@@ -1,0 +1,28 @@
+include: package:very_good_analysis/analysis_options.yaml
+linter:
+  rules:
+    flutter_style_todos: false
+    sort_pub_dependencies: false
+    prefer_final_locals: false
+    public_member_api_docs: false
+    avoid_escaping_inner_quotes: true
+    avoid_multiple_declarations_per_line: true
+    avoid_returning_null_for_void: true
+    avoid_unnecessary_containers: true
+    avoid_void_async: true
+    avoid_relative_lib_imports: true
+    prefer_const_constructors_in_immutables: true
+    prefer_single_quotes: true
+    prefer_if_null_operators: true
+    prefer_int_literals: true
+    prefer_interpolation_to_compose_strings: true
+    prefer_is_empty: true
+    prefer_is_not_empty: true
+    always_use_package_imports: true
+    unnecessary_new: true
+    unnecessary_brace_in_string_interps: true
+    require_trailing_commas: true
+    use_key_in_widget_constructors: true
+    constant_identifier_names: false
+    curly_braces_in_flow_control_structures: true
+    sized_box_for_whitespace: true

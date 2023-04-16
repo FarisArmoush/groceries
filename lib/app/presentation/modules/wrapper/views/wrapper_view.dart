@@ -1,0 +1,36 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:groceries/app/presentation/blocs/auth/auth_bloc.dart';
+import 'package:groceries/app/presentation/modules/root/views/root_view.dart';
+import 'package:groceries/app/presentation/modules/welcome/views/welcome_view.dart';
+
+class WrapperView extends StatelessWidget {
+  const WrapperView({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<AuthBloc, AuthState>(
+      buildWhen: (previous, current) => current != previous,
+      builder: (context, state) {
+        if (state is Unauthenticated) {
+          return const WelcomeView();
+        }
+        if (state is Authenticated) {
+          return const RootView();
+        }
+        // if (state is NotVerified) {
+        //   return Scaffold(
+        //     body: Center(
+        //       child: Text('Not Verified AF'),
+        //     ),
+        //   );
+        // }
+        return const Scaffold(
+          body: Center(
+            child: Text('Something went wrong...'),
+          ),
+        );
+      },
+    );
+  }
+}
