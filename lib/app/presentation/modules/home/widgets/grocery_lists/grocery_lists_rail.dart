@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/app/data/models/list_model.dart';
+import 'package:groceries/app/data/models/grocery_list_model.dart';
 import 'package:groceries/app/presentation/modules/home/widgets/grocery_lists/create_your_first_list_button.dart';
 import 'package:groceries/app/presentation/modules/home/widgets/grocery_lists/grocery_lists_list.dart';
 import 'package:groceries/app/presentation/modules/home/widgets/rail_title.dart';
@@ -10,7 +10,7 @@ class GroceryListsRail extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  final List<ListModel> lists;
+  final List<GroceryListModel> lists;
 
   @override
   Widget build(BuildContext context) {

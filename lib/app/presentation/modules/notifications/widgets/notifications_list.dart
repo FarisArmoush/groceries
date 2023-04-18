@@ -18,6 +18,7 @@ class NotificationsList extends StatelessWidget {
       itemBuilder: (context, index) {
         return NotificationCard(
           notificationsModel: NotificationModel(
+            id: list[index].id,
             title: list[index].title,
             subtitle: list[index].subtitle,
             date: list[index].date,

@@ -11,7 +11,7 @@ class LoadGroceryLists extends GroceryListsEvent {}
 
 class LeaveGroceryList extends GroceryListsEvent {
   const LeaveGroceryList({required this.list});
-  final ListModel list;
+  final GroceryListModel list;
 
   @override
   List<Object> get props => [list];

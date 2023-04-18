@@ -11,7 +11,7 @@ class GroceryListsInitial extends GroceryListsState {}
 
 class GroceryListsLoaded extends GroceryListsState {
   const GroceryListsLoaded({required this.lists});
-  final List<ListModel> lists;
+  final List<GroceryListModel> lists;
 
   @override
   List<Object> get props => [lists];

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/core/routes/app_named_routes.dart';
-import 'package:groceries/app/data/models/list_model.dart';
+import 'package:groceries/app/data/models/grocery_list_model.dart';
 import 'package:groceries/app/presentation/modules/home/widgets/grocery_lists/create_new_grocery_list_card_button.dart';
 import 'package:groceries/app/presentation/modules/home/widgets/grocery_lists/grocery_list_card.dart';
 
@@ -11,7 +11,7 @@ class GroceryListsList extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  final List<ListModel> lists;
+  final List<GroceryListModel> lists;
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +29,9 @@ class GroceryListsList extends StatelessWidget {
             return const CreateNewGroceryListCardButton();
           } else {
             return GroceryListCard(
-              listModel: ListModel(
+              listModel: GroceryListModel(
                 uid: lists[index].uid,
-                groupName: lists[index].groupName,
+                name: lists[index].name,
                 imageUrl: lists[index].imageUrl,
                 tasksAmount: lists[index].tasksAmount,
               ),

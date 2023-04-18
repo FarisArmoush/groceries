@@ -11,18 +11,21 @@ class MockNotificationsRepository extends BaseNotificationsRepository {
   @override
   List<NotificationModel> get notifications => [
         NotificationModel(
+          id: 'asdgf',
           title: faker.person.name(),
           subtitle: faker.lorem.sentence(),
           date: faker.date.dateTime(),
           imageUrl: faker.image.image(),
         ),
         NotificationModel(
+          id: 'asdgf',
           title: faker.person.name(),
           subtitle: faker.lorem.sentence(),
           date: faker.date.dateTime(),
           imageUrl: faker.image.image(),
         ),
         NotificationModel(
+          id: 'asdgf',
           title: faker.person.name(),
           subtitle: faker.lorem.sentence(),
           date: faker.date.dateTime(),

@@ -33,15 +33,15 @@ class NotificationCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           NotificationCardTitle(
-            title: notificationsModel.title!,
+            title: notificationsModel.title,
           ),
           NotificationCardDate(
-            date: notificationsModel.date!,
+            date: notificationsModel.date,
           ),
         ],
       ),
       subtitle: NotificationCardSubtitle(
-        subtitle: notificationsModel.subtitle!,
+        subtitle: notificationsModel.subtitle,
       ),
     );
   }
