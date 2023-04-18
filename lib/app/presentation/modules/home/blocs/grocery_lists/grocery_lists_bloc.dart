@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:groceries/app/data/models/list_model.dart';
+import 'package:groceries/app/data/models/grocery_list_model.dart';
 import 'package:groceries/app/data/repositories/mock_repositories/mock_grocery_lists_repository.dart';
 import 'package:groceries/app/domain/repositories/base_grocery_lists_repository.dart';
 

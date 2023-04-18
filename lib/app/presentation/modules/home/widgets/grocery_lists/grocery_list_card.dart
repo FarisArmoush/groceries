@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/app/core/constants/app_text_styles.dart';
-import 'package:groceries/app/data/models/list_model.dart';
+import 'package:groceries/app/data/models/grocery_list_model.dart';
 import 'package:groceries/app/presentation/modules/grocery_list/widgets/grocery_list_options_button.dart';
 
 class GroceryListCard extends StatelessWidget {
@@ -9,7 +9,7 @@ class GroceryListCard extends StatelessWidget {
     required this.onTap,
     Key? key,
   }) : super(key: key);
-  final ListModel listModel;
+  final GroceryListModel listModel;
   final VoidCallback onTap;
 
   @override
@@ -35,7 +35,7 @@ class GroceryListCard extends StatelessWidget {
                 height: size.height * 0.05,
               ),
               Text(
-                listModel.groupName,
+                listModel.name,
                 style: AppTextStyles.poppinsMedium(
                   color: Theme.of(context).primaryColor,
                   fontSize: 24,

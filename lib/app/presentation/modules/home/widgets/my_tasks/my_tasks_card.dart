@@ -18,7 +18,7 @@ class MyTasksCard extends StatelessWidget {
       onTap: () {},
       contentPadding: const EdgeInsets.all(8),
       leading: CachedImage(
-        imageUrl: taskModel.listModel!.imageUrl,
+        imageUrl: taskModel.listModel.imageUrl,
         width: size.width * 0.15,
         height: size.height * 0.1,
         boxFit: BoxFit.cover,
@@ -28,7 +28,7 @@ class MyTasksCard extends StatelessWidget {
           Expanded(
             flex: 2,
             child: Text(
-              taskModel.listModel!.groupName,
+              taskModel.listModel.name,
               style: AppTextStyles.poppinsRegular(
                 color: Theme.of(context).primaryColor,
                 fontSize: 14,
@@ -49,9 +49,9 @@ class MyTasksCard extends StatelessWidget {
           ),
         ],
       ),
-      subtitle: taskModel.groceries!.isNotEmpty
+      subtitle: taskModel.groceries.isNotEmpty
           ? Text(
-              'You have ${taskModel.groceries!.length} tasks',
+              'You have ${taskModel.groceries.length} tasks',
               style: AppTextStyles.poppinsRegular(
                 color: Theme.of(context).primaryColorLight,
                 fontSize: 12,

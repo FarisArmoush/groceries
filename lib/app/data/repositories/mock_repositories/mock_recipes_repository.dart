@@ -12,10 +12,10 @@ class MockRecipesRepository extends BaseRecipesRepository {
   List<RecipeModel> get recipes {
     return [
       RecipeModel(
-        id: 123,
+        id: '123',
         name: faker.food.dish(),
         imageUrl: faker.image.image(),
-        items: [
+        items: const [
           'Pasta',
           'Olive Oil',
           'Eggs',
@@ -23,10 +23,10 @@ class MockRecipesRepository extends BaseRecipesRepository {
         ],
       ),
       RecipeModel(
-        id: 234,
+        id: '234',
         name: faker.food.dish(),
         imageUrl: faker.image.image(),
-        items: [
+        items: const [
           'Warm milk',
           'Flour',
           'Eggs',
@@ -34,10 +34,10 @@ class MockRecipesRepository extends BaseRecipesRepository {
         ],
       ),
       RecipeModel(
-        id: 345,
+        id: '345',
         name: faker.food.dish(),
         imageUrl: faker.image.image(),
-        items: [
+        items: const [
           'Rice',
           'Chicken',
           'Potatoes',
@@ -45,10 +45,10 @@ class MockRecipesRepository extends BaseRecipesRepository {
         ],
       ),
       RecipeModel(
-        id: 456,
+        id: '456',
         name: faker.food.dish(),
         imageUrl: faker.image.image(),
-        items: [],
+        items: const [],
       ),
     ];
   }
