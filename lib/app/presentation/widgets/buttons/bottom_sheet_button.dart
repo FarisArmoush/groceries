@@ -23,7 +23,7 @@ class BottomSheetButton extends StatelessWidget {
         text,
         style: AppTextStyles.poppinsRegular(
           color: Theme.of(context).primaryColor,
-          fontSize: 16,
+          fontSize: 14,
         ),
       ),
       leading: SvgPicture.asset(

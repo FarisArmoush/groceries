@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/core/constants/app_text_styles.dart';
 import 'package:groceries/app/core/routes/app_named_routes.dart';
-import 'package:groceries/app/presentation/widgets/buttons/app_button.dart';
 import 'package:groceries/gen/assets.gen.dart';
 
 class ListCreatedUnsuccessfullyView extends StatelessWidget {
@@ -51,10 +50,10 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
             SizedBox(
               height: size.height * 0.05,
             ),
-            AppButton(
-              text: 'Go to Home',
-              buttonStyle: AppButtonStyles.red(context),
-              onTap: () => context.pushReplacementNamed(AppNamedRoutes.root),
+            FilledButton(
+              onPressed: () =>
+                  context.pushReplacementNamed(AppNamedRoutes.root),
+              child: const Text('Go to Home'),
             ),
           ],
         ),

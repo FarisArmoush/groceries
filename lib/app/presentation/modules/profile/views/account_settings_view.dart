@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/app/presentation/widgets/app_text_field.dart';
-import 'package:groceries/app/presentation/widgets/buttons/app_button.dart';
 
 class AccountSettingsView extends StatelessWidget {
   const AccountSettingsView({Key? key}) : super(key: key);
@@ -9,7 +8,7 @@ class AccountSettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Account'),
+        title: const Text('Account Settings'),
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
@@ -30,10 +29,9 @@ class AccountSettingsView extends StatelessWidget {
           const AppTextField(
             labelText: 'Confirm New Password',
           ),
-          AppButton(
-            text: 'Delete Account',
-            buttonStyle: AppButtonStyles.red(context),
-            onTap: () {},
+          FilledButton(
+            onPressed: () {},
+            child: const Text('Delete Account?'),
           ),
         ],
       ),

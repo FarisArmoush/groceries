@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/core/constants/app_text_styles.dart';
 import 'package:groceries/app/core/routes/app_named_routes.dart';
-import 'package:groceries/app/presentation/widgets/buttons/app_button.dart';
 import 'package:groceries/gen/assets.gen.dart';
 
 class ListCreatedSuccessfullyView extends StatelessWidget {
@@ -51,20 +50,22 @@ class ListCreatedSuccessfullyView extends StatelessWidget {
             SizedBox(
               height: size.height * 0.05,
             ),
-            AppButton(
-              text: 'Go to <NAME> List',
-              buttonStyle: AppButtonStyles.red(context).copyWith(
-                backgroundColor: MaterialStateProperty.all<Color>(green),
-              ),
-              onTap: () {},
+            FilledButton(
+              onPressed: () {},
+              style: Theme.of(context).filledButtonTheme.style?.copyWith(
+                    backgroundColor: MaterialStateProperty.all(
+                      Colors.green,
+                    ),
+                  ),
+              child: const Text('Go To <NAME> List'),
             ),
             SizedBox(
               height: size.height * 0.02,
             ),
-            AppButton(
-              text: 'Go to Home',
-              buttonStyle: AppButtonStyles.transparent(context),
-              onTap: () => context.pushReplacementNamed(AppNamedRoutes.root),
+            OutlinedButton(
+              onPressed: () =>
+                  context.pushReplacementNamed(AppNamedRoutes.root),
+              child: const Text('Go to Home'),
             ),
           ],
         ),
