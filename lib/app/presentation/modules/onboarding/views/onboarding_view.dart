@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/app/core/routes/app_named_routes.dart';
 import 'package:groceries/app/presentation/blocs/remote_config/remote_config_cubit.dart';
 import 'package:groceries/app/presentation/modules/onboarding/widgets/note.dart';
-import 'package:groceries/app/presentation/widgets/buttons/app_button.dart';
 import 'package:groceries/app/presentation/widgets/buttons/next_button.dart';
 import 'package:groceries/app/presentation/widgets/page_indicator.dart';
 
@@ -60,10 +59,9 @@ class _OnboardingViewState extends State<OnboardingView> {
         child: Padding(
           padding: const EdgeInsets.all(32),
           child: _currentPage == 2
-              ? AppButton(
-                  text: 'Get Started',
-                  buttonStyle: AppButtonStyles.red(context),
-                  onTap: () => context.pushReplacementNamed(
+              ? FilledButton(
+                  child: const Text('Get Started'),
+                  onPressed: () => context.pushReplacementNamed(
                     AppNamedRoutes.welcome,
                   ),
                 )

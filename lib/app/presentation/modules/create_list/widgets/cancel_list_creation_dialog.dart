@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/presentation/widgets/app_dialog_content_text.dart';
 import 'package:groceries/app/presentation/widgets/app_dialog_title.dart';
-import 'package:groceries/app/presentation/widgets/buttons/app_button.dart';
 
 class CancelListCreationDialog extends StatelessWidget {
   const CancelListCreationDialog({Key? key}) : super(key: key);
@@ -17,17 +16,13 @@ class CancelListCreationDialog extends StatelessWidget {
         text: 'If you cancel you will lose all progress in creating this list',
       ),
       actions: [
-        AppButton(
-          text: 'No, Dont cancel',
-          buttonStyle: AppButtonStyles.transparent(context),
-          onTap: () => context.pop(),
+        FilledButton(
+          onPressed: () => context.pop(),
+          child: const Text('No, Dont Cancel'),
         ),
-        AppButton(
-          text: 'Yes, Cancel',
-          buttonStyle: AppButtonStyles.red(context),
-          onTap: () => context
-            ..pop()
-            ..pop(),
+        OutlinedButton(
+          onPressed: () => context.pop(),
+          child: const Text('Yes, Cancel'),
         ),
       ],
     );

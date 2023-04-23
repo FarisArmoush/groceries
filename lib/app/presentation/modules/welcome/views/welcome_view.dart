@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/app/core/routes/app_named_routes.dart';
 import 'package:groceries/app/presentation/modules/welcome/widgets/welcome_view_body.dart';
 import 'package:groceries/app/presentation/modules/welcome/widgets/welcome_view_header.dart';
-import 'package:groceries/app/presentation/widgets/buttons/app_button.dart';
 
 class WelcomeView extends StatelessWidget {
   const WelcomeView({Key? key}) : super(key: key);
@@ -30,22 +29,20 @@ class WelcomeView extends StatelessWidget {
             SizedBox(
               height: size.height * 0.09,
             ),
-            AppButton(
-              text: 'Create an account',
-              buttonStyle: AppButtonStyles.red(context),
-              onTap: () => context.pushReplacementNamed(
+            FilledButton(
+              onPressed: () => context.pushReplacementNamed(
                 AppNamedRoutes.register,
               ),
+              child: const Text('Sign Up'),
             ),
             SizedBox(
               height: size.height * 0.02,
             ),
-            AppButton(
-              text: 'Sign in',
-              buttonStyle: AppButtonStyles.transparent(context),
-              onTap: () => context.pushReplacementNamed(
+            OutlinedButton(
+              onPressed: () => context.pushReplacementNamed(
                 AppNamedRoutes.login,
               ),
+              child: const Text('Login'),
             ),
           ],
         ),

@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/app/presentation/blocs/auth/auth_bloc.dart';
 import 'package:groceries/app/presentation/widgets/app_dialog_content_text.dart';
 import 'package:groceries/app/presentation/widgets/app_dialog_title.dart';
-import 'package:groceries/app/presentation/widgets/buttons/app_button.dart';
 
 class LogoutDialog extends StatelessWidget {
   const LogoutDialog({Key? key}) : super(key: key);
@@ -19,18 +18,16 @@ class LogoutDialog extends StatelessWidget {
         text: 'Are you sure you would like to logout of your account?',
       ),
       actions: [
-        AppButton(
-          text: 'No, Dont Logout!',
-          buttonStyle: AppButtonStyles.transparent(context),
-          onTap: () => context.pop(),
+        OutlinedButton(
+          onPressed: () => context.pop,
+          child: const Text("No, Don't Logout"),
         ),
-        AppButton(
-          text: 'Yes, Logout',
-          buttonStyle: AppButtonStyles.red(context),
-          onTap: () {
+        FilledButton(
+          onPressed: () {
             context.read<AuthBloc>().add(const AppLogoutRequested());
             context.pop();
           },
+          child: const Text('Yes, Logout'),
         ),
       ],
     );

@@ -58,7 +58,7 @@ class AppGoRouter {
               GoRoute(
                 name: AppNamedRoutes.forgotPassword,
                 path: 'forgotPassword',
-                builder: (context, state) => ForgotPasswordView(),
+                builder: (context, state) => const ForgotPasswordView(),
                 routes: [
                   GoRoute(
                     name: AppNamedRoutes.verification,

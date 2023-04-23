@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:groceries/app/core/constants/app_text_styles.dart';
+import 'package:groceries/app/core/routes/app_named_routes.dart';
 import 'package:groceries/app/presentation/blocs/remote_config/remote_config_cubit.dart';
 import 'package:groceries/app/presentation/modules/forgot_password/widgets/cancel_forgot_password_dialog.dart';
 import 'package:groceries/app/presentation/widgets/app_text_field.dart';
-import 'package:groceries/app/presentation/widgets/buttons/app_button.dart';
-import 'package:groceries/app/presentation/widgets/constant_widgets/app_snack_bars.dart';
 
-// ignore: must_be_immutable
 class ForgotPasswordView extends StatelessWidget {
-  ForgotPasswordView({Key? key}) : super(key: key);
-
-  TextEditingController emailController = TextEditingController();
-  final _forgotPasswordKey = GlobalKey<FormState>();
+  const ForgotPasswordView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +27,6 @@ class ForgotPasswordView extends StatelessWidget {
           ),
         ),
         body: Form(
-          key: _forgotPasswordKey,
-          autovalidateMode: AutovalidateMode.onUserInteraction,
           child: ListView(
             padding: EdgeInsets.symmetric(
               horizontal: size.width * 0.09,
@@ -68,22 +62,16 @@ class ForgotPasswordView extends StatelessWidget {
               SizedBox(
                 height: size.height * 0.04,
               ),
-              AppButton(
-                text: 'Send',
-                buttonStyle: AppButtonStyles.blackAndWhite(context),
-                onTap: () => checkEmail(context),
+              ElevatedButton(
+                onPressed: () => context.pushReplacementNamed(
+                  AppNamedRoutes.verification,
+                ),
+                child: const Text('Send'),
               ),
             ],
           ),
         ),
       ),
     );
-  }
-
-  Future<void> checkEmail(BuildContext context) async {
-    if (_forgotPasswordKey.currentState!.validate()) {
-    } else {
-      AppSnackBars.failedSnackBar(context, 'Email is Invalid');
-    }
   }
 }

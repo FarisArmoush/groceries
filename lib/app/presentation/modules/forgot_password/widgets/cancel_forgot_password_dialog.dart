@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/presentation/widgets/app_dialog_title.dart';
-import 'package:groceries/app/presentation/widgets/buttons/app_button.dart';
 
 class CancelForgotPasswordDialog extends StatelessWidget {
   const CancelForgotPasswordDialog({Key? key}) : super(key: key);
@@ -13,17 +12,15 @@ class CancelForgotPasswordDialog extends StatelessWidget {
         title: 'Are you sure you want to cancel',
       ),
       children: [
-        AppButton(
-          text: 'Yes, Go Back',
-          buttonStyle: AppButtonStyles.red(context),
-          onTap: () => context
+        FilledButton(
+          onPressed: () => context
             ..pop()
             ..pop(),
+          child: const Text('Yes, Go Back'),
         ),
-        AppButton(
-          text: "No, Don't Cancel",
-          buttonStyle: AppButtonStyles.transparent(context),
-          onTap: () {},
+        OutlinedButton(
+          onPressed: () => context.pop(),
+          child: const Text('No, Dont Cancel'),
         ),
       ],
     );

@@ -11,6 +11,7 @@ class RegisterView extends StatelessWidget {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return SafeArea(
+      top: false,
       child: Scaffold(
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(

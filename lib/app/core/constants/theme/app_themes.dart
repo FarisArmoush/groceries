@@ -14,6 +14,9 @@ part '__app_list_tile_theme_data.dart';
 part '__app_radio_theme_data.dart';
 part '__app_text_button_theme_data.dart';
 part '__app_dialog_theme_data.dart';
+part '__app_filled_button_theme_data.dart';
+part '__app_outlined_button_theme_data.dart';
+part '__app_elevated_button_theme_data.dart';
 
 class AppThemes {
   AppThemes._();
@@ -37,11 +40,15 @@ class AppThemes {
     textButtonTheme: _AppTextButtonThemeData.light,
     progressIndicatorTheme: _AppProgressIndicatorThemeData.light,
     dialogTheme: _AppDialogThemeData.light,
+    filledButtonTheme: _AppFilledButtonThemeData.light,
+    outlinedButtonTheme: _AppOutlinedButtonThemeData.light,
+    elevatedButtonTheme: __AppElevatedButtonThemeData.light,
     fontFamily: FontFamily.poppinsRegular,
   );
 
-  static final ThemeData darkTheme = ThemeData(
+  static final ThemeData darkTheme = ThemeData.dark(
     useMaterial3: true,
+  ).copyWith(
     brightness: Brightness.dark,
     primaryColor: ColorConstants.white,
     primaryColorLight: Colors.red,
@@ -60,6 +67,8 @@ class AppThemes {
     textButtonTheme: _AppTextButtonThemeData.dark,
     progressIndicatorTheme: _AppProgressIndicatorThemeData.dark,
     dialogTheme: _AppDialogThemeData.dark,
-    fontFamily: FontFamily.poppinsRegular,
+    filledButtonTheme: _AppFilledButtonThemeData.dark,
+    outlinedButtonTheme: _AppOutlinedButtonThemeData.dark,
+    elevatedButtonTheme: __AppElevatedButtonThemeData.dark,
   );
 }

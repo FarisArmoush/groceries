@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/presentation/widgets/app_dialog_content_text.dart';
 import 'package:groceries/app/presentation/widgets/app_dialog_title.dart';
-import 'package:groceries/app/presentation/widgets/buttons/app_button.dart';
 
 class DeleteRecipeDialog extends StatelessWidget {
   const DeleteRecipeDialog({Key? key}) : super(key: key);
@@ -17,15 +16,13 @@ class DeleteRecipeDialog extends StatelessWidget {
         text: 'if you delete this list, you wont be able to get it back',
       ),
       actions: [
-        AppButton(
-          text: 'No, Dont Delete!',
-          buttonStyle: AppButtonStyles.transparent(context),
-          onTap: () => context.pop(),
+        OutlinedButton(
+          onPressed: () => context.pop(),
+          child: const Text('No, Dont Delete'),
         ),
-        AppButton(
-          text: 'Yes, Delete!',
-          buttonStyle: AppButtonStyles.red(context),
-          onTap: () => context.pop(),
+        FilledButton(
+          onPressed: () => context.pop(),
+          child: const Text('Yes, Delete'),
         ),
       ],
     );
