@@ -6,6 +6,9 @@ class _AppTextButtonThemeData {
       iconColor: MaterialStateProperty.all<Color>(
         ColorConstants.black,
       ),
+      foregroundColor: MaterialStateProperty.all<Color>(
+        ColorConstants.red,
+      ),
       textStyle: MaterialStateProperty.all<TextStyle>(
         TextStyle(
           fontFamily: FontFamily.poppinsRegular,
@@ -23,11 +26,13 @@ class _AppTextButtonThemeData {
       iconColor: MaterialStateProperty.all<Color>(
         ColorConstants.white,
       ),
+      foregroundColor: MaterialStateProperty.all<Color>(
+        Colors.red,
+      ),
       textStyle: MaterialStateProperty.all<TextStyle>(
-        TextStyle(
-          fontFamily: FontFamily.poppinsRegular,
-          fontSize: 16,
+        AppTextStyles.poppinsRegular(
           color: ColorConstants.white,
+          fontSize: 16,
         ),
       ),
       overlayColor: MaterialStateProperty.all<Color>(

@@ -4,8 +4,8 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/app/core/routes/app_named_routes.dart';
 import 'package:groceries/app/presentation/blocs/auth/auth_bloc.dart';
 import 'package:groceries/app/presentation/modules/profile/widgets/logout_button.dart';
+import 'package:groceries/app/presentation/modules/profile/widgets/profile_header/profile_header.dart';
 import 'package:groceries/app/presentation/widgets/buttons/tile_button.dart';
-import 'package:groceries/app/presentation/widgets/profile_header/profile_header.dart';
 import 'package:groceries/gen/assets.gen.dart';
 
 class ProfileView extends StatelessWidget {

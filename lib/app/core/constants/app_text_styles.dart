@@ -9,6 +9,8 @@ class AppTextStyles {
 
   /// Returns a `TextStyle` object with the Poppins Thin font family,
   /// with the specified `color` and `fontSize`.
+  ///
+  /// `[100]`
   static TextStyle poppinsThin({
     required Color color,
     required double fontSize,
@@ -22,6 +24,8 @@ class AppTextStyles {
 
   /// Returns a `TextStyle` object with the Poppins Extra-Light font family,
   /// with the specified `color` and `fontSize`.
+  ///
+  /// `[200]`
   static TextStyle poppinsExtraLight({
     required Color color,
     required double fontSize,
@@ -35,6 +39,8 @@ class AppTextStyles {
 
   /// Returns a `TextStyle` object with the Poppins Light font family,
   /// with the specified `color` and `fontSize`.
+  ///
+  /// `[300]`
   static TextStyle poppinsLight({
     required Color color,
     required double fontSize,
@@ -48,6 +54,8 @@ class AppTextStyles {
 
   /// Returns a `TextStyle` object with the Poppins Regular font family,
   /// with the specified `color` and `fontSize`.
+  ///
+  /// `[400]`
   static TextStyle poppinsRegular({
     required Color color,
     required double fontSize,
@@ -61,6 +69,8 @@ class AppTextStyles {
 
   /// Returns a `TextStyle` object with the Poppins Medium font family,
   /// with the specified `color` and `fontSize`.
+  ///
+  /// `[500]`
   static TextStyle poppinsMedium({
     required Color color,
     required double fontSize,
@@ -74,6 +84,8 @@ class AppTextStyles {
 
   /// Returns a `TextStyle` object with the Poppins Semi-Bold font family,
   /// with the specified `color` and `fontSize`.
+  ///
+  /// `[600]`
   static TextStyle poppinsSemiBold({
     required Color color,
     required double fontSize,
@@ -87,6 +99,8 @@ class AppTextStyles {
 
   /// Returns a `TextStyle` object with the Poppins Bold font family,
   /// with the specified `color` and `fontSize`.
+  ///
+  /// `[700]`
   static TextStyle poppinsBold({
     required Color color,
     required double fontSize,
@@ -100,6 +114,8 @@ class AppTextStyles {
 
   /// Returns a `TextStyle` object with the Poppins Extra-Bold font family,
   /// with the specified `color` and `fontSize`.
+  ///
+  /// `[800]`
   static TextStyle poppinsExtraBold({
     required Color color,
     required double fontSize,
@@ -113,6 +129,8 @@ class AppTextStyles {
 
   /// Returns a `TextStyle` object with the Poppins Black font family,
   /// with the specified `color` and `fontSize`.
+  ///
+  /// `[900]`
   static TextStyle poppinsBlack({
     required Color color,
     required double fontSize,

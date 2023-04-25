@@ -15,13 +15,12 @@ class MyTasksRail extends StatelessWidget {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     return ListView(
-      padding: EdgeInsets.only(
-        top: height * 0.03,
-      ),
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       children: [
-        const RailTitle(title: 'My Tasks'),
+        const RailTitle(
+          title: 'My Tasks',
+        ),
         SizedBox(
           height: height * 0.025,
         ),

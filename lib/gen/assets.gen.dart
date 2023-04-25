@@ -199,6 +199,51 @@ class $AssetsSvgGen {
   /// File path: assets/svg/icWhatsapp.svg
   String get icWhatsapp => 'assets/svg/icWhatsapp.svg';
 
+  /// File path: assets/svg/illBirdWatching.svg
+  String get illBirdWatching => 'assets/svg/illBirdWatching.svg';
+
+  /// File path: assets/svg/illCall.svg
+  String get illCall => 'assets/svg/illCall.svg';
+
+  /// File path: assets/svg/illCelebrating.svg
+  String get illCelebrating => 'assets/svg/illCelebrating.svg';
+
+  /// File path: assets/svg/illComputer.svg
+  String get illComputer => 'assets/svg/illComputer.svg';
+
+  /// File path: assets/svg/illEating.svg
+  String get illEating => 'assets/svg/illEating.svg';
+
+  /// File path: assets/svg/illError.svg
+  String get illError => 'assets/svg/illError.svg';
+
+  /// File path: assets/svg/illFishing.svg
+  String get illFishing => 'assets/svg/illFishing.svg';
+
+  /// File path: assets/svg/illFootball.svg
+  String get illFootball => 'assets/svg/illFootball.svg';
+
+  /// File path: assets/svg/illGaming.svg
+  String get illGaming => 'assets/svg/illGaming.svg';
+
+  /// File path: assets/svg/illMail.svg
+  String get illMail => 'assets/svg/illMail.svg';
+
+  /// File path: assets/svg/illMusic.svg
+  String get illMusic => 'assets/svg/illMusic.svg';
+
+  /// File path: assets/svg/illPills.svg
+  String get illPills => 'assets/svg/illPills.svg';
+
+  /// File path: assets/svg/illScooter.svg
+  String get illScooter => 'assets/svg/illScooter.svg';
+
+  /// File path: assets/svg/illShopping.svg
+  String get illShopping => 'assets/svg/illShopping.svg';
+
+  /// File path: assets/svg/illWriting.svg
+  String get illWriting => 'assets/svg/illWriting.svg';
+
   /// List of all assets
   List<String> get values => [
         icArchive,
@@ -247,7 +292,22 @@ class $AssetsSvgGen {
         icUsers,
         icVerified,
         icVerticalThreeDots,
-        icWhatsapp
+        icWhatsapp,
+        illBirdWatching,
+        illCall,
+        illCelebrating,
+        illComputer,
+        illEating,
+        illError,
+        illFishing,
+        illFootball,
+        illGaming,
+        illMail,
+        illMusic,
+        illPills,
+        illScooter,
+        illShopping,
+        illWriting
       ];
 }
 

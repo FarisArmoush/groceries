@@ -6,6 +6,7 @@ class AccountSettingsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Account Settings'),
@@ -17,17 +18,32 @@ class AccountSettingsView extends StatelessWidget {
           const AppTextField(
             labelText: 'Username',
           ),
+          SizedBox(
+            height: size.height * 0.015,
+          ),
           const AppTextField(
             labelText: 'Email',
+          ),
+          SizedBox(
+            height: size.height * 0.015,
           ),
           const AppTextField(
             labelText: 'Old password',
           ),
+          SizedBox(
+            height: size.height * 0.015,
+          ),
           const AppTextField(
             labelText: 'New Password',
           ),
+          SizedBox(
+            height: size.height * 0.015,
+          ),
           const AppTextField(
             labelText: 'Confirm New Password',
+          ),
+          SizedBox(
+            height: size.height * 0.03,
           ),
           FilledButton(
             onPressed: () {},

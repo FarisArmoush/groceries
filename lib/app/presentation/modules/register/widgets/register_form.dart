@@ -5,13 +5,15 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/app/core/constants/app_text_styles.dart';
 import 'package:groceries/app/core/routes/app_named_routes.dart';
 import 'package:groceries/app/presentation/modules/register/cubit/register_cubit.dart';
-import 'package:groceries/app/presentation/modules/register/widgets/register_button.dart';
-import 'package:groceries/app/presentation/modules/register/widgets/register_confirm_password_text_field.dart';
-import 'package:groceries/app/presentation/modules/register/widgets/register_display_name_text_field.dart';
-import 'package:groceries/app/presentation/modules/register/widgets/register_email_text_field.dart';
-import 'package:groceries/app/presentation/modules/register/widgets/register_password_text_field.dart';
+import 'package:groceries/app/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/app/presentation/widgets/app_logo.dart';
+import 'package:groceries/app/presentation/widgets/app_text_field.dart';
 import 'package:groceries/app/presentation/widgets/buttons/other_options_text_button.dart';
+part '__register_button.dart';
+part '__register_confirm_password_text_field.dart';
+part '__register_display_name_text_field.dart';
+part '__register_email_text_field.dart';
+part '__register_password_text_field.dart';
 
 class RegisterForm extends StatelessWidget {
   const RegisterForm({Key? key}) : super(key: key);
@@ -51,6 +53,9 @@ class RegisterForm extends StatelessWidget {
           horizontal: 32,
         ),
         children: [
+          SizedBox(
+            height: size.height * 0.065,
+          ),
           const AppLogo(),
           SizedBox(
             height: size.height * 0.04,
@@ -75,23 +80,23 @@ class RegisterForm extends StatelessWidget {
           SizedBox(
             height: size.height * 0.025,
           ),
-          const RegisterDisplayNameTextField(),
+          const _RegisterDisplayNameTextField(),
           SizedBox(
             height: size.height * 0.02,
           ),
-          const RegisterEmailTextField(),
+          const _RegisterEmailTextField(),
           SizedBox(
             height: size.height * 0.02,
           ),
-          const RegisterPasswordTextField(),
+          const _RegisterPasswordTextField(),
           SizedBox(
             height: size.height * 0.02,
           ),
-          const RegisterConfirmPasswordTextField(),
+          const _RegisterConfirmPasswordTextField(),
           SizedBox(
             height: size.height * 0.04,
           ),
-          const RegisterButton(),
+          const _RegisterButton(),
           SizedBox(
             height: size.height * 0.03,
           ),

@@ -9,24 +9,12 @@ class RegisterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-    return SafeArea(
-      top: false,
-      child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(
-            size.height * 0.05,
-          ),
-          child: AppBar(
-            scrolledUnderElevation: 0,
-          ),
+    return Scaffold(
+      body: BlocProvider(
+        create: (context) => RegisterCubit(
+          context.read<FirebaseAuthRepository>(),
         ),
-        body: BlocProvider(
-          create: (context) => RegisterCubit(
-            context.read<FirebaseAuthRepository>(),
-          ),
-          child: const RegisterForm(),
-        ),
+        child: const RegisterForm(),
       ),
     );
   }

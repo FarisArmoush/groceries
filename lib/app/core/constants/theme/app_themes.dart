@@ -20,8 +20,9 @@ part '__app_elevated_button_theme_data.dart';
 
 class AppThemes {
   AppThemes._();
-  static final ThemeData lightTheme = ThemeData(
+  static final ThemeData lightTheme = ThemeData.light(
     useMaterial3: true,
+  ).copyWith(
     brightness: Brightness.light,
     primaryColor: ColorConstants.black,
     primaryColorLight: ColorConstants.red,
@@ -43,7 +44,7 @@ class AppThemes {
     filledButtonTheme: _AppFilledButtonThemeData.light,
     outlinedButtonTheme: _AppOutlinedButtonThemeData.light,
     elevatedButtonTheme: __AppElevatedButtonThemeData.light,
-    fontFamily: FontFamily.poppinsRegular,
+    // fontFamily: FontFamily.poppinsRegular,
   );
 
   static final ThemeData darkTheme = ThemeData.dark(

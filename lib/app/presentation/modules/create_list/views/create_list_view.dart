@@ -45,8 +45,8 @@ class CreateListView extends StatelessWidget {
 
   void _navigationHandler(BuildContext context) {
     if (_pageController.page == 1) {
-      context.pushReplacementNamed(AppNamedRoutes.listCreatedSuccessfully);
-      // context.pushReplacementNamed(AppNamedRoutes.listCreatedUnsuccessfully);
+      // context.pushReplacementNamed(AppNamedRoutes.listCreatedSuccessfully);
+      context.pushReplacementNamed(AppNamedRoutes.listCreatedUnsuccessfully);
     } else {
       _pageController.nextPage(
         duration: const Duration(milliseconds: 750),

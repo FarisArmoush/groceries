@@ -29,7 +29,7 @@ class NotificationsList extends StatelessWidget {
       },
       separatorBuilder: (context, index) {
         return SizedBox(
-          height: MediaQuery.of(context).size.height * 0.03,
+          height: MediaQuery.of(context).size.height * 0.01,
         );
       },
     );

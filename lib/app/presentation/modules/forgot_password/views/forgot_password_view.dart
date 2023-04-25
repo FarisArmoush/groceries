@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/core/constants/app_text_styles.dart';
 import 'package:groceries/app/core/routes/app_named_routes.dart';
 import 'package:groceries/app/presentation/blocs/remote_config/remote_config_cubit.dart';
 import 'package:groceries/app/presentation/modules/forgot_password/widgets/cancel_forgot_password_dialog.dart';
 import 'package:groceries/app/presentation/widgets/app_text_field.dart';
+import 'package:groceries/gen/assets.gen.dart';
 
 class ForgotPasswordView extends StatelessWidget {
   const ForgotPasswordView({Key? key}) : super(key: key);
@@ -56,8 +58,14 @@ class ForgotPasswordView extends StatelessWidget {
               SizedBox(
                 height: size.height * 0.06,
               ),
-              const AppTextField(
-                labelText: 'Group Discription',
+              AppTextField(
+                labelText: 'Email',
+                keyboardType: TextInputType.emailAddress,
+                prefixIcon: SvgPicture.asset(
+                  Assets.svg.icAtSign,
+                  color: Theme.of(context).hintColor,
+                  fit: BoxFit.scaleDown,
+                ),
               ),
               SizedBox(
                 height: size.height * 0.04,

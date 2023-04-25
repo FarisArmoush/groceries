@@ -26,7 +26,9 @@ class GroceryListsList extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 4),
         itemBuilder: (context, index) {
           if (index == lists.length) {
-            return const CreateNewGroceryListCardButton();
+            return const CreateNewGroceryListCardButton(
+              text: 'Create a new List',
+            );
           } else {
             return GroceryListCard(
               listModel: GroceryListModel(
@@ -34,6 +36,7 @@ class GroceryListsList extends StatelessWidget {
                 name: lists[index].name,
                 imageUrl: lists[index].imageUrl,
                 tasksAmount: lists[index].tasksAmount,
+                members: lists[index].members,
               ),
               onTap: () => context.pushNamed(AppNamedRoutes.groceryList),
             );

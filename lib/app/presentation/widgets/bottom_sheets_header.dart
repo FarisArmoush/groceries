@@ -27,10 +27,6 @@ class BottomSheetsHeader extends StatelessWidget {
         TextButton(
           child: Text(
             buttonText ?? 'Close',
-            style: AppTextStyles.poppinsRegular(
-              color: Theme.of(context).primaryColorLight,
-              fontSize: 16,
-            ),
           ),
           onPressed: () => context.pop(),
         ),

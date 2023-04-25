@@ -7,48 +7,46 @@ class SendInviteViaButton extends StatelessWidget {
   const SendInviteViaButton({
     required this.icon,
     required this.onPressed,
+    required this.bottomText,
     this.backgroundColor,
-    this.bottomText,
     Key? key,
   }) : super(key: key);
 
   final VoidCallback onPressed;
   final String icon;
+  final String bottomText;
   final Color? backgroundColor;
-  final String? bottomText;
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    return Column(
-      children: [
-        IconButton(
-          style: ButtonStyle(
-            padding: MaterialStateProperty.all<EdgeInsets>(
-              const EdgeInsets.all(16),
+    return InkWell(
+      onTap: onPressed,
+      borderRadius: BorderRadius.circular(16),
+      child: Column(
+        children: [
+          Container(
+            height: size.height * 0.15,
+            width: size.width * 0.15,
+            padding: const EdgeInsets.all(14),
+            decoration: BoxDecoration(
+              color: backgroundColor ?? Colors.amber,
+              shape: BoxShape.circle,
             ),
-            backgroundColor: MaterialStateProperty.all<Color>(
-              backgroundColor ?? Colors.red,
+            child: SvgPicture.asset(
+              icon,
+              color: ColorConstants.white,
             ),
           ),
-          onPressed: onPressed,
-          icon: SvgPicture.asset(
-            icon,
-            color: ColorConstants.white,
-            height: size.height * 0.06,
+          Text(
+            bottomText,
+            style: AppTextStyles.poppinsRegular(
+              color: Theme.of(context).primaryColor,
+              fontSize: 14,
+            ),
           ),
-        ),
-        SizedBox(
-          height: size.height * 0.01,
-        ),
-        Text(
-          bottomText ?? 'WhatsApp',
-          style: AppTextStyles.poppinsRegular(
-            color: Theme.of(context).primaryColor,
-            fontSize: 14,
-          ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -52,6 +52,17 @@ class TaskModel extends Equatable {
     );
   }
 
+  @override
+  String toString() {
+    return 'TaskModel('
+        'id: $id, '
+        'listModel: $listModel, '
+        'dueDate: $dueDate, '
+        'groceries: $groceries, '
+        'groceriesAmount: $groceriesAmount, '
+        ')';
+  }
+
   final String id;
   final GroceryListModel listModel;
   final DateTime dueDate;
