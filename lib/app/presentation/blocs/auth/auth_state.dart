@@ -18,5 +18,3 @@ class Authenticated extends AuthState {
 class Unauthenticated extends AuthState {
   const Unauthenticated();
 }
-
-class NotVerified extends AuthState {}

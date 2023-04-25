@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/core/routes/app_named_routes.dart';
-import 'package:groceries/app/presentation/modules/welcome/widgets/welcome_view_body.dart';
-import 'package:groceries/app/presentation/modules/welcome/widgets/welcome_view_header.dart';
+import 'package:groceries/app/presentation/modules/welcome/widgets/welcome_view_body_text.dart';
+import 'package:groceries/app/presentation/modules/welcome/widgets/welcome_view_header_text.dart';
 
 class WelcomeView extends StatelessWidget {
   const WelcomeView({Key? key}) : super(key: key);
@@ -21,11 +21,11 @@ class WelcomeView extends StatelessWidget {
             SizedBox(
               height: size.height * 0.15,
             ),
-            const WelcomeViewHeader(),
+            const WelcomeViewHeaderText(),
             SizedBox(
               height: size.height * 0.065,
             ),
-            const WelcomeViewBody(),
+            const WelcomeViewBodyText(),
             SizedBox(
               height: size.height * 0.09,
             ),

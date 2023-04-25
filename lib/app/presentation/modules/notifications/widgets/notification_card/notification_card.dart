@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/app/core/constants/app_text_styles.dart';
 import 'package:groceries/app/data/models/notification_model.dart';
-import 'package:groceries/app/presentation/modules/notifications/widgets/notification_card/notification_card_date.dart';
-import 'package:groceries/app/presentation/modules/notifications/widgets/notification_card/notification_card_subtitle.dart';
-import 'package:groceries/app/presentation/modules/notifications/widgets/notification_card/notification_card_title.dart';
 import 'package:groceries/app/presentation/widgets/cached_image.dart';
+part '__notification_card_date.dart';
+part '__notification_card_subtitle.dart';
+part '__notification_card_title.dart';
 
 class NotificationCard extends StatelessWidget {
   const NotificationCard({
@@ -32,15 +33,15 @@ class NotificationCard extends StatelessWidget {
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          NotificationCardTitle(
+          _NotificationCardTitle(
             title: notificationsModel.title,
           ),
-          NotificationCardDate(
+          _NotificationCardDate(
             date: notificationsModel.date,
           ),
         ],
       ),
-      subtitle: NotificationCardSubtitle(
+      subtitle: _NotificationCardSubtitle(
         subtitle: notificationsModel.subtitle,
       ),
     );

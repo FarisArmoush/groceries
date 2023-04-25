@@ -9,7 +9,7 @@ class _AppOutlinedButtonThemeData {
         ),
       ),
       overlayColor: MaterialStateProperty.all(
-        ColorConstants.backgroundLightGrey,
+        ColorConstants.black.withOpacity(0.15),
       ),
       foregroundColor: MaterialStateProperty.all(
         ColorConstants.black,

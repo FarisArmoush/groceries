@@ -1,11 +1,11 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
-import 'package:groceries/app/core/routes/app_named_routes.dart';
 import 'package:groceries/app/presentation/blocs/remote_config/remote_config_cubit.dart';
-import 'package:groceries/app/presentation/modules/onboarding/widgets/note.dart';
-import 'package:groceries/app/presentation/widgets/buttons/next_button.dart';
-import 'package:groceries/app/presentation/widgets/page_indicator.dart';
+import 'package:groceries/app/presentation/modules/onboarding/widgets/base_onboarding_page.dart';
+import 'package:groceries/app/presentation/modules/onboarding/widgets/leave_onboarding_button.dart';
+import 'package:groceries/app/presentation/modules/onboarding/widgets/onboarding_next_page_button.dart';
+import 'package:groceries/gen/assets.gen.dart';
 
 class OnboardingView extends StatefulWidget {
   const OnboardingView({Key? key}) : super(key: key);
@@ -15,94 +15,52 @@ class OnboardingView extends StatefulWidget {
 }
 
 class _OnboardingViewState extends State<OnboardingView> {
-  final PageController _pageController = PageController();
-  late int _currentPage;
+  final controller = CarouselController();
 
-  @override
-  void initState() {
-    _currentPage = 0;
-    _pageController.addListener(() {
-      setState(() {
-        _currentPage = _pageController.page!.toInt();
-      });
-    });
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _pageController.dispose();
-    super.dispose();
-  }
+  late int currentPage = 0;
 
   @override
   Widget build(BuildContext context) {
+    final remoteConfig = context.watch<RemoteConfigCubit>().remoteConfigRepo;
     return Scaffold(
-      appBar: AppBar(
-        title: PageIndicator(
-          pageController: _pageController,
+      body: SizedBox(
+        height: double.infinity,
+        child: CarouselSlider(
+          carouselController: controller,
+          options: CarouselOptions(
+            aspectRatio: 1 / 3,
+            height: double.infinity,
+            viewportFraction: 1 / 1,
+            enableInfiniteScroll: false,
+            onPageChanged: (index, reason) => setState(() {
+              currentPage = index;
+            }),
+          ),
+          items: [
+            BaseOnboardingPage(
+              illustrationPath: Assets.svg.illCelebrating,
+              title: remoteConfig.onboardingFirstHeader,
+              body: remoteConfig.onboardingFirstBody,
+              backgroundColor: Colors.amber,
+            ),
+            BaseOnboardingPage(
+              illustrationPath: Assets.svg.illMail,
+              title: remoteConfig.onboardingSecondHeader,
+              body: remoteConfig.onboardingSecondBody,
+              backgroundColor: Colors.purple,
+            ),
+            BaseOnboardingPage(
+              illustrationPath: Assets.svg.illEating,
+              title: remoteConfig.onnboardingThirdHeader,
+              body: remoteConfig.onboardingThirdBody,
+              backgroundColor: Colors.blue,
+            ),
+          ],
         ),
       ),
-      body: PageView.builder(
-        controller: _pageController,
-        physics: const NeverScrollableScrollPhysics(),
-        itemCount: headers(context).length,
-        itemBuilder: (BuildContext context, int index) {
-          return Note(
-            header: headers(context)[index],
-            body: bodies(context)[index],
-          );
-        },
-      ),
-      bottomSheet: ColoredBox(
-        color: Theme.of(context).scaffoldBackgroundColor,
-        child: Padding(
-          padding: const EdgeInsets.all(32),
-          child: _currentPage == 2
-              ? FilledButton(
-                  child: const Text('Get Started'),
-                  onPressed: () => context.pushReplacementNamed(
-                    AppNamedRoutes.welcome,
-                  ),
-                )
-              : Row(
-                  children: [
-                    const Spacer(),
-                    NextButton(
-                      onTap: () {
-                        _pageController.nextPage(
-                          duration: const Duration(milliseconds: 750),
-                          curve: Curves.fastOutSlowIn,
-                        );
-                      },
-                    ),
-                  ],
-                ),
-        ),
-      ),
+      floatingActionButton: currentPage == 2
+          ? const LeaveOnboardingButton()
+          : OnboardingNextPageButton(controller: controller),
     );
   }
-
-  List<String> headers(BuildContext context) => [
-        context
-            .watch<RemoteConfigCubit>()
-            .remoteConfigRepo
-            .onboardingFirstHeader,
-        context
-            .watch<RemoteConfigCubit>()
-            .remoteConfigRepo
-            .onboardingSecondHeader,
-        context
-            .watch<RemoteConfigCubit>()
-            .remoteConfigRepo
-            .onnboardingThirdHeader,
-      ];
-  List<String> bodies(BuildContext context) => [
-        context.watch<RemoteConfigCubit>().remoteConfigRepo.onboardingFirstBody,
-        context
-            .watch<RemoteConfigCubit>()
-            .remoteConfigRepo
-            .onboardingSecondBody,
-        context.watch<RemoteConfigCubit>().remoteConfigRepo.onboardingThirdBody,
-      ];
 }

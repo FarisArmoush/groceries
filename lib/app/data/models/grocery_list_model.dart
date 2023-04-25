@@ -6,20 +6,20 @@ class GroceryListModel extends Equatable {
     required this.uid,
     required this.name,
     required this.imageUrl,
-    this.members,
-    this.tasksAmount,
+    required this.members,
+    required this.tasksAmount,
   });
   factory GroceryListModel.fromJson(Map<String, dynamic> json) {
     return GroceryListModel(
       uid: json['uid'] as int,
       name: json['name'] as String,
       imageUrl: json['imageUrl'] as String,
-      members: (json['members'] as List<dynamic>?)?.map(
+      members: (json['members'] as List<dynamic>).map(
         (e) {
           return UserModel.fromJson(e as Map<String, dynamic>);
         },
       ).toList(),
-      tasksAmount: json['tasksAmount'] as int?,
+      tasksAmount: json['tasksAmount'] as int,
     );
   }
 
@@ -28,7 +28,7 @@ class GroceryListModel extends Equatable {
       'uid': uid,
       'name': name,
       'imageUrl': imageUrl,
-      'members': members?.map((member) => member.toJson()).toList(),
+      'members': members.map((member) => member.toJson()).toList(),
       'tasksAmount': tasksAmount,
     };
   }
@@ -49,11 +49,22 @@ class GroceryListModel extends Equatable {
     );
   }
 
+  @override
+  String toString() {
+    return 'GroceryListModel('
+        'uid: $uid, '
+        'name: $name, '
+        'imageUrl: $imageUrl, '
+        'members: $members, '
+        'tasksAmount: $tasksAmount'
+        ')';
+  }
+
   final int uid;
   final String name;
   final String imageUrl;
-  final List<UserModel>? members;
-  final int? tasksAmount;
+  final List<UserModel> members;
+  final int tasksAmount;
 
   @override
   List<Object?> get props => [

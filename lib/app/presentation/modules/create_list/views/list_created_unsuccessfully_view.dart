@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/core/constants/app_text_styles.dart';
 import 'package:groceries/app/core/routes/app_named_routes.dart';
@@ -10,7 +11,6 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    var red = Colors.red.shade400;
     return Scaffold(
       body: SafeArea(
         child: ListView(
@@ -20,18 +20,15 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           children: [
             SizedBox(
-              height: size.height * 0.075,
+              height: size.height * 0.1,
             ),
-            Assets.png.failed.image(
-              height: size.height * 0.3,
-            ),
-            SizedBox(
-              height: size.height * 0.03,
+            SvgPicture.asset(
+              Assets.svg.illError,
             ),
             Text(
               'Oops...!',
               style: AppTextStyles.poppinsSemiBold(
-                color: red,
+                color: Theme.of(context).primaryColorLight,
                 fontSize: 32,
               ),
               textAlign: TextAlign.center,
@@ -42,7 +39,7 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
             Text(
               'Something went wrong',
               style: AppTextStyles.poppinsRegular(
-                color: red,
+                color: Theme.of(context).hintColor,
                 fontSize: 16,
               ),
               textAlign: TextAlign.center,
@@ -54,6 +51,10 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
               onPressed: () =>
                   context.pushReplacementNamed(AppNamedRoutes.root),
               child: const Text('Go to Home'),
+            ),
+            OutlinedButton(
+              onPressed: () {},
+              child: const Text('Try again?'),
             ),
           ],
         ),

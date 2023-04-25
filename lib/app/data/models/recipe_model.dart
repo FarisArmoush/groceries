@@ -43,6 +43,16 @@ class RecipeModel extends Equatable {
     );
   }
 
+  @override
+  String toString() {
+    return 'RecipeModel('
+        'id: $id, '
+        'name: $name, '
+        'imageUrl: $imageUrl, '
+        'items: $items, '
+        ')';
+  }
+
   final String id;
   final String name;
   final String imageUrl;

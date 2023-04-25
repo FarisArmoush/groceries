@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/core/constants/app_text_styles.dart';
 import 'package:groceries/app/core/routes/app_named_routes.dart';
 import 'package:groceries/app/presentation/modules/login/cubit/login_cubit.dart';
-import 'package:groceries/app/presentation/modules/login/widgets/forgot_password_button.dart';
-import 'package:groceries/app/presentation/modules/login/widgets/login_button.dart';
-import 'package:groceries/app/presentation/modules/login/widgets/login_email_text_field.dart';
-import 'package:groceries/app/presentation/modules/login/widgets/login_password_text_field.dart';
+import 'package:groceries/app/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/app/presentation/widgets/app_logo.dart';
+import 'package:groceries/app/presentation/widgets/app_text_field.dart';
 import 'package:groceries/app/presentation/widgets/buttons/other_options_text_button.dart';
+import 'package:groceries/gen/assets.gen.dart';
+part '__login_password_text_field.dart';
+part '__login_email_text_field.dart';
+part '__login_button.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({Key? key}) : super(key: key);
@@ -53,6 +56,9 @@ class LoginForm extends StatelessWidget {
           horizontal: 32,
         ),
         children: [
+          SizedBox(
+            height: size.height * 0.075,
+          ),
           const AppLogo(),
           SizedBox(
             height: size.height * 0.04,
@@ -77,25 +83,28 @@ class LoginForm extends StatelessWidget {
           SizedBox(
             height: size.height * 0.029,
           ),
-          const LoginEmailTextField(),
+          const _LoginEmailTextField(),
           SizedBox(
             height: size.height * 0.015,
           ),
-          const LoginPasswordTextField(),
+          const _LoginPasswordTextField(),
           SizedBox(
             height: size.height * 0.01,
           ),
-          const ForgotPasswordButton(),
+          TextButton(
+            child: const Text('Forgot your password?'),
+            onPressed: () => context.pushNamed(AppNamedRoutes.forgotPassword),
+          ),
           SizedBox(
             height: size.height * 0.015,
           ),
-          const LoginButton(),
+          const _LoginButton(),
           SizedBox(
             height: size.height * 0.03,
           ),
           OtherOptionTextButton(
-            upperText: "Don't have an account",
-            lowerText: 'Sign Up',
+            upperText: "Don't have an account?",
+            lowerText: 'Sign Up, Now!',
             onTap: () => context.pushReplacementNamed(AppNamedRoutes.register),
           ),
         ],

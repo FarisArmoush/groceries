@@ -39,6 +39,16 @@ class UserModel extends Equatable {
     );
   }
 
+  @override
+  String toString() {
+    return 'UserModel('
+        'id: $id, '
+        'name: $name, '
+        'imageUrl: $imageUrl, '
+        'email: $email, '
+        ')';
+  }
+
   final String? id;
   final String? name;
   final String? imageUrl;

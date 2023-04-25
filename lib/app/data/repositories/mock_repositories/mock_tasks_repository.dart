@@ -20,6 +20,8 @@ class MockTasksRepository extends BaseTasksRepository {
             uid: 1,
             name: faker.company.name(),
             imageUrl: faker.image.image(),
+            tasksAmount: faker.randomGenerator.integer(99),
+            members: const [],
           ),
           groceries: [
             GroceryModel(
@@ -38,6 +40,8 @@ class MockTasksRepository extends BaseTasksRepository {
             uid: 1,
             name: faker.company.name(),
             imageUrl: faker.image.image(),
+            tasksAmount: faker.randomGenerator.integer(99),
+            members: const [],
           ),
           groceries: [
             GroceryModel(
@@ -56,6 +60,8 @@ class MockTasksRepository extends BaseTasksRepository {
             uid: 1,
             name: faker.company.name(),
             imageUrl: faker.image.image(),
+            tasksAmount: faker.randomGenerator.integer(99),
+            members: const [],
           ),
           groceries: [
             GroceryModel(
@@ -74,6 +80,8 @@ class MockTasksRepository extends BaseTasksRepository {
             uid: 1,
             name: faker.company.name(),
             imageUrl: faker.image.image(),
+            tasksAmount: faker.randomGenerator.integer(99),
+            members: const [],
           ),
           groceries: [
             GroceryModel(

@@ -46,6 +46,17 @@ class NotificationModel extends Equatable {
     );
   }
 
+  @override
+  String toString() {
+    return 'NotificationModel('
+        'id: $id, '
+        'title: $title, '
+        'subtitle: $subtitle, '
+        'imageUrl: $imageUrl, '
+        'date: $date'
+        ')';
+  }
+
   final String id;
   final String title;
   final String subtitle;

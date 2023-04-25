@@ -39,8 +39,8 @@ class LogoutButton extends StatelessWidget {
       },
       child: TileButton(
         onTap: () {
-          // context.read<AuthBloc>().add(const AppLogoutRequested());
-          showDialog<LogoutDialog>(
+          showModalBottomSheet<LogoutDialog>(
+            enableDrag: false,
             context: context,
             builder: (context) {
               return const LogoutDialog();

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:groceries/app/core/constants/app_text_styles.dart';
 import 'package:groceries/app/core/constants/color_constants.dart';
-import 'package:groceries/app/presentation/widgets/constant_widgets/app_borders.dart';
 import 'package:groceries/gen/fonts.gen.dart';
 
 part '__app_progress_indicator_theme_data.dart';
@@ -20,8 +19,9 @@ part '__app_elevated_button_theme_data.dart';
 
 class AppThemes {
   AppThemes._();
-  static final ThemeData lightTheme = ThemeData(
+  static final ThemeData lightTheme = ThemeData.light(
     useMaterial3: true,
+  ).copyWith(
     brightness: Brightness.light,
     primaryColor: ColorConstants.black,
     primaryColorLight: ColorConstants.red,
@@ -43,7 +43,7 @@ class AppThemes {
     filledButtonTheme: _AppFilledButtonThemeData.light,
     outlinedButtonTheme: _AppOutlinedButtonThemeData.light,
     elevatedButtonTheme: __AppElevatedButtonThemeData.light,
-    fontFamily: FontFamily.poppinsRegular,
+    // fontFamily: FontFamily.poppinsRegular,
   );
 
   static final ThemeData darkTheme = ThemeData.dark(

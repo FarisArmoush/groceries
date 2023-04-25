@@ -40,6 +40,16 @@ class GroceryModel extends Equatable {
     );
   }
 
+  @override
+  String toString() {
+    return 'GroceryModel('
+        'id: $id, '
+        'name: $name, '
+        'category: $category, '
+        'notes: $notes'
+        ')';
+  }
+
   final String id;
   final String name;
   final String category;

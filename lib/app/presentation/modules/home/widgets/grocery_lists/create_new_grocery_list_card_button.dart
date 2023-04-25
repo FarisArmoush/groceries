@@ -7,7 +7,11 @@ import 'package:groceries/app/core/routes/app_named_routes.dart';
 import 'package:groceries/gen/assets.gen.dart';
 
 class CreateNewGroceryListCardButton extends StatelessWidget {
-  const CreateNewGroceryListCardButton({Key? key}) : super(key: key);
+  const CreateNewGroceryListCardButton({
+    required this.text,
+    Key? key,
+  }) : super(key: key);
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +36,7 @@ class CreateNewGroceryListCardButton extends StatelessWidget {
                 height: size.height * 0.02,
               ),
               Text(
-                'Create a new List!',
+                text,
                 style: AppTextStyles.poppinsMedium(
                   color: ColorConstants.white,
                   fontSize: 22,

@@ -29,15 +29,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final FirebaseAuthRepository authRepo;
 
   void _onUserChanged(_AppUserChanged event, Emitter<AuthState> emit) {
-    // if (event.user != null) {
-    //   emit(Authenticated(authRepo.currentUser));
-    // }
-    // if (event.user == null) {
-    //   emit(const Unauthenticated());
-    // }
-    // if (event.user?.emailVerified == false) {
-    //   emit(NotVerified());
-    // }
     emit(
       event.user != null
           ? Authenticated(authRepo.currentUser)

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/app/presentation/modules/recipes/widgets/add_recipe_to_list_bottom_sheet.dart';
-import 'package:groceries/app/presentation/modules/recipes/widgets/delete_recipe_dialog.dart';
+import 'package:groceries/app/presentation/modules/recipes/widgets/bottom_sheets/add_recipe_to_list_bottom_sheet.dart';
+import 'package:groceries/app/presentation/modules/recipes/widgets/bottom_sheets/delete_recipe_bottom_sheet.dart';
 import 'package:groceries/app/presentation/modules/recipes/widgets/recipe_card/recipe_card_action_button.dart';
-import 'package:groceries/app/presentation/widgets/constant_widgets/app_snack_bars.dart';
+import 'package:groceries/app/presentation/widgets/app_snack_bars.dart';
 import 'package:groceries/gen/assets.gen.dart';
 
 class RecipeCardActionsRow extends StatelessWidget {
@@ -18,6 +18,7 @@ class RecipeCardActionsRow extends StatelessWidget {
           icon: Assets.svg.icPlus,
           onPressed: () => showModalBottomSheet<AddRecipeToListBottomSheet>(
             context: context,
+            enableDrag: false,
             builder: (context) => const AddRecipeToListBottomSheet(),
           ),
         ),
@@ -32,9 +33,10 @@ class RecipeCardActionsRow extends StatelessWidget {
         RecipeCardActionButton(
           label: 'Delete',
           icon: Assets.svg.icTrash,
-          onPressed: () => showDialog<DeleteRecipeDialog>(
+          onPressed: () => showModalBottomSheet<DeleteRecipeBottomSheet>(
             context: context,
-            builder: (context) => const DeleteRecipeDialog(),
+            enableDrag: false,
+            builder: (context) => const DeleteRecipeBottomSheet(),
           ),
         ),
       ],

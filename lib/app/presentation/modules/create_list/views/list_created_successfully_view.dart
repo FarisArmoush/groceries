@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/core/constants/app_text_styles.dart';
 import 'package:groceries/app/core/routes/app_named_routes.dart';
@@ -10,7 +11,6 @@ class ListCreatedSuccessfullyView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    var green = Colors.green.shade400;
     return Scaffold(
       body: SafeArea(
         child: ListView(
@@ -19,19 +19,13 @@ class ListCreatedSuccessfullyView extends StatelessWidget {
           ),
           physics: const BouncingScrollPhysics(),
           children: [
-            SizedBox(
-              height: size.height * 0.075,
-            ),
-            Assets.png.success.image(
-              height: size.height * 0.3,
-            ),
-            SizedBox(
-              height: size.height * 0.03,
+            SvgPicture.asset(
+              Assets.svg.illCelebrating,
             ),
             Text(
               'Well Done!',
               style: AppTextStyles.poppinsSemiBold(
-                color: green,
+                color: Theme.of(context).primaryColor,
                 fontSize: 32,
               ),
               textAlign: TextAlign.center,
@@ -42,7 +36,7 @@ class ListCreatedSuccessfullyView extends StatelessWidget {
             Text(
               'Explore your list or something bitch ass motherfucker',
               style: AppTextStyles.poppinsRegular(
-                color: green,
+                color: Theme.of(context).hintColor,
                 fontSize: 16,
               ),
               textAlign: TextAlign.center,
@@ -52,11 +46,6 @@ class ListCreatedSuccessfullyView extends StatelessWidget {
             ),
             FilledButton(
               onPressed: () {},
-              style: Theme.of(context).filledButtonTheme.style?.copyWith(
-                    backgroundColor: MaterialStateProperty.all(
-                      Colors.green,
-                    ),
-                  ),
               child: const Text('Go To <NAME> List'),
             ),
             SizedBox(
