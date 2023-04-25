@@ -28,56 +28,54 @@ class ForgotPasswordView extends StatelessWidget {
             ),
           ),
         ),
-        body: Form(
-          child: ListView(
-            padding: EdgeInsets.symmetric(
-              horizontal: size.width * 0.09,
-            ),
-            physics: const BouncingScrollPhysics(),
-            children: [
-              SizedBox(
-                height: size.width * 0.07,
-              ),
-              Text(
-                remoteConfigRepo.forgotPasswordTitle,
-                style: AppTextStyles.poppinsSemiBold(
-                  color: Theme.of(context).primaryColorLight,
-                  fontSize: 24,
-                ),
-              ),
-              SizedBox(
-                height: size.height * 0.02,
-              ),
-              Text(
-                remoteConfigRepo.forgotPasswordBody,
-                style: AppTextStyles.poppinsRegular(
-                  color: Theme.of(context).hintColor,
-                  fontSize: 14,
-                ),
-              ),
-              SizedBox(
-                height: size.height * 0.06,
-              ),
-              AppTextField(
-                labelText: 'Email',
-                keyboardType: TextInputType.emailAddress,
-                prefixIcon: SvgPicture.asset(
-                  Assets.svg.icAtSign,
-                  color: Theme.of(context).hintColor,
-                  fit: BoxFit.scaleDown,
-                ),
-              ),
-              SizedBox(
-                height: size.height * 0.04,
-              ),
-              ElevatedButton(
-                onPressed: () => context.pushReplacementNamed(
-                  AppNamedRoutes.verification,
-                ),
-                child: const Text('Send'),
-              ),
-            ],
+        body: ListView(
+          padding: EdgeInsets.symmetric(
+            horizontal: size.width * 0.09,
           ),
+          physics: const BouncingScrollPhysics(),
+          children: [
+            SizedBox(
+              height: size.width * 0.07,
+            ),
+            Text(
+              remoteConfigRepo.forgotPasswordTitle,
+              style: AppTextStyles.poppinsSemiBold(
+                color: Theme.of(context).primaryColorLight,
+                fontSize: 24,
+              ),
+            ),
+            SizedBox(
+              height: size.height * 0.02,
+            ),
+            Text(
+              remoteConfigRepo.forgotPasswordBody,
+              style: AppTextStyles.poppinsRegular(
+                color: Theme.of(context).hintColor,
+                fontSize: 14,
+              ),
+            ),
+            SizedBox(
+              height: size.height * 0.06,
+            ),
+            AppTextField(
+              labelText: 'Email',
+              keyboardType: TextInputType.emailAddress,
+              prefixIcon: SvgPicture.asset(
+                Assets.svg.icAtSign,
+                color: Theme.of(context).hintColor,
+                fit: BoxFit.scaleDown,
+              ),
+            ),
+            SizedBox(
+              height: size.height * 0.04,
+            ),
+            ElevatedButton(
+              onPressed: () => context.pushReplacementNamed(
+                AppNamedRoutes.verification,
+              ),
+              child: const Text('Send'),
+            ),
+          ],
         ),
       ),
     );

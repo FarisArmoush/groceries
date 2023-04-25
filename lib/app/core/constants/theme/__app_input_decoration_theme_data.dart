@@ -15,12 +15,12 @@ class _AppInputDecorationThemeData {
       color: ColorConstants.lightGrey,
       fontSize: 16,
     ),
-    enabledBorder: AppBorders.tfCircularBorder(),
-    border: AppBorders.tfCircularBorder(),
-    focusedBorder: AppBorders.tfActiveCircularBorder(),
-    errorBorder: AppBorders.tfErrorCircularBorder(),
-    disabledBorder: AppBorders.tfCircularBorder(),
-    focusedErrorBorder: AppBorders.tfErrorCircularBorder(),
+    enabledBorder: _circularBorder(),
+    border: _circularBorder(),
+    disabledBorder: _circularBorder(),
+    focusedBorder: _activeCircularBorder(),
+    errorBorder: _errorCircularBorder(),
+    focusedErrorBorder: _errorCircularBorder(),
   );
 
   static final dark = InputDecorationTheme(
@@ -37,11 +37,38 @@ class _AppInputDecorationThemeData {
       color: ColorConstants.lightGrey,
       fontSize: 16,
     ),
-    enabledBorder: AppBorders.tfCircularBorder(),
-    border: AppBorders.tfCircularBorder(),
-    focusedBorder: AppBorders.tfActiveCircularBorder(),
-    errorBorder: AppBorders.tfErrorCircularBorder(),
-    disabledBorder: AppBorders.tfCircularBorder(),
-    focusedErrorBorder: AppBorders.tfErrorCircularBorder(),
+    enabledBorder: _circularBorder(),
+    border: _circularBorder(),
+    disabledBorder: _circularBorder(),
+    focusedBorder: _activeCircularBorder(),
+    errorBorder: _errorCircularBorder(),
+    focusedErrorBorder: _errorCircularBorder(),
   );
+
+  static OutlineInputBorder _circularBorder() {
+    return OutlineInputBorder(
+      borderSide: BorderSide(
+        color: ColorConstants.lightGrey,
+      ),
+      borderRadius: BorderRadius.circular(55),
+    );
+  }
+
+  static OutlineInputBorder _activeCircularBorder() {
+    return OutlineInputBorder(
+      borderSide: BorderSide(
+        color: Colors.red.shade500,
+      ),
+      borderRadius: BorderRadius.circular(55),
+    );
+  }
+
+  static OutlineInputBorder _errorCircularBorder() {
+    return OutlineInputBorder(
+      borderSide: BorderSide(
+        color: ColorConstants.red,
+      ),
+      borderRadius: BorderRadius.circular(55),
+    );
+  }
 }

@@ -7,34 +7,14 @@ class GroceryListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // var size = MediaQuery.of(context).size;
     return const Scaffold(
       body: CustomScrollView(
         physics: BouncingScrollPhysics(),
         slivers: [
           GroceryListViewAppBar(),
           EmptyGroceryList(),
-          // _mockList(size),
         ],
       ),
     );
   }
-
-  // SliverList _mockList(Size size) {
-  //   return SliverList(
-  //     delegate: SliverChildBuilderDelegate(
-  //       (context, index) {
-  //         return Column(
-  //           children: [
-  //             CategoryBox(
-  //               category: 'Meats ${index + 1}',
-  //             ),
-  //             SizedBox(height: size.height * 0.015),
-  //           ],
-  //         );
-  //       },
-  //       childCount: 1,
-  //     ),
-  //   );
-  // }
 }

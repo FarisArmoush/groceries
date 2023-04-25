@@ -10,7 +10,7 @@ class WrapperView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AuthBloc, AuthState>(
-      buildWhen: (previous, current) => current != previous,
+      buildWhen: (previous, current) => previous != current,
       builder: (context, state) {
         if (state is Unauthenticated) {
           return const WelcomeView();
@@ -18,13 +18,6 @@ class WrapperView extends StatelessWidget {
         if (state is Authenticated) {
           return const RootView();
         }
-        // if (state is NotVerified) {
-        //   return Scaffold(
-        //     body: Center(
-        //       child: Text('Not Verified AF'),
-        //     ),
-        //   );
-        // }
         return const Scaffold(
           body: Center(
             child: Text('Something went wrong...'),

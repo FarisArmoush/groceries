@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:groceries/app/core/constants/app_text_styles.dart';
 import 'package:groceries/app/core/constants/color_constants.dart';
-import 'package:groceries/app/presentation/widgets/constant_widgets/app_borders.dart';
 import 'package:groceries/gen/fonts.gen.dart';
 
 part '__app_progress_indicator_theme_data.dart';
