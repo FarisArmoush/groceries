@@ -5,6 +5,7 @@ import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/core/routes/app_named_routes.dart';
 import 'package:groceries/app/presentation/blocs/auth/auth_bloc.dart';
 import 'package:groceries/app/presentation/modules/profile/widgets/logout_dialog.dart';
+import 'package:groceries/app/presentation/widgets/app_snackbars/app_snack_bars.dart';
 import 'package:groceries/app/presentation/widgets/buttons/tile_button.dart';
 import 'package:groceries/gen/assets.gen.dart';
 
@@ -19,10 +20,8 @@ class LogoutButton extends StatelessWidget {
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(
-              const SnackBar(
-                content: Text(
-                  'Logged out sucessfully',
-                ),
+              AppSnackBars.error(
+                error: "Logged out, Successfully.\nWe'll Miss you.",
               ),
             );
           context.pushReplacementNamed(AppNamedRoutes.welcome);
@@ -30,10 +29,8 @@ class LogoutButton extends StatelessWidget {
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(
-              const SnackBar(
-                content: Text(
-                  'Failed bruh',
-                ),
+              AppSnackBars.error(
+                error: 'Failed to logout.\nTry again later',
               ),
             );
         }

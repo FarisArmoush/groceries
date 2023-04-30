@@ -11,10 +11,16 @@ class _LoginButton extends StatelessWidget {
         if (state.status.isSubmissionInProgress) {
           return const AppLoadingIndicator();
         }
+        if (!state.status.isValidated) {
+          // Returns a disabled button
+          return FilledButton(
+            onPressed: null,
+            style: DisabledButtonStyle(),
+            child: Text(AppTranslations.login),
+          );
+        }
         return FilledButton(
-          onPressed: () => state.status.isValidated
-              ? context.read<LoginCubit>().login()
-              : null,
+          onPressed: () => context.read<LoginCubit>().login(),
           child: Text(AppTranslations.login),
         );
       },

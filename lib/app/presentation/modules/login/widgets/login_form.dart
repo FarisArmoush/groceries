@@ -9,8 +9,10 @@ import 'package:groceries/app/core/routes/app_named_routes.dart';
 import 'package:groceries/app/presentation/modules/login/cubit/login_cubit.dart';
 import 'package:groceries/app/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/app/presentation/widgets/app_logo.dart';
+import 'package:groceries/app/presentation/widgets/app_snackbars/app_snack_bars.dart';
 import 'package:groceries/app/presentation/widgets/app_text_field.dart';
 import 'package:groceries/app/presentation/widgets/buttons/other_options_text_button.dart';
+import 'package:groceries/app/presentation/widgets/disabled_button_style.dart';
 import 'package:groceries/gen/assets.gen.dart';
 part '__login_password_text_field.dart';
 part '__login_email_text_field.dart';
@@ -28,10 +30,8 @@ class LoginForm extends StatelessWidget {
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(
-              SnackBar(
-                content: Text(
-                  state.errorMessage ?? 'Authentication Failure',
-                ),
+              AppSnackBars.error(
+                error: state.errorMessage ?? 'Authentication Failure',
               ),
             );
         }
@@ -39,12 +39,8 @@ class LoginForm extends StatelessWidget {
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(
-              const SnackBar(
-                showCloseIcon: true,
-                backgroundColor: Colors.green,
-                content: Text(
-                  'Welcome Back!',
-                ),
+              AppSnackBars.success(
+                message: 'Welcome Back',
               ),
             );
           context.pushReplacementNamed(AppNamedRoutes.root);
