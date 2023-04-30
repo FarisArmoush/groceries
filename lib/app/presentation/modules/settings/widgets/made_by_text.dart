@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/app/core/constants/app_text_styles.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/presentation/blocs/remote_config/remote_config_cubit.dart';
 
 class MadeByText extends StatelessWidget {
@@ -14,7 +15,7 @@ class MadeByText extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'Made With Love By',
+          AppTranslations.madeWithLoveBy,
           style: AppTextStyles.poppinsRegular(
             color: Theme.of(context).primaryColor,
             fontSize: 12,
@@ -24,7 +25,7 @@ class MadeByText extends StatelessWidget {
         GestureDetector(
           onTap: remoteConfigCubit.urlLauncherRepo.launchDevTwitterAccount,
           child: Text(
-            'Faris Armoush',
+            AppTranslations.devName,
             style: AppTextStyles.poppinsSemiBold(
               color: Theme.of(context).primaryColorDark,
               fontSize: 13,

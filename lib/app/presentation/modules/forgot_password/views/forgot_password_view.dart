@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/core/constants/app_text_styles.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/core/routes/app_named_routes.dart';
-import 'package:groceries/app/presentation/blocs/remote_config/remote_config_cubit.dart';
 import 'package:groceries/app/presentation/modules/forgot_password/widgets/cancel_forgot_password_dialog.dart';
 import 'package:groceries/app/presentation/widgets/app_text_field.dart';
 import 'package:groceries/gen/assets.gen.dart';
@@ -14,8 +13,6 @@ class ForgotPasswordView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final remoteConfigRepo =
-        context.watch<RemoteConfigCubit>().remoteConfigRepo;
     var size = MediaQuery.of(context).size;
     return SafeArea(
       top: false,
@@ -38,7 +35,7 @@ class ForgotPasswordView extends StatelessWidget {
               height: size.width * 0.07,
             ),
             Text(
-              remoteConfigRepo.forgotPasswordTitle,
+              AppTranslations.forgotYourPassword,
               style: AppTextStyles.poppinsSemiBold(
                 color: Theme.of(context).primaryColorLight,
                 fontSize: 24,
@@ -48,7 +45,7 @@ class ForgotPasswordView extends StatelessWidget {
               height: size.height * 0.02,
             ),
             Text(
-              remoteConfigRepo.forgotPasswordBody,
+              AppTranslations.forgotPasswordBody,
               style: AppTextStyles.poppinsRegular(
                 color: Theme.of(context).hintColor,
                 fontSize: 14,
@@ -58,7 +55,7 @@ class ForgotPasswordView extends StatelessWidget {
               height: size.height * 0.06,
             ),
             AppTextField(
-              labelText: 'Email',
+              labelText: AppTranslations.email,
               keyboardType: TextInputType.emailAddress,
               prefixIcon: SvgPicture.asset(
                 Assets.svg.icAtSign,
@@ -73,7 +70,9 @@ class ForgotPasswordView extends StatelessWidget {
               onPressed: () => context.pushReplacementNamed(
                 AppNamedRoutes.verification,
               ),
-              child: const Text('Send'),
+              child: Text(
+                AppTranslations.send,
+              ),
             ),
           ],
         ),

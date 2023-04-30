@@ -27,7 +27,7 @@ class _LoginPasswordTextFieldState extends State<_LoginPasswordTextField> {
           onChanged: (password) {
             context.read<LoginCubit>().passwordChanged(password);
           },
-          labelText: 'Password',
+          labelText: AppTranslations.password,
           errorText: state.password.error,
           validator: (value) => state.password.validator(value),
           suffixIcon: _obscurityButton(),

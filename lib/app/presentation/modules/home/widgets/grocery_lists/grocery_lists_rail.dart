@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/data/models/grocery_list_model.dart';
 import 'package:groceries/app/presentation/modules/home/widgets/grocery_lists/create_new_grocery_list_card_button.dart';
 import 'package:groceries/app/presentation/modules/home/widgets/grocery_lists/grocery_lists_list.dart';
@@ -19,7 +20,9 @@ class GroceryListsRail extends StatelessWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       children: [
-        const RailTitle(title: 'Lists'),
+        RailTitle(
+          title: AppTranslations.lists,
+        ),
         SizedBox(
           height: size.height * 0.025,
         ),
@@ -28,8 +31,8 @@ class GroceryListsRail extends StatelessWidget {
             lists: lists,
           )
         else
-          const CreateNewGroceryListCardButton(
-            text: 'Create your first List!, Now!',
+          CreateNewGroceryListCardButton(
+            text: AppTranslations.createNewList,
           ),
       ],
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/presentation/modules/create_list/widgets/add_image_button.dart';
 import 'package:groceries/app/presentation/widgets/app_text_field.dart';
 import 'package:groceries/app/presentation/widgets/cached_image.dart';
@@ -18,15 +19,15 @@ class AddListNameAndImageView extends StatelessWidget {
       ),
       children: [
         CachedImage(
-          imageUrl: '',
+          imageUrl: null,
           height: size.height * 0.15,
         ),
         const AddImageButton(),
         SizedBox(
           height: size.height * 0.05,
         ),
-        const AppTextField(
-          labelText: 'Name',
+        AppTextField(
+          labelText: AppTranslations.listName,
         ),
       ],
     );

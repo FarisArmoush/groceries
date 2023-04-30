@@ -8,7 +8,7 @@ class _AddItemsButton extends StatelessWidget {
     return TextButton(
       onPressed: () {},
       child: Text(
-        'Add Items',
+        AppTranslations.addItems,
         style: AppTextStyles.poppinsLight(
           color: Theme.of(context).primaryColorLight,
           fontSize: 12,

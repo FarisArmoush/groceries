@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/app/core/constants/app_text_styles.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/presentation/blocs/auth/auth_bloc.dart';
 
 class GreetingText extends StatelessWidget {
@@ -13,7 +14,7 @@ class GreetingText extends StatelessWidget {
 
     return RichText(
       text: TextSpan(
-        text: 'Hi ',
+        text: '${AppTranslations.homeGreeting} ',
         style: AppTextStyles.poppinsSemiBold(
           color: Theme.of(context).primaryColor,
           fontSize: 20,

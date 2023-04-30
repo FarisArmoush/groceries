@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/app/core/constants/app_text_styles.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 
 class TermsOfUseView extends StatelessWidget {
   const TermsOfUseView({Key? key}) : super(key: key);
@@ -8,7 +9,9 @@ class TermsOfUseView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Terms Of Use'),
+        title: Text(
+          AppTranslations.termsOfUse,
+        ),
       ),
       body: Center(
         child: Text(

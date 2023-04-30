@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/presentation/modules/recipes/widgets/bottom_sheets/add_recipe_to_list_bottom_sheet.dart';
 import 'package:groceries/app/presentation/modules/recipes/widgets/bottom_sheets/delete_recipe_bottom_sheet.dart';
 import 'package:groceries/app/presentation/modules/recipes/widgets/recipe_card/recipe_card_action_button.dart';
@@ -14,7 +15,7 @@ class RecipeCardActionsRow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         RecipeCardActionButton(
-          label: 'Add to List',
+          label: AppTranslations.addToList,
           icon: Assets.svg.icPlus,
           onPressed: () => showModalBottomSheet<AddRecipeToListBottomSheet>(
             context: context,
@@ -23,7 +24,7 @@ class RecipeCardActionsRow extends StatelessWidget {
           ),
         ),
         RecipeCardActionButton(
-          label: 'Archive',
+          label: AppTranslations.archive,
           icon: Assets.svg.icArchive,
           onPressed: () => AppSnackBars.successSnackBar(
             context,
@@ -31,7 +32,7 @@ class RecipeCardActionsRow extends StatelessWidget {
           ),
         ),
         RecipeCardActionButton(
-          label: 'Delete',
+          label: AppTranslations.delete,
           icon: Assets.svg.icTrash,
           onPressed: () => showModalBottomSheet<DeleteRecipeBottomSheet>(
             context: context,

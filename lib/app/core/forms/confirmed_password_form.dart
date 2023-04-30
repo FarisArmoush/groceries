@@ -1,4 +1,5 @@
 import 'package:formz/formz.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 
 /// A form input class that validates a confirmed
 /// password against a given [password].
@@ -30,10 +31,10 @@ class ConfirmedPasswordForm extends FormzInput<String, String> {
     // return password == value ? null : 'Passwords do not matchs';
 
     if (password.isEmpty) {
-      return 'This Field cannot be empty';
+      return AppTranslations.fieldCannotBeEmpty;
     }
     if (password != value) {
-      return 'Passwords do not match';
+      return AppTranslations.passwordsDoNotMatch;
     }
 
     return null;

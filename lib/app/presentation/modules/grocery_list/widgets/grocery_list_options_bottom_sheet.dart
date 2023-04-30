@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/core/routes/app_named_routes.dart';
 import 'package:groceries/app/presentation/widgets/bottom_sheets_header.dart';
 import 'package:groceries/app/presentation/widgets/buttons/bottom_sheet_button.dart';
@@ -21,21 +22,21 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
           shrinkWrap: true,
           physics: const BouncingScrollPhysics(),
           children: [
-            const BottomSheetsHeader(
-              header: 'List Options',
+            BottomSheetsHeader(
+              header: AppTranslations.listOptions,
             ),
             BottomSheetButton(
-              text: 'Send List As Text',
+              text: AppTranslations.sendListAsText,
               icon: Assets.svg.icSend,
               onTap: () {},
             ),
             BottomSheetButton(
-              text: 'Print List',
+              text: AppTranslations.printList,
               icon: Assets.svg.icPrinter,
               onTap: () {},
             ),
             BottomSheetButton(
-              text: 'List Settings',
+              text: AppTranslations.listSettings,
               icon: Assets.svg.icSettings,
               onTap: () => context
                 ..pop()

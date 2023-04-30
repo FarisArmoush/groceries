@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/presentation/widgets/dialog_widgets/app_dialog_content_text.dart';
 import 'package:groceries/app/presentation/widgets/dialog_widgets/app_dialog_title.dart';
 
@@ -9,22 +10,26 @@ class CancelListCreationDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const AppDialogTitle(
-        title: 'Are you sure you want to cancel?',
+      title: AppDialogTitle(
+        title: AppTranslations.youSureYouWantToCancelListCreation,
       ),
-      content: const AppDialogContentText(
-        text: 'If you cancel you will lose all progress in creating this list',
+      content: AppDialogContentText(
+        text: AppTranslations.listCreationCancelDialogBody,
       ),
       actions: [
         OutlinedButton(
           onPressed: () => context
             ..pop()
             ..pop(),
-          child: const Text('Yes, Cancel'),
+          child: Text(
+            AppTranslations.yesCancel,
+          ),
         ),
         FilledButton(
           onPressed: () => context.pop(),
-          child: const Text('No, Dont Cancel'),
+          child: Text(
+            AppTranslations.noDontCancel,
+          ),
         ),
       ],
     );

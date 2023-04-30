@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/presentation/blocs/auth/auth_bloc.dart';
 import 'package:groceries/app/presentation/modules/root/views/root_view.dart';
 import 'package:groceries/app/presentation/modules/welcome/views/welcome_view.dart';
@@ -18,9 +19,11 @@ class WrapperView extends StatelessWidget {
         if (state is Authenticated) {
           return const RootView();
         }
-        return const Scaffold(
+        return Scaffold(
           body: Center(
-            child: Text('Something went wrong...'),
+            child: Text(
+              AppTranslations.somethingWentWrong,
+            ),
           ),
         );
       },

@@ -64,7 +64,7 @@ class AppGoRouter {
                     name: AppNamedRoutes.verification,
                     path: 'verification',
                     builder: (context, state) =>
-                        ForgotPasswordVerificationView(),
+                        const ForgotPasswordVerificationView(),
                   ),
                 ],
               ),

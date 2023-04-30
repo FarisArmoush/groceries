@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/presentation/modules/settings/widgets/notifications_settings_switch.dart';
 
 class NotificationsSettingsView extends StatelessWidget {
@@ -8,7 +9,9 @@ class NotificationsSettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Notifications'),
+        title: Text(
+          AppTranslations.notificationsSettings,
+        ),
       ),
       body: ListView(
         physics: const BouncingScrollPhysics(),

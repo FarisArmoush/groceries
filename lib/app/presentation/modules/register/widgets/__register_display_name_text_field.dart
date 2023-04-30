@@ -14,7 +14,7 @@ class _RegisterDisplayNameTextField extends StatelessWidget {
           onChanged: (name) =>
               context.read<RegisterCubit>().displayNameChanged(name),
           keyboardType: TextInputType.name,
-          labelText: 'Username',
+          labelText: AppTranslations.username,
           errorText: state.displayName.error,
           validator: (value) => state.displayName.validator(value),
         );

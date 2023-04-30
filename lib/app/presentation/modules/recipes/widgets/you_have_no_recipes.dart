@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/app/core/constants/app_text_styles.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/gen/assets.gen.dart';
 
 class YouHaveNoRecipes extends StatelessWidget {
@@ -22,7 +23,7 @@ class YouHaveNoRecipes extends StatelessWidget {
           height: size.height * 0.02,
         ),
         Text(
-          'You dont have any recipes',
+          AppTranslations.youHaveNoRecipes,
           style: AppTextStyles.poppinsSemiBold(
             color: Theme.of(context).primaryColor,
             fontSize: 24,
@@ -33,7 +34,7 @@ class YouHaveNoRecipes extends StatelessWidget {
           height: size.height * 0.01,
         ),
         Text(
-          'You can start by creating\na new one right now',
+          AppTranslations.startWithCreatingYourFirstRecipe,
           style: AppTextStyles.poppinsLight(
             color: Theme.of(context).hintColor,
             fontSize: 14,
@@ -45,7 +46,7 @@ class YouHaveNoRecipes extends StatelessWidget {
         ),
         FilledButton(
           onPressed: () {},
-          child: const Text('Create your first recipe'),
+          child: Text(AppTranslations.createFirstRecipe),
         ),
       ],
     );

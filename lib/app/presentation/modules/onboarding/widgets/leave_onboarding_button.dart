@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/core/routes/app_named_routes.dart';
 
 class LeaveOnboardingButton extends StatelessWidget {
@@ -9,7 +10,9 @@ class LeaveOnboardingButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton.extended(
       onPressed: () => context.pushReplacementNamed(AppNamedRoutes.welcome),
-      label: const Text('Finish Introduction'),
+      label: Text(
+        AppTranslations.finishIntroduction,
+      ),
       backgroundColor: Theme.of(context).primaryColorLight,
     );
   }
