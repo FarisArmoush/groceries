@@ -1,4 +1,5 @@
 import 'package:formz/formz.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 
 class LoginPasswordForm extends FormzInput<String, String> {
   const LoginPasswordForm.pure() : super.pure('');
@@ -9,10 +10,10 @@ class LoginPasswordForm extends FormzInput<String, String> {
   String? validator(String? value) {
     var errors = '';
     if (value!.isEmpty) {
-      return 'Field cannot be empty\n';
+      return '${AppTranslations.fieldCannotBeEmpty}\n';
     }
     if (value.length < 8) {
-      errors += 'Cannot be less than 8 letters.\n';
+      errors += AppTranslations.fieldMustHaveAtLeastEightCharacters;
     }
     if (errors.isEmpty) {
       return null;

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/presentation/widgets/dialog_widgets/app_dialog_content_text.dart';
 import 'package:groceries/app/presentation/widgets/dialog_widgets/app_dialog_title.dart';
 
@@ -20,11 +21,11 @@ class CancelForgotPasswordDialog extends StatelessWidget {
           onPressed: () => context
             ..pop()
             ..pop(),
-          child: const Text('Yes, Go Back'),
+          child: Text(AppTranslations.yesCancel),
         ),
         OutlinedButton(
           onPressed: () => context.pop(),
-          child: const Text('No, Dont Cancel'),
+          child: Text(AppTranslations.noDontCancel),
         ),
       ],
     );

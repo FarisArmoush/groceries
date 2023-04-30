@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/app/core/constants/app_text_styles.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/data/models/grocery_list_model.dart';
 import 'package:groceries/app/presentation/modules/grocery_list/widgets/grocery_list_options_button.dart';
 
@@ -51,7 +52,7 @@ class GroceryListCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
-                    '${listModel.tasksAmount} New Tasks',
+                    '${listModel.tasksAmount} ${AppTranslations.newTasks}',
                     style: AppTextStyles.poppinsLight(
                       color: Theme.of(context).colorScheme.secondary,
                       fontSize: 14,

@@ -15,7 +15,9 @@ class _RegisterButton extends StatelessWidget {
           onPressed: () => state.status.isValidated
               ? context.read<RegisterCubit>().register()
               : null,
-          child: const Text('Sign Up'),
+          child: Text(
+            AppTranslations.register,
+          ),
         );
       },
     );

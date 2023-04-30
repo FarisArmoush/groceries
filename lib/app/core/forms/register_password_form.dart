@@ -1,4 +1,5 @@
 import 'package:formz/formz.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/core/utils/app_reg_exps.dart';
 
 class RegisterPasswordForm extends FormzInput<String, String> {
@@ -10,16 +11,18 @@ class RegisterPasswordForm extends FormzInput<String, String> {
   String? validator(String? value) {
     var errors = '';
     if (value!.isEmpty) {
-      return 'Field must not be empty.\n';
+      return '${AppTranslations.fieldCannotBeEmpty}\n';
     }
     if (value.length < 8) {
       errors += 'Cannot be less than 8 letters.\n';
+      errors += '${AppTranslations.fieldMustHaveAtLeastEightCharacters}\n';
     }
     if (!value.contains(AppRegExps.specialCharacters)) {
-      errors += 'Must at least have one special character.\n';
+      errors +=
+          '${AppTranslations.fieldMustContainAtLeastOneSpecialCharacter}\n';
     }
     if (!value.contains(AppRegExps.numbers)) {
-      errors += 'Must at least have one number.\n';
+      errors += '${AppTranslations.fieldMustContainAtLeastOneNumber}\n';
     }
     if (errors.isEmpty) {
       return null;

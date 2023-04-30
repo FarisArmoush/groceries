@@ -1,4 +1,5 @@
 import 'package:formz/formz.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/core/utils/app_reg_exps.dart';
 
 class DisplayNameForm extends FormzInput<String, String> {
@@ -16,16 +17,17 @@ class DisplayNameForm extends FormzInput<String, String> {
     }
     var errors = '';
     if (value.length < 8) {
-      errors += 'Field must have at least 8 characters\n';
+      errors += '${AppTranslations.fieldMustHaveAtLeastEightCharacters}\n';
     }
     if (value.contains(AppRegExps.specialCharacters)) {
-      errors += 'Field must not contain a special character\n';
+      errors +=
+          '${AppTranslations.fieldMustContainAtLeastOneSpecialCharacter}\n';
     }
     if (englishLettersCount < 4) {
-      errors += 'Field must at least have 4 letters\n';
+      errors += '${AppTranslations.fieldMustAtLeastContainFourLetters}\n';
     }
     if (value.contains(' ')) {
-      errors += 'Field cannot have a space\n';
+      errors += '${AppTranslations.fieldMustNotHaveSpace}\n';
     }
     if (errors.isEmpty) {
       return null;

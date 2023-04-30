@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/app/core/constants/app_text_styles.dart';
-import 'package:groceries/app/presentation/blocs/remote_config/remote_config_cubit.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 
 class WelcomeViewBodyText extends StatelessWidget {
   const WelcomeViewBodyText({Key? key}) : super(key: key);
@@ -9,7 +8,7 @@ class WelcomeViewBodyText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      context.watch<RemoteConfigCubit>().remoteConfigRepo.chooseAuthBody,
+      AppTranslations.welcomeBody,
       style: AppTextStyles.poppinsRegular(
         color: Theme.of(context).primaryColor.withOpacity(0.9),
         fontSize: 20,

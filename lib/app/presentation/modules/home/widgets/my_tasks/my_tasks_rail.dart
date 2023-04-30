@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/data/models/task_model.dart';
 import 'package:groceries/app/presentation/modules/home/widgets/my_tasks/my_tasks_list.dart';
 import 'package:groceries/app/presentation/modules/home/widgets/rail_title.dart';
@@ -18,8 +19,8 @@ class MyTasksRail extends StatelessWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       children: [
-        const RailTitle(
-          title: 'My Tasks',
+        RailTitle(
+          title: AppTranslations.myTasks,
         ),
         SizedBox(
           height: height * 0.025,

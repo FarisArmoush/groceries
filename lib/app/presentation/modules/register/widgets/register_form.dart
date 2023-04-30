@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/core/constants/app_text_styles.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/core/routes/app_named_routes.dart';
 import 'package:groceries/app/presentation/modules/register/cubit/register_cubit.dart';
 import 'package:groceries/app/presentation/widgets/app_loading_indicator.dart';
@@ -61,7 +62,7 @@ class RegisterForm extends StatelessWidget {
             height: size.height * 0.04,
           ),
           Text(
-            'Sign Up',
+            AppTranslations.register,
             style: AppTextStyles.poppinsSemiBold(
               color: Theme.of(context).primaryColorLight,
               fontSize: 24,
@@ -71,7 +72,7 @@ class RegisterForm extends StatelessWidget {
             height: size.height * 0.035,
           ),
           Text(
-            'Create your account',
+            AppTranslations.createYourAccount,
             style: AppTextStyles.poppinsSemiBold(
               color: Theme.of(context).primaryColor.withOpacity(0.8),
               fontSize: 16,
@@ -101,8 +102,8 @@ class RegisterForm extends StatelessWidget {
             height: size.height * 0.03,
           ),
           OtherOptionTextButton(
-            upperText: 'Already have an account?',
-            lowerText: 'Login, Now!',
+            upperText: AppTranslations.alreadyHaveAnAccount,
+            lowerText: AppTranslations.loginNow,
             onTap: () => context.pushNamed(AppNamedRoutes.login),
           ),
           SizedBox(

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/core/constants/app_text_styles.dart';
 import 'package:groceries/app/core/constants/color_constants.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/core/routes/app_named_routes.dart';
 import 'package:groceries/app/presentation/blocs/remote_config/remote_config_cubit.dart';
 import 'package:groceries/app/presentation/modules/settings/widgets/settings_list_tile.dart';
@@ -17,7 +18,7 @@ class AboutAppSettingsBox extends StatelessWidget {
     final remoteConfigCubit = context.watch<RemoteConfigCubit>();
     return PrimaryBox(
       header: Text(
-        'Groceries',
+        AppTranslations.appName,
         style: AppTextStyles.poppinsMedium(
           color: Theme.of(context).primaryColor,
           fontSize: 16,
@@ -29,43 +30,43 @@ class AboutAppSettingsBox extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         children: [
           SettingsListTile(
-            title: 'About',
+            title: AppTranslations.about,
             icon: Assets.svg.icClipboard,
             iconsBoxColor: Colors.purple,
             onTap: () => context.pushNamed(AppNamedRoutes.about),
           ),
           SettingsListTile(
-            title: "What's New",
+            title: AppTranslations.whatsNew,
             icon: Assets.svg.icPlus,
             iconsBoxColor: Colors.red,
             onTap: () => context.pushNamed(AppNamedRoutes.whatsNew),
           ),
           SettingsListTile(
-            title: 'Privacy Policy',
+            title: AppTranslations.privacyPolicy,
             icon: Assets.svg.icFolderLock,
             iconsBoxColor: Colors.blue,
             onTap: () => context.pushNamed(AppNamedRoutes.privacyPolicy),
           ),
           SettingsListTile(
-            title: 'Terms of use',
+            title: AppTranslations.termsOfUse,
             icon: Assets.svg.icFile,
             iconsBoxColor: Colors.grey.shade600,
             onTap: () => context.pushNamed(AppNamedRoutes.termsOfUse),
           ),
           SettingsListTile(
-            title: 'Send Feedback',
+            title: AppTranslations.sendFeedback,
             icon: Assets.svg.icSend,
             iconsBoxColor: Colors.green,
             onTap: remoteConfigCubit.urlLauncherRepo.sendFeedbackToAppEmail,
           ),
           SettingsListTile(
-            title: 'Website',
+            title: AppTranslations.website,
             icon: Assets.svg.icLink,
             iconsBoxColor: Colors.pink,
             onTap: remoteConfigCubit.urlLauncherRepo.launchAppWebsite,
           ),
           SettingsListTile(
-            title: 'Follow us on Twitter',
+            title: AppTranslations.followsUsOnTwitter,
             icon: Assets.svg.icTwitter,
             iconsBoxColor: ColorConstants.twitterBlue,
             onTap: remoteConfigCubit.urlLauncherRepo.launchAppTwitterAccount,

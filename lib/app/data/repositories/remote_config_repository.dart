@@ -35,47 +35,6 @@ class RemoteConfigRepository {
     }
   }
 
-  String get homeHeader => _remoteConfigApi.getHomeHeader();
-
-  String get chooseAuthHeader =>
-      _remoteConfigApi.getChooseAuthStrings()['header'] as String;
-
-  String get chooseAuthBody =>
-      _remoteConfigApi.getChooseAuthStrings()['body'] as String;
-
-  String get onboardingFirstHeader =>
-      _remoteConfigApi.getOnboardingStrings()['firstPageHeader'] as String;
-
-  String get onboardingSecondHeader =>
-      _remoteConfigApi.getOnboardingStrings()['secondPageHeader'] as String;
-
-  String get onnboardingThirdHeader =>
-      _remoteConfigApi.getOnboardingStrings()['thrirdPageHeader'] as String;
-
-  String get onboardingFirstBody =>
-      _remoteConfigApi.getOnboardingStrings()['firstPageBody'] as String;
-
-  String get onboardingSecondBody =>
-      _remoteConfigApi.getOnboardingStrings()['secondPageBody'] as String;
-
-  String get onboardingThirdBody =>
-      _remoteConfigApi.getOnboardingStrings()['thirdPageBody'] as String;
-
-  String get forgotPasswordTitle =>
-      _remoteConfigApi.getForgotPasswordStrings()['title'] as String;
-
-  String get forgotPasswordBody =>
-      _remoteConfigApi.getForgotPasswordStrings()['body'] as String;
-
-  String get emailVerificationTitle =>
-      _remoteConfigApi.getEmailVerificationStrings()['title'] as String;
-
-  String get emailVerificationBody =>
-      _remoteConfigApi.getEmailVerificationStrings()['body'] as String;
-
-  String get arabicLocale => _remoteConfigApi.getArabicLocale();
-  String get englishLocale => _remoteConfigApi.getEnglishLocale();
-
   String get developerTwitterAccountPath =>
       _remoteConfigApi.getDeveloperTwitterAccountLink()['path'] as String;
 
@@ -93,6 +52,4 @@ class RemoteConfigRepository {
 
   String get appTwitterAccountAuthority =>
       _remoteConfigApi.getAppTwitterAccountLink()['authority'] as String;
-
-  dynamic get chooseAuthImages => _remoteConfigApi.getChooseAuthImages();
 }

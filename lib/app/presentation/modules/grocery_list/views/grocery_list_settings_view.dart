@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/gen/assets.gen.dart';
 
 class GroceryListSettingsView extends StatelessWidget {
@@ -9,7 +10,9 @@ class GroceryListSettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Group Settings'),
+        title: Text(
+          AppTranslations.listSettings,
+        ),
       ),
       body: ListView(
         children: [

@@ -15,7 +15,7 @@ class _RegisterEmailTextField extends StatelessWidget {
             context.read<RegisterCubit>().emailChanged(email);
           },
           keyboardType: TextInputType.emailAddress,
-          labelText: 'Email',
+          labelText: AppTranslations.email,
           validator: (value) => state.email.validator(value),
           errorText: state.email.error,
         );

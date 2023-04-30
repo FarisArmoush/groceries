@@ -15,7 +15,7 @@ class _LoginButton extends StatelessWidget {
           onPressed: () => state.status.isValidated
               ? context.read<LoginCubit>().login()
               : null,
-          child: const Text('Login'),
+          child: Text(AppTranslations.login),
         );
       },
     );

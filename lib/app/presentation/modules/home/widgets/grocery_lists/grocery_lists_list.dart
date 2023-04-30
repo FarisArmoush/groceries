@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/core/routes/app_named_routes.dart';
 import 'package:groceries/app/data/models/grocery_list_model.dart';
 import 'package:groceries/app/presentation/modules/home/widgets/grocery_lists/create_new_grocery_list_card_button.dart';
@@ -26,8 +27,8 @@ class GroceryListsList extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 4),
         itemBuilder: (context, index) {
           if (index == lists.length) {
-            return const CreateNewGroceryListCardButton(
-              text: 'Create a new List',
+            return CreateNewGroceryListCardButton(
+              text: AppTranslations.createNewList,
             );
           } else {
             return GroceryListCard(

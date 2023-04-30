@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/core/constants/app_text_styles.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 
 class DeleteRecipeBottomSheet extends StatelessWidget {
   const DeleteRecipeBottomSheet({Key? key}) : super(key: key);
@@ -21,7 +22,7 @@ class DeleteRecipeBottomSheet extends StatelessWidget {
           ),
           children: [
             Text(
-              'Are you sure you want to delete this recipe?',
+              AppTranslations.youSureYouWantToDeleteThisRecipe,
               style: AppTextStyles.poppinsSemiBold(
                 color: Theme.of(context).primaryColor,
                 fontSize: 24,
@@ -33,11 +34,15 @@ class DeleteRecipeBottomSheet extends StatelessWidget {
             ),
             FilledButton(
               onPressed: () => context.pop(),
-              child: const Text('Yes, Delete this recipe'),
+              child: Text(
+                AppTranslations.yesDeleteRecipe,
+              ),
             ),
             OutlinedButton(
               onPressed: () => context.pop(),
-              child: const Text('No, Keep It'),
+              child: Text(
+                AppTranslations.noKeepIt,
+              ),
             ),
           ],
         );

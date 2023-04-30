@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/presentation/widgets/app_text_field.dart';
 
 class AccountSettingsView extends StatelessWidget {
@@ -9,45 +10,47 @@ class AccountSettingsView extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Account Settings'),
+        title: Text(AppTranslations.accountSettings),
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         physics: const BouncingScrollPhysics(),
         children: [
-          const AppTextField(
-            labelText: 'Username',
+          AppTextField(
+            labelText: AppTranslations.username,
           ),
           SizedBox(
             height: size.height * 0.015,
           ),
-          const AppTextField(
-            labelText: 'Email',
+          AppTextField(
+            labelText: AppTranslations.email,
           ),
           SizedBox(
             height: size.height * 0.015,
           ),
-          const AppTextField(
-            labelText: 'Old password',
+          AppTextField(
+            labelText: AppTranslations.password,
           ),
           SizedBox(
             height: size.height * 0.015,
           ),
-          const AppTextField(
-            labelText: 'New Password',
+          AppTextField(
+            labelText: AppTranslations.password,
           ),
           SizedBox(
             height: size.height * 0.015,
           ),
-          const AppTextField(
-            labelText: 'Confirm New Password',
+          AppTextField(
+            labelText: AppTranslations.password,
           ),
           SizedBox(
             height: size.height * 0.03,
           ),
           FilledButton(
             onPressed: () {},
-            child: const Text('Delete Account?'),
+            child: Text(
+              AppTranslations.deleteAccount,
+            ),
           ),
         ],
       ),

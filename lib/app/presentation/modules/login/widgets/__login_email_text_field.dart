@@ -11,7 +11,7 @@ class _LoginEmailTextField extends StatelessWidget {
         return AppTextField(
           onChanged: (email) => context.read<LoginCubit>().emailChanged(email),
           keyboardType: TextInputType.emailAddress,
-          labelText: 'Email',
+          labelText: AppTranslations.email,
           errorText: state.email.error,
           validator: (value) => state.email.validator(value),
         );
