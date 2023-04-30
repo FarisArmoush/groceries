@@ -58,6 +58,9 @@ class $AssetsPngGen {
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
+  /// File path: assets/svg/icAlertTriangle.svg
+  String get icAlertTriangle => 'assets/svg/icAlertTriangle.svg';
+
   /// File path: assets/svg/icArchive.svg
   String get icArchive => 'assets/svg/icArchive.svg';
 
@@ -75,6 +78,9 @@ class $AssetsSvgGen {
 
   /// File path: assets/svg/icCheck.svg
   String get icCheck => 'assets/svg/icCheck.svg';
+
+  /// File path: assets/svg/icCheckCircle.svg
+  String get icCheckCircle => 'assets/svg/icCheckCircle.svg';
 
   /// File path: assets/svg/icChefHat.svg
   String get icChefHat => 'assets/svg/icChefHat.svg';
@@ -246,12 +252,14 @@ class $AssetsSvgGen {
 
   /// List of all assets
   List<String> get values => [
+        icAlertTriangle,
         icArchive,
         icArrowLeftRight,
         icAtSign,
         icBell,
         icCamera,
         icCheck,
+        icCheckCircle,
         icChefHat,
         icCircleX,
         icClipboard,

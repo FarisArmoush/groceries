@@ -11,10 +11,16 @@ class _RegisterButton extends StatelessWidget {
         if (state.status.isSubmissionInProgress) {
           return const AppLoadingIndicator();
         }
+        if (!state.status.isValidated) {
+          // Returns a disabled button
+          return FilledButton(
+            onPressed: null,
+            style: DisabledButtonStyle(),
+            child: Text(AppTranslations.register),
+          );
+        }
         return FilledButton(
-          onPressed: () => state.status.isValidated
-              ? context.read<RegisterCubit>().register()
-              : null,
+          onPressed: () => context.read<RegisterCubit>().register(),
           child: Text(
             AppTranslations.register,
           ),
