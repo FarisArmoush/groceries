@@ -36,6 +36,7 @@ class PrimaryBox extends StatelessWidget {
   Widget childWithHeader() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
         header ?? const SizedBox.shrink(),
         const SizedBox(height: 12),
