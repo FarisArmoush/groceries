@@ -1,22 +1,66 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:groceries/app/core/localization/app_translations.dart';
+import 'package:groceries/app/data/models/grocery_model.dart';
+import 'package:groceries/app/presentation/modules/grocery_list/widgets/grocery_item_card.dart';
 
 class AddItemsView extends StatelessWidget {
   const AddItemsView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          AppTranslations.addItems,
+    var size = MediaQuery.of(context).size;
+    return DefaultTabController(
+      length: _list.length,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text(AppTranslations.addItems),
+          bottom: TabBar(
+            physics: const BouncingScrollPhysics(),
+            isScrollable: true,
+            tabs: _list.map((e) => Tab(text: e)).toList(),
+          ),
         ),
-      ),
-      body: const Center(
-        child: Text(
-          'AddItemsView is Working!',
+        body: ListView.separated(
+          padding: EdgeInsetsDirectional.fromSTEB(
+            16,
+            24,
+            16,
+            size.height * 0.1,
+          ),
+          physics: const BouncingScrollPhysics(),
+          itemCount: _list.length,
+          separatorBuilder: (context, index) {
+            return const SizedBox(
+              height: 12,
+            );
+          },
+          itemBuilder: (context, index) => GroceryItemCard(
+            groceryModel: GroceryModel(
+              id: _list[index],
+              name: _list[index],
+              category: _list[index],
+              notes: _list[index],
+            ),
+          ),
         ),
+        floatingActionButton: FloatingActionButton.extended(
+          tooltip: AppTranslations.done,
+          label: Text(
+            AppTranslations.done,
+          ),
+          onPressed: () => context.pop(),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),
     );
   }
 }
+
+List<String> _list = [
+  'All',
+  'Meats',
+  'Fruits and Vegetables',
+  'Poultry',
+  'Health Care',
+];

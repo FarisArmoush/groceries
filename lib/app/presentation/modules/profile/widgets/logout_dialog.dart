@@ -3,8 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/presentation/blocs/auth/auth_bloc.dart';
-import 'package:groceries/app/presentation/widgets/dialog_widgets/app_dialog_content_text.dart';
-import 'package:groceries/app/presentation/widgets/dialog_widgets/app_dialog_title.dart';
 
 class LogoutDialog extends StatelessWidget {
   const LogoutDialog({Key? key}) : super(key: key);
@@ -24,14 +22,14 @@ class LogoutDialog extends StatelessWidget {
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           children: [
-            AppDialogTitle(
-              title: AppTranslations.logoutFromApp,
+            Text(
+              AppTranslations.logoutFromApp,
             ),
             SizedBox(
               height: size.height * 0.02,
             ),
-            AppDialogContentText(
-              text: AppTranslations.youSureYouWantToLogout,
+            Text(
+              AppTranslations.youSureYouWantToLogout,
             ),
             SizedBox(
               height: size.height * 0.01,

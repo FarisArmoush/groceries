@@ -116,4 +116,8 @@ class AppTranslations {
   static final fieldMustContainAtLeastOneNumber =
       'field_must_contain_at_least_one_number'.tr();
   static final emptyNotificationsBody = 'empty_notifications_body'.tr();
+  static final deleteList = 'delete_list'.tr();
+  static final save = 'save'.tr();
+  static final listMember = 'list_members'.tr();
+  static final done = 'done'.tr();
 }

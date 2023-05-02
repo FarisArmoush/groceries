@@ -15,7 +15,6 @@ class CreateNewListFAB extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton.extended(
       onPressed: onPressed,
-      backgroundColor: Theme.of(context).primaryColorLight,
       label: SvgPicture.asset(
         Assets.svg.icRightArrow,
         color: ColorConstants.white,

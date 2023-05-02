@@ -145,6 +145,9 @@ class $AssetsSvgGen {
   /// File path: assets/svg/icListPlus.svg
   String get icListPlus => 'assets/svg/icListPlus.svg';
 
+  /// File path: assets/svg/icListX.svg
+  String get icListX => 'assets/svg/icListX.svg';
+
   /// File path: assets/svg/icLogout.svg
   String get icLogout => 'assets/svg/icLogout.svg';
 
@@ -192,6 +195,9 @@ class $AssetsSvgGen {
 
   /// File path: assets/svg/icUser.svg
   String get icUser => 'assets/svg/icUser.svg';
+
+  /// File path: assets/svg/icUserX.svg
+  String get icUserX => 'assets/svg/icUserX.svg';
 
   /// File path: assets/svg/icUsers.svg
   String get icUsers => 'assets/svg/icUsers.svg';
@@ -281,6 +287,7 @@ class $AssetsSvgGen {
         icLink,
         icListChecks,
         icListPlus,
+        icListX,
         icLogout,
         icMenu,
         icMessageBubble,
@@ -297,6 +304,7 @@ class $AssetsSvgGen {
         icTrash,
         icTwitter,
         icUser,
+        icUserX,
         icUsers,
         icVerified,
         icVerticalThreeDots,

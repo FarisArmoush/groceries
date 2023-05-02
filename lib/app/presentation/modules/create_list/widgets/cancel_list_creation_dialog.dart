@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/core/localization/app_translations.dart';
-import 'package:groceries/app/presentation/widgets/dialog_widgets/app_dialog_content_text.dart';
-import 'package:groceries/app/presentation/widgets/dialog_widgets/app_dialog_title.dart';
 
 class CancelListCreationDialog extends StatelessWidget {
   const CancelListCreationDialog({Key? key}) : super(key: key);
@@ -10,11 +8,11 @@ class CancelListCreationDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: AppDialogTitle(
-        title: AppTranslations.youSureYouWantToCancelListCreation,
+      title: Text(
+        AppTranslations.youSureYouWantToCancelListCreation,
       ),
-      content: AppDialogContentText(
-        text: AppTranslations.listCreationCancelDialogBody,
+      content: Text(
+        AppTranslations.listCreationCancelDialogBody,
       ),
       actions: [
         OutlinedButton(
