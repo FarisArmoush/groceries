@@ -1,7 +1,6 @@
 part of 'app_themes.dart';
 
 class _AppDialogThemeData {
-  // TODO: ADD content text style and title text style
   static final light = DialogTheme(
     backgroundColor: ColorConstants.white,
     elevation: 0,
