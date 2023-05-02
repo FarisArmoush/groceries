@@ -119,4 +119,5 @@ class AppTranslations {
   static final deleteList = 'delete_list'.tr();
   static final save = 'save'.tr();
   static final listMember = 'list_members'.tr();
+  static final done = 'done'.tr();
 }

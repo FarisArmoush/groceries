@@ -14,14 +14,13 @@ class OnboardingNextPageButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton.small(
+      tooltip: 'Next Page',
       onPressed: () => controller.nextPage(
         curve: Curves.easeInOut,
         duration: const Duration(
           milliseconds: 500,
         ),
       ),
-      backgroundColor: Theme.of(context).primaryColorLight,
-      tooltip: 'Next Page',
       child: SvgPicture.asset(
         Assets.svg.icRightArrow,
         color: Theme.of(context).primaryColor,

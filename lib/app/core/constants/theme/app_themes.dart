@@ -16,6 +16,8 @@ part '__app_dialog_theme_data.dart';
 part '__app_filled_button_theme_data.dart';
 part '__app_outlined_button_theme_data.dart';
 part '__app_elevated_button_theme_data.dart';
+part '__app_tab_bar_theme_data.dart';
+part '__app_floating_action_button_theme_data.dart';
 
 class AppThemes {
   AppThemes._();
@@ -43,6 +45,8 @@ class AppThemes {
     filledButtonTheme: _AppFilledButtonThemeData.light,
     outlinedButtonTheme: _AppOutlinedButtonThemeData.light,
     elevatedButtonTheme: __AppElevatedButtonThemeData.light,
+    tabBarTheme: _AppTabBarThemeData.light,
+    floatingActionButtonTheme: _AppFloatingActionButtonThemeData.light,
     // fontFamily: FontFamily.poppinsRegular,
   );
 
@@ -70,5 +74,7 @@ class AppThemes {
     filledButtonTheme: _AppFilledButtonThemeData.dark,
     outlinedButtonTheme: _AppOutlinedButtonThemeData.dark,
     elevatedButtonTheme: __AppElevatedButtonThemeData.dark,
+    tabBarTheme: _AppTabBarThemeData.dark,
+    floatingActionButtonTheme: _AppFloatingActionButtonThemeData.dark,
   );
 }
