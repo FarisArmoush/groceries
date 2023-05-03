@@ -10,9 +10,11 @@ class CancelListCreationDialog extends StatelessWidget {
     return AlertDialog(
       title: Text(
         AppTranslations.youSureYouWantToCancelListCreation,
+        textAlign: TextAlign.center,
       ),
       content: Text(
         AppTranslations.listCreationCancelDialogBody,
+        textAlign: TextAlign.center,
       ),
       actions: [
         OutlinedButton(

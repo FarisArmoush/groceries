@@ -13,15 +13,14 @@ class DisplayNameForm extends FormzInput<String, String> {
         AppRegExps.englishLetters.allMatches(value!).length;
 
     if (value.isEmpty) {
-      return 'Field cannot be empty';
+      return AppTranslations.fieldCannotBeEmpty;
     }
     var errors = '';
     if (value.length < 8) {
       errors += '${AppTranslations.fieldMustHaveAtLeastEightCharacters}\n';
     }
     if (value.contains(AppRegExps.specialCharacters)) {
-      errors +=
-          '${AppTranslations.fieldMustContainAtLeastOneSpecialCharacter}\n';
+      errors += '${AppTranslations.fieldMustNotContainSpecialCharacters}\n';
     }
     if (englishLettersCount < 4) {
       errors += '${AppTranslations.fieldMustAtLeastContainFourLetters}\n';

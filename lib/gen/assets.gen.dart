@@ -61,6 +61,9 @@ class $AssetsSvgGen {
   /// File path: assets/svg/icAlertTriangle.svg
   String get icAlertTriangle => 'assets/svg/icAlertTriangle.svg';
 
+  /// File path: assets/svg/icApple.svg
+  String get icApple => 'assets/svg/icApple.svg';
+
   /// File path: assets/svg/icArchive.svg
   String get icArchive => 'assets/svg/icArchive.svg';
 
@@ -123,6 +126,9 @@ class $AssetsSvgGen {
 
   /// File path: assets/svg/icFolderLock.svg
   String get icFolderLock => 'assets/svg/icFolderLock.svg';
+
+  /// File path: assets/svg/icGoogle.svg
+  String get icGoogle => 'assets/svg/icGoogle.svg';
 
   /// File path: assets/svg/icHeart.svg
   String get icHeart => 'assets/svg/icHeart.svg';
@@ -259,6 +265,7 @@ class $AssetsSvgGen {
   /// List of all assets
   List<String> get values => [
         icAlertTriangle,
+        icApple,
         icArchive,
         icArrowLeftRight,
         icAtSign,
@@ -280,6 +287,7 @@ class $AssetsSvgGen {
         icFileTerminal,
         icFlag,
         icFolderLock,
+        icGoogle,
         icHeart,
         icHome,
         icInfo,

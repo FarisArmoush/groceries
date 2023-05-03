@@ -120,4 +120,6 @@ class AppTranslations {
   static final save = 'save'.tr();
   static final listMember = 'list_members'.tr();
   static final done = 'done'.tr();
+  static final loginHeader = 'login_header'.tr();
+  static final registerHeader = 'register_header'.tr();
 }

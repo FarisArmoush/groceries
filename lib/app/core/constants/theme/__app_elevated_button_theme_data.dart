@@ -5,6 +5,11 @@ class __AppElevatedButtonThemeData {
 
   static final light = ElevatedButtonThemeData(
     style: ButtonStyle(
+      shape: MaterialStateProperty.all(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+      ),
       backgroundColor: MaterialStateProperty.all<Color>(
         ColorConstants.black,
       ),
@@ -28,6 +33,11 @@ class __AppElevatedButtonThemeData {
 
   static final dark = ElevatedButtonThemeData(
     style: ButtonStyle(
+      shape: MaterialStateProperty.all(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+      ),
       backgroundColor: MaterialStateProperty.all<Color>(
         ColorConstants.white,
       ),

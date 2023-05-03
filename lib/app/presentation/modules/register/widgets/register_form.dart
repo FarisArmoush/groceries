@@ -1,22 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/core/constants/app_text_styles.dart';
 import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/core/routes/app_named_routes.dart';
+import 'package:groceries/app/presentation/modules/login/widgets/or_divider.dart';
 import 'package:groceries/app/presentation/modules/register/cubit/register_cubit.dart';
-import 'package:groceries/app/presentation/widgets/app_loading_indicator.dart';
-import 'package:groceries/app/presentation/widgets/app_logo.dart';
 import 'package:groceries/app/presentation/widgets/app_snackbars/app_snack_bars.dart';
 import 'package:groceries/app/presentation/widgets/app_text_field.dart';
 import 'package:groceries/app/presentation/widgets/buttons/other_options_text_button.dart';
 import 'package:groceries/app/presentation/widgets/disabled_button_style.dart';
+import 'package:groceries/app/presentation/widgets/loading_state_filled_button.dart';
+import 'package:groceries/gen/assets.gen.dart';
 part '__register_button.dart';
 part '__register_confirm_password_text_field.dart';
 part '__register_display_name_text_field.dart';
 part '__register_email_text_field.dart';
 part '__register_password_text_field.dart';
+part '__register_with_google_button.dart';
+part '__register_header.dart';
+part '__register_body_text.dart';
 
 class RegisterForm extends StatelessWidget {
   const RegisterForm({Key? key}) : super(key: key);
@@ -51,35 +56,19 @@ class RegisterForm extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.symmetric(
           vertical: 16,
-          horizontal: 32,
+          horizontal: 24,
         ),
         children: [
           SizedBox(
-            height: size.height * 0.065,
+            height: size.height * 0.09,
           ),
-          const AppLogo(),
+          const _RegisterHeader(),
+          SizedBox(
+            height: size.height * 0.01,
+          ),
+          const _RegisterBodyText(),
           SizedBox(
             height: size.height * 0.04,
-          ),
-          Text(
-            AppTranslations.register,
-            style: AppTextStyles.poppinsSemiBold(
-              color: Theme.of(context).primaryColorLight,
-              fontSize: 24,
-            ),
-          ),
-          SizedBox(
-            height: size.height * 0.035,
-          ),
-          Text(
-            AppTranslations.createYourAccount,
-            style: AppTextStyles.poppinsSemiBold(
-              color: Theme.of(context).primaryColor.withOpacity(0.8),
-              fontSize: 16,
-            ),
-          ),
-          SizedBox(
-            height: size.height * 0.025,
           ),
           const _RegisterDisplayNameTextField(),
           SizedBox(
@@ -99,15 +88,20 @@ class RegisterForm extends StatelessWidget {
           ),
           const _RegisterButton(),
           SizedBox(
+            height: size.height * 0.01,
+          ),
+          const OrDivider(),
+          SizedBox(
+            height: size.height * 0.01,
+          ),
+          const _RegisterWithGoogleButton(),
+          SizedBox(
             height: size.height * 0.03,
           ),
           OtherOptionTextButton(
             upperText: AppTranslations.alreadyHaveAnAccount,
             lowerText: AppTranslations.loginNow,
             onTap: () => context.pushNamed(AppNamedRoutes.login),
-          ),
-          SizedBox(
-            height: size.height * 0.01,
           ),
         ],
       ),

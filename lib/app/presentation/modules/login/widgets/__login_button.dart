@@ -9,10 +9,13 @@ class _LoginButton extends StatelessWidget {
       buildWhen: (previous, current) => previous.status != current.status,
       builder: (context, state) {
         if (state.status.isSubmissionInProgress) {
-          return const AppLoadingIndicator();
+          // An untapable button with a loading indicator.
+          return LoadingStateFilledButton(
+            label: AppTranslations.login,
+          );
         }
         if (!state.status.isValidated) {
-          // Returns a disabled button
+          // A disabled button.
           return FilledButton(
             onPressed: null,
             style: DisabledButtonStyle(),

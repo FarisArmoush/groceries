@@ -11,7 +11,7 @@ class RegisterPasswordForm extends FormzInput<String, String> {
   String? validator(String? value) {
     var errors = '';
     if (value!.isEmpty) {
-      return '${AppTranslations.fieldCannotBeEmpty}\n';
+      return AppTranslations.fieldCannotBeEmpty;
     }
     if (value.length < 8) {
       errors += 'Cannot be less than 8 letters.\n';

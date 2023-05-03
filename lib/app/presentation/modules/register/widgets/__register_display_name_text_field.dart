@@ -13,6 +13,10 @@ class _RegisterDisplayNameTextField extends StatelessWidget {
         return AppTextField(
           onChanged: (name) =>
               context.read<RegisterCubit>().displayNameChanged(name),
+          prefixIcon: Icon(
+            Icons.person_2_outlined,
+            color: Theme.of(context).hintColor,
+          ),
           keyboardType: TextInputType.name,
           labelText: AppTranslations.username,
           errorText: state.displayName.error,

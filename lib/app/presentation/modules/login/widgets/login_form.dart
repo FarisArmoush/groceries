@@ -7,16 +7,20 @@ import 'package:groceries/app/core/constants/app_text_styles.dart';
 import 'package:groceries/app/core/localization/app_translations.dart';
 import 'package:groceries/app/core/routes/app_named_routes.dart';
 import 'package:groceries/app/presentation/modules/login/cubit/login_cubit.dart';
-import 'package:groceries/app/presentation/widgets/app_loading_indicator.dart';
-import 'package:groceries/app/presentation/widgets/app_logo.dart';
+import 'package:groceries/app/presentation/modules/login/widgets/or_divider.dart';
 import 'package:groceries/app/presentation/widgets/app_snackbars/app_snack_bars.dart';
 import 'package:groceries/app/presentation/widgets/app_text_field.dart';
 import 'package:groceries/app/presentation/widgets/buttons/other_options_text_button.dart';
 import 'package:groceries/app/presentation/widgets/disabled_button_style.dart';
+import 'package:groceries/app/presentation/widgets/loading_state_filled_button.dart';
 import 'package:groceries/gen/assets.gen.dart';
 part '__login_password_text_field.dart';
 part '__login_email_text_field.dart';
 part '__login_button.dart';
+part '__login_forgot_password_button.dart';
+part '__login_header.dart';
+part '__login_body_text.dart';
+part '__login_with_google_button.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({Key? key}) : super(key: key);
@@ -54,50 +58,37 @@ class LoginForm extends StatelessWidget {
         ),
         children: [
           SizedBox(
-            height: size.height * 0.075,
+            height: size.height * 0.09,
           ),
-          const AppLogo(),
-          SizedBox(
-            height: size.height * 0.04,
-          ),
-          Text(
-            AppTranslations.login,
-            style: AppTextStyles.poppinsSemiBold(
-              color: Theme.of(context).primaryColorLight,
-              fontSize: 24,
-            ),
-          ),
-          SizedBox(
-            height: size.height * 0.045,
-          ),
-          Text(
-            AppTranslations.loginToYourAccount,
-            style: AppTextStyles.poppinsSemiBold(
-              color: Theme.of(context).primaryColor.withOpacity(0.8),
-              fontSize: 16,
-            ),
-          ),
-          SizedBox(
-            height: size.height * 0.029,
-          ),
-          const _LoginEmailTextField(),
-          SizedBox(
-            height: size.height * 0.015,
-          ),
-          const _LoginPasswordTextField(),
+          const _LoginHeader(),
           SizedBox(
             height: size.height * 0.01,
           ),
-          TextButton(
-            child: Text(
-              AppTranslations.forgotYourPassword,
-            ),
-            onPressed: () => context.pushNamed(AppNamedRoutes.forgotPassword),
-          ),
+          const _LoginBodyText(),
           SizedBox(
-            height: size.height * 0.015,
+            height: size.height * 0.03,
+          ),
+          const _LoginEmailTextField(),
+          SizedBox(
+            height: size.height * 0.02,
+          ),
+          const _LoginPasswordTextField(),
+          SizedBox(
+            height: size.height * 0.02,
+          ),
+          const _LoginForgotPasswordButton(),
+          SizedBox(
+            height: size.height * 0.02,
           ),
           const _LoginButton(),
+          SizedBox(
+            height: size.height * 0.03,
+          ),
+          const OrDivider(),
+          SizedBox(
+            height: size.height * 0.01,
+          ),
+          const _LoginWithGoogleButton(),
           SizedBox(
             height: size.height * 0.03,
           ),
