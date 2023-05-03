@@ -3,6 +3,11 @@ part of 'app_themes.dart';
 class _AppOutlinedButtonThemeData {
   static final light = OutlinedButtonThemeData(
     style: ButtonStyle(
+      shape: MaterialStateProperty.all(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+      ),
       side: MaterialStateProperty.all<BorderSide>(
         BorderSide(
           color: ColorConstants.lightGrey,
@@ -28,6 +33,11 @@ class _AppOutlinedButtonThemeData {
 
   static final dark = OutlinedButtonThemeData(
     style: ButtonStyle(
+      shape: MaterialStateProperty.all(
+        RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+      ),
       side: MaterialStateProperty.all<BorderSide>(
         BorderSide(
           color: ColorConstants.lightGrey,

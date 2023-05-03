@@ -1,15 +1,7 @@
 part of 'login_form.dart';
 
-class _LoginPasswordTextField extends StatefulWidget {
+class _LoginPasswordTextField extends StatelessWidget {
   const _LoginPasswordTextField({Key? key}) : super(key: key);
-
-  @override
-  State<_LoginPasswordTextField> createState() =>
-      _LoginPasswordTextFieldState();
-}
-
-class _LoginPasswordTextFieldState extends State<_LoginPasswordTextField> {
-  bool _isObscure = true;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +9,11 @@ class _LoginPasswordTextFieldState extends State<_LoginPasswordTextField> {
       buildWhen: (previous, current) => previous.password != current.password,
       builder: (context, state) {
         return AppTextField(
-          obscureText: _isObscure,
+          prefixIcon: Icon(
+            Icons.lock,
+            color: Theme.of(context).hintColor,
+          ),
+          obscureText: true,
           autofillHints: const [
             AutofillHints.password,
           ],
@@ -28,23 +24,8 @@ class _LoginPasswordTextFieldState extends State<_LoginPasswordTextField> {
           labelText: AppTranslations.password,
           errorText: state.password.error,
           validator: (value) => state.password.validator(value),
-          suffixIcon: _obscurityButton(),
         );
       },
-    );
-  }
-
-  Widget _obscurityButton() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: IconButton(
-        splashRadius: 24,
-        onPressed: () => setState(() => _isObscure = !_isObscure),
-        icon: SvgPicture.asset(
-          _isObscure ? Assets.svg.icEyeOff : Assets.svg.icEye,
-          color: Theme.of(context).primaryColor,
-        ),
-      ),
     );
   }
 }

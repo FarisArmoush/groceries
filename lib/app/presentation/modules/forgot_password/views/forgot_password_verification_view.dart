@@ -14,7 +14,9 @@ class ForgotPasswordVerificationView extends StatelessWidget {
     return SafeArea(
       top: false,
       child: Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+          leading: const SizedBox.shrink(),
+        ),
         body: ListView(
           padding: EdgeInsets.symmetric(
             horizontal: size.width * 0.09,

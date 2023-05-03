@@ -50,7 +50,7 @@ class _AppInputDecorationThemeData {
       borderSide: BorderSide(
         color: ColorConstants.lightGrey,
       ),
-      borderRadius: BorderRadius.circular(55),
+      borderRadius: BorderRadius.circular(radiusValue),
     );
   }
 
@@ -59,7 +59,7 @@ class _AppInputDecorationThemeData {
       borderSide: BorderSide(
         color: Colors.red.shade500,
       ),
-      borderRadius: BorderRadius.circular(55),
+      borderRadius: BorderRadius.circular(radiusValue),
     );
   }
 
@@ -68,7 +68,9 @@ class _AppInputDecorationThemeData {
       borderSide: BorderSide(
         color: ColorConstants.red,
       ),
-      borderRadius: BorderRadius.circular(55),
+      borderRadius: BorderRadius.circular(radiusValue),
     );
   }
+
+  static const radiusValue = 12.0;
 }

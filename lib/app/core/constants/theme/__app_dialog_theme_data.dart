@@ -12,6 +12,7 @@ class _AppDialogThemeData {
       color: ColorConstants.black,
       fontSize: 16,
     ),
+    alignment: Alignment.center,
   );
   static final dark = DialogTheme(
     backgroundColor: ColorConstants.darkGrey,

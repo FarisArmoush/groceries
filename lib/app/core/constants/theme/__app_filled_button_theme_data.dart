@@ -12,7 +12,7 @@ class _AppFilledButtonThemeData {
       elevation: MaterialStateProperty.all<double>(10),
       shape: MaterialStateProperty.all(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(28),
+          borderRadius: BorderRadius.circular(12),
         ),
       ),
       backgroundColor: MaterialStateProperty.all<Color>(
@@ -38,7 +38,7 @@ class _AppFilledButtonThemeData {
       elevation: MaterialStateProperty.all<double>(10),
       shape: MaterialStateProperty.all(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(28),
+          borderRadius: BorderRadius.circular(12),
         ),
       ),
       backgroundColor: MaterialStateProperty.all<Color>(

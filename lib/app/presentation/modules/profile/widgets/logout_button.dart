@@ -20,8 +20,8 @@ class LogoutButton extends StatelessWidget {
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(
-              AppSnackBars.error(
-                error: "Logged out, Successfully.\nWe'll Miss you.",
+              AppSnackBars.informative(
+                message: "Logged out, Successfully.\nWe'll Miss you.",
               ),
             );
           context.pushReplacementNamed(AppNamedRoutes.welcome);
