@@ -14,7 +14,7 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = context.watch<AuthBloc>().authRepo.currentUser!;
+    final user = context.watch<AuthBloc>().authRepo.currentUser;
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -29,9 +29,9 @@ class ProfileView extends StatelessWidget {
         ),
         children: [
           ProfileHeader(
-            imageUrl: user.photoURL,
-            displayName: user.displayName,
-            email: user.email,
+            imageUrl: user?.photoURL,
+            displayName: user?.displayName,
+            email: user?.email,
           ),
           SizedBox(
             height: size.height * 0.025,

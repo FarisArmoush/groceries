@@ -122,4 +122,10 @@ class AppTranslations {
   static final done = 'done'.tr();
   static final loginHeader = 'login_header'.tr();
   static final registerHeader = 'register_header'.tr();
+
+  static final deleteAccountHeader = 'delete_account_header'.tr();
+  static final deleteAccountBody = 'delete_account_body'.tr();
+
+  static final dontDeleteAccount = 'dont_delete_account'.tr();
+  static final yesDeleteAccount = 'yes_delete_account'.tr();
 }

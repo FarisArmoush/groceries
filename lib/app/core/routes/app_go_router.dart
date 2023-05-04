@@ -4,6 +4,7 @@ import 'package:groceries/app/presentation/modules/create_list/views/create_list
 import 'package:groceries/app/presentation/modules/create_list/views/invite_users_to_list_view.dart';
 import 'package:groceries/app/presentation/modules/create_list/views/list_created_successfully_view.dart';
 import 'package:groceries/app/presentation/modules/create_list/views/list_created_unsuccessfully_view.dart';
+import 'package:groceries/app/presentation/modules/delete_account/views/delete_account_view.dart';
 import 'package:groceries/app/presentation/modules/forgot_password/views/forgot_password_verification_view.dart';
 import 'package:groceries/app/presentation/modules/forgot_password/views/forgot_password_view.dart';
 import 'package:groceries/app/presentation/modules/grocery_list/views/add_items_view.dart';
@@ -154,15 +155,22 @@ class AppGoRouter {
             builder: (context, state) => const ProfileView(),
             routes: [
               GoRoute(
+                name: AppNamedRoutes.accountSettings,
+                path: 'accountSettings',
+                builder: (context, state) => const AccountSettingsView(),
+                routes: [
+                  GoRoute(
+                    name: AppNamedRoutes.deleteAccount,
+                    path: 'deleteAccount',
+                    builder: (context, state) => const DeleteAccountView(),
+                  ),
+                ],
+              ),
+              GoRoute(
                 name: AppNamedRoutes.settings,
                 path: 'settings',
                 builder: (context, state) => const SettingsView(),
                 routes: [
-                  GoRoute(
-                    name: AppNamedRoutes.accountSettings,
-                    path: 'accountSettings',
-                    builder: (context, state) => const AccountSettingsView(),
-                  ),
                   GoRoute(
                     name: AppNamedRoutes.appearanceSettings,
                     path: 'appearanceSettings',
