@@ -7,8 +7,13 @@ class _AppColorScheme {
     error: ColorConstants.red,
   );
   static final dark = ColorScheme.fromSwatch().copyWith(
-    secondary: ColorConstants.black,
     brightness: Brightness.dark,
-    error: ColorConstants.red,
+    primary: ColorConstants.red,
+    secondary: Colors.red,
+    primaryContainer: ColorConstants.cardDarkGrey,
+    onBackground: ColorConstants.white,
+    background: ColorConstants.darkGrey,
+    shadow: ColorConstants.white.withOpacity(0.015),
+    outline: ColorConstants.lightGrey,
   );
 }

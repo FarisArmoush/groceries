@@ -1,7 +1,10 @@
 // ignore_for_file: strict_raw_type
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:groceries/app/core/exceptions/delete_account_exception.dart';
 import 'package:groceries/app/core/exceptions/login_with_email_password_failure.dart';
 import 'package:groceries/app/core/exceptions/login_with_google_failure.dart';
 import 'package:groceries/app/core/exceptions/logout_failure.dart';
@@ -13,11 +16,14 @@ class FirebaseAuthRepository implements BaseAuthRepository {
   FirebaseAuthRepository({
     FirebaseAuth? firebaseAuth,
     GoogleSignIn? googleSignIn,
+    FirebaseFirestore? firestore,
   })  : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance,
-        _googleSignIn = googleSignIn ?? GoogleSignIn.standard();
+        _googleSignIn = googleSignIn ?? GoogleSignIn.standard(),
+        _firestore = firestore ?? FirebaseFirestore.instance;
 
   final FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
+  final FirebaseFirestore _firestore;
   @override
   Stream<User?> get authStateChanges => _firebaseAuth.userChanges().map(
         (fbUser) => fbUser,
@@ -39,7 +45,7 @@ class FirebaseAuthRepository implements BaseAuthRepository {
             password: password,
           )
           .then(
-            (currentUser) => FirebaseFirestore.instance
+            (currentUser) => _firestore
                 .collection('users')
                 .doc('${currentUser.user?.uid}')
                 .set(
@@ -64,7 +70,12 @@ class FirebaseAuthRepository implements BaseAuthRepository {
 
   @override
   Future deleteAccount() async {
-    throw UnimplementedError();
+    try {
+      await _firestore.collection('users').doc(currentUser?.uid).delete();
+      await currentUser?.delete();
+    } catch (e) {
+      throw DeleteAccountException();
+    }
   }
 
   @override

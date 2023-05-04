@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:groceries/app/core/localization/app_translations.dart';
+import 'package:groceries/app/core/routes/app_named_routes.dart';
 import 'package:groceries/app/presentation/widgets/app_text_field.dart';
 
 class AccountSettingsView extends StatelessWidget {
@@ -47,7 +49,7 @@ class AccountSettingsView extends StatelessWidget {
             height: size.height * 0.03,
           ),
           FilledButton(
-            onPressed: () {},
+            onPressed: () => context.pushNamed(AppNamedRoutes.deleteAccount),
             child: Text(
               AppTranslations.deleteAccount,
             ),

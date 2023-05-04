@@ -64,6 +64,8 @@ class AppTextField extends StatelessWidget {
       onTap: onTap,
       keyboardType: keyboardType,
       onTapOutside: onTapOutside,
+      cursorColor: Theme.of(context).primaryColorLight,
+      cursorWidth: 1,
       onEditingComplete: onEditingComplete,
       style: AppTextStyles.poppinsRegular(
         color: Theme.of(context).primaryColor,
