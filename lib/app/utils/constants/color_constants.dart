@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/app/core/extensions/color_extension.dart';
+import 'package:groceries/app/utils/extensions/color_extension.dart';
 
 /// A class that contains constants for commonly used colors in the app.
 class ColorConstants {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/app/core/localization/app_translations.dart';
+import 'package:groceries/app/config/localization/app_translations.dart';
 import 'package:groceries/app/presentation/modules/delete_account/widgets/delete_account_body_text.dart';
 import 'package:groceries/app/presentation/modules/delete_account/widgets/delete_account_button.dart';
 import 'package:groceries/app/presentation/modules/delete_account/widgets/delete_account_header.dart';

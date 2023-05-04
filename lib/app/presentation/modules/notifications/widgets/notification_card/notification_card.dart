@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/app/core/constants/app_text_styles.dart';
 import 'package:groceries/app/data/models/notification_model.dart';
 import 'package:groceries/app/presentation/widgets/cached_image.dart';
+import 'package:groceries/app/utils/constants/app_text_styles.dart';
+
 part '__notification_card_date.dart';
 part '__notification_card_subtitle.dart';
 part '__notification_card_title.dart';

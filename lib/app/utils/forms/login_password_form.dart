@@ -1,5 +1,5 @@
 import 'package:formz/formz.dart';
-import 'package:groceries/app/core/localization/app_translations.dart';
+import 'package:groceries/app/config/localization/app_translations.dart';
 
 class LoginPasswordForm extends FormzInput<String, String> {
   const LoginPasswordForm.pure() : super.pure('');

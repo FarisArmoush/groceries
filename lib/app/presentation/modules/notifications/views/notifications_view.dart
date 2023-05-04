@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/app/core/localization/app_translations.dart';
+import 'package:groceries/app/config/localization/app_translations.dart';
 import 'package:groceries/app/presentation/modules/notifications/bloc/notifications_bloc.dart';
 import 'package:groceries/app/presentation/modules/notifications/widgets/notifications_form.dart';
 

@@ -4,12 +4,12 @@ import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:groceries/app/core/exceptions/delete_account_exception.dart';
-import 'package:groceries/app/core/exceptions/login_with_email_password_failure.dart';
-import 'package:groceries/app/core/exceptions/login_with_google_failure.dart';
-import 'package:groceries/app/core/exceptions/logout_failure.dart';
-import 'package:groceries/app/core/exceptions/register_with_email_and_password_failure.dart';
 import 'package:groceries/app/domain/repositories/base_auth_repository.dart';
+import 'package:groceries/app/utils/exceptions/delete_account_exception.dart';
+import 'package:groceries/app/utils/exceptions/login_with_email_password_failure.dart';
+import 'package:groceries/app/utils/exceptions/login_with_google_failure.dart';
+import 'package:groceries/app/utils/exceptions/logout_failure.dart';
+import 'package:groceries/app/utils/exceptions/register_with_email_and_password_failure.dart';
 
 /// Authentication Repository that uses the Firebase Auth Service
 class FirebaseAuthRepository implements BaseAuthRepository {

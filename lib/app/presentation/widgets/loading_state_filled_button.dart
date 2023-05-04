@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/app/core/constants/color_constants.dart';
+import 'package:groceries/app/utils/constants/color_constants.dart';
 
 /// Use this button when an action is called and you want to display
 /// an untapable button which shows a loading indicator.

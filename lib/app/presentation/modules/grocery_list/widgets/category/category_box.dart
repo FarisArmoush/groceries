@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/app/core/constants/app_text_styles.dart';
-import 'package:groceries/app/core/localization/app_translations.dart';
-part '_category_box_divider.dart';
+import 'package:groceries/app/config/localization/app_translations.dart';
+import 'package:groceries/app/utils/constants/app_text_styles.dart';
+
 part '_add_items_button.dart';
+part '_category_box_divider.dart';
 
 class CategoryBox extends StatelessWidget {
   const CategoryBox({

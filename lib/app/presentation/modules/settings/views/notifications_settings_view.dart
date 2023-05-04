@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/app/core/localization/app_translations.dart';
+import 'package:groceries/app/config/localization/app_translations.dart';
 import 'package:groceries/app/presentation/modules/settings/widgets/notifications_settings_switch.dart';
 
 class NotificationsSettingsView extends StatelessWidget {

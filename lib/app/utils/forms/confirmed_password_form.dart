@@ -1,5 +1,5 @@
 import 'package:formz/formz.dart';
-import 'package:groceries/app/core/localization/app_translations.dart';
+import 'package:groceries/app/config/localization/app_translations.dart';
 
 /// A form input class that validates a confirmed
 /// password against a given [password].

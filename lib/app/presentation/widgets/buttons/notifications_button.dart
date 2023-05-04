@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/app/core/routes/app_named_routes.dart';
+import 'package:groceries/app/config/routes/app_named_routes.dart';
 import 'package:groceries/gen/assets.gen.dart';
 
 class NotificationsButton extends StatelessWidget {

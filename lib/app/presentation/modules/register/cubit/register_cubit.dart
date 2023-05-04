@@ -1,12 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
-import 'package:groceries/app/core/exceptions/register_with_email_and_password_failure.dart';
-import 'package:groceries/app/core/forms/confirmed_password_form.dart';
-import 'package:groceries/app/core/forms/display_name_form.dart';
-import 'package:groceries/app/core/forms/email_form.dart';
-import 'package:groceries/app/core/forms/register_password_form.dart';
 import 'package:groceries/app/data/repositories/firebase_auth_repository.dart';
+import 'package:groceries/app/utils/exceptions/register_with_email_and_password_failure.dart';
+import 'package:groceries/app/utils/forms/confirmed_password_form.dart';
+import 'package:groceries/app/utils/forms/display_name_form.dart';
+import 'package:groceries/app/utils/forms/email_form.dart';
+import 'package:groceries/app/utils/forms/register_password_form.dart';
 
 part 'register_state.dart';
 

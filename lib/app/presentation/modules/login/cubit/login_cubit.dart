@@ -1,11 +1,11 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
-import 'package:groceries/app/core/exceptions/login_with_email_password_failure.dart';
-import 'package:groceries/app/core/exceptions/login_with_google_failure.dart';
-import 'package:groceries/app/core/forms/email_form.dart';
-import 'package:groceries/app/core/forms/login_password_form.dart';
 import 'package:groceries/app/data/repositories/firebase_auth_repository.dart';
+import 'package:groceries/app/utils/exceptions/login_with_email_password_failure.dart';
+import 'package:groceries/app/utils/exceptions/login_with_google_failure.dart';
+import 'package:groceries/app/utils/forms/email_form.dart';
+import 'package:groceries/app/utils/forms/login_password_form.dart';
 
 part 'login_state.dart';
 

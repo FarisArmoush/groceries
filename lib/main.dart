@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:groceries/app/core/localization/remote_config_translations_loader.dart';
+import 'package:groceries/app/config/localization/remote_config_translations_loader.dart';
 import 'package:groceries/app/data/repositories/firebase_auth_repository.dart';
 import 'package:groceries/app/data/repositories/remote_config_repository.dart';
 import 'package:groceries/app/presentation/modules/app/widgets/app_bloc_provider.dart';

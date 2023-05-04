@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/app/core/constants/app_text_styles.dart';
-import 'package:groceries/app/core/localization/app_translations.dart';
+import 'package:groceries/app/config/localization/app_translations.dart';
 import 'package:groceries/app/presentation/modules/settings/widgets/appearnce_radios_list.dart';
+import 'package:groceries/app/utils/constants/app_text_styles.dart';
 
 class AppearanceSettingsView extends StatelessWidget {
   const AppearanceSettingsView({Key? key}) : super(key: key);

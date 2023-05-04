@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/app/core/localization/app_translations.dart';
+import 'package:groceries/app/config/localization/app_translations.dart';
 import 'package:groceries/app/data/models/grocery_list_model.dart';
 import 'package:groceries/app/presentation/modules/home/widgets/grocery_lists/create_new_grocery_list_card_button.dart';
 import 'package:groceries/app/presentation/modules/home/widgets/grocery_lists/grocery_lists_list.dart';

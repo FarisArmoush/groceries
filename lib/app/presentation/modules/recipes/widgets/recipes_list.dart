@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/app/core/routes/app_named_routes.dart';
+import 'package:groceries/app/config/routes/app_named_routes.dart';
 import 'package:groceries/app/data/models/recipe_model.dart';
 import 'package:groceries/app/presentation/modules/recipes/widgets/recipe_card/recipe_card.dart';
 

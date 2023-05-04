@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/app/core/localization/app_translations.dart';
+import 'package:groceries/app/config/localization/app_translations.dart';
 import 'package:groceries/app/presentation/modules/grocery_list/widgets/members/edit_list_image.dart';
 import 'package:groceries/app/presentation/modules/grocery_list/widgets/members/list_members_box.dart';
 import 'package:groceries/app/presentation/widgets/app_text_field.dart';

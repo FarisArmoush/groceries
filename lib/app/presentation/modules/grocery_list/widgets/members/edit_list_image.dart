@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:groceries/app/core/constants/color_constants.dart';
 import 'package:groceries/app/presentation/widgets/cached_image.dart';
+import 'package:groceries/app/utils/constants/color_constants.dart';
 import 'package:groceries/gen/assets.gen.dart';
 
 class EditListImage extends StatelessWidget {
