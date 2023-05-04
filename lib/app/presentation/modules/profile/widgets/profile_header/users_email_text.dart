@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/app/core/constants/app_text_styles.dart';
+import 'package:groceries/app/utils/constants/app_text_styles.dart';
 
 class UsersEmailText extends StatelessWidget {
   const UsersEmailText({

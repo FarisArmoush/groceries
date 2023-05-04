@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/app/core/constants/app_text_styles.dart';
-import 'package:groceries/app/core/localization/app_translations.dart';
+import 'package:groceries/app/config/localization/app_translations.dart';
+import 'package:groceries/app/utils/constants/app_text_styles.dart';
 
 class DeleteAccountBodyText extends StatelessWidget {
   const DeleteAccountBodyText({Key? key}) : super(key: key);

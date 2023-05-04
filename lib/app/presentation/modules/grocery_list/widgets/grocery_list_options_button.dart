@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:groceries/app/core/localization/app_translations.dart';
+import 'package:groceries/app/config/localization/app_translations.dart';
 import 'package:groceries/app/presentation/modules/grocery_list/widgets/grocery_list_options_bottom_sheet.dart';
 import 'package:groceries/gen/assets.gen.dart';
 

@@ -2,7 +2,7 @@ import 'dart:developer' as dev;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/app/core/localization/app_translations.dart';
+import 'package:groceries/app/config/localization/app_translations.dart';
 import 'package:groceries/app/presentation/modules/delete_account/cubit/delete_account_cubit.dart';
 import 'package:groceries/app/presentation/widgets/app_loading_indicator.dart';
 

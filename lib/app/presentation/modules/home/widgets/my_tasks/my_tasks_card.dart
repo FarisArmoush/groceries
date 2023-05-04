@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/app/core/constants/app_text_styles.dart';
-import 'package:groceries/app/core/localization/app_translations.dart';
+import 'package:groceries/app/config/localization/app_translations.dart';
 import 'package:groceries/app/data/models/task_model.dart';
 import 'package:groceries/app/presentation/widgets/cached_image.dart';
+import 'package:groceries/app/utils/constants/app_text_styles.dart';
 
 class MyTasksCard extends StatelessWidget {
   const MyTasksCard({

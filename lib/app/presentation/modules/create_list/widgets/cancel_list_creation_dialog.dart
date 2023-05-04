@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/app/core/localization/app_translations.dart';
+import 'package:groceries/app/config/localization/app_translations.dart';
 
 class CancelListCreationDialog extends StatelessWidget {
   const CancelListCreationDialog({Key? key}) : super(key: key);

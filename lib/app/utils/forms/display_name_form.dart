@@ -1,6 +1,6 @@
 import 'package:formz/formz.dart';
-import 'package:groceries/app/core/localization/app_translations.dart';
-import 'package:groceries/app/core/utils/app_reg_exps.dart';
+import 'package:groceries/app/config/localization/app_translations.dart';
+import 'package:groceries/app/utils/app_reg_exps.dart';
 
 class DisplayNameForm extends FormzInput<String, String> {
   const DisplayNameForm.pure() : super.dirty('');

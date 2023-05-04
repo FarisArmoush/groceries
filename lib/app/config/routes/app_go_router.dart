@@ -1,5 +1,5 @@
 import 'package:go_router/go_router.dart';
-import 'package:groceries/app/core/routes/app_named_routes.dart';
+import 'package:groceries/app/config/routes/app_named_routes.dart';
 import 'package:groceries/app/presentation/modules/create_list/views/create_list_view.dart';
 import 'package:groceries/app/presentation/modules/create_list/views/invite_users_to_list_view.dart';
 import 'package:groceries/app/presentation/modules/create_list/views/list_created_successfully_view.dart';

@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:groceries/app/core/exceptions/delete_account_exception.dart';
 import 'package:groceries/app/data/repositories/firebase_auth_repository.dart';
+import 'package:groceries/app/utils/exceptions/delete_account_exception.dart';
 
 part 'delete_account_state.dart';
 

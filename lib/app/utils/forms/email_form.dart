@@ -1,6 +1,6 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:formz/formz.dart';
-import 'package:groceries/app/core/localization/app_translations.dart';
+import 'package:groceries/app/config/localization/app_translations.dart';
 
 class EmailForm extends FormzInput<String, String> {
   const EmailForm.pure() : super.pure('');

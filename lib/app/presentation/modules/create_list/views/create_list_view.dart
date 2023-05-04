@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/app/core/localization/app_translations.dart';
-import 'package:groceries/app/core/routes/app_named_routes.dart';
+import 'package:groceries/app/config/localization/app_translations.dart';
+import 'package:groceries/app/config/routes/app_named_routes.dart';
 import 'package:groceries/app/presentation/modules/create_list/views/add_list_name_and_image_view.dart';
 import 'package:groceries/app/presentation/modules/create_list/widgets/cancel_list_creation_dialog.dart';
 import 'package:groceries/app/presentation/modules/create_list/widgets/create_new_list_fab.dart';

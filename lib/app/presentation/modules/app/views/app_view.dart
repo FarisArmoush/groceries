@@ -1,8 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/app/core/constants/theme/app_themes.dart';
-import 'package:groceries/app/core/routes/app_go_router.dart';
+import 'package:groceries/app/config/routes/app_go_router.dart';
+import 'package:groceries/app/config/theme/app_themes.dart';
 import 'package:groceries/app/presentation/blocs/remote_config/remote_config_cubit.dart';
 import 'package:groceries/app/presentation/blocs/theme/theme_cubit.dart';
 

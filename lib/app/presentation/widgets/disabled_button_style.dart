@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/app/core/constants/color_constants.dart';
+import 'package:groceries/app/utils/constants/color_constants.dart';
 
 class DisabledButtonStyle extends ButtonStyle {
   DisabledButtonStyle()

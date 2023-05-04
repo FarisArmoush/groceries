@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/app/core/constants/app_text_styles.dart';
-import 'package:groceries/app/core/localization/app_translations.dart';
+import 'package:groceries/app/config/localization/app_translations.dart';
 import 'package:groceries/app/presentation/blocs/auth/auth_bloc.dart';
+import 'package:groceries/app/utils/constants/app_text_styles.dart';
 
 class GreetingText extends StatelessWidget {
   const GreetingText({Key? key}) : super(key: key);
