@@ -10,8 +10,8 @@ import 'package:groceries/app/presentation/modules/register/cubit/register_cubit
 import 'package:groceries/app/presentation/widgets/app_snackbars/app_snack_bars.dart';
 import 'package:groceries/app/presentation/widgets/app_text_field.dart';
 import 'package:groceries/app/presentation/widgets/buttons/other_options_text_button.dart';
+import 'package:groceries/app/presentation/widgets/buttons_loading_indicator.dart';
 import 'package:groceries/app/presentation/widgets/disabled_button_style.dart';
-import 'package:groceries/app/presentation/widgets/loading_state_filled_button.dart';
 import 'package:groceries/app/utils/constants/app_text_styles.dart';
 import 'package:groceries/gen/assets.gen.dart';
 

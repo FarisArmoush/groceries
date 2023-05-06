@@ -9,9 +9,12 @@ class _RegisterButton extends StatelessWidget {
       buildWhen: (previous, current) => previous.status != current.status,
       builder: (context, state) {
         if (state.status.isSubmissionInProgress) {
-          // An untapable button with a loading indicator.
-          return LoadingStateFilledButton(
-            label: AppTranslations.register,
+          return IgnorePointer(
+            child: FilledButton.icon(
+              onPressed: () {},
+              icon: const ButtonsLoadingIndicator(),
+              label: Text(AppTranslations.register),
+            ),
           );
         }
         if (!state.status.isValidated) {

@@ -25,6 +25,9 @@ abstract class BaseAuthRepository {
     required String displayName,
   });
 
+  /// Sends an email to the user to reset their password
+  Future sendPasswordResetEmail({required String email});
+
   /// Signs in a user with Google.
   Future loginWithGoogle();
 

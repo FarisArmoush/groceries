@@ -17,6 +17,12 @@ class AppNamedRoutes {
   /// Forgot Password View
   static const String forgotPassword = 'forgotPassword';
 
+  /// Reset Password Sent Successfully View
+  ///
+  /// When the reset password email is sent to user then show him this view.
+  static const String resetPasswordSentSuccessfully =
+      'resetPasswordSentSuccessfully';
+
   /// Verification View
   static const String verification = 'ForgotPasswordverification';
 
