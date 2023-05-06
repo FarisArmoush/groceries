@@ -10,6 +10,7 @@ import 'package:groceries/app/utils/exceptions/login_with_email_password_failure
 import 'package:groceries/app/utils/exceptions/login_with_google_failure.dart';
 import 'package:groceries/app/utils/exceptions/logout_failure.dart';
 import 'package:groceries/app/utils/exceptions/register_with_email_and_password_failure.dart';
+import 'package:groceries/app/utils/exceptions/send_password_reset_email_exception.dart';
 
 /// Authentication Repository that uses the Firebase Auth Service
 class FirebaseAuthRepository implements BaseAuthRepository {
@@ -57,10 +58,8 @@ class FirebaseAuthRepository implements BaseAuthRepository {
             ),
           )
           .then(
-        (value) {
-          _firebaseAuth.currentUser!.updateDisplayName(displayName);
-        },
-      );
+            (_) => _firebaseAuth.currentUser!.updateDisplayName(displayName),
+          );
     } on FirebaseAuthException catch (e) {
       throw RegisterWithEmailAndPasswordFailure.fromCode(e.code);
     } catch (_) {
@@ -113,6 +112,17 @@ class FirebaseAuthRepository implements BaseAuthRepository {
       throw LoginWithEmailAndPasswordFailure.fromCode(e.code);
     } catch (_) {
       throw const LoginWithEmailAndPasswordFailure();
+    }
+  }
+
+  @override
+  Future sendPasswordResetEmail({required String email}) async {
+    try {
+      await _firebaseAuth.sendPasswordResetEmail(email: email);
+    } on FirebaseAuthException catch (e) {
+      throw SendPasswordResetEmailException.fromCode(e.code);
+    } catch (_) {
+      throw const SendPasswordResetEmailException();
     }
   }
 }

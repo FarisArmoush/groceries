@@ -9,7 +9,7 @@ class _AppColorScheme {
   static final dark = ColorScheme.fromSwatch().copyWith(
     brightness: Brightness.dark,
     primary: ColorConstants.red,
-    secondary: Colors.red,
+    secondary: ColorConstants.white,
     primaryContainer: ColorConstants.cardDarkGrey,
     onBackground: ColorConstants.white,
     background: ColorConstants.darkGrey,

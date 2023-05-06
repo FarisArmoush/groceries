@@ -10,10 +10,15 @@ class __AppElevatedButtonThemeData {
           borderRadius: BorderRadius.circular(12),
         ),
       ),
-      backgroundColor: MaterialStateProperty.all<Color>(
-        ColorConstants.black,
+      backgroundColor: MaterialStateProperty.resolveWith<Color>(
+        (Set<MaterialState> states) {
+          if (states.contains(MaterialState.disabled)) {
+            return ColorConstants.lightGrey;
+          }
+          return ColorConstants.black;
+        },
       ),
-      foregroundColor: MaterialStateProperty.all(
+      foregroundColor: MaterialStateProperty.all<Color>(
         ColorConstants.white,
       ),
       overlayColor: MaterialStateProperty.all(
@@ -38,11 +43,21 @@ class __AppElevatedButtonThemeData {
           borderRadius: BorderRadius.circular(12),
         ),
       ),
-      backgroundColor: MaterialStateProperty.all<Color>(
-        ColorConstants.white,
+      backgroundColor: MaterialStateProperty.resolveWith<Color>(
+        (Set<MaterialState> states) {
+          if (states.contains(MaterialState.disabled)) {
+            return ColorConstants.lightGrey;
+          }
+          return ColorConstants.white;
+        },
       ),
-      foregroundColor: MaterialStateProperty.all(
-        ColorConstants.black,
+      foregroundColor: MaterialStateProperty.resolveWith<Color>(
+        (Set<MaterialState> states) {
+          if (states.contains(MaterialState.disabled)) {
+            return ColorConstants.white;
+          }
+          return ColorConstants.black;
+        },
       ),
       overlayColor: MaterialStateProperty.all(
         ColorConstants.black.withOpacity(0.12),
