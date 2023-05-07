@@ -4,39 +4,39 @@ class _AppTextButtonThemeData {
   static final light = TextButtonThemeData(
     style: ButtonStyle(
       iconColor: MaterialStateProperty.all<Color>(
-        ColorConstants.black,
+        AppColors.black,
       ),
       foregroundColor: MaterialStateProperty.all<Color>(
-        ColorConstants.red,
+        AppColors.darkRed,
       ),
       textStyle: MaterialStateProperty.all<TextStyle>(
-        TextStyle(
+        const TextStyle(
           fontFamily: FontFamily.poppinsRegular,
           fontSize: 16,
-          color: ColorConstants.black,
+          color: AppColors.black,
         ),
       ),
       overlayColor: MaterialStateProperty.all<Color>(
-        ColorConstants.black.withOpacity(0.1),
+        AppColors.black.withOpacity(0.1),
       ),
     ),
   );
   static final dark = TextButtonThemeData(
     style: ButtonStyle(
       iconColor: MaterialStateProperty.all<Color>(
-        ColorConstants.white,
+        AppColors.white,
       ),
       foregroundColor: MaterialStateProperty.all<Color>(
-        Colors.red,
+        AppColors.lightRed,
       ),
       textStyle: MaterialStateProperty.all<TextStyle>(
         AppTextStyles.poppinsRegular(
-          color: ColorConstants.white,
+          color: AppColors.white,
           fontSize: 16,
         ),
       ),
       overlayColor: MaterialStateProperty.all<Color>(
-        ColorConstants.white.withOpacity(0.1),
+        AppColors.white.withOpacity(0.1),
       ),
     ),
   );

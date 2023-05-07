@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/app/utils/constants/app_colors.dart';
 import 'package:groceries/app/utils/constants/app_text_styles.dart';
-import 'package:groceries/app/utils/constants/color_constants.dart';
 
 class NotificationsSettingsSwitch extends StatefulWidget {
   const NotificationsSettingsSwitch({Key? key}) : super(key: key);
@@ -17,10 +17,10 @@ class _NotificationsSettingsSwitchState
   @override
   Widget build(BuildContext context) {
     return SwitchListTile.adaptive(
-      inactiveTrackColor: ColorConstants.black,
+      inactiveTrackColor: AppColors.black,
       activeColor: Theme.of(context).primaryColorLight,
-      inactiveThumbColor: ColorConstants.veryLightGrey,
-      activeTrackColor: ColorConstants.veryLightGrey,
+      inactiveThumbColor: AppColors.veryLightGrey,
+      activeTrackColor: AppColors.veryLightGrey,
       tileColor: Colors.transparent,
       value: value,
       title: Text(

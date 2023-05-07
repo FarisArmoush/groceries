@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/app/utils/constants/color_constants.dart';
+import 'package:groceries/app/utils/constants/app_colors.dart';
 
 class DisabledButtonStyle extends ButtonStyle {
   DisabledButtonStyle()
       : super(
           backgroundColor: MaterialStateProperty.all<Color>(
-            ColorConstants.lightGrey,
+            AppColors.lightGrey,
           ),
           elevation: MaterialStateProperty.all<double>(0),
           foregroundColor: MaterialStateProperty.all<Color>(
-            ColorConstants.white,
+            AppColors.white,
           ),
         );
 }

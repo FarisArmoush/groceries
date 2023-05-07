@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/config/routes/app_named_routes.dart';
+import 'package:groceries/app/utils/constants/app_colors.dart';
 import 'package:groceries/app/utils/constants/app_text_styles.dart';
-import 'package:groceries/app/utils/constants/color_constants.dart';
 import 'package:groceries/gen/assets.gen.dart';
 
 class CreateNewGroceryListCardButton extends StatelessWidget {
@@ -30,7 +30,7 @@ class CreateNewGroceryListCardButton extends StatelessWidget {
               SvgPicture.asset(
                 Assets.svg.icPlusCircle,
                 height: size.height * 0.1,
-                color: ColorConstants.white,
+                color: AppColors.white,
               ),
               SizedBox(
                 height: size.height * 0.02,
@@ -38,7 +38,7 @@ class CreateNewGroceryListCardButton extends StatelessWidget {
               Text(
                 text,
                 style: AppTextStyles.poppinsMedium(
-                  color: ColorConstants.white,
+                  color: AppColors.white,
                   fontSize: 22,
                 ),
               ),

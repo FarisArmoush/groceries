@@ -9,7 +9,7 @@ class _RegisterBodyText extends StatelessWidget {
       AppTranslations.createYourAccount,
       style: AppTextStyles.poppinsRegular(
         color: Theme.of(context).primaryColor,
-        fontSize: 28,
+        fontSize: 22,
       ),
     );
   }

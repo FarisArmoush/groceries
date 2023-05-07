@@ -4,10 +4,10 @@ class _AppFilledButtonThemeData {
   static final light = FilledButtonThemeData(
     style: ButtonStyle(
       shadowColor: MaterialStateProperty.all(
-        ColorConstants.black,
+        AppColors.black,
       ),
       overlayColor: MaterialStateProperty.all(
-        ColorConstants.white.withOpacity(0.25),
+        AppColors.white.withOpacity(0.25),
       ),
       elevation: MaterialStateProperty.all<double>(10),
       shape: MaterialStateProperty.all(
@@ -16,11 +16,11 @@ class _AppFilledButtonThemeData {
         ),
       ),
       backgroundColor: MaterialStateProperty.all<Color>(
-        ColorConstants.red,
+        AppColors.darkRed,
       ),
       textStyle: MaterialStateProperty.all<TextStyle>(
         AppTextStyles.poppinsRegular(
-          color: ColorConstants.white,
+          color: AppColors.white,
           fontSize: 16,
         ),
       ),
@@ -30,10 +30,10 @@ class _AppFilledButtonThemeData {
   static final dark = FilledButtonThemeData(
     style: ButtonStyle(
       shadowColor: MaterialStateProperty.all(
-        ColorConstants.white.withOpacity(0.2),
+        AppColors.white.withOpacity(0.2),
       ),
       overlayColor: MaterialStateProperty.all(
-        ColorConstants.white.withOpacity(0.3),
+        AppColors.white.withOpacity(0.3),
       ),
       elevation: MaterialStateProperty.all<double>(10),
       shape: MaterialStateProperty.all(
@@ -42,11 +42,11 @@ class _AppFilledButtonThemeData {
         ),
       ),
       backgroundColor: MaterialStateProperty.all<Color>(
-        Colors.red,
+        AppColors.lightRed,
       ),
       textStyle: MaterialStateProperty.all<TextStyle>(
         AppTextStyles.poppinsRegular(
-          color: ColorConstants.white,
+          color: AppColors.white,
           fontSize: 16,
         ),
       ),

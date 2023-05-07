@@ -11,7 +11,7 @@ class _LoginBodyText extends StatelessWidget {
       AppTranslations.loginToYourAccount,
       style: AppTextStyles.poppinsRegular(
         color: Theme.of(context).primaryColor,
-        fontSize: 28,
+        fontSize: 22,
       ),
     );
   }

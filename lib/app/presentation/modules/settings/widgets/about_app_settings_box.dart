@@ -6,8 +6,8 @@ import 'package:groceries/app/config/routes/app_named_routes.dart';
 import 'package:groceries/app/presentation/blocs/remote_config/remote_config_cubit.dart';
 import 'package:groceries/app/presentation/modules/settings/widgets/settings_list_tile.dart';
 import 'package:groceries/app/presentation/widgets/primary_box.dart';
+import 'package:groceries/app/utils/constants/app_colors.dart';
 import 'package:groceries/app/utils/constants/app_text_styles.dart';
-import 'package:groceries/app/utils/constants/color_constants.dart';
 import 'package:groceries/gen/assets.gen.dart';
 
 class AboutAppSettingsBox extends StatelessWidget {
@@ -38,7 +38,7 @@ class AboutAppSettingsBox extends StatelessWidget {
           SettingsListTile(
             title: AppTranslations.whatsNew,
             icon: Assets.svg.icPlus,
-            iconsBoxColor: Colors.red,
+            iconsBoxColor: AppColors.lightRed,
             onTap: () => context.pushNamed(AppNamedRoutes.whatsNew),
           ),
           SettingsListTile(
@@ -68,7 +68,7 @@ class AboutAppSettingsBox extends StatelessWidget {
           SettingsListTile(
             title: AppTranslations.followsUsOnTwitter,
             icon: Assets.svg.icTwitter,
-            iconsBoxColor: ColorConstants.twitterBlue,
+            iconsBoxColor: AppColors.twitterBlue,
             onTap: remoteConfigCubit.urlLauncherRepo.launchAppTwitterAccount,
           ),
         ],

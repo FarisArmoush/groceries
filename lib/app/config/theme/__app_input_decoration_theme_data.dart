@@ -3,16 +3,16 @@ part of 'app_themes.dart';
 class _AppInputDecorationThemeData {
   static final light = InputDecorationTheme(
     floatingLabelStyle: AppTextStyles.poppinsRegular(
-      color: ColorConstants.black,
+      color: AppColors.black,
       fontSize: 16,
     ),
-    suffixIconColor: ColorConstants.black,
+    suffixIconColor: AppColors.black,
     errorStyle: AppTextStyles.poppinsMedium(
-      color: ColorConstants.red,
+      color: AppColors.darkRed,
       fontSize: 12,
     ),
     labelStyle: AppTextStyles.poppinsRegular(
-      color: ColorConstants.lightGrey,
+      color: AppColors.lightGrey,
       fontSize: 16,
     ),
     enabledBorder: _circularBorder(),
@@ -25,16 +25,16 @@ class _AppInputDecorationThemeData {
 
   static final dark = InputDecorationTheme(
     floatingLabelStyle: AppTextStyles.poppinsRegular(
-      color: ColorConstants.white,
+      color: AppColors.white,
       fontSize: 16,
     ),
-    suffixIconColor: ColorConstants.white,
+    suffixIconColor: AppColors.white,
     errorStyle: AppTextStyles.poppinsMedium(
       fontSize: 12,
-      color: ColorConstants.red,
+      color: AppColors.darkRed,
     ),
     labelStyle: AppTextStyles.poppinsRegular(
-      color: ColorConstants.lightGrey,
+      color: AppColors.lightGrey,
       fontSize: 16,
     ),
     enabledBorder: _circularBorder(),
@@ -47,8 +47,8 @@ class _AppInputDecorationThemeData {
 
   static OutlineInputBorder _circularBorder() {
     return OutlineInputBorder(
-      borderSide: BorderSide(
-        color: ColorConstants.lightGrey,
+      borderSide: const BorderSide(
+        color: AppColors.lightGrey,
       ),
       borderRadius: BorderRadius.circular(radiusValue),
     );
@@ -56,8 +56,8 @@ class _AppInputDecorationThemeData {
 
   static OutlineInputBorder _activeCircularBorder() {
     return OutlineInputBorder(
-      borderSide: BorderSide(
-        color: Colors.red.shade500,
+      borderSide: const BorderSide(
+        color: AppColors.lightRed,
       ),
       borderRadius: BorderRadius.circular(radiusValue),
     );
@@ -65,8 +65,8 @@ class _AppInputDecorationThemeData {
 
   static OutlineInputBorder _errorCircularBorder() {
     return OutlineInputBorder(
-      borderSide: BorderSide(
-        color: ColorConstants.red,
+      borderSide: const BorderSide(
+        color: AppColors.darkRed,
       ),
       borderRadius: BorderRadius.circular(radiusValue),
     );

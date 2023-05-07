@@ -3,28 +3,28 @@ part of 'app_themes.dart';
 class _AppOutlinedButtonThemeData {
   static final light = OutlinedButtonThemeData(
     style: ButtonStyle(
-      shape: MaterialStateProperty.all(
+      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
         RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
       ),
       side: MaterialStateProperty.all<BorderSide>(
-        BorderSide(
-          color: ColorConstants.lightGrey,
+        const BorderSide(
+          color: AppColors.lightGrey,
         ),
       ),
-      overlayColor: MaterialStateProperty.all(
-        ColorConstants.black.withOpacity(0.15),
+      overlayColor: MaterialStateProperty.all<Color>(
+        AppColors.black.withOpacity(0.15),
       ),
-      foregroundColor: MaterialStateProperty.all(
-        ColorConstants.black,
+      foregroundColor: MaterialStateProperty.all<Color>(
+        AppColors.black,
       ),
       iconColor: MaterialStateProperty.all<Color>(
-        ColorConstants.black,
+        AppColors.black,
       ),
       textStyle: MaterialStateProperty.all(
         AppTextStyles.poppinsRegular(
-          color: ColorConstants.black,
+          color: AppColors.black,
           fontSize: 16,
         ),
       ),
@@ -39,22 +39,22 @@ class _AppOutlinedButtonThemeData {
         ),
       ),
       side: MaterialStateProperty.all<BorderSide>(
-        BorderSide(
-          color: ColorConstants.lightGrey,
+        const BorderSide(
+          color: AppColors.lightGrey,
         ),
       ),
-      overlayColor: MaterialStateProperty.all(
-        ColorConstants.white.withOpacity(0.25),
+      overlayColor: MaterialStateProperty.all<Color>(
+        AppColors.white.withOpacity(0.25),
       ),
-      foregroundColor: MaterialStateProperty.all(
-        ColorConstants.white,
+      foregroundColor: MaterialStateProperty.all<Color>(
+        AppColors.white,
       ),
       iconColor: MaterialStateProperty.all<Color>(
-        ColorConstants.white,
+        AppColors.white,
       ),
-      textStyle: MaterialStateProperty.all(
+      textStyle: MaterialStateProperty.all<TextStyle>(
         AppTextStyles.poppinsRegular(
-          color: ColorConstants.white,
+          color: AppColors.white,
           fontSize: 16,
         ),
       ),
