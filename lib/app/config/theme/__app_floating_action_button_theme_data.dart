@@ -2,16 +2,16 @@ part of 'app_themes.dart';
 
 class _AppFloatingActionButtonThemeData {
   static final light = FloatingActionButtonThemeData(
-    backgroundColor: ColorConstants.red,
+    backgroundColor: AppColors.darkRed,
     extendedTextStyle: AppTextStyles.poppinsRegular(
-      color: ColorConstants.white,
+      color: AppColors.white,
       fontSize: 16,
     ),
   );
   static final dark = FloatingActionButtonThemeData(
-    backgroundColor: Colors.red,
+    backgroundColor: AppColors.lightRed,
     extendedTextStyle: AppTextStyles.poppinsRegular(
-      color: ColorConstants.white,
+      color: AppColors.white,
       fontSize: 16,
     ),
   );

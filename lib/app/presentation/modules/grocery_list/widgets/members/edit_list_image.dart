@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/app/presentation/widgets/cached_image.dart';
-import 'package:groceries/app/utils/constants/color_constants.dart';
+import 'package:groceries/app/utils/constants/app_colors.dart';
 import 'package:groceries/gen/assets.gen.dart';
 
 class EditListImage extends StatelessWidget {
@@ -23,12 +23,12 @@ class EditListImage extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(8),
           child: CircleAvatar(
-            backgroundColor: ColorConstants.black70,
+            backgroundColor: AppColors.black.withOpacity(0.7),
             child: IconButton(
               onPressed: () {},
               icon: SvgPicture.asset(
                 Assets.svg.icEdit,
-                color: ColorConstants.white,
+                color: AppColors.white,
               ),
             ),
           ),

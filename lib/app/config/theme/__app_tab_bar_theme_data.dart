@@ -3,40 +3,40 @@ part of 'app_themes.dart';
 class _AppTabBarThemeData {
   static final light = TabBarTheme(
     labelStyle: AppTextStyles.poppinsRegular(
-      color: ColorConstants.black,
+      color: AppColors.black,
       fontSize: _labelTextSize,
     ),
     splashFactory: _splashFactory,
     unselectedLabelStyle: AppTextStyles.poppinsRegular(
-      color: ColorConstants.lightGrey,
+      color: AppColors.lightGrey,
       fontSize: _labelTextSize,
     ),
     overlayColor: MaterialStateProperty.all(
-      ColorConstants.white.withOpacity(0.1),
+      AppColors.white.withOpacity(0.1),
     ),
-    unselectedLabelColor: ColorConstants.lightGrey,
-    labelColor: ColorConstants.black,
+    unselectedLabelColor: AppColors.lightGrey,
+    labelColor: AppColors.black,
     dividerColor: Colors.transparent,
-    indicatorColor: Colors.red,
+    indicatorColor: AppColors.lightRed,
   );
 
   static final dark = TabBarTheme(
     labelStyle: AppTextStyles.poppinsRegular(
-      color: ColorConstants.white,
+      color: AppColors.white,
       fontSize: _labelTextSize,
     ),
     splashFactory: _splashFactory,
     unselectedLabelStyle: AppTextStyles.poppinsRegular(
-      color: ColorConstants.lightGrey,
+      color: AppColors.lightGrey,
       fontSize: _labelTextSize,
     ),
     overlayColor: MaterialStateProperty.all(
-      ColorConstants.white.withOpacity(0.1),
+      AppColors.white.withOpacity(0.1),
     ),
-    unselectedLabelColor: ColorConstants.lightGrey,
-    labelColor: ColorConstants.white,
+    unselectedLabelColor: AppColors.lightGrey,
+    labelColor: AppColors.white,
     dividerColor: Colors.transparent,
-    indicatorColor: ColorConstants.red,
+    indicatorColor: AppColors.darkRed,
   );
   static const _splashFactory = NoSplash.splashFactory;
   static const _labelTextSize = 16.0;

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:groceries/app/utils/constants/app_colors.dart';
 import 'package:groceries/app/utils/constants/app_text_styles.dart';
-import 'package:groceries/app/utils/constants/color_constants.dart';
 import 'package:groceries/gen/assets.gen.dart';
+
 part '__snackbar_message.dart';
 
 /// A utility class for creating [SnackBar]s with different types of messages
@@ -43,7 +44,7 @@ class AppSnackBars {
         children: [
           SvgPicture.asset(
             Assets.svg.icCheckCircle,
-            color: ColorConstants.white,
+            color: AppColors.white,
           ),
           const SizedBox(width: 16),
           _SnackbarMessage(message: message),
@@ -73,7 +74,7 @@ class AppSnackBars {
         children: [
           SvgPicture.asset(
             Assets.svg.icInfo,
-            color: ColorConstants.white,
+            color: AppColors.white,
           ),
           const SizedBox(width: 16),
           _SnackbarMessage(message: message),
@@ -103,7 +104,7 @@ class AppSnackBars {
         children: [
           SvgPicture.asset(
             Assets.svg.icAlertTriangle,
-            color: ColorConstants.white,
+            color: AppColors.white,
           ),
           const SizedBox(width: 16),
           _SnackbarMessage(message: warning),
@@ -125,7 +126,7 @@ class AppSnackBars {
       margin: _margin,
       behavior: _behavior,
       elevation: _elevation,
-      backgroundColor: Colors.red,
+      backgroundColor: AppColors.lightRed,
       content: Row(
         crossAxisAlignment: CrossAxisAlignment.baseline,
         textBaseline: TextBaseline.alphabetic,
@@ -133,7 +134,7 @@ class AppSnackBars {
         children: [
           SvgPicture.asset(
             Assets.svg.icCircleX,
-            color: ColorConstants.white,
+            color: AppColors.white,
           ),
           const SizedBox(width: _widthSpace),
           _SnackbarMessage(message: error),

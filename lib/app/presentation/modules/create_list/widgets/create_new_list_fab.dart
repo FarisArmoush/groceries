@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:groceries/app/utils/constants/color_constants.dart';
+import 'package:groceries/app/utils/constants/app_colors.dart';
 import 'package:groceries/gen/assets.gen.dart';
 
 class CreateNewListFAB extends StatelessWidget {
@@ -17,7 +17,7 @@ class CreateNewListFAB extends StatelessWidget {
       onPressed: onPressed,
       label: SvgPicture.asset(
         Assets.svg.icRightArrow,
-        color: ColorConstants.white,
+        color: AppColors.white,
       ),
     );
   }

@@ -13,25 +13,25 @@ class __AppElevatedButtonThemeData {
       backgroundColor: MaterialStateProperty.resolveWith<Color>(
         (Set<MaterialState> states) {
           if (states.contains(MaterialState.disabled)) {
-            return ColorConstants.lightGrey;
+            return AppColors.lightGrey;
           }
-          return ColorConstants.black;
+          return AppColors.black;
         },
       ),
       foregroundColor: MaterialStateProperty.all<Color>(
-        ColorConstants.white,
+        AppColors.white,
       ),
       overlayColor: MaterialStateProperty.all(
-        ColorConstants.white.withOpacity(0.12),
+        AppColors.white.withOpacity(0.12),
       ),
       textStyle: MaterialStateProperty.all<TextStyle>(
         AppTextStyles.poppinsRegular(
-          color: ColorConstants.white,
+          color: AppColors.white,
           fontSize: 16,
         ),
       ),
       iconColor: MaterialStateProperty.all<Color>(
-        ColorConstants.white,
+        AppColors.white,
       ),
     ),
   );
@@ -46,30 +46,30 @@ class __AppElevatedButtonThemeData {
       backgroundColor: MaterialStateProperty.resolveWith<Color>(
         (Set<MaterialState> states) {
           if (states.contains(MaterialState.disabled)) {
-            return ColorConstants.lightGrey;
+            return AppColors.lightGrey;
           }
-          return ColorConstants.white;
+          return AppColors.white;
         },
       ),
       foregroundColor: MaterialStateProperty.resolveWith<Color>(
         (Set<MaterialState> states) {
           if (states.contains(MaterialState.disabled)) {
-            return ColorConstants.white;
+            return AppColors.white;
           }
-          return ColorConstants.black;
+          return AppColors.black;
         },
       ),
       overlayColor: MaterialStateProperty.all(
-        ColorConstants.black.withOpacity(0.12),
+        AppColors.black.withOpacity(0.12),
       ),
       textStyle: MaterialStateProperty.all<TextStyle>(
         AppTextStyles.poppinsRegular(
-          color: ColorConstants.white,
+          color: AppColors.white,
           fontSize: 16,
         ),
       ),
       iconColor: MaterialStateProperty.all<Color>(
-        ColorConstants.white,
+        AppColors.white,
       ),
     ),
   );

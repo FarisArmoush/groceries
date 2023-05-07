@@ -1,10 +1,10 @@
 part of 'app_themes.dart';
 
 class _AppProgressIndicatorThemeData {
-  static final light = ProgressIndicatorThemeData(
-    color: ColorConstants.red,
+  static const light = ProgressIndicatorThemeData(
+    color: AppColors.darkRed,
   );
   static const dark = ProgressIndicatorThemeData(
-    color: Colors.red,
+    color: AppColors.lightRed,
   );
 }

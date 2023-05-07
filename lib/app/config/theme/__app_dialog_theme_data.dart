@@ -2,27 +2,27 @@ part of 'app_themes.dart';
 
 class _AppDialogThemeData {
   static final light = DialogTheme(
-    backgroundColor: ColorConstants.white,
+    backgroundColor: AppColors.white,
     elevation: 0,
     titleTextStyle: AppTextStyles.poppinsMedium(
-      color: ColorConstants.black,
+      color: AppColors.black,
       fontSize: 22,
     ),
     contentTextStyle: AppTextStyles.poppinsRegular(
-      color: ColorConstants.black,
+      color: AppColors.black,
       fontSize: 16,
     ),
     alignment: Alignment.center,
   );
   static final dark = DialogTheme(
-    backgroundColor: ColorConstants.darkGrey,
+    backgroundColor: AppColors.darkGrey,
     elevation: 0,
     titleTextStyle: AppTextStyles.poppinsMedium(
-      color: ColorConstants.white,
+      color: AppColors.white,
       fontSize: 22,
     ),
     contentTextStyle: AppTextStyles.poppinsRegular(
-      color: ColorConstants.white,
+      color: AppColors.white,
       fontSize: 16,
     ),
   );

@@ -1,17 +1,17 @@
 part of 'app_themes.dart';
 
 class _AppTextTheme {
-  static final light = TextTheme(
+  static const light = TextTheme(
     headlineLarge: TextStyle(
       fontFamily: FontFamily.poppinsSemiBold,
-      color: ColorConstants.black,
+      color: AppColors.black,
       fontSize: 32,
     ),
   );
-  static final dark = TextTheme(
+  static const dark = TextTheme(
     headlineLarge: TextStyle(
       fontFamily: FontFamily.poppinsSemiBold,
-      color: ColorConstants.white,
+      color: AppColors.white,
       fontSize: 32,
     ),
   );

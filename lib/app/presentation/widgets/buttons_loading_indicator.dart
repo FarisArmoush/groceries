@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/app/utils/constants/color_constants.dart';
+import 'package:groceries/app/utils/constants/app_colors.dart';
 
 class ButtonsLoadingIndicator extends StatelessWidget {
   const ButtonsLoadingIndicator({
@@ -9,12 +9,12 @@ class ButtonsLoadingIndicator extends StatelessWidget {
   final Color? backgroundColor;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return const SizedBox(
       height: 20,
       width: 20,
       child: CircularProgressIndicator.adaptive(
         strokeWidth: 2,
-        backgroundColor: ColorConstants.white,
+        backgroundColor: AppColors.white,
       ),
     );
   }

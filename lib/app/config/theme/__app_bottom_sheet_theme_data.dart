@@ -1,12 +1,12 @@
 part of 'app_themes.dart';
 
 class _AppBottomSheetThemeData {
-  static final light = BottomSheetThemeData(
-    backgroundColor: ColorConstants.white,
+  static const light = BottomSheetThemeData(
+    backgroundColor: AppColors.white,
     elevation: 0,
   );
-  static final dark = BottomSheetThemeData(
-    backgroundColor: ColorConstants.darkGrey,
+  static const dark = BottomSheetThemeData(
+    backgroundColor: AppColors.darkGrey,
     elevation: 0,
   );
 }

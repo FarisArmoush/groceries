@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries/app/presentation/modules/home/widgets/grocery_lists/grocery_lists_form.dart';
 import 'package:groceries/app/presentation/modules/home/widgets/home_header.dart';
 import 'package:groceries/app/presentation/modules/home/widgets/my_tasks/my_tasks_form.dart';
+import 'package:groceries/app/utils/constants/app_colors.dart';
 
 class HomeForm extends StatelessWidget {
   const HomeForm({Key? key}) : super(key: key);
@@ -25,6 +26,16 @@ class HomeForm extends StatelessWidget {
           height: size.height * 0.05,
         ),
         const MyTasksForm(),
+        Container(
+          height: 40,
+          width: size.width,
+          color: AppColors.darkRed,
+        ),
+        Container(
+          height: 40,
+          width: size.width,
+          color: AppColors.veryLightGrey,
+        ),
       ],
     );
   }
