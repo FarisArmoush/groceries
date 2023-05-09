@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/config/routes/app_named_routes.dart';
 import 'package:groceries/app/presentation/modules/additional_resources/views/additional_resources_view.dart';
+import 'package:groceries/app/presentation/modules/appearance/views/appearance_settings_view.dart';
 import 'package:groceries/app/presentation/modules/create_list/views/create_list_view.dart';
 import 'package:groceries/app/presentation/modules/create_list/views/invite_users_to_list_view.dart';
 import 'package:groceries/app/presentation/modules/create_list/views/list_created_successfully_view.dart';
@@ -15,6 +16,7 @@ import 'package:groceries/app/presentation/modules/grocery_list/views/grocery_li
 import 'package:groceries/app/presentation/modules/home/views/home_view.dart';
 import 'package:groceries/app/presentation/modules/login/views/login_view.dart';
 import 'package:groceries/app/presentation/modules/notifications/views/notifications_view.dart';
+import 'package:groceries/app/presentation/modules/notifications_settings/views/notifications_settings_view.dart';
 import 'package:groceries/app/presentation/modules/onboarding/views/onboarding_view.dart';
 import 'package:groceries/app/presentation/modules/page_not_found/views/page_not_found_view.dart';
 import 'package:groceries/app/presentation/modules/profile/views/account_settings_view.dart';
@@ -23,8 +25,6 @@ import 'package:groceries/app/presentation/modules/recipes/views/recipe_view.dar
 import 'package:groceries/app/presentation/modules/recipes/views/recipes_view.dart';
 import 'package:groceries/app/presentation/modules/register/views/register_view.dart';
 import 'package:groceries/app/presentation/modules/root/views/root_view.dart';
-import 'package:groceries/app/presentation/modules/settings/views/appearance_settings_view.dart';
-import 'package:groceries/app/presentation/modules/settings/views/notifications_settings_view.dart';
 import 'package:groceries/app/presentation/modules/settings/views/settings_view.dart';
 import 'package:groceries/app/presentation/modules/welcome/views/welcome_view.dart';
 import 'package:groceries/app/presentation/modules/wrapper/views/wrapper_view.dart';
