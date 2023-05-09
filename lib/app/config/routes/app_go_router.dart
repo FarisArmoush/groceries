@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/config/routes/app_named_routes.dart';
+import 'package:groceries/app/presentation/modules/additional_resources/views/additional_resources_view.dart';
 import 'package:groceries/app/presentation/modules/create_list/views/create_list_view.dart';
 import 'package:groceries/app/presentation/modules/create_list/views/invite_users_to_list_view.dart';
 import 'package:groceries/app/presentation/modules/create_list/views/list_created_successfully_view.dart';
@@ -22,13 +23,9 @@ import 'package:groceries/app/presentation/modules/recipes/views/recipe_view.dar
 import 'package:groceries/app/presentation/modules/recipes/views/recipes_view.dart';
 import 'package:groceries/app/presentation/modules/register/views/register_view.dart';
 import 'package:groceries/app/presentation/modules/root/views/root_view.dart';
-import 'package:groceries/app/presentation/modules/settings/views/about_view.dart';
 import 'package:groceries/app/presentation/modules/settings/views/appearance_settings_view.dart';
 import 'package:groceries/app/presentation/modules/settings/views/notifications_settings_view.dart';
-import 'package:groceries/app/presentation/modules/settings/views/privacy_policy_view.dart';
 import 'package:groceries/app/presentation/modules/settings/views/settings_view.dart';
-import 'package:groceries/app/presentation/modules/settings/views/terms_of_use_view.dart';
-import 'package:groceries/app/presentation/modules/settings/views/whats_new_view.dart';
 import 'package:groceries/app/presentation/modules/welcome/views/welcome_view.dart';
 import 'package:groceries/app/presentation/modules/wrapper/views/wrapper_view.dart';
 
@@ -190,24 +187,10 @@ class AppGoRouter {
                         const NotificationsSettingsView(),
                   ),
                   GoRoute(
-                    name: AppNamedRoutes.about,
-                    path: 'about',
-                    builder: (context, state) => const AboutView(),
-                  ),
-                  GoRoute(
-                    name: AppNamedRoutes.whatsNew,
-                    path: 'whatsNew',
-                    builder: (context, state) => const WhatsNewView(),
-                  ),
-                  GoRoute(
-                    name: AppNamedRoutes.privacyPolicy,
-                    path: 'privacyPolicy',
-                    builder: (context, state) => const PrivacyPolicyView(),
-                  ),
-                  GoRoute(
-                    name: AppNamedRoutes.termsOfUse,
-                    path: 'termsOfUse',
-                    builder: (context, state) => const TermsOfUseView(),
+                    name: AppNamedRoutes.additionalResources,
+                    path: 'additionalResources',
+                    builder: (context, state) =>
+                        const AdditionalResourcesView(),
                   ),
                 ],
               ),

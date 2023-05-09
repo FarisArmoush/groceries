@@ -36,18 +36,16 @@ class LogoutButton extends StatelessWidget {
         }
       },
       child: TileButton(
-        onTap: () {
-          showModalBottomSheet<LogoutDialog>(
-            enableDrag: false,
-            context: context,
-            builder: (context) {
-              return const LogoutDialog();
-            },
-          );
-        },
         title: AppTranslations.logout,
         icon: Assets.svg.icLogout,
         color: Theme.of(context).primaryColorLight,
+        onTap: () => showModalBottomSheet<LogoutDialog>(
+          enableDrag: false,
+          context: context,
+          builder: (context) {
+            return const LogoutDialog();
+          },
+        ),
       ),
     );
   }

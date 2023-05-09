@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:groceries/app/config/localization/app_translations.dart';
-import 'package:groceries/app/presentation/modules/settings/widgets/about_app_settings_box.dart';
-import 'package:groceries/app/presentation/modules/settings/widgets/general_settings_box.dart';
-import 'package:groceries/app/presentation/modules/settings/widgets/made_by_text.dart';
-import 'package:groceries/app/utils/constants/app_text_styles.dart';
+import 'package:groceries/app/config/routes/app_named_routes.dart';
+import 'package:groceries/app/presentation/modules/settings/widgets/settings_list_tile.dart';
+import 'package:groceries/gen/assets.gen.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({Key? key}) : super(key: key);
@@ -17,30 +17,49 @@ class SettingsView extends StatelessWidget {
       ),
       body: ListView(
         physics: const BouncingScrollPhysics(),
-        padding: const EdgeInsetsDirectional.all(16),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 14,
+        ),
         children: [
-          const GeneralSettingsBox(),
           SizedBox(
             height: size.height * 0.02,
           ),
-          const AboutAppSettingsBox(),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.03,
-          ),
-          Text(
-            AppTranslations.appName,
-            style: AppTextStyles.poppinsSemiBold(
-              color: Theme.of(context).primaryColor,
-              fontSize: 22,
-            ),
-            textAlign: TextAlign.center,
+          SettingsListTile(
+            title: AppTranslations.accountSettings,
+            subtitle: AppTranslations.accountSettingsDescription,
+            icon: Assets.svg.icUser,
+            onTap: () => context.pushNamed(AppNamedRoutes.accountSettings),
           ),
           SizedBox(
-            height: size.height * 0.015,
+            height: size.height * 0.01,
           ),
-          const MadeByText(),
+          SettingsListTile(
+            title: AppTranslations.notifications,
+            subtitle: AppTranslations.notificationSettingsDescription,
+            icon: Assets.svg.icBell,
+            onTap: () =>
+                context.pushNamed(AppNamedRoutes.notificationsSettings),
+          ),
           SizedBox(
-            height: size.height * 0.04,
+            height: size.height * 0.01,
+          ),
+          SettingsListTile(
+            title: AppTranslations.theme,
+            subtitle: AppTranslations.themeHeader,
+            icon: Assets.svg.icPalette,
+            onTap: () => context.pushNamed(AppNamedRoutes.appearanceSettings),
+          ),
+          SizedBox(
+            height: size.height * 0.01,
+          ),
+          SettingsListTile(
+            title: AppTranslations.additionalResources,
+            subtitle: AppTranslations.additionalResourcesDescription,
+            icon: Assets.svg.icVerticalThreeDots,
+            onTap: () => context.pushNamed(AppNamedRoutes.additionalResources),
+          ),
+          SizedBox(
+            height: size.height * 0.01,
           ),
         ],
       ),
