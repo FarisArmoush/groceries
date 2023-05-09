@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/app/presentation/modules/profile/widgets/profile_header/display_name_text.dart';
-import 'package:groceries/app/presentation/modules/profile/widgets/profile_header/users_email_text.dart';
+import 'package:groceries/app/presentation/modules/profile/widgets/display_name_text.dart';
+import 'package:groceries/app/presentation/modules/profile/widgets/users_email_text.dart';
 import 'package:groceries/app/presentation/widgets/cached_image.dart';
 
 class ProfileHeader extends StatelessWidget {

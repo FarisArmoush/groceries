@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/app/config/localization/app_translations.dart';
-import 'package:groceries/app/presentation/modules/settings/widgets/notifications_settings_switch.dart';
+import 'package:groceries/app/presentation/modules/notifications_settings/widgets/notifications_settings_switch.dart';
 
 class NotificationsSettingsView extends StatelessWidget {
   const NotificationsSettingsView({Key? key}) : super(key: key);

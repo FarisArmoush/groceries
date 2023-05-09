@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/config/routes/app_named_routes.dart';
+import 'package:groceries/app/presentation/modules/account_settings/views/account_settings_view.dart';
 import 'package:groceries/app/presentation/modules/additional_resources/views/additional_resources_view.dart';
 import 'package:groceries/app/presentation/modules/appearance/views/appearance_settings_view.dart';
 import 'package:groceries/app/presentation/modules/create_list/views/create_list_view.dart';
@@ -19,7 +20,6 @@ import 'package:groceries/app/presentation/modules/notifications/views/notificat
 import 'package:groceries/app/presentation/modules/notifications_settings/views/notifications_settings_view.dart';
 import 'package:groceries/app/presentation/modules/onboarding/views/onboarding_view.dart';
 import 'package:groceries/app/presentation/modules/page_not_found/views/page_not_found_view.dart';
-import 'package:groceries/app/presentation/modules/profile/views/account_settings_view.dart';
 import 'package:groceries/app/presentation/modules/profile/views/profile_view.dart';
 import 'package:groceries/app/presentation/modules/recipes/views/recipe_view.dart';
 import 'package:groceries/app/presentation/modules/recipes/views/recipes_view.dart';
@@ -159,18 +159,6 @@ class AppGoRouter {
             builder: (context, state) => const ProfileView(),
             routes: [
               GoRoute(
-                name: AppNamedRoutes.accountSettings,
-                path: 'accountSettings',
-                builder: (context, state) => const AccountSettingsView(),
-                routes: [
-                  GoRoute(
-                    name: AppNamedRoutes.deleteAccount,
-                    path: 'deleteAccount',
-                    builder: (context, state) => const DeleteAccountView(),
-                  ),
-                ],
-              ),
-              GoRoute(
                 name: AppNamedRoutes.settings,
                 path: 'settings',
                 builder: (context, state) => const SettingsView(),
@@ -191,6 +179,18 @@ class AppGoRouter {
                     path: 'additionalResources',
                     builder: (context, state) =>
                         const AdditionalResourcesView(),
+                  ),
+                  GoRoute(
+                    name: AppNamedRoutes.accountSettings,
+                    path: 'accountSettings',
+                    builder: (context, state) => const AccountSettingsView(),
+                    routes: [
+                      GoRoute(
+                        name: AppNamedRoutes.deleteAccount,
+                        path: 'deleteAccount',
+                        builder: (context, state) => const DeleteAccountView(),
+                      ),
+                    ],
                   ),
                 ],
               ),
