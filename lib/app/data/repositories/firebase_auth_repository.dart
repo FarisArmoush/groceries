@@ -1,10 +1,11 @@
-// ignore_for_file: strict_raw_type
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:groceries/app/domain/repositories/base_auth_repository.dart';
+import 'package:groceries/app/domain/usecases/set_user_data_in_firestore_use_case.dart';
+import 'package:groceries/app/domain/usecases/update_display_name_in_firestore_use_case.dart';
 import 'package:groceries/app/utils/exceptions/delete_account_exception.dart';
 import 'package:groceries/app/utils/exceptions/login_with_email_password_failure.dart';
 import 'package:groceries/app/utils/exceptions/login_with_google_failure.dart';
@@ -34,7 +35,7 @@ class FirebaseAuthRepository implements BaseAuthRepository {
   User? get currentUser => _firebaseAuth.currentUser;
 
   @override
-  Future signUpWithEmailAndPassword({
+  Future<void> signUpWithEmailAndPassword({
     required String email,
     required String password,
     required String displayName,
@@ -46,15 +47,10 @@ class FirebaseAuthRepository implements BaseAuthRepository {
             password: password,
           )
           .then(
-            (currentUser) => _firestore
-                .collection('users')
-                .doc('${currentUser.user?.uid}')
-                .set(
-              {
-                'uid': currentUser.user?.uid,
-                'email': email,
-                'displayName': displayName,
-              },
+            (currentUser) => SetUserDataInFirestoreUseCase(_firestore).setData(
+              uid: currentUser.user!.uid,
+              email: email,
+              displayName: displayName,
             ),
           )
           .then(
@@ -68,7 +64,7 @@ class FirebaseAuthRepository implements BaseAuthRepository {
   }
 
   @override
-  Future deleteAccount() async {
+  Future<void> deleteAccount() async {
     try {
       await _firestore.collection('users').doc(currentUser?.uid).delete();
       await currentUser?.delete();
@@ -78,7 +74,7 @@ class FirebaseAuthRepository implements BaseAuthRepository {
   }
 
   @override
-  Future logOut() async {
+  Future<void> logOut() async {
     try {
       await Future.wait([
         _firebaseAuth.signOut(),
@@ -90,7 +86,7 @@ class FirebaseAuthRepository implements BaseAuthRepository {
   }
 
   @override
-  Future loginWithGoogle() async {
+  Future<void> loginWithGoogle() async {
     try {
       await _googleSignIn.signIn();
     } catch (e) {
@@ -99,7 +95,7 @@ class FirebaseAuthRepository implements BaseAuthRepository {
   }
 
   @override
-  Future signInWithEmailAndPassword({
+  Future<void> signInWithEmailAndPassword({
     required String email,
     required String password,
   }) async {
@@ -116,13 +112,29 @@ class FirebaseAuthRepository implements BaseAuthRepository {
   }
 
   @override
-  Future sendPasswordResetEmail({required String email}) async {
+  Future<void> sendPasswordResetEmail({required String email}) async {
     try {
       await _firebaseAuth.sendPasswordResetEmail(email: email);
     } on FirebaseAuthException catch (e) {
       throw SendPasswordResetEmailException.fromCode(e.code);
     } catch (_) {
       throw const SendPasswordResetEmailException();
+    }
+  }
+
+  @override
+  Future<void> updateDisplayName(String newName) async {
+    try {
+      await currentUser?.updateDisplayName(newName).then(
+            (_) => {
+              UpdateDisplayNameInFirestoreUseCase(_firestore).update(
+                newName: newName,
+                uid: currentUser!.uid,
+              ),
+            },
+          );
+    } catch (e) {
+      throw Exception('Failed to update username');
     }
   }
 }
