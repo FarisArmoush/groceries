@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/app/config/localization/app_translations.dart';
 import 'package:groceries/app/presentation/blocs/theme/theme_cubit.dart';
-import 'package:groceries/app/presentation/modules/settings/widgets/appearance_radio.dart';
+import 'package:groceries/app/presentation/modules/appearance/widgets/appearance_radio.dart';
 import 'package:groceries/app/presentation/widgets/primary_box.dart';
 
 class AppearanceRadiosList extends StatelessWidget {

@@ -8,6 +8,7 @@ part '__app_app_bar_theme_data.dart';
 part '__app_bottom_sheet_theme_data.dart';
 part '__app_color_scheme.dart';
 part '__app_dialog_theme_data.dart';
+part '__app_divider_theme_data.dart';
 part '__app_elevated_button_theme_data.dart';
 part '__app_filled_button_theme_data.dart';
 part '__app_floating_action_button_theme_data.dart';
@@ -49,7 +50,7 @@ class AppThemes {
     tabBarTheme: _AppTabBarThemeData.light,
     textTheme: _AppTextTheme.light,
     floatingActionButtonTheme: _AppFloatingActionButtonThemeData.light,
-    // fontFamily: FontFamily.poppinsRegular,
+    dividerTheme: _AppDividerThemeData.light,
   );
 
   static final ThemeData darkTheme = ThemeData.dark(
@@ -79,5 +80,6 @@ class AppThemes {
     tabBarTheme: _AppTabBarThemeData.dark,
     textTheme: _AppTextTheme.dark,
     floatingActionButtonTheme: _AppFloatingActionButtonThemeData.dark,
+    dividerTheme: _AppDividerThemeData.dark,
   );
 }

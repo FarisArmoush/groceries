@@ -128,4 +128,18 @@ class AppTranslations {
 
   static final dontDeleteAccount = 'dont_delete_account'.tr();
   static final yesDeleteAccount = 'yes_delete_account'.tr();
+  static final version = 'version'.tr();
+  static final legal = 'legal'.tr();
+  static final getHelp = 'get_help'.tr();
+  static final sendCrashReports = 'send_crash_reports'.tr();
+  static final sendCrashReportsDescription =
+      'send_crash_reports_description'.tr();
+
+  static final additionalResources = 'additional_resources'.tr();
+  static final additionalResourcesDescription =
+      'additional_resources_description'.tr();
+
+  static final accountSettingsDescription = 'account_settings_description'.tr();
+  static final notificationSettingsDescription =
+      'notification_settings_description'.tr();
 }

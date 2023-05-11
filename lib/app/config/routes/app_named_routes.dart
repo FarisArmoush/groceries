@@ -84,17 +84,8 @@ class AppNamedRoutes {
   /// Notifications Settings View
   static const String notificationsSettings = 'notificationsSettings';
 
-  /// About View
-  static const String about = 'about';
-
-  /// What's New View
-  static const String whatsNew = 'whatsNew';
-
-  /// Privacy Policy View
-  static const String privacyPolicy = 'privacyPolicy';
-
-  /// Terms Of Use View
-  static const String termsOfUse = 'termsOfUse';
+  /// Additional Resources View
+  static const String additionalResources = 'additionalResources';
 
   /// Page Not Found View
   ///

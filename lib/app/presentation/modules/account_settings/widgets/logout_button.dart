@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/app/config/localization/app_translations.dart';
 import 'package:groceries/app/config/routes/app_named_routes.dart';
 import 'package:groceries/app/presentation/blocs/auth/auth_bloc.dart';
-import 'package:groceries/app/presentation/modules/profile/widgets/logout_dialog.dart';
+import 'package:groceries/app/presentation/modules/account_settings/widgets/logout_dialog.dart';
 import 'package:groceries/app/presentation/widgets/app_snackbars/app_snack_bars.dart';
 import 'package:groceries/app/presentation/widgets/buttons/tile_button.dart';
 import 'package:groceries/gen/assets.gen.dart';
@@ -21,7 +21,7 @@ class LogoutButton extends StatelessWidget {
             ..hideCurrentSnackBar()
             ..showSnackBar(
               AppSnackBars.informative(
-                message: "Logged out, Successfully.\nWe'll Miss you.",
+                message: "We'll Miss you.",
               ),
             );
           context.pushReplacementNamed(AppNamedRoutes.welcome);
@@ -36,18 +36,14 @@ class LogoutButton extends StatelessWidget {
         }
       },
       child: TileButton(
-        onTap: () {
-          showModalBottomSheet<LogoutDialog>(
-            enableDrag: false,
-            context: context,
-            builder: (context) {
-              return const LogoutDialog();
-            },
-          );
-        },
         title: AppTranslations.logout,
         icon: Assets.svg.icLogout,
         color: Theme.of(context).primaryColorLight,
+        onTap: () => showModalBottomSheet<LogoutDialog>(
+          enableDrag: false,
+          context: context,
+          builder: (context) => const LogoutDialog(),
+        ),
       ),
     );
   }

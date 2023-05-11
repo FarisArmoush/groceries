@@ -24,12 +24,16 @@ class LogoutDialog extends StatelessWidget {
           children: [
             Text(
               AppTranslations.logoutFromApp,
+              style: Theme.of(context).dialogTheme.titleTextStyle,
+              textAlign: TextAlign.center,
             ),
             SizedBox(
               height: size.height * 0.02,
             ),
             Text(
               AppTranslations.youSureYouWantToLogout,
+              style: Theme.of(context).dialogTheme.contentTextStyle,
+              textAlign: TextAlign.center,
             ),
             SizedBox(
               height: size.height * 0.01,

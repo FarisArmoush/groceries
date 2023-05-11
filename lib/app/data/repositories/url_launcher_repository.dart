@@ -40,6 +40,45 @@ class UrlLauncherRepository extends BaseUrlLauncherRepository {
 
   @override
   Future<void> sendFeedbackToAppEmail() async {
-    throw UnimplementedError();
+    final uri = Uri.https(
+      remoteConfigRepo.developerTwitterAccountAuthority,
+      remoteConfigRepo.developerTwitterAccountPath,
+    );
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    }
+  }
+
+  @override
+  Future<void> launchAboutAppWebsite() async {
+    final uri = Uri.https(
+      remoteConfigRepo.aboutAppAuthority,
+      remoteConfigRepo.aboutAppPath,
+    );
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    }
+  }
+
+  @override
+  Future<void> launchPrivacyPolicyWebsite() async {
+    final uri = Uri.https(
+      remoteConfigRepo.privacyPolicyAuthority,
+      remoteConfigRepo.privacyPolicyPath,
+    );
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    }
+  }
+
+  @override
+  Future<void> launchTermsOfUseWebsite() async {
+    final uri = Uri.https(
+      remoteConfigRepo.termsOfUseAuthority,
+      remoteConfigRepo.termsOfUsePath,
+    );
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    }
   }
 }
