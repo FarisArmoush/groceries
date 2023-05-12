@@ -15,12 +15,6 @@ class _AppInputDecorationThemeData {
       color: AppColors.lightGrey,
       fontSize: 16,
     ),
-    enabledBorder: _circularBorder(),
-    border: _circularBorder(),
-    disabledBorder: _circularBorder(),
-    focusedBorder: _activeCircularBorder(),
-    errorBorder: _errorCircularBorder(),
-    focusedErrorBorder: _errorCircularBorder(),
   );
 
   static final dark = InputDecorationTheme(
@@ -31,46 +25,11 @@ class _AppInputDecorationThemeData {
     suffixIconColor: AppColors.white,
     errorStyle: AppTextStyles.poppinsMedium(
       fontSize: 12,
-      color: AppColors.darkRed,
+      color: AppColors.lightRed,
     ),
     labelStyle: AppTextStyles.poppinsRegular(
       color: AppColors.lightGrey,
       fontSize: 16,
     ),
-    enabledBorder: _circularBorder(),
-    border: _circularBorder(),
-    disabledBorder: _circularBorder(),
-    focusedBorder: _activeCircularBorder(),
-    errorBorder: _errorCircularBorder(),
-    focusedErrorBorder: _errorCircularBorder(),
   );
-
-  static OutlineInputBorder _circularBorder() {
-    return OutlineInputBorder(
-      borderSide: const BorderSide(
-        color: AppColors.lightGrey,
-      ),
-      borderRadius: BorderRadius.circular(radiusValue),
-    );
-  }
-
-  static OutlineInputBorder _activeCircularBorder() {
-    return OutlineInputBorder(
-      borderSide: const BorderSide(
-        color: AppColors.lightRed,
-      ),
-      borderRadius: BorderRadius.circular(radiusValue),
-    );
-  }
-
-  static OutlineInputBorder _errorCircularBorder() {
-    return OutlineInputBorder(
-      borderSide: const BorderSide(
-        color: AppColors.darkRed,
-      ),
-      borderRadius: BorderRadius.circular(radiusValue),
-    );
-  }
-
-  static const radiusValue = 12.0;
 }
