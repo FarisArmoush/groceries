@@ -5,7 +5,6 @@ import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/config/localization/app_translations.dart';
 import 'package:groceries/app/config/routes/app_named_routes.dart';
-import 'package:groceries/app/presentation/modules/login/widgets/or_divider.dart';
 import 'package:groceries/app/presentation/modules/register/cubit/register_cubit.dart';
 import 'package:groceries/app/presentation/widgets/app_snackbars/app_snack_bars.dart';
 import 'package:groceries/app/presentation/widgets/app_text_field.dart';
@@ -88,14 +87,6 @@ class RegisterForm extends StatelessWidget {
             height: size.height * 0.04,
           ),
           const _RegisterButton(),
-          SizedBox(
-            height: size.height * 0.01,
-          ),
-          const OrDivider(),
-          SizedBox(
-            height: size.height * 0.01,
-          ),
-          const _RegisterWithGoogleButton(),
           SizedBox(
             height: size.height * 0.03,
           ),

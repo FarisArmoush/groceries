@@ -45,6 +45,10 @@ class WelcomeView extends StatelessWidget {
               ),
               child: Text(AppTranslations.login),
             ),
+            TextButton(
+              onPressed: () => throw Exception('Oh yeah'),
+              child: const Text('Throw Exception'),
+            ),
           ],
         ),
       ),
