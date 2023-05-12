@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/config/localization/app_translations.dart';
 import 'package:groceries/app/config/routes/app_named_routes.dart';
+import 'package:groceries/app/presentation/blocs/auth/auth_bloc.dart';
 import 'package:groceries/app/presentation/modules/settings/widgets/settings_list_tile.dart';
+import 'package:groceries/app/presentation/modules/settings/widgets/user_data_box.dart';
 import 'package:groceries/gen/assets.gen.dart';
 
 class SettingsView extends StatelessWidget {
@@ -10,6 +13,7 @@ class SettingsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final user = context.watch<AuthBloc>().authRepo.currentUser;
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
@@ -21,8 +25,13 @@ class SettingsView extends StatelessWidget {
           horizontal: 14,
         ),
         children: [
-          SizedBox(
-            height: size.height * 0.02,
+          UserDataBox(
+            imageUrl: user?.photoURL,
+            displayName: user?.displayName,
+            email: user?.email,
+          ),
+          Divider(
+            height: size.height * 0.05,
           ),
           SettingsListTile(
             title: AppTranslations.accountSettings,

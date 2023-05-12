@@ -20,7 +20,6 @@ import 'package:groceries/app/presentation/modules/notifications/views/notificat
 import 'package:groceries/app/presentation/modules/notifications_settings/views/notifications_settings_view.dart';
 import 'package:groceries/app/presentation/modules/onboarding/views/onboarding_view.dart';
 import 'package:groceries/app/presentation/modules/page_not_found/views/page_not_found_view.dart';
-import 'package:groceries/app/presentation/modules/profile/views/profile_view.dart';
 import 'package:groceries/app/presentation/modules/recipes/views/recipe_view.dart';
 import 'package:groceries/app/presentation/modules/recipes/views/recipes_view.dart';
 import 'package:groceries/app/presentation/modules/register/views/register_view.dart';
@@ -154,43 +153,34 @@ class AppGoRouter {
             ],
           ),
           GoRoute(
-            name: AppNamedRoutes.profile,
-            path: 'profile',
-            builder: (context, state) => const ProfileView(),
+            name: AppNamedRoutes.settings,
+            path: 'settings',
+            builder: (context, state) => const SettingsView(),
             routes: [
               GoRoute(
-                name: AppNamedRoutes.settings,
-                path: 'settings',
-                builder: (context, state) => const SettingsView(),
+                name: AppNamedRoutes.appearanceSettings,
+                path: 'appearanceSettings',
+                builder: (context, state) => const AppearanceSettingsView(),
+              ),
+              GoRoute(
+                name: AppNamedRoutes.notificationsSettings,
+                path: 'notificationsSettings',
+                builder: (context, state) => const NotificationsSettingsView(),
+              ),
+              GoRoute(
+                name: AppNamedRoutes.additionalResources,
+                path: 'additionalResources',
+                builder: (context, state) => const AdditionalResourcesView(),
+              ),
+              GoRoute(
+                name: AppNamedRoutes.accountSettings,
+                path: 'accountSettings',
+                builder: (context, state) => const AccountSettingsView(),
                 routes: [
                   GoRoute(
-                    name: AppNamedRoutes.appearanceSettings,
-                    path: 'appearanceSettings',
-                    builder: (context, state) => const AppearanceSettingsView(),
-                  ),
-                  GoRoute(
-                    name: AppNamedRoutes.notificationsSettings,
-                    path: 'notificationsSettings',
-                    builder: (context, state) =>
-                        const NotificationsSettingsView(),
-                  ),
-                  GoRoute(
-                    name: AppNamedRoutes.additionalResources,
-                    path: 'additionalResources',
-                    builder: (context, state) =>
-                        const AdditionalResourcesView(),
-                  ),
-                  GoRoute(
-                    name: AppNamedRoutes.accountSettings,
-                    path: 'accountSettings',
-                    builder: (context, state) => const AccountSettingsView(),
-                    routes: [
-                      GoRoute(
-                        name: AppNamedRoutes.deleteAccount,
-                        path: 'deleteAccount',
-                        builder: (context, state) => const DeleteAccountView(),
-                      ),
-                    ],
+                    name: AppNamedRoutes.deleteAccount,
+                    path: 'deleteAccount',
+                    builder: (context, state) => const DeleteAccountView(),
                   ),
                 ],
               ),

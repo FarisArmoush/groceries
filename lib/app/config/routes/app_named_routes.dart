@@ -38,9 +38,6 @@ class AppNamedRoutes {
   /// Recipe View
   static const String recipe = 'recipe';
 
-  /// Profile View
-  static const String profile = 'profile';
-
   /// Add Items to list View
   static const String addItems = 'addItems';
 

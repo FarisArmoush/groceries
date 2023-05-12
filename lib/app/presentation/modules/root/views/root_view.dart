@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/app/presentation/modules/home/views/home_view.dart';
-import 'package:groceries/app/presentation/modules/profile/views/profile_view.dart';
 import 'package:groceries/app/presentation/modules/recipes/views/recipes_view.dart';
+import 'package:groceries/app/presentation/modules/settings/views/settings_view.dart';
 import 'package:groceries/gen/assets.gen.dart';
 
 class RootView extends StatefulWidget {
@@ -34,7 +34,7 @@ class _RootViewState extends State<RootView> {
   final List<Widget> views = [
     const HomeView(),
     const RecipesView(),
-    const ProfileView(),
+    const SettingsView(),
   ];
   List<BottomNavigationBarItem> bnb(BuildContext context) {
     return [
@@ -50,8 +50,8 @@ class _RootViewState extends State<RootView> {
       ),
       bnbItem(
         context,
-        label: 'Profile',
-        asset: Assets.svg.icUser,
+        label: 'Settings',
+        asset: Assets.svg.icSettings,
       ),
     ];
   }
