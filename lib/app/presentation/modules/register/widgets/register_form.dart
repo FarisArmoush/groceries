@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/app/config/localization/app_translations.dart';
@@ -12,7 +11,6 @@ import 'package:groceries/app/presentation/widgets/buttons/other_options_text_bu
 import 'package:groceries/app/presentation/widgets/buttons_loading_indicator.dart';
 import 'package:groceries/app/presentation/widgets/disabled_button_style.dart';
 import 'package:groceries/app/utils/constants/app_text_styles.dart';
-import 'package:groceries/gen/assets.gen.dart';
 
 part '__register_body_text.dart';
 part '__register_button.dart';
@@ -21,7 +19,6 @@ part '__register_display_name_text_field.dart';
 part '__register_email_text_field.dart';
 part '__register_header.dart';
 part '__register_password_text_field.dart';
-part '__register_with_google_button.dart';
 
 class RegisterForm extends StatelessWidget {
   const RegisterForm({Key? key}) : super(key: key);
