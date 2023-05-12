@@ -72,6 +72,7 @@ class AppTextField extends StatelessWidget {
         fontSize: 14,
       ),
       decoration: InputDecoration(
+        suffixIconColor: Theme.of(context).primaryColor,
         suffix: suffix,
         prefix: prefix,
         prefixIcon: prefixIcon,
@@ -81,12 +82,7 @@ class AppTextField extends StatelessWidget {
           color: Theme.of(context).hintColor,
           fontSize: 16,
         ),
-        suffixIconColor: Theme.of(context).primaryColor,
         errorText: errorText,
-        errorStyle: AppTextStyles.poppinsMedium(
-          color: Theme.of(context).primaryColorLight,
-          fontSize: 12,
-        ),
         floatingLabelStyle: AppTextStyles.poppinsRegular(
           color: Theme.of(context).primaryColor,
           fontSize: 16,
