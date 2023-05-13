@@ -60,6 +60,9 @@ flutter_native_splash:
   android: true
   ios: true
 
+flutter_gen: 
+  output: lib/utils/constants/
+
 flutter:
   uses-material-design: true
   assets:
