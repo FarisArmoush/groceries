@@ -64,8 +64,7 @@ class SettingsListTile extends StatelessWidget {
             const SizedBox(
               width: 20,
             ),
-            SvgPicture.asset(
-              Assets.svg.icRightArrow,
+            Assets.svg.icRightArrow.svg(
               color: Theme.of(context).hintColor,
             ),
           ],

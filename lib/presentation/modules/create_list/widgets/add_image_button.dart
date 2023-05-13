@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -11,8 +10,7 @@ class AddImageButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton.icon(
       onPressed: () {},
-      icon: SvgPicture.asset(
-        Assets.svg.icCamera,
+      icon: Assets.svg.icCamera.svg(
         color: Theme.of(context).primaryColor,
       ),
       label: Text(

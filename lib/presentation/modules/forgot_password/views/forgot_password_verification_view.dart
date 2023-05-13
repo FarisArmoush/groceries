@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/widgets/buttons/other_options_text_button.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
@@ -26,8 +25,7 @@ class ForgotPasswordVerificationView extends StatelessWidget {
             SizedBox(
               height: size.width * 0.07,
             ),
-            SvgPicture.asset(
-              Assets.svg.icVerified,
+            Assets.svg.icVerified.svg(
               height: MediaQuery.of(context).size.height * 0.15,
               color: Theme.of(context).primaryColor,
             ),

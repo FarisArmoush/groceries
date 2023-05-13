@@ -20,7 +20,7 @@ class GroceryListSecondaryCard extends StatelessWidget {
         imageUrl: listModel.imageUrl,
       ),
       trailing: SvgPicture.asset(
-        Assets.svg.icListPlus,
+        Assets.svg.icListPlus.path,
         color: Theme.of(context).primaryColor,
       ),
       title: Text(

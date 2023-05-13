@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/grocery_list/widgets/grocery_list_options_bottom_sheet.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -11,8 +10,7 @@ class GroceryListOptionsButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       tooltip: AppTranslations.listOptions,
-      icon: SvgPicture.asset(
-        Assets.svg.icVerticalThreeDots,
+      icon: Assets.svg.icVerticalThreeDots.svg(
         color: Theme.of(context).primaryColor,
       ),
       onPressed: () => showModalBottomSheet<GroceryListOptionsBottomSheet>(

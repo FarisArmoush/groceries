@@ -42,8 +42,7 @@ class AppSnackBars {
         textBaseline: TextBaseline.alphabetic,
         mainAxisSize: MainAxisSize.min,
         children: [
-          SvgPicture.asset(
-            Assets.svg.icCheckCircle,
+          Assets.svg.icCheckCircle.svg(
             color: AppColors.white,
           ),
           const SizedBox(width: 16),
@@ -72,8 +71,7 @@ class AppSnackBars {
         textBaseline: TextBaseline.alphabetic,
         mainAxisSize: MainAxisSize.min,
         children: [
-          SvgPicture.asset(
-            Assets.svg.icInfo,
+          Assets.svg.icInfo.svg(
             color: AppColors.white,
           ),
           const SizedBox(width: 16),
@@ -102,8 +100,7 @@ class AppSnackBars {
         textBaseline: TextBaseline.alphabetic,
         mainAxisSize: MainAxisSize.min,
         children: [
-          SvgPicture.asset(
-            Assets.svg.icAlertTriangle,
+          Assets.svg.icAlertTriangle.svg(
             color: AppColors.white,
           ),
           const SizedBox(width: 16),
@@ -132,8 +129,7 @@ class AppSnackBars {
         textBaseline: TextBaseline.alphabetic,
         mainAxisSize: MainAxisSize.min,
         children: [
-          SvgPicture.asset(
-            Assets.svg.icCircleX,
+          Assets.svg.icCircleX.svg(
             color: AppColors.white,
           ),
           const SizedBox(width: _widthSpace),

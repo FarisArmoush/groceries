@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -17,7 +16,7 @@ class InviteUsersToListForm extends StatelessWidget {
         horizontal: 32,
       ),
       children: [
-        SvgPicture.asset(Assets.svg.illCall),
+        Assets.svg.illCall.svg(),
         Text(
           AppTranslations.invitePeopleToList,
           style: AppTextStyles.poppinsSemiBold(
@@ -42,8 +41,7 @@ class InviteUsersToListForm extends StatelessWidget {
       children: [
         TextButton.icon(
           onPressed: () {},
-          icon: SvgPicture.asset(
-            Assets.svg.icClipboardCopy,
+          icon: Assets.svg.icClipboardCopy.svg(
             color: Theme.of(context).primaryColor,
             height: size.height * 0.03,
           ),
@@ -57,8 +55,7 @@ class InviteUsersToListForm extends StatelessWidget {
         ),
         TextButton.icon(
           onPressed: () {},
-          icon: SvgPicture.asset(
-            Assets.svg.icAtSign,
+          icon: Assets.svg.icAtSign.svg(
             color: Theme.of(context).primaryColor,
             height: size.height * 0.03,
           ),

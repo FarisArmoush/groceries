@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -22,9 +21,7 @@ class EmptyGroceryList extends StatelessWidget {
             ),
             SizedBox(
               height: size.height * 0.45,
-              child: SvgPicture.asset(
-                Assets.svg.illWriting,
-              ),
+              child: Assets.svg.illWriting.svg(),
             ),
             SizedBox(
               height: size.height * 0.03,
@@ -53,8 +50,7 @@ class EmptyGroceryList extends StatelessWidget {
             ),
             ElevatedButton.icon(
               onPressed: () {},
-              icon: SvgPicture.asset(
-                Assets.svg.icSearch,
+              icon: Assets.svg.icSearch.svg(
                 color: Theme.of(context).colorScheme.secondary,
               ),
               label: Text(

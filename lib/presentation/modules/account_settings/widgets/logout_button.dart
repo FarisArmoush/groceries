@@ -37,7 +37,7 @@ class LogoutButton extends StatelessWidget {
       },
       child: TileButton(
         title: AppTranslations.logout,
-        icon: Assets.svg.icLogout,
+        icon: Assets.svg.icLogout.path,
         color: Theme.of(context).primaryColorLight,
         onTap: () => showModalBottomSheet<LogoutDialog>(
           enableDrag: false,

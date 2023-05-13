@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
@@ -20,9 +19,7 @@ class ListCreatedSuccessfullyView extends StatelessWidget {
           ),
           physics: const BouncingScrollPhysics(),
           children: [
-            SvgPicture.asset(
-              Assets.svg.illCelebrating,
-            ),
+            Assets.svg.illCelebrating.svg(),
             Text(
               AppTranslations.listCreatedSuccessfullyHeader,
               style: AppTextStyles.poppinsSemiBold(

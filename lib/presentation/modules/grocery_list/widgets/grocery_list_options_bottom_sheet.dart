@@ -27,17 +27,17 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
             ),
             BottomSheetButton(
               text: AppTranslations.sendListAsText,
-              icon: Assets.svg.icSend,
+              icon: Assets.svg.icSend.path,
               onTap: () {},
             ),
             BottomSheetButton(
               text: AppTranslations.printList,
-              icon: Assets.svg.icPrinter,
+              icon: Assets.svg.icPrinter.path,
               onTap: () {},
             ),
             BottomSheetButton(
               text: AppTranslations.listSettings,
-              icon: Assets.svg.icSettings,
+              icon: Assets.svg.icSettings.path,
               onTap: () => context
                 ..pop()
                 ..pushNamed(

@@ -19,7 +19,7 @@ class RecipeView extends StatelessWidget {
           return TileButton(
             onTap: () {},
             title: '<ITEM>',
-            icon: Assets.svg.icArchive,
+            icon: Assets.svg.icArchive.path,
           );
         },
         separatorBuilder: (context, index) {

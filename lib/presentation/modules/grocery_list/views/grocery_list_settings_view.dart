@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/grocery_list/widgets/members/edit_list_image.dart';
@@ -46,8 +45,7 @@ class GroceryListSettingsView extends StatelessWidget {
           ),
           OutlinedButton.icon(
             onPressed: () {},
-            icon: SvgPicture.asset(
-              Assets.svg.icListX,
+            icon: Assets.svg.icListX.svg(
               color: Theme.of(context).primaryColor,
             ),
             label: Text(

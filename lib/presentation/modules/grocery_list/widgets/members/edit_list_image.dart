@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -26,8 +25,7 @@ class EditListImage extends StatelessWidget {
             backgroundColor: AppColors.black.withOpacity(0.7),
             child: IconButton(
               onPressed: () {},
-              icon: SvgPicture.asset(
-                Assets.svg.icEdit,
+              icon: Assets.svg.icEdit.svg(
                 color: AppColors.white,
               ),
             ),

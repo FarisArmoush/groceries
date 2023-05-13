@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -15,9 +14,7 @@ class YouHaveNoRecipes extends StatelessWidget {
       children: [
         SizedBox(
           height: size.height * 0.35,
-          child: SvgPicture.asset(
-            Assets.svg.illEating,
-          ),
+          child: Assets.svg.illEating.svg(),
         ),
         SizedBox(
           height: size.height * 0.02,

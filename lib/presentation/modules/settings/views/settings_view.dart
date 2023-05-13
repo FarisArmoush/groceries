@@ -36,7 +36,7 @@ class SettingsView extends StatelessWidget {
           SettingsListTile(
             title: AppTranslations.accountSettings,
             subtitle: AppTranslations.accountSettingsDescription,
-            icon: Assets.svg.icUser,
+            icon: Assets.svg.icUser.path,
             onTap: () => context.pushNamed(AppNamedRoutes.accountSettings),
           ),
           SizedBox(
@@ -45,7 +45,7 @@ class SettingsView extends StatelessWidget {
           SettingsListTile(
             title: AppTranslations.notifications,
             subtitle: AppTranslations.notificationSettingsDescription,
-            icon: Assets.svg.icBell,
+            icon: Assets.svg.icBell.path,
             onTap: () =>
                 context.pushNamed(AppNamedRoutes.notificationsSettings),
           ),
@@ -55,7 +55,7 @@ class SettingsView extends StatelessWidget {
           SettingsListTile(
             title: AppTranslations.theme,
             subtitle: AppTranslations.themeHeader,
-            icon: Assets.svg.icPalette,
+            icon: Assets.svg.icPalette.path,
             onTap: () => context.pushNamed(AppNamedRoutes.appearanceSettings),
           ),
           SizedBox(
@@ -64,7 +64,7 @@ class SettingsView extends StatelessWidget {
           SettingsListTile(
             title: AppTranslations.additionalResources,
             subtitle: AppTranslations.additionalResourcesDescription,
-            icon: Assets.svg.icVerticalThreeDots,
+            icon: Assets.svg.icVerticalThreeDots.path,
             onTap: () => context.pushNamed(AppNamedRoutes.additionalResources),
           ),
           SizedBox(
