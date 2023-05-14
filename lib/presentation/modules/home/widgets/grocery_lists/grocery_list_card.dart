@@ -37,8 +37,7 @@ class GroceryListCard extends StatelessWidget {
               ),
               Text(
                 listModel.name,
-                style: AppTextStyles.medium(
-                  context: context,
+                style: AppTextStyles.poppinsMedium(
                   color: Theme.of(context).primaryColor,
                   fontSize: 24,
                 ),
@@ -54,8 +53,7 @@ class GroceryListCard extends StatelessWidget {
                   ),
                   child: Text(
                     '${listModel.tasksAmount} ${AppTranslations.newTasks}',
-                    style: AppTextStyles.light(
-                      context: context,
+                    style: AppTextStyles.poppinsLight(
                       color: Theme.of(context).colorScheme.secondary,
                       fontSize: 14,
                     ),

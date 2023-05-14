@@ -7,8 +7,7 @@ class _RegisterBodyText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       AppTranslations.createYourAccount,
-      style: AppTextStyles.regular(
-        context: context,
+      style: AppTextStyles.poppinsRegular(
         color: Theme.of(context).primaryColor,
         fontSize: 22,
       ),

@@ -29,8 +29,7 @@ class TileButton extends StatelessWidget {
       ),
       title: Text(
         title,
-        style: AppTextStyles.regular(
-          context: context,
+        style: AppTextStyles.poppinsRegular(
           color: color ?? Theme.of(context).primaryColor,
           fontSize: 16,
         ),

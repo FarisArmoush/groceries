@@ -30,7 +30,7 @@ Future<void> main() async {
       assetLoader: RemoteConfigTranslationsLoader(),
       fallbackLocale: const Locale('en'),
       useOnlyLangCode: true,
-      startLocale: const Locale('en'),
+      startLocale: const Locale('ar'),
       path: 'The path parameter is unnecessary when using RemoteConfig',
       child: App(authRepository: authRepo),
     ),

@@ -10,8 +10,7 @@ class WelcomeViewHeaderText extends StatelessWidget {
     return Text(
       AppTranslations.welcomeHeader,
       textAlign: TextAlign.start,
-      style: AppTextStyles.bold(
-        context: context,
+      style: AppTextStyles.poppinsBold(
         color: Theme.of(context).primaryColor,
         fontSize: 30,
       ),

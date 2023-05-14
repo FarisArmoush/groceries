@@ -66,8 +66,7 @@ class ForgotPasswordForm extends StatelessWidget {
               ),
               Text(
                 AppTranslations.forgotYourPassword,
-                style: AppTextStyles.semiBold(
-                  context: context,
+                style: AppTextStyles.poppinsSemiBold(
                   color: Theme.of(context).primaryColorLight,
                   fontSize: 32,
                 ),
@@ -77,8 +76,7 @@ class ForgotPasswordForm extends StatelessWidget {
               ),
               Text(
                 AppTranslations.forgotPasswordBody,
-                style: AppTextStyles.regular(
-                  context: context,
+                style: AppTextStyles.poppinsRegular(
                   color: Theme.of(context).primaryColor,
                   fontSize: 18,
                 ),

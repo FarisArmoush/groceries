@@ -35,8 +35,7 @@ class CreateNewGroceryListCardButton extends StatelessWidget {
               ),
               Text(
                 text,
-                style: AppTextStyles.medium(
-                  context: context,
+                style: AppTextStyles.poppinsMedium(
                   color: AppColors.white,
                   fontSize: 22,
                 ),

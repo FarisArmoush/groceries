@@ -9,8 +9,7 @@ class DeleteAccountBodyText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       AppTranslations.deleteAccountBody,
-      style: AppTextStyles.regular(
-        context: context,
+      style: AppTextStyles.poppinsRegular(
         color: Theme.of(context).primaryColor,
         fontSize: 18,
       ),

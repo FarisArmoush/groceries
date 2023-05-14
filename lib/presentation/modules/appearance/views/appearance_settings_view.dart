@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/appearance/widgets/appearnce_radios_list.dart';
-import 'package:groceries/presentation/widgets/app_bar_title.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
 
 class AppearanceSettingsView extends StatelessWidget {
@@ -12,7 +11,7 @@ class AppearanceSettingsView extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: AppBarTitle(
+        title: Text(
           AppTranslations.theme,
         ),
       ),
@@ -23,8 +22,7 @@ class AppearanceSettingsView extends StatelessWidget {
           _textPadding(
             Text(
               AppTranslations.themeHeader,
-              style: AppTextStyles.medium(
-                context: context,
+              style: AppTextStyles.poppinsMedium(
                 color: Theme.of(context).primaryColor,
                 fontSize: 12,
               ),
@@ -41,8 +39,7 @@ class AppearanceSettingsView extends StatelessWidget {
           _textPadding(
             Text(
               AppTranslations.themeHint,
-              style: AppTextStyles.light(
-                context: context,
+              style: AppTextStyles.poppinsLight(
                 color: Theme.of(context).hintColor,
                 fontSize: 12,
               ),

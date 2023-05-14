@@ -29,8 +29,7 @@ class CategoryBox extends StatelessWidget {
             ),
             child: Text(
               category,
-              style: AppTextStyles.regular(
-                context: context,
+              style: AppTextStyles.poppinsRegular(
                 color: Theme.of(context).primaryColor,
                 fontSize: 14,
               ),

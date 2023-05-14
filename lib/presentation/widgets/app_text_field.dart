@@ -67,8 +67,7 @@ class AppTextField extends StatelessWidget {
       cursorColor: Theme.of(context).primaryColorLight,
       cursorWidth: 1,
       onEditingComplete: onEditingComplete,
-      style: AppTextStyles.regular(
-        context: context,
+      style: AppTextStyles.poppinsRegular(
         color: Theme.of(context).primaryColor,
         fontSize: 14,
       ),
@@ -79,19 +78,12 @@ class AppTextField extends StatelessWidget {
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         labelText: labelText,
-        labelStyle: AppTextStyles.regular(
-          context: context,
+        labelStyle: AppTextStyles.poppinsRegular(
           color: Theme.of(context).hintColor,
           fontSize: 16,
         ),
         errorText: errorText,
-        errorStyle: AppTextStyles.medium(
-          context: context,
-          fontSize: 12,
-          color: Theme.of(context).primaryColorLight,
-        ),
-        floatingLabelStyle: AppTextStyles.regular(
-          context: context,
+        floatingLabelStyle: AppTextStyles.poppinsRegular(
           color: Theme.of(context).primaryColor,
           fontSize: 16,
         ),

@@ -18,12 +18,12 @@ class _AppFilledButtonThemeData {
       backgroundColor: MaterialStateProperty.all<Color>(
         AppColors.darkRed,
       ),
-      // textStyle: MaterialStateProperty.all<TextStyle>(
-      //   AppTextStyles.regular(
-      //     color: AppColors.white,
-      //     fontSize: 16,
-      //   ),
-      // ),
+      textStyle: MaterialStateProperty.all<TextStyle>(
+        AppTextStyles.poppinsRegular(
+          color: AppColors.white,
+          fontSize: 16,
+        ),
+      ),
     ),
   );
 
@@ -44,12 +44,12 @@ class _AppFilledButtonThemeData {
       backgroundColor: MaterialStateProperty.all<Color>(
         AppColors.lightRed,
       ),
-      // textStyle: MaterialStateProperty.all<TextStyle>(
-      // AppTextStyles.regular(
-      //   color: AppColors.white,
-      //   fontSize: 16,
-      // ),
-      // ),
+      textStyle: MaterialStateProperty.all<TextStyle>(
+        AppTextStyles.poppinsRegular(
+          color: AppColors.white,
+          fontSize: 16,
+        ),
+      ),
     ),
   );
 }

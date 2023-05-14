@@ -20,16 +20,14 @@ class UserDataListTile extends StatelessWidget {
       onTap: onTap,
       title: Text(
         title,
-        style: AppTextStyles.regular(
-          context: context,
+        style: AppTextStyles.poppinsRegular(
           color: Theme.of(context).primaryColor,
           fontSize: 14,
         ),
       ),
       subtitle: Text(
         subtitle ?? '',
-        style: AppTextStyles.regular(
-          context: context,
+        style: AppTextStyles.poppinsRegular(
           color: Theme.of(context).hintColor,
           fontSize: 12,
         ),

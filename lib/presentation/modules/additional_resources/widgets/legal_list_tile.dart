@@ -18,8 +18,7 @@ class LegalListTile extends StatelessWidget {
       onTap: onTap,
       title: Text(
         title,
-        style: AppTextStyles.regular(
-          context: context,
+        style: AppTextStyles.poppinsRegular(
           color: Theme.of(context).primaryColor,
           fontSize: 14,
         ),

@@ -22,8 +22,7 @@ class ListCreatedSuccessfullyView extends StatelessWidget {
             Assets.svg.illCelebrating.svg(),
             Text(
               AppTranslations.listCreatedSuccessfullyHeader,
-              style: AppTextStyles.semiBold(
-                context: context,
+              style: AppTextStyles.poppinsSemiBold(
                 color: Theme.of(context).primaryColor,
                 fontSize: 32,
               ),
@@ -34,8 +33,7 @@ class ListCreatedSuccessfullyView extends StatelessWidget {
             ),
             Text(
               AppTranslations.listCreatedSuccessfullyBody,
-              style: AppTextStyles.regular(
-                context: context,
+              style: AppTextStyles.poppinsRegular(
                 color: Theme.of(context).hintColor,
                 fontSize: 16,
               ),

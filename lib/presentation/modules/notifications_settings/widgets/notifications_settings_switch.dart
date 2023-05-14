@@ -25,16 +25,14 @@ class _NotificationsSettingsSwitchState
       value: value,
       title: Text(
         'Requests',
-        style: AppTextStyles.medium(
-          context: context,
+        style: AppTextStyles.poppinsMedium(
           color: Theme.of(context).primaryColor,
           fontSize: 16,
         ),
       ),
       subtitle: Text(
         'Receive a notification when someone requests a grocery from you?',
-        style: AppTextStyles.light(
-          context: context,
+        style: AppTextStyles.poppinsLight(
           color: Theme.of(context).hintColor,
           fontSize: 12,
         ),

@@ -30,8 +30,7 @@ class MyTasksCard extends StatelessWidget {
             flex: 2,
             child: Text(
               taskModel.listModel.name,
-              style: AppTextStyles.regular(
-                context: context,
+              style: AppTextStyles.poppinsRegular(
                 color: Theme.of(context).primaryColor,
                 fontSize: 14,
               ),
@@ -41,8 +40,7 @@ class MyTasksCard extends StatelessWidget {
           Expanded(
             child: Text(
               taskModel.dueDate.toString(),
-              style: AppTextStyles.regular(
-                context: context,
+              style: AppTextStyles.poppinsRegular(
                 color: Theme.of(context).hintColor,
                 fontSize: 12,
               ),
@@ -55,8 +53,7 @@ class MyTasksCard extends StatelessWidget {
       subtitle: taskModel.groceries.isNotEmpty
           ? Text(
               '${taskModel.groceries.length} ${AppTranslations.newTasks}',
-              style: AppTextStyles.regular(
-                context: context,
+              style: AppTextStyles.poppinsRegular(
                 color: Theme.of(context).primaryColorLight,
                 fontSize: 12,
               ),

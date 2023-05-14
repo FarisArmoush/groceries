@@ -15,16 +15,14 @@ class GreetingText extends StatelessWidget {
     return RichText(
       text: TextSpan(
         text: '${AppTranslations.homeGreeting} ',
-        style: AppTextStyles.semiBold(
-          context: context,
+        style: AppTextStyles.poppinsSemiBold(
           color: Theme.of(context).primaryColor,
           fontSize: 20,
         ),
         children: <TextSpan>[
           TextSpan(
             text: displayName,
-            style: AppTextStyles.semiBold(
-              context: context,
+            style: AppTextStyles.poppinsSemiBold(
               color: Theme.of(context).primaryColorLight,
               fontSize: 20,
             ),
