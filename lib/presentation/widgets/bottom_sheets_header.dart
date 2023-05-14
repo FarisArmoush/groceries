@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
 
 class BottomSheetsHeader extends StatelessWidget {
@@ -20,15 +19,14 @@ class BottomSheetsHeader extends StatelessWidget {
       children: [
         Text(
           header ?? 'Options',
-          style: AppTextStyles.medium(
-            context: context,
+          style: AppTextStyles.poppinsMedium(
             color: Theme.of(context).primaryColor,
             fontSize: 18,
           ),
         ),
         TextButton(
           child: Text(
-            buttonText ?? AppTranslations.close,
+            buttonText ?? 'Close',
           ),
           onPressed: () => context.pop(),
         ),

@@ -28,8 +28,7 @@ class EmptyGroceryList extends StatelessWidget {
             ),
             Text(
               AppTranslations.listIsEmpty,
-              style: AppTextStyles.semiBold(
-                context: context,
+              style: AppTextStyles.poppinsSemiBold(
                 color: Theme.of(context).primaryColor,
                 fontSize: 24,
               ),
@@ -40,8 +39,7 @@ class EmptyGroceryList extends StatelessWidget {
             ),
             Text(
               AppTranslations.addItemsToList,
-              style: AppTextStyles.light(
-                context: context,
+              style: AppTextStyles.poppinsLight(
                 color: Theme.of(context).hintColor,
                 fontSize: 14,
               ),

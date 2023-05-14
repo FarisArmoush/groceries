@@ -6,7 +6,6 @@ import 'package:groceries/presentation/modules/create_list/views/add_list_name_a
 import 'package:groceries/presentation/modules/create_list/widgets/cancel_list_creation_dialog.dart';
 import 'package:groceries/presentation/modules/create_list/widgets/create_new_list_fab.dart';
 import 'package:groceries/presentation/modules/create_list/widgets/invite_users_to_list_form.dart';
-import 'package:groceries/presentation/widgets/app_bar_title.dart';
 import 'package:groceries/presentation/widgets/page_indicator.dart';
 
 class CreateListView extends StatelessWidget {
@@ -25,7 +24,7 @@ class CreateListView extends StatelessWidget {
             builder: (context) => const CancelListCreationDialog(),
           ),
         ),
-        title: AppBarTitle(
+        title: Text(
           AppTranslations.createNewList,
         ),
         bottom: PreferredSize(

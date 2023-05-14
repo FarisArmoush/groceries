@@ -10,8 +10,7 @@ class RailTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: AppTextStyles.semiBold(
-        context: context,
+      style: AppTextStyles.poppinsSemiBold(
         color: Theme.of(context).primaryColor,
         fontSize: 22,
       ),

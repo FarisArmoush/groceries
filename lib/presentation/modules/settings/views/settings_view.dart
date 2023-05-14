@@ -6,7 +6,6 @@ import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
 import 'package:groceries/presentation/modules/settings/widgets/settings_list_tile.dart';
 import 'package:groceries/presentation/modules/settings/widgets/user_data_box.dart';
-import 'package:groceries/presentation/widgets/app_bar_title.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class SettingsView extends StatelessWidget {
@@ -18,7 +17,7 @@ class SettingsView extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: AppBarTitle(AppTranslations.settings),
+        title: Text(AppTranslations.settings),
       ),
       body: ListView(
         physics: const BouncingScrollPhysics(),

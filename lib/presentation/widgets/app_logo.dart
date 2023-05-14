@@ -9,8 +9,7 @@ class AppLogo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       AppTranslations.appName,
-      style: AppTextStyles.black(
-        context: context,
+      style: AppTextStyles.poppinsBlack(
         color: Theme.of(context).primaryColorLight,
         fontSize: 32,
       ),

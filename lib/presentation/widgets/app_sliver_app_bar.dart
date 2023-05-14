@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/presentation/widgets/app_bar_title.dart';
+import 'package:groceries/utils/constants/app_text_styles.dart';
 
 class AppSliverAppBar extends StatelessWidget {
   const AppSliverAppBar({
@@ -20,7 +20,13 @@ class AppSliverAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SliverAppBar.medium(
-      title: AppBarTitle(title),
+      title: Text(
+        title,
+        style: AppTextStyles.poppinsMedium(
+          color: Theme.of(context).primaryColor,
+          fontSize: 20,
+        ),
+      ),
       leading: leading ?? const BackButton(),
       centerTitle: centerTitle,
       actions: actions,

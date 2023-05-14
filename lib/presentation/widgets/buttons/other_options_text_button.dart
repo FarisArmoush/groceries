@@ -22,16 +22,14 @@ class OtherOptionTextButton extends StatelessWidget {
           children: <TextSpan>[
             TextSpan(
               text: '$upperText\n',
-              style: AppTextStyles.light(
-                context: context,
+              style: AppTextStyles.poppinsLight(
                 color: Theme.of(context).hintColor,
                 fontSize: 14,
               ),
             ),
             TextSpan(
               text: lowerText,
-              style: AppTextStyles.medium(
-                context: context,
+              style: AppTextStyles.poppinsMedium(
                 color: Theme.of(context).primaryColorLight,
                 fontSize: 14,
               ),

@@ -11,8 +11,7 @@ class _NotificationCardDate extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       '${date.day}/${date.month}/${date.year}',
-      style: AppTextStyles.light(
-        context: context,
+      style: AppTextStyles.poppinsLight(
         color: Theme.of(context).hintColor,
         fontSize: 12,
       ),

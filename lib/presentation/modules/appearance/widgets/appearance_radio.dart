@@ -25,8 +25,7 @@ class AppearanceRadio extends StatelessWidget {
       groupValue: groupValue,
       title: Text(
         title,
-        style: AppTextStyles.medium(
-          context: context,
+        style: AppTextStyles.poppinsMedium(
           color: Theme.of(context).primaryColor,
           fontSize: 14,
         ),

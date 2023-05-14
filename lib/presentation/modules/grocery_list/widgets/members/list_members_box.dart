@@ -12,8 +12,7 @@ class ListMembersBox extends StatelessWidget {
     return PrimaryBox(
       header: Text(
         AppTranslations.listMember,
-        style: AppTextStyles.regular(
-          context: context,
+        style: AppTextStyles.poppinsRegular(
           color: Theme.of(context).primaryColor,
           fontSize: 16,
         ),

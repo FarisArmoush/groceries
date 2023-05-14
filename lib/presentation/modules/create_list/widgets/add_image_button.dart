@@ -15,8 +15,7 @@ class AddImageButton extends StatelessWidget {
       ),
       label: Text(
         AppTranslations.addImageToList,
-        style: AppTextStyles.medium(
-          context: context,
+        style: AppTextStyles.poppinsMedium(
           color: Theme.of(context).primaryColor,
           fontSize: 16,
         ),

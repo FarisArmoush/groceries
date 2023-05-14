@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
+import 'package:groceries/utils/constants/app_text_styles.dart';
 import 'package:groceries/utils/constants/fonts.gen.dart';
 
 part '__app_app_bar_theme_data.dart';
@@ -11,6 +12,7 @@ part '__app_divider_theme_data.dart';
 part '__app_elevated_button_theme_data.dart';
 part '__app_filled_button_theme_data.dart';
 part '__app_floating_action_button_theme_data.dart';
+part '__app_input_decoration_theme_data.dart';
 part '__app_list_tile_theme_data.dart';
 part '__app_outlined_button_theme_data.dart';
 part '__app_progress_indicator_theme_data.dart';
@@ -35,6 +37,7 @@ class AppThemes {
     scaffoldBackgroundColor: AppColors.white,
     colorScheme: _AppColorScheme.light,
     appBarTheme: _AppAppBarThemeData.light,
+    inputDecorationTheme: _AppInputDecorationThemeData.light,
     listTileTheme: _AppListTileThemeData.light,
     bottomSheetTheme: _AppBottomSheetThemeData.light,
     radioTheme: _AppRadioThemeData.light,
@@ -64,6 +67,7 @@ class AppThemes {
     scaffoldBackgroundColor: AppColors.darkGrey,
     colorScheme: _AppColorScheme.dark,
     appBarTheme: _AppAppBarThemeData.dark,
+    inputDecorationTheme: _AppInputDecorationThemeData.dark,
     listTileTheme: _AppListTileThemeData.dark,
     bottomSheetTheme: _AppBottomSheetThemeData.dark,
     radioTheme: _AppRadioThemeData.dark,

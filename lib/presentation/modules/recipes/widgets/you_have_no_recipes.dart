@@ -21,8 +21,7 @@ class YouHaveNoRecipes extends StatelessWidget {
         ),
         Text(
           AppTranslations.youHaveNoRecipes,
-          style: AppTextStyles.semiBold(
-            context: context,
+          style: AppTextStyles.poppinsSemiBold(
             color: Theme.of(context).primaryColor,
             fontSize: 24,
           ),
@@ -33,8 +32,7 @@ class YouHaveNoRecipes extends StatelessWidget {
         ),
         Text(
           AppTranslations.startWithCreatingYourFirstRecipe,
-          style: AppTextStyles.light(
-            context: context,
+          style: AppTextStyles.poppinsLight(
             color: Theme.of(context).hintColor,
             fontSize: 14,
           ),

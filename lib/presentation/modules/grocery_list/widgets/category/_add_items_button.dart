@@ -9,8 +9,7 @@ class _AddItemsButton extends StatelessWidget {
       onPressed: () {},
       child: Text(
         AppTranslations.addItems,
-        style: AppTextStyles.light(
-          context: context,
+        style: AppTextStyles.poppinsLight(
           color: Theme.of(context).primaryColorLight,
           fontSize: 12,
         ),

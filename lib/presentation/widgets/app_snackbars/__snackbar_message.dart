@@ -12,8 +12,7 @@ class _SnackbarMessage extends StatelessWidget {
     return Flexible(
       child: Text(
         message,
-        style: AppTextStyles.regular(
-          context: context,
+        style: AppTextStyles.poppinsRegular(
           color: AppColors.white,
           fontSize: 16,
         ),

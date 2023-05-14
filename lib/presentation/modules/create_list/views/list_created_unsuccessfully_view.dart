@@ -25,8 +25,7 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
             Assets.svg.illError.svg(),
             Text(
               AppTranslations.oops,
-              style: AppTextStyles.semiBold(
-                context: context,
+              style: AppTextStyles.poppinsSemiBold(
                 color: Theme.of(context).primaryColorLight,
                 fontSize: 32,
               ),
@@ -37,8 +36,7 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
             ),
             Text(
               AppTranslations.somethingWentWrong,
-              style: AppTextStyles.regular(
-                context: context,
+              style: AppTextStyles.poppinsRegular(
                 color: Theme.of(context).hintColor,
                 fontSize: 16,
               ),
