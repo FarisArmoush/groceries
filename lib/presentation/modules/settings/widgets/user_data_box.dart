@@ -8,8 +8,8 @@ class UserDataBox extends StatelessWidget {
     required this.imageUrl,
     required this.displayName,
     required this.email,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String? imageUrl;
   final String? displayName;

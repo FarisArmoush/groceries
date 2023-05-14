@@ -8,8 +8,8 @@ class TileButton extends StatelessWidget {
     required this.title,
     required this.icon,
     this.color,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String title;
   final String icon;

@@ -9,8 +9,8 @@ class SettingsListTile extends StatelessWidget {
     required this.subtitle,
     required this.icon,
     required this.onTap,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String icon;
   final String title;

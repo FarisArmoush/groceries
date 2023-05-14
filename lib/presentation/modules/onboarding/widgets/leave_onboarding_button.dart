@@ -4,7 +4,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 
 class LeaveOnboardingButton extends StatelessWidget {
-  const LeaveOnboardingButton({Key? key}) : super(key: key);
+  const LeaveOnboardingButton({super.key});
 
   @override
   Widget build(BuildContext context) {

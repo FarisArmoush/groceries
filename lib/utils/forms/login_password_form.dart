@@ -4,7 +4,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 class LoginPasswordForm extends FormzInput<String, String> {
   const LoginPasswordForm.pure() : super.pure('');
 
-  const LoginPasswordForm.dirty(String value) : super.dirty(value);
+  const LoginPasswordForm.dirty(super.value) : super.dirty();
 
   @override
   String? validator(String? value) {

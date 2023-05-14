@@ -9,7 +9,7 @@ import 'package:groceries/presentation/widgets/app_bar_title.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
 
 class AdditionalResourcesView extends StatelessWidget {
-  const AdditionalResourcesView({Key? key}) : super(key: key);
+  const AdditionalResourcesView({super.key});
 
   @override
   Widget build(BuildContext context) {

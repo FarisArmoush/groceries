@@ -8,8 +8,8 @@ part '_category_box_divider.dart';
 class CategoryBox extends StatelessWidget {
   const CategoryBox({
     required this.category,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String category;
 

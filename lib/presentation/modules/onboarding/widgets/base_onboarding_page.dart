@@ -8,8 +8,8 @@ class BaseOnboardingPage extends StatelessWidget {
     required this.title,
     required this.body,
     required this.backgroundColor,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String illustrationPath;
   final String title;

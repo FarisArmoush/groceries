@@ -1,9 +1,7 @@
 part of 'login_form.dart';
 
 class _LoginForgotPasswordButton extends StatelessWidget {
-  const _LoginForgotPasswordButton({
-    Key? key,
-  }) : super(key: key);
+  const _LoginForgotPasswordButton();
 
   @override
   Widget build(BuildContext context) {

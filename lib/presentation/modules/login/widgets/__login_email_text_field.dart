@@ -1,7 +1,7 @@
 part of 'login_form.dart';
 
 class _LoginEmailTextField extends StatelessWidget {
-  const _LoginEmailTextField({Key? key}) : super(key: key);
+  const _LoginEmailTextField();
 
   @override
   Widget build(BuildContext context) {

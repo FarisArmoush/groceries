@@ -5,7 +5,7 @@ import 'package:groceries/utils/app_reg_exps.dart';
 class RegisterPasswordForm extends FormzInput<String, String> {
   const RegisterPasswordForm.pure() : super.pure('');
 
-  const RegisterPasswordForm.dirty(String value) : super.dirty(value);
+  const RegisterPasswordForm.dirty(super.value) : super.dirty();
 
   @override
   String? validator(String? value) {

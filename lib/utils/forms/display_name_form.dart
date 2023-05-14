@@ -5,7 +5,7 @@ import 'package:groceries/utils/app_reg_exps.dart';
 class DisplayNameForm extends FormzInput<String, String> {
   const DisplayNameForm.pure() : super.dirty('');
 
-  const DisplayNameForm.dirty(String value) : super.pure(value);
+  const DisplayNameForm.dirty(super.value) : super.pure();
 
   @override
   String? validator(String? value) {

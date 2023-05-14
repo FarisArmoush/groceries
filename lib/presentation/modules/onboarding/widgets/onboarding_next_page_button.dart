@@ -5,8 +5,8 @@ import 'package:groceries/utils/constants/assets.gen.dart';
 class OnboardingNextPageButton extends StatelessWidget {
   const OnboardingNextPageButton({
     required this.controller,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final CarouselController controller;
 

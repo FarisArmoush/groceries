@@ -4,7 +4,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
 
 class DeleteRecipeBottomSheet extends StatelessWidget {
-  const DeleteRecipeBottomSheet({Key? key}) : super(key: key);
+  const DeleteRecipeBottomSheet({super.key});
 
   @override
   Widget build(BuildContext context) {

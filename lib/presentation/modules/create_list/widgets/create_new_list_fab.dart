@@ -5,8 +5,8 @@ import 'package:groceries/utils/constants/assets.gen.dart';
 class CreateNewListFAB extends StatelessWidget {
   const CreateNewListFAB({
     required this.onPressed,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final VoidCallback onPressed;
 

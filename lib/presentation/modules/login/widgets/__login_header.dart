@@ -1,7 +1,7 @@
 part of 'login_form.dart';
 
 class _LoginHeader extends StatelessWidget {
-  const _LoginHeader({Key? key}) : super(key: key);
+  const _LoginHeader();
 
   @override
   Widget build(BuildContext context) {

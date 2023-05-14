@@ -11,8 +11,8 @@ class CachedImage extends StatelessWidget {
     this.boxFit,
     this.boxShape,
     this.borderRadius,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String? imageUrl;
   final double? height;

@@ -4,8 +4,8 @@ import 'package:groceries/utils/constants/app_text_styles.dart';
 class DisplayNameText extends StatelessWidget {
   const DisplayNameText({
     required this.name,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final String? name;
 
   @override

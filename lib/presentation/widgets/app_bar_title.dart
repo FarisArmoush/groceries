@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
 
 class AppBarTitle extends StatelessWidget {
-  const AppBarTitle(this.title, {Key? key}) : super(key: key);
+  const AppBarTitle(this.title, {super.key});
   final String title;
   @override
   Widget build(BuildContext context) {

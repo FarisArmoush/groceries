@@ -4,8 +4,8 @@ import 'package:groceries/utils/constants/app_text_styles.dart';
 class UsersEmailText extends StatelessWidget {
   const UsersEmailText({
     required this.email,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final String? email;
 
   @override

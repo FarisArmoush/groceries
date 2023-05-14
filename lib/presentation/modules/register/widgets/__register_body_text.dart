@@ -1,7 +1,7 @@
 part of 'register_form.dart';
 
 class _RegisterBodyText extends StatelessWidget {
-  const _RegisterBodyText({Key? key}) : super(key: key);
+  const _RegisterBodyText();
 
   @override
   Widget build(BuildContext context) {

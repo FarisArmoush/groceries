@@ -6,7 +6,7 @@ import 'package:groceries/presentation/modules/settings/views/settings_view.dart
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class RootView extends StatefulWidget {
-  const RootView({Key? key}) : super(key: key);
+  const RootView({super.key});
 
   @override
   State<RootView> createState() => _RootViewState();

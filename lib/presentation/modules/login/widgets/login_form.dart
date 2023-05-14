@@ -20,7 +20,7 @@ part '__login_header.dart';
 part '__login_password_text_field.dart';
 
 class LoginForm extends StatelessWidget {
-  const LoginForm({Key? key}) : super(key: key);
+  const LoginForm({super.key});
 
   @override
   Widget build(BuildContext context) {

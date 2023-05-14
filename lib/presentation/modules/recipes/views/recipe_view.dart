@@ -4,7 +4,7 @@ import 'package:groceries/presentation/widgets/buttons/tile_button.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class RecipeView extends StatelessWidget {
-  const RecipeView({Key? key}) : super(key: key);
+  const RecipeView({super.key});
 
   @override
   Widget build(BuildContext context) {

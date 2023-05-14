@@ -8,8 +8,8 @@ class AppearanceRadio extends StatelessWidget {
     required this.groupValue,
     required this.value,
     required this.onChanged,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final String title;
   final Object? groupValue;
   final Object? value;

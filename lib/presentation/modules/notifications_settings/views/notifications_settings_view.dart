@@ -4,7 +4,7 @@ import 'package:groceries/presentation/modules/notifications_settings/widgets/no
 import 'package:groceries/presentation/widgets/app_bar_title.dart';
 
 class NotificationsSettingsView extends StatelessWidget {
-  const NotificationsSettingsView({Key? key}) : super(key: key);
+  const NotificationsSettingsView({super.key});
 
   @override
   Widget build(BuildContext context) {

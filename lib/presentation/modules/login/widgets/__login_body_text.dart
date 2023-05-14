@@ -1,9 +1,7 @@
 part of 'login_form.dart';
 
 class _LoginBodyText extends StatelessWidget {
-  const _LoginBodyText({
-    Key? key,
-  }) : super(key: key);
+  const _LoginBodyText();
 
   @override
   Widget build(BuildContext context) {

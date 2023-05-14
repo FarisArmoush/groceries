@@ -5,7 +5,7 @@ import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 
 class RequestToDeleteAccountButton extends StatelessWidget {
-  const RequestToDeleteAccountButton({Key? key}) : super(key: key);
+  const RequestToDeleteAccountButton({super.key});
 
   @override
   Widget build(BuildContext context) {

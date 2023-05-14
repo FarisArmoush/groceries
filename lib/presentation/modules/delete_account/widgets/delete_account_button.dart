@@ -7,7 +7,7 @@ import 'package:groceries/presentation/modules/delete_account/cubit/delete_accou
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 
 class DeleteAccountButton extends StatelessWidget {
-  const DeleteAccountButton({Key? key}) : super(key: key);
+  const DeleteAccountButton({super.key});
 
   @override
   Widget build(BuildContext context) {

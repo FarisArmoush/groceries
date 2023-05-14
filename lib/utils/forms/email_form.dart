@@ -5,7 +5,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 class EmailForm extends FormzInput<String, String> {
   const EmailForm.pure() : super.pure('');
 
-  const EmailForm.dirty(String value) : super.dirty(value);
+  const EmailForm.dirty(super.value) : super.dirty();
 
   @override
   String? validator(String? value) {

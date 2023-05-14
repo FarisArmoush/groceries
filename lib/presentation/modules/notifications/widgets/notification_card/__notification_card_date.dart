@@ -3,8 +3,7 @@ part of 'notification_card.dart';
 class _NotificationCardDate extends StatelessWidget {
   const _NotificationCardDate({
     required this.date,
-    Key? key,
-  }) : super(key: key);
+  });
 
   final DateTime date;
 

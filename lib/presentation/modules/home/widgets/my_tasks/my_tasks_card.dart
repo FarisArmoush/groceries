@@ -7,8 +7,8 @@ import 'package:groceries/utils/constants/app_text_styles.dart';
 class MyTasksCard extends StatelessWidget {
   const MyTasksCard({
     required this.taskModel,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final TaskModel taskModel;
 

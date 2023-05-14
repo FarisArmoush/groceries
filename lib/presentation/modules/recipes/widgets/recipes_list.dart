@@ -7,8 +7,8 @@ import 'package:groceries/presentation/modules/recipes/widgets/recipe_card/recip
 class RecipesList extends StatelessWidget {
   const RecipesList({
     required this.recipes,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final List<RecipeModel> recipes;
 
   @override

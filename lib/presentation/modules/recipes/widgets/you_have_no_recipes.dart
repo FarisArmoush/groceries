@@ -4,7 +4,7 @@ import 'package:groceries/utils/constants/app_text_styles.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class YouHaveNoRecipes extends StatelessWidget {
-  const YouHaveNoRecipes({Key? key}) : super(key: key);
+  const YouHaveNoRecipes({super.key});
 
   @override
   Widget build(BuildContext context) {

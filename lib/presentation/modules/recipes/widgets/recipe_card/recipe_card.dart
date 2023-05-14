@@ -8,8 +8,8 @@ class RecipeCard extends StatelessWidget {
   const RecipeCard({
     required this.recipeModel,
     required this.onTap,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final VoidCallback onTap;
   final RecipeModel recipeModel;

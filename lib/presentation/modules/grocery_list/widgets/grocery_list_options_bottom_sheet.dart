@@ -7,7 +7,7 @@ import 'package:groceries/presentation/widgets/buttons/bottom_sheet_button.dart'
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class GroceryListOptionsBottomSheet extends StatelessWidget {
-  const GroceryListOptionsBottomSheet({Key? key}) : super(key: key);
+  const GroceryListOptionsBottomSheet({super.key});
 
   @override
   Widget build(BuildContext context) {

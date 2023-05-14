@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class PageNotFoundView extends StatelessWidget {
-  const PageNotFoundView({Key? key}) : super(key: key);
+  const PageNotFoundView({super.key});
 
   @override
   Widget build(BuildContext context) {

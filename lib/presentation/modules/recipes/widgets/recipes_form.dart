@@ -6,7 +6,7 @@ import 'package:groceries/presentation/modules/recipes/widgets/you_have_no_recip
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 
 class RecipesForm extends StatelessWidget {
-  const RecipesForm({Key? key}) : super(key: key);
+  const RecipesForm({super.key});
 
   @override
   Widget build(BuildContext context) {

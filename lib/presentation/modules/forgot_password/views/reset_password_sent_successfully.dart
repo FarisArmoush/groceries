@@ -6,7 +6,7 @@ import 'package:groceries/utils/constants/app_text_styles.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class ResetPasswordSentSuccessfullyView extends StatelessWidget {
-  const ResetPasswordSentSuccessfullyView({Key? key}) : super(key: key);
+  const ResetPasswordSentSuccessfullyView({super.key});
 
   @override
   Widget build(BuildContext context) {

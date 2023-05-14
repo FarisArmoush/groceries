@@ -10,7 +10,7 @@ import 'package:groceries/presentation/modules/account_settings/widgets/user_dat
 import 'package:groceries/presentation/widgets/app_bar_title.dart';
 
 class AccountSettingsView extends StatelessWidget {
-  const AccountSettingsView({Key? key}) : super(key: key);
+  const AccountSettingsView({super.key});
 
   @override
   Widget build(BuildContext context) {

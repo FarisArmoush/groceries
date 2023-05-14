@@ -6,7 +6,7 @@ import 'package:groceries/presentation/modules/notifications/widgets/notificatio
 import 'package:groceries/presentation/widgets/app_bar_title.dart';
 
 class NotificationsView extends StatelessWidget {
-  const NotificationsView({Key? key}) : super(key: key);
+  const NotificationsView({super.key});
 
   @override
   Widget build(BuildContext context) {

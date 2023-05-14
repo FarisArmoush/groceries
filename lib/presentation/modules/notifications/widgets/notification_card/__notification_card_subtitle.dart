@@ -3,8 +3,7 @@ part of 'notification_card.dart';
 class _NotificationCardSubtitle extends StatelessWidget {
   const _NotificationCardSubtitle({
     required this.subtitle,
-    Key? key,
-  }) : super(key: key);
+  });
   final String subtitle;
 
   @override

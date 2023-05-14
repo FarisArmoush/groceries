@@ -10,7 +10,7 @@ import 'package:groceries/presentation/widgets/app_bar_title.dart';
 import 'package:groceries/presentation/widgets/page_indicator.dart';
 
 class CreateListView extends StatelessWidget {
-  CreateListView({Key? key}) : super(key: key);
+  CreateListView({super.key});
 
   final PageController _pageController = PageController();
 

@@ -7,7 +7,7 @@ import 'package:groceries/presentation/widgets/app_snackbars/app_snack_bars.dart
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class RecipeCardActionsRow extends StatelessWidget {
-  const RecipeCardActionsRow({Key? key}) : super(key: key);
+  const RecipeCardActionsRow({super.key});
 
   @override
   Widget build(BuildContext context) {

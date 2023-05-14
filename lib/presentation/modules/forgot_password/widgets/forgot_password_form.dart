@@ -16,7 +16,7 @@ part '__email_text_field.dart';
 part '__send_button.dart';
 
 class ForgotPasswordForm extends StatelessWidget {
-  const ForgotPasswordForm({Key? key}) : super(key: key);
+  const ForgotPasswordForm({super.key});
 
   @override
   Widget build(BuildContext context) {

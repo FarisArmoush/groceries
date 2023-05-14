@@ -6,7 +6,7 @@ import 'package:groceries/presentation/modules/recipes/widgets/recipes_form.dart
 import 'package:groceries/presentation/widgets/app_bar_title.dart';
 
 class RecipesView extends StatelessWidget {
-  const RecipesView({Key? key}) : super(key: key);
+  const RecipesView({super.key});
 
   @override
   Widget build(BuildContext context) {

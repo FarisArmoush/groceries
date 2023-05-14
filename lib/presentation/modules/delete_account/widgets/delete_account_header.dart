@@ -3,7 +3,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
 
 class DeleteAccountHeader extends StatelessWidget {
-  const DeleteAccountHeader({Key? key}) : super(key: key);
+  const DeleteAccountHeader({super.key});
 
   @override
   Widget build(BuildContext context) {

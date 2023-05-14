@@ -6,8 +6,8 @@ class OtherOptionTextButton extends StatelessWidget {
     required this.onTap,
     required this.upperText,
     required this.lowerText,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final String upperText;
   final String lowerText;
   final VoidCallback onTap;

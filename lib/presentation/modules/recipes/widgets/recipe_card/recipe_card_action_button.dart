@@ -7,8 +7,8 @@ class RecipeCardActionButton extends StatelessWidget {
     required this.label,
     required this.icon,
     required this.onPressed,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String label;
   final String icon;

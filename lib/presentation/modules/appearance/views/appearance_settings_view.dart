@@ -5,7 +5,7 @@ import 'package:groceries/presentation/widgets/app_bar_title.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
 
 class AppearanceSettingsView extends StatelessWidget {
-  const AppearanceSettingsView({Key? key}) : super(key: key);
+  const AppearanceSettingsView({super.key});
 
   @override
   Widget build(BuildContext context) {

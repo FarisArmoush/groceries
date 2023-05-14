@@ -4,7 +4,7 @@ import 'package:groceries/utils/constants/app_text_styles.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class AddImageButton extends StatelessWidget {
-  const AddImageButton({Key? key}) : super(key: key);
+  const AddImageButton({super.key});
 
   @override
   Widget build(BuildContext context) {

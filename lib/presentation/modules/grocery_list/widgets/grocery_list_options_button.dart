@@ -4,7 +4,7 @@ import 'package:groceries/presentation/modules/grocery_list/widgets/grocery_list
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class GroceryListOptionsButton extends StatelessWidget {
-  const GroceryListOptionsButton({Key? key}) : super(key: key);
+  const GroceryListOptionsButton({super.key});
 
   @override
   Widget build(BuildContext context) {

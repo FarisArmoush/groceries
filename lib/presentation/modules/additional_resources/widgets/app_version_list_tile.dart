@@ -5,7 +5,7 @@ import 'package:groceries/presentation/blocs/remote_config/remote_config_cubit.d
 import 'package:groceries/utils/constants/app_text_styles.dart';
 
 class AppVersionListTile extends StatelessWidget {
-  const AppVersionListTile({Key? key}) : super(key: key);
+  const AppVersionListTile({super.key});
 
   @override
   Widget build(BuildContext context) {

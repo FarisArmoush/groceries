@@ -3,7 +3,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
 
 class WelcomeViewBodyText extends StatelessWidget {
-  const WelcomeViewBodyText({Key? key}) : super(key: key);
+  const WelcomeViewBodyText({super.key});
 
   @override
   Widget build(BuildContext context) {

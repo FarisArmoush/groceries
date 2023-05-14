@@ -6,8 +6,8 @@ class LegalListTile extends StatelessWidget {
   const LegalListTile({
     required this.title,
     required this.onTap,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String title;
   final VoidCallback onTap;

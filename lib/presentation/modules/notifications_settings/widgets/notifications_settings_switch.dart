@@ -3,7 +3,7 @@ import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
 
 class NotificationsSettingsSwitch extends StatefulWidget {
-  const NotificationsSettingsSwitch({Key? key}) : super(key: key);
+  const NotificationsSettingsSwitch({super.key});
 
   @override
   State<NotificationsSettingsSwitch> createState() =>

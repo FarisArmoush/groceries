@@ -1,7 +1,7 @@
 part of 'register_form.dart';
 
 class _RegisterPasswordTextField extends StatelessWidget {
-  const _RegisterPasswordTextField({Key? key}) : super(key: key);
+  const _RegisterPasswordTextField();
 
   @override
   Widget build(BuildContext context) {

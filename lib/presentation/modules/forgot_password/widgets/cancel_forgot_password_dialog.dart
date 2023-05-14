@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 
 class CancelForgotPasswordDialog extends StatelessWidget {
-  const CancelForgotPasswordDialog({Key? key}) : super(key: key);
+  const CancelForgotPasswordDialog({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -8,8 +8,8 @@ import 'package:groceries/utils/constants/assets.gen.dart';
 class GroceryListSecondaryCard extends StatelessWidget {
   const GroceryListSecondaryCard({
     required this.listModel,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final GroceryListModel listModel;
 

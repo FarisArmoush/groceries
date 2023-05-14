@@ -4,7 +4,7 @@ import 'package:groceries/utils/constants/app_text_styles.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class NoNotificationsYet extends StatelessWidget {
-  const NoNotificationsYet({Key? key}) : super(key: key);
+  const NoNotificationsYet({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -4,7 +4,7 @@ import 'package:groceries/utils/constants/app_text_styles.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class InviteUsersToListForm extends StatelessWidget {
-  const InviteUsersToListForm({Key? key}) : super(key: key);
+  const InviteUsersToListForm({super.key});
 
   @override
   Widget build(BuildContext context) {

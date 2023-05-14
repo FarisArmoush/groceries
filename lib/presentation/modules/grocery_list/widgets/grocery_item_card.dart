@@ -6,8 +6,8 @@ import 'package:groceries/utils/constants/assets.gen.dart';
 class GroceryItemCard extends StatelessWidget {
   const GroceryItemCard({
     required this.groceryModel,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final GroceryModel groceryModel;
 
   @override

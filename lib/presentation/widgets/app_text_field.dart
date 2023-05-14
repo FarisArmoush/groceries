@@ -3,7 +3,7 @@ import 'package:groceries/utils/constants/app_text_styles.dart';
 
 class AppTextField extends StatelessWidget {
   const AppTextField({
-    Key? key,
+    super.key,
     this.controller,
     this.onChanged,
     this.autofillHints,
@@ -26,7 +26,7 @@ class AppTextField extends StatelessWidget {
     this.prefix,
     this.suffix,
     this.validator,
-  }) : super(key: key);
+  });
 
   final String? labelText;
   final String? errorText;

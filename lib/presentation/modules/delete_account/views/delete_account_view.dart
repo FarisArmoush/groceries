@@ -5,7 +5,7 @@ import 'package:groceries/presentation/modules/delete_account/cubit/delete_accou
 import 'package:groceries/presentation/modules/delete_account/widgets/delete_account_form.dart';
 
 class DeleteAccountView extends StatelessWidget {
-  const DeleteAccountView({Key? key}) : super(key: key);
+  const DeleteAccountView({super.key});
 
   @override
   Widget build(BuildContext context) {

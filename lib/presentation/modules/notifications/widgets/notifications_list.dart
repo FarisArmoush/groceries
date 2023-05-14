@@ -5,8 +5,8 @@ import 'package:groceries/presentation/modules/notifications/widgets/notificatio
 class NotificationsList extends StatelessWidget {
   const NotificationsList({
     required this.list,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final List<NotificationModel> list;
 
   @override

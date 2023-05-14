@@ -8,8 +8,8 @@ import 'package:groceries/utils/constants/assets.gen.dart';
 class CreateNewGroceryListCardButton extends StatelessWidget {
   const CreateNewGroceryListCardButton({
     required this.text,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final String text;
 
   @override

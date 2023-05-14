@@ -8,7 +8,7 @@ import 'package:groceries/presentation/widgets/app_text_field.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class GroceryListSettingsView extends StatelessWidget {
-  const GroceryListSettingsView({Key? key}) : super(key: key);
+  const GroceryListSettingsView({super.key});
 
   @override
   Widget build(BuildContext context) {

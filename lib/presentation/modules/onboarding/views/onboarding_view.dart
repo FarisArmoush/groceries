@@ -6,7 +6,7 @@ import 'package:groceries/presentation/modules/onboarding/widgets/onboarding_nex
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class OnboardingView extends StatefulWidget {
-  const OnboardingView({Key? key}) : super(key: key);
+  const OnboardingView({super.key});
 
   @override
   State<OnboardingView> createState() => _OnboardingViewState();

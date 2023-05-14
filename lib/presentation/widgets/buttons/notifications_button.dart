@@ -5,9 +5,9 @@ import 'package:groceries/utils/constants/assets.gen.dart';
 
 class NotificationsButton extends StatelessWidget {
   const NotificationsButton({
-    Key? key,
+    super.key,
     this.color,
-  }) : super(key: key);
+  });
 
   final Color? color;
 

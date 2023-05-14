@@ -3,7 +3,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
 
 class SendCrashReportsSwitchTile extends StatelessWidget {
-  const SendCrashReportsSwitchTile({Key? key}) : super(key: key);
+  const SendCrashReportsSwitchTile({super.key});
 
   @override
   Widget build(BuildContext context) {

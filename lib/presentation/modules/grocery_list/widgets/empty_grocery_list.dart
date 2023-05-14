@@ -4,7 +4,7 @@ import 'package:groceries/utils/constants/app_text_styles.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class EmptyGroceryList extends StatelessWidget {
-  const EmptyGroceryList({Key? key}) : super(key: key);
+  const EmptyGroceryList({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -8,8 +8,8 @@ class GroceryListCard extends StatelessWidget {
   const GroceryListCard({
     required this.listModel,
     required this.onTap,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final GroceryListModel listModel;
   final VoidCallback onTap;
 

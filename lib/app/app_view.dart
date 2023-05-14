@@ -7,7 +7,7 @@ import 'package:groceries/presentation/blocs/remote_config/remote_config_cubit.d
 import 'package:groceries/presentation/blocs/theme/theme_cubit.dart';
 
 class AppView extends StatelessWidget {
-  const AppView({Key? key}) : super(key: key);
+  const AppView({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -5,7 +5,7 @@ import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
 
 class GreetingText extends StatelessWidget {
-  const GreetingText({Key? key}) : super(key: key);
+  const GreetingText({super.key});
 
   @override
   Widget build(BuildContext context) {

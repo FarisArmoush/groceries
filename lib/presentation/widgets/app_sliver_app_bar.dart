@@ -8,8 +8,8 @@ class AppSliverAppBar extends StatelessWidget {
     this.actions,
     this.centerTitle,
     this.bottom,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String title;
   final List<Widget>? actions;

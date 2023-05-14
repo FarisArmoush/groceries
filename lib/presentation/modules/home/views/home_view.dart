@@ -5,7 +5,7 @@ import 'package:groceries/presentation/modules/home/blocs/my_tasks/my_tasks_bloc
 import 'package:groceries/presentation/modules/home/widgets/home_form.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({Key? key}) : super(key: key);
+  const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {

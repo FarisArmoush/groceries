@@ -3,7 +3,7 @@ import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class MemberCard extends StatelessWidget {
-  const MemberCard({Key? key}) : super(key: key);
+  const MemberCard({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -7,8 +7,8 @@ class BottomSheetsHeader extends StatelessWidget {
   const BottomSheetsHeader({
     this.header,
     this.buttonText,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String? header;
   final String? buttonText;

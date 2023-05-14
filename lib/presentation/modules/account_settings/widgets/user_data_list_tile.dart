@@ -7,8 +7,8 @@ class UserDataListTile extends StatelessWidget {
     required this.title,
     required this.subtitle,
     this.onTap,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String title;
   final String? subtitle;

@@ -4,7 +4,7 @@ import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class EditListImage extends StatelessWidget {
-  const EditListImage({Key? key}) : super(key: key);
+  const EditListImage({super.key});
 
   @override
   Widget build(BuildContext context) {

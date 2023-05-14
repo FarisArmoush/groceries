@@ -5,7 +5,7 @@ import 'package:groceries/presentation/modules/home/widgets/my_tasks/my_tasks_ra
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 
 class MyTasksForm extends StatelessWidget {
-  const MyTasksForm({Key? key}) : super(key: key);
+  const MyTasksForm({super.key});
 
   @override
   Widget build(BuildContext context) {
