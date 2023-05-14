@@ -5,7 +5,7 @@ import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocer
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 
 class GroceryListsForm extends StatelessWidget {
-  const GroceryListsForm({Key? key}) : super(key: key);
+  const GroceryListsForm({super.key});
 
   @override
   Widget build(BuildContext context) {

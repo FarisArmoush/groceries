@@ -1,13 +1,14 @@
 part of 'register_form.dart';
 
 class _RegisterHeader extends StatelessWidget {
-  const _RegisterHeader({Key? key}) : super(key: key);
+  const _RegisterHeader();
 
   @override
   Widget build(BuildContext context) {
     return Text(
       AppTranslations.registerHeader,
-      style: AppTextStyles.poppinsSemiBold(
+      style: AppTextStyles.semiBold(
+        context: context,
         color: Theme.of(context).primaryColorLight,
         fontSize: 32,
       ),

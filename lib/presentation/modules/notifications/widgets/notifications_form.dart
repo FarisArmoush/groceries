@@ -6,7 +6,7 @@ import 'package:groceries/presentation/modules/notifications/widgets/notificatio
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 
 class NotificationsForm extends StatelessWidget {
-  const NotificationsForm({Key? key}) : super(key: key);
+  const NotificationsForm({super.key});
 
   @override
   Widget build(BuildContext context) {

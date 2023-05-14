@@ -4,15 +4,16 @@ import 'package:groceries/utils/constants/app_text_styles.dart';
 class DisplayNameText extends StatelessWidget {
   const DisplayNameText({
     required this.name,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final String? name;
 
   @override
   Widget build(BuildContext context) {
     return SelectableText(
       name ?? '',
-      style: AppTextStyles.poppinsMedium(
+      style: AppTextStyles.medium(
+        context: context,
         color: Theme.of(context).primaryColor,
         fontSize: 16,
       ),

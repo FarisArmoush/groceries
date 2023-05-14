@@ -24,12 +24,12 @@ class __AppElevatedButtonThemeData {
       overlayColor: MaterialStateProperty.all(
         AppColors.white.withOpacity(0.12),
       ),
-      textStyle: MaterialStateProperty.all<TextStyle>(
-        AppTextStyles.poppinsRegular(
-          color: AppColors.white,
-          fontSize: 16,
-        ),
-      ),
+      // textStyle: MaterialStateProperty.all<TextStyle>(
+      //   AppTextStyles.regular(
+      //     color: AppColors.white,
+      //     fontSize: 16,
+      //   ),
+      // ),
       iconColor: MaterialStateProperty.all<Color>(
         AppColors.white,
       ),
@@ -62,12 +62,12 @@ class __AppElevatedButtonThemeData {
       overlayColor: MaterialStateProperty.all(
         AppColors.black.withOpacity(0.12),
       ),
-      textStyle: MaterialStateProperty.all<TextStyle>(
-        AppTextStyles.poppinsRegular(
-          color: AppColors.white,
-          fontSize: 16,
-        ),
-      ),
+      // textStyle: MaterialStateProperty.all<TextStyle>(
+      // AppTextStyles.regular(
+      //   color: AppColors.white,
+      //   fontSize: 16,
+      // ),
+      // ),
       iconColor: MaterialStateProperty.all<Color>(
         AppColors.white,
       ),

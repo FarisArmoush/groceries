@@ -1,7 +1,7 @@
 part of 'forgot_password_form.dart';
 
 class _EmailTextField extends StatelessWidget {
-  const _EmailTextField({Key? key}) : super(key: key);
+  const _EmailTextField();
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +15,7 @@ class _EmailTextField extends StatelessWidget {
           keyboardType: TextInputType.emailAddress,
           validator: (value) => state.email.validator(value),
           errorText: state.email.error,
-          prefixIcon: SvgPicture.asset(
-            Assets.svg.icAtSign,
+          prefixIcon: Assets.svg.icAtSign.svg(
             color: Theme.of(context).hintColor,
             fit: BoxFit.scaleDown,
           ),

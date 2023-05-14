@@ -8,8 +8,8 @@ part '_category_box_divider.dart';
 class CategoryBox extends StatelessWidget {
   const CategoryBox({
     required this.category,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String category;
 
@@ -29,7 +29,8 @@ class CategoryBox extends StatelessWidget {
             ),
             child: Text(
               category,
-              style: AppTextStyles.poppinsRegular(
+              style: AppTextStyles.regular(
+                context: context,
                 color: Theme.of(context).primaryColor,
                 fontSize: 14,
               ),

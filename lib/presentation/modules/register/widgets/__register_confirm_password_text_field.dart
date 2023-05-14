@@ -1,7 +1,7 @@
 part of 'register_form.dart';
 
 class _RegisterConfirmPasswordTextField extends StatelessWidget {
-  const _RegisterConfirmPasswordTextField({Key? key}) : super(key: key);
+  const _RegisterConfirmPasswordTextField();
 
   @override
   Widget build(BuildContext context) {

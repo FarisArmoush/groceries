@@ -5,7 +5,7 @@ import 'package:groceries/presentation/modules/forgot_password/cubit/forgot_pass
 import 'package:groceries/presentation/modules/forgot_password/widgets/forgot_password_form.dart';
 
 class ForgotPasswordView extends StatelessWidget {
-  const ForgotPasswordView({Key? key}) : super(key: key);
+  const ForgotPasswordView({super.key});
 
   @override
   Widget build(BuildContext context) {

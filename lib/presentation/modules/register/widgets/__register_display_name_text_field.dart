@@ -1,7 +1,7 @@
 part of 'register_form.dart';
 
 class _RegisterDisplayNameTextField extends StatelessWidget {
-  const _RegisterDisplayNameTextField({Key? key}) : super(key: key);
+  const _RegisterDisplayNameTextField();
 
   @override
   Widget build(BuildContext context) {

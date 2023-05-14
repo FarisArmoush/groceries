@@ -3,7 +3,7 @@ import 'package:groceries/utils/constants/app_text_styles.dart';
 
 class AppTextField extends StatelessWidget {
   const AppTextField({
-    Key? key,
+    super.key,
     this.controller,
     this.onChanged,
     this.autofillHints,
@@ -26,7 +26,7 @@ class AppTextField extends StatelessWidget {
     this.prefix,
     this.suffix,
     this.validator,
-  }) : super(key: key);
+  });
 
   final String? labelText;
   final String? errorText;
@@ -67,7 +67,8 @@ class AppTextField extends StatelessWidget {
       cursorColor: Theme.of(context).primaryColorLight,
       cursorWidth: 1,
       onEditingComplete: onEditingComplete,
-      style: AppTextStyles.poppinsRegular(
+      style: AppTextStyles.regular(
+        context: context,
         color: Theme.of(context).primaryColor,
         fontSize: 14,
       ),
@@ -78,12 +79,19 @@ class AppTextField extends StatelessWidget {
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         labelText: labelText,
-        labelStyle: AppTextStyles.poppinsRegular(
+        labelStyle: AppTextStyles.regular(
+          context: context,
           color: Theme.of(context).hintColor,
           fontSize: 16,
         ),
         errorText: errorText,
-        floatingLabelStyle: AppTextStyles.poppinsRegular(
+        errorStyle: AppTextStyles.medium(
+          context: context,
+          fontSize: 12,
+          color: Theme.of(context).primaryColorLight,
+        ),
+        floatingLabelStyle: AppTextStyles.regular(
+          context: context,
           color: Theme.of(context).primaryColor,
           fontSize: 16,
         ),

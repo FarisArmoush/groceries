@@ -4,7 +4,7 @@ import 'package:groceries/presentation/modules/home/widgets/home_header.dart';
 import 'package:groceries/presentation/modules/home/widgets/my_tasks/my_tasks_form.dart';
 
 class HomeForm extends StatelessWidget {
-  const HomeForm({Key? key}) : super(key: key);
+  const HomeForm({super.key});
 
   @override
   Widget build(BuildContext context) {

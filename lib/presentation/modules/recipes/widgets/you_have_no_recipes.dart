@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class YouHaveNoRecipes extends StatelessWidget {
-  const YouHaveNoRecipes({Key? key}) : super(key: key);
+  const YouHaveNoRecipes({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,16 +14,15 @@ class YouHaveNoRecipes extends StatelessWidget {
       children: [
         SizedBox(
           height: size.height * 0.35,
-          child: SvgPicture.asset(
-            Assets.svg.illEating,
-          ),
+          child: Assets.svg.illEating.svg(),
         ),
         SizedBox(
           height: size.height * 0.02,
         ),
         Text(
           AppTranslations.youHaveNoRecipes,
-          style: AppTextStyles.poppinsSemiBold(
+          style: AppTextStyles.semiBold(
+            context: context,
             color: Theme.of(context).primaryColor,
             fontSize: 24,
           ),
@@ -35,7 +33,8 @@ class YouHaveNoRecipes extends StatelessWidget {
         ),
         Text(
           AppTranslations.startWithCreatingYourFirstRecipe,
-          style: AppTextStyles.poppinsLight(
+          style: AppTextStyles.light(
+            context: context,
             color: Theme.of(context).hintColor,
             fontSize: 14,
           ),

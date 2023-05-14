@@ -6,7 +6,7 @@ import 'package:groceries/presentation/modules/root/views/root_view.dart';
 import 'package:groceries/presentation/modules/welcome/views/welcome_view.dart';
 
 class WrapperView extends StatelessWidget {
-  const WrapperView({Key? key}) : super(key: key);
+  const WrapperView({super.key});
 
   @override
   Widget build(BuildContext context) {

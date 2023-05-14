@@ -5,7 +5,7 @@ import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
 
 class GreetingText extends StatelessWidget {
-  const GreetingText({Key? key}) : super(key: key);
+  const GreetingText({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,14 +15,16 @@ class GreetingText extends StatelessWidget {
     return RichText(
       text: TextSpan(
         text: '${AppTranslations.homeGreeting} ',
-        style: AppTextStyles.poppinsSemiBold(
+        style: AppTextStyles.semiBold(
+          context: context,
           color: Theme.of(context).primaryColor,
           fontSize: 20,
         ),
         children: <TextSpan>[
           TextSpan(
             text: displayName,
-            style: AppTextStyles.poppinsSemiBold(
+            style: AppTextStyles.semiBold(
+              context: context,
               color: Theme.of(context).primaryColorLight,
               fontSize: 20,
             ),

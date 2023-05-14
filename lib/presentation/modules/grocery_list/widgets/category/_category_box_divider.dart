@@ -2,7 +2,7 @@ part of 'category_box.dart';
 
 /// The divider used in the [CategoryBox]
 class _CategoryBoxDivider extends StatelessWidget {
-  const _CategoryBoxDivider({Key? key}) : super(key: key);
+  const _CategoryBoxDivider();
 
   @override
   Widget build(BuildContext context) {

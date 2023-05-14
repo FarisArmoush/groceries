@@ -10,11 +10,32 @@
 class FontFamily {
   FontFamily._();
 
-  /// Font family: NanumBrush
-  static const String nanumBrush = 'NanumBrush';
+  /// Font family: NotoSansArabicBlack
+  static const String notoSansArabicBlack = 'NotoSansArabicBlack';
 
-  /// Font family: NanumPen
-  static const String nanumPen = 'NanumPen';
+  /// Font family: NotoSansArabicBold
+  static const String notoSansArabicBold = 'NotoSansArabicBold';
+
+  /// Font family: NotoSansArabicExtraBold
+  static const String notoSansArabicExtraBold = 'NotoSansArabicExtraBold';
+
+  /// Font family: NotoSansArabicExtraLight
+  static const String notoSansArabicExtraLight = 'NotoSansArabicExtraLight';
+
+  /// Font family: NotoSansArabicLight
+  static const String notoSansArabicLight = 'NotoSansArabicLight';
+
+  /// Font family: NotoSansArabicMedium
+  static const String notoSansArabicMedium = 'NotoSansArabicMedium';
+
+  /// Font family: NotoSansArabicRegular
+  static const String notoSansArabicRegular = 'NotoSansArabicRegular';
+
+  /// Font family: NotoSansArabicSemiBold
+  static const String notoSansArabicSemiBold = 'NotoSansArabicSemiBold';
+
+  /// Font family: NotoSansArabicThin
+  static const String notoSansArabicThin = 'NotoSansArabicThin';
 
   /// Font family: PoppinsBlack
   static const String poppinsBlack = 'PoppinsBlack';

@@ -6,7 +6,7 @@ import 'package:groceries/presentation/modules/appearance/widgets/appearance_rad
 import 'package:groceries/presentation/widgets/primary_box.dart';
 
 class AppearanceRadiosList extends StatelessWidget {
-  const AppearanceRadiosList({Key? key}) : super(key: key);
+  const AppearanceRadiosList({super.key});
 
   @override
   Widget build(BuildContext context) {

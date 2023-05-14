@@ -8,8 +8,8 @@ class AppearanceRadio extends StatelessWidget {
     required this.groupValue,
     required this.value,
     required this.onChanged,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final String title;
   final Object? groupValue;
   final Object? value;
@@ -25,7 +25,8 @@ class AppearanceRadio extends StatelessWidget {
       groupValue: groupValue,
       title: Text(
         title,
-        style: AppTextStyles.poppinsMedium(
+        style: AppTextStyles.medium(
+          context: context,
           color: Theme.of(context).primaryColor,
           fontSize: 14,
         ),

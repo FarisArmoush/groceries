@@ -10,7 +10,7 @@ import 'package:groceries/presentation/widgets/buttons/tile_button.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class LogoutButton extends StatelessWidget {
-  const LogoutButton({Key? key}) : super(key: key);
+  const LogoutButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class LogoutButton extends StatelessWidget {
       },
       child: TileButton(
         title: AppTranslations.logout,
-        icon: Assets.svg.icLogout,
+        icon: Assets.svg.icLogout.path,
         color: Theme.of(context).primaryColorLight,
         onTap: () => showModalBottomSheet<LogoutDialog>(
           enableDrag: false,

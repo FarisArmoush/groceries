@@ -8,8 +8,8 @@ class TileButton extends StatelessWidget {
     required this.title,
     required this.icon,
     this.color,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String title;
   final String icon;
@@ -29,7 +29,8 @@ class TileButton extends StatelessWidget {
       ),
       title: Text(
         title,
-        style: AppTextStyles.poppinsRegular(
+        style: AppTextStyles.regular(
+          context: context,
           color: color ?? Theme.of(context).primaryColor,
           fontSize: 16,
         ),

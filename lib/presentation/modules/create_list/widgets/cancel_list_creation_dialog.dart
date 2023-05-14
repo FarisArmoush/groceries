@@ -3,7 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 
 class CancelListCreationDialog extends StatelessWidget {
-  const CancelListCreationDialog({Key? key}) : super(key: key);
+  const CancelListCreationDialog({super.key});
 
   @override
   Widget build(BuildContext context) {

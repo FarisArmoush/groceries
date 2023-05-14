@@ -8,8 +8,8 @@ import 'package:groceries/presentation/modules/home/widgets/rail_title.dart';
 class GroceryListsRail extends StatelessWidget {
   const GroceryListsRail({
     required this.lists,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final List<GroceryListModel> lists;
 

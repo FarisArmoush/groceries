@@ -6,7 +6,7 @@ import 'package:groceries/presentation/modules/settings/views/settings_view.dart
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class RootView extends StatefulWidget {
-  const RootView({Key? key}) : super(key: key);
+  const RootView({super.key});
 
   @override
   State<RootView> createState() => _RootViewState();
@@ -41,17 +41,17 @@ class _RootViewState extends State<RootView> {
       bnbItem(
         context,
         label: 'Home',
-        asset: Assets.svg.icHome,
+        asset: Assets.svg.icHome.path,
       ),
       bnbItem(
         context,
         label: 'Recipes',
-        asset: Assets.svg.icChefHat,
+        asset: Assets.svg.icChefHat.path,
       ),
       bnbItem(
         context,
         label: 'Settings',
-        asset: Assets.svg.icSettings,
+        asset: Assets.svg.icSettings.path,
       ),
     ];
   }

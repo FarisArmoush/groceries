@@ -9,8 +9,8 @@ import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocer
 class GroceryListsList extends StatelessWidget {
   const GroceryListsList({
     required this.lists,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final List<GroceryListModel> lists;
 

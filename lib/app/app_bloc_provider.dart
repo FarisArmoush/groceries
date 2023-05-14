@@ -7,9 +7,8 @@ import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
 class App extends StatelessWidget {
   const App({
     required FirebaseAuthRepository authRepository,
-    Key? key,
-  })  : _authRepository = authRepository,
-        super(key: key);
+    super.key,
+  })  : _authRepository = authRepository;
   final FirebaseAuthRepository _authRepository;
 
   @override

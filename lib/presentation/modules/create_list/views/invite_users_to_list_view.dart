@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class InviteUsersToListView extends StatelessWidget {
-  const InviteUsersToListView({Key? key}) : super(key: key);
+  const InviteUsersToListView({super.key});
 
   @override
   Widget build(BuildContext context) {

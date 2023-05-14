@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/widgets/buttons/other_options_text_button.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class ForgotPasswordVerificationView extends StatelessWidget {
-  const ForgotPasswordVerificationView({Key? key}) : super(key: key);
+  const ForgotPasswordVerificationView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +25,7 @@ class ForgotPasswordVerificationView extends StatelessWidget {
             SizedBox(
               height: size.width * 0.07,
             ),
-            SvgPicture.asset(
-              Assets.svg.icVerified,
+            Assets.svg.icVerified.svg(
               height: MediaQuery.of(context).size.height * 0.15,
               color: Theme.of(context).primaryColor,
             ),
@@ -36,7 +34,8 @@ class ForgotPasswordVerificationView extends StatelessWidget {
             ),
             Text(
               AppTranslations.verifyYourAccount,
-              style: AppTextStyles.poppinsSemiBold(
+              style: AppTextStyles.semiBold(
+                context: context,
                 color: Theme.of(context).primaryColorLight,
                 fontSize: 24,
               ),
@@ -47,7 +46,8 @@ class ForgotPasswordVerificationView extends StatelessWidget {
             ),
             Text(
               AppTranslations.verificationBody,
-              style: AppTextStyles.poppinsRegular(
+              style: AppTextStyles.regular(
+                context: context,
                 color: Theme.of(context).hintColor,
                 fontSize: 14,
               ),

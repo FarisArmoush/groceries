@@ -22,12 +22,12 @@ class _AppOutlinedButtonThemeData {
       iconColor: MaterialStateProperty.all<Color>(
         AppColors.black,
       ),
-      textStyle: MaterialStateProperty.all(
-        AppTextStyles.poppinsRegular(
-          color: AppColors.black,
-          fontSize: 16,
-        ),
-      ),
+      // textStyle: MaterialStateProperty.all(
+      //   AppTextStyles.regular(
+      //     color: AppColors.black,
+      //     fontSize: 16,
+      //   ),
+      // ),
     ),
   );
 
@@ -52,12 +52,12 @@ class _AppOutlinedButtonThemeData {
       iconColor: MaterialStateProperty.all<Color>(
         AppColors.white,
       ),
-      textStyle: MaterialStateProperty.all<TextStyle>(
-        AppTextStyles.poppinsRegular(
-          color: AppColors.white,
-          fontSize: 16,
-        ),
-      ),
+      // textStyle: MaterialStateProperty.all<TextStyle>(
+      //   AppTextStyles.regular(
+      //     color: AppColors.white,
+      //     fontSize: 16,
+      //   ),
+      // ),
     ),
   );
 }

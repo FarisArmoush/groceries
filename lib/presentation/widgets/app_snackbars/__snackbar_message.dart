@@ -3,8 +3,7 @@ part of 'app_snack_bars.dart';
 class _SnackbarMessage extends StatelessWidget {
   const _SnackbarMessage({
     required this.message,
-    Key? key,
-  }) : super(key: key);
+  });
 
   final String message;
 
@@ -13,7 +12,8 @@ class _SnackbarMessage extends StatelessWidget {
     return Flexible(
       child: Text(
         message,
-        style: AppTextStyles.poppinsRegular(
+        style: AppTextStyles.regular(
+          context: context,
           color: AppColors.white,
           fontSize: 16,
         ),

@@ -7,7 +7,7 @@ import 'package:groceries/presentation/widgets/buttons/bottom_sheet_button.dart'
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class GroceryListOptionsBottomSheet extends StatelessWidget {
-  const GroceryListOptionsBottomSheet({Key? key}) : super(key: key);
+  const GroceryListOptionsBottomSheet({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -27,17 +27,17 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
             ),
             BottomSheetButton(
               text: AppTranslations.sendListAsText,
-              icon: Assets.svg.icSend,
+              icon: Assets.svg.icSend.path,
               onTap: () {},
             ),
             BottomSheetButton(
               text: AppTranslations.printList,
-              icon: Assets.svg.icPrinter,
+              icon: Assets.svg.icPrinter.path,
               onTap: () {},
             ),
             BottomSheetButton(
               text: AppTranslations.listSettings,
-              icon: Assets.svg.icSettings,
+              icon: Assets.svg.icSettings.path,
               onTap: () => context
                 ..pop()
                 ..pushNamed(

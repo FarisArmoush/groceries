@@ -6,7 +6,7 @@ import 'package:groceries/presentation/modules/onboarding/widgets/onboarding_nex
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class OnboardingView extends StatefulWidget {
-  const OnboardingView({Key? key}) : super(key: key);
+  const OnboardingView({super.key});
 
   @override
   State<OnboardingView> createState() => _OnboardingViewState();
@@ -35,19 +35,19 @@ class _OnboardingViewState extends State<OnboardingView> {
           ),
           items: [
             BaseOnboardingPage(
-              illustrationPath: Assets.svg.illCelebrating,
+              illustrationPath: Assets.svg.illCelebrating.path,
               title: '1',
               body: 'BODY 1',
               backgroundColor: Colors.amber,
             ),
             BaseOnboardingPage(
-              illustrationPath: Assets.svg.illMail,
+              illustrationPath: Assets.svg.illMail.path,
               title: '2',
               body: 'BODY 2',
               backgroundColor: Colors.purple,
             ),
             BaseOnboardingPage(
-              illustrationPath: Assets.svg.illEating,
+              illustrationPath: Assets.svg.illEating.path,
               title: '3',
               body: 'BODY 3',
               backgroundColor: Colors.blue,

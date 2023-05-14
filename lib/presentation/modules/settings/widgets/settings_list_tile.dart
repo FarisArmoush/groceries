@@ -9,8 +9,8 @@ class SettingsListTile extends StatelessWidget {
     required this.subtitle,
     required this.icon,
     required this.onTap,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String icon;
   final String title;
@@ -42,7 +42,8 @@ class SettingsListTile extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: AppTextStyles.poppinsRegular(
+                      style: AppTextStyles.regular(
+                        context: context,
                         color: Theme.of(context).primaryColor,
                         fontSize: 14,
                       ),
@@ -52,7 +53,8 @@ class SettingsListTile extends StatelessWidget {
                     ),
                     Text(
                       subtitle,
-                      style: AppTextStyles.poppinsRegular(
+                      style: AppTextStyles.regular(
+                        context: context,
                         color: Theme.of(context).hintColor,
                         fontSize: 12,
                       ),
@@ -64,8 +66,7 @@ class SettingsListTile extends StatelessWidget {
             const SizedBox(
               width: 20,
             ),
-            SvgPicture.asset(
-              Assets.svg.icRightArrow,
+            Assets.svg.icRightArrow.svg(
               color: Theme.of(context).hintColor,
             ),
           ],

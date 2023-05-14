@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
@@ -7,7 +6,7 @@ import 'package:groceries/utils/constants/app_text_styles.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class ResetPasswordSentSuccessfullyView extends StatelessWidget {
-  const ResetPasswordSentSuccessfullyView({Key? key}) : super(key: key);
+  const ResetPasswordSentSuccessfullyView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,8 +24,7 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
           SizedBox(
             height: size.height * 0.01,
           ),
-          SvgPicture.asset(
-            Assets.svg.illMail,
+          Assets.svg.illMail.svg(
             height: size.height * 0.3,
           ),
           SizedBox(
@@ -34,7 +32,8 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
           ),
           Text(
             'Check your Email!',
-            style: AppTextStyles.poppinsBold(
+            style: AppTextStyles.bold(
+              context: context,
               color: Theme.of(context).primaryColorLight,
               fontSize: 30,
             ),
@@ -45,7 +44,8 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
           ),
           Text(
             'We have sent a password reset instrucion to your email',
-            style: AppTextStyles.poppinsRegular(
+            style: AppTextStyles.regular(
+              context: context,
               color: Theme.of(context).primaryColor,
               fontSize: 20,
             ),

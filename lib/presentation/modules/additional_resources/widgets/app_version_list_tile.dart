@@ -5,7 +5,7 @@ import 'package:groceries/presentation/blocs/remote_config/remote_config_cubit.d
 import 'package:groceries/utils/constants/app_text_styles.dart';
 
 class AppVersionListTile extends StatelessWidget {
-  const AppVersionListTile({Key? key}) : super(key: key);
+  const AppVersionListTile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +14,16 @@ class AppVersionListTile extends StatelessWidget {
     return ListTile(
       title: Text(
         AppTranslations.version,
-        style: AppTextStyles.poppinsMedium(
+        style: AppTextStyles.medium(
+          context: context,
           color: Theme.of(context).primaryColor,
           fontSize: 14,
         ),
       ),
       trailing: Text(
         appVersion,
-        style: AppTextStyles.poppinsRegular(
+        style: AppTextStyles.regular(
+          context: context,
           color: Theme.of(context).primaryColor,
           fontSize: 12,
         ),

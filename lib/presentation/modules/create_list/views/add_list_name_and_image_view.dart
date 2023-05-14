@@ -5,7 +5,7 @@ import 'package:groceries/presentation/widgets/app_text_field.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 
 class AddListNameAndImageView extends StatelessWidget {
-  const AddListNameAndImageView({Key? key}) : super(key: key);
+  const AddListNameAndImageView({super.key});
 
   @override
   Widget build(BuildContext context) {

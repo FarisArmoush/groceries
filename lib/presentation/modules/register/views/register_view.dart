@@ -5,7 +5,7 @@ import 'package:groceries/presentation/modules/register/cubit/register_cubit.dar
 import 'package:groceries/presentation/modules/register/widgets/register_form.dart';
 
 class RegisterView extends StatelessWidget {
-  const RegisterView({Key? key}) : super(key: key);
+  const RegisterView({super.key});
 
   @override
   Widget build(BuildContext context) {

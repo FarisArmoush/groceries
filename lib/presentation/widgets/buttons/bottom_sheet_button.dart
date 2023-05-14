@@ -7,8 +7,8 @@ class BottomSheetButton extends StatelessWidget {
     required this.text,
     required this.icon,
     required this.onTap,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final VoidCallback onTap;
   final String text;
@@ -21,7 +21,8 @@ class BottomSheetButton extends StatelessWidget {
       tileColor: Colors.transparent,
       title: Text(
         text,
-        style: AppTextStyles.poppinsRegular(
+        style: AppTextStyles.regular(
+          context: context,
           color: Theme.of(context).primaryColor,
           fontSize: 14,
         ),

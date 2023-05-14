@@ -6,8 +6,8 @@ class PrimaryBox extends StatelessWidget {
     this.header,
     this.backgroundColor,
     this.borderRadius,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final Widget child;
   final Widget? header;

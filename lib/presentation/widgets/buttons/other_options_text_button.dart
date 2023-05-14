@@ -6,8 +6,8 @@ class OtherOptionTextButton extends StatelessWidget {
     required this.onTap,
     required this.upperText,
     required this.lowerText,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final String upperText;
   final String lowerText;
   final VoidCallback onTap;
@@ -22,14 +22,16 @@ class OtherOptionTextButton extends StatelessWidget {
           children: <TextSpan>[
             TextSpan(
               text: '$upperText\n',
-              style: AppTextStyles.poppinsLight(
+              style: AppTextStyles.light(
+                context: context,
                 color: Theme.of(context).hintColor,
                 fontSize: 14,
               ),
             ),
             TextSpan(
               text: lowerText,
-              style: AppTextStyles.poppinsMedium(
+              style: AppTextStyles.medium(
+                context: context,
                 color: Theme.of(context).primaryColorLight,
                 fontSize: 14,
               ),

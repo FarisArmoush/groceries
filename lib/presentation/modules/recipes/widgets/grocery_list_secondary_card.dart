@@ -8,8 +8,8 @@ import 'package:groceries/utils/constants/assets.gen.dart';
 class GroceryListSecondaryCard extends StatelessWidget {
   const GroceryListSecondaryCard({
     required this.listModel,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final GroceryListModel listModel;
 
@@ -20,12 +20,13 @@ class GroceryListSecondaryCard extends StatelessWidget {
         imageUrl: listModel.imageUrl,
       ),
       trailing: SvgPicture.asset(
-        Assets.svg.icListPlus,
+        Assets.svg.icListPlus.path,
         color: Theme.of(context).primaryColor,
       ),
       title: Text(
         listModel.name,
-        style: AppTextStyles.poppinsRegular(
+        style: AppTextStyles.regular(
+          context: context,
           color: Theme.of(context).primaryColor,
           fontSize: 14,
         ),

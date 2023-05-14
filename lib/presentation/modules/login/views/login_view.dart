@@ -5,7 +5,7 @@ import 'package:groceries/presentation/modules/login/cubit/login_cubit.dart';
 import 'package:groceries/presentation/modules/login/widgets/login_form.dart';
 
 class LoginView extends StatelessWidget {
-  const LoginView({Key? key}) : super(key: key);
+  const LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {

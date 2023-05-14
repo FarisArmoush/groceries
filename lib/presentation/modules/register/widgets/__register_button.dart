@@ -1,7 +1,7 @@
 part of 'register_form.dart';
 
 class _RegisterButton extends StatelessWidget {
-  const _RegisterButton({Key? key}) : super(key: key);
+  const _RegisterButton();
 
   @override
   Widget build(BuildContext context) {

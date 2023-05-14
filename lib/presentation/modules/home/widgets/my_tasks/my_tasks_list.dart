@@ -5,8 +5,8 @@ import 'package:groceries/presentation/modules/home/widgets/my_tasks/my_tasks_ca
 class MyTasksList extends StatelessWidget {
   const MyTasksList({
     required this.tasks,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final List<TaskModel> tasks;
 

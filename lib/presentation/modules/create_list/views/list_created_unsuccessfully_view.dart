@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
@@ -7,7 +6,7 @@ import 'package:groceries/utils/constants/app_text_styles.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class ListCreatedUnsuccessfullyView extends StatelessWidget {
-  const ListCreatedUnsuccessfullyView({Key? key}) : super(key: key);
+  const ListCreatedUnsuccessfullyView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +22,11 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
             SizedBox(
               height: size.height * 0.1,
             ),
-            SvgPicture.asset(
-              Assets.svg.illError,
-            ),
+            Assets.svg.illError.svg(),
             Text(
               AppTranslations.oops,
-              style: AppTextStyles.poppinsSemiBold(
+              style: AppTextStyles.semiBold(
+                context: context,
                 color: Theme.of(context).primaryColorLight,
                 fontSize: 32,
               ),
@@ -39,7 +37,8 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
             ),
             Text(
               AppTranslations.somethingWentWrong,
-              style: AppTextStyles.poppinsRegular(
+              style: AppTextStyles.regular(
+                context: context,
                 color: Theme.of(context).hintColor,
                 fontSize: 16,
               ),

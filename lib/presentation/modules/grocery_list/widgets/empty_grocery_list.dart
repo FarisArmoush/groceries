@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class EmptyGroceryList extends StatelessWidget {
-  const EmptyGroceryList({Key? key}) : super(key: key);
+  const EmptyGroceryList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,16 +21,15 @@ class EmptyGroceryList extends StatelessWidget {
             ),
             SizedBox(
               height: size.height * 0.45,
-              child: SvgPicture.asset(
-                Assets.svg.illWriting,
-              ),
+              child: Assets.svg.illWriting.svg(),
             ),
             SizedBox(
               height: size.height * 0.03,
             ),
             Text(
               AppTranslations.listIsEmpty,
-              style: AppTextStyles.poppinsSemiBold(
+              style: AppTextStyles.semiBold(
+                context: context,
                 color: Theme.of(context).primaryColor,
                 fontSize: 24,
               ),
@@ -42,7 +40,8 @@ class EmptyGroceryList extends StatelessWidget {
             ),
             Text(
               AppTranslations.addItemsToList,
-              style: AppTextStyles.poppinsLight(
+              style: AppTextStyles.light(
+                context: context,
                 color: Theme.of(context).hintColor,
                 fontSize: 14,
               ),
@@ -53,8 +52,7 @@ class EmptyGroceryList extends StatelessWidget {
             ),
             ElevatedButton.icon(
               onPressed: () {},
-              icon: SvgPicture.asset(
-                Assets.svg.icSearch,
+              icon: Assets.svg.icSearch.svg(
                 color: Theme.of(context).colorScheme.secondary,
               ),
               label: Text(

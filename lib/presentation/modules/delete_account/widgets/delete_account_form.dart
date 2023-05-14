@@ -4,16 +4,17 @@ import 'package:groceries/presentation/modules/delete_account/widgets/delete_acc
 import 'package:groceries/presentation/modules/delete_account/widgets/delete_account_button.dart';
 import 'package:groceries/presentation/modules/delete_account/widgets/delete_account_header.dart';
 import 'package:groceries/presentation/modules/delete_account/widgets/delete_account_illustration.dart';
+import 'package:groceries/presentation/widgets/app_bar_title.dart';
 
 class DeleteAccountForm extends StatelessWidget {
-  const DeleteAccountForm({Key? key}) : super(key: key);
+  const DeleteAccountForm({super.key});
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppTranslations.deleteAccount),
+        title: AppBarTitle(AppTranslations.deleteAccount),
       ),
       body: ListView(
         shrinkWrap: true,

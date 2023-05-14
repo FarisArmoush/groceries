@@ -3,7 +3,7 @@ import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
 
 class NotificationsSettingsSwitch extends StatefulWidget {
-  const NotificationsSettingsSwitch({Key? key}) : super(key: key);
+  const NotificationsSettingsSwitch({super.key});
 
   @override
   State<NotificationsSettingsSwitch> createState() =>
@@ -25,14 +25,16 @@ class _NotificationsSettingsSwitchState
       value: value,
       title: Text(
         'Requests',
-        style: AppTextStyles.poppinsMedium(
+        style: AppTextStyles.medium(
+          context: context,
           color: Theme.of(context).primaryColor,
           fontSize: 16,
         ),
       ),
       subtitle: Text(
         'Receive a notification when someone requests a grocery from you?',
-        style: AppTextStyles.poppinsLight(
+        style: AppTextStyles.light(
+          context: context,
           color: Theme.of(context).hintColor,
           fontSize: 12,
         ),

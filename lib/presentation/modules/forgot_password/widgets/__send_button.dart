@@ -1,7 +1,7 @@
 part of 'forgot_password_form.dart';
 
 class _SendButton extends StatelessWidget {
-  const _SendButton({Key? key}) : super(key: key);
+  const _SendButton();
 
   @override
   Widget build(BuildContext context) {

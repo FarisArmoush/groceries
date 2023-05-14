@@ -1,7 +1,7 @@
 part of 'register_form.dart';
 
 class _RegisterEmailTextField extends StatelessWidget {
-  const _RegisterEmailTextField({Key? key}) : super(key: key);
+  const _RegisterEmailTextField();
 
   @override
   Widget build(BuildContext context) {

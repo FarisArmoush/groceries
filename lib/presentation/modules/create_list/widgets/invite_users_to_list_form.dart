@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class InviteUsersToListForm extends StatelessWidget {
-  const InviteUsersToListForm({Key? key}) : super(key: key);
+  const InviteUsersToListForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +16,11 @@ class InviteUsersToListForm extends StatelessWidget {
         horizontal: 32,
       ),
       children: [
-        SvgPicture.asset(Assets.svg.illCall),
+        Assets.svg.illCall.svg(),
         Text(
           AppTranslations.invitePeopleToList,
-          style: AppTextStyles.poppinsSemiBold(
+          style: AppTextStyles.semiBold(
+            context: context,
             color: Theme.of(context).primaryColor,
             fontSize: 28,
           ),
@@ -42,14 +42,14 @@ class InviteUsersToListForm extends StatelessWidget {
       children: [
         TextButton.icon(
           onPressed: () {},
-          icon: SvgPicture.asset(
-            Assets.svg.icClipboardCopy,
+          icon: Assets.svg.icClipboardCopy.svg(
             color: Theme.of(context).primaryColor,
             height: size.height * 0.03,
           ),
           label: Text(
             AppTranslations.copyInvitationLink,
-            style: AppTextStyles.poppinsRegular(
+            style: AppTextStyles.regular(
+              context: context,
               color: Theme.of(context).primaryColor,
               fontSize: 16,
             ),
@@ -57,14 +57,14 @@ class InviteUsersToListForm extends StatelessWidget {
         ),
         TextButton.icon(
           onPressed: () {},
-          icon: SvgPicture.asset(
-            Assets.svg.icAtSign,
+          icon: Assets.svg.icAtSign.svg(
             color: Theme.of(context).primaryColor,
             height: size.height * 0.03,
           ),
           label: Text(
             AppTranslations.email,
-            style: AppTextStyles.poppinsRegular(
+            style: AppTextStyles.regular(
+              context: context,
               color: Theme.of(context).primaryColor,
               fontSize: 16,
             ),

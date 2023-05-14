@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
@@ -12,8 +11,8 @@ class CachedImage extends StatelessWidget {
     this.boxFit,
     this.boxShape,
     this.borderRadius,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String? imageUrl;
   final double? height;
@@ -46,8 +45,7 @@ class CachedImage extends StatelessWidget {
         return const AppLoadingIndicator();
       },
       errorWidget: (context, url, error) {
-        return SvgPicture.asset(
-          Assets.svg.icCircleX,
+        return Assets.svg.icCircleX.svg(
           color: Theme.of(context).primaryColorLight,
         );
       },

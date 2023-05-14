@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class MemberCard extends StatelessWidget {
-  const MemberCard({Key? key}) : super(key: key);
+  const MemberCard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,8 +21,7 @@ class MemberCard extends StatelessWidget {
       ),
       trailing: IconButton(
         onPressed: () {},
-        icon: SvgPicture.asset(
-          Assets.svg.icUserX,
+        icon: Assets.svg.icUserX.svg(
           color: Theme.of(context).hintColor,
         ),
       ),

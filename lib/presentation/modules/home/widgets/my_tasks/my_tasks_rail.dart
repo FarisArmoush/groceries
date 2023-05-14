@@ -7,8 +7,8 @@ import 'package:groceries/presentation/modules/home/widgets/rail_title.dart';
 class MyTasksRail extends StatelessWidget {
   const MyTasksRail({
     required this.tasks,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final List<TaskModel> tasks;
 
