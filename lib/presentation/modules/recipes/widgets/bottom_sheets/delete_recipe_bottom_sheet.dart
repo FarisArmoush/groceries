@@ -23,7 +23,8 @@ class DeleteRecipeBottomSheet extends StatelessWidget {
           children: [
             Text(
               AppTranslations.youSureYouWantToDeleteThisRecipe,
-              style: AppTextStyles.poppinsSemiBold(
+              style: AppTextStyles.semiBold(
+                context: context,
                 color: Theme.of(context).primaryColor,
                 fontSize: 24,
               ),

@@ -12,7 +12,8 @@ class DisplayNameText extends StatelessWidget {
   Widget build(BuildContext context) {
     return SelectableText(
       name ?? '',
-      style: AppTextStyles.poppinsMedium(
+      style: AppTextStyles.medium(
+        context: context,
         color: Theme.of(context).primaryColor,
         fontSize: 16,
       ),

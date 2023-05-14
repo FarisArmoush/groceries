@@ -5,6 +5,7 @@ import 'package:groceries/presentation/blocs/remote_config/remote_config_cubit.d
 import 'package:groceries/presentation/modules/additional_resources/widgets/app_version_list_tile.dart';
 import 'package:groceries/presentation/modules/additional_resources/widgets/legal_list_tile.dart';
 import 'package:groceries/presentation/modules/additional_resources/widgets/send_crash_reports_switch_tile.dart';
+import 'package:groceries/presentation/widgets/app_bar_title.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
 
 class AdditionalResourcesView extends StatelessWidget {
@@ -16,7 +17,7 @@ class AdditionalResourcesView extends StatelessWidget {
     final urlLauncher = context.read<RemoteConfigCubit>().urlLauncherRepo;
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppTranslations.additionalResources),
+        title: AppBarTitle(AppTranslations.additionalResources),
       ),
       body: ListView(
         physics: const BouncingScrollPhysics(),
@@ -31,7 +32,8 @@ class AdditionalResourcesView extends StatelessWidget {
           ),
           Text(
             AppTranslations.getHelp,
-            style: AppTextStyles.poppinsMedium(
+            style: AppTextStyles.medium(
+              context: context,
               color: Theme.of(context).primaryColor,
               fontSize: 18,
             ),
@@ -45,7 +47,8 @@ class AdditionalResourcesView extends StatelessWidget {
           ),
           Text(
             AppTranslations.legal,
-            style: AppTextStyles.poppinsMedium(
+            style: AppTextStyles.medium(
+              context: context,
               color: Theme.of(context).primaryColor,
               fontSize: 18,
             ),

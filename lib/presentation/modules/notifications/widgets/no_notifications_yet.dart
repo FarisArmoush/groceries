@@ -21,7 +21,8 @@ class NoNotificationsYet extends StatelessWidget {
         ),
         Text(
           AppTranslations.notifications,
-          style: AppTextStyles.poppinsSemiBold(
+          style: AppTextStyles.semiBold(
+            context: context,
             color: Theme.of(context).primaryColor,
             fontSize: 24,
           ),
@@ -32,7 +33,8 @@ class NoNotificationsYet extends StatelessWidget {
         ),
         Text(
           AppTranslations.emptyNotificationsBody,
-          style: AppTextStyles.poppinsLight(
+          style: AppTextStyles.light(
+            context: context,
             color: Theme.of(context).hintColor,
             fontSize: 14,
           ),

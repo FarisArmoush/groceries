@@ -7,7 +7,8 @@ class _RegisterHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       AppTranslations.registerHeader,
-      style: AppTextStyles.poppinsSemiBold(
+      style: AppTextStyles.semiBold(
+        context: context,
         color: Theme.of(context).primaryColorLight,
         fontSize: 32,
       ),

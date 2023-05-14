@@ -23,7 +23,8 @@ class RecipeCard extends StatelessWidget {
       children: [
         Text(
           recipeModel.name,
-          style: AppTextStyles.poppinsSemiBold(
+          style: AppTextStyles.semiBold(
+            context: context,
             color: Theme.of(context).primaryColor,
             fontSize: 32,
           ),

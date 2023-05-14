@@ -9,7 +9,8 @@ class AppTipText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       AppTranslations.homeTip,
-      style: AppTextStyles.poppinsMedium(
+      style: AppTextStyles.medium(
+        context: context,
         color: Theme.of(context).hintColor,
         fontSize: 14,
       ),

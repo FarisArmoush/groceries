@@ -25,7 +25,8 @@ class GroceryListSecondaryCard extends StatelessWidget {
       ),
       title: Text(
         listModel.name,
-        style: AppTextStyles.poppinsRegular(
+        style: AppTextStyles.regular(
+          context: context,
           color: Theme.of(context).primaryColor,
           fontSize: 14,
         ),

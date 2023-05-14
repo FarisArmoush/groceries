@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/presentation/widgets/app_bar_title.dart';
 import 'package:groceries/presentation/widgets/buttons/tile_button.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
@@ -10,7 +11,7 @@ class RecipeView extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Recipe <NAME>'),
+        title: const AppBarTitle('Recipe <NAME>'),
       ),
       body: ListView.separated(
         physics: const BouncingScrollPhysics(),

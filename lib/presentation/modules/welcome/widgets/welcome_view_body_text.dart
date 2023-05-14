@@ -9,7 +9,8 @@ class WelcomeViewBodyText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       AppTranslations.welcomeBody,
-      style: AppTextStyles.poppinsRegular(
+      style: AppTextStyles.regular(
+        context: context,
         color: Theme.of(context).primaryColor.withOpacity(0.9),
         fontSize: 20,
       ),

@@ -40,7 +40,8 @@ class BaseOnboardingPage extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: AppTextStyles.poppinsSemiBold(
+                  style: AppTextStyles.semiBold(
+                    context: context,
                     color: Theme.of(context).primaryColor,
                     fontSize: 26,
                   ),
@@ -50,7 +51,8 @@ class BaseOnboardingPage extends StatelessWidget {
                 ),
                 Text(
                   body,
-                  style: AppTextStyles.poppinsRegular(
+                  style: AppTextStyles.regular(
+                    context: context,
                     color: Theme.of(context).hintColor,
                     fontSize: 18,
                   ),

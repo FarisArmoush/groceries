@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:groceries/utils/constants/fonts.gen.dart';
 
@@ -11,12 +12,15 @@ class AppTextStyles {
   /// with the specified `color` and `fontSize`.
   ///
   /// `[100]`
-  static TextStyle poppinsThin({
+  static TextStyle thin({
+    required BuildContext context,
     required Color color,
     required double fontSize,
   }) {
     return TextStyle(
-      fontFamily: FontFamily.poppinsThin,
+      fontFamily: context.locale.languageCode != 'ar'
+          ? FontFamily.poppinsThin
+          : FontFamily.notoSansArabicThin,
       fontSize: fontSize,
       color: color,
     );
@@ -26,12 +30,15 @@ class AppTextStyles {
   /// with the specified `color` and `fontSize`.
   ///
   /// `[200]`
-  static TextStyle poppinsExtraLight({
+  static TextStyle extraLight({
+    required BuildContext context,
     required Color color,
     required double fontSize,
   }) {
     return TextStyle(
-      fontFamily: FontFamily.poppinsExtraLight,
+      fontFamily: context.locale.languageCode != 'ar'
+          ? FontFamily.poppinsExtraLight
+          : FontFamily.notoSansArabicExtraLight,
       fontSize: fontSize,
       color: color,
     );
@@ -41,12 +48,15 @@ class AppTextStyles {
   /// with the specified `color` and `fontSize`.
   ///
   /// `[300]`
-  static TextStyle poppinsLight({
+  static TextStyle light({
+    required BuildContext context,
     required Color color,
     required double fontSize,
   }) {
     return TextStyle(
-      fontFamily: FontFamily.poppinsLight,
+      fontFamily: context.locale.languageCode != 'ar'
+          ? FontFamily.poppinsLight
+          : FontFamily.notoSansArabicLight,
       color: color,
       fontSize: fontSize,
     );
@@ -56,12 +66,15 @@ class AppTextStyles {
   /// with the specified `color` and `fontSize`.
   ///
   /// `[400]`
-  static TextStyle poppinsRegular({
+  static TextStyle regular({
+    required BuildContext context,
     required Color color,
     required double fontSize,
   }) {
     return TextStyle(
-      fontFamily: FontFamily.poppinsRegular,
+      fontFamily: context.locale.languageCode != 'ar'
+          ? FontFamily.poppinsRegular
+          : FontFamily.notoSansArabicRegular,
       fontSize: fontSize,
       color: color,
     );
@@ -71,12 +84,15 @@ class AppTextStyles {
   /// with the specified `color` and `fontSize`.
   ///
   /// `[500]`
-  static TextStyle poppinsMedium({
+  static TextStyle medium({
+    required BuildContext context,
     required Color color,
     required double fontSize,
   }) {
     return TextStyle(
-      fontFamily: FontFamily.poppinsMedium,
+      fontFamily: context.locale.languageCode != 'ar'
+          ? FontFamily.poppinsMedium
+          : FontFamily.notoSansArabicMedium,
       color: color,
       fontSize: fontSize,
     );
@@ -86,12 +102,15 @@ class AppTextStyles {
   /// with the specified `color` and `fontSize`.
   ///
   /// `[600]`
-  static TextStyle poppinsSemiBold({
+  static TextStyle semiBold({
+    required BuildContext context,
     required Color color,
     required double fontSize,
   }) {
     return TextStyle(
-      fontFamily: FontFamily.poppinsSemiBold,
+      fontFamily: context.locale.languageCode != 'ar'
+          ? FontFamily.poppinsSemiBold
+          : FontFamily.notoSansArabicSemiBold,
       fontSize: fontSize,
       color: color,
     );
@@ -101,12 +120,15 @@ class AppTextStyles {
   /// with the specified `color` and `fontSize`.
   ///
   /// `[700]`
-  static TextStyle poppinsBold({
+  static TextStyle bold({
+    required BuildContext context,
     required Color color,
     required double fontSize,
   }) {
     return TextStyle(
-      fontFamily: FontFamily.poppinsBold,
+      fontFamily: context.locale.languageCode != 'ar'
+          ? FontFamily.poppinsBold
+          : FontFamily.notoSansArabicBold,
       fontSize: fontSize,
       color: color,
     );
@@ -116,12 +138,15 @@ class AppTextStyles {
   /// with the specified `color` and `fontSize`.
   ///
   /// `[800]`
-  static TextStyle poppinsExtraBold({
+  static TextStyle extraBold({
+    required BuildContext context,
     required Color color,
     required double fontSize,
   }) {
     return TextStyle(
-      fontFamily: FontFamily.poppinsExtraBold,
+      fontFamily: context.locale.languageCode != 'ar'
+          ? FontFamily.poppinsExtraBold
+          : FontFamily.notoSansArabicExtraBold,
       fontSize: fontSize,
       color: color,
     );
@@ -131,40 +156,17 @@ class AppTextStyles {
   /// with the specified `color` and `fontSize`.
   ///
   /// `[900]`
-  static TextStyle poppinsBlack({
+  static TextStyle black({
+    required BuildContext context,
     required Color color,
     required double fontSize,
   }) {
     return TextStyle(
-      fontFamily: FontFamily.poppinsBlack,
+      fontFamily: context.locale.languageCode != 'ar'
+          ? FontFamily.poppinsBlack
+          : FontFamily.poppinsBlack,
       color: color,
       fontSize: fontSize,
-    );
-  }
-
-  /// Returns a `TextStyle` object with the Nanum Brush font family,
-  /// with the specified `color` and `fontSize`.
-  static TextStyle nanumBrush({
-    required Color color,
-    required double fontSize,
-  }) {
-    return TextStyle(
-      fontFamily: FontFamily.nanumBrush,
-      fontSize: fontSize,
-      color: color,
-    );
-  }
-
-  /// Returns a `TextStyle` object with the Nanum Pen font family,
-  /// with the specified `color` and `fontSize`.
-  static TextStyle nanumPen({
-    required Color color,
-    required double fontSize,
-  }) {
-    return TextStyle(
-      fontFamily: FontFamily.nanumPen,
-      fontSize: fontSize,
-      color: color,
     );
   }
 }

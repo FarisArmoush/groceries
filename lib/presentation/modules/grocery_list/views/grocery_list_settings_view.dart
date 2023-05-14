@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/grocery_list/widgets/members/edit_list_image.dart';
 import 'package:groceries/presentation/modules/grocery_list/widgets/members/list_members_box.dart';
+import 'package:groceries/presentation/widgets/app_bar_title.dart';
 import 'package:groceries/presentation/widgets/app_text_field.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
@@ -14,7 +15,7 @@ class GroceryListSettingsView extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: AppBarTitle(
           AppTranslations.listSettings,
         ),
         actions: [

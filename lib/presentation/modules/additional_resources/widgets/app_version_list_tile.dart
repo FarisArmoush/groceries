@@ -14,14 +14,16 @@ class AppVersionListTile extends StatelessWidget {
     return ListTile(
       title: Text(
         AppTranslations.version,
-        style: AppTextStyles.poppinsMedium(
+        style: AppTextStyles.medium(
+          context: context,
           color: Theme.of(context).primaryColor,
           fontSize: 14,
         ),
       ),
       trailing: Text(
         appVersion,
-        style: AppTextStyles.poppinsRegular(
+        style: AppTextStyles.regular(
+          context: context,
           color: Theme.of(context).primaryColor,
           fontSize: 12,
         ),

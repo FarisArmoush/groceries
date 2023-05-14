@@ -3,7 +3,7 @@ version: 1.0.0+1
 publish_to: none
 description: an amazing app
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -107,10 +107,42 @@ flutter:
       fonts:
         - asset: assets/fonts/Poppins-SemiBold.ttf
 
-    - family: NanumPen
-      fonts:
-        - asset: assets/fonts/NanumPenScript-Regular.ttf
 
-    - family: NanumBrush
+
+
+    - family: NotoSansArabicThin
       fonts:
-        - asset: assets/fonts/NanumBrushScript-Regular.ttf
+        - asset: assets/fonts/NotoSansArabic-Thin.ttf
+
+    - family: NotoSansArabicRegular
+      fonts:
+        - asset: assets/fonts/NotoSansArabic-Regular.ttf
+
+    - family: NotoSansArabicExtraBold
+      fonts:
+        - asset: assets/fonts/NotoSansArabic-ExtraBold.ttf
+
+    - family: NotoSansArabicBold
+      fonts:
+        - asset: assets/fonts/NotoSansArabic-Bold.ttf
+
+    - family: NotoSansArabicBlack
+      fonts:
+        - asset: assets/fonts/NotoSansArabic-Black.ttf
+
+    - family: NotoSansArabicExtraLight
+      fonts:
+        - asset: assets/fonts/NotoSansArabic-ExtraLight.ttf
+
+    - family: NotoSansArabicLight
+      fonts:
+        - asset: assets/fonts/NotoSansArabic-Light.ttf
+
+    - family: NotoSansArabicMedium
+      fonts:
+        - asset: assets/fonts/NotoSansArabic-Medium.ttf
+
+    - family: NotoSansArabicSemiBold
+      fonts:
+        - asset: assets/fonts/NotoSansArabic-SemiBold.ttf
+

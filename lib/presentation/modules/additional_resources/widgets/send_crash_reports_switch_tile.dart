@@ -13,14 +13,16 @@ class SendCrashReportsSwitchTile extends StatelessWidget {
       tileColor: Colors.transparent,
       title: Text(
         AppTranslations.sendCrashReports,
-        style: AppTextStyles.poppinsRegular(
+        style: AppTextStyles.regular(
+          context: context,
           color: Theme.of(context).primaryColor,
           fontSize: 14,
         ),
       ),
       subtitle: Text(
         AppTranslations.sendCrashReportsDescription,
-        style: AppTextStyles.poppinsRegular(
+        style: AppTextStyles.regular(
+          context: context,
           color: Theme.of(context).hintColor,
           fontSize: 12,
         ),

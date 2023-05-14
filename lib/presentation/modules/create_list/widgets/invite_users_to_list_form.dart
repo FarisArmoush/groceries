@@ -19,7 +19,8 @@ class InviteUsersToListForm extends StatelessWidget {
         Assets.svg.illCall.svg(),
         Text(
           AppTranslations.invitePeopleToList,
-          style: AppTextStyles.poppinsSemiBold(
+          style: AppTextStyles.semiBold(
+            context: context,
             color: Theme.of(context).primaryColor,
             fontSize: 28,
           ),
@@ -47,7 +48,8 @@ class InviteUsersToListForm extends StatelessWidget {
           ),
           label: Text(
             AppTranslations.copyInvitationLink,
-            style: AppTextStyles.poppinsRegular(
+            style: AppTextStyles.regular(
+              context: context,
               color: Theme.of(context).primaryColor,
               fontSize: 16,
             ),
@@ -61,7 +63,8 @@ class InviteUsersToListForm extends StatelessWidget {
           ),
           label: Text(
             AppTranslations.email,
-            style: AppTextStyles.poppinsRegular(
+            style: AppTextStyles.regular(
+              context: context,
               color: Theme.of(context).primaryColor,
               fontSize: 16,
             ),

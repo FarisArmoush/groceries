@@ -7,6 +7,7 @@ import 'package:groceries/data/repositories/firebase_auth_repository.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/logout_button.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/request_to_delete_account_button.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/user_data_list_tile.dart';
+import 'package:groceries/presentation/widgets/app_bar_title.dart';
 
 class AccountSettingsView extends StatelessWidget {
   const AccountSettingsView({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class AccountSettingsView extends StatelessWidget {
     final user = context.read<FirebaseAuthRepository>().currentUser;
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppTranslations.accountSettings),
+        title: AppBarTitle(AppTranslations.accountSettings),
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),

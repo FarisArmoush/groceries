@@ -9,7 +9,8 @@ class DeleteAccountHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       AppTranslations.deleteAccountHeader,
-      style: AppTextStyles.poppinsBold(
+      style: AppTextStyles.bold(
+        context: context,
         color: Theme.of(context).primaryColorLight,
         fontSize: 28,
       ),

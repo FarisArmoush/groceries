@@ -42,7 +42,8 @@ class SettingsListTile extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: AppTextStyles.poppinsRegular(
+                      style: AppTextStyles.regular(
+                        context: context,
                         color: Theme.of(context).primaryColor,
                         fontSize: 14,
                       ),
@@ -52,7 +53,8 @@ class SettingsListTile extends StatelessWidget {
                     ),
                     Text(
                       subtitle,
-                      style: AppTextStyles.poppinsRegular(
+                      style: AppTextStyles.regular(
+                        context: context,
                         color: Theme.of(context).hintColor,
                         fontSize: 12,
                       ),

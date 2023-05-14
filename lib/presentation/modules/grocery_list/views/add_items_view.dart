@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/grocery_model.dart';
 import 'package:groceries/presentation/modules/grocery_list/widgets/grocery_item_card.dart';
+import 'package:groceries/presentation/widgets/app_bar_title.dart';
 
 class AddItemsView extends StatelessWidget {
   const AddItemsView({Key? key}) : super(key: key);
@@ -14,7 +15,7 @@ class AddItemsView extends StatelessWidget {
       length: _list.length,
       child: Scaffold(
         appBar: AppBar(
-          title: Text(AppTranslations.addItems),
+          title: AppBarTitle(AppTranslations.addItems),
           bottom: TabBar(
             physics: const BouncingScrollPhysics(),
             isScrollable: true,

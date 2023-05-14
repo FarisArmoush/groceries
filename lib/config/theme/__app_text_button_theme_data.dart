@@ -9,13 +9,13 @@ class _AppTextButtonThemeData {
       foregroundColor: MaterialStateProperty.all<Color>(
         AppColors.darkRed,
       ),
-      textStyle: MaterialStateProperty.all<TextStyle>(
-        const TextStyle(
-          fontFamily: FontFamily.poppinsRegular,
-          fontSize: 16,
-          color: AppColors.black,
-        ),
-      ),
+      // textStyle: MaterialStateProperty.all<TextStyle>(
+      //   const TextStyle(
+      //     fontFamily: FontFamily.poppinsRegular,
+      //     fontSize: 16,
+      //     color: AppColors.black,
+      //   ),
+      // ),
       overlayColor: MaterialStateProperty.all<Color>(
         AppColors.black.withOpacity(0.1),
       ),
@@ -29,12 +29,12 @@ class _AppTextButtonThemeData {
       foregroundColor: MaterialStateProperty.all<Color>(
         AppColors.lightRed,
       ),
-      textStyle: MaterialStateProperty.all<TextStyle>(
-        AppTextStyles.poppinsRegular(
-          color: AppColors.white,
-          fontSize: 16,
-        ),
-      ),
+      // textStyle: MaterialStateProperty.all<TextStyle>(
+      //   AppTextStyles.regular(
+      //     color: AppColors.white,
+      //     fontSize: 16,
+      //   ),
+      // ),
       overlayColor: MaterialStateProperty.all<Color>(
         AppColors.white.withOpacity(0.1),
       ),

@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/utils/constants/app_text_styles.dart';
 
-class RailTitle extends StatelessWidget {
-  const RailTitle({required this.title, Key? key}) : super(key: key);
-
+class AppBarTitle extends StatelessWidget {
+  const AppBarTitle(this.title, {Key? key}) : super(key: key);
   final String title;
-
   @override
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: AppTextStyles.semiBold(
+      style: AppTextStyles.medium(
         context: context,
         color: Theme.of(context).primaryColor,
-        fontSize: 22,
+        fontSize: 18,
       ),
     );
   }

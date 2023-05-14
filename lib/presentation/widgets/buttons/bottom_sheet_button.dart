@@ -21,7 +21,8 @@ class BottomSheetButton extends StatelessWidget {
       tileColor: Colors.transparent,
       title: Text(
         text,
-        style: AppTextStyles.poppinsRegular(
+        style: AppTextStyles.regular(
+          context: context,
           color: Theme.of(context).primaryColor,
           fontSize: 14,
         ),

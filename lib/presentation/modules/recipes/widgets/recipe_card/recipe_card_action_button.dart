@@ -24,7 +24,8 @@ class RecipeCardActionButton extends StatelessWidget {
       ),
       label: Text(
         label,
-        style: AppTextStyles.poppinsLight(
+        style: AppTextStyles.light(
+          context: context,
           color: Theme.of(context).primaryColor,
           fontSize: 16,
         ),

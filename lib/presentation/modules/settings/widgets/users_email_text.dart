@@ -12,7 +12,8 @@ class UsersEmailText extends StatelessWidget {
   Widget build(BuildContext context) {
     return SelectableText(
       email ?? '',
-      style: AppTextStyles.poppinsLight(
+      style: AppTextStyles.light(
+        context: context,
         color: Theme.of(context).hintColor,
         fontSize: 12,
       ),

@@ -32,7 +32,8 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
           ),
           Text(
             'Check your Email!',
-            style: AppTextStyles.poppinsBold(
+            style: AppTextStyles.bold(
+              context: context,
               color: Theme.of(context).primaryColorLight,
               fontSize: 30,
             ),
@@ -43,7 +44,8 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
           ),
           Text(
             'We have sent a password reset instrucion to your email',
-            style: AppTextStyles.poppinsRegular(
+            style: AppTextStyles.regular(
+              context: context,
               color: Theme.of(context).primaryColor,
               fontSize: 20,
             ),

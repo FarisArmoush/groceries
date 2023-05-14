@@ -12,7 +12,8 @@ class _NotificationCardTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: AppTextStyles.poppinsMedium(
+      style: AppTextStyles.medium(
+        context: context,
         color: Theme.of(context).primaryColor,
         fontSize: 16,
       ),

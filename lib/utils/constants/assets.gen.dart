@@ -449,8 +449,10 @@ class SvgGenImage {
     String? semanticsLabel,
     bool excludeFromSemantics = false,
     SvgTheme theme = const SvgTheme(),
+    ColorFilter? colorFilter,
     Color? color,
     BlendMode colorBlendMode = BlendMode.srcIn,
+    Clip? clipBehavior,
     bool cacheColorFilter = false,
   }) {
     return SvgPicture.asset(

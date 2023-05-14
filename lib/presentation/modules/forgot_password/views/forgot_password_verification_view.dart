@@ -34,7 +34,8 @@ class ForgotPasswordVerificationView extends StatelessWidget {
             ),
             Text(
               AppTranslations.verifyYourAccount,
-              style: AppTextStyles.poppinsSemiBold(
+              style: AppTextStyles.semiBold(
+                context: context,
                 color: Theme.of(context).primaryColorLight,
                 fontSize: 24,
               ),
@@ -45,7 +46,8 @@ class ForgotPasswordVerificationView extends StatelessWidget {
             ),
             Text(
               AppTranslations.verificationBody,
-              style: AppTextStyles.poppinsRegular(
+              style: AppTextStyles.regular(
+                context: context,
                 color: Theme.of(context).hintColor,
                 fontSize: 14,
               ),

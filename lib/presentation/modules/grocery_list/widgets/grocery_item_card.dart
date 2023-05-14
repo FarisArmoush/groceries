@@ -15,14 +15,16 @@ class GroceryItemCard extends StatelessWidget {
     return ListTile(
       title: Text(
         groceryModel.name,
-        style: AppTextStyles.poppinsRegular(
+        style: AppTextStyles.regular(
+          context: context,
           color: Theme.of(context).primaryColor,
           fontSize: 18,
         ),
       ),
       subtitle: Text(
         groceryModel.category,
-        style: AppTextStyles.poppinsLight(
+        style: AppTextStyles.light(
+          context: context,
           color: Theme.of(context).hintColor,
           fontSize: 14,
         ),
