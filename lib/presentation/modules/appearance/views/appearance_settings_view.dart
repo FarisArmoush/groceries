@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/appearance/widgets/appearnce_radios_list.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 
 class AppearanceSettingsView extends StatelessWidget {
   const AppearanceSettingsView({super.key});
@@ -22,7 +22,8 @@ class AppearanceSettingsView extends StatelessWidget {
           _textPadding(
             Text(
               AppTranslations.themeHeader,
-              style: AppTextStyles.poppinsMedium(
+              style: TextStyle(
+                fontFamily: AppFonts.medium(context),
                 color: Theme.of(context).primaryColor,
                 fontSize: 12,
               ),
@@ -39,7 +40,8 @@ class AppearanceSettingsView extends StatelessWidget {
           _textPadding(
             Text(
               AppTranslations.themeHint,
-              style: AppTextStyles.poppinsLight(
+              style: TextStyle(
+                fontFamily: AppFonts.light(context),
                 color: Theme.of(context).hintColor,
                 fontSize: 12,
               ),

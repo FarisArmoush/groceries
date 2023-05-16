@@ -1,29 +1,38 @@
 part of 'app_themes.dart';
 
 class _AppDialogThemeData {
-  static final light = DialogTheme(
-    backgroundColor: AppColors.white,
-    elevation: 0,
-    titleTextStyle: AppTextStyles.poppinsMedium(
-      color: AppColors.black,
-      fontSize: 22,
-    ),
-    contentTextStyle: AppTextStyles.poppinsRegular(
-      color: AppColors.black,
-      fontSize: 16,
-    ),
-    alignment: Alignment.center,
-  );
-  static final dark = DialogTheme(
-    backgroundColor: AppColors.darkGrey,
-    elevation: 0,
-    titleTextStyle: AppTextStyles.poppinsMedium(
-      color: AppColors.white,
-      fontSize: 22,
-    ),
-    contentTextStyle: AppTextStyles.poppinsRegular(
-      color: AppColors.white,
-      fontSize: 16,
-    ),
-  );
+  static DialogTheme light(BuildContext context) {
+    return DialogTheme(
+      backgroundColor: AppColors.white,
+      elevation: 0,
+      titleTextStyle: TextStyle(
+        fontFamily: AppFonts.medium(context),
+        color: AppColors.black,
+        fontSize: 22,
+      ),
+      contentTextStyle: TextStyle(
+        fontFamily: AppFonts.regular(context),
+        color: AppColors.black,
+        fontSize: 16,
+      ),
+      alignment: Alignment.center,
+    );
+  }
+
+  static DialogTheme dark(BuildContext context) {
+    return DialogTheme(
+      backgroundColor: AppColors.darkGrey,
+      elevation: 0,
+      titleTextStyle: TextStyle(
+        fontFamily: AppFonts.medium(context),
+        color: AppColors.white,
+        fontSize: 22,
+      ),
+      contentTextStyle: TextStyle(
+        fontFamily: AppFonts.regular(context),
+        color: AppColors.white,
+        fontSize: 16,
+      ),
+    );
+  }
 }

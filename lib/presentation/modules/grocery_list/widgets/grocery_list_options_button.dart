@@ -15,6 +15,8 @@ class GroceryListOptionsButton extends StatelessWidget {
       ),
       onPressed: () => showModalBottomSheet<GroceryListOptionsBottomSheet>(
         context: context,
+        enableDrag: false,
+        showDragHandle: false,
         builder: (context) => const GroceryListOptionsBottomSheet(),
       ),
     );

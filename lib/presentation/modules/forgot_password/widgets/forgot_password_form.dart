@@ -9,7 +9,7 @@ import 'package:groceries/presentation/modules/forgot_password/widgets/cancel_fo
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/app_snackbars/app_snack_bars.dart';
 import 'package:groceries/presentation/widgets/app_text_field.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 part '__email_text_field.dart';
@@ -66,7 +66,8 @@ class ForgotPasswordForm extends StatelessWidget {
               ),
               Text(
                 AppTranslations.forgotYourPassword,
-                style: AppTextStyles.poppinsSemiBold(
+                style: TextStyle(
+                  fontFamily: AppFonts.semiBold(context),
                   color: Theme.of(context).primaryColorLight,
                   fontSize: 32,
                 ),
@@ -76,7 +77,8 @@ class ForgotPasswordForm extends StatelessWidget {
               ),
               Text(
                 AppTranslations.forgotPasswordBody,
-                style: AppTextStyles.poppinsRegular(
+                style: TextStyle(
+                  fontFamily: AppFonts.regular(context),
                   color: Theme.of(context).primaryColor,
                   fontSize: 18,
                 ),

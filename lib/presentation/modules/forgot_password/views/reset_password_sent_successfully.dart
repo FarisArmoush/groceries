@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class ResetPasswordSentSuccessfullyView extends StatelessWidget {
@@ -32,7 +32,8 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
           ),
           Text(
             'Check your Email!',
-            style: AppTextStyles.poppinsBold(
+            style: TextStyle(
+              fontFamily: AppFonts.bold(context),
               color: Theme.of(context).primaryColorLight,
               fontSize: 30,
             ),
@@ -43,7 +44,8 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
           ),
           Text(
             'We have sent a password reset instrucion to your email',
-            style: AppTextStyles.poppinsRegular(
+            style: TextStyle(
+              fontFamily: AppFonts.regular(context),
               color: Theme.of(context).primaryColor,
               fontSize: 20,
             ),

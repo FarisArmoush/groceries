@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 part '__snackbar_message.dart';

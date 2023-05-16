@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 
 class AppSliverAppBar extends StatelessWidget {
   const AppSliverAppBar({
@@ -22,7 +22,8 @@ class AppSliverAppBar extends StatelessWidget {
     return SliverAppBar.medium(
       title: Text(
         title,
-        style: AppTextStyles.poppinsMedium(
+        style: TextStyle(
+          fontFamily: AppFonts.medium(context),
           color: Theme.of(context).primaryColor,
           fontSize: 20,
         ),

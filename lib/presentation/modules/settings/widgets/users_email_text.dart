@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 
 class UsersEmailText extends StatelessWidget {
   const UsersEmailText({
@@ -12,7 +12,8 @@ class UsersEmailText extends StatelessWidget {
   Widget build(BuildContext context) {
     return SelectableText(
       email ?? '',
-      style: AppTextStyles.poppinsLight(
+      style: TextStyle(
+        fontFamily: AppFonts.light(context),
         color: Theme.of(context).hintColor,
         fontSize: 12,
       ),

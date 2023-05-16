@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 
 class AppTextField extends StatelessWidget {
   const AppTextField({
@@ -67,7 +67,8 @@ class AppTextField extends StatelessWidget {
       cursorColor: Theme.of(context).primaryColorLight,
       cursorWidth: 1,
       onEditingComplete: onEditingComplete,
-      style: AppTextStyles.poppinsRegular(
+      style: TextStyle(
+        fontFamily: AppFonts.regular(context),
         color: Theme.of(context).primaryColor,
         fontSize: 14,
       ),
@@ -78,12 +79,14 @@ class AppTextField extends StatelessWidget {
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         labelText: labelText,
-        labelStyle: AppTextStyles.poppinsRegular(
+        labelStyle: TextStyle(
+          fontFamily: AppFonts.regular(context),
           color: Theme.of(context).hintColor,
           fontSize: 16,
         ),
         errorText: errorText,
-        floatingLabelStyle: AppTextStyles.poppinsRegular(
+        floatingLabelStyle: TextStyle(
+          fontFamily: AppFonts.regular(context),
           color: Theme.of(context).primaryColor,
           fontSize: 16,
         ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class ListCreatedUnsuccessfullyView extends StatelessWidget {
@@ -25,7 +25,8 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
             Assets.svg.illError.svg(),
             Text(
               AppTranslations.oops,
-              style: AppTextStyles.poppinsSemiBold(
+              style: TextStyle(
+                fontFamily: AppFonts.semiBold(context),
                 color: Theme.of(context).primaryColorLight,
                 fontSize: 32,
               ),
@@ -36,7 +37,8 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
             ),
             Text(
               AppTranslations.somethingWentWrong,
-              style: AppTextStyles.poppinsRegular(
+              style: TextStyle(
+                fontFamily: AppFonts.regular(context),
                 color: Theme.of(context).hintColor,
                 fontSize: 16,
               ),

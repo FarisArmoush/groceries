@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/grocery_list_model.dart';
 import 'package:groceries/presentation/modules/grocery_list/widgets/grocery_list_options_button.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 
 class GroceryListCard extends StatelessWidget {
   const GroceryListCard({
@@ -37,7 +37,8 @@ class GroceryListCard extends StatelessWidget {
               ),
               Text(
                 listModel.name,
-                style: AppTextStyles.poppinsMedium(
+                style: TextStyle(
+                  fontFamily: AppFonts.medium(context),
                   color: Theme.of(context).primaryColor,
                   fontSize: 24,
                 ),
@@ -53,7 +54,8 @@ class GroceryListCard extends StatelessWidget {
                   ),
                   child: Text(
                     '${listModel.tasksAmount} ${AppTranslations.newTasks}',
-                    style: AppTextStyles.poppinsLight(
+                    style: TextStyle(
+                      fontFamily: AppFonts.light(context),
                       color: Theme.of(context).colorScheme.secondary,
                       fontSize: 14,
                     ),

@@ -10,7 +10,7 @@ import 'package:groceries/presentation/widgets/app_text_field.dart';
 import 'package:groceries/presentation/widgets/buttons/other_options_text_button.dart';
 import 'package:groceries/presentation/widgets/buttons_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/disabled_button_style.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 
 part '__login_body_text.dart';
 part '__login_button.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 
 part '_add_items_button.dart';
 part '_category_box_divider.dart';
@@ -29,7 +29,8 @@ class CategoryBox extends StatelessWidget {
             ),
             child: Text(
               category,
-              style: AppTextStyles.poppinsRegular(
+              style: TextStyle(
+                fontFamily: AppFonts.regular(context),
                 color: Theme.of(context).primaryColor,
                 fontSize: 14,
               ),

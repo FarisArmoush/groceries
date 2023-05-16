@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/data/models/grocery_list_model.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class GroceryListSecondaryCard extends StatelessWidget {
@@ -23,13 +22,7 @@ class GroceryListSecondaryCard extends StatelessWidget {
         Assets.svg.icListPlus.path,
         color: Theme.of(context).primaryColor,
       ),
-      title: Text(
-        listModel.name,
-        style: AppTextStyles.poppinsRegular(
-          color: Theme.of(context).primaryColor,
-          fontSize: 14,
-        ),
-      ),
+      title: Text(listModel.name),
     );
   }
 }

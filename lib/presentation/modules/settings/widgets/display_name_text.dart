@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 
 class DisplayNameText extends StatelessWidget {
   const DisplayNameText({
@@ -12,7 +12,8 @@ class DisplayNameText extends StatelessWidget {
   Widget build(BuildContext context) {
     return SelectableText(
       name ?? '',
-      style: AppTextStyles.poppinsMedium(
+      style: TextStyle(
+        fontFamily: AppFonts.medium(context),
         color: Theme.of(context).primaryColor,
         fontSize: 16,
       ),

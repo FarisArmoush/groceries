@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 
 class BaseOnboardingPage extends StatelessWidget {
   const BaseOnboardingPage({
@@ -40,7 +40,8 @@ class BaseOnboardingPage extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: AppTextStyles.poppinsSemiBold(
+                  style: TextStyle(
+                    fontFamily: AppFonts.semiBold(context),
                     color: Theme.of(context).primaryColor,
                     fontSize: 26,
                   ),
@@ -50,7 +51,8 @@ class BaseOnboardingPage extends StatelessWidget {
                 ),
                 Text(
                   body,
-                  style: AppTextStyles.poppinsRegular(
+                  style: TextStyle(
+                    fontFamily: AppFonts.regular(context),
                     color: Theme.of(context).hintColor,
                     fontSize: 18,
                   ),

@@ -5,7 +5,7 @@ import 'package:groceries/presentation/blocs/remote_config/remote_config_cubit.d
 import 'package:groceries/presentation/modules/additional_resources/widgets/app_version_list_tile.dart';
 import 'package:groceries/presentation/modules/additional_resources/widgets/legal_list_tile.dart';
 import 'package:groceries/presentation/modules/additional_resources/widgets/send_crash_reports_switch_tile.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 
 class AdditionalResourcesView extends StatelessWidget {
   const AdditionalResourcesView({super.key});
@@ -31,7 +31,8 @@ class AdditionalResourcesView extends StatelessWidget {
           ),
           Text(
             AppTranslations.getHelp,
-            style: AppTextStyles.poppinsMedium(
+            style: TextStyle(
+              fontFamily: AppFonts.medium(context),
               color: Theme.of(context).primaryColor,
               fontSize: 18,
             ),
@@ -45,7 +46,8 @@ class AdditionalResourcesView extends StatelessWidget {
           ),
           Text(
             AppTranslations.legal,
-            style: AppTextStyles.poppinsMedium(
+            style: TextStyle(
+              fontFamily: AppFonts.medium(context),
               color: Theme.of(context).primaryColor,
               fontSize: 18,
             ),

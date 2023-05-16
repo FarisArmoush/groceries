@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/presentation/widgets/next_arrow_icon.dart';
 
 class UserDataListTile extends StatelessWidget {
   const UserDataListTile({
@@ -18,23 +17,9 @@ class UserDataListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: onTap,
-      title: Text(
-        title,
-        style: AppTextStyles.poppinsRegular(
-          color: Theme.of(context).primaryColor,
-          fontSize: 14,
-        ),
-      ),
-      subtitle: Text(
-        subtitle ?? '',
-        style: AppTextStyles.poppinsRegular(
-          color: Theme.of(context).hintColor,
-          fontSize: 12,
-        ),
-      ),
-      trailing: onTap != null
-          ? const CupertinoListTileChevron()
-          : const SizedBox.shrink(),
+      title: Text(title),
+      subtitle: Text(subtitle ?? ''),
+      trailing: onTap != null ? const NextArrowIcon() : const SizedBox.shrink(),
     );
   }
 }

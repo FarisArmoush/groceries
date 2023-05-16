@@ -1,6 +1,5 @@
 // ignore_for_file: strict_raw_type
 import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
 
 class AppearanceRadio extends StatelessWidget {
   const AppearanceRadio({
@@ -25,10 +24,6 @@ class AppearanceRadio extends StatelessWidget {
       groupValue: groupValue,
       title: Text(
         title,
-        style: AppTextStyles.poppinsMedium(
-          color: Theme.of(context).primaryColor,
-          fontSize: 14,
-        ),
       ),
       onChanged: onChanged,
     );

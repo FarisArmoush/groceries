@@ -5,7 +5,6 @@ import 'package:groceries/app/app_bloc_provider.dart';
 import 'package:groceries/config/localization/remote_config_translations_loader.dart';
 import 'package:groceries/data/repositories/firebase_auth_repository.dart';
 import 'package:groceries/data/repositories/remote_config_repository.dart';
-import 'package:groceries/domain/usecases/crashlytics_service.dart';
 import 'package:groceries/firebase_options.dart';
 
 Future<void> main() async {
@@ -17,8 +16,8 @@ Future<void> main() async {
   await authRepo.authStateChanges.first;
   final remoteConfigRepo = RemoteConfigRepository();
   await remoteConfigRepo.init();
-  FirebaseCrashlyticsService.initCrashlytics();
-  FirebaseCrashlyticsService.initPlatformErrorsHandler();
+  // FirebaseCrashlyticsService.initCrashlytics();
+  // FirebaseCrashlyticsService.initPlatformErrorsHandler();
   await EasyLocalization.ensureInitialized();
 
   runApp(

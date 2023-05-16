@@ -7,7 +7,8 @@ class _LoginHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       AppTranslations.loginHeader,
-      style: AppTextStyles.poppinsSemiBold(
+      style: TextStyle(
+        fontFamily: AppFonts.semiBold(context),
         color: Theme.of(context).primaryColorLight,
         fontSize: 32,
       ),

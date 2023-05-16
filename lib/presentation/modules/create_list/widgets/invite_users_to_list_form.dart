@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class InviteUsersToListForm extends StatelessWidget {
@@ -19,7 +19,8 @@ class InviteUsersToListForm extends StatelessWidget {
         Assets.svg.illCall.svg(),
         Text(
           AppTranslations.invitePeopleToList,
-          style: AppTextStyles.poppinsSemiBold(
+          style: TextStyle(
+            fontFamily: AppFonts.semiBold(context),
             color: Theme.of(context).primaryColor,
             fontSize: 28,
           ),
@@ -47,7 +48,8 @@ class InviteUsersToListForm extends StatelessWidget {
           ),
           label: Text(
             AppTranslations.copyInvitationLink,
-            style: AppTextStyles.poppinsRegular(
+            style: TextStyle(
+              fontFamily: AppFonts.regular(context),
               color: Theme.of(context).primaryColor,
               fontSize: 16,
             ),
@@ -61,7 +63,8 @@ class InviteUsersToListForm extends StatelessWidget {
           ),
           label: Text(
             AppTranslations.email,
-            style: AppTextStyles.poppinsRegular(
+            style: TextStyle(
+              fontFamily: AppFonts.regular(context),
               color: Theme.of(context).primaryColor,
               fontSize: 16,
             ),

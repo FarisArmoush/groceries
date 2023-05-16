@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/grocery_list/widgets/members/member_card.dart';
 import 'package:groceries/presentation/widgets/primary_box.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 
 class ListMembersBox extends StatelessWidget {
   const ListMembersBox({super.key});
@@ -12,7 +12,8 @@ class ListMembersBox extends StatelessWidget {
     return PrimaryBox(
       header: Text(
         AppTranslations.listMember,
-        style: AppTextStyles.poppinsRegular(
+        style: TextStyle(
+          fontFamily: AppFonts.regular(context),
           color: Theme.of(context).primaryColor,
           fontSize: 16,
         ),

@@ -1,18 +1,25 @@
 part of 'app_themes.dart';
 
 class _AppFloatingActionButtonThemeData {
-  static final light = FloatingActionButtonThemeData(
-    backgroundColor: AppColors.darkRed,
-    extendedTextStyle: AppTextStyles.poppinsRegular(
-      color: AppColors.white,
-      fontSize: 16,
-    ),
-  );
-  static final dark = FloatingActionButtonThemeData(
-    backgroundColor: AppColors.lightRed,
-    extendedTextStyle: AppTextStyles.poppinsRegular(
-      color: AppColors.white,
-      fontSize: 16,
-    ),
-  );
+  static FloatingActionButtonThemeData light(BuildContext context) {
+    return FloatingActionButtonThemeData(
+      backgroundColor: const Color.fromRGBO(176, 8, 8, 1),
+      extendedTextStyle: TextStyle(
+        fontFamily: AppFonts.regular(context),
+        color: AppColors.white,
+        fontSize: 16,
+      ),
+    );
+  }
+
+  static FloatingActionButtonThemeData dark(BuildContext context) {
+    return FloatingActionButtonThemeData(
+      backgroundColor: AppColors.lightRed,
+      extendedTextStyle: TextStyle(
+        fontFamily: AppFonts.regular(context),
+        color: AppColors.white,
+        fontSize: 16,
+      ),
+    );
+  }
 }

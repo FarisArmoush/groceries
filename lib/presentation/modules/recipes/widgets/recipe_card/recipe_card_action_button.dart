@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 
 class RecipeCardActionButton extends StatelessWidget {
   const RecipeCardActionButton({
@@ -24,7 +24,8 @@ class RecipeCardActionButton extends StatelessWidget {
       ),
       label: Text(
         label,
-        style: AppTextStyles.poppinsLight(
+        style: TextStyle(
+          fontFamily: AppFonts.light(context),
           color: Theme.of(context).primaryColor,
           fontSize: 16,
         ),
