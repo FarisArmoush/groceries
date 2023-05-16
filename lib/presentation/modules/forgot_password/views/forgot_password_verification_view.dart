@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/widgets/buttons/other_options_text_button.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class ForgotPasswordVerificationView extends StatelessWidget {
@@ -34,7 +34,8 @@ class ForgotPasswordVerificationView extends StatelessWidget {
             ),
             Text(
               AppTranslations.verifyYourAccount,
-              style: AppTextStyles.poppinsSemiBold(
+              style: TextStyle(
+                fontFamily: AppFonts.semiBold(context),
                 color: Theme.of(context).primaryColorLight,
                 fontSize: 24,
               ),
@@ -45,7 +46,8 @@ class ForgotPasswordVerificationView extends StatelessWidget {
             ),
             Text(
               AppTranslations.verificationBody,
-              style: AppTextStyles.poppinsRegular(
+              style: TextStyle(
+                fontFamily: AppFonts.regular(context),
                 color: Theme.of(context).hintColor,
                 fontSize: 14,
               ),

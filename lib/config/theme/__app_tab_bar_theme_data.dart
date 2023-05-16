@@ -1,43 +1,52 @@
 part of 'app_themes.dart';
 
 class _AppTabBarThemeData {
-  static final light = TabBarTheme(
-    labelStyle: AppTextStyles.poppinsRegular(
-      color: AppColors.black,
-      fontSize: _labelTextSize,
-    ),
-    splashFactory: _splashFactory,
-    unselectedLabelStyle: AppTextStyles.poppinsRegular(
-      color: AppColors.lightGrey,
-      fontSize: _labelTextSize,
-    ),
-    overlayColor: MaterialStateProperty.all(
-      AppColors.white.withOpacity(0.1),
-    ),
-    unselectedLabelColor: AppColors.lightGrey,
-    labelColor: AppColors.black,
-    dividerColor: Colors.transparent,
-    indicatorColor: AppColors.lightRed,
-  );
+  static TabBarTheme light(BuildContext context) {
+    return TabBarTheme(
+      labelStyle: TextStyle(
+        fontFamily: AppFonts.regular(context),
+        color: AppColors.black,
+        fontSize: _labelTextSize,
+      ),
+      splashFactory: _splashFactory,
+      unselectedLabelStyle: TextStyle(
+        fontFamily: AppFonts.regular(context),
+        color: AppColors.lightGrey,
+        fontSize: _labelTextSize,
+      ),
+      overlayColor: MaterialStateProperty.all(
+        AppColors.white.withOpacity(0.1),
+      ),
+      unselectedLabelColor: AppColors.lightGrey,
+      labelColor: AppColors.black,
+      dividerColor: Colors.transparent,
+      indicatorColor: AppColors.lightRed,
+    );
+  }
 
-  static final dark = TabBarTheme(
-    labelStyle: AppTextStyles.poppinsRegular(
-      color: AppColors.white,
-      fontSize: _labelTextSize,
-    ),
-    splashFactory: _splashFactory,
-    unselectedLabelStyle: AppTextStyles.poppinsRegular(
-      color: AppColors.lightGrey,
-      fontSize: _labelTextSize,
-    ),
-    overlayColor: MaterialStateProperty.all(
-      AppColors.white.withOpacity(0.1),
-    ),
-    unselectedLabelColor: AppColors.lightGrey,
-    labelColor: AppColors.white,
-    dividerColor: Colors.transparent,
-    indicatorColor: AppColors.darkRed,
-  );
+  static TabBarTheme dark(BuildContext context) {
+    return TabBarTheme(
+      labelStyle: TextStyle(
+        fontFamily: AppFonts.regular(context),
+        color: AppColors.white,
+        fontSize: _labelTextSize,
+      ),
+      splashFactory: _splashFactory,
+      unselectedLabelStyle: TextStyle(
+        fontFamily: AppFonts.regular(context),
+        color: AppColors.lightGrey,
+        fontSize: _labelTextSize,
+      ),
+      overlayColor: MaterialStateProperty.all(
+        AppColors.white.withOpacity(0.1),
+      ),
+      unselectedLabelColor: AppColors.lightGrey,
+      labelColor: AppColors.white,
+      dividerColor: Colors.transparent,
+      indicatorColor: AppColors.darkRed,
+    );
+  }
+
   static const _splashFactory = NoSplash.splashFactory;
   static const _labelTextSize = 16.0;
 }

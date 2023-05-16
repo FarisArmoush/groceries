@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries/data/models/recipe_model.dart';
 import 'package:groceries/presentation/modules/recipes/widgets/recipe_card/recipe_card_actions_row.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 
 class RecipeCard extends StatelessWidget {
   const RecipeCard({
@@ -23,7 +23,8 @@ class RecipeCard extends StatelessWidget {
       children: [
         Text(
           recipeModel.name,
-          style: AppTextStyles.poppinsSemiBold(
+          style: TextStyle(
+            fontFamily: AppFonts.semiBold(context),
             color: Theme.of(context).primaryColor,
             fontSize: 32,
           ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 
 class AppLogo extends StatelessWidget {
   const AppLogo({super.key});
@@ -9,7 +9,8 @@ class AppLogo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       AppTranslations.appName,
-      style: AppTextStyles.poppinsBlack(
+      style: TextStyle(
+        fontFamily: AppFonts.black(context),
         color: Theme.of(context).primaryColorLight,
         fontSize: 32,
       ),

@@ -7,7 +7,8 @@ class _LoginBodyText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       AppTranslations.loginToYourAccount,
-      style: AppTextStyles.poppinsRegular(
+      style: TextStyle(
+        fontFamily: AppFonts.regular(context),
         color: Theme.of(context).primaryColor,
         fontSize: 22,
       ),

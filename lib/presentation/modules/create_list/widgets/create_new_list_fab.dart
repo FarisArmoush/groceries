@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/presentation/widgets/next_arrow_icon.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
 
 class CreateNewListFAB extends StatelessWidget {
   const CreateNewListFAB({
@@ -14,7 +14,7 @@ class CreateNewListFAB extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton.extended(
       onPressed: onPressed,
-      label: Assets.svg.icRightArrow.svg(
+      label: const NextArrowIcon(
         color: AppColors.white,
       ),
     );

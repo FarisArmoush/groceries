@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 
 class DeleteRecipeBottomSheet extends StatelessWidget {
   const DeleteRecipeBottomSheet({super.key});
@@ -23,7 +23,8 @@ class DeleteRecipeBottomSheet extends StatelessWidget {
           children: [
             Text(
               AppTranslations.youSureYouWantToDeleteThisRecipe,
-              style: AppTextStyles.poppinsSemiBold(
+              style: TextStyle(
+                fontFamily: AppFonts.semiBold(context),
                 color: Theme.of(context).primaryColor,
                 fontSize: 24,
               ),

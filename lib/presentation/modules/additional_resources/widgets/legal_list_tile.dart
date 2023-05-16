@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/presentation/widgets/next_arrow_icon.dart';
 
 class LegalListTile extends StatelessWidget {
   const LegalListTile({
@@ -16,15 +15,9 @@ class LegalListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: onTap,
-      title: Text(
-        title,
-        style: AppTextStyles.poppinsRegular(
-          color: Theme.of(context).primaryColor,
-          fontSize: 14,
-        ),
-      ),
+      title: Text(title),
       tileColor: Colors.transparent,
-      trailing: const CupertinoListTileChevron(),
+      trailing: const NextArrowIcon(),
     );
   }
 }

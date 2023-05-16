@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 
 class BottomSheetsHeader extends StatelessWidget {
   const BottomSheetsHeader({
@@ -19,7 +19,8 @@ class BottomSheetsHeader extends StatelessWidget {
       children: [
         Text(
           header ?? 'Options',
-          style: AppTextStyles.poppinsMedium(
+          style: TextStyle(
+            fontFamily: AppFonts.regular(context),
             color: Theme.of(context).primaryColor,
             fontSize: 18,
           ),

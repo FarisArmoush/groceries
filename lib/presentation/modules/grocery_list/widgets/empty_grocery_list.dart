@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class EmptyGroceryList extends StatelessWidget {
@@ -28,7 +28,8 @@ class EmptyGroceryList extends StatelessWidget {
             ),
             Text(
               AppTranslations.listIsEmpty,
-              style: AppTextStyles.poppinsSemiBold(
+              style: TextStyle(
+                fontFamily: AppFonts.semiBold(context),
                 color: Theme.of(context).primaryColor,
                 fontSize: 24,
               ),
@@ -39,7 +40,8 @@ class EmptyGroceryList extends StatelessWidget {
             ),
             Text(
               AppTranslations.addItemsToList,
-              style: AppTextStyles.poppinsLight(
+              style: TextStyle(
+                fontFamily: AppFonts.light(context),
                 color: Theme.of(context).hintColor,
                 fontSize: 14,
               ),

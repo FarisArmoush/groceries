@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class CreateNewGroceryListCardButton extends StatelessWidget {
@@ -35,7 +35,8 @@ class CreateNewGroceryListCardButton extends StatelessWidget {
               ),
               Text(
                 text,
-                style: AppTextStyles.poppinsMedium(
+                style: TextStyle(
+                  fontFamily: AppFonts.medium(context),
                   color: AppColors.white,
                   fontSize: 22,
                 ),

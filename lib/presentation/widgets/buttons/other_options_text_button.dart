@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 
 class OtherOptionTextButton extends StatelessWidget {
   const OtherOptionTextButton({
@@ -22,14 +22,16 @@ class OtherOptionTextButton extends StatelessWidget {
           children: <TextSpan>[
             TextSpan(
               text: '$upperText\n',
-              style: AppTextStyles.poppinsLight(
+              style: TextStyle(
+                fontFamily: AppFonts.light(context),
                 color: Theme.of(context).hintColor,
                 fontSize: 14,
               ),
             ),
             TextSpan(
               text: lowerText,
-              style: AppTextStyles.poppinsMedium(
+              style: TextStyle(
+                fontFamily: AppFonts.medium(context),
                 color: Theme.of(context).primaryColorLight,
                 fontSize: 14,
               ),

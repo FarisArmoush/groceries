@@ -18,6 +18,7 @@ class SettingsView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(AppTranslations.settings),
+        leading: const SizedBox.shrink(),
       ),
       body: ListView(
         physics: const BouncingScrollPhysics(),

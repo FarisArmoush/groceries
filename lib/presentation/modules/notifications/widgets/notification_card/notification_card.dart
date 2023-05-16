@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/data/models/notification_model.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 
 part '__notification_card_date.dart';
-part '__notification_card_subtitle.dart';
 part '__notification_card_title.dart';
 
 class NotificationCard extends StatelessWidget {
@@ -42,9 +41,7 @@ class NotificationCard extends StatelessWidget {
           ),
         ],
       ),
-      subtitle: _NotificationCardSubtitle(
-        subtitle: notificationsModel.subtitle,
-      ),
+      subtitle: Text(notificationsModel.subtitle),
     );
   }
 }

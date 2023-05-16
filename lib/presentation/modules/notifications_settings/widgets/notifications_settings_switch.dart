@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
-import 'package:groceries/utils/constants/app_text_styles.dart';
 
 class NotificationsSettingsSwitch extends StatefulWidget {
   const NotificationsSettingsSwitch({super.key});
@@ -23,19 +22,11 @@ class _NotificationsSettingsSwitchState
       activeTrackColor: AppColors.veryLightGrey,
       tileColor: Colors.transparent,
       value: value,
-      title: Text(
+      title: const Text(
         'Requests',
-        style: AppTextStyles.poppinsMedium(
-          color: Theme.of(context).primaryColor,
-          fontSize: 16,
-        ),
       ),
-      subtitle: Text(
+      subtitle: const Text(
         'Receive a notification when someone requests a grocery from you?',
-        style: AppTextStyles.poppinsLight(
-          color: Theme.of(context).hintColor,
-          fontSize: 12,
-        ),
       ),
       onChanged: (bool newValue) {
         setState(() {
