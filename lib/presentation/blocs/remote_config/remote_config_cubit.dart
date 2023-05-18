@@ -8,7 +8,6 @@ part 'remote_config_state.dart';
 class RemoteConfigCubit extends Cubit<RemoteConfigState> {
   RemoteConfigCubit() : super(RemoteConfigInitial());
 
-  /// Use this variable when you want to launch a url
   final urlLauncherRepo = UrlLauncherRepository();
 
   final remoteConfigRepository = RemoteConfigRepository();

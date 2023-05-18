@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
+/// {@template primary_box}
+/// A widget that represents a primary box container
+/// with optional header and customizable styling.
+/// {@endtemplate}
 class PrimaryBox extends StatelessWidget {
+  /// {@macro primary_box}
   const PrimaryBox({
     required this.child,
     this.header,
@@ -9,9 +14,16 @@ class PrimaryBox extends StatelessWidget {
     super.key,
   });
 
+  /// The main content of the box.
   final Widget child;
+
+  /// An optional header widget displayed above the main content.
   final Widget? header;
+
+  /// The background color of the box.
   final Color? backgroundColor;
+
+  /// The border radius of the box.
   final BorderRadiusGeometry? borderRadius;
 
   @override
@@ -24,16 +36,16 @@ class PrimaryBox extends StatelessWidget {
       ),
       child: Material(
         color: Colors.transparent,
-        child: widget(),
+        child: _child(),
       ),
     );
   }
 
-  Widget widget() {
-    return header == null ? child : childWithHeader();
+  Widget _child() {
+    return header == null ? child : _childWithHeader();
   }
 
-  Widget childWithHeader() {
+  Column _childWithHeader() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,

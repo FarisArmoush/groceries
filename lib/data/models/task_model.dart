@@ -2,7 +2,14 @@ import 'package:equatable/equatable.dart';
 import 'package:groceries/data/models/grocery_list_model.dart';
 import 'package:groceries/data/models/grocery_model.dart';
 
+/// {@template task_model}
+/// A model class representing a task.
+///
+/// This class extends [Equatable] for easy equality comparison
+/// and state management.
+/// {@endtemplate}
 class TaskModel extends Equatable {
+  /// {@macro task_model}
   const TaskModel({
     required this.id,
     required this.listModel,
@@ -11,6 +18,7 @@ class TaskModel extends Equatable {
     required this.groceriesAmount,
   });
 
+  /// Constructs a [TaskModel] instance from a JSON map.
   factory TaskModel.fromJson(Map<String, dynamic> json) {
     return TaskModel(
       id: json['id'] as String,
@@ -26,6 +34,7 @@ class TaskModel extends Equatable {
     );
   }
 
+  /// Converts the [TaskModel] instance to a JSON map.
   Map<String, dynamic> toJson() {
     return {
       'id': id,
@@ -36,6 +45,8 @@ class TaskModel extends Equatable {
     };
   }
 
+  /// Creates a copy of this [TaskModel] instance with
+  /// the provided properties.
   TaskModel copyWith({
     String? id,
     GroceryListModel? listModel,
@@ -63,10 +74,19 @@ class TaskModel extends Equatable {
         ')';
   }
 
+  /// The unique identifier of the task.
   final String id;
+
+  /// The grocery list model associated with the task.
   final GroceryListModel listModel;
+
+  /// The due date of the task.
   final DateTime dueDate;
+
+  /// The list of groceries associated with the task.
   final List<GroceryModel> groceries;
+
+  /// The amount of groceries in the task.
   final int groceriesAmount;
 
   @override

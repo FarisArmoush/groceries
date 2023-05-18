@@ -1,35 +1,38 @@
 import 'package:formz/formz.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 
-/// A form input class that validates a confirmed
-/// password against a given [password].
-///
-/// This class extends [FormzInput] and takes a string
-/// value that represents the confirmed password.
-///
-/// The class provides two constructors:
-///
-/// * pure: Constructs an instance of ConfirmedPasswordForm
-///   with a pure value of an empty string.
-///
-/// * dirty: Constructs an instance of ConfirmedPasswordForm
-///   with a dirty value of the given [value] and a [password].
-///
-/// The class uses [FormzInput] to handle the state of the input value and
-/// provides a custom [validator] that validates if the confirmed password
-/// matches the given [password].
-class ConfirmedPasswordForm extends FormzInput<String, String> {
-  const ConfirmedPasswordForm.pure({this.password = ''}) : super.pure('');
+/// A class representing a confirmed password input form field.
+/// This class extends the FormzInput class and is specifically
+/// designed for handling confirmed password input fields.
+/// It provides validation logic for confirming passwords.
 
-  const ConfirmedPasswordForm.dirty({required this.password, String value = ''})
-      : super.dirty(value);
+class ConfirmedPasswordForm extends FormzInput<String, String> {
+  /// Constructor which creates a pure [ConfirmedPasswordForm]
+  /// with a given password.
+  ///
+  /// The pure state indicates that the form field has not been modified.
+  ///
+  /// @param password The password to be confirmed.
+  const ConfirmedPasswordForm.pure({
+    this.password = '',
+  }) : super.pure('');
+
+  /// Constructor which creates a dirty [ConfirmedPasswordForm]
+  /// with a given password and value.
+  ///
+  /// The dirty state indicates that the form field has been modified.
+  ///
+  /// @param password The password to be confirmed.
+  /// @param value The initial value of the confirmed password form field.
+  const ConfirmedPasswordForm.dirty({
+    required this.password,
+    String value = '',
+  }) : super.dirty(value);
 
   final String password;
 
   @override
   String? validator(String? value) {
-    // return password == value ? null : 'Passwords do not matchs';
-
     if (password.isEmpty) {
       return AppTranslations.fieldCannotBeEmpty;
     }

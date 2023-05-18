@@ -19,6 +19,8 @@
 ///
 /// * invalid-verification-id: The credential verification ID received is invalid.
 class LoginWithGoogleFailure implements Exception {
+  /// Creates a new instance of [LoginWithGoogleFailure]
+  /// with an optional error [message].
   const LoginWithGoogleFailure([
     this.message = 'An unknown exception occurred.',
   ]);
@@ -61,5 +63,7 @@ class LoginWithGoogleFailure implements Exception {
         return const LoginWithGoogleFailure();
     }
   }
+
+  /// The error message associated with the failure.
   final String message;
 }

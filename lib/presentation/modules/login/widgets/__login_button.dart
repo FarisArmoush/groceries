@@ -18,16 +18,10 @@ class _LoginButton extends StatelessWidget {
             ),
           );
         }
-        if (!state.status.isValidated) {
-          // A disabled button.
-          return FilledButton(
-            onPressed: null,
-            style: DisabledButtonStyle(),
-            child: Text(AppTranslations.login),
-          );
-        }
         return FilledButton(
-          onPressed: () => context.read<LoginCubit>().login(),
+          onPressed: state.status.isValidated
+              ? () => context.read<LoginCubit>().login()
+              : null,
           child: Text(AppTranslations.login),
         );
       },

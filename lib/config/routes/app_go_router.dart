@@ -28,8 +28,11 @@ import 'package:groceries/presentation/modules/settings/views/settings_view.dart
 import 'package:groceries/presentation/modules/welcome/views/welcome_view.dart';
 import 'package:groceries/presentation/modules/wrapper/views/wrapper_view.dart';
 
+/// A class that defines the routes and builders for the App.
 class AppGoRouter {
   AppGoRouter._();
+
+  /// The main routes configuration for the AppGoRouter.
   static final GoRouter routes = GoRouter(
     initialLocation: '/',
     routes: [

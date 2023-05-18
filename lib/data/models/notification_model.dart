@@ -1,6 +1,13 @@
 import 'package:equatable/equatable.dart';
 
+/// {@template notification_model}
+/// A model class representing a notification.
+///
+/// This class extends [Equatable] for easy equality comparison
+/// and state management.
+/// {@endtemplate}
 class NotificationModel extends Equatable {
+  /// {@macro notification_model}
   const NotificationModel({
     required this.id,
     required this.title,
@@ -9,6 +16,7 @@ class NotificationModel extends Equatable {
     required this.date,
   });
 
+  /// Constructs a [NotificationModel] instance from a JSON map.
   factory NotificationModel.fromJson(Map<String, dynamic> json) {
     return NotificationModel(
       id: json['id'] as String,
@@ -21,6 +29,7 @@ class NotificationModel extends Equatable {
     );
   }
 
+  /// Converts the [NotificationModel] instance to a JSON map.
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'title': title,
@@ -30,6 +39,8 @@ class NotificationModel extends Equatable {
     };
   }
 
+  /// Creates a copy of this [NotificationModel] instance with
+  /// the provided properties.
   NotificationModel copyWith({
     String? id,
     String? title,
@@ -57,10 +68,19 @@ class NotificationModel extends Equatable {
         ')';
   }
 
+  /// The unique identifier of the notification.
   final String id;
+
+  /// The title of the grocery list.
   final String title;
+
+  /// The subtitle of the notification.
   final String subtitle;
+
+  /// The URL of the image associated with the notification.
   final String imageUrl;
+
+  /// The date of the notification.
   final DateTime date;
 
   @override

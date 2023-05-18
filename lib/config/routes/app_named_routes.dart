@@ -1,3 +1,4 @@
+/// A class that defines the names of the routes used in the App.
 class AppNamedRoutes {
   /// Wrapper View
   static const String wrapper = 'wrapper';
