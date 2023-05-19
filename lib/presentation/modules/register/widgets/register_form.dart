@@ -10,6 +10,7 @@ import 'package:groceries/presentation/widgets/app_text_field.dart';
 import 'package:groceries/presentation/widgets/buttons/other_options_text_button.dart';
 import 'package:groceries/presentation/widgets/buttons_loading_indicator.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 part '__register_body_text.dart';
 part '__register_button.dart';
@@ -24,7 +25,6 @@ class RegisterForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return BlocListener<RegisterCubit, RegisterState>(
       listener: (context, state) {
         if (state.status.isSubmissionFailure) {
@@ -56,35 +56,35 @@ class RegisterForm extends StatelessWidget {
         ),
         children: [
           SizedBox(
-            height: size.height * 0.09,
+            height: context.deviceHeight * 0.09,
           ),
           const _RegisterHeader(),
           SizedBox(
-            height: size.height * 0.01,
+            height: context.deviceHeight * 0.01,
           ),
           const _RegisterBodyText(),
           SizedBox(
-            height: size.height * 0.04,
+            height: context.deviceHeight * 0.04,
           ),
           const _RegisterDisplayNameTextField(),
           SizedBox(
-            height: size.height * 0.02,
+            height: context.deviceHeight * 0.02,
           ),
           const _RegisterEmailTextField(),
           SizedBox(
-            height: size.height * 0.02,
+            height: context.deviceHeight * 0.02,
           ),
           const _RegisterPasswordTextField(),
           SizedBox(
-            height: size.height * 0.02,
+            height: context.deviceHeight * 0.02,
           ),
           const _RegisterConfirmPasswordTextField(),
           SizedBox(
-            height: size.height * 0.04,
+            height: context.deviceHeight * 0.04,
           ),
           const _RegisterButton(),
           SizedBox(
-            height: size.height * 0.03,
+            height: context.deviceHeight * 0.03,
           ),
           OtherOptionTextButton(
             upperText: AppTranslations.alreadyHaveAnAccount,

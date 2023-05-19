@@ -7,6 +7,7 @@ import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
 import 'package:groceries/presentation/modules/settings/widgets/settings_list_tile.dart';
 import 'package:groceries/presentation/modules/settings/widgets/user_data_box.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});
@@ -14,7 +15,6 @@ class SettingsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final user = context.watch<AuthBloc>().authRepo.currentUser;
-    var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: Text(AppTranslations.settings),
@@ -32,7 +32,7 @@ class SettingsView extends StatelessWidget {
             email: user?.email,
           ),
           Divider(
-            height: size.height * 0.05,
+            height: context.deviceHeight * 0.05,
           ),
           SettingsListTile(
             title: AppTranslations.accountSettings,
@@ -41,7 +41,7 @@ class SettingsView extends StatelessWidget {
             onTap: () => context.pushNamed(AppNamedRoutes.accountSettings),
           ),
           SizedBox(
-            height: size.height * 0.01,
+            height: context.deviceHeight * 0.01,
           ),
           SettingsListTile(
             title: AppTranslations.notifications,
@@ -51,7 +51,7 @@ class SettingsView extends StatelessWidget {
                 context.pushNamed(AppNamedRoutes.notificationsSettings),
           ),
           SizedBox(
-            height: size.height * 0.01,
+            height: context.deviceHeight * 0.01,
           ),
           SettingsListTile(
             title: AppTranslations.theme,
@@ -60,7 +60,7 @@ class SettingsView extends StatelessWidget {
             onTap: () => context.pushNamed(AppNamedRoutes.appearanceSettings),
           ),
           SizedBox(
-            height: size.height * 0.01,
+            height: context.deviceHeight * 0.01,
           ),
           SettingsListTile(
             title: AppTranslations.additionalResources,
@@ -69,7 +69,7 @@ class SettingsView extends StatelessWidget {
             onTap: () => context.pushNamed(AppNamedRoutes.additionalResources),
           ),
           SizedBox(
-            height: size.height * 0.01,
+            height: context.deviceHeight * 0.01,
           ),
         ],
       ),

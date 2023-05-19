@@ -4,13 +4,13 @@ import 'package:groceries/presentation/modules/delete_account/widgets/delete_acc
 import 'package:groceries/presentation/modules/delete_account/widgets/delete_account_button.dart';
 import 'package:groceries/presentation/modules/delete_account/widgets/delete_account_header.dart';
 import 'package:groceries/presentation/modules/delete_account/widgets/delete_account_illustration.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class DeleteAccountForm extends StatelessWidget {
   const DeleteAccountForm({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: Text(AppTranslations.deleteAccount),
@@ -24,11 +24,11 @@ class DeleteAccountForm extends StatelessWidget {
         children: [
           const DeleteAccountIllustration(),
           SizedBox(
-            height: size.height * 0.01,
+            height: context.deviceHeight * 0.01,
           ),
           const DeleteAccountHeader(),
           SizedBox(
-            height: size.height * 0.02,
+            height: context.deviceHeight * 0.02,
           ),
           const DeleteAccountBodyText(),
         ],

@@ -3,13 +3,13 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/create_list/widgets/add_image_button.dart';
 import 'package:groceries/presentation/widgets/app_text_field.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class AddListNameAndImageView extends StatelessWidget {
   const AddListNameAndImageView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return ListView(
       shrinkWrap: true,
       physics: const BouncingScrollPhysics(),
@@ -20,11 +20,11 @@ class AddListNameAndImageView extends StatelessWidget {
       children: [
         CachedImage(
           imageUrl: null,
-          height: size.height * 0.15,
+          height: context.deviceHeight * 0.15,
         ),
         const AddImageButton(),
         SizedBox(
-          height: size.height * 0.05,
+          height: context.deviceHeight * 0.05,
         ),
         AppTextField(
           labelText: AppTranslations.listName,

@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class EmptyGroceryList extends StatelessWidget {
   const EmptyGroceryList({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return SliverPadding(
       padding: const EdgeInsets.symmetric(
         horizontal: 16,
@@ -17,14 +17,14 @@ class EmptyGroceryList extends StatelessWidget {
         delegate: SliverChildListDelegate(
           [
             SizedBox(
-              height: size.height * 0.03,
+              height: context.deviceHeight * 0.03,
             ),
             SizedBox(
-              height: size.height * 0.45,
+              height: context.deviceHeight * 0.45,
               child: Assets.svg.illWriting.svg(),
             ),
             SizedBox(
-              height: size.height * 0.03,
+              height: context.deviceHeight * 0.03,
             ),
             Text(
               AppTranslations.listIsEmpty,
@@ -36,7 +36,7 @@ class EmptyGroceryList extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: size.height * 0.01,
+              height: context.deviceHeight * 0.01,
             ),
             Text(
               AppTranslations.addItemsToList,
@@ -48,7 +48,7 @@ class EmptyGroceryList extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: size.height * 0.02,
+              height: context.deviceHeight * 0.02,
             ),
             ElevatedButton.icon(
               onPressed: () {},

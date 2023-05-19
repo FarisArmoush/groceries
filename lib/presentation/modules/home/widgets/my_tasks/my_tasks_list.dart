@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/data/models/task_model.dart';
 import 'package:groceries/presentation/modules/home/widgets/my_tasks/my_tasks_card.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class MyTasksList extends StatelessWidget {
   const MyTasksList({
@@ -12,7 +13,6 @@ class MyTasksList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return ListView.separated(
       itemCount: tasks.length,
       shrinkWrap: true,
@@ -30,7 +30,7 @@ class MyTasksList extends StatelessWidget {
       },
       separatorBuilder: (context, index) {
         return SizedBox(
-          height: size.height * 0.01,
+          height: context.deviceHeight * 0.01,
         );
       },
     );

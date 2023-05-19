@@ -3,13 +3,13 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/widgets/buttons/other_options_text_button.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class ForgotPasswordVerificationView extends StatelessWidget {
   const ForgotPasswordVerificationView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return SafeArea(
       top: false,
       child: Scaffold(
@@ -18,19 +18,19 @@ class ForgotPasswordVerificationView extends StatelessWidget {
         ),
         body: ListView(
           padding: EdgeInsets.symmetric(
-            horizontal: size.width * 0.09,
+            horizontal: context.deviceWidth * 0.09,
           ),
           physics: const BouncingScrollPhysics(),
           children: [
             SizedBox(
-              height: size.width * 0.07,
+              height: context.deviceWidth * 0.07,
             ),
             Assets.svg.icVerified.svg(
-              height: MediaQuery.of(context).size.height * 0.15,
+              height: context.deviceHeight * 0.15,
               color: Theme.of(context).primaryColor,
             ),
             SizedBox(
-              height: size.width * 0.07,
+              height: context.deviceWidth * 0.07,
             ),
             Text(
               AppTranslations.verifyYourAccount,
@@ -42,7 +42,7 @@ class ForgotPasswordVerificationView extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: size.width * 0.035,
+              height: context.deviceWidth * 0.035,
             ),
             Text(
               AppTranslations.verificationBody,
@@ -54,7 +54,7 @@ class ForgotPasswordVerificationView extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: size.width * 0.2,
+              height: context.deviceWidth * 0.2,
             ),
             OtherOptionTextButton(
               upperText: AppTranslations.didntRecieveAnOTP,

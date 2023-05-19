@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/appearance/widgets/appearnce_radios_list.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class AppearanceSettingsView extends StatelessWidget {
   const AppearanceSettingsView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -28,14 +28,14 @@ class AppearanceSettingsView extends StatelessWidget {
                 fontSize: 12,
               ),
             ),
-            size: size,
+            context,
           ),
           SizedBox(
-            height: size.height * 0.02,
+            height: context.deviceHeight * 0.02,
           ),
           const AppearanceRadiosList(),
           SizedBox(
-            height: size.height * 0.01,
+            height: context.deviceHeight * 0.01,
           ),
           _textPadding(
             Text(
@@ -46,17 +46,18 @@ class AppearanceSettingsView extends StatelessWidget {
                 fontSize: 12,
               ),
             ),
-            size: size,
+            context,
           ),
         ],
       ),
     );
   }
 
-  Padding _textPadding(Widget child, {required Size size}) {
+  // TODO: Figure it out.
+  Padding _textPadding(Widget child, BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(
-        horizontal: size.width * 0.035,
+        horizontal: context.deviceWidth * 0.035,
       ),
       child: child,
     );

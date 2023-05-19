@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/presentation/widgets/buttons/tile_button.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class RecipeView extends StatelessWidget {
   const RecipeView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Recipe <NAME>'),
@@ -23,7 +23,7 @@ class RecipeView extends StatelessWidget {
           );
         },
         separatorBuilder: (context, index) {
-          return SizedBox(height: size.height * 0.01);
+          return SizedBox(height: context.deviceHeight * 0.01);
         },
       ),
     );

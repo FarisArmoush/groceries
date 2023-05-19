@@ -6,13 +6,13 @@ import 'package:groceries/presentation/modules/additional_resources/widgets/app_
 import 'package:groceries/presentation/modules/additional_resources/widgets/legal_list_tile.dart';
 import 'package:groceries/presentation/modules/additional_resources/widgets/send_crash_reports_switch_tile.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class AdditionalResourcesView extends StatelessWidget {
   const AdditionalResourcesView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     final urlLauncher = context.read<RemoteConfigCubit>().urlLauncherRepo;
     return Scaffold(
       appBar: AppBar(
@@ -27,7 +27,7 @@ class AdditionalResourcesView extends StatelessWidget {
         children: [
           const AppVersionListTile(),
           Divider(
-            height: size.height * 0.04,
+            height: context.deviceHeight * 0.04,
           ),
           Text(
             AppTranslations.getHelp,
@@ -38,11 +38,11 @@ class AdditionalResourcesView extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: size.height * 0.02,
+            height: context.deviceHeight * 0.02,
           ),
           const SendCrashReportsSwitchTile(),
           Divider(
-            height: size.height * 0.075,
+            height: context.deviceHeight * 0.075,
           ),
           Text(
             AppTranslations.legal,
@@ -53,7 +53,7 @@ class AdditionalResourcesView extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: size.height * 0.02,
+            height: context.deviceHeight * 0.02,
           ),
           LegalListTile(
             title: AppTranslations.about,

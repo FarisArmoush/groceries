@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 /// {@template page_indicator}
@@ -29,7 +30,6 @@ class PageIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return SmoothPageIndicator(
       controller: pageController,
       count: count ?? 3,
@@ -37,7 +37,7 @@ class PageIndicator extends StatelessWidget {
         spacing: 0,
         activeDotColor: AppColors.darkRed,
         dotColor: const Color.fromARGB(255, 217, 217, 217),
-        dotWidth: size.width * 0.3,
+        dotWidth: context.deviceWidth * 0.3,
         dotHeight: 4,
       ),
     );

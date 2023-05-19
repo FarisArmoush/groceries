@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/data/models/recipe_model.dart';
 import 'package:groceries/presentation/modules/recipes/widgets/recipe_card/recipe_card.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class RecipesList extends StatelessWidget {
   const RecipesList({
@@ -13,7 +14,6 @@ class RecipesList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return ListView.separated(
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.symmetric(
@@ -34,7 +34,7 @@ class RecipesList extends StatelessWidget {
       },
       separatorBuilder: (context, index) {
         return SizedBox(
-          height: size.height * 0.04,
+          height: context.deviceHeight * 0.04,
         );
       },
     );

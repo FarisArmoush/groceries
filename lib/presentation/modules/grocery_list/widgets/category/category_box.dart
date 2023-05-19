@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 part '_add_items_button.dart';
 part '_category_box_divider.dart';
@@ -15,7 +16,6 @@ class CategoryBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return ColoredBox(
       color: Theme.of(context).cardColor,
       child: Column(
@@ -24,8 +24,8 @@ class CategoryBox extends StatelessWidget {
           const _CategoryBoxDivider(),
           Padding(
             padding: EdgeInsets.symmetric(
-              vertical: size.height * 0.0175,
-              horizontal: size.width * 0.1,
+              vertical: context.deviceHeight * 0.0175,
+              horizontal: context.deviceWidth * 0.1,
             ),
             child: Text(
               category,
@@ -39,7 +39,7 @@ class CategoryBox extends StatelessWidget {
           const _CategoryBoxDivider(),
           Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: size.width * 0.1,
+              horizontal: context.deviceWidth * 0.1,
             ),
             child: const _AddItemsButton(),
           ),

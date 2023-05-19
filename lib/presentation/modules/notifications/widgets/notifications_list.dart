@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/data/models/notification_model.dart';
 import 'package:groceries/presentation/modules/notifications/widgets/notification_card/notification_card.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class NotificationsList extends StatelessWidget {
   const NotificationsList({
@@ -29,7 +30,7 @@ class NotificationsList extends StatelessWidget {
       },
       separatorBuilder: (context, index) {
         return SizedBox(
-          height: MediaQuery.of(context).size.height * 0.01,
+          height: context.deviceHeight * 0.01,
         );
       },
     );

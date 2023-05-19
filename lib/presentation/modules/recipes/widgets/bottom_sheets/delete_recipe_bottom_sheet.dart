@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class DeleteRecipeBottomSheet extends StatelessWidget {
   const DeleteRecipeBottomSheet({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return BottomSheet(
       onClosing: () {},
       enableDrag: false,
@@ -31,7 +31,7 @@ class DeleteRecipeBottomSheet extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: size.height * 0.02,
+              height: context.deviceHeight * 0.02,
             ),
             FilledButton(
               onPressed: () => context.pop(),

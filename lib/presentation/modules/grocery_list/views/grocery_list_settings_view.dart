@@ -5,13 +5,13 @@ import 'package:groceries/presentation/modules/grocery_list/widgets/members/edit
 import 'package:groceries/presentation/modules/grocery_list/widgets/members/list_members_box.dart';
 import 'package:groceries/presentation/widgets/app_text_field.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class GroceryListSettingsView extends StatelessWidget {
   const GroceryListSettingsView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -31,17 +31,17 @@ class GroceryListSettingsView extends StatelessWidget {
         children: [
           const EditListImage(),
           SizedBox(
-            height: size.height * 0.05,
+            height: context.deviceHeight * 0.05,
           ),
           AppTextField(
             labelText: AppTranslations.listName,
           ),
           SizedBox(
-            height: size.height * 0.025,
+            height: context.deviceHeight * 0.025,
           ),
           const ListMembersBox(),
           SizedBox(
-            height: size.height * 0.04,
+            height: context.deviceHeight * 0.04,
           ),
           OutlinedButton.icon(
             onPressed: () {},
@@ -53,7 +53,7 @@ class GroceryListSettingsView extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: size.height * 0.03,
+            height: context.deviceHeight * 0.03,
           ),
         ],
       ),

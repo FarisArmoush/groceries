@@ -3,13 +3,13 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/grocery_model.dart';
 import 'package:groceries/presentation/modules/grocery_list/widgets/grocery_item_card.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class AddItemsView extends StatelessWidget {
   const AddItemsView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return DefaultTabController(
       length: _list.length,
       child: Scaffold(
@@ -26,7 +26,7 @@ class AddItemsView extends StatelessWidget {
             16,
             24,
             16,
-            size.height * 0.1,
+            context.deviceHeight * 0.1,
           ),
           physics: const BouncingScrollPhysics(),
           itemCount: _list.length,

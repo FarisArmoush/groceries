@@ -4,6 +4,7 @@ import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class CreateNewGroceryListCardButton extends StatelessWidget {
   const CreateNewGroceryListCardButton({
@@ -14,24 +15,23 @@ class CreateNewGroceryListCardButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Material(
       borderRadius: BorderRadius.circular(12),
       color: Theme.of(context).primaryColorLight,
       child: InkWell(
         onTap: () => context.pushNamed(AppNamedRoutes.createList),
         child: Container(
-          width: size.width * 0.6,
+          width: context.deviceWidth * 0.6,
           padding: const EdgeInsetsDirectional.all(16),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Assets.svg.icPlusCircle.svg(
-                height: size.height * 0.1,
+                height: context.deviceHeight * 0.1,
                 color: AppColors.white,
               ),
               SizedBox(
-                height: size.height * 0.02,
+                height: context.deviceHeight * 0.02,
               ),
               Text(
                 text,

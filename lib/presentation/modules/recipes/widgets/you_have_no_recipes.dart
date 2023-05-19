@@ -2,22 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class YouHaveNoRecipes extends StatelessWidget {
   const YouHaveNoRecipes({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         SizedBox(
-          height: size.height * 0.35,
+          height: context.deviceHeight * 0.35,
           child: Assets.svg.illEating.svg(),
         ),
         SizedBox(
-          height: size.height * 0.02,
+          height: context.deviceHeight * 0.02,
         ),
         Text(
           AppTranslations.youHaveNoRecipes,
@@ -29,7 +29,7 @@ class YouHaveNoRecipes extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         SizedBox(
-          height: size.height * 0.01,
+          height: context.deviceHeight * 0.01,
         ),
         Text(
           AppTranslations.startWithCreatingYourFirstRecipe,
@@ -41,7 +41,7 @@ class YouHaveNoRecipes extends StatelessWidget {
           textAlign: TextAlign.center,
         ),
         SizedBox(
-          height: size.height * 0.02,
+          height: context.deviceHeight * 0.02,
         ),
         FilledButton(
           onPressed: () {},
