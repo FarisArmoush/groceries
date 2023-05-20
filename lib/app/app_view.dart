@@ -6,7 +6,14 @@ import 'package:groceries/config/theme/app_themes.dart';
 import 'package:groceries/presentation/blocs/remote_config/remote_config_cubit.dart';
 import 'package:groceries/presentation/blocs/theme/theme_cubit.dart';
 
+/// {@template app_view}
+/// The main application view that sets up the app's theme,
+/// localization, and routing. also provides
+/// [ThemeCubit], and [RemoteConfigCubit], and they are commonly
+/// used all around the app.
+/// {@endtemplate}
 class AppView extends StatelessWidget {
+  /// {@macro app_view}
   const AppView({super.key});
 
   @override
@@ -20,6 +27,7 @@ class AppView extends StatelessWidget {
           create: (context) => RemoteConfigCubit(),
         ),
       ],
+      // Used a builder to access the current theme.
       child: Builder(
         builder: (context) {
           final currentTheme = context.watch<ThemeCubit>().state;

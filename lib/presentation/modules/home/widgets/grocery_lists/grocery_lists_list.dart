@@ -5,6 +5,7 @@ import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/data/models/grocery_list_model.dart';
 import 'package:groceries/presentation/modules/home/widgets/grocery_lists/create_new_grocery_list_card_button.dart';
 import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocery_list_card.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class GroceryListsList extends StatelessWidget {
   const GroceryListsList({
@@ -16,9 +17,8 @@ class GroceryListsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return SizedBox(
-      height: size.height * 0.31,
+      height: context.deviceHeight * 0.31,
       child: ListView.separated(
         physics: const BouncingScrollPhysics(),
         shrinkWrap: true,
@@ -45,7 +45,7 @@ class GroceryListsList extends StatelessWidget {
         },
         separatorBuilder: (context, index) {
           return SizedBox(
-            width: size.width * 0.01,
+            width: context.deviceWidth * 0.01,
           );
         },
       ),

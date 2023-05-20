@@ -4,13 +4,13 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class ListCreatedUnsuccessfullyView extends StatelessWidget {
   const ListCreatedUnsuccessfullyView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
         child: ListView(
@@ -20,7 +20,7 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           children: [
             SizedBox(
-              height: size.height * 0.1,
+              height: context.deviceHeight * 0.1,
             ),
             Assets.svg.illError.svg(),
             Text(
@@ -33,7 +33,7 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: size.height * 0.01,
+              height: context.deviceHeight * 0.01,
             ),
             Text(
               AppTranslations.somethingWentWrong,
@@ -45,7 +45,7 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: size.height * 0.05,
+              height: context.deviceHeight * 0.05,
             ),
             FilledButton(
               onPressed: () =>

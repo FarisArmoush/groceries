@@ -9,8 +9,13 @@ class BottomSheetButton extends StatelessWidget {
     super.key,
   });
 
+  /// The callback function to be invoked when the button is tapped.
   final VoidCallback onTap;
+
+  /// The text to be displayed on the button.
   final String text;
+
+  /// The SVG icon asset path.
   final String icon;
 
   @override

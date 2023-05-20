@@ -11,6 +11,7 @@ import 'package:groceries/presentation/widgets/app_snackbars/app_snack_bars.dart
 import 'package:groceries/presentation/widgets/app_text_field.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 part '__email_text_field.dart';
 part '__send_button.dart';
@@ -20,7 +21,6 @@ class ForgotPasswordForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return BlocListener<ForgotPasswordCubit, ForgotPasswordState>(
       listener: (context, state) {
         if (state.status.isSubmissionSuccess) {
@@ -62,7 +62,7 @@ class ForgotPasswordForm extends StatelessWidget {
             physics: const BouncingScrollPhysics(),
             children: [
               SizedBox(
-                height: size.width * 0.02,
+                height: context.deviceWidth * 0.02,
               ),
               Text(
                 AppTranslations.forgotYourPassword,
@@ -73,7 +73,7 @@ class ForgotPasswordForm extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: size.height * 0.02,
+                height: context.deviceHeight * 0.02,
               ),
               Text(
                 AppTranslations.forgotPasswordBody,
@@ -84,7 +84,7 @@ class ForgotPasswordForm extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: size.height * 0.06,
+                height: context.deviceHeight * 0.06,
               ),
               const _EmailTextField(),
             ],

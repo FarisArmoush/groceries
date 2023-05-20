@@ -3,6 +3,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/task_model.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class MyTasksCard extends StatelessWidget {
   const MyTasksCard({
@@ -14,14 +15,13 @@ class MyTasksCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return ListTile(
       onTap: () {},
       contentPadding: const EdgeInsets.all(8),
       leading: CachedImage(
         imageUrl: taskModel.listModel.imageUrl,
-        width: size.width * 0.15,
-        height: size.height * 0.1,
+        width: context.deviceWidth * 0.15,
+        height: context.deviceHeight * 0.1,
         boxFit: BoxFit.cover,
       ),
       title: Row(

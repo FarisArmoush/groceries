@@ -3,6 +3,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/grocery_list_model.dart';
 import 'package:groceries/presentation/modules/grocery_list/widgets/grocery_list_options_button.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class GroceryListCard extends StatelessWidget {
   const GroceryListCard({
@@ -15,14 +16,13 @@ class GroceryListCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Material(
       borderRadius: BorderRadius.circular(12),
       color: Theme.of(context).cardColor,
       child: InkWell(
         onTap: onTap,
         child: Container(
-          width: size.width * 0.6,
+          width: context.deviceWidth * 0.6,
           padding: const EdgeInsetsDirectional.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,7 +33,7 @@ class GroceryListCard extends StatelessWidget {
                 child: GroceryListOptionsButton(),
               ),
               SizedBox(
-                height: size.height * 0.05,
+                height: context.deviceHeight * 0.05,
               ),
               Text(
                 listModel.name,

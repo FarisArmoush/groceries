@@ -4,6 +4,7 @@ import 'package:groceries/data/models/grocery_list_model.dart';
 import 'package:groceries/presentation/modules/home/widgets/grocery_lists/create_new_grocery_list_card_button.dart';
 import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocery_lists_list.dart';
 import 'package:groceries/presentation/modules/home/widgets/rail_title.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class GroceryListsRail extends StatelessWidget {
   const GroceryListsRail({
@@ -15,7 +16,6 @@ class GroceryListsRail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return ListView(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
@@ -24,7 +24,7 @@ class GroceryListsRail extends StatelessWidget {
           title: AppTranslations.lists,
         ),
         SizedBox(
-          height: size.height * 0.025,
+          height: context.deviceHeight * 0.025,
         ),
         if (lists.isNotEmpty)
           GroceryListsList(

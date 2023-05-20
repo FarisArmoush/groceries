@@ -1,6 +1,13 @@
 import 'package:equatable/equatable.dart';
 
+/// {@template recipe_model}
+/// A model class representing a recipe.
+///
+/// This class extends [Equatable] for easy equality comparison
+/// and state management.
+/// {@endtemplate}
 class RecipeModel extends Equatable {
+  /// {@macro recipe_model}
   const RecipeModel({
     required this.id,
     required this.name,
@@ -8,6 +15,7 @@ class RecipeModel extends Equatable {
     required this.items,
   });
 
+  /// Constructs a [RecipeModel] instance from a JSON map.
   factory RecipeModel.fromJson(Map<String, dynamic> json) {
     final itemsJson = json['items'] as List<dynamic>;
     final items = itemsJson.map((dynamic item) => item as String).toList();
@@ -20,6 +28,7 @@ class RecipeModel extends Equatable {
     );
   }
 
+  /// Converts the [RecipeModel] instance to a JSON map.
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'id': id,
@@ -29,6 +38,8 @@ class RecipeModel extends Equatable {
     };
   }
 
+  /// Creates a copy of this [RecipeModel] instance with
+  /// the provided properties.
   RecipeModel copyWith({
     String? id,
     String? name,
@@ -53,9 +64,16 @@ class RecipeModel extends Equatable {
         ')';
   }
 
+  /// The unique identifier of the recipe.
   final String id;
+
+  /// The name of the notification.
   final String name;
+
+  /// The URL of the image associated with the recipe.
   final String imageUrl;
+
+  /// The list of items that make up a recipe.
   final List<String> items;
 
   @override

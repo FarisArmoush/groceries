@@ -1,4 +1,25 @@
+/// Creates a new instance of [SendPasswordResetEmailException]
+/// from a Firebase error [message].
+///
+/// The following error codes are supported:
+///
+/// * invalid-email: Email is not valid or badly formatted.
+///
+/// * user-not-found: There is no user associated with the provided email.
+///
+/// * unauthorized-continue-uri: Unauthorized continue uri message,
+/// contact support.
+///
+/// * invalid-continue-uri: Unauthorized continue uri message, contact support.
+///
+/// * missing-ios-bundle-id: Missing IOS bundle id, contact support.
+///
+/// * missing-continue-uri: Missing continue URI, contact support.
+///
+/// * missing-android-pkg-name: Missing android package name, contact support.
 class SendPasswordResetEmailException implements Exception {
+  /// Creates a new instance of [SendPasswordResetEmailException]
+  /// with an optional error [message].
   const SendPasswordResetEmailException([
     this.message = 'Something went wrong...',
   ]);
@@ -7,7 +28,7 @@ class SendPasswordResetEmailException implements Exception {
     switch (code) {
       case 'invalid-email':
         return const SendPasswordResetEmailException(
-          'Invalid Email.',
+          'Email is not valid or badly formatted.',
         );
       case 'user-not-found':
         return const SendPasswordResetEmailException(
@@ -16,32 +37,33 @@ class SendPasswordResetEmailException implements Exception {
 
       case 'unauthorized-continue-uri':
         return const SendPasswordResetEmailException(
-          'unauthorized-continue-uri message',
+          'Unauthorized continue uri message, contact support.',
         );
 
       case 'invalid-continue-uri':
         return const SendPasswordResetEmailException(
-          'invalid-continue-uri message.',
+          'Invalid continue uri message, contact support.',
         );
 
       case 'missing-ios-bundle-id':
         return const SendPasswordResetEmailException(
-          'missing-ios-bundle-id message.',
+          'Missing IOS bundle id, contact support.',
         );
 
       case 'missing-continue-uri':
         return const SendPasswordResetEmailException(
-          'missing-continue-uri message.',
+          'Missing continue URI, contact support.',
         );
 
       case 'missing-android-pkg-name':
         return const SendPasswordResetEmailException(
-          'missing-android-pkg-name message.',
+          'Missing android package name, contact support.',
         );
       default:
         return const SendPasswordResetEmailException();
     }
   }
 
+  /// The error message associated with the failure.
   final String message;
 }

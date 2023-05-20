@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 
+/// {@template app_text_field}
+/// A custom text field widget for the application.
+///
+/// The reason this widget exists is because in the [InputDecorationTheme]
+/// there is not a way to modify the [TextStyle] of the input text.
+/// {@endtemplate}
 class AppTextField extends StatelessWidget {
+  /// {@macro app_text_field}
   const AppTextField({
     super.key,
     this.controller,
@@ -10,7 +17,7 @@ class AppTextField extends StatelessWidget {
     this.onEditingComplete,
     this.onTapOutside,
     this.onTap,
-    this.labelText = 'Add a label',
+    this.labelText,
     this.errorText,
     this.autoCorrect = false,
     this.obscureText = false,
@@ -26,30 +33,77 @@ class AppTextField extends StatelessWidget {
     this.prefix,
     this.suffix,
     this.validator,
+    this.autovalidateMode,
   });
 
+  /// The text displayed as the label of the text field.
   final String? labelText;
+
+  /// The error message displayed below the text field.
   final String? errorText;
+
+  /// The autofill hints for the text field.
   final Iterable<String>? autofillHints;
+
+  /// The controller for the text field.
   final TextEditingController? controller;
+
+  /// A callback function called when the text in the field changes.
   final ValueChanged<String>? onChanged;
+
+  /// A callback function called when editing is completed.
   final VoidCallback? onEditingComplete;
+
+  /// A callback function called when tapping outside the text field.
   final TapRegionCallback? onTapOutside;
+
+  /// A callback function called when the text field is tapped.
   final GestureTapCallback? onTap;
+
+  /// Determines whether the text in the field should be obscured.
   final bool obscureText;
+
+  /// The type of keyboard to use for input.
   final TextInputType? keyboardType;
+
+  /// The icon widget to be displayed as a suffix.
   final Widget? suffixIcon;
+
+  /// The icon widget to be displayed as a prefix.
   final Widget? prefixIcon;
+
+  /// The widget to be displayed as a prefix.
   final Widget? prefix;
+
+  /// The widget to be displayed as a suffix.
   final Widget? suffix;
+
+  /// Determines whether auto-correction should be enabled.
   final bool autoCorrect;
+
+  /// The border to display when the field is enabled.
   final InputBorder? enabledBorder;
+
+  /// The border to display when the field is not focused.
   final InputBorder? border;
+
+  /// The border to display when the field is focused.
   final InputBorder? focusedBorder;
+
+  /// The border to display when the field has an error.
   final InputBorder? errorBorder;
+
+  /// The border to display when the field is disabled.
   final InputBorder? disabledBorder;
+
+  /// The border to display when the field is focused and has an error.
   final InputBorder? focusedErrorBorder;
+
+  /// A function that validates the input value.
   final FormFieldValidator<String>? validator;
+
+  /// Specifies validation mode.
+  final AutovalidateMode? autovalidateMode;
 
   @override
   Widget build(BuildContext context) {
@@ -72,6 +126,7 @@ class AppTextField extends StatelessWidget {
         color: Theme.of(context).primaryColor,
         fontSize: 14,
       ),
+      autovalidateMode: autovalidateMode,
       decoration: InputDecoration(
         suffixIconColor: Theme.of(context).primaryColor,
         suffix: suffix,
@@ -79,23 +134,23 @@ class AppTextField extends StatelessWidget {
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
         labelText: labelText,
-        labelStyle: TextStyle(
-          fontFamily: AppFonts.regular(context),
-          color: Theme.of(context).hintColor,
-          fontSize: 16,
-        ),
         errorText: errorText,
-        floatingLabelStyle: TextStyle(
-          fontFamily: AppFonts.regular(context),
-          color: Theme.of(context).primaryColor,
-          fontSize: 16,
-        ),
         enabledBorder: enabledBorder,
         border: border,
         focusedBorder: focusedBorder,
         errorBorder: errorBorder,
         disabledBorder: disabledBorder,
         focusedErrorBorder: focusedBorder,
+        labelStyle: TextStyle(
+          fontFamily: AppFonts.regular(context),
+          color: Theme.of(context).hintColor,
+          fontSize: 16,
+        ),
+        floatingLabelStyle: TextStyle(
+          fontFamily: AppFonts.regular(context),
+          color: Theme.of(context).primaryColor,
+          fontSize: 16,
+        ),
       ),
     );
   }

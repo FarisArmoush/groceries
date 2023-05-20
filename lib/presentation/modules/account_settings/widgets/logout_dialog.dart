@@ -3,13 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class LogoutDialog extends StatelessWidget {
   const LogoutDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return BottomSheet(
       enableDrag: false,
       onClosing: () {},
@@ -28,7 +28,7 @@ class LogoutDialog extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: size.height * 0.02,
+              height: context.deviceHeight * 0.02,
             ),
             Text(
               AppTranslations.youSureYouWantToLogout,
@@ -36,7 +36,7 @@ class LogoutDialog extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: size.height * 0.01,
+              height: context.deviceHeight * 0.01,
             ),
             FilledButton(
               onPressed: () => context

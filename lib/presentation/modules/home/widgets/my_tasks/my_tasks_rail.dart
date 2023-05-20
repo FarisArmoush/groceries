@@ -3,6 +3,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/task_model.dart';
 import 'package:groceries/presentation/modules/home/widgets/my_tasks/my_tasks_list.dart';
 import 'package:groceries/presentation/modules/home/widgets/rail_title.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class MyTasksRail extends StatelessWidget {
   const MyTasksRail({
@@ -14,7 +15,6 @@ class MyTasksRail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var height = MediaQuery.of(context).size.height;
     return ListView(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
@@ -23,7 +23,7 @@ class MyTasksRail extends StatelessWidget {
           title: AppTranslations.myTasks,
         ),
         SizedBox(
-          height: height * 0.025,
+          height: context.deviceHeight * 0.025,
         ),
         MyTasksList(
           tasks: tasks,

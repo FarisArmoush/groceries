@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 
+/// This class provides translations for all app strings.
 class AppTranslations {
   AppTranslations._();
   static final appName = 'app_name'.tr();

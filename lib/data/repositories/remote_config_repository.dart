@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_dynamic_calls
-
 import 'dart:developer' as dev;
 
 import 'package:firebase_auth/firebase_auth.dart';

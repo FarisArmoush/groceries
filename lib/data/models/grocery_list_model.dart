@@ -1,7 +1,14 @@
 import 'package:equatable/equatable.dart';
 import 'package:groceries/data/models/user_model.dart';
 
+/// {@template grocery_list_model}
+/// A model class representing a grocery list.
+///
+/// This class extends [Equatable] for easy equality comparison
+/// and state management.
+/// {@endtemplate}
 class GroceryListModel extends Equatable {
+  /// {@macro grocery_list_model}
   const GroceryListModel({
     required this.uid,
     required this.name,
@@ -9,6 +16,8 @@ class GroceryListModel extends Equatable {
     required this.members,
     required this.tasksAmount,
   });
+
+  /// Constructs a [GroceryListModel] instance from a JSON map.
   factory GroceryListModel.fromJson(Map<String, dynamic> json) {
     return GroceryListModel(
       uid: json['uid'] as int,
@@ -23,6 +32,7 @@ class GroceryListModel extends Equatable {
     );
   }
 
+  /// Converts the [GroceryListModel] instance to a JSON map.
   Map<String, dynamic> toJson() {
     return <String, dynamic>{
       'uid': uid,
@@ -33,6 +43,8 @@ class GroceryListModel extends Equatable {
     };
   }
 
+  /// Creates a copy of this [GroceryListModel] instance with
+  /// the provided properties.
   GroceryListModel copyWith({
     int? uid,
     String? name,
@@ -60,10 +72,19 @@ class GroceryListModel extends Equatable {
         ')';
   }
 
+  /// The unique identifier of the grocery list.
   final int uid;
+
+  /// The name of the grocery list.
   final String name;
+
+  /// The URL of the image associated with the grocery list.
   final String imageUrl;
+
+  /// The list of members associated with the grocery list.
   final List<UserModel> members;
+
+  /// The total number of tasks in the grocery list.
   final int tasksAmount;
 
   @override

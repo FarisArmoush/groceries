@@ -3,6 +3,7 @@ import 'package:groceries/data/models/recipe_model.dart';
 import 'package:groceries/presentation/modules/recipes/widgets/recipe_card/recipe_card_actions_row.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class RecipeCard extends StatelessWidget {
   const RecipeCard({
@@ -16,7 +17,6 @@ class RecipeCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,20 +30,20 @@ class RecipeCard extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: size.height * 0.01,
+          height: context.deviceHeight * 0.01,
         ),
         InkWell(
           onTap: onTap,
           child: CachedImage(
             imageUrl: recipeModel.imageUrl,
-            height: size.height * 0.2,
+            height: context.deviceHeight * 0.2,
             width: double.infinity,
             boxShape: BoxShape.rectangle,
             borderRadius: BorderRadius.circular(16),
           ),
         ),
         SizedBox(
-          height: size.height * 0.01,
+          height: context.deviceHeight * 0.01,
         ),
         const RecipeCardActionsRow(),
       ],

@@ -1,5 +1,4 @@
 // ignore_for_file: use_if_null_to_convert_nulls_to_bools
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/config/localization/app_translations.dart';
@@ -7,13 +6,13 @@ import 'package:groceries/data/repositories/firebase_auth_repository.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/logout_button.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/request_to_delete_account_button.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/user_data_list_tile.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class AccountSettingsView extends StatelessWidget {
   const AccountSettingsView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     final user = context.read<FirebaseAuthRepository>().currentUser;
     return Scaffold(
       appBar: AppBar(
@@ -29,7 +28,7 @@ class AccountSettingsView extends StatelessWidget {
             onTap: () {},
           ),
           SizedBox(
-            height: size.height * 0.01,
+            height: context.deviceHeight * 0.01,
           ),
           UserDataListTile(
             title: AppTranslations.email,
@@ -37,7 +36,7 @@ class AccountSettingsView extends StatelessWidget {
             onTap: () {},
           ),
           SizedBox(
-            height: size.height * 0.01,
+            height: context.deviceHeight * 0.01,
           ),
           UserDataListTile(
             title: 'Verified?',
@@ -45,18 +44,18 @@ class AccountSettingsView extends StatelessWidget {
             onTap: () {},
           ),
           SizedBox(
-            height: size.height * 0.01,
+            height: context.deviceHeight * 0.01,
           ),
           UserDataListTile(
             title: 'Account Creation Meta Data',
             subtitle: user?.metadata.creationTime.toString() ?? '',
           ),
           SizedBox(
-            height: size.height * 0.03,
+            height: context.deviceHeight * 0.03,
           ),
           const LogoutButton(),
           SizedBox(
-            height: size.height * 0.05,
+            height: context.deviceHeight * 0.05,
           ),
           const RequestToDeleteAccountButton(),
         ],

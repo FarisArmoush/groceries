@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class InviteUsersToListForm extends StatelessWidget {
   const InviteUsersToListForm({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return ListView(
       shrinkWrap: true,
       physics: const BouncingScrollPhysics(),
@@ -26,28 +26,30 @@ class InviteUsersToListForm extends StatelessWidget {
           ),
           textAlign: TextAlign.center,
         ),
-        SizedBox(height: size.height * 0.04),
+        SizedBox(
+          height: context.deviceHeight * 0.04,
+        ),
         _buttonsRow(context),
-        SizedBox(height: size.height * 0.06),
+        SizedBox(
+          height: context.deviceHeight * 0.06,
+        ),
       ],
     );
   }
 
   Column _buttonsRow(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-
     return Column(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         TextButton.icon(
           onPressed: () {},
-          icon: Assets.svg.icClipboardCopy.svg(
+          icon: Assets.svg.icAtSign.svg(
             color: Theme.of(context).primaryColor,
-            height: size.height * 0.03,
+            height: context.deviceHeight * 0.03,
           ),
           label: Text(
-            AppTranslations.copyInvitationLink,
+            AppTranslations.email,
             style: TextStyle(
               fontFamily: AppFonts.regular(context),
               color: Theme.of(context).primaryColor,
@@ -57,12 +59,12 @@ class InviteUsersToListForm extends StatelessWidget {
         ),
         TextButton.icon(
           onPressed: () {},
-          icon: Assets.svg.icAtSign.svg(
+          icon: Assets.svg.icClipboardCopy.svg(
             color: Theme.of(context).primaryColor,
-            height: size.height * 0.03,
+            height: context.deviceHeight * 0.03,
           ),
           label: Text(
-            AppTranslations.email,
+            AppTranslations.copyInvitationLink,
             style: TextStyle(
               fontFamily: AppFonts.regular(context),
               color: Theme.of(context).primaryColor,

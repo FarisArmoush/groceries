@@ -3,6 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
+/// A widget that displays a cached network image.
+///
+/// * The [imageUrl] parameter specifies the URL of the image to display.
+///
+/// * The [height] parameter specifies the height of the image widget.
+///
+/// * The [width] parameter specifies the width of the image widget.
+///
+/// * The [boxFit] parameter specifies how the image
+///   should be fit within the widget's bounds.
+///
+/// * The [boxShape] parameter specifies the shape
+///   of the container that holds the image.
+///
+/// * The [borderRadius] parameter specifies the border radius of the container.
 class CachedImage extends StatelessWidget {
   const CachedImage({
     required this.imageUrl,
@@ -14,11 +29,22 @@ class CachedImage extends StatelessWidget {
     super.key,
   });
 
+  /// The URL of the image to display.
   final String? imageUrl;
+
+  /// The height of the image widget.
   final double? height;
+
+  /// The width of the image widget.
   final double? width;
+
+  /// How the image should be fit within the widget's bounds.
   final BoxFit? boxFit;
+
+  /// The shape of the container that holds the image.
   final BoxShape? boxShape;
+
+  /// The border radius of the container.
   final BorderRadiusGeometry? borderRadius;
 
   @override

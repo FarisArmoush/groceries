@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class BaseOnboardingPage extends StatelessWidget {
   const BaseOnboardingPage({
@@ -18,7 +19,6 @@ class BaseOnboardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return ColoredBox(
       color: backgroundColor,
       child: Column(
@@ -58,7 +58,7 @@ class BaseOnboardingPage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: size.height * 0.1,
+                  height: context.deviceHeight * 0.1,
                 ),
               ],
             ),

@@ -10,8 +10,8 @@ class AppearanceRadio extends StatelessWidget {
     super.key,
   });
   final String title;
-  final Object? groupValue;
-  final Object? value;
+  final ThemeMode groupValue;
+  final ThemeMode value;
   final ValueChanged? onChanged;
 
   @override

@@ -19,8 +19,13 @@ part '__app_radio_theme_data.dart';
 part '__app_tab_bar_theme_data.dart';
 part '__app_text_button_theme_data.dart';
 
+/// A class that provides light and dark themes for the application.
 class AppThemes {
   AppThemes._();
+
+  /// Returns the light theme for the application.
+  ///
+  /// The [context] parameter is used to access the current build context.
   static ThemeData lightTheme(BuildContext context) => ThemeData.light(
         useMaterial3: true,
       ).copyWith(
@@ -51,6 +56,9 @@ class AppThemes {
         dividerTheme: _AppDividerThemeData.light,
       );
 
+  /// Returns the dark theme for the application.
+  ///
+  /// The [context] parameter is used to access the current build context.
   static ThemeData darkTheme(BuildContext context) => ThemeData.dark(
         useMaterial3: true,
       ).copyWith(

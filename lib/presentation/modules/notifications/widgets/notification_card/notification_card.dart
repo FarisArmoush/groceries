@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries/data/models/notification_model.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 part '__notification_card_date.dart';
 part '__notification_card_title.dart';
@@ -18,17 +19,16 @@ class NotificationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return ListTile(
       contentPadding: EdgeInsets.symmetric(
-        vertical: size.height * 0.0125,
-        horizontal: size.width * 0.04,
+        vertical: context.deviceHeight * 0.0125,
+        horizontal: context.deviceWidth * 0.04,
       ),
       onTap: onTap,
       leading: CachedImage(
         imageUrl: notificationsModel.imageUrl,
-        width: size.width * 0.15,
-        height: size.height * 0.1,
+        width: context.deviceWidth * 0.15,
+        height: context.deviceHeight * 0.1,
       ),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

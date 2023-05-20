@@ -1,17 +1,18 @@
 import 'dart:developer' as dev;
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/delete_account/cubit/delete_account_cubit.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class DeleteAccountButton extends StatelessWidget {
   const DeleteAccountButton({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return BlocListener<DeleteAccountCubit, DeleteAccountState>(
       listener: (context, state) {
         if (state is DeleteAccountLoading) {
@@ -36,7 +37,7 @@ class DeleteAccountButton extends StatelessWidget {
           horizontal: 24,
         ),
         child: SizedBox(
-          width: size.width,
+          width: context.deviceWidth,
           child: FilledButton(
             onPressed: () => context.read<DeleteAccountCubit>().deleteAccount(),
             child: Text(AppTranslations.yesDeleteAccount),

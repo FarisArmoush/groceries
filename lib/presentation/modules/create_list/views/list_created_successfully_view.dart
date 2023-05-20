@@ -4,13 +4,13 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class ListCreatedSuccessfullyView extends StatelessWidget {
   const ListCreatedSuccessfullyView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Scaffold(
       body: SafeArea(
         child: ListView(
@@ -30,7 +30,7 @@ class ListCreatedSuccessfullyView extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: size.height * 0.01,
+              height: context.deviceHeight * 0.01,
             ),
             Text(
               AppTranslations.listCreatedSuccessfullyBody,
@@ -42,7 +42,7 @@ class ListCreatedSuccessfullyView extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: size.height * 0.05,
+              height: context.deviceHeight * 0.05,
             ),
             FilledButton(
               onPressed: () {},
@@ -51,7 +51,7 @@ class ListCreatedSuccessfullyView extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: size.height * 0.02,
+              height: context.deviceHeight * 0.02,
             ),
             OutlinedButton(
               onPressed: () =>

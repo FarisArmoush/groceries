@@ -1,6 +1,13 @@
 import 'package:equatable/equatable.dart';
 
+/// {@template grocery_model}
+/// A model class representing a grocery item.
+///
+/// This class extends [Equatable] for easy equality
+/// comparison and state management.
+/// {@endtemplate}
 class GroceryModel extends Equatable {
+  /// {@macro grocery_model}
   const GroceryModel({
     required this.id,
     required this.name,
@@ -8,6 +15,7 @@ class GroceryModel extends Equatable {
     required this.notes,
   });
 
+  /// Constructs a [GroceryModel] instance from a JSON map.
   factory GroceryModel.fromJson(Map<String, dynamic> json) {
     return GroceryModel(
       id: json['id'] as String,
@@ -17,6 +25,7 @@ class GroceryModel extends Equatable {
     );
   }
 
+  /// Converts the [GroceryModel] instance to a JSON map.
   Map<String, dynamic> toJson() {
     return {
       'id': id,
@@ -26,6 +35,8 @@ class GroceryModel extends Equatable {
     };
   }
 
+  /// Creates a copy of this [GroceryModel] instance with the
+  /// provided properties.
   GroceryModel copyWith({
     String? id,
     String? name,
@@ -50,9 +61,16 @@ class GroceryModel extends Equatable {
         ')';
   }
 
+  /// The unique identifier of the grocery item.
   final String id;
+
+  /// The name of the grocery item.
   final String name;
+
+  /// The category of the grocery item.
   final String category;
+
+  /// Additional notes or description about the grocery item.
   final String notes;
 
   @override

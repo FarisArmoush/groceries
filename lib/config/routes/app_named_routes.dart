@@ -1,3 +1,4 @@
+/// A class that defines the names of the routes used in the App.
 class AppNamedRoutes {
   /// Wrapper View
   static const String wrapper = 'wrapper';
@@ -22,9 +23,6 @@ class AppNamedRoutes {
   /// When the reset password email is sent to user then show him this view.
   static const String resetPasswordSentSuccessfully =
       'resetPasswordSentSuccessfully';
-
-  /// Verification View
-  static const String verification = 'ForgotPasswordverification';
 
   /// Root View
   static const String root = 'root';

@@ -17,16 +17,18 @@ class _RegisterButton extends StatelessWidget {
             ),
           );
         }
-        if (!state.status.isValidated) {
-          // Returns a disabled button
-          return FilledButton(
-            onPressed: null,
-            style: DisabledButtonStyle(),
-            child: Text(AppTranslations.register),
-          );
-        }
+        // if (!state.status.isValidated) {
+        //   // Returns a disabled button
+        //   return FilledButton(
+        //     onPressed: null,
+        //     style: DisabledButtonStyle(),
+        //     child: Text(AppTranslations.register),
+        //   );
+        // }
         return FilledButton(
-          onPressed: () => context.read<RegisterCubit>().register(),
+          onPressed: state.status.isValidated
+              ? () => context.read<RegisterCubit>().register()
+              : null,
           child: Text(
             AppTranslations.register,
           ),
