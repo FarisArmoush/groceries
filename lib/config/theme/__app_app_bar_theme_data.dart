@@ -7,7 +7,7 @@ class _AppAppBarThemeData {
         color: AppColors.black,
       ),
       surfaceTintColor: Colors.transparent,
-      systemOverlayStyle: SystemUiOverlayStyle.dark,
+      systemOverlayStyle: SystemUiOverlayStyle.light,
       elevation: 0,
       centerTitle: true,
       titleTextStyle: TextStyle(

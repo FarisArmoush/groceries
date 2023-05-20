@@ -19,8 +19,14 @@ class AddListNameAndImageView extends StatelessWidget {
       ),
       children: [
         CachedImage(
-          imageUrl: null,
-          height: context.deviceHeight * 0.15,
+          imageUrl:
+              'https://imglarger.com/Images/before-after/ai-image-enlarger-1-after-2.jpg',
+          height: context.deviceHeight * 0.3,
+          borderRadius: BorderRadius.circular(16),
+          boxShape: BoxShape.rectangle,
+        ),
+        SizedBox(
+          height: context.deviceHeight * 0.01,
         ),
         const AddImageButton(),
         SizedBox(
@@ -28,6 +34,9 @@ class AddListNameAndImageView extends StatelessWidget {
         ),
         AppTextField(
           labelText: AppTranslations.listName,
+        ),
+        SizedBox(
+          height: context.deviceHeight * 0.05,
         ),
       ],
     );

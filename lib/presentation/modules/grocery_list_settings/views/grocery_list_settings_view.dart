@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/presentation/modules/grocery_list/widgets/members/edit_list_image.dart';
-import 'package:groceries/presentation/modules/grocery_list/widgets/members/list_members_box.dart';
+import 'package:groceries/presentation/modules/grocery_list_settings/widgets/edit_list_image.dart';
+import 'package:groceries/presentation/modules/grocery_list_settings/widgets/list_members_box.dart';
 import 'package:groceries/presentation/widgets/app_text_field.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/media_query_values.dart';

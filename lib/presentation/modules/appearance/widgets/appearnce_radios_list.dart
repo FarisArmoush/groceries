@@ -13,6 +13,7 @@ class AppearanceRadiosList extends StatelessWidget {
     final groupValue = context.watch<ThemeCubit>().state;
     return PrimaryBox(
       child: ListView(
+        primary: false,
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         padding: EdgeInsets.zero,
@@ -21,7 +22,7 @@ class AppearanceRadiosList extends StatelessWidget {
             title: AppTranslations.lightMode,
             value: ThemeMode.light,
             groupValue: groupValue,
-            onChanged: (value) => context.read<ThemeCubit>().setTheme(
+            onChanged: (_) => context.read<ThemeCubit>().setTheme(
                   ThemeModeValue.light,
                 ),
           ),
@@ -29,7 +30,7 @@ class AppearanceRadiosList extends StatelessWidget {
             title: AppTranslations.darkMode,
             value: ThemeMode.dark,
             groupValue: groupValue,
-            onChanged: (value) => context.read<ThemeCubit>().setTheme(
+            onChanged: (_) => context.read<ThemeCubit>().setTheme(
                   ThemeModeValue.dark,
                 ),
           ),
@@ -37,7 +38,7 @@ class AppearanceRadiosList extends StatelessWidget {
             title: AppTranslations.systemMode,
             value: ThemeMode.system,
             groupValue: groupValue,
-            onChanged: (value) => context.read<ThemeCubit>().setTheme(
+            onChanged: (_) => context.read<ThemeCubit>().setTheme(
                   ThemeModeValue.system,
                 ),
           ),

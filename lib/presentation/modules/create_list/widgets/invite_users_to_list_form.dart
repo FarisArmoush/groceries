@@ -44,12 +44,12 @@ class InviteUsersToListForm extends StatelessWidget {
       children: [
         TextButton.icon(
           onPressed: () {},
-          icon: Assets.svg.icClipboardCopy.svg(
+          icon: Assets.svg.icAtSign.svg(
             color: Theme.of(context).primaryColor,
             height: context.deviceHeight * 0.03,
           ),
           label: Text(
-            AppTranslations.copyInvitationLink,
+            AppTranslations.email,
             style: TextStyle(
               fontFamily: AppFonts.regular(context),
               color: Theme.of(context).primaryColor,
@@ -59,12 +59,12 @@ class InviteUsersToListForm extends StatelessWidget {
         ),
         TextButton.icon(
           onPressed: () {},
-          icon: Assets.svg.icAtSign.svg(
+          icon: Assets.svg.icClipboardCopy.svg(
             color: Theme.of(context).primaryColor,
             height: context.deviceHeight * 0.03,
           ),
           label: Text(
-            AppTranslations.email,
+            AppTranslations.copyInvitationLink,
             style: TextStyle(
               fontFamily: AppFonts.regular(context),
               color: Theme.of(context).primaryColor,

@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 
-class DisplayNameText extends StatelessWidget {
-  const DisplayNameText({
-    required this.name,
-    super.key,
-  });
-  final String? name;
+class AdditionalResourcesTitle extends StatelessWidget {
+  const AdditionalResourcesTitle(this.text, {super.key});
+
+  final String text;
 
   @override
   Widget build(BuildContext context) {
-    return SelectableText(
-      name ?? '',
+    return Text(
+      text,
       style: TextStyle(
         fontFamily: AppFonts.medium(context),
         color: Theme.of(context).primaryColor,
-        fontSize: 16,
+        fontSize: 18,
       ),
-      textAlign: TextAlign.center,
     );
   }
 }

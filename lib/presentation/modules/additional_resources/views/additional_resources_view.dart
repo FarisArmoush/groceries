@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/blocs/remote_config/remote_config_cubit.dart';
+import 'package:groceries/presentation/modules/additional_resources/widgets/additional_resources_title.dart';
 import 'package:groceries/presentation/modules/additional_resources/widgets/app_version_list_tile.dart';
 import 'package:groceries/presentation/modules/additional_resources/widgets/legal_list_tile.dart';
 import 'package:groceries/presentation/modules/additional_resources/widgets/send_crash_reports_switch_tile.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class AdditionalResourcesView extends StatelessWidget {
@@ -29,14 +29,7 @@ class AdditionalResourcesView extends StatelessWidget {
           Divider(
             height: context.deviceHeight * 0.04,
           ),
-          Text(
-            AppTranslations.getHelp,
-            style: TextStyle(
-              fontFamily: AppFonts.medium(context),
-              color: Theme.of(context).primaryColor,
-              fontSize: 18,
-            ),
-          ),
+          AdditionalResourcesTitle(AppTranslations.getHelp),
           SizedBox(
             height: context.deviceHeight * 0.02,
           ),
@@ -44,14 +37,7 @@ class AdditionalResourcesView extends StatelessWidget {
           Divider(
             height: context.deviceHeight * 0.075,
           ),
-          Text(
-            AppTranslations.legal,
-            style: TextStyle(
-              fontFamily: AppFonts.medium(context),
-              color: Theme.of(context).primaryColor,
-              fontSize: 18,
-            ),
-          ),
+          AdditionalResourcesTitle(AppTranslations.legal),
           SizedBox(
             height: context.deviceHeight * 0.02,
           ),

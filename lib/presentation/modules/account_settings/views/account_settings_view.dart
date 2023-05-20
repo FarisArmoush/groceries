@@ -1,3 +1,4 @@
+// ignore_for_file: use_if_null_to_convert_nulls_to_bools
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/config/localization/app_translations.dart';
@@ -39,7 +40,6 @@ class AccountSettingsView extends StatelessWidget {
           ),
           UserDataListTile(
             title: 'Verified?',
-            // ignore: use_if_null_to_convert_nulls_to_bools
             subtitle: user?.emailVerified == true ? 'Yes' : 'No',
             onTap: () {},
           ),

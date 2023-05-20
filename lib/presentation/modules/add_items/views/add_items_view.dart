@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/grocery_model.dart';
-import 'package:groceries/presentation/modules/grocery_list/widgets/grocery_item_card.dart';
+import 'package:groceries/presentation/modules/add_items/widgets/add_items_fab.dart';
+import 'package:groceries/presentation/modules/add_items/widgets/grocery_item_card.dart';
 import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class AddItemsView extends StatelessWidget {
@@ -44,13 +44,7 @@ class AddItemsView extends StatelessWidget {
             ),
           ),
         ),
-        floatingActionButton: FloatingActionButton.extended(
-          tooltip: AppTranslations.done,
-          label: Text(
-            AppTranslations.done,
-          ),
-          onPressed: () => context.pop(),
-        ),
+        floatingActionButton: const AddItemsFab(),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       ),
     );

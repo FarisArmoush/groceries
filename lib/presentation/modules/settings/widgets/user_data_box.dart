@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/presentation/modules/settings/widgets/display_name_text.dart';
-import 'package:groceries/presentation/modules/settings/widgets/users_email_text.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/media_query_values.dart';
+
+part '__display_name.dart';
+part '__email.dart';
 
 class UserDataBox extends StatelessWidget {
   const UserDataBox({
@@ -30,13 +32,13 @@ class UserDataBox extends StatelessWidget {
         SizedBox(
           height: context.deviceHeight * 0.02,
         ),
-        DisplayNameText(
+        _DisplayName(
           name: displayName,
         ),
         SizedBox(
           height: context.deviceHeight * 0.005,
         ),
-        UsersEmailText(
+        _Email(
           email: email,
         ),
       ],

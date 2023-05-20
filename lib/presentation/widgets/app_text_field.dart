@@ -33,6 +33,7 @@ class AppTextField extends StatelessWidget {
     this.prefix,
     this.suffix,
     this.validator,
+    this.autovalidateMode,
   });
 
   /// The text displayed as the label of the text field.
@@ -101,6 +102,9 @@ class AppTextField extends StatelessWidget {
   /// A function that validates the input value.
   final FormFieldValidator<String>? validator;
 
+  /// Specifies validation mode.
+  final AutovalidateMode? autovalidateMode;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -122,6 +126,7 @@ class AppTextField extends StatelessWidget {
         color: Theme.of(context).primaryColor,
         fontSize: 14,
       ),
+      autovalidateMode: autovalidateMode,
       decoration: InputDecoration(
         suffixIconColor: Theme.of(context).primaryColor,
         suffix: suffix,

@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/modules/account_settings/views/account_settings_view.dart';
+import 'package:groceries/presentation/modules/add_items/views/add_items_view.dart';
 import 'package:groceries/presentation/modules/additional_resources/views/additional_resources_view.dart';
 import 'package:groceries/presentation/modules/appearance/views/appearance_settings_view.dart';
 import 'package:groceries/presentation/modules/create_list/views/create_list_view.dart';
@@ -8,12 +9,10 @@ import 'package:groceries/presentation/modules/create_list/views/invite_users_to
 import 'package:groceries/presentation/modules/create_list/views/list_created_successfully_view.dart';
 import 'package:groceries/presentation/modules/create_list/views/list_created_unsuccessfully_view.dart';
 import 'package:groceries/presentation/modules/delete_account/views/delete_account_view.dart';
-import 'package:groceries/presentation/modules/forgot_password/views/forgot_password_verification_view.dart';
 import 'package:groceries/presentation/modules/forgot_password/views/forgot_password_view.dart';
 import 'package:groceries/presentation/modules/forgot_password/views/reset_password_sent_successfully.dart';
-import 'package:groceries/presentation/modules/grocery_list/views/add_items_view.dart';
-import 'package:groceries/presentation/modules/grocery_list/views/grocery_list_settings_view.dart';
 import 'package:groceries/presentation/modules/grocery_list/views/grocery_list_view.dart';
+import 'package:groceries/presentation/modules/grocery_list_settings/views/grocery_list_settings_view.dart';
 import 'package:groceries/presentation/modules/home/views/home_view.dart';
 import 'package:groceries/presentation/modules/login/views/login_view.dart';
 import 'package:groceries/presentation/modules/notifications/views/notifications_view.dart';
@@ -57,21 +56,15 @@ class AppGoRouter {
             builder: (context, state) => const LoginView(),
             routes: [
               GoRoute(
-                name: AppNamedRoutes.resetPasswordSentSuccessfully,
-                path: 'resetPasswordSentSuccessfully',
-                builder: (context, state) =>
-                    const ResetPasswordSentSuccessfullyView(),
-              ),
-              GoRoute(
                 name: AppNamedRoutes.forgotPassword,
                 path: 'forgotPassword',
                 builder: (context, state) => const ForgotPasswordView(),
                 routes: [
                   GoRoute(
-                    name: AppNamedRoutes.verification,
-                    path: 'verification',
+                    name: AppNamedRoutes.resetPasswordSentSuccessfully,
+                    path: 'resetPasswordSentSuccessfully',
                     builder: (context, state) =>
-                        const ForgotPasswordVerificationView(),
+                        const ResetPasswordSentSuccessfullyView(),
                   ),
                 ],
               ),

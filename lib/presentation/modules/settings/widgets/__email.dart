@@ -1,10 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
+part of 'user_data_box.dart';
 
-class UsersEmailText extends StatelessWidget {
-  const UsersEmailText({
+class _Email extends StatelessWidget {
+  const _Email({
     required this.email,
-    super.key,
   });
   final String? email;
 

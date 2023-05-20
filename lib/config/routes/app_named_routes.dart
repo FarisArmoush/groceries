@@ -24,9 +24,6 @@ class AppNamedRoutes {
   static const String resetPasswordSentSuccessfully =
       'resetPasswordSentSuccessfully';
 
-  /// Verification View
-  static const String verification = 'ForgotPasswordverification';
-
   /// Root View
   static const String root = 'root';
 
