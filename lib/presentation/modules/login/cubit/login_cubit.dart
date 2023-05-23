@@ -2,8 +2,8 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
 import 'package:groceries/data/repositories/firebase_auth_repository.dart';
-import 'package:groceries/utils/exceptions/login_with_email_password_failure.dart';
-import 'package:groceries/utils/exceptions/login_with_google_failure.dart';
+import 'package:groceries/utils/exceptions/login_with_email_password_exception.dart';
+import 'package:groceries/utils/exceptions/login_with_google_exception.dart';
 import 'package:groceries/utils/forms/email_form.dart';
 import 'package:groceries/utils/forms/login_password_form.dart';
 
@@ -45,7 +45,7 @@ class LoginCubit extends Cubit<LoginState> {
         password: state.password.value,
       );
       emit(state.copyWith(status: FormzStatus.submissionSuccess));
-    } on LoginWithEmailAndPasswordFailure catch (e) {
+    } on LoginWithEmailAndPasswordException catch (e) {
       emit(
         state.copyWith(
           errorMessage: e.message,
@@ -62,7 +62,7 @@ class LoginCubit extends Cubit<LoginState> {
     try {
       await authRepo.loginWithGoogle();
       emit(state.copyWith(status: FormzStatus.submissionSuccess));
-    } on LoginWithGoogleFailure catch (e) {
+    } on LoginWithGoogleException catch (e) {
       emit(
         state.copyWith(
           errorMessage: e.message,

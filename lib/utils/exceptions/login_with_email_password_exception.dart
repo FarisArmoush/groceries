@@ -1,4 +1,4 @@
-/// Creates a new instance of [LoginWithEmailAndPasswordFailure]
+/// Creates a new instance of [LoginWithEmailAndPasswordException]
 /// from a Firebase error [message].
 ///
 /// The following error codes are supported:
@@ -11,35 +11,35 @@
 /// * user-not-found: Email is not found, please create an account.
 ///
 /// * wrong-password: Incorrect password, please try again.
-class LoginWithEmailAndPasswordFailure implements Exception {
-  /// Creates a new instance of [LoginWithEmailAndPasswordFailure]
+class LoginWithEmailAndPasswordException implements Exception {
+  /// Creates a new instance of [LoginWithEmailAndPasswordException]
   /// with an optional error [message].
-  const LoginWithEmailAndPasswordFailure([
+  const LoginWithEmailAndPasswordException([
     this.message = 'An unknown exception occurred.',
   ]);
 
-  /// Creates a new instance of [LoginWithEmailAndPasswordFailure]
+  /// Creates a new instance of [LoginWithEmailAndPasswordException]
   ///  from a Firebase error [code].
-  factory LoginWithEmailAndPasswordFailure.fromCode(String code) {
+  factory LoginWithEmailAndPasswordException.fromCode(String code) {
     switch (code) {
       case 'invalid-email':
-        return const LoginWithEmailAndPasswordFailure(
+        return const LoginWithEmailAndPasswordException(
           'Email is not valid or badly formatted.',
         );
       case 'user-disabled':
-        return const LoginWithEmailAndPasswordFailure(
+        return const LoginWithEmailAndPasswordException(
           'This user has been disabled. Please contact support for help.',
         );
       case 'user-not-found':
-        return const LoginWithEmailAndPasswordFailure(
+        return const LoginWithEmailAndPasswordException(
           'Email is not found, please create an account.',
         );
       case 'wrong-password':
-        return const LoginWithEmailAndPasswordFailure(
+        return const LoginWithEmailAndPasswordException(
           'Incorrect password, please try again.',
         );
       default:
-        return const LoginWithEmailAndPasswordFailure();
+        return const LoginWithEmailAndPasswordException();
     }
   }
 

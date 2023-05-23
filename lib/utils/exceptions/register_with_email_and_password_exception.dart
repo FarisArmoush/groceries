@@ -1,5 +1,5 @@
 // ignore_for_file: comment_references
-/// Creates a new instance of [RegisterWithEmailAndPasswordFailure]
+/// Creates a new instance of [RegisterWithEmailAndPasswordException]
 /// from a Firebase error [code].
 ///
 /// The following error codes are supported:
@@ -14,37 +14,37 @@
 /// * operation-not-allowed: Operation is not allowed. Please contact support.
 ///
 /// * weak-password: Please enter a stronger password.
-class RegisterWithEmailAndPasswordFailure implements Exception {
-  const RegisterWithEmailAndPasswordFailure([
+class RegisterWithEmailAndPasswordException implements Exception {
+  const RegisterWithEmailAndPasswordException([
     this.message = 'Something went wrong...',
   ]);
 
-  /// Creates a new instance of [RegisterWithEmailAndPasswordFailure]
+  /// Creates a new instance of [RegisterWithEmailAndPasswordException]
   /// from a Firebase error [code].
-  factory RegisterWithEmailAndPasswordFailure.fromCode(String code) {
+  factory RegisterWithEmailAndPasswordException.fromCode(String code) {
     switch (code) {
       case 'invalid-email':
-        return const RegisterWithEmailAndPasswordFailure(
+        return const RegisterWithEmailAndPasswordException(
           'Email is not valid or badly formatted.',
         );
       case 'user-disabled':
-        return const RegisterWithEmailAndPasswordFailure(
+        return const RegisterWithEmailAndPasswordException(
           'This user has been disabled. Please contact support for help.',
         );
       case 'email-already-in-use':
-        return const RegisterWithEmailAndPasswordFailure(
+        return const RegisterWithEmailAndPasswordException(
           'An account already exists for that email.',
         );
       case 'operation-not-allowed':
-        return const RegisterWithEmailAndPasswordFailure(
+        return const RegisterWithEmailAndPasswordException(
           'Operation is not allowed.  Please contact support.',
         );
       case 'weak-password':
-        return const RegisterWithEmailAndPasswordFailure(
+        return const RegisterWithEmailAndPasswordException(
           'Please enter a stronger password.',
         );
       default:
-        return const RegisterWithEmailAndPasswordFailure();
+        return const RegisterWithEmailAndPasswordException();
     }
   }
 
