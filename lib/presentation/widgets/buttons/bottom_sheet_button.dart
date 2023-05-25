@@ -28,6 +28,7 @@ class BottomSheetButton extends StatelessWidget {
       ),
       leading: SvgPicture.asset(
         icon,
+        // ignore: deprecated_member_use
         color: Theme.of(context).primaryColor,
       ),
     );

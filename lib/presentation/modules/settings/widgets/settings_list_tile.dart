@@ -6,12 +6,12 @@ class SettingsListTile extends StatelessWidget {
   const SettingsListTile({
     required this.title,
     required this.subtitle,
-    required this.icon,
+    required this.iconPath,
     required this.onTap,
     super.key,
   });
 
-  final String icon;
+  final String iconPath;
   final String title;
   final String subtitle;
   final VoidCallback onTap;
@@ -22,14 +22,15 @@ class SettingsListTile extends StatelessWidget {
       onTap: onTap,
       tileColor: Colors.transparent,
       leading: SvgPicture.asset(
-        icon,
+        iconPath,
+        // ignore: deprecated_member_use
         color: Theme.of(context).hintColor,
       ),
       title: Text(title),
       subtitle: Text(subtitle),
+      isThreeLine: true,
       trailing: const NextArrowIcon(),
       titleAlignment: ListTileTitleAlignment.center,
-      isThreeLine: true,
     );
   }
 }

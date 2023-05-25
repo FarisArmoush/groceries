@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class DeleteRecipeBottomSheet extends StatelessWidget {
@@ -12,22 +11,19 @@ class DeleteRecipeBottomSheet extends StatelessWidget {
     return BottomSheet(
       onClosing: () {},
       enableDrag: false,
+      showDragHandle: false,
       builder: (context) {
         return ListView(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           padding: const EdgeInsets.symmetric(
-            vertical: 16,
-            horizontal: 32,
+            vertical: 12,
+            horizontal: 24,
           ),
           children: [
             Text(
               AppTranslations.youSureYouWantToDeleteThisRecipe,
-              style: TextStyle(
-                fontFamily: AppFonts.semiBold(context),
-                color: Theme.of(context).primaryColor,
-                fontSize: 24,
-              ),
+              style: Theme.of(context).dialogTheme.titleTextStyle,
               textAlign: TextAlign.center,
             ),
             SizedBox(
@@ -44,6 +40,9 @@ class DeleteRecipeBottomSheet extends StatelessWidget {
               child: Text(
                 AppTranslations.noKeepIt,
               ),
+            ),
+            SizedBox(
+              height: context.deviceHeight * 0.02,
             ),
           ],
         );

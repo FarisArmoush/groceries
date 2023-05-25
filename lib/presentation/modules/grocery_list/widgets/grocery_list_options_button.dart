@@ -14,9 +14,9 @@ class GroceryListOptionsButton extends StatelessWidget {
         color: Theme.of(context).primaryColor,
       ),
       onPressed: () => showModalBottomSheet<GroceryListOptionsBottomSheet>(
+        showDragHandle: true,
+        elevation: 0,
         context: context,
-        showDragHandle: false,
-        enableDrag: false,
         builder: (context) => const GroceryListOptionsBottomSheet(),
       ),
     );

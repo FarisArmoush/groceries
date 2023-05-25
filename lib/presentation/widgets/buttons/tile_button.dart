@@ -24,6 +24,7 @@ class TileButton extends StatelessWidget {
       ),
       leading: SvgPicture.asset(
         icon,
+        // ignore: deprecated_member_use
         color: color ?? Theme.of(context).primaryColor,
       ),
       title: Text(

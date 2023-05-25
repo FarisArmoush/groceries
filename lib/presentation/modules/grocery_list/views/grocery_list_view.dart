@@ -25,12 +25,7 @@ class GroceryListView extends StatelessWidget {
           const GroceryListOptionsButton(),
         ],
       ),
-      body: const CustomScrollView(
-        physics: BouncingScrollPhysics(),
-        slivers: [
-          EmptyGroceryList(),
-        ],
-      ),
+      body: const EmptyGroceryList(),
     );
   }
 }

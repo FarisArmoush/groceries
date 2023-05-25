@@ -20,6 +20,7 @@ class RecipeCardActionButton extends StatelessWidget {
       onPressed: onPressed,
       icon: SvgPicture.asset(
         icon,
+        // ignore: deprecated_member_use
         color: Theme.of(context).primaryColor,
       ),
       label: Text(

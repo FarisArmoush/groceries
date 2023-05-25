@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/presentation/modules/grocery_list_settings/widgets/remove_list_member_bottom_sheet.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/media_query_values.dart';
@@ -19,7 +20,12 @@ class MemberCard extends StatelessWidget {
         'fariskarmoush@gmail.com',
       ),
       trailing: IconButton(
-        onPressed: () {},
+        onPressed: () => showModalBottomSheet<RemoveListMemberBottomSheet>(
+          showDragHandle: true,
+          elevation: 0,
+          context: context,
+          builder: (context) => const RemoveListMemberBottomSheet(),
+        ),
         icon: Assets.svg.icUserX.svg(
           color: Theme.of(context).hintColor,
         ),

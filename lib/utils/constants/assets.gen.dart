@@ -11,52 +11,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class $AssetsPngGen {
-  const $AssetsPngGen();
-
-  /// File path: assets/png/chooseAuthBackgroundImageFour.jpg
-  AssetGenImage get chooseAuthBackgroundImageFour =>
-      const AssetGenImage('assets/png/chooseAuthBackgroundImageFour.jpg');
-
-  /// File path: assets/png/chooseAuthBackgroundImageOne.jpg
-  AssetGenImage get chooseAuthBackgroundImageOne =>
-      const AssetGenImage('assets/png/chooseAuthBackgroundImageOne.jpg');
-
-  /// File path: assets/png/chooseAuthBackgroundImageThree.jpg
-  AssetGenImage get chooseAuthBackgroundImageThree =>
-      const AssetGenImage('assets/png/chooseAuthBackgroundImageThree.jpg');
-
-  /// File path: assets/png/chooseAuthBackgroundImageTwo.jpg
-  AssetGenImage get chooseAuthBackgroundImageTwo =>
-      const AssetGenImage('assets/png/chooseAuthBackgroundImageTwo.jpg');
-
-  /// File path: assets/png/failed.png
-  AssetGenImage get failed => const AssetGenImage('assets/png/failed.png');
-
-  /// File path: assets/png/icPaperAndShoppingCart.png
-  AssetGenImage get icPaperAndShoppingCart =>
-      const AssetGenImage('assets/png/icPaperAndShoppingCart.png');
-
-  /// File path: assets/png/profilesBackground.png
-  AssetGenImage get profilesBackground =>
-      const AssetGenImage('assets/png/profilesBackground.png');
-
-  /// File path: assets/png/success.png
-  AssetGenImage get success => const AssetGenImage('assets/png/success.png');
-
-  /// List of all assets
-  List<AssetGenImage> get values => [
-        chooseAuthBackgroundImageFour,
-        chooseAuthBackgroundImageOne,
-        chooseAuthBackgroundImageThree,
-        chooseAuthBackgroundImageTwo,
-        failed,
-        icPaperAndShoppingCart,
-        profilesBackground,
-        success
-      ];
-}
-
 class $AssetsSvgGen {
   const $AssetsSvgGen();
 
@@ -64,15 +18,8 @@ class $AssetsSvgGen {
   SvgGenImage get icAlertTriangle =>
       const SvgGenImage('assets/svg/icAlertTriangle.svg');
 
-  /// File path: assets/svg/icApple.svg
-  SvgGenImage get icApple => const SvgGenImage('assets/svg/icApple.svg');
-
   /// File path: assets/svg/icArchive.svg
   SvgGenImage get icArchive => const SvgGenImage('assets/svg/icArchive.svg');
-
-  /// File path: assets/svg/icArrowLeftRight.svg
-  SvgGenImage get icArrowLeftRight =>
-      const SvgGenImage('assets/svg/icArrowLeftRight.svg');
 
   /// File path: assets/svg/icAtSign.svg
   SvgGenImage get icAtSign => const SvgGenImage('assets/svg/icAtSign.svg');
@@ -82,9 +29,6 @@ class $AssetsSvgGen {
 
   /// File path: assets/svg/icCamera.svg
   SvgGenImage get icCamera => const SvgGenImage('assets/svg/icCamera.svg');
-
-  /// File path: assets/svg/icCheck.svg
-  SvgGenImage get icCheck => const SvgGenImage('assets/svg/icCheck.svg');
 
   /// File path: assets/svg/icCheckCircle.svg
   SvgGenImage get icCheckCircle =>
@@ -96,53 +40,12 @@ class $AssetsSvgGen {
   /// File path: assets/svg/icCircleX.svg
   SvgGenImage get icCircleX => const SvgGenImage('assets/svg/icCircleX.svg');
 
-  /// File path: assets/svg/icClipboard.svg
-  SvgGenImage get icClipboard =>
-      const SvgGenImage('assets/svg/icClipboard.svg');
-
   /// File path: assets/svg/icClipboardCopy.svg
   SvgGenImage get icClipboardCopy =>
       const SvgGenImage('assets/svg/icClipboardCopy.svg');
 
-  /// File path: assets/svg/icContact.svg
-  SvgGenImage get icContact => const SvgGenImage('assets/svg/icContact.svg');
-
-  /// File path: assets/svg/icDoubleCheck.svg
-  SvgGenImage get icDoubleCheck =>
-      const SvgGenImage('assets/svg/icDoubleCheck.svg');
-
-  /// File path: assets/svg/icDownArrow.svg
-  SvgGenImage get icDownArrow =>
-      const SvgGenImage('assets/svg/icDownArrow.svg');
-
   /// File path: assets/svg/icEdit.svg
   SvgGenImage get icEdit => const SvgGenImage('assets/svg/icEdit.svg');
-
-  /// File path: assets/svg/icEye.svg
-  SvgGenImage get icEye => const SvgGenImage('assets/svg/icEye.svg');
-
-  /// File path: assets/svg/icEyeOff.svg
-  SvgGenImage get icEyeOff => const SvgGenImage('assets/svg/icEyeOff.svg');
-
-  /// File path: assets/svg/icFile.svg
-  SvgGenImage get icFile => const SvgGenImage('assets/svg/icFile.svg');
-
-  /// File path: assets/svg/icFileTerminal.svg
-  SvgGenImage get icFileTerminal =>
-      const SvgGenImage('assets/svg/icFileTerminal.svg');
-
-  /// File path: assets/svg/icFlag.svg
-  SvgGenImage get icFlag => const SvgGenImage('assets/svg/icFlag.svg');
-
-  /// File path: assets/svg/icFolderLock.svg
-  SvgGenImage get icFolderLock =>
-      const SvgGenImage('assets/svg/icFolderLock.svg');
-
-  /// File path: assets/svg/icGoogle.svg
-  SvgGenImage get icGoogle => const SvgGenImage('assets/svg/icGoogle.svg');
-
-  /// File path: assets/svg/icHeart.svg
-  SvgGenImage get icHeart => const SvgGenImage('assets/svg/icHeart.svg');
 
   /// File path: assets/svg/icHome.svg
   SvgGenImage get icHome => const SvgGenImage('assets/svg/icHome.svg');
@@ -154,35 +57,11 @@ class $AssetsSvgGen {
   SvgGenImage get icLeftArrow =>
       const SvgGenImage('assets/svg/icLeftArrow.svg');
 
-  /// File path: assets/svg/icLink.svg
-  SvgGenImage get icLink => const SvgGenImage('assets/svg/icLink.svg');
-
-  /// File path: assets/svg/icListChecks.svg
-  SvgGenImage get icListChecks =>
-      const SvgGenImage('assets/svg/icListChecks.svg');
-
-  /// File path: assets/svg/icListPlus.svg
-  SvgGenImage get icListPlus => const SvgGenImage('assets/svg/icListPlus.svg');
-
-  /// File path: assets/svg/icListX.svg
-  SvgGenImage get icListX => const SvgGenImage('assets/svg/icListX.svg');
-
   /// File path: assets/svg/icLogout.svg
   SvgGenImage get icLogout => const SvgGenImage('assets/svg/icLogout.svg');
 
-  /// File path: assets/svg/icMenu.svg
-  SvgGenImage get icMenu => const SvgGenImage('assets/svg/icMenu.svg');
-
-  /// File path: assets/svg/icMessageBubble.svg
-  SvgGenImage get icMessageBubble =>
-      const SvgGenImage('assets/svg/icMessageBubble.svg');
-
   /// File path: assets/svg/icPalette.svg
   SvgGenImage get icPalette => const SvgGenImage('assets/svg/icPalette.svg');
-
-  /// File path: assets/svg/icPaperClip.svg
-  SvgGenImage get icPaperClip =>
-      const SvgGenImage('assets/svg/icPaperClip.svg');
 
   /// File path: assets/svg/icPlus.svg
   SvgGenImage get icPlus => const SvgGenImage('assets/svg/icPlus.svg');
@@ -207,9 +86,6 @@ class $AssetsSvgGen {
   /// File path: assets/svg/icSettings.svg
   SvgGenImage get icSettings => const SvgGenImage('assets/svg/icSettings.svg');
 
-  /// File path: assets/svg/icStar.svg
-  SvgGenImage get icStar => const SvgGenImage('assets/svg/icStar.svg');
-
   /// File path: assets/svg/icTrash.svg
   SvgGenImage get icTrash => const SvgGenImage('assets/svg/icTrash.svg');
 
@@ -231,9 +107,6 @@ class $AssetsSvgGen {
   /// File path: assets/svg/icVerticalThreeDots.svg
   SvgGenImage get icVerticalThreeDots =>
       const SvgGenImage('assets/svg/icVerticalThreeDots.svg');
-
-  /// File path: assets/svg/icWhatsapp.svg
-  SvgGenImage get icWhatsapp => const SvgGenImage('assets/svg/icWhatsapp.svg');
 
   /// File path: assets/svg/illBirdWatching.svg
   SvgGenImage get illBirdWatching =>
@@ -288,42 +161,20 @@ class $AssetsSvgGen {
   /// List of all assets
   List<SvgGenImage> get values => [
         icAlertTriangle,
-        icApple,
         icArchive,
-        icArrowLeftRight,
         icAtSign,
         icBell,
         icCamera,
-        icCheck,
         icCheckCircle,
         icChefHat,
         icCircleX,
-        icClipboard,
         icClipboardCopy,
-        icContact,
-        icDoubleCheck,
-        icDownArrow,
         icEdit,
-        icEye,
-        icEyeOff,
-        icFile,
-        icFileTerminal,
-        icFlag,
-        icFolderLock,
-        icGoogle,
-        icHeart,
         icHome,
         icInfo,
         icLeftArrow,
-        icLink,
-        icListChecks,
-        icListPlus,
-        icListX,
         icLogout,
-        icMenu,
-        icMessageBubble,
         icPalette,
-        icPaperClip,
         icPlus,
         icPlusCircle,
         icPrinter,
@@ -331,7 +182,6 @@ class $AssetsSvgGen {
         icSearch,
         icSend,
         icSettings,
-        icStar,
         icTrash,
         icTwitter,
         icUser,
@@ -339,7 +189,6 @@ class $AssetsSvgGen {
         icUsers,
         icVerified,
         icVerticalThreeDots,
-        icWhatsapp,
         illBirdWatching,
         illCall,
         illCelebrating,
@@ -361,7 +210,6 @@ class $AssetsSvgGen {
 class Assets {
   Assets._();
 
-  static const $AssetsPngGen png = $AssetsPngGen();
   static const $AssetsSvgGen svg = $AssetsSvgGen();
 }
 
@@ -423,7 +271,16 @@ class AssetGenImage {
     );
   }
 
-  ImageProvider provider() => AssetImage(_assetName);
+  ImageProvider provider({
+    AssetBundle? bundle,
+    String? package,
+  }) {
+    return AssetImage(
+      _assetName,
+      bundle: bundle,
+      package: package,
+    );
+  }
 
   String get path => _assetName;
 
@@ -449,6 +306,8 @@ class SvgGenImage {
     String? semanticsLabel,
     bool excludeFromSemantics = false,
     SvgTheme theme = const SvgTheme(),
+    ColorFilter? colorFilter,
+    Clip clipBehavior = Clip.hardEdge,
     Color? color,
     BlendMode colorBlendMode = BlendMode.srcIn,
     bool cacheColorFilter = false,
@@ -468,8 +327,10 @@ class SvgGenImage {
       semanticsLabel: semanticsLabel,
       excludeFromSemantics: excludeFromSemantics,
       theme: theme,
+      colorFilter: colorFilter,
       color: color,
       colorBlendMode: colorBlendMode,
+      clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
     );
   }

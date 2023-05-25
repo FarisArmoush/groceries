@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
 import 'package:groceries/presentation/modules/settings/widgets/settings_list_tile.dart';
 import 'package:groceries/presentation/modules/settings/widgets/user_data_box.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -14,7 +12,6 @@ class SettingsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = context.watch<AuthBloc>().authRepo.currentUser;
     return Scaffold(
       appBar: AppBar(
         title: Text(AppTranslations.settings),
@@ -26,18 +23,14 @@ class SettingsView extends StatelessWidget {
           horizontal: 14,
         ),
         children: [
-          UserDataBox(
-            imageUrl: user?.photoURL,
-            displayName: user?.displayName,
-            email: user?.email,
-          ),
+          const UserDataBox(),
           Divider(
             height: context.deviceHeight * 0.05,
           ),
           SettingsListTile(
             title: AppTranslations.accountSettings,
             subtitle: AppTranslations.accountSettingsDescription,
-            icon: Assets.svg.icUser.path,
+            iconPath: Assets.svg.icUser.path,
             onTap: () => context.pushNamed(AppNamedRoutes.accountSettings),
           ),
           SizedBox(
@@ -46,7 +39,7 @@ class SettingsView extends StatelessWidget {
           SettingsListTile(
             title: AppTranslations.notifications,
             subtitle: AppTranslations.notificationSettingsDescription,
-            icon: Assets.svg.icBell.path,
+            iconPath: Assets.svg.icBell.path,
             onTap: () =>
                 context.pushNamed(AppNamedRoutes.notificationsSettings),
           ),
@@ -56,7 +49,7 @@ class SettingsView extends StatelessWidget {
           SettingsListTile(
             title: AppTranslations.theme,
             subtitle: AppTranslations.themeHeader,
-            icon: Assets.svg.icPalette.path,
+            iconPath: Assets.svg.icPalette.path,
             onTap: () => context.pushNamed(AppNamedRoutes.appearanceSettings),
           ),
           SizedBox(
@@ -65,7 +58,7 @@ class SettingsView extends StatelessWidget {
           SettingsListTile(
             title: AppTranslations.additionalResources,
             subtitle: AppTranslations.additionalResourcesDescription,
-            icon: Assets.svg.icVerticalThreeDots.path,
+            iconPath: Assets.svg.icVerticalThreeDots.path,
             onTap: () => context.pushNamed(AppNamedRoutes.additionalResources),
           ),
           SizedBox(

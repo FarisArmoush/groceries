@@ -16,8 +16,16 @@ class _AppFilledButtonThemeData {
             borderRadius: BorderRadius.circular(12),
           ),
         ),
-        backgroundColor: MaterialStateProperty.all<Color>(
-          AppColors.darkRed,
+        foregroundColor: MaterialStateProperty.all(
+          AppColors.white,
+        ),
+        backgroundColor: MaterialStateProperty.resolveWith<Color>(
+          (states) {
+            if (states.contains(MaterialState.disabled)) {
+              return AppColors.lightGrey;
+            }
+            return AppColors.darkRed;
+          },
         ),
         textStyle: MaterialStateProperty.all<TextStyle>(
           TextStyle(
@@ -45,8 +53,16 @@ class _AppFilledButtonThemeData {
             borderRadius: BorderRadius.circular(12),
           ),
         ),
-        backgroundColor: MaterialStateProperty.all<Color>(
-          AppColors.lightRed,
+        backgroundColor: MaterialStateProperty.resolveWith<Color>(
+          (states) {
+            if (states.contains(MaterialState.disabled)) {
+              return AppColors.lightGrey;
+            }
+            return AppColors.lightRed;
+          },
+        ),
+        foregroundColor: MaterialStateProperty.all(
+          AppColors.white,
         ),
         textStyle: MaterialStateProperty.all<TextStyle>(
           TextStyle(

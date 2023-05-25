@@ -9,13 +9,11 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BlocProvider(
-        create: (context) => LoginCubit(
-          context.read<FirebaseAuthRepository>(),
-        ),
-        child: const LoginForm(),
+    return BlocProvider(
+      create: (context) => LoginCubit(
+        context.read<FirebaseAuthRepository>(),
       ),
+      child: const LoginForm(),
     );
   }
 }

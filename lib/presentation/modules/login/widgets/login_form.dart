@@ -25,64 +25,66 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<LoginCubit, LoginState>(
-      listener: (context, state) {
-        if (state.status.isSubmissionFailure) {
-          ScaffoldMessenger.of(context)
-            ..hideCurrentSnackBar()
-            ..showSnackBar(
-              AppSnackBars.error(
-                error: state.errorMessage ?? 'Authentication Failure',
-              ),
-            );
-        }
-        if (state.status.isSubmissionSuccess) {
-          ScaffoldMessenger.of(context)
-            ..hideCurrentSnackBar()
-            ..showSnackBar(
-              AppSnackBars.success(
-                message: 'Welcome Back',
-              ),
-            );
-          context.pushReplacementNamed(AppNamedRoutes.root);
-        }
-      },
-      child: ListView(
-        physics: const BouncingScrollPhysics(),
-        padding: const EdgeInsets.symmetric(
-          vertical: 16,
-          horizontal: 32,
+    return Scaffold(
+      body: BlocListener<LoginCubit, LoginState>(
+        listener: (context, state) {
+          if (state.status.isSubmissionFailure) {
+            ScaffoldMessenger.of(context)
+              ..hideCurrentSnackBar()
+              ..showSnackBar(
+                AppSnackBars.error(
+                  error: state.errorMessage ?? 'Authentication Failure',
+                ),
+              );
+          }
+          if (state.status.isSubmissionSuccess) {
+            ScaffoldMessenger.of(context)
+              ..hideCurrentSnackBar()
+              ..showSnackBar(
+                AppSnackBars.success(
+                  message: 'Welcome Back',
+                ),
+              );
+            context.pushReplacementNamed(AppNamedRoutes.root);
+          }
+        },
+        child: ListView(
+          physics: const BouncingScrollPhysics(),
+          padding: const EdgeInsets.symmetric(
+            vertical: 16,
+            horizontal: 32,
+          ),
+          children: [
+            SizedBox(
+              height: context.deviceHeight * 0.09,
+            ),
+            const _LoginHeader(),
+            SizedBox(
+              height: context.deviceHeight * 0.01,
+            ),
+            const _LoginBodyText(),
+            SizedBox(
+              height: context.deviceHeight * 0.03,
+            ),
+            const _LoginEmailTextField(),
+            SizedBox(
+              height: context.deviceHeight * 0.02,
+            ),
+            const _LoginPasswordTextField(),
+            SizedBox(
+              height: context.deviceHeight * 0.02,
+            ),
+            const _LoginForgotPasswordButton(),
+            SizedBox(
+              height: context.deviceHeight * 0.02,
+            ),
+            const _LoginButton(),
+            SizedBox(
+              height: context.deviceHeight * 0.03,
+            ),
+            const _LoginOtherOptionsTextButton(),
+          ],
         ),
-        children: [
-          SizedBox(
-            height: context.deviceHeight * 0.09,
-          ),
-          const _LoginHeader(),
-          SizedBox(
-            height: context.deviceHeight * 0.01,
-          ),
-          const _LoginBodyText(),
-          SizedBox(
-            height: context.deviceHeight * 0.03,
-          ),
-          const _LoginEmailTextField(),
-          SizedBox(
-            height: context.deviceHeight * 0.02,
-          ),
-          const _LoginPasswordTextField(),
-          SizedBox(
-            height: context.deviceHeight * 0.02,
-          ),
-          const _LoginForgotPasswordButton(),
-          SizedBox(
-            height: context.deviceHeight * 0.02,
-          ),
-          const _LoginButton(),
-          SizedBox(
-            height: context.deviceHeight * 0.03,
-          ),
-          const _LoginOtherOptionsTextButton(),
-        ],
       ),
     );
   }

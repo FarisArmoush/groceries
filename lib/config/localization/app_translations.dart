@@ -143,4 +143,26 @@ class AppTranslations {
   static final accountSettingsDescription = 'account_settings_description'.tr();
   static final notificationSettingsDescription =
       'notification_settings_description'.tr();
+
+  static final verifed = 'verified'.tr();
+  static final accountCreationMetaData = 'account_creation_meta_data'.tr();
+
+  static final cancelForgotPassowordDialogHeader =
+      'cancel_forgot_password_dialog_header'.tr();
+  static final cancelForgotPassowordDialogBody =
+      'cancel_forgot_password_dialog_body'.tr();
+
+  static final deleteGroceryListBottomSheetHeader =
+      'delete_grocery_list_bottom_sheet_header'.tr();
+
+  static final deleteGroceryListBottomSheetBody =
+      'delete_grocery_list_bottom_sheet_body'.tr();
+
+  static final yesDeleteList = 'yes_delete_list'.tr();
+  static final noDontDeleteList = 'no_dont_delete_list'.tr();
+
+  static final addRecipeToListBottomSheetHeader =
+      'add_recipe_to_list_bottom_sheet_header'.tr();
+  static final addRecipeToListBottomSheetBody =
+      'add_recipe_to_list_bottom_sheet_body'.tr();
 }

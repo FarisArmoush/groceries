@@ -12,8 +12,8 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomSheet(
-      enableDrag: false,
       showDragHandle: false,
+      enableDrag: false,
       onClosing: () {},
       builder: (context) {
         return ListView(

@@ -25,73 +25,75 @@ class RegisterForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<RegisterCubit, RegisterState>(
-      listener: (context, state) {
-        if (state.status.isSubmissionFailure) {
-          ScaffoldMessenger.of(context)
-            ..hideCurrentSnackBar()
-            ..showSnackBar(
-              AppSnackBars.error(
-                error: state.errorMessage ?? 'Authentication Failure',
-              ),
-            );
-        }
+    return Scaffold(
+      body: BlocListener<RegisterCubit, RegisterState>(
+        listener: (context, state) {
+          if (state.status.isSubmissionFailure) {
+            ScaffoldMessenger.of(context)
+              ..hideCurrentSnackBar()
+              ..showSnackBar(
+                AppSnackBars.error(
+                  error: state.errorMessage ?? 'Authentication Failure',
+                ),
+              );
+          }
 
-        if (state.status.isSubmissionSuccess) {
-          ScaffoldMessenger.of(context)
-            ..hideCurrentSnackBar()
-            ..showSnackBar(
-              AppSnackBars.success(
-                message: 'Account Created Successfully',
-              ),
-            );
-          context.pushReplacementNamed(AppNamedRoutes.root);
-        }
-      },
-      child: ListView(
-        physics: const BouncingScrollPhysics(),
-        padding: const EdgeInsets.symmetric(
-          vertical: 16,
-          horizontal: 24,
+          if (state.status.isSubmissionSuccess) {
+            ScaffoldMessenger.of(context)
+              ..hideCurrentSnackBar()
+              ..showSnackBar(
+                AppSnackBars.success(
+                  message: 'Account Created Successfully',
+                ),
+              );
+            context.pushReplacementNamed(AppNamedRoutes.root);
+          }
+        },
+        child: ListView(
+          physics: const BouncingScrollPhysics(),
+          padding: const EdgeInsets.symmetric(
+            vertical: 16,
+            horizontal: 24,
+          ),
+          children: [
+            SizedBox(
+              height: context.deviceHeight * 0.09,
+            ),
+            const _RegisterHeader(),
+            SizedBox(
+              height: context.deviceHeight * 0.01,
+            ),
+            const _RegisterBodyText(),
+            SizedBox(
+              height: context.deviceHeight * 0.04,
+            ),
+            const _RegisterDisplayNameTextField(),
+            SizedBox(
+              height: context.deviceHeight * 0.02,
+            ),
+            const _RegisterEmailTextField(),
+            SizedBox(
+              height: context.deviceHeight * 0.02,
+            ),
+            const _RegisterPasswordTextField(),
+            SizedBox(
+              height: context.deviceHeight * 0.02,
+            ),
+            const _RegisterConfirmPasswordTextField(),
+            SizedBox(
+              height: context.deviceHeight * 0.04,
+            ),
+            const _RegisterButton(),
+            SizedBox(
+              height: context.deviceHeight * 0.03,
+            ),
+            OtherOptionTextButton(
+              upperText: AppTranslations.alreadyHaveAnAccount,
+              lowerText: AppTranslations.loginNow,
+              onTap: () => context.pushNamed(AppNamedRoutes.login),
+            ),
+          ],
         ),
-        children: [
-          SizedBox(
-            height: context.deviceHeight * 0.09,
-          ),
-          const _RegisterHeader(),
-          SizedBox(
-            height: context.deviceHeight * 0.01,
-          ),
-          const _RegisterBodyText(),
-          SizedBox(
-            height: context.deviceHeight * 0.04,
-          ),
-          const _RegisterDisplayNameTextField(),
-          SizedBox(
-            height: context.deviceHeight * 0.02,
-          ),
-          const _RegisterEmailTextField(),
-          SizedBox(
-            height: context.deviceHeight * 0.02,
-          ),
-          const _RegisterPasswordTextField(),
-          SizedBox(
-            height: context.deviceHeight * 0.02,
-          ),
-          const _RegisterConfirmPasswordTextField(),
-          SizedBox(
-            height: context.deviceHeight * 0.04,
-          ),
-          const _RegisterButton(),
-          SizedBox(
-            height: context.deviceHeight * 0.03,
-          ),
-          OtherOptionTextButton(
-            upperText: AppTranslations.alreadyHaveAnAccount,
-            lowerText: AppTranslations.loginNow,
-            onTap: () => context.pushNamed(AppNamedRoutes.login),
-          ),
-        ],
       ),
     );
   }

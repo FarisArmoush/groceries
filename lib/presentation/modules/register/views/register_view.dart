@@ -9,13 +9,11 @@ class RegisterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BlocProvider(
-        create: (context) => RegisterCubit(
-          context.read<FirebaseAuthRepository>(),
-        ),
-        child: const RegisterForm(),
+    return BlocProvider(
+      create: (context) => RegisterCubit(
+        context.read<FirebaseAuthRepository>(),
       ),
+      child: const RegisterForm(),
     );
   }
 }

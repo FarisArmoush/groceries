@@ -1,62 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/presentation/modules/grocery_list_settings/widgets/edit_list_image.dart';
-import 'package:groceries/presentation/modules/grocery_list_settings/widgets/list_members_box.dart';
-import 'package:groceries/presentation/widgets/app_text_field.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:groceries/presentation/modules/grocery_list_settings/bloc/grocery_list_settings_bloc.dart';
+import 'package:groceries/presentation/modules/grocery_list_settings/widgets/grocery_list_form.dart';
 
 class GroceryListSettingsView extends StatelessWidget {
   const GroceryListSettingsView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          AppTranslations.listSettings,
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => context.pop(),
-            child: Text(AppTranslations.save),
-          ),
-        ],
-      ),
-      body: ListView(
-        physics: const BouncingScrollPhysics(),
-        primary: true,
-        padding: const EdgeInsets.all(12),
-        children: [
-          const EditListImage(),
-          SizedBox(
-            height: context.deviceHeight * 0.05,
-          ),
-          AppTextField(
-            labelText: AppTranslations.listName,
-          ),
-          SizedBox(
-            height: context.deviceHeight * 0.025,
-          ),
-          const ListMembersBox(),
-          SizedBox(
-            height: context.deviceHeight * 0.04,
-          ),
-          OutlinedButton.icon(
-            onPressed: () {},
-            icon: Assets.svg.icListX.svg(
-              color: Theme.of(context).primaryColor,
-            ),
-            label: Text(
-              AppTranslations.deleteList,
-            ),
-          ),
-          SizedBox(
-            height: context.deviceHeight * 0.03,
-          ),
-        ],
-      ),
+    return BlocProvider<GroceryListSettingsBloc>(
+      create: (context) => GroceryListSettingsBloc(),
+      child: const GroceryListForm(),
     );
   }
 }

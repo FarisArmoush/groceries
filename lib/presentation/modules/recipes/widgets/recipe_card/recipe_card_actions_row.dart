@@ -20,6 +20,9 @@ class RecipeCardActionsRow extends StatelessWidget {
           onPressed: () => showModalBottomSheet<AddRecipeToListBottomSheet>(
             context: context,
             enableDrag: false,
+            showDragHandle: true,
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            elevation: 0,
             builder: (context) => const AddRecipeToListBottomSheet(),
           ),
         ),
@@ -37,7 +40,8 @@ class RecipeCardActionsRow extends StatelessWidget {
           icon: Assets.svg.icTrash.path,
           onPressed: () => showModalBottomSheet<DeleteRecipeBottomSheet>(
             context: context,
-            enableDrag: false,
+            showDragHandle: true,
+            elevation: 0,
             builder: (context) => const DeleteRecipeBottomSheet(),
           ),
         ),
