@@ -8,6 +8,7 @@ import 'package:groceries/presentation/modules/create_list/views/create_list_vie
 import 'package:groceries/presentation/modules/create_list/views/invite_users_to_list_view.dart';
 import 'package:groceries/presentation/modules/create_list/views/list_created_successfully_view.dart';
 import 'package:groceries/presentation/modules/create_list/views/list_created_unsuccessfully_view.dart';
+import 'package:groceries/presentation/modules/create_recipe/views/create_recipe_view.dart';
 import 'package:groceries/presentation/modules/delete_account/views/delete_account_view.dart';
 import 'package:groceries/presentation/modules/forgot_password/views/forgot_password_view.dart';
 import 'package:groceries/presentation/modules/forgot_password/views/reset_password_sent_successfully.dart';
@@ -146,6 +147,11 @@ class AppGoRouter {
                 path: 'recipe',
                 builder: (context, state) => const RecipeView(),
               ),
+              GoRoute(
+                name: AppNamedRoutes.createRecipe,
+                path: 'createRecipe',
+                builder: (context, state) => const CreateRecipeView(),
+              )
             ],
           ),
           GoRoute(

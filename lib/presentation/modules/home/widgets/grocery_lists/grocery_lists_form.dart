@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/presentation/modules/home/blocs/grocery_lists/grocery_lists_bloc.dart';
 import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocery_lists_rail.dart';
+import 'package:groceries/presentation/modules/root/blocs/grocery_lists/grocery_lists_bloc.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 
 class GroceryListsForm extends StatelessWidget {

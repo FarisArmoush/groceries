@@ -16,9 +16,10 @@ class IsUserVerifiedListTile extends StatelessWidget {
 
     return ListTile(
       title: Text(AppTranslations.verifed),
-      // TODO: Figure out an icon
       trailing: isVerified == true
-          ? const SizedBox.shrink()
+          ? Assets.svg.icVerified.svg(
+              color: Colors.green,
+            )
           : Assets.svg.icVerified.svg(
               color: Theme.of(context).hintColor,
             ),

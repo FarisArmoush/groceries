@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:groceries/presentation/modules/home/blocs/grocery_lists/grocery_lists_bloc.dart';
-import 'package:groceries/presentation/modules/home/blocs/my_tasks/my_tasks_bloc.dart';
 import 'package:groceries/presentation/modules/home/views/home_view.dart';
 import 'package:groceries/presentation/modules/recipes/views/recipes_view.dart';
+import 'package:groceries/presentation/modules/root/blocs/grocery_lists/grocery_lists_bloc.dart';
+import 'package:groceries/presentation/modules/root/blocs/my_tasks/my_tasks_bloc.dart';
 import 'package:groceries/presentation/modules/settings/views/settings_view.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
