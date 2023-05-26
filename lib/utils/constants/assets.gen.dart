@@ -50,6 +50,9 @@ class $AssetsSvgGen {
   /// File path: assets/svg/icHome.svg
   SvgGenImage get icHome => const SvgGenImage('assets/svg/icHome.svg');
 
+  /// File path: assets/svg/icImage.svg
+  SvgGenImage get icImage => const SvgGenImage('assets/svg/icImage.svg');
+
   /// File path: assets/svg/icInfo.svg
   SvgGenImage get icInfo => const SvgGenImage('assets/svg/icInfo.svg');
 
@@ -171,6 +174,7 @@ class $AssetsSvgGen {
         icClipboardCopy,
         icEdit,
         icHome,
+        icImage,
         icInfo,
         icLeftArrow,
         icLogout,

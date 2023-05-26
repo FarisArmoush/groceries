@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
-import 'package:groceries/presentation/modules/account_settings/widgets/logout_dialog.dart';
+import 'package:groceries/presentation/modules/account_settings/widgets/logout/logout_bottom_sheet.dart';
 import 'package:groceries/presentation/widgets/app_snackbars/app_snack_bars.dart';
 import 'package:groceries/presentation/widgets/buttons/tile_button.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -39,10 +39,11 @@ class LogoutButton extends StatelessWidget {
         title: AppTranslations.logout,
         icon: Assets.svg.icLogout.path,
         color: Theme.of(context).primaryColorLight,
-        onTap: () => showModalBottomSheet<LogoutDialog>(
-          enableDrag: false,
+        onTap: () => showModalBottomSheet<LogoutBottomSheet>(
           context: context,
-          builder: (context) => const LogoutDialog(),
+          showDragHandle: true,
+          elevation: 0,
+          builder: (context) => const LogoutBottomSheet(),
         ),
       ),
     );

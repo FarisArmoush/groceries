@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/presentation/modules/account_settings/widgets/user_image/edit_user_image_bottom_sheet.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class EditUserImageButton extends StatelessWidget {
@@ -7,7 +8,12 @@ class EditUserImageButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton.icon(
-      onPressed: () {},
+      onPressed: () => showModalBottomSheet<EditUserImageBottomSheet>(
+        context: context,
+        showDragHandle: true,
+        elevation: 0,
+        builder: (context) => const EditUserImageBottomSheet(),
+      ),
       icon: Assets.svg.icEdit.svg(
         color: Theme.of(context).primaryColorLight,
       ),

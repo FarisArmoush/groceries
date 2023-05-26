@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
+/// {@template cached_image}
 /// A widget that displays a cached network image.
 ///
 /// * The [imageUrl] parameter specifies the URL of the image to display.
@@ -18,7 +19,9 @@ import 'package:groceries/utils/constants/assets.gen.dart';
 ///   of the container that holds the image.
 ///
 /// * The [borderRadius] parameter specifies the border radius of the container.
+/// {@endtemplate}
 class CachedImage extends StatelessWidget {
+  /// {@macro cached_image}
   const CachedImage({
     required this.imageUrl,
     this.height,
@@ -39,9 +42,13 @@ class CachedImage extends StatelessWidget {
   final double? width;
 
   /// How the image should be fit within the widget's bounds.
+  ///
+  /// @Defaults to [BoxFit.cover]
   final BoxFit? boxFit;
 
   /// The shape of the container that holds the image.
+  ///
+  /// @Defaults to [BoxShape.circle]
   final BoxShape? boxShape;
 
   /// The border radius of the container.
@@ -78,3 +85,5 @@ class CachedImage extends StatelessWidget {
     );
   }
 }
+
+// sealed  class Omal {}

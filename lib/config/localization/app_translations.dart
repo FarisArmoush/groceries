@@ -165,4 +165,8 @@ class AppTranslations {
       'add_recipe_to_list_bottom_sheet_header'.tr();
   static final addRecipeToListBottomSheetBody =
       'add_recipe_to_list_bottom_sheet_body'.tr();
+
+  static final removeMemberFromList = 'remove_member_from_list'.tr();
+  static final yesRemoveMember = 'yes_remove_member'.tr();
+  static final dontRemoveMember = 'dont_remove_member'.tr();
 }

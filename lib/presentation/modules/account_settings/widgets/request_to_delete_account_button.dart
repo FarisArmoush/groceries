@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
@@ -11,16 +13,20 @@ class RequestToDeleteAccountButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FilledButton(
       onPressed: () async {
-        // ignore: unawaited_futures
-        showDialog<AppLoadingIndicator>(
-          context: context,
-          builder: (context) => const AppLoadingIndicator(),
+        unawaited(
+          showDialog<AppLoadingIndicator>(
+            context: context,
+            builder: (context) => const AppLoadingIndicator(),
+          ),
         );
-        await Future.delayed(const Duration(seconds: 1), () {
-          context
-            ..pop()
-            ..pushNamed(AppNamedRoutes.deleteAccount);
-        });
+        await Future.delayed(
+          const Duration(milliseconds: 500),
+          () {
+            context
+              ..pop()
+              ..pushNamed(AppNamedRoutes.deleteAccount);
+          },
+        );
       },
       child: Text(AppTranslations.deleteAccount),
     );

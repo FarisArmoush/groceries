@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/repositories/firebase_auth_repository.dart';
+import 'package:groceries/presentation/modules/account_settings/widgets/email/change_email_bottom_sheet.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
 class UserEmailListTile extends StatelessWidget {
@@ -15,7 +16,12 @@ class UserEmailListTile extends StatelessWidget {
       title: Text(AppTranslations.email),
       subtitle: Text(email ?? ''),
       trailing: Assets.svg.icEdit.svg(color: Theme.of(context).hintColor),
-      onTap: () {},
+      onTap: () => showModalBottomSheet<ChangeEmailBottomSheet>(
+        context: context,
+        showDragHandle: true,
+        elevation: 0,
+        builder: (context) => const ChangeEmailBottomSheet(),
+      ),
     );
   }
 }

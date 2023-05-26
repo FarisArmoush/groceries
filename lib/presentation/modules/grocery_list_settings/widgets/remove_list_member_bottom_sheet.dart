@@ -1,6 +1,6 @@
-// TODO: ADD text to remote config. and add doc comments
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class RemoveListMemberBottomSheet extends StatelessWidget {
@@ -22,7 +22,7 @@ class RemoveListMemberBottomSheet extends StatelessWidget {
           ),
           children: [
             Text(
-              'Are you sure you want to remove this member from this list?',
+              AppTranslations.removeMemberFromList,
               style: Theme.of(context).dialogTheme.titleTextStyle,
               textAlign: TextAlign.center,
             ),
@@ -31,13 +31,11 @@ class RemoveListMemberBottomSheet extends StatelessWidget {
             ),
             FilledButton(
               onPressed: () => context.pop(),
-              child: const Text(
-                'Yes, Remove Member',
-              ),
+              child: Text(AppTranslations.yesRemoveMember),
             ),
             OutlinedButton(
               onPressed: () => context.pop(),
-              child: const Text('No, Keep Member'),
+              child: Text(AppTranslations.dontRemoveMember),
             ),
           ],
         );
