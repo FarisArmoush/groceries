@@ -21,7 +21,7 @@ class GroceryListsRail extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       children: [
         RailTitle(
-          title: AppTranslations.lists,
+          title: AppTranslations.myLists,
         ),
         SizedBox(
           height: context.deviceHeight * 0.025,

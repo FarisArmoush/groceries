@@ -16,7 +16,7 @@ class IsUserVerifiedListTile extends StatelessWidget {
         context.read<FirebaseAuthRepository>().currentUser?.emailVerified;
 
     return ListTile(
-      title: Text(AppTranslations.verifed),
+      title: Text(AppTranslations.verified),
       trailing: isVerified == true
           ? Assets.svg.icVerified.svg(
               color: Colors.green,

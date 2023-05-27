@@ -11,7 +11,7 @@ class AppVersionListTile extends StatelessWidget {
     final appVersion =
         context.read<RemoteConfigCubit>().remoteConfigRepository.appVersion;
     return ListTile(
-      title: Text(AppTranslations.version),
+      title: Text(AppTranslations.appVersion),
       trailing: Text(appVersion),
     );
   }

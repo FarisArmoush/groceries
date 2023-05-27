@@ -28,6 +28,8 @@ class EditListImage extends StatelessWidget {
               onPressed: () {
                 showModalBottomSheet<EditListImageBottomSheet>(
                   context: context,
+                  elevation: 0,
+                  showDragHandle: true,
                   builder: (context) => const EditListImageBottomSheet(),
                 );
               },

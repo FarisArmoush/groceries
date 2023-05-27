@@ -22,7 +22,7 @@ class DeleteRecipeBottomSheet extends StatelessWidget {
           ),
           children: [
             Text(
-              AppTranslations.youSureYouWantToDeleteThisRecipe,
+              AppTranslations.deleteRecipeBottomSheetHeader,
               style: Theme.of(context).dialogTheme.titleTextStyle,
               textAlign: TextAlign.center,
             ),
@@ -38,7 +38,7 @@ class DeleteRecipeBottomSheet extends StatelessWidget {
             OutlinedButton(
               onPressed: () => context.pop(),
               child: Text(
-                AppTranslations.noKeepIt,
+                AppTranslations.dontDeleteRecipe,
               ),
             ),
             SizedBox(

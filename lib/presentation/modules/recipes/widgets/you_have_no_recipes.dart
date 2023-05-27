@@ -20,7 +20,7 @@ class YouHaveNoRecipes extends StatelessWidget {
           height: context.deviceHeight * 0.02,
         ),
         Text(
-          AppTranslations.youHaveNoRecipes,
+          AppTranslations.emptyRecipesHeader,
           style: TextStyle(
             fontFamily: AppFonts.semiBold(context),
             color: Theme.of(context).primaryColor,
@@ -32,7 +32,7 @@ class YouHaveNoRecipes extends StatelessWidget {
           height: context.deviceHeight * 0.01,
         ),
         Text(
-          AppTranslations.startWithCreatingYourFirstRecipe,
+          AppTranslations.emptyRecipesBody,
           style: TextStyle(
             fontFamily: AppFonts.light(context),
             color: Theme.of(context).hintColor,

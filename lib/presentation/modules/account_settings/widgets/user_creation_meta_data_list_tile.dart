@@ -15,7 +15,7 @@ class UserCreationMetaDataListTile extends StatelessWidget {
         .creationTime
         .toString();
     return ListTile(
-      title: Text(AppTranslations.accountCreationMetaData),
+      title: Text(AppTranslations.accountMetaData),
       subtitle: Text(creationTime ?? ''),
     );
   }

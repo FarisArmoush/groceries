@@ -18,7 +18,7 @@ class EmptyGroceryList extends StatelessWidget {
       children: [
         Assets.svg.illWriting.svg(),
         Text(
-          AppTranslations.listIsEmpty,
+          AppTranslations.emptyListHeader,
           style: TextStyle(
             fontFamily: AppFonts.semiBold(context),
             color: Theme.of(context).primaryColor,
@@ -30,7 +30,7 @@ class EmptyGroceryList extends StatelessWidget {
           height: context.deviceHeight * 0.01,
         ),
         Text(
-          AppTranslations.addItemsToList,
+          AppTranslations.emptyListBody,
           style: TextStyle(
             fontFamily: AppFonts.light(context),
             color: Theme.of(context).hintColor,

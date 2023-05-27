@@ -15,7 +15,7 @@ class RecipeCardActionsRow extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         RecipeCardActionButton(
-          label: AppTranslations.addToList,
+          label: AppTranslations.addRecipeToList,
           icon: Assets.svg.icPlus.path,
           onPressed: () => showModalBottomSheet<AddRecipeToListBottomSheet>(
             context: context,
@@ -27,7 +27,7 @@ class RecipeCardActionsRow extends StatelessWidget {
           ),
         ),
         RecipeCardActionButton(
-          label: AppTranslations.archive,
+          label: AppTranslations.archiveRecipe,
           icon: Assets.svg.icArchive.path,
           onPressed: () => ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
@@ -36,7 +36,7 @@ class RecipeCardActionsRow extends StatelessWidget {
             ),
         ),
         RecipeCardActionButton(
-          label: AppTranslations.delete,
+          label: AppTranslations.deleteRecipe,
           icon: Assets.svg.icTrash.path,
           onPressed: () => showModalBottomSheet<DeleteRecipeBottomSheet>(
             context: context,

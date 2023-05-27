@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/widgets/buttons/bottom_sheet_button.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
@@ -16,12 +17,12 @@ class EditListImageBottomSheet extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       children: [
         BottomSheetButton(
-          text: 'Take a photo',
+          text: AppTranslations.takePhoto,
           iconPath: Assets.svg.icCamera.path,
           onTap: () {},
         ),
         BottomSheetButton(
-          text: 'Upload a photo from gallery',
+          text: AppTranslations.uploadPhotoFromGallery,
           iconPath: Assets.svg.icCamera.path,
           onTap: () {},
         ),

@@ -19,7 +19,7 @@ class LogoutBottomSheet extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       children: [
         Text(
-          AppTranslations.logoutFromApp,
+          AppTranslations.logoutBottomSheetHeader,
           style: Theme.of(context).dialogTheme.titleTextStyle,
           textAlign: TextAlign.center,
         ),
@@ -27,7 +27,7 @@ class LogoutBottomSheet extends StatelessWidget {
           height: context.deviceHeight * 0.02,
         ),
         Text(
-          AppTranslations.youSureYouWantToLogout,
+          AppTranslations.logoutBottomSheetBody,
           style: Theme.of(context).dialogTheme.contentTextStyle,
           textAlign: TextAlign.center,
         ),

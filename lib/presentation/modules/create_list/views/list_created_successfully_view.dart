@@ -47,7 +47,7 @@ class ListCreatedSuccessfullyView extends StatelessWidget {
             FilledButton(
               onPressed: () {},
               child: Text(
-                AppTranslations.gotoList,
+                AppTranslations.goToList,
               ),
             ),
             SizedBox(
@@ -57,7 +57,7 @@ class ListCreatedSuccessfullyView extends StatelessWidget {
               onPressed: () =>
                   context.pushReplacementNamed(AppNamedRoutes.root),
               child: Text(
-                AppTranslations.goToHome,
+                AppTranslations.goHome,
               ),
             ),
           ],

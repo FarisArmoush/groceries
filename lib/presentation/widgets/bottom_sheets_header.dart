@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 
 /// {@template bottom_sheets_header}
@@ -13,13 +14,13 @@ import 'package:groceries/utils/constants/app_fonts.dart';
 class BottomSheetsHeader extends StatelessWidget {
   /// {@macro bottom_sheets_header}
   const BottomSheetsHeader({
-    this.header,
+    required this.header,
     this.buttonText,
     super.key,
   });
 
   /// The text displayed as the header of the bottom sheet.
-  final String? header;
+  final String header;
 
   /// The text displayed on the close button.
   final String? buttonText;
@@ -30,7 +31,7 @@ class BottomSheetsHeader extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          header ?? 'Options',
+          header,
           style: TextStyle(
             fontFamily: AppFonts.regular(context),
             color: Theme.of(context).primaryColor,
@@ -39,7 +40,7 @@ class BottomSheetsHeader extends StatelessWidget {
         ),
         TextButton(
           child: Text(
-            buttonText ?? 'Close',
+            buttonText ?? AppTranslations.close,
           ),
           onPressed: () => context.pop(),
         ),

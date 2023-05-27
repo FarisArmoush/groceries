@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
@@ -10,7 +11,6 @@ import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/app_snackbars/app_snack_bars.dart';
 import 'package:groceries/presentation/widgets/app_text_field.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 part '__email_text_field.dart';
@@ -65,7 +65,7 @@ class ForgotPasswordForm extends StatelessWidget {
                 height: context.deviceWidth * 0.02,
               ),
               Text(
-                AppTranslations.forgotYourPassword,
+                AppTranslations.forgotPassword,
                 style: TextStyle(
                   fontFamily: AppFonts.semiBold(context),
                   color: Theme.of(context).primaryColorLight,

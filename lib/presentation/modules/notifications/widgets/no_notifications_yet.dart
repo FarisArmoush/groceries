@@ -32,9 +32,9 @@ class NoNotificationsYet extends StatelessWidget {
           height: context.deviceHeight * 0.01,
         ),
         Text(
-          AppTranslations.emptyNotificationsBody,
+          AppTranslations.emptyNotifications,
           style: TextStyle(
-            fontFamily: AppFonts.light(context),
+            fontFamily: AppFonts.medium(context),
             color: Theme.of(context).hintColor,
             fontSize: 14,
           ),

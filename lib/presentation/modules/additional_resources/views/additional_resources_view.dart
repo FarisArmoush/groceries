@@ -29,7 +29,7 @@ class AdditionalResourcesView extends StatelessWidget {
           Divider(
             height: context.deviceHeight * 0.04,
           ),
-          AdditionalResourcesTitle(AppTranslations.getHelp),
+          AdditionalResourcesTitle(AppTranslations.helpImproveApp),
           SizedBox(
             height: context.deviceHeight * 0.02,
           ),

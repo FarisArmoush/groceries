@@ -10,7 +10,7 @@ class _LoginPasswordTextField extends StatelessWidget {
       builder: (context, state) {
         return AppTextField(
           prefixIcon: Icon(
-            Icons.lock,
+            CupertinoIcons.lock,
             color: Theme.of(context).hintColor,
           ),
           obscureText: true,

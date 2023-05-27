@@ -24,7 +24,7 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
             ),
             Assets.svg.illError.svg(),
             Text(
-              AppTranslations.oops,
+              AppTranslations.listCreatedUnsuccessfullyHeader,
               style: TextStyle(
                 fontFamily: AppFonts.semiBold(context),
                 color: Theme.of(context).primaryColorLight,
@@ -36,7 +36,7 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
               height: context.deviceHeight * 0.01,
             ),
             Text(
-              AppTranslations.somethingWentWrong,
+              AppTranslations.listCreatedUnsuccessfullyBody,
               style: TextStyle(
                 fontFamily: AppFonts.regular(context),
                 color: Theme.of(context).hintColor,
@@ -51,7 +51,7 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
               onPressed: () =>
                   context.pushReplacementNamed(AppNamedRoutes.root),
               child: Text(
-                AppTranslations.goToHome,
+                AppTranslations.goHome,
               ),
             ),
             OutlinedButton(
