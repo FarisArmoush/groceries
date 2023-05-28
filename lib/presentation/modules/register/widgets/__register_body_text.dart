@@ -6,7 +6,7 @@ class _RegisterBodyText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      AppTranslations.createYourAccount,
+      AppTranslations.registerBody,
       style: TextStyle(
         fontFamily: AppFonts.regular(context),
         color: Theme.of(context).primaryColor,

@@ -28,11 +28,7 @@ class _NotificationsSettingsSwitchState
       subtitle: const Text(
         'Receive a notification when someone requests a grocery from you?',
       ),
-      onChanged: (bool newValue) {
-        setState(() {
-          newValue = value = !value;
-        });
-      },
+      onChanged: (newValue) => setState(() => newValue = value = !value),
     );
   }
 }

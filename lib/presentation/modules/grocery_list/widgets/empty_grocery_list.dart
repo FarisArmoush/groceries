@@ -9,59 +9,48 @@ class EmptyGroceryList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverPadding(
+    return ListView(
+      physics: const BouncingScrollPhysics(),
+      shrinkWrap: true,
       padding: const EdgeInsets.symmetric(
         horizontal: 16,
       ),
-      sliver: SliverList(
-        delegate: SliverChildListDelegate(
-          [
-            SizedBox(
-              height: context.deviceHeight * 0.03,
-            ),
-            SizedBox(
-              height: context.deviceHeight * 0.45,
-              child: Assets.svg.illWriting.svg(),
-            ),
-            SizedBox(
-              height: context.deviceHeight * 0.03,
-            ),
-            Text(
-              AppTranslations.listIsEmpty,
-              style: TextStyle(
-                fontFamily: AppFonts.semiBold(context),
-                color: Theme.of(context).primaryColor,
-                fontSize: 24,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(
-              height: context.deviceHeight * 0.01,
-            ),
-            Text(
-              AppTranslations.addItemsToList,
-              style: TextStyle(
-                fontFamily: AppFonts.light(context),
-                color: Theme.of(context).hintColor,
-                fontSize: 14,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(
-              height: context.deviceHeight * 0.02,
-            ),
-            ElevatedButton.icon(
-              onPressed: () {},
-              icon: Assets.svg.icSearch.svg(
-                color: Theme.of(context).colorScheme.secondary,
-              ),
-              label: Text(
-                AppTranslations.browseGroceries,
-              ),
-            ),
-          ],
+      children: [
+        Assets.svg.illWriting.svg(),
+        Text(
+          AppTranslations.emptyListHeader,
+          style: TextStyle(
+            fontFamily: AppFonts.semiBold(context),
+            color: Theme.of(context).primaryColor,
+            fontSize: 24,
+          ),
+          textAlign: TextAlign.center,
         ),
-      ),
+        SizedBox(
+          height: context.deviceHeight * 0.01,
+        ),
+        Text(
+          AppTranslations.emptyListBody,
+          style: TextStyle(
+            fontFamily: AppFonts.light(context),
+            color: Theme.of(context).hintColor,
+            fontSize: 14,
+          ),
+          textAlign: TextAlign.center,
+        ),
+        SizedBox(
+          height: context.deviceHeight * 0.02,
+        ),
+        ElevatedButton.icon(
+          onPressed: () {},
+          icon: Assets.svg.icSearch.svg(
+            color: Theme.of(context).colorScheme.secondary,
+          ),
+          label: Text(
+            AppTranslations.browseGroceries,
+          ),
+        ),
+      ],
     );
   }
 }

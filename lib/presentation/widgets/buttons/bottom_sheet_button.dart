@@ -4,7 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 class BottomSheetButton extends StatelessWidget {
   const BottomSheetButton({
     required this.text,
-    required this.icon,
+    required this.iconPath,
     required this.onTap,
     super.key,
   });
@@ -16,7 +16,7 @@ class BottomSheetButton extends StatelessWidget {
   final String text;
 
   /// The SVG icon asset path.
-  final String icon;
+  final String iconPath;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,8 @@ class BottomSheetButton extends StatelessWidget {
         text,
       ),
       leading: SvgPicture.asset(
-        icon,
+        iconPath,
+        // ignore: deprecated_member_use
         color: Theme.of(context).primaryColor,
       ),
     );

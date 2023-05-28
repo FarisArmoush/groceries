@@ -14,7 +14,7 @@ class AddImageButton extends StatelessWidget {
         color: Theme.of(context).primaryColor,
       ),
       label: Text(
-        AppTranslations.addImageToList,
+        AppTranslations.addListImage,
         style: TextStyle(
           fontFamily: AppFonts.medium(context),
           color: Theme.of(context).primaryColor,

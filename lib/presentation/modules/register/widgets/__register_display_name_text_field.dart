@@ -14,7 +14,7 @@ class _RegisterDisplayNameTextField extends StatelessWidget {
           onChanged: (name) =>
               context.read<RegisterCubit>().displayNameChanged(name),
           prefixIcon: Icon(
-            Icons.person_2_outlined,
+            CupertinoIcons.person_circle,
             color: Theme.of(context).hintColor,
           ),
           keyboardType: TextInputType.name,

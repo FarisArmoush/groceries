@@ -31,19 +31,19 @@ class WelcomeView extends StatelessWidget {
               height: context.deviceHeight * 0.09,
             ),
             FilledButton(
+              child: Text(AppTranslations.register),
               onPressed: () => context.pushReplacementNamed(
                 AppNamedRoutes.register,
               ),
-              child: Text(AppTranslations.register),
             ),
             SizedBox(
               height: context.deviceHeight * 0.02,
             ),
             OutlinedButton(
+              child: Text(AppTranslations.login),
               onPressed: () => context.pushReplacementNamed(
                 AppNamedRoutes.login,
               ),
-              child: Text(AppTranslations.login),
             ),
           ],
         ),

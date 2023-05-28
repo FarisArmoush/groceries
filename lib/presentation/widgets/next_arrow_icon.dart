@@ -24,6 +24,7 @@ class NextArrowIcon extends StatelessWidget {
       context.locale.languageCode == 'ar'
           ? Assets.svg.icLeftArrow.path
           : Assets.svg.icRightArrow.path,
+      // ignore: deprecated_member_use
       color: color ?? Theme.of(context).hintColor,
     );
   }

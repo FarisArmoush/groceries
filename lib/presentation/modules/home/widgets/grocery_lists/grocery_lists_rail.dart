@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/grocery_list_model.dart';
-import 'package:groceries/presentation/modules/home/widgets/grocery_lists/create_new_grocery_list_card_button.dart';
 import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocery_lists_list.dart';
+import 'package:groceries/presentation/modules/home/widgets/grocery_lists/you_have_no_grocery_lists.dart';
 import 'package:groceries/presentation/modules/home/widgets/rail_title.dart';
 import 'package:groceries/utils/extenstions/media_query_values.dart';
 
@@ -21,19 +21,19 @@ class GroceryListsRail extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       children: [
         RailTitle(
-          title: AppTranslations.lists,
+          title: AppTranslations.myLists,
         ),
         SizedBox(
-          height: context.deviceHeight * 0.025,
+          height: lists.isNotEmpty
+              ? context.deviceHeight * 0.025
+              : context.deviceHeight * 0.05,
         ),
         if (lists.isNotEmpty)
           GroceryListsList(
             lists: lists,
           )
         else
-          CreateNewGroceryListCardButton(
-            text: AppTranslations.createNewList,
-          ),
+          const YouDontHaveGroceryLists(),
       ],
     );
   }

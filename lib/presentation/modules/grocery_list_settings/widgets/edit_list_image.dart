@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/presentation/modules/grocery_list_settings/widgets/edit_list_image_bottom_sheet.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -24,7 +25,14 @@ class EditListImage extends StatelessWidget {
           child: CircleAvatar(
             backgroundColor: AppColors.black.withOpacity(0.7),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                showModalBottomSheet<EditListImageBottomSheet>(
+                  context: context,
+                  elevation: 0,
+                  showDragHandle: true,
+                  builder: (context) => const EditListImageBottomSheet(),
+                );
+              },
               icon: Assets.svg.icEdit.svg(
                 color: AppColors.white,
               ),

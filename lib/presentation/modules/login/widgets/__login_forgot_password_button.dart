@@ -11,7 +11,7 @@ class _LoginForgotPasswordButton extends StatelessWidget {
         const Spacer(),
         TextButton(
           child: Text(
-            AppTranslations.forgotYourPassword,
+            AppTranslations.forgotPassword,
           ),
           onPressed: () => context.pushNamed(AppNamedRoutes.forgotPassword),
         ),

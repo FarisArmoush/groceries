@@ -6,7 +6,7 @@ class _LoginBodyText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      AppTranslations.loginToYourAccount,
+      AppTranslations.loginBody,
       style: TextStyle(
         fontFamily: AppFonts.regular(context),
         color: Theme.of(context).primaryColor,

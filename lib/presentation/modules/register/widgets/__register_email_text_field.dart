@@ -15,7 +15,7 @@ class _RegisterEmailTextField extends StatelessWidget {
             context.read<RegisterCubit>().emailChanged(email);
           },
           prefixIcon: Icon(
-            Icons.email,
+            CupertinoIcons.mail,
             color: Theme.of(context).hintColor,
           ),
           keyboardType: TextInputType.emailAddress,

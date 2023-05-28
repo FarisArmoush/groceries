@@ -11,7 +11,7 @@ class ListMembersBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return PrimaryBox(
       header: Text(
-        AppTranslations.listMember,
+        AppTranslations.listMembers,
         style: TextStyle(
           fontFamily: AppFonts.regular(context),
           color: Theme.of(context).primaryColor,

@@ -9,7 +9,7 @@ class CancelListCreationDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       title: Text(
-        AppTranslations.youSureYouWantToCancelListCreation,
+        AppTranslations.listCreationCancelDialogHeader,
         textAlign: TextAlign.center,
       ),
       content: Text(
@@ -22,13 +22,13 @@ class CancelListCreationDialog extends StatelessWidget {
             ..pop()
             ..pop(),
           child: Text(
-            AppTranslations.yesCancel,
+            AppTranslations.yesCancelListCreation,
           ),
         ),
         FilledButton(
           onPressed: () => context.pop(),
           child: Text(
-            AppTranslations.noDontCancel,
+            AppTranslations.dontCancelListCreation,
           ),
         ),
       ],

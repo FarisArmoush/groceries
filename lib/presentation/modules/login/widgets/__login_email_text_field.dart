@@ -10,7 +10,7 @@ class _LoginEmailTextField extends StatelessWidget {
       builder: (context, state) {
         return AppTextField(
           prefixIcon: Icon(
-            Icons.email,
+            CupertinoIcons.mail,
             color: Theme.of(context).hintColor,
           ),
           onChanged: (email) => context.read<LoginCubit>().emailChanged(email),

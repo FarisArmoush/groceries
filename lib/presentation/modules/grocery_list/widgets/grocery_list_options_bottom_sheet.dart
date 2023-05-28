@@ -12,8 +12,8 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BottomSheet(
-      enableDrag: false,
       showDragHandle: false,
+      enableDrag: false,
       onClosing: () {},
       builder: (context) {
         return ListView(
@@ -29,17 +29,17 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
             ),
             BottomSheetButton(
               text: AppTranslations.sendListAsText,
-              icon: Assets.svg.icSend.path,
+              iconPath: Assets.svg.icSend.path,
               onTap: () {},
             ),
             BottomSheetButton(
               text: AppTranslations.printList,
-              icon: Assets.svg.icPrinter.path,
+              iconPath: Assets.svg.icPrinter.path,
               onTap: () {},
             ),
             BottomSheetButton(
               text: AppTranslations.listSettings,
-              icon: Assets.svg.icSettings.path,
+              iconPath: Assets.svg.icSettings.path,
               onTap: () => context
                 ..pop()
                 ..pushNamed(

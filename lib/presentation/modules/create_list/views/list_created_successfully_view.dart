@@ -19,7 +19,12 @@ class ListCreatedSuccessfullyView extends StatelessWidget {
           ),
           physics: const BouncingScrollPhysics(),
           children: [
-            Assets.svg.illCelebrating.svg(),
+            SizedBox(
+              height: context.deviceHeight * 0.15,
+            ),
+            Assets.svg.illCelebrating.svg(
+              height: context.deviceHeight * 0.35,
+            ),
             Text(
               AppTranslations.listCreatedSuccessfullyHeader,
               style: TextStyle(
@@ -42,22 +47,22 @@ class ListCreatedSuccessfullyView extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             SizedBox(
-              height: context.deviceHeight * 0.05,
+              height: context.deviceHeight * 0.02,
             ),
             FilledButton(
               onPressed: () {},
               child: Text(
-                AppTranslations.gotoList,
+                AppTranslations.goToList,
               ),
             ),
             SizedBox(
-              height: context.deviceHeight * 0.02,
+              height: context.deviceHeight * 0.005,
             ),
             OutlinedButton(
               onPressed: () =>
                   context.pushReplacementNamed(AppNamedRoutes.root),
               child: Text(
-                AppTranslations.goToHome,
+                AppTranslations.goHome,
               ),
             ),
           ],

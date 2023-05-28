@@ -1,6 +1,7 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/widgets/next_arrow_icon.dart';
+import 'package:groceries/utils/constants/app_colors.dart';
 
 class OnboardingNextPageButton extends StatelessWidget {
   const OnboardingNextPageButton({
@@ -8,20 +9,20 @@ class OnboardingNextPageButton extends StatelessWidget {
     super.key,
   });
 
-  final CarouselController controller;
+  final PageController controller;
 
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton.small(
-      tooltip: 'Next Page',
+      tooltip: AppTranslations.nextPage,
       onPressed: () => controller.nextPage(
         curve: Curves.easeInOut,
         duration: const Duration(
           milliseconds: 500,
         ),
       ),
-      child: NextArrowIcon(
-        color: Theme.of(context).primaryColor,
+      child: const NextArrowIcon(
+        color: AppColors.white,
       ),
     );
   }

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/presentation/modules/home/views/home_view.dart';
 import 'package:groceries/presentation/modules/recipes/views/recipes_view.dart';
+import 'package:groceries/presentation/modules/root/blocs/grocery_lists/grocery_lists_bloc.dart';
+import 'package:groceries/presentation/modules/root/blocs/my_tasks/my_tasks_bloc.dart';
 import 'package:groceries/presentation/modules/settings/views/settings_view.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
@@ -17,16 +20,26 @@ class _RootViewState extends State<RootView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: views[currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-        currentIndex: currentIndex,
-        onTap: (int index) => setState(() => currentIndex = index),
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        items: bnb(context),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<GroceryListsBloc>(
+          create: (context) => GroceryListsBloc()..add(LoadGroceryLists()),
+        ),
+        BlocProvider<MyTasksBloc>(
+          create: (context) => MyTasksBloc()..add(LoadMyTasks()),
+        ),
+      ],
+      child: Scaffold(
+        body: views[currentIndex],
+        bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          currentIndex: currentIndex,
+          onTap: (int index) => setState(() => currentIndex = index),
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          items: bnb(context),
+        ),
       ),
     );
   }
@@ -64,12 +77,14 @@ class _RootViewState extends State<RootView> {
     return BottomNavigationBarItem(
       icon: SvgPicture.asset(
         asset,
+        // ignore: deprecated_member_use
         color: Theme.of(context).hintColor,
       ),
       label: label,
       tooltip: label,
       activeIcon: SvgPicture.asset(
         asset,
+        // ignore: deprecated_member_use
         color: Theme.of(context).primaryColor,
       ),
     );

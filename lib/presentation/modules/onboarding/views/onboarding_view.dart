@@ -1,5 +1,5 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/onboarding/widgets/base_onboarding_page.dart';
 import 'package:groceries/presentation/modules/onboarding/widgets/leave_onboarding_button.dart';
 import 'package:groceries/presentation/modules/onboarding/widgets/onboarding_next_page_button.dart';
@@ -13,47 +13,37 @@ class OnboardingView extends StatefulWidget {
 }
 
 class _OnboardingViewState extends State<OnboardingView> {
-  final controller = CarouselController();
+  final controller = PageController();
 
-  late int currentPage = 0;
+  int currentPage = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox(
-        height: double.infinity,
-        child: CarouselSlider(
-          carouselController: controller,
-          options: CarouselOptions(
-            aspectRatio: 1 / 3,
-            height: double.infinity,
-            viewportFraction: 1 / 1,
-            enableInfiniteScroll: false,
-            onPageChanged: (index, reason) => setState(() {
-              currentPage = index;
-            }),
+      body: PageView(
+        controller: controller,
+        onPageChanged: (value) => setState(() => currentPage = value),
+        physics: const ClampingScrollPhysics(),
+        children: [
+          BaseOnboardingPage(
+            illustrationPath: Assets.svg.illCelebrating.path,
+            title: AppTranslations.onboardingFirstTitle,
+            body: AppTranslations.onboardingFirstBody,
+            backgroundColor: Colors.amber,
           ),
-          items: [
-            BaseOnboardingPage(
-              illustrationPath: Assets.svg.illCelebrating.path,
-              title: '1',
-              body: 'BODY 1',
-              backgroundColor: Colors.amber,
-            ),
-            BaseOnboardingPage(
-              illustrationPath: Assets.svg.illMail.path,
-              title: '2',
-              body: 'BODY 2',
-              backgroundColor: Colors.purple,
-            ),
-            BaseOnboardingPage(
-              illustrationPath: Assets.svg.illEating.path,
-              title: '3',
-              body: 'BODY 3',
-              backgroundColor: Colors.blue,
-            ),
-          ],
-        ),
+          BaseOnboardingPage(
+            illustrationPath: Assets.svg.illMail.path,
+            title: AppTranslations.onboardingSecondTitle,
+            body: AppTranslations.onboardingSecondBody,
+            backgroundColor: Colors.purple,
+          ),
+          BaseOnboardingPage(
+            illustrationPath: Assets.svg.illEating.path,
+            title: AppTranslations.onboardingThirdTitle,
+            body: AppTranslations.onboardingThirdBody,
+            backgroundColor: Colors.blue,
+          ),
+        ],
       ),
       floatingActionButton: currentPage == 2
           ? const LeaveOnboardingButton()

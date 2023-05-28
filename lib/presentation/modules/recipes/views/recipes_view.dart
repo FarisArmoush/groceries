@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/modules/recipes/bloc/recipes_bloc.dart';
 import 'package:groceries/presentation/modules/recipes/widgets/recipes_form.dart';
+import 'package:groceries/utils/constants/assets.gen.dart';
 
 class RecipesView extends StatelessWidget {
   const RecipesView({super.key});
@@ -15,6 +18,14 @@ class RecipesView extends StatelessWidget {
           AppTranslations.recipes,
         ),
         leading: const SizedBox.shrink(),
+        actions: [
+          IconButton(
+            onPressed: () => context.pushNamed(AppNamedRoutes.createRecipe),
+            icon: Assets.svg.icPlusCircle.svg(
+              color: Theme.of(context).primaryColorLight,
+            ),
+          ),
+        ],
       ),
       body: BlocProvider(
         create: (context) => RecipesBloc()..add(LoadRecipes()),

@@ -11,7 +11,7 @@ class _RegisterPasswordTextField extends StatelessWidget {
         return AppTextField(
           obscureText: true,
           prefixIcon: Icon(
-            Icons.lock,
+            CupertinoIcons.lock,
             color: Theme.of(context).hintColor,
           ),
           autofillHints: const [AutofillHints.password],

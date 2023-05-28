@@ -36,6 +36,9 @@ class AppNamedRoutes {
   /// Recipe View
   static const String recipe = 'recipe';
 
+  /// Create Recipe View
+  static const String createRecipe = 'createRecipe';
+
   /// Add Items to list View
   static const String addItems = 'addItems';
 

@@ -8,7 +8,6 @@ class AddItemsFab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton.extended(
-      tooltip: AppTranslations.done,
       label: Text(
         AppTranslations.done,
       ),

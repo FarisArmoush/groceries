@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/task_model.dart';
 import 'package:groceries/presentation/modules/home/widgets/my_tasks/my_tasks_list.dart';
+import 'package:groceries/presentation/modules/home/widgets/my_tasks/you_have_no_tasks.dart';
 import 'package:groceries/presentation/modules/home/widgets/rail_title.dart';
 import 'package:groceries/utils/extenstions/media_query_values.dart';
 
@@ -23,11 +24,16 @@ class MyTasksRail extends StatelessWidget {
           title: AppTranslations.myTasks,
         ),
         SizedBox(
-          height: context.deviceHeight * 0.025,
+          height: tasks.isNotEmpty
+              ? context.deviceHeight * 0.025
+              : context.deviceHeight * 0.05,
         ),
-        MyTasksList(
-          tasks: tasks,
-        ),
+        if (tasks.isNotEmpty)
+          MyTasksList(
+            tasks: tasks,
+          )
+        else
+          const YouHaveNoTasks(),
       ],
     );
   }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/presentation/modules/home/blocs/grocery_lists/grocery_lists_bloc.dart';
-import 'package:groceries/presentation/modules/home/blocs/my_tasks/my_tasks_bloc.dart';
-import 'package:groceries/presentation/modules/home/widgets/home_form.dart';
+import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocery_lists_form.dart';
+import 'package:groceries/presentation/modules/home/widgets/home_header.dart';
+import 'package:groceries/presentation/modules/home/widgets/my_tasks/my_tasks_form.dart';
+import 'package:groceries/utils/extenstions/media_query_values.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -11,16 +11,23 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: MultiBlocProvider(
-          providers: [
-            BlocProvider<GroceryListsBloc>(
-              create: (context) => GroceryListsBloc()..add(LoadGroceryLists()),
+        body: ListView(
+          physics: const BouncingScrollPhysics(),
+          padding: const EdgeInsets.all(16),
+          children: [
+            SizedBox(
+              height: context.deviceHeight * 0.04,
             ),
-            BlocProvider<MyTasksBloc>(
-              create: (context) => MyTasksBloc()..add(LoadMyTasks()),
+            const HomeHeader(),
+            SizedBox(
+              height: context.deviceHeight * 0.05,
             ),
+            const GroceryListsForm(),
+            SizedBox(
+              height: context.deviceHeight * 0.05,
+            ),
+            const MyTasksForm(),
           ],
-          child: const HomeForm(),
         ),
       ),
     );

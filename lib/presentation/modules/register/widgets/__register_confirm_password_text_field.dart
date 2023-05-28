@@ -13,7 +13,7 @@ class _RegisterConfirmPasswordTextField extends StatelessWidget {
       builder: (context, state) {
         return AppTextField(
           prefixIcon: Icon(
-            Icons.lock_reset,
+            CupertinoIcons.repeat,
             color: Theme.of(context).hintColor,
           ),
           onChanged: (confirmPassword) {
