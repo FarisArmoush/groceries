@@ -14,9 +14,7 @@ class MyTasksForm extends StatelessWidget {
         if (state is MyTasksInitial) {
           return const AppLoadingIndicator();
         }
-        if (state is MyTasksLoaded && state.myTasks.isEmpty) {
-          return const SizedBox.shrink();
-        } else if (state is MyTasksLoaded) {
+        if (state is MyTasksLoaded) {
           return MyTasksRail(
             tasks: state.myTasks,
           );

@@ -9,30 +9,36 @@ part 'grocery_lists_state.dart';
 
 class GroceryListsBloc extends Bloc<GroceryListsEvent, GroceryListsState> {
   GroceryListsBloc() : super(GroceryListsInitial()) {
-    final BaseGroceryListsRepository listsRepository =
-        MockGroceryListsRepository();
-    on<LoadGroceryLists>(
-      (event, emit) async {
-        await listsRepository.getLists();
-        emit(
-          GroceryListsLoaded(
-            lists: listsRepository.lists,
+    on<LoadGroceryLists>(_onLoadGroceryLists);
+    on<LeaveGroceryList>(_onLeaveGroceryList);
+  }
+  final BaseGroceryListsRepository listsRepository =
+      MockGroceryListsRepository();
+
+  Future<void> _onLeaveGroceryList(
+    LeaveGroceryList event,
+    Emitter<GroceryListsState> emit,
+  ) async {
+    if (state is GroceryListsLoaded) {
+      emit(
+        GroceryListsLoaded(
+          lists: List.from(
+            listsRepository.lists..remove(event.list),
           ),
-        );
-      },
-    );
-    on<LeaveGroceryList>(
-      (event, emit) {
-        if (state is GroceryListsLoaded) {
-          emit(
-            GroceryListsLoaded(
-              lists: List.from(
-                listsRepository.lists..remove(event.list),
-              ),
-            ),
-          );
-        }
-      },
+        ),
+      );
+    }
+  }
+
+  Future<void> _onLoadGroceryLists(
+    LoadGroceryLists event,
+    Emitter<GroceryListsState> emit,
+  ) async {
+    await listsRepository.getLists();
+    emit(
+      GroceryListsLoaded(
+        lists: listsRepository.lists,
+      ),
     );
   }
 }
