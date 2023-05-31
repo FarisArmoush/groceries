@@ -73,6 +73,15 @@ class AppNamedRoutes {
   /// Account Settings View
   static const String accountSettings = 'accountSettings';
 
+  /// Update Display Name View
+  static const String updateDisplayName = 'updateDisplayName';
+
+  /// Update Display Name View
+  static const String updateEmail = 'updateEmail';
+
+  /// Update Display Name View
+  static const String updatePassword = 'updatePassword';
+
   /// Delete Account View
   static const String deleteAccount = 'deleteAccount';
 

@@ -25,6 +25,9 @@ import 'package:groceries/presentation/modules/recipes/views/recipes_view.dart';
 import 'package:groceries/presentation/modules/register/views/register_view.dart';
 import 'package:groceries/presentation/modules/root/views/root_view.dart';
 import 'package:groceries/presentation/modules/settings/views/settings_view.dart';
+import 'package:groceries/presentation/modules/update_display_name/views/update_display_name_view.dart';
+import 'package:groceries/presentation/modules/update_email/views/update_email_view.dart';
+import 'package:groceries/presentation/modules/update_password/views/update_password_view.dart';
 import 'package:groceries/presentation/modules/welcome/views/welcome_view.dart';
 import 'package:groceries/presentation/modules/wrapper/views/wrapper_view.dart';
 
@@ -183,6 +186,21 @@ class AppGoRouter {
                     name: AppNamedRoutes.deleteAccount,
                     path: 'deleteAccount',
                     builder: (context, state) => const DeleteAccountView(),
+                  ),
+                  GoRoute(
+                    name: AppNamedRoutes.updateDisplayName,
+                    path: 'updateUsername',
+                    builder: (context, state) => const UpdateDisplayNameView(),
+                  ),
+                  GoRoute(
+                    name: AppNamedRoutes.updateEmail,
+                    path: 'updateEmail',
+                    builder: (context, state) => const UpdateEmailView(),
+                  ),
+                  GoRoute(
+                    name: AppNamedRoutes.updatePassword,
+                    path: 'updatePassword',
+                    builder: (context, state) => const UpdatePasswordView(),
                   ),
                 ],
               ),
