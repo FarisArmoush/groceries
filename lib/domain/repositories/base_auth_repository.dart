@@ -26,6 +26,7 @@ abstract class BaseAuthRepository {
   /// Sends an email to the user to reset their password
   Future<void> sendPasswordResetEmail({required String email});
 
+  /// Updates the user's display name
   Future<void> updateDisplayName(String newName);
 
   /// Signs in a user with Google.
@@ -36,6 +37,12 @@ abstract class BaseAuthRepository {
 
   /// Deletes the account of the current user.
   Future<void> deleteAccount();
+
+  /// updates the current user's email
+  Future<void> updateEmail(String newEmail);
+
+  /// updates the current user's password
+  Future<void> updatePassword(String newPassword);
 
   /// A stream of authentication state changes.
   Stream<dynamic> get authStateChanges;

@@ -23,7 +23,7 @@ class UpdateDisplayNameInFirestoreUseCase {
     required String uid,
   }) async {
     try {
-      await firestore.collection('users').doc(uid).set(
+      await firestore.collection('users').doc(uid).update(
         {
           'displayName': newName,
         },

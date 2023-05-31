@@ -1,17 +1,18 @@
-import 'dart:async';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:groceries/domain/repositories/base_auth_repository.dart';
 import 'package:groceries/domain/use_cases/set_user_data_in_firestore_use_case.dart';
 import 'package:groceries/domain/use_cases/update_display_name_in_firestore_use_case.dart';
+import 'package:groceries/domain/use_cases/update_email_in_firestore_use_case.dart';
 import 'package:groceries/utils/exceptions/delete_account_exception.dart';
 import 'package:groceries/utils/exceptions/login_with_email_password_exception.dart';
 import 'package:groceries/utils/exceptions/login_with_google_exception.dart';
 import 'package:groceries/utils/exceptions/logout_failure.dart';
 import 'package:groceries/utils/exceptions/register_with_email_and_password_exception.dart';
 import 'package:groceries/utils/exceptions/send_password_reset_email_exception.dart';
+import 'package:groceries/utils/exceptions/update_email_exception.dart';
+import 'package:groceries/utils/exceptions/update_password_exception.dart';
 
 /// Authentication Repository that uses the Firebase Auth Service
 class FirebaseAuthRepository implements BaseAuthRepository {
@@ -133,8 +134,35 @@ class FirebaseAuthRepository implements BaseAuthRepository {
               ),
             },
           );
-    } catch (e) {
-      throw Exception('Failed to update username');
+    } on FirebaseAuthException catch (e) {
+      throw Exception(e.code);
+    }
+  }
+
+  @override
+  Future<void> updateEmail(String newEmail) async {
+    try {
+      await currentUser?.updateEmail(newEmail).then(
+            (_) => UpdateEmailInFirestoreUseCase(_firestore).setEmail(
+              uid: currentUser?.uid,
+              email: newEmail,
+            ),
+          );
+    } on FirebaseAuthException catch (e) {
+      throw UpdateEmailException.fromCode(e.code);
+    } catch (_) {
+      throw const UpdateEmailException();
+    }
+  }
+
+  @override
+  Future<void> updatePassword(String newPassword) async {
+    try {
+      await currentUser?.updatePassword(newPassword);
+    } on FirebaseAuthException catch (e) {
+      throw UpdatePasswordException.fromCode(e.code);
+    } catch (_) {
+      throw const UpdatePasswordException();
     }
   }
 }

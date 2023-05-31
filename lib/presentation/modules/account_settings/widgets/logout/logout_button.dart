@@ -15,6 +15,7 @@ class LogoutButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocListener<AuthBloc, AuthState>(
+      listenWhen: (previous, current) => previous != current,
       listener: (context, state) {
         if (state is Unauthenticated) {
           ScaffoldMessenger.of(context)
@@ -25,15 +26,16 @@ class LogoutButton extends StatelessWidget {
               ),
             );
           context.pushReplacementNamed(AppNamedRoutes.welcome);
-        } else {
-          ScaffoldMessenger.of(context)
-            ..hideCurrentSnackBar()
-            ..showSnackBar(
-              AppSnackBars.error(
-                error: 'Failed to logout.\nTry again later',
-              ),
-            );
         }
+        // else {
+        //   ScaffoldMessenger.of(context)
+        //     ..hideCurrentSnackBar()
+        //     ..showSnackBar(
+        //       AppSnackBars.error(
+        //         error: 'Failed to logout.\nTry again later',
+        //       ),
+        //     );
+        // }
       },
       child: TileButton(
         title: AppTranslations.logout,
