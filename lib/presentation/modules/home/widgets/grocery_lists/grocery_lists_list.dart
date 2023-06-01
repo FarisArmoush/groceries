@@ -39,7 +39,7 @@ class GroceryListsList extends StatelessWidget {
                 tasksAmount: lists[index].tasksAmount,
                 members: lists[index].members,
               ),
-              onTap: () => context.pushNamed(AppNamedRoutes.groceryList),
+              onTap: () => context.pushNamed(AppNamedRoutes.groceryListDetails),
             );
           }
         },

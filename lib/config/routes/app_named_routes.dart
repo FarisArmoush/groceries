@@ -46,7 +46,7 @@ class AppNamedRoutes {
   static const String notifications = 'notifications';
 
   /// Grocery List View
-  static const String groceryList = 'groceryList';
+  static const String groceryListDetails = 'groceryListDetails';
 
   /// Grocery List Settings View
   static const String goceryListSettings = 'goceryListSettings';
