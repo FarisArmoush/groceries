@@ -37,6 +37,7 @@ class AppGoRouter {
 
   /// The main routes configuration for the AppGoRouter.
   static final GoRouter routes = GoRouter(
+    debugLogDiagnostics: true,
     initialLocation: '/',
     routes: [
       GoRoute(
