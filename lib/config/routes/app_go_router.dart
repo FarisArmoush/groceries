@@ -12,7 +12,7 @@ import 'package:groceries/presentation/modules/create_recipe/views/create_recipe
 import 'package:groceries/presentation/modules/delete_account/views/delete_account_view.dart';
 import 'package:groceries/presentation/modules/forgot_password/views/forgot_password_view.dart';
 import 'package:groceries/presentation/modules/forgot_password/views/reset_password_sent_successfully.dart';
-import 'package:groceries/presentation/modules/grocery_list/views/grocery_list_details_view.dart';
+import 'package:groceries/presentation/modules/grocery_list_details/views/grocery_list_details_view.dart';
 import 'package:groceries/presentation/modules/grocery_list_settings/views/grocery_list_settings_view.dart';
 import 'package:groceries/presentation/modules/home/views/home_view.dart';
 import 'package:groceries/presentation/modules/login/views/login_view.dart';

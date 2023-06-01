@@ -1,7 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/grocery_list_model.dart';
-import 'package:groceries/presentation/modules/grocery_list/widgets/grocery_list_options_button.dart';
+import 'package:groceries/presentation/modules/grocery_list_details/widgets/grocery_list_options_button.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/media_query_values.dart';
 
@@ -32,8 +33,9 @@ class GroceryListCard extends StatelessWidget {
                 alignment: AlignmentDirectional.topEnd,
                 child: GroceryListOptionsButton(),
               ),
-              SizedBox(
-                height: context.deviceHeight * 0.05,
+              Icon(
+                CupertinoIcons.home,
+                size: context.deviceHeight * 0.06,
               ),
               Text(
                 listModel.name,
