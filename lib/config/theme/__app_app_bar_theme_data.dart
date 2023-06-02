@@ -9,6 +9,7 @@ class _AppAppBarThemeData {
       surfaceTintColor: Colors.transparent,
       systemOverlayStyle: SystemUiOverlayStyle.light,
       elevation: 0,
+      scrolledUnderElevation: 1,
       centerTitle: true,
       titleTextStyle: TextStyle(
         fontFamily: AppFonts.medium(context),
@@ -21,6 +22,7 @@ class _AppAppBarThemeData {
 
   static AppBarTheme dark(BuildContext context) {
     return AppBarTheme(
+      scrolledUnderElevation: 1,
       iconTheme: IconThemeData(
         color: Colors.white.withOpacity(0.99),
       ),

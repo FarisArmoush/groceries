@@ -10,10 +10,7 @@ class _RegisterPasswordTextField extends StatelessWidget {
       builder: (context, state) {
         return AppTextField(
           obscureText: true,
-          prefixIcon: Icon(
-            CupertinoIcons.lock,
-            color: Theme.of(context).hintColor,
-          ),
+          prefixIcon: const Icon(CupertinoIcons.lock),
           autofillHints: const [AutofillHints.password],
           keyboardType: TextInputType.visiblePassword,
           onChanged: (password) {

@@ -65,7 +65,7 @@ void main() {
             equals('notifications'),
           );
           expect(
-            AppNamedRoutes.groceryList,
+            AppNamedRoutes.groceryListDetails,
             equals('groceryList'),
           );
           expect(

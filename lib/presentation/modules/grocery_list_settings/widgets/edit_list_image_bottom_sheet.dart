@@ -23,7 +23,7 @@ class EditListImageBottomSheet extends StatelessWidget {
         ),
         BottomSheetButton(
           text: AppTranslations.uploadPhotoFromGallery,
-          iconPath: Assets.svg.icCamera.path,
+          iconPath: Assets.svg.icImage.path,
           onTap: () {},
         ),
       ],

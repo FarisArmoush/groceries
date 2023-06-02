@@ -18,6 +18,17 @@ class _AppInputDecorationThemeData {
         color: AppColors.lightGrey,
         fontSize: 16,
       ),
+      prefixIconColor: AppColors.lightGrey,
+      enabledBorder: const UnderlineInputBorder(
+        borderSide: BorderSide(
+          color: AppColors.lightRed,
+        ),
+      ),
+      focusedBorder: const UnderlineInputBorder(
+        borderSide: BorderSide(
+          color: AppColors.lightRed,
+        ),
+      ),
     );
   }
 
@@ -37,6 +48,17 @@ class _AppInputDecorationThemeData {
         fontFamily: AppFonts.medium(context),
         color: AppColors.lightGrey,
         fontSize: 16,
+      ),
+      prefixIconColor: AppColors.lightGrey,
+      enabledBorder: const UnderlineInputBorder(
+        borderSide: BorderSide(
+          color: AppColors.darkRed,
+        ),
+      ),
+      focusedBorder: const UnderlineInputBorder(
+        borderSide: BorderSide(
+          color: AppColors.darkRed,
+        ),
       ),
     );
   }
