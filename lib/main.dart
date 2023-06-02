@@ -17,10 +17,6 @@ Future<void> main() async {
   await authRepo.authStateChanges.first;
   final remoteConfigRepo = RemoteConfigRepository();
   await remoteConfigRepo.init();
-  // FirebaseCrashlyticsRepository()
-  //   ..initCrashlytics()
-  //   ..initPlatformErrorsHandler();
-
   await EasyLocalization.ensureInitialized();
   Bloc.observer = AppBlocObserver();
   runApp(

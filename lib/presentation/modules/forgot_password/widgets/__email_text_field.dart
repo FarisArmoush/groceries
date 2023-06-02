@@ -15,10 +15,7 @@ class _EmailTextField extends StatelessWidget {
           keyboardType: TextInputType.emailAddress,
           validator: (value) => state.email.validator(value),
           errorText: state.email.error,
-          prefixIcon: Icon(
-            CupertinoIcons.mail,
-            color: Theme.of(context).hintColor,
-          ),
+          prefixIcon: const Icon(CupertinoIcons.mail),
         );
       },
     );

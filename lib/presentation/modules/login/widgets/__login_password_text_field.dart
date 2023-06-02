@@ -9,10 +9,7 @@ class _LoginPasswordTextField extends StatelessWidget {
       buildWhen: (previous, current) => previous.password != current.password,
       builder: (context, state) {
         return AppTextField(
-          prefixIcon: Icon(
-            CupertinoIcons.lock,
-            color: Theme.of(context).hintColor,
-          ),
+          prefixIcon: const Icon(CupertinoIcons.lock),
           obscureText: true,
           autofillHints: const [
             AutofillHints.password,

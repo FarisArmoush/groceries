@@ -12,10 +12,7 @@ class _RegisterConfirmPasswordTextField extends StatelessWidget {
       },
       builder: (context, state) {
         return AppTextField(
-          prefixIcon: Icon(
-            CupertinoIcons.repeat,
-            color: Theme.of(context).hintColor,
-          ),
+          prefixIcon: const Icon(CupertinoIcons.repeat),
           onChanged: (confirmPassword) {
             context
                 .read<RegisterCubit>()
