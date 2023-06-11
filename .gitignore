@@ -115,3 +115,6 @@ grocories/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant
 grocories/android/local.properties
 windows/flutter/generated_plugins.cmake
 windows/flutter/generated_plugin_registrant.cc
+linux/flutter/generated_plugin_registrant.cc
+linux/flutter/generated_plugins.cmake
+macos/Flutter/GeneratedPluginRegistrant.swift
