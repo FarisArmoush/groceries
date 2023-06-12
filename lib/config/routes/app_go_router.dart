@@ -20,7 +20,7 @@ import 'package:groceries/presentation/modules/notifications/views/notifications
 import 'package:groceries/presentation/modules/notifications_settings/views/notifications_settings_view.dart';
 import 'package:groceries/presentation/modules/onboarding/views/onboarding_view.dart';
 import 'package:groceries/presentation/modules/page_not_found/views/page_not_found_view.dart';
-import 'package:groceries/presentation/modules/recipes/views/recipe_view.dart';
+import 'package:groceries/presentation/modules/recipes/views/recipe_details_view.dart';
 import 'package:groceries/presentation/modules/recipes/views/recipes_view.dart';
 import 'package:groceries/presentation/modules/register/views/register_view.dart';
 import 'package:groceries/presentation/modules/root/views/root_view.dart';
@@ -147,9 +147,9 @@ class AppGoRouter {
             builder: (context, state) => const RecipesView(),
             routes: [
               GoRoute(
-                name: AppNamedRoutes.recipe,
-                path: 'recipe',
-                builder: (context, state) => const RecipeView(),
+                name: AppNamedRoutes.recipeDetails,
+                path: 'recipeDetails',
+                builder: (context, state) => const RecipeDetailsView(),
               ),
               GoRoute(
                 name: AppNamedRoutes.createRecipe,

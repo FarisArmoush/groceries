@@ -29,7 +29,7 @@ class RecipesList extends StatelessWidget {
             imageUrl: recipes[index].imageUrl,
             items: recipes[index].items,
           ),
-          onTap: () => context.pushNamed(AppNamedRoutes.recipe),
+          onTap: () => context.pushNamed(AppNamedRoutes.recipeDetails),
         );
       },
       separatorBuilder: (context, index) {
