@@ -34,7 +34,7 @@ class AppNamedRoutes {
   static const String recipes = 'recipes';
 
   /// Recipe View
-  static const String recipe = 'recipe';
+  static const String recipeDetails = 'recipeDetails';
 
   /// Create Recipe View
   static const String createRecipe = 'createRecipe';

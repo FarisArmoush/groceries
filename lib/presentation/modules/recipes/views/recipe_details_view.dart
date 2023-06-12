@@ -3,8 +3,8 @@ import 'package:groceries/presentation/widgets/buttons/tile_button.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/media_query_values.dart';
 
-class RecipeView extends StatelessWidget {
-  const RecipeView({super.key});
+class RecipeDetailsView extends StatelessWidget {
+  const RecipeDetailsView({super.key});
 
   @override
   Widget build(BuildContext context) {
