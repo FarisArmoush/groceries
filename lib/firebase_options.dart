@@ -51,7 +51,7 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBHwWZTJUASjvpYEdVJ_ASpM5IA5mxI1kw',
-    appId: '1:960305957931:android:b82e5cbc3f002b734eae6e',
+    appId: '1:960305957931:android:ba434249588d6d204eae6e',
     messagingSenderId: '960305957931',
     projectId: 'grocoriesapp',
     databaseURL:
