@@ -22,9 +22,6 @@ class AppColors {
   /// Very Light Grey
   static const Color veryLightGrey = Color.fromARGB(255, 239, 239, 239);
 
-  /// Twitter's logo blue color
-  static const Color twitterBlue = Color.fromARGB(255, 29, 160, 242);
-
   /// Background dark grey, used for views background.
   static const Color darkGrey = Color.fromARGB(255, 18, 18, 18);
 

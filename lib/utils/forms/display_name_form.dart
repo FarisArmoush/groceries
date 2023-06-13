@@ -12,14 +12,14 @@ class DisplayNameForm extends FormzInput<String, String> {
   /// The pure state indicates that the form field has not been modified.
   ///
   /// @param value The initial value of the display name form field.
-  const DisplayNameForm.pure() : super.dirty('');
+  const DisplayNameForm.pure() : super.pure('');
 
   /// Constructor which creates a dirty [DisplayNameForm] with a given value.
   ///
   /// The dirty state indicates that the form field has been modified.
   ///
   /// @param value The initial value of the display name form field.
-  const DisplayNameForm.dirty(super.value) : super.pure();
+  const DisplayNameForm.dirty(super.value) : super.dirty();
 
   @override
   String? validator(String? value) {
