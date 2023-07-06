@@ -101,8 +101,8 @@ void main() {
             equals('deleteAccount'),
           );
           expect(
-            AppNamedRoutes.appearanceSettings,
-            equals('appearanceSettings'),
+            AppNamedRoutes.themeSettings,
+            equals('themeSettings'),
           );
           expect(
             AppNamedRoutes.notificationsSettings,

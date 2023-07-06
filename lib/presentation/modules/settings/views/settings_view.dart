@@ -50,7 +50,7 @@ class SettingsView extends StatelessWidget {
             title: AppTranslations.theme,
             subtitle: AppTranslations.themeHeader,
             iconPath: Assets.svg.icPalette.path,
-            onTap: () => context.pushNamed(AppNamedRoutes.appearanceSettings),
+            onTap: () => context.pushNamed(AppNamedRoutes.themeSettings),
           ),
           SizedBox(
             height: context.deviceHeight * 0.01,

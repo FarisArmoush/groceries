@@ -86,7 +86,7 @@ class AppNamedRoutes {
   static const String deleteAccount = 'deleteAccount';
 
   /// Appearance Settings View
-  static const String appearanceSettings = 'appearanceSettings';
+  static const String themeSettings = 'themeSettings';
 
   /// Notifications Settings View
   static const String notificationsSettings = 'notificationsSettings';

@@ -3,7 +3,6 @@ import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/modules/account_settings/views/account_settings_view.dart';
 import 'package:groceries/presentation/modules/add_items/views/add_items_view.dart';
 import 'package:groceries/presentation/modules/additional_resources/views/additional_resources_view.dart';
-import 'package:groceries/presentation/modules/appearance/views/appearance_settings_view.dart';
 import 'package:groceries/presentation/modules/create_list/views/create_list_view.dart';
 import 'package:groceries/presentation/modules/create_list/views/invite_users_to_list_view.dart';
 import 'package:groceries/presentation/modules/create_list/views/list_created_successfully_view.dart';
@@ -26,6 +25,7 @@ import 'package:groceries/presentation/modules/recipes/views/recipes_view.dart';
 import 'package:groceries/presentation/modules/register/views/register_view.dart';
 import 'package:groceries/presentation/modules/root/views/root_view.dart';
 import 'package:groceries/presentation/modules/settings/views/settings_view.dart';
+import 'package:groceries/presentation/modules/theme_settings/views/theme_settings_view.dart';
 import 'package:groceries/presentation/modules/update_display_name/views/update_display_name_view.dart';
 import 'package:groceries/presentation/modules/update_email/views/update_email_view.dart';
 import 'package:groceries/presentation/modules/update_password/views/update_password_view.dart';
@@ -165,9 +165,9 @@ class AppGoRouter {
             builder: (context, state) => const SettingsView(),
             routes: [
               GoRoute(
-                name: AppNamedRoutes.appearanceSettings,
-                path: 'appearanceSettings',
-                builder: (context, state) => const AppearanceSettingsView(),
+                name: AppNamedRoutes.themeSettings,
+                path: 'themeSettings',
+                builder: (context, state) => const ThemeSettingsView(),
               ),
               GoRoute(
                 name: AppNamedRoutes.notificationsSettings,

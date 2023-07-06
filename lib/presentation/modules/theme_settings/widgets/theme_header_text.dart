@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 
-class AppearanceHintText extends StatelessWidget {
-  const AppearanceHintText({super.key});
+class ThemeHeaderText extends StatelessWidget {
+  const ThemeHeaderText({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      AppTranslations.themeHint,
+      AppTranslations.themeHeader,
       style: TextStyle(
-        fontFamily: AppFonts.light(context),
-        color: Theme.of(context).hintColor,
+        fontFamily: AppFonts.medium(context),
+        color: Theme.of(context).primaryColor,
         fontSize: 12,
       ),
     );
