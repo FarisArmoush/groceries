@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/blocs/remote_config/remote_config_cubit.dart';
 import 'package:groceries/presentation/modules/additional_resources/widgets/additional_resources_title.dart';
 import 'package:groceries/presentation/modules/additional_resources/widgets/app_version_list_tile.dart';
@@ -52,6 +54,10 @@ class AdditionalResourcesView extends StatelessWidget {
           LegalListTile(
             title: AppTranslations.privacyPolicy,
             onTap: urlLauncher.launchPrivacyPolicyWebsite,
+          ),
+          LegalListTile(
+            title: AppTranslations.credits,
+            onTap: () => context.pushNamed(AppNamedRoutes.credits),
           ),
         ],
       ),

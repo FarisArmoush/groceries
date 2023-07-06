@@ -366,6 +366,9 @@ class AppTranslations {
   /// terms_of_use
   static final termsOfUse = 'terms_of_use'.tr();
 
+  /// credits
+  static final credits = 'credits'.tr();
+
   // $_ACCOUNT_SETTINGS_$
   ///edit_user_image
   static final editUserImage = 'edit_user_image'.tr();

@@ -16,7 +16,6 @@ dependencies:
     sdk: flutter
   bloc: ^8.1.1
   cached_network_image: ^3.2.3
-  carousel_slider: ^4.1.1
   cloud_firestore: ^4.3.1
   cupertino_icons: ^1.0.2
   easy_localization: ^3.0.1
@@ -38,7 +37,6 @@ dependencies:
   go_router: ^7.0.0
   google_sign_in: ^6.1.0
   http: ^0.13.5
-  hydrated_bloc: ^9.1.2
   image_picker: ^0.8.6
   shared_preferences: ^2.0.16
   smooth_page_indicator: ^1.0.0+2
