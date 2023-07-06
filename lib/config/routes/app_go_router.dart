@@ -9,6 +9,7 @@ import 'package:groceries/presentation/modules/create_list/views/invite_users_to
 import 'package:groceries/presentation/modules/create_list/views/list_created_successfully_view.dart';
 import 'package:groceries/presentation/modules/create_list/views/list_created_unsuccessfully_view.dart';
 import 'package:groceries/presentation/modules/create_recipe/views/create_recipe_view.dart';
+import 'package:groceries/presentation/modules/credits/views/credits_view.dart';
 import 'package:groceries/presentation/modules/delete_account/views/delete_account_view.dart';
 import 'package:groceries/presentation/modules/forgot_password/views/forgot_password_view.dart';
 import 'package:groceries/presentation/modules/forgot_password/views/reset_password_sent_successfully.dart';
@@ -177,6 +178,13 @@ class AppGoRouter {
                 name: AppNamedRoutes.additionalResources,
                 path: 'additionalResources',
                 builder: (context, state) => const AdditionalResourcesView(),
+                routes: [
+                  GoRoute(
+                    name: AppNamedRoutes.credits,
+                    path: 'credits',
+                    builder: (context, state) => const CreditsView(),
+                  ),
+                ],
               ),
               GoRoute(
                 name: AppNamedRoutes.accountSettings,
