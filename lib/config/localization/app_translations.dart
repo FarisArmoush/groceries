@@ -318,21 +318,6 @@ class AppTranslations {
   /// system_mode
   static final systemMode = 'system_mode'.tr();
 
-  // $_NOTIFICATIONS_$
-  /// notifications
-  static final notifications = 'notifications'.tr();
-
-  /// empty_notifications
-  static final emptyNotifications = 'empty_notifications'.tr();
-
-  // $_NOTIFICATIONS_SETTINGS_$
-  /// notifications_settings
-  static final notificationsSettings = 'notifications_settings'.tr();
-
-  /// notification_settings_description
-  static final notificationSettingsDescription =
-      'notification_settings_description'.tr();
-
   // $_ADDITIONAL_RESOURCES_$
   /// additional_resources
   static final additionalResources = 'additional_resources'.tr();

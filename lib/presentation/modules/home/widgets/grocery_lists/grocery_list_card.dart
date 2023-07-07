@@ -18,57 +18,89 @@ class GroceryListCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
+      type: MaterialType.card,
       borderRadius: BorderRadius.circular(12),
       color: Theme.of(context).cardColor,
       child: InkWell(
+        splashFactory: NoSplash.splashFactory,
         onTap: onTap,
         child: Container(
-          width: context.deviceWidth * 0.6,
-          padding: const EdgeInsetsDirectional.all(16),
+          padding: const EdgeInsetsDirectional.only(
+            start: 16,
+            end: 12,
+            top: 20,
+            bottom: 16,
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisSize: MainAxisSize.min,
             children: [
-              const Align(
-                alignment: AlignmentDirectional.topEnd,
-                child: GroceryListOptionsButton(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  _icon(context),
+                  const GroceryListOptionsButton(),
+                ],
               ),
-              Icon(
-                CupertinoIcons.home,
-                size: context.deviceHeight * 0.06,
+              SizedBox(
+                height: context.deviceHeight * 0.02,
               ),
-              Text(
-                listModel.name,
-                style: TextStyle(
-                  fontFamily: AppFonts.medium(context),
-                  color: Theme.of(context).primaryColor,
-                  fontSize: 24,
-                ),
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
-              if (listModel.tasksAmount != 0)
-                Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).primaryColor,
-                    borderRadius: BorderRadius.circular(12),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  _listName(context),
+                  SizedBox(
+                    height: context.deviceHeight * 0.01,
                   ),
-                  child: Text(
-                    '${listModel.tasksAmount} ${AppTranslations.newTasks}',
-                    style: TextStyle(
-                      fontFamily: AppFonts.light(context),
-                      color: Theme.of(context).colorScheme.secondary,
-                      fontSize: 14,
-                    ),
-                  ),
-                )
-              else
-                const SizedBox(),
+                  if (listModel.tasksAmount != 0)
+                    _newTasksBox(context)
+                  else
+                    const SizedBox(),
+                ],
+              ),
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Icon _icon(BuildContext context) {
+    return Icon(
+      CupertinoIcons.home,
+      size: context.deviceHeight * 0.045,
+    );
+  }
+
+  Container _newTasksBox(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: Theme.of(context).primaryColor,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Text(
+        '${listModel.tasksAmount} ${AppTranslations.newTasks}',
+        style: TextStyle(
+          fontFamily: AppFonts.light(context),
+          color: Theme.of(context).colorScheme.secondary,
+          fontSize: 10,
+        ),
+      ),
+    );
+  }
+
+  Text _listName(BuildContext context) {
+    return Text(
+      listModel.name,
+      style: TextStyle(
+        fontFamily: AppFonts.medium(context),
+        color: Theme.of(context).primaryColor,
+        fontSize: 20,
+      ),
+      maxLines: 2,
+      overflow: TextOverflow.ellipsis,
     );
   }
 }

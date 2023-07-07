@@ -1,8 +1,7 @@
-// ignore_for_file: strict_raw_type
 import 'package:flutter/material.dart';
 
-class AppearanceRadio extends StatelessWidget {
-  const AppearanceRadio({
+class ThemeRadio extends StatelessWidget {
+  const ThemeRadio({
     required this.title,
     required this.groupValue,
     required this.value,
@@ -12,20 +11,18 @@ class AppearanceRadio extends StatelessWidget {
   final String title;
   final ThemeMode groupValue;
   final ThemeMode value;
-  final ValueChanged? onChanged;
+  final ValueChanged<ThemeMode?>? onChanged;
 
   @override
   Widget build(BuildContext context) {
-    return RadioListTile(
-      tileColor: Colors.transparent,
-      controlAffinity: ListTileControlAffinity.trailing,
-      activeColor: Theme.of(context).primaryColorLight,
+    return RadioListTile<ThemeMode>(
       value: value,
       groupValue: groupValue,
-      title: Text(
-        title,
-      ),
       onChanged: onChanged,
+      title: Text(title),
+      tileColor: Colors.transparent,
+      activeColor: Theme.of(context).primaryColorLight,
+      controlAffinity: ListTileControlAffinity.trailing,
     );
   }
 }

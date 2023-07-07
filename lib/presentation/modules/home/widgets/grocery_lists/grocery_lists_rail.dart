@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/grocery_list_model.dart';
 import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocery_lists_list.dart';
+import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocery_lists_rail_header.dart';
 import 'package:groceries/presentation/modules/home/widgets/grocery_lists/you_have_no_grocery_lists.dart';
 import 'package:groceries/presentation/modules/home/widgets/rail_title.dart';
 import 'package:groceries/utils/extenstions/media_query_values.dart';
@@ -20,9 +21,10 @@ class GroceryListsRail extends StatelessWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       children: [
-        RailTitle(
-          title: AppTranslations.myLists,
-        ),
+        if (lists.isNotEmpty)
+          const GroceryListsRailHeader()
+        else
+          RailTitle(title: AppTranslations.myLists),
         SizedBox(
           height: lists.isNotEmpty
               ? context.deviceHeight * 0.025

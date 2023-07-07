@@ -67,7 +67,7 @@ class RecipeModel extends Equatable {
   /// The unique identifier of the recipe.
   final String id;
 
-  /// The name of the notification.
+  /// The name of the recipe.
   final String name;
 
   /// The URL of the image associated with the recipe.

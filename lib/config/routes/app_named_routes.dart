@@ -42,9 +42,6 @@ class AppNamedRoutes {
   /// Add Items to list View
   static const String addItems = 'addItems';
 
-  /// Notifications View
-  static const String notifications = 'notifications';
-
   /// Grocery List View
   static const String groceryListDetails = 'groceryListDetails';
 
@@ -86,10 +83,7 @@ class AppNamedRoutes {
   static const String deleteAccount = 'deleteAccount';
 
   /// Appearance Settings View
-  static const String appearanceSettings = 'appearanceSettings';
-
-  /// Notifications Settings View
-  static const String notificationsSettings = 'notificationsSettings';
+  static const String themeSettings = 'themeSettings';
 
   /// Additional Resources View
   static const String additionalResources = 'additionalResources';
