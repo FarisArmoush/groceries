@@ -61,10 +61,6 @@ void main() {
             equals('addItems'),
           );
           expect(
-            AppNamedRoutes.notifications,
-            equals('notifications'),
-          );
-          expect(
             AppNamedRoutes.groceryListDetails,
             equals('groceryListDetails'),
           );
@@ -103,10 +99,6 @@ void main() {
           expect(
             AppNamedRoutes.themeSettings,
             equals('themeSettings'),
-          );
-          expect(
-            AppNamedRoutes.notificationsSettings,
-            equals('notificationsSettings'),
           );
           expect(
             AppNamedRoutes.additionalResources,

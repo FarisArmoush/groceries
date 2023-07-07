@@ -36,13 +36,6 @@ class SettingsView extends StatelessWidget {
           SizedBox(
             height: context.deviceHeight * 0.01,
           ),
-          SettingsListTile(
-            title: AppTranslations.notifications,
-            subtitle: AppTranslations.notificationSettingsDescription,
-            iconPath: Assets.svg.icBell.path,
-            onTap: () =>
-                context.pushNamed(AppNamedRoutes.notificationsSettings),
-          ),
           SizedBox(
             height: context.deviceHeight * 0.01,
           ),

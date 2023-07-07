@@ -16,8 +16,6 @@ import 'package:groceries/presentation/modules/grocery_list_details/views/grocer
 import 'package:groceries/presentation/modules/grocery_list_settings/views/grocery_list_settings_view.dart';
 import 'package:groceries/presentation/modules/home/views/home_view.dart';
 import 'package:groceries/presentation/modules/login/views/login_view.dart';
-import 'package:groceries/presentation/modules/notifications/views/notifications_view.dart';
-import 'package:groceries/presentation/modules/notifications_settings/views/notifications_settings_view.dart';
 import 'package:groceries/presentation/modules/onboarding/views/onboarding_view.dart';
 import 'package:groceries/presentation/modules/page_not_found/views/page_not_found_view.dart';
 import 'package:groceries/presentation/modules/recipes/views/recipe_details_view.dart';
@@ -135,11 +133,6 @@ class AppGoRouter {
                   ),
                 ],
               ),
-              GoRoute(
-                name: AppNamedRoutes.notifications,
-                path: 'notifications',
-                builder: (context, state) => const NotificationsView(),
-              ),
             ],
           ),
           GoRoute(
@@ -168,11 +161,6 @@ class AppGoRouter {
                 name: AppNamedRoutes.themeSettings,
                 path: 'themeSettings',
                 builder: (context, state) => const ThemeSettingsView(),
-              ),
-              GoRoute(
-                name: AppNamedRoutes.notificationsSettings,
-                path: 'notificationsSettings',
-                builder: (context, state) => const NotificationsSettingsView(),
               ),
               GoRoute(
                 name: AppNamedRoutes.additionalResources,
