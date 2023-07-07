@@ -69,7 +69,7 @@ class GroceryListCard extends StatelessWidget {
   Icon _icon(BuildContext context) {
     return Icon(
       CupertinoIcons.home,
-      size: context.deviceHeight * 0.06,
+      size: context.deviceHeight * 0.045,
     );
   }
 

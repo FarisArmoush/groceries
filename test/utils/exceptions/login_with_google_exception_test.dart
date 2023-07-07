@@ -3,13 +3,12 @@ import 'package:groceries/utils/exceptions/login_with_google_exception.dart';
 
 void main() {
   group('LoginWithGoogleException', () {
-    test('Create exception with default message', () {
+    test('exception with default message', () {
       const exception = LoginWithGoogleException();
       expect(exception.message, 'An unknown exception occurred.');
     });
 
-    test(
-        'Create exception from error code "account-exists-with-different-credential"',
+    test('exception from error code "account-exists-with-different-credential"',
         () {
       final exception = LoginWithGoogleException.fromCode(
         'account-exists-with-different-credential',
@@ -17,7 +16,7 @@ void main() {
       expect(exception.message, 'Account exists with different credentials.');
     });
 
-    test('Create exception from error code "invalid-credential"', () {
+    test('exception from error code "invalid-credential"', () {
       final exception = LoginWithGoogleException.fromCode('invalid-credential');
       expect(
         exception.message,
@@ -25,7 +24,7 @@ void main() {
       );
     });
 
-    test('Create exception from error code "operation-not-allowed"', () {
+    test('exception from error code "operation-not-allowed"', () {
       final exception =
           LoginWithGoogleException.fromCode('operation-not-allowed');
       expect(
@@ -34,7 +33,7 @@ void main() {
       );
     });
 
-    test('Create exception from error code "user-disabled"', () {
+    test('exception from error code "user-disabled"', () {
       final exception = LoginWithGoogleException.fromCode('user-disabled');
       expect(
         exception.message,
@@ -42,20 +41,20 @@ void main() {
       );
     });
 
-    test('Create exception from error code "user-not-found"', () {
+    test(' exception from error code "user-not-found"', () {
       final exception = LoginWithGoogleException.fromCode('user-not-found');
       expect(
         exception.message,
-        'Email is not found, please create an account.',
+        'Email is not found, please  an account.',
       );
     });
 
-    test('Create exception from error code "wrong-password"', () {
+    test('exception from error code "wrong-password"', () {
       final exception = LoginWithGoogleException.fromCode('wrong-password');
       expect(exception.message, 'Incorrect password, please try again.');
     });
 
-    test('Create exception from error code "invalid-verification-code"', () {
+    test('exception from error code "invalid-verification-code"', () {
       final exception =
           LoginWithGoogleException.fromCode('invalid-verification-code');
       expect(
@@ -64,7 +63,7 @@ void main() {
       );
     });
 
-    test('Create exception from error code "invalid-verification-id"', () {
+    test('exception from error code "invalid-verification-id"', () {
       final exception =
           LoginWithGoogleException.fromCode('invalid-verification-id');
       expect(
@@ -73,7 +72,7 @@ void main() {
       );
     });
 
-    test('Create exception from unknown error code', () {
+    test('exception from unknown error code', () {
       final exception = LoginWithGoogleException.fromCode('unknown-code');
       expect(exception.message, 'An unknown exception occurred.');
     });
