@@ -4,6 +4,7 @@ class _AppFilledButtonThemeData {
   static FilledButtonThemeData light(BuildContext context) {
     return FilledButtonThemeData(
       style: ButtonStyle(
+        splashFactory: _splashFactory,
         shadowColor: MaterialStateProperty.all(
           AppColors.black,
         ),
@@ -41,6 +42,7 @@ class _AppFilledButtonThemeData {
   static FilledButtonThemeData dark(BuildContext context) {
     return FilledButtonThemeData(
       style: ButtonStyle(
+        splashFactory: _splashFactory,
         shadowColor: MaterialStateProperty.all(
           AppColors.white.withOpacity(0.2),
         ),
@@ -74,4 +76,6 @@ class _AppFilledButtonThemeData {
       ),
     );
   }
+
+  static const _splashFactory = NoSplash.splashFactory;
 }

@@ -4,6 +4,7 @@ class _AppTextButtonThemeData {
   static TextButtonThemeData light(BuildContext context) {
     return TextButtonThemeData(
       style: ButtonStyle(
+        splashFactory: _splashFactory,
         iconColor: MaterialStateProperty.all<Color>(
           AppColors.black,
         ),
@@ -27,6 +28,7 @@ class _AppTextButtonThemeData {
   static TextButtonThemeData dark(BuildContext context) {
     return TextButtonThemeData(
       style: ButtonStyle(
+        splashFactory: _splashFactory,
         iconColor: MaterialStateProperty.all<Color>(
           AppColors.white,
         ),
@@ -46,4 +48,6 @@ class _AppTextButtonThemeData {
       ),
     );
   }
+
+  static const _splashFactory = NoSplash.splashFactory;
 }
