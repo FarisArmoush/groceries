@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/data/models/grocery_model.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class GroceryItemCard extends StatelessWidget {
   const GroceryItemCard({
@@ -17,7 +18,7 @@ class GroceryItemCard extends StatelessWidget {
       trailing: IconButton(
         onPressed: () {},
         icon: Assets.svg.icPlus.svg(
-          color: Theme.of(context).primaryColor,
+          color: context.theme.primaryColor,
         ),
       ),
     );

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class AddRecipeToListBottomSheet extends StatelessWidget {
   const AddRecipeToListBottomSheet({super.key});
@@ -17,7 +17,7 @@ class AddRecipeToListBottomSheet extends StatelessWidget {
       children: [
         Text(
           AppTranslations.addRecipeToListBottomSheetHeader,
-          style: Theme.of(context).dialogTheme.titleTextStyle,
+          style: context.theme.dialogTheme.titleTextStyle,
           textAlign: TextAlign.center,
         ),
         SizedBox(
@@ -25,7 +25,7 @@ class AddRecipeToListBottomSheet extends StatelessWidget {
         ),
         Text(
           AppTranslations.addRecipeToListBottomSheetBody,
-          style: Theme.of(context).dialogTheme.contentTextStyle,
+          style: context.theme.dialogTheme.contentTextStyle,
           textAlign: TextAlign.center,
         ),
         SizedBox(

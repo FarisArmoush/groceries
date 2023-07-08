@@ -5,7 +5,7 @@ import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocer
 import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocery_lists_rail_header.dart';
 import 'package:groceries/presentation/modules/home/widgets/grocery_lists/you_have_no_grocery_lists.dart';
 import 'package:groceries/presentation/modules/home/widgets/rail_title.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class GroceryListsRail extends StatelessWidget {
   const GroceryListsRail({

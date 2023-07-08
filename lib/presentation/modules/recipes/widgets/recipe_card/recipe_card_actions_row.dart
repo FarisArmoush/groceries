@@ -5,6 +5,7 @@ import 'package:groceries/presentation/modules/recipes/widgets/bottom_sheets/del
 import 'package:groceries/presentation/modules/recipes/widgets/recipe_card/recipe_card_action_button.dart';
 import 'package:groceries/presentation/widgets/app_snackbars/app_snack_bars.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class RecipeCardActionsRow extends StatelessWidget {
   const RecipeCardActionsRow({super.key});
@@ -21,7 +22,7 @@ class RecipeCardActionsRow extends StatelessWidget {
             context: context,
             enableDrag: false,
             showDragHandle: true,
-            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            backgroundColor: context.theme.scaffoldBackgroundColor,
             elevation: 0,
             builder: (context) => const AddRecipeToListBottomSheet(),
           ),

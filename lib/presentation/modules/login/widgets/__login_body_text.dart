@@ -9,7 +9,7 @@ class _LoginBodyText extends StatelessWidget {
       AppTranslations.loginBody,
       style: TextStyle(
         fontFamily: AppFonts.regular(context),
-        color: Theme.of(context).primaryColor,
+        color: context.theme.primaryColor,
         fontSize: 22,
       ),
     );

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class EmptyGroceryList extends StatelessWidget {
   const EmptyGroceryList({super.key});
@@ -21,7 +21,7 @@ class EmptyGroceryList extends StatelessWidget {
           AppTranslations.emptyListHeader,
           style: TextStyle(
             fontFamily: AppFonts.semiBold(context),
-            color: Theme.of(context).primaryColor,
+            color: context.theme.primaryColor,
             fontSize: 24,
           ),
           textAlign: TextAlign.center,
@@ -33,7 +33,7 @@ class EmptyGroceryList extends StatelessWidget {
           AppTranslations.emptyListBody,
           style: TextStyle(
             fontFamily: AppFonts.light(context),
-            color: Theme.of(context).hintColor,
+            color: context.theme.hintColor,
             fontSize: 14,
           ),
           textAlign: TextAlign.center,
@@ -44,7 +44,7 @@ class EmptyGroceryList extends StatelessWidget {
         ElevatedButton.icon(
           onPressed: () {},
           icon: Assets.svg.icSearch.svg(
-            color: Theme.of(context).colorScheme.secondary,
+            color: context.theme.colorScheme.secondary,
           ),
           label: Text(
             AppTranslations.browseGroceries,

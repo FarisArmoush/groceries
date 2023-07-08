@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class CancelListCreationDialog extends StatelessWidget {
   const CancelListCreationDialog({super.key});
@@ -17,18 +18,24 @@ class CancelListCreationDialog extends StatelessWidget {
         textAlign: TextAlign.center,
       ),
       actions: [
-        OutlinedButton(
-          onPressed: () => context
-            ..pop()
-            ..pop(),
-          child: Text(
-            AppTranslations.yesCancelListCreation,
+        SizedBox(
+          width: context.deviceWidth,
+          child: OutlinedButton(
+            onPressed: () => context
+              ..pop()
+              ..pop(),
+            child: Text(
+              AppTranslations.yesCancelListCreation,
+            ),
           ),
         ),
-        FilledButton(
-          onPressed: () => context.pop(),
-          child: Text(
-            AppTranslations.dontCancelListCreation,
+        SizedBox(
+          width: context.deviceWidth,
+          child: FilledButton(
+            onPressed: () => context.pop(),
+            child: Text(
+              AppTranslations.dontCancelListCreation,
+            ),
           ),
         ),
       ],

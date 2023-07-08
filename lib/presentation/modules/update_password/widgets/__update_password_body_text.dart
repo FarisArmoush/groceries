@@ -9,7 +9,7 @@ class _UpdatePasswordBodyText extends StatelessWidget {
       'Choose your new Password',
       style: TextStyle(
         fontFamily: AppFonts.regular(context),
-        color: Theme.of(context).primaryColor,
+        color: context.theme.primaryColor,
         fontSize: 22,
       ),
     );

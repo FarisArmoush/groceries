@@ -5,6 +5,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/data/repositories/firebase_auth_repository.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class UserDisplayNameListTile extends StatelessWidget {
   const UserDisplayNameListTile({super.key});
@@ -16,14 +17,8 @@ class UserDisplayNameListTile extends StatelessWidget {
     return ListTile(
       title: Text(AppTranslations.username),
       subtitle: Text(displayName ?? ''),
-      trailing: Assets.svg.icEdit.svg(color: Theme.of(context).hintColor),
+      trailing: Assets.svg.icEdit.svg(color: context.theme.hintColor),
       onTap: () => context.pushNamed(AppNamedRoutes.updateDisplayName),
-      // onTap: () => showModalBottomSheet<ChangeDisplayNameBottomSheet>(
-      //   context: context,
-      //   showDragHandle: true,
-      //   elevation: 0,
-      //   builder: (context) => const ChangeDisplayNameBottomSheet(),
-      // ),
     );
   }
 }

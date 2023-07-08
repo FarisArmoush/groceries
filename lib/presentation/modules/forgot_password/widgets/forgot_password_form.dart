@@ -11,7 +11,7 @@ import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/app_snackbars/app_snack_bars.dart';
 import 'package:groceries/presentation/widgets/app_text_field.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 part '__email_text_field.dart';
 part '__send_button.dart';
@@ -68,7 +68,7 @@ class ForgotPasswordForm extends StatelessWidget {
                 AppTranslations.forgotPassword,
                 style: TextStyle(
                   fontFamily: AppFonts.semiBold(context),
-                  color: Theme.of(context).primaryColorLight,
+                  color: context.theme.primaryColorLight,
                   fontSize: 32,
                 ),
               ),
@@ -79,7 +79,7 @@ class ForgotPasswordForm extends StatelessWidget {
                 AppTranslations.forgotPasswordBody,
                 style: TextStyle(
                   fontFamily: AppFonts.regular(context),
-                  color: Theme.of(context).primaryColor,
+                  color: context.theme.primaryColor,
                   fontSize: 18,
                 ),
               ),

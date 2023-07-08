@@ -9,7 +9,7 @@ class _UpdateDisplayNameBodyText extends StatelessWidget {
       'Choose your new username',
       style: TextStyle(
         fontFamily: AppFonts.regular(context),
-        color: Theme.of(context).primaryColor,
+        color: context.theme.primaryColor,
         fontSize: 22,
       ),
     );

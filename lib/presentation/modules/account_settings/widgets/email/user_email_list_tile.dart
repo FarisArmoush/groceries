@@ -4,6 +4,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/repositories/firebase_auth_repository.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/email/change_email_bottom_sheet.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class UserEmailListTile extends StatelessWidget {
   const UserEmailListTile({super.key});
@@ -15,7 +16,7 @@ class UserEmailListTile extends StatelessWidget {
     return ListTile(
       title: Text(AppTranslations.email),
       subtitle: Text(email ?? ''),
-      trailing: Assets.svg.icEdit.svg(color: Theme.of(context).hintColor),
+      trailing: Assets.svg.icEdit.svg(color: context.theme.hintColor),
       onTap: () => showModalBottomSheet<ChangeEmailBottomSheet>(
         context: context,
         showDragHandle: true,

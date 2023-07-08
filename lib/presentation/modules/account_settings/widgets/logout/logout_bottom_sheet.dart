@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class LogoutBottomSheet extends StatelessWidget {
   const LogoutBottomSheet({super.key});
@@ -20,7 +20,7 @@ class LogoutBottomSheet extends StatelessWidget {
       children: [
         Text(
           AppTranslations.logoutBottomSheetHeader,
-          style: Theme.of(context).dialogTheme.titleTextStyle,
+          style: context.theme.dialogTheme.titleTextStyle,
           textAlign: TextAlign.center,
         ),
         SizedBox(
@@ -28,7 +28,7 @@ class LogoutBottomSheet extends StatelessWidget {
         ),
         Text(
           AppTranslations.logoutBottomSheetBody,
-          style: Theme.of(context).dialogTheme.contentTextStyle,
+          style: context.theme.dialogTheme.contentTextStyle,
           textAlign: TextAlign.center,
         ),
         SizedBox(

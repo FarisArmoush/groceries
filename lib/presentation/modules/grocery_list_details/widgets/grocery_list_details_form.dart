@@ -4,7 +4,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/widgets/grocery_list_options_button.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class GroceryListDetailsForm extends StatelessWidget {
   const GroceryListDetailsForm({super.key});
@@ -17,14 +17,14 @@ class GroceryListDetailsForm extends StatelessWidget {
         SliverAppBar.medium(
           title: Text(
             '<NAME>',
-            style: Theme.of(context).appBarTheme.titleTextStyle,
+            style: context.theme.appBarTheme.titleTextStyle,
           ),
           actions: [
             IconButton(
               onPressed: () => context.pushNamed(AppNamedRoutes.addItems),
               tooltip: AppTranslations.addItems,
               icon: Assets.svg.icPlus.svg(
-                color: Theme.of(context).primaryColor,
+                color: context.theme.primaryColor,
               ),
             ),
             const GroceryListOptionsButton(),

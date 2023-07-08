@@ -3,7 +3,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/task_model.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class MyTasksCard extends StatelessWidget {
   const MyTasksCard({
@@ -30,7 +30,7 @@ class MyTasksCard extends StatelessWidget {
             flex: 2,
             child: Text(
               taskModel.listModel.name,
-              style: Theme.of(context).listTileTheme.titleTextStyle,
+              style: context.theme.listTileTheme.titleTextStyle,
               overflow: TextOverflow.ellipsis,
             ),
           ),
@@ -39,7 +39,7 @@ class MyTasksCard extends StatelessWidget {
               taskModel.dueDate.toString(),
               style: TextStyle(
                 fontFamily: AppFonts.regular(context),
-                color: Theme.of(context).hintColor,
+                color: context.theme.hintColor,
                 fontSize: 12,
               ),
               overflow: TextOverflow.ellipsis,
@@ -51,10 +51,9 @@ class MyTasksCard extends StatelessWidget {
       subtitle: taskModel.groceries.isNotEmpty
           ? Text(
               '${taskModel.groceries.length} ${AppTranslations.newTasks}',
-              style:
-                  Theme.of(context).listTileTheme.subtitleTextStyle?.copyWith(
-                        color: Theme.of(context).primaryColorLight,
-                      ),
+              style: context.theme.listTileTheme.subtitleTextStyle?.copyWith(
+                color: context.theme.primaryColorLight,
+              ),
             )
           : const SizedBox.shrink(),
     );

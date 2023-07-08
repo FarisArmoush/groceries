@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/additional_resources/cubit/send_crash_reports_cubit.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class SendCrashReportsSwitchTile extends StatelessWidget {
   const SendCrashReportsSwitchTile({super.key});
@@ -30,7 +31,7 @@ class _SwitchListTile extends StatelessWidget {
             context.read<SendCrashReportsCubit>().toggle();
           },
           inactiveTrackColor: AppColors.black,
-          activeColor: Theme.of(context).primaryColorLight,
+          activeColor: context.theme.primaryColorLight,
           inactiveThumbColor: AppColors.veryLightGrey,
           activeTrackColor: AppColors.veryLightGrey,
           tileColor: Colors.transparent,

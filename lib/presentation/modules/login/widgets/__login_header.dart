@@ -9,7 +9,7 @@ class _LoginHeader extends StatelessWidget {
       AppTranslations.loginHeader,
       style: TextStyle(
         fontFamily: AppFonts.semiBold(context),
-        color: Theme.of(context).primaryColorLight,
+        color: context.theme.primaryColorLight,
         fontSize: 32,
       ),
     );

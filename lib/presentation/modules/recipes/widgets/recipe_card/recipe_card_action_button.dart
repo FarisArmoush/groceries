@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class RecipeCardActionButton extends StatelessWidget {
   const RecipeCardActionButton({
@@ -21,13 +22,13 @@ class RecipeCardActionButton extends StatelessWidget {
       icon: SvgPicture.asset(
         icon,
         // ignore: deprecated_member_use
-        color: Theme.of(context).primaryColor,
+        color: context.theme.primaryColor,
       ),
       label: Text(
         label,
         style: TextStyle(
           fontFamily: AppFonts.light(context),
-          color: Theme.of(context).primaryColor,
+          color: context.theme.primaryColor,
           fontSize: 16,
         ),
       ),

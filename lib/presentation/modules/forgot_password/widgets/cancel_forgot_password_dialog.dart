@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class CancelForgotPasswordDialog extends StatelessWidget {
   const CancelForgotPasswordDialog({super.key});
@@ -18,11 +18,6 @@ class CancelForgotPasswordDialog extends StatelessWidget {
         vertical: 16,
       ),
       children: [
-        Text(
-          AppTranslations.cancelForgotPassowordDialogBody,
-          style: Theme.of(context).dialogTheme.contentTextStyle,
-          textAlign: TextAlign.center,
-        ),
         SizedBox(
           height: context.deviceHeight * 0.01,
         ),

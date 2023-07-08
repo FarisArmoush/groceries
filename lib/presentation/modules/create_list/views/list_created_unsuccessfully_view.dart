@@ -4,7 +4,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class ListCreatedUnsuccessfullyView extends StatelessWidget {
   const ListCreatedUnsuccessfullyView({super.key});
@@ -27,7 +27,7 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
               AppTranslations.listCreatedUnsuccessfullyHeader,
               style: TextStyle(
                 fontFamily: AppFonts.semiBold(context),
-                color: Theme.of(context).primaryColorLight,
+                color: context.theme.primaryColorLight,
                 fontSize: 32,
               ),
               textAlign: TextAlign.center,
@@ -39,7 +39,7 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
               AppTranslations.listCreatedUnsuccessfullyBody,
               style: TextStyle(
                 fontFamily: AppFonts.regular(context),
-                color: Theme.of(context).hintColor,
+                color: context.theme.hintColor,
                 fontSize: 16,
               ),
               textAlign: TextAlign.center,

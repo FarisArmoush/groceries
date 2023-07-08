@@ -9,7 +9,7 @@ class _UpdateEmailBodyText extends StatelessWidget {
       'Choose your new Email',
       style: TextStyle(
         fontFamily: AppFonts.regular(context),
-        color: Theme.of(context).primaryColor,
+        color: context.theme.primaryColor,
         fontSize: 22,
       ),
     );

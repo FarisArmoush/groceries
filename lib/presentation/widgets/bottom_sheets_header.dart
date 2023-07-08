@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 /// {@template bottom_sheets_header}
 /// A header widget used in bottom sheets.
@@ -34,7 +35,7 @@ class BottomSheetsHeader extends StatelessWidget {
           header,
           style: TextStyle(
             fontFamily: AppFonts.regular(context),
-            color: Theme.of(context).primaryColor,
+            color: context.theme.primaryColor,
             fontSize: 18,
           ),
         ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/presentation/widgets/next_arrow_icon.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class SettingsListTile extends StatelessWidget {
   const SettingsListTile({
@@ -24,7 +25,7 @@ class SettingsListTile extends StatelessWidget {
       leading: SvgPicture.asset(
         iconPath,
         // ignore: deprecated_member_use
-        color: Theme.of(context).hintColor,
+        color: context.theme.hintColor,
       ),
       title: Text(title),
       subtitle: Text(subtitle),

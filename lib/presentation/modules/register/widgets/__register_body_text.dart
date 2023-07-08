@@ -9,7 +9,7 @@ class _RegisterBodyText extends StatelessWidget {
       AppTranslations.registerBody,
       style: TextStyle(
         fontFamily: AppFonts.regular(context),
-        color: Theme.of(context).primaryColor,
+        color: context.theme.primaryColor,
         fontSize: 22,
       ),
     );

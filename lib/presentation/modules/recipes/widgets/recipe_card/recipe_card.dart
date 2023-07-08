@@ -3,7 +3,7 @@ import 'package:groceries/data/models/recipe_model.dart';
 import 'package:groceries/presentation/modules/recipes/widgets/recipe_card/recipe_card_actions_row.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class RecipeCard extends StatelessWidget {
   const RecipeCard({
@@ -25,7 +25,7 @@ class RecipeCard extends StatelessWidget {
           recipeModel.name,
           style: TextStyle(
             fontFamily: AppFonts.semiBold(context),
-            color: Theme.of(context).primaryColor,
+            color: context.theme.primaryColor,
             fontSize: 32,
           ),
         ),

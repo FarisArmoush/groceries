@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class TileButton extends StatelessWidget {
   const TileButton({
@@ -25,13 +26,13 @@ class TileButton extends StatelessWidget {
       leading: SvgPicture.asset(
         icon,
         // ignore: deprecated_member_use
-        color: color ?? Theme.of(context).primaryColor,
+        color: color ?? context.theme.primaryColor,
       ),
       title: Text(
         title,
-        style: Theme.of(context).listTileTheme.titleTextStyle?.copyWith(
-              color: color ?? Theme.of(context).primaryColor,
-            ),
+        style: context.theme.listTileTheme.titleTextStyle?.copyWith(
+          color: color ?? context.theme.primaryColor,
+        ),
       ),
     );
   }

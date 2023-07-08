@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 /// {@template primary_box}
 /// A widget that represents a primary box container
@@ -32,7 +33,7 @@ class PrimaryBox extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
         borderRadius: borderRadius ?? BorderRadius.circular(16),
-        color: backgroundColor ?? Theme.of(context).cardColor,
+        color: backgroundColor ?? context.theme.cardColor,
       ),
       child: Material(
         color: Colors.transparent,
