@@ -1,6 +1,6 @@
 part of 'forgot_password_cubit.dart';
 
-class ForgotPasswordState extends Equatable {
+final class ForgotPasswordState extends Equatable {
   const ForgotPasswordState({
     this.email = const EmailForm.pure(),
     this.status = FormzStatus.pure,

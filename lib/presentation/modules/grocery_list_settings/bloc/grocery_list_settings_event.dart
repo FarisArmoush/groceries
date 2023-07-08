@@ -1,6 +1,6 @@
 part of 'grocery_list_settings_bloc.dart';
 
-abstract class GroceryListSettingsEvent extends Equatable {
+sealed class GroceryListSettingsEvent extends Equatable {
   const GroceryListSettingsEvent();
 
   @override

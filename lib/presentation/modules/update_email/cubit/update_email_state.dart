@@ -1,6 +1,6 @@
 part of 'update_email_cubit.dart';
 
-class UpdateEmailState extends Equatable {
+final class UpdateEmailState extends Equatable {
   const UpdateEmailState({
     this.email = const EmailForm.pure(),
     this.status = FormzStatus.pure,

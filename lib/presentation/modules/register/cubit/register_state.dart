@@ -1,6 +1,6 @@
 part of 'register_cubit.dart';
 
-class RegisterState extends Equatable {
+final class RegisterState extends Equatable {
   const RegisterState({
     this.displayName = const DisplayNameForm.pure(),
     this.email = const EmailForm.pure(),

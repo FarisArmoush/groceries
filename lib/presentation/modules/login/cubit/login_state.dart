@@ -1,6 +1,6 @@
 part of 'login_cubit.dart';
 
-class LoginState extends Equatable {
+final class LoginState extends Equatable {
   const LoginState({
     this.email = const EmailForm.pure(),
     this.password = const LoginPasswordForm.pure(),

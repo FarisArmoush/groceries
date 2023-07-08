@@ -1,6 +1,6 @@
 part of 'update_password_cubit.dart';
 
-class UpdatePasswordState extends Equatable {
+final class UpdatePasswordState extends Equatable {
   const UpdatePasswordState({
     this.email = const EmailForm.pure(),
     this.status = FormzStatus.pure,

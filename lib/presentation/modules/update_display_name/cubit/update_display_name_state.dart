@@ -1,6 +1,6 @@
 part of 'update_display_name_cubit.dart';
 
-class UpdateDisplayNameState extends Equatable {
+final class UpdateDisplayNameState extends Equatable {
   const UpdateDisplayNameState({
     this.name = const DisplayNameForm.pure(),
     this.status = FormzStatus.pure,
