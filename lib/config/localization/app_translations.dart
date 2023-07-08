@@ -109,10 +109,6 @@ class AppTranslations {
   static final cancelForgotPassowordDialogHeader =
       'cancel_forgot_password_dialog_header'.tr();
 
-  /// cancel_forgot_password_dialog_body
-  static final cancelForgotPassowordDialogBody =
-      'cancel_forgot_password_dialog_body'.tr();
-
   /// yes_cancel_forgot_password
   static final yesCancelForgotPassword = 'yes_cancel_forgot_password'.tr();
 

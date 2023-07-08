@@ -4,6 +4,7 @@ class _AppOutlinedButtonThemeData {
   static OutlinedButtonThemeData light(BuildContext context) {
     return OutlinedButtonThemeData(
       style: ButtonStyle(
+        splashFactory: _splashFactory,
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
@@ -37,6 +38,7 @@ class _AppOutlinedButtonThemeData {
   static OutlinedButtonThemeData dark(BuildContext context) {
     return OutlinedButtonThemeData(
       style: ButtonStyle(
+        splashFactory: _splashFactory,
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
@@ -66,4 +68,6 @@ class _AppOutlinedButtonThemeData {
       ),
     );
   }
+
+  static const _splashFactory = NoSplash.splashFactory;
 }

@@ -8,7 +8,7 @@ import 'package:groceries/presentation/widgets/app_snackbars/app_snack_bars.dart
 import 'package:groceries/presentation/widgets/app_text_field.dart';
 import 'package:groceries/presentation/widgets/buttons_loading_indicator.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 part '__submit_new_display_name_button.dart';
 part '__update_display_name_body_text.dart';

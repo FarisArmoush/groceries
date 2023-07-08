@@ -8,7 +8,7 @@ class _CategoryBoxDivider extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 1,
-      color: Theme.of(context).hintColor.withOpacity(0.25),
+      color: context.theme.hintColor.withOpacity(0.25),
     );
   }
 }

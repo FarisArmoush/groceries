@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class UserImage extends StatelessWidget {
   const UserImage({super.key});

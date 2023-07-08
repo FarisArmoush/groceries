@@ -5,7 +5,7 @@ import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/modules/settings/widgets/settings_list_tile.dart';
 import 'package:groceries/presentation/modules/settings/widgets/user_data_box.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});

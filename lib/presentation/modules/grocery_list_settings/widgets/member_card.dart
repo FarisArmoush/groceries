@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries/presentation/modules/grocery_list_settings/widgets/remove_list_member_bottom_sheet.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class MemberCard extends StatelessWidget {
   const MemberCard({super.key});
@@ -27,7 +27,7 @@ class MemberCard extends StatelessWidget {
           builder: (context) => const RemoveListMemberBottomSheet(),
         ),
         icon: Assets.svg.icUserX.svg(
-          color: Theme.of(context).hintColor,
+          color: context.theme.hintColor,
         ),
       ),
     );

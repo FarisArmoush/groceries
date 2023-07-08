@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class BottomSheetButton extends StatelessWidget {
   const BottomSheetButton({
@@ -29,7 +30,7 @@ class BottomSheetButton extends StatelessWidget {
       leading: SvgPicture.asset(
         iconPath,
         // ignore: deprecated_member_use
-        color: Theme.of(context).primaryColor,
+        color: context.theme.primaryColor,
       ),
     );
   }

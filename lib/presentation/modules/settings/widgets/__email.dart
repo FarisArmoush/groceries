@@ -12,7 +12,7 @@ class _Email extends StatelessWidget {
       email ?? '',
       style: TextStyle(
         fontFamily: AppFonts.light(context),
-        color: Theme.of(context).hintColor,
+        color: context.theme.hintColor,
         fontSize: 12,
       ),
       textAlign: TextAlign.center,

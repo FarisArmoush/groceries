@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class BaseOnboardingPage extends StatelessWidget {
   const BaseOnboardingPage({
@@ -33,7 +33,7 @@ class BaseOnboardingPage extends StatelessWidget {
           const Spacer(),
           Container(
             width: double.infinity,
-            color: Theme.of(context).cardColor,
+            color: context.theme.cardColor,
             padding: const EdgeInsets.all(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,7 +42,7 @@ class BaseOnboardingPage extends StatelessWidget {
                   title,
                   style: TextStyle(
                     fontFamily: AppFonts.semiBold(context),
-                    color: Theme.of(context).primaryColor,
+                    color: context.theme.primaryColor,
                     fontSize: 26,
                   ),
                 ),
@@ -53,7 +53,7 @@ class BaseOnboardingPage extends StatelessWidget {
                   body,
                   style: TextStyle(
                     fontFamily: AppFonts.regular(context),
-                    color: Theme.of(context).hintColor,
+                    color: context.theme.hintColor,
                     fontSize: 18,
                   ),
                 ),

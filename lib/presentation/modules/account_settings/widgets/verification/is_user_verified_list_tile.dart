@@ -6,6 +6,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/repositories/firebase_auth_repository.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/verification/send_verification_email_bottom_sheet.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class IsUserVerifiedListTile extends StatelessWidget {
   const IsUserVerifiedListTile({super.key});
@@ -22,7 +23,7 @@ class IsUserVerifiedListTile extends StatelessWidget {
               color: Colors.green,
             )
           : Assets.svg.icVerified.svg(
-              color: Theme.of(context).hintColor,
+              color: context.theme.hintColor,
             ),
       subtitle: Text(isVerified == true ? 'Yes' : 'No'),
       onTap: isVerified == true

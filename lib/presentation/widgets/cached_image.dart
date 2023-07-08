@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 /// {@template cached_image}
 /// A widget that displays a cached network image.
@@ -79,7 +80,7 @@ class CachedImage extends StatelessWidget {
       },
       errorWidget: (context, url, error) {
         return Assets.svg.icCircleX.svg(
-          color: Theme.of(context).primaryColorLight,
+          color: context.theme.primaryColorLight,
         );
       },
     );

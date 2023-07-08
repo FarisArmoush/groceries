@@ -6,7 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/delete_account/cubit/delete_account_cubit.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class DeleteAccountButton extends StatelessWidget {
   const DeleteAccountButton({super.key});

@@ -6,6 +6,7 @@ import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/modules/recipes/bloc/recipes_bloc.dart';
 import 'package:groceries/presentation/modules/recipes/widgets/recipes_form.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class RecipesView extends StatelessWidget {
   const RecipesView({super.key});
@@ -22,7 +23,7 @@ class RecipesView extends StatelessWidget {
           IconButton(
             onPressed: () => context.pushNamed(AppNamedRoutes.createRecipe),
             icon: Assets.svg.icPlusCircle.svg(
-              color: Theme.of(context).primaryColorLight,
+              color: context.theme.primaryColorLight,
             ),
           ),
         ],

@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 /// {@template next_arrow_icon}
 /// An icon widget that represents a next arrow.
@@ -25,7 +26,7 @@ class NextArrowIcon extends StatelessWidget {
           ? Assets.svg.icLeftArrow.path
           : Assets.svg.icRightArrow.path,
       // ignore: deprecated_member_use
-      color: color ?? Theme.of(context).hintColor,
+      color: color ?? context.theme.hintColor,
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 /// {@template app_loading_indicator}
 /// A widget that displays a loading indicator.
@@ -13,7 +14,7 @@ class AppLoadingIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: CircularProgressIndicator(
-        color: Theme.of(context).primaryColorLight,
+        color: context.theme.primaryColorLight,
       ),
     );
   }

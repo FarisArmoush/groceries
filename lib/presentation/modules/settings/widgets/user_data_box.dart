@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 part '__display_name.dart';
 part '__email.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class DeleteRecipeBottomSheet extends StatelessWidget {
   const DeleteRecipeBottomSheet({super.key});
@@ -18,7 +18,7 @@ class DeleteRecipeBottomSheet extends StatelessWidget {
       children: [
         Text(
           AppTranslations.deleteRecipeBottomSheetHeader,
-          style: Theme.of(context).dialogTheme.titleTextStyle,
+          style: context.theme.dialogTheme.titleTextStyle,
           textAlign: TextAlign.center,
         ),
         SizedBox(

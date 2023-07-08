@@ -4,7 +4,7 @@ import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class CreateNewGroceryListCardButton extends StatelessWidget {
   const CreateNewGroceryListCardButton({
@@ -17,7 +17,7 @@ class CreateNewGroceryListCardButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       borderRadius: BorderRadius.circular(12),
-      color: Theme.of(context).primaryColorLight,
+      color: context.theme.primaryColorLight,
       child: InkWell(
         onTap: () => context.pushNamed(AppNamedRoutes.createList),
         child: Container(

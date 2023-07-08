@@ -4,7 +4,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/grocery_list_model.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/widgets/grocery_list_options_button.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class GroceryListCard extends StatelessWidget {
   const GroceryListCard({
@@ -20,7 +20,7 @@ class GroceryListCard extends StatelessWidget {
     return Material(
       type: MaterialType.card,
       borderRadius: BorderRadius.circular(12),
-      color: Theme.of(context).cardColor,
+      color: context.theme.cardColor,
       child: InkWell(
         splashFactory: NoSplash.splashFactory,
         onTap: onTap,
@@ -77,14 +77,14 @@ class GroceryListCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
-        color: Theme.of(context).primaryColor,
+        color: context.theme.primaryColor,
         borderRadius: BorderRadius.circular(12),
       ),
       child: Text(
         '${listModel.tasksAmount} ${AppTranslations.newTasks}',
         style: TextStyle(
           fontFamily: AppFonts.light(context),
-          color: Theme.of(context).colorScheme.secondary,
+          color: context.theme.colorScheme.secondary,
           fontSize: 10,
         ),
       ),
@@ -96,7 +96,7 @@ class GroceryListCard extends StatelessWidget {
       listModel.name,
       style: TextStyle(
         fontFamily: AppFonts.medium(context),
-        color: Theme.of(context).primaryColor,
+        color: context.theme.primaryColor,
         fontSize: 20,
       ),
       maxLines: 2,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 /// {@template page_indicator}

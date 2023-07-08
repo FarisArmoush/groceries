@@ -3,7 +3,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/create_list/widgets/add_image_button.dart';
 import 'package:groceries/presentation/widgets/app_text_field.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class AddListNameAndImageView extends StatelessWidget {
   const AddListNameAndImageView({super.key});

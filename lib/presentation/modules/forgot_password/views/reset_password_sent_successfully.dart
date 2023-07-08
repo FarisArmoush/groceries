@@ -4,7 +4,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class ResetPasswordSentSuccessfullyView extends StatelessWidget {
   const ResetPasswordSentSuccessfullyView({super.key});
@@ -34,7 +34,7 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
             'Check your Email!',
             style: TextStyle(
               fontFamily: AppFonts.bold(context),
-              color: Theme.of(context).primaryColorLight,
+              color: context.theme.primaryColorLight,
               fontSize: 30,
             ),
             textAlign: TextAlign.center,
@@ -46,7 +46,7 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
             'We have sent a password reset instrucion to your email',
             style: TextStyle(
               fontFamily: AppFonts.regular(context),
-              color: Theme.of(context).primaryColor,
+              color: context.theme.primaryColor,
               fontSize: 20,
             ),
             textAlign: TextAlign.center,

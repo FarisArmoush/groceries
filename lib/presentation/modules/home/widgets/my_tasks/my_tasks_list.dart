@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/data/models/task_model.dart';
 import 'package:groceries/presentation/modules/home/widgets/my_tasks/my_tasks_card.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class MyTasksList extends StatelessWidget {
   const MyTasksList({

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class InviteUsersToListForm extends StatelessWidget {
   const InviteUsersToListForm({super.key});
@@ -21,7 +21,7 @@ class InviteUsersToListForm extends StatelessWidget {
           AppTranslations.invitePeopleToList,
           style: TextStyle(
             fontFamily: AppFonts.semiBold(context),
-            color: Theme.of(context).primaryColor,
+            color: context.theme.primaryColor,
             fontSize: 28,
           ),
           textAlign: TextAlign.center,
@@ -45,14 +45,14 @@ class InviteUsersToListForm extends StatelessWidget {
         TextButton.icon(
           onPressed: () {},
           icon: Assets.svg.icAtSign.svg(
-            color: Theme.of(context).primaryColor,
+            color: context.theme.primaryColor,
             height: context.deviceHeight * 0.03,
           ),
           label: Text(
             AppTranslations.email,
             style: TextStyle(
               fontFamily: AppFonts.regular(context),
-              color: Theme.of(context).primaryColor,
+              color: context.theme.primaryColor,
               fontSize: 16,
             ),
           ),
@@ -60,14 +60,14 @@ class InviteUsersToListForm extends StatelessWidget {
         TextButton.icon(
           onPressed: () {},
           icon: Assets.svg.icClipboardCopy.svg(
-            color: Theme.of(context).primaryColor,
+            color: context.theme.primaryColor,
             height: context.deviceHeight * 0.03,
           ),
           label: Text(
             AppTranslations.copyInvitationLink,
             style: TextStyle(
               fontFamily: AppFonts.regular(context),
-              color: Theme.of(context).primaryColor,
+              color: context.theme.primaryColor,
               fontSize: 16,
             ),
           ),

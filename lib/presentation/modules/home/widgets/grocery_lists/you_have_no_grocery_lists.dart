@@ -5,7 +5,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class YouDontHaveGroceryLists extends StatelessWidget {
   const YouDontHaveGroceryLists({super.key});
@@ -27,7 +27,7 @@ class YouDontHaveGroceryLists extends StatelessWidget {
           style: TextStyle(
             fontFamily: AppFonts.medium(context),
             fontSize: 16,
-            color: Theme.of(context).primaryColor,
+            color: context.theme.primaryColor,
           ),
           textAlign: TextAlign.center,
         ),

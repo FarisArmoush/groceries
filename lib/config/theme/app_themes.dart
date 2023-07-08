@@ -11,6 +11,7 @@ part '__app_divider_theme_data.dart';
 part '__app_elevated_button_theme_data.dart';
 part '__app_filled_button_theme_data.dart';
 part '__app_floating_action_button_theme_data.dart';
+part '__app_icon_button_theme_data.dart';
 part '__app_input_decoration_theme_data.dart';
 part '__app_list_tile_theme_data.dart';
 part '__app_outlined_button_theme_data.dart';
@@ -54,6 +55,7 @@ class AppThemes {
         floatingActionButtonTheme:
             _AppFloatingActionButtonThemeData.light(context),
         dividerTheme: _AppDividerThemeData.light,
+        iconButtonTheme: __AppIconButtonThemeData.light,
       );
 
   /// Returns the dark theme for the application.
@@ -87,5 +89,6 @@ class AppThemes {
         floatingActionButtonTheme:
             _AppFloatingActionButtonThemeData.dark(context),
         dividerTheme: _AppDividerThemeData.dark,
+        iconButtonTheme: __AppIconButtonThemeData.dark,
       );
 }

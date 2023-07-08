@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class OtherOptionTextButton extends StatelessWidget {
   const OtherOptionTextButton({
@@ -24,7 +25,7 @@ class OtherOptionTextButton extends StatelessWidget {
               text: '$upperText\n',
               style: TextStyle(
                 fontFamily: AppFonts.light(context),
-                color: Theme.of(context).hintColor,
+                color: context.theme.hintColor,
                 fontSize: 14,
               ),
             ),
@@ -32,7 +33,7 @@ class OtherOptionTextButton extends StatelessWidget {
               text: lowerText,
               style: TextStyle(
                 fontFamily: AppFonts.medium(context),
-                color: Theme.of(context).primaryColorLight,
+                color: context.theme.primaryColorLight,
                 fontSize: 14,
               ),
             ),

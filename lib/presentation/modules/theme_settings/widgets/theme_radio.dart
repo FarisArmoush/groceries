@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class ThemeRadio extends StatelessWidget {
   const ThemeRadio({
@@ -21,7 +22,7 @@ class ThemeRadio extends StatelessWidget {
       onChanged: onChanged,
       title: Text(title),
       tileColor: Colors.transparent,
-      activeColor: Theme.of(context).primaryColorLight,
+      activeColor: context.theme.primaryColorLight,
       controlAffinity: ListTileControlAffinity.trailing,
     );
   }

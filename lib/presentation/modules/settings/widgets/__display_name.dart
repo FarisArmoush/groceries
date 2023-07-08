@@ -12,7 +12,7 @@ class _DisplayName extends StatelessWidget {
       name ?? '',
       style: TextStyle(
         fontFamily: AppFonts.medium(context),
-        color: Theme.of(context).primaryColor,
+        color: context.theme.primaryColor,
         fontSize: 16,
       ),
       textAlign: TextAlign.center,

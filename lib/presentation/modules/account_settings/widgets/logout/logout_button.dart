@@ -8,6 +8,7 @@ import 'package:groceries/presentation/modules/account_settings/widgets/logout/l
 import 'package:groceries/presentation/widgets/app_snackbars/app_snack_bars.dart';
 import 'package:groceries/presentation/widgets/buttons/tile_button.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class LogoutButton extends StatelessWidget {
   const LogoutButton({super.key});
@@ -27,20 +28,11 @@ class LogoutButton extends StatelessWidget {
             );
           context.pushReplacementNamed(AppNamedRoutes.welcome);
         }
-        // else {
-        //   ScaffoldMessenger.of(context)
-        //     ..hideCurrentSnackBar()
-        //     ..showSnackBar(
-        //       AppSnackBars.error(
-        //         error: 'Failed to logout.\nTry again later',
-        //       ),
-        //     );
-        // }
       },
       child: TileButton(
         title: AppTranslations.logout,
         icon: Assets.svg.icLogout.path,
-        color: Theme.of(context).primaryColorLight,
+        color: context.theme.primaryColorLight,
         onTap: () => showModalBottomSheet<LogoutBottomSheet>(
           context: context,
           showDragHandle: true,

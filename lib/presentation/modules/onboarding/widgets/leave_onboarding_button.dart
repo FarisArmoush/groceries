@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class LeaveOnboardingButton extends StatelessWidget {
   const LeaveOnboardingButton({super.key});
@@ -13,7 +14,7 @@ class LeaveOnboardingButton extends StatelessWidget {
       label: Text(
         AppTranslations.finishIntroduction,
       ),
-      backgroundColor: Theme.of(context).primaryColorLight,
+      backgroundColor: context.theme.primaryColorLight,
     );
   }
 }

@@ -7,6 +7,7 @@ import 'package:groceries/presentation/modules/root/blocs/grocery_lists/grocery_
 import 'package:groceries/presentation/modules/root/blocs/my_tasks/my_tasks_bloc.dart';
 import 'package:groceries/presentation/modules/settings/views/settings_view.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class RootView extends StatefulWidget {
   const RootView({super.key});
@@ -33,7 +34,7 @@ class _RootViewState extends State<RootView> {
         body: views[currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
-          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          backgroundColor: context.theme.scaffoldBackgroundColor,
           currentIndex: currentIndex,
           onTap: (int index) => setState(() => currentIndex = index),
           showSelectedLabels: false,
@@ -78,14 +79,14 @@ class _RootViewState extends State<RootView> {
       icon: SvgPicture.asset(
         asset,
         // ignore: deprecated_member_use
-        color: Theme.of(context).hintColor,
+        color: context.theme.hintColor,
       ),
       label: label,
       tooltip: label,
       activeIcon: SvgPicture.asset(
         asset,
         // ignore: deprecated_member_use
-        color: Theme.of(context).primaryColor,
+        color: context.theme.primaryColor,
       ),
     );
   }

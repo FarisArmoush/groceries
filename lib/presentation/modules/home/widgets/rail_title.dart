@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class RailTitle extends StatelessWidget {
   const RailTitle({required this.title, super.key});
@@ -12,7 +13,7 @@ class RailTitle extends StatelessWidget {
       title,
       style: TextStyle(
         fontFamily: AppFonts.semiBold(context),
-        color: Theme.of(context).primaryColor,
+        color: context.theme.primaryColor,
         fontSize: 22,
       ),
     );

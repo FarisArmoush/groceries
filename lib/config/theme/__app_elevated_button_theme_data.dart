@@ -6,6 +6,7 @@ class __AppElevatedButtonThemeData {
   static ElevatedButtonThemeData light(BuildContext context) {
     return ElevatedButtonThemeData(
       style: ButtonStyle(
+        splashFactory: _splashFactory,
         shape: MaterialStateProperty.all<OutlinedBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
@@ -42,6 +43,7 @@ class __AppElevatedButtonThemeData {
   static ElevatedButtonThemeData dark(BuildContext context) {
     return ElevatedButtonThemeData(
       style: ButtonStyle(
+        splashFactory: _splashFactory,
         shape: MaterialStateProperty.all<OutlinedBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
@@ -79,4 +81,6 @@ class __AppElevatedButtonThemeData {
       ),
     );
   }
+
+  static const _splashFactory = NoSplash.splashFactory;
 }

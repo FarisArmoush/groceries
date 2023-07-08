@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 /// {@template app_text_field}
 /// A custom text field widget for the application.
@@ -118,17 +119,17 @@ class AppTextField extends StatelessWidget {
       onTap: onTap,
       keyboardType: keyboardType,
       onTapOutside: onTapOutside,
-      cursorColor: Theme.of(context).primaryColorLight,
+      cursorColor: context.theme.primaryColorLight,
       cursorWidth: 1,
       onEditingComplete: onEditingComplete,
       style: TextStyle(
         fontFamily: AppFonts.regular(context),
-        color: Theme.of(context).primaryColor,
+        color: context.theme.primaryColor,
         fontSize: 14,
       ),
       autovalidateMode: autovalidateMode,
       decoration: InputDecoration(
-        suffixIconColor: Theme.of(context).primaryColor,
+        suffixIconColor: context.theme.primaryColor,
         suffix: suffix,
         prefix: prefix,
         prefixIcon: prefixIcon,
@@ -143,12 +144,12 @@ class AppTextField extends StatelessWidget {
         focusedErrorBorder: focusedBorder,
         labelStyle: TextStyle(
           fontFamily: AppFonts.regular(context),
-          color: Theme.of(context).hintColor,
+          color: context.theme.hintColor,
           fontSize: 16,
         ),
         floatingLabelStyle: TextStyle(
           fontFamily: AppFonts.regular(context),
-          color: Theme.of(context).primaryColor,
+          color: context.theme.primaryColor,
           fontSize: 16,
         ),
       ),

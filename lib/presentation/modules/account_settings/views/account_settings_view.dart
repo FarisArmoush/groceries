@@ -8,7 +8,7 @@ import 'package:groceries/presentation/modules/account_settings/widgets/user_cre
 import 'package:groceries/presentation/modules/account_settings/widgets/user_image/edit_user_image_button.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/user_image/user_image.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/verification/is_user_verified_list_tile.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class AccountSettingsView extends StatelessWidget {
   const AccountSettingsView({super.key});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
-import 'package:groceries/utils/extenstions/media_query_values.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 part '_add_items_button.dart';
 part '_category_box_divider.dart';
@@ -17,7 +17,7 @@ class CategoryBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ColoredBox(
-      color: Theme.of(context).cardColor,
+      color: context.theme.cardColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -31,7 +31,7 @@ class CategoryBox extends StatelessWidget {
               category,
               style: TextStyle(
                 fontFamily: AppFonts.regular(context),
-                color: Theme.of(context).primaryColor,
+                color: context.theme.primaryColor,
                 fontSize: 14,
               ),
             ),
