@@ -22,7 +22,7 @@ class UpdateDisplayNameForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<UpdateDisplayNameCubit, UpdateDisplayNameState>(
       listener: (context, state) {
-        if (state.status.isSubmissionSuccess) {
+        if (state.status.isSuccess) {
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(
@@ -32,7 +32,7 @@ class UpdateDisplayNameForm extends StatelessWidget {
             );
           context.pushReplacementNamed(AppNamedRoutes.root);
         }
-        if (state.status.isSubmissionFailure) {
+        if (state.status.isFailure) {
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(

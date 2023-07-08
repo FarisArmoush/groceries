@@ -6,9 +6,8 @@ class _RegisterButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<RegisterCubit, RegisterState>(
-      buildWhen: (previous, current) => previous.status != current.status,
       builder: (context, state) {
-        if (state.status.isSubmissionInProgress) {
+        if (state.status.isInProgress) {
           return IgnorePointer(
             child: FilledButton.icon(
               onPressed: () {},
@@ -17,16 +16,8 @@ class _RegisterButton extends StatelessWidget {
             ),
           );
         }
-        // if (!state.status.isValidated) {
-        //   // Returns a disabled button
-        //   return FilledButton(
-        //     onPressed: null,
-        //     style: DisabledButtonStyle(),
-        //     child: Text(AppTranslations.register),
-        //   );
-        // }
         return FilledButton(
-          onPressed: state.status.isValidated
+          onPressed: state.isValid
               ? () => context.read<RegisterCubit>().register()
               : null,
           child: Text(

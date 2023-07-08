@@ -15,7 +15,7 @@ class _SubmitNewEmailButton extends StatelessWidget {
         child: BlocBuilder<UpdateEmailCubit, UpdateEmailState>(
           buildWhen: (previous, current) => previous.status != current.status,
           builder: (context, state) {
-            if (state.status.isSubmissionInProgress) {
+            if (state.status.isInProgress) {
               // An untapable button with a loading indicator.
               return IgnorePointer(
                 child: ElevatedButton.icon(
@@ -26,7 +26,7 @@ class _SubmitNewEmailButton extends StatelessWidget {
               );
             }
             return ElevatedButton(
-              onPressed: state.status.isValidated
+              onPressed: state.isValid
                   ? null
                   : () => context.read<UpdateEmailCubit>().updateEmail(),
               child: const Text('Submit'),

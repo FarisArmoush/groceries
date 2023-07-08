@@ -6,9 +6,8 @@ class _LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<LoginCubit, LoginState>(
-      buildWhen: (previous, current) => previous.status != current.status,
       builder: (context, state) {
-        if (state.status.isSubmissionInProgress) {
+        if (state.status.isInProgress) {
           // An untapable button with a loading indicator.
           return IgnorePointer(
             child: FilledButton.icon(
@@ -19,9 +18,8 @@ class _LoginButton extends StatelessWidget {
           );
         }
         return FilledButton(
-          onPressed: state.status.isValidated
-              ? () => context.read<LoginCubit>().login()
-              : null,
+          onPressed:
+              state.isValid ? () => context.read<LoginCubit>().login() : null,
           child: Text(AppTranslations.login),
         );
       },

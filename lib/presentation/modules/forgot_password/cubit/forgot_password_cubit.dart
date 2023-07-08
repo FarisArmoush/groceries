@@ -17,36 +17,36 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
     emit(
       state.copyWith(
         email: email,
-        status: Formz.validate([email]),
+        isValid: Formz.validate([email]),
       ),
     );
   }
 
   Future<void> sendEmail() async {
-    if (!state.status.isValidated) return;
+    if (!state.isValid) return;
     emit(
       state.copyWith(
-        status: FormzStatus.submissionInProgress,
+        status: FormzSubmissionStatus.inProgress,
       ),
     );
     try {
       await authRepo.sendPasswordResetEmail(email: state.email.value);
       emit(
         state.copyWith(
-          status: FormzStatus.submissionSuccess,
+          status: FormzSubmissionStatus.success,
         ),
       );
     } on SendPasswordResetEmailException catch (e) {
       emit(
         state.copyWith(
           errorMessage: e.message,
-          status: FormzStatus.submissionFailure,
+          status: FormzSubmissionStatus.failure,
         ),
       );
     } catch (_) {
       emit(
         state.copyWith(
-          status: FormzStatus.submissionFailure,
+          status: FormzSubmissionStatus.failure,
         ),
       );
     }

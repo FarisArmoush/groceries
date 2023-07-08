@@ -29,7 +29,7 @@ class LoginForm extends StatelessWidget {
     return Scaffold(
       body: BlocListener<LoginCubit, LoginState>(
         listener: (context, state) {
-          if (state.status.isSubmissionFailure) {
+          if (state.status.isFailure) {
             ScaffoldMessenger.of(context)
               ..hideCurrentSnackBar()
               ..showSnackBar(
@@ -38,7 +38,7 @@ class LoginForm extends StatelessWidget {
                 ),
               );
           }
-          if (state.status.isSubmissionSuccess) {
+          if (state.status.isSuccess) {
             ScaffoldMessenger.of(context)
               ..hideCurrentSnackBar()
               ..showSnackBar(

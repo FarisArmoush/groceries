@@ -17,20 +17,20 @@ class UpdatePasswordCubit extends Cubit<UpdatePasswordState> {
     emit(
       state.copyWith(
         email: email,
-        status: Formz.validate([email]),
+        isValid: Formz.validate([email]),
       ),
     );
   }
 
   Future<void> updateEmail() async {
-    emit(state.copyWith(status: FormzStatus.submissionInProgress));
+    emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
     try {
       await authRepository.updateEmail(state.email.value);
-      emit(state.copyWith(status: FormzStatus.submissionSuccess));
+      emit(state.copyWith(status: FormzSubmissionStatus.success));
     } catch (_) {
       emit(
         state.copyWith(
-          status: FormzStatus.submissionFailure,
+          status: FormzSubmissionStatus.failure,
           errorMessage: 'Something went wrong.',
         ),
       );
