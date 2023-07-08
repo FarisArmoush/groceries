@@ -29,9 +29,6 @@ abstract class BaseAuthRepository {
   /// Updates the user's display name
   Future<void> updateDisplayName(String newName);
 
-  /// Signs in a user with Google.
-  Future<void> loginWithGoogle();
-
   /// Signs out the current user.
   Future<void> logOut();
 
