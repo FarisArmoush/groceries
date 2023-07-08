@@ -23,12 +23,12 @@ class ForgotPasswordForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<ForgotPasswordCubit, ForgotPasswordState>(
       listener: (context, state) {
-        if (state.status.isSubmissionSuccess) {
+        if (state.status.isSuccess) {
           context.pushReplacementNamed(
             AppNamedRoutes.resetPasswordSentSuccessfully,
           );
         }
-        if (state.status.isSubmissionFailure) {
+        if (state.status.isFailure) {
           context.pop();
           ScaffoldMessenger.of(context).showSnackBar(
             AppSnackBars.error(
@@ -36,7 +36,7 @@ class ForgotPasswordForm extends StatelessWidget {
             ),
           );
         }
-        if (state.status.isSubmissionInProgress) {
+        if (state.status.isInProgress) {
           showDialog<AppLoadingIndicator>(
             context: context,
             builder: (context) => const AppLoadingIndicator(),

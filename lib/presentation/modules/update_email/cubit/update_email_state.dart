@@ -1,27 +1,31 @@
 part of 'update_email_cubit.dart';
 
-class UpdateEmailState extends Equatable {
+final class UpdateEmailState extends Equatable {
   const UpdateEmailState({
     this.email = const EmailForm.pure(),
-    this.status = FormzStatus.pure,
+    this.status = FormzSubmissionStatus.initial,
     this.errorMessage,
+    this.isValid = false,
   });
 
   final EmailForm email;
-  final FormzStatus status;
+  final FormzSubmissionStatus status;
   final String? errorMessage;
+  final bool isValid;
   @override
   List<Object> get props => [email, status];
 
   UpdateEmailState copyWith({
     EmailForm? email,
-    FormzStatus? status,
+    FormzSubmissionStatus? status,
     String? errorMessage,
+    bool? isValid,
   }) {
     return UpdateEmailState(
       email: email ?? this.email,
       status: status ?? this.status,
       errorMessage: errorMessage ?? this.errorMessage,
+      isValid: isValid ?? this.isValid,
     );
   }
 }

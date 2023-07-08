@@ -19,7 +19,7 @@ class LoginCubit extends Cubit<LoginState> {
     emit(
       state.copyWith(
         email: email,
-        status: Formz.validate([email, state.password]),
+        isValid: Formz.validate([email, state.password]),
       ),
     );
   }
@@ -29,48 +29,48 @@ class LoginCubit extends Cubit<LoginState> {
     emit(
       state.copyWith(
         password: password,
-        status: Formz.validate([state.email, password]),
+        isValid: Formz.validate([state.email, password]),
       ),
     );
   }
 
   Future<void> login() async {
-    if (!state.status.isValidated) return;
+    if (!state.isValid) return;
     emit(
-      state.copyWith(status: FormzStatus.submissionInProgress),
+      state.copyWith(status: FormzSubmissionStatus.inProgress),
     );
     try {
       await authRepo.signInWithEmailAndPassword(
         email: state.email.value,
         password: state.password.value,
       );
-      emit(state.copyWith(status: FormzStatus.submissionSuccess));
+      emit(state.copyWith(status: FormzSubmissionStatus.success));
     } on LoginWithEmailAndPasswordException catch (e) {
       emit(
         state.copyWith(
           errorMessage: e.message,
-          status: FormzStatus.submissionFailure,
+          status: FormzSubmissionStatus.failure,
         ),
       );
     } catch (_) {
-      emit(state.copyWith(status: FormzStatus.submissionFailure));
+      emit(state.copyWith(status: FormzSubmissionStatus.failure));
     }
   }
 
   Future<void> logInWithGoogle() async {
-    emit(state.copyWith(status: FormzStatus.submissionInProgress));
+    emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
     try {
       await authRepo.loginWithGoogle();
-      emit(state.copyWith(status: FormzStatus.submissionSuccess));
+      emit(state.copyWith(status: FormzSubmissionStatus.success));
     } on LoginWithGoogleException catch (e) {
       emit(
         state.copyWith(
           errorMessage: e.message,
-          status: FormzStatus.submissionFailure,
+          status: FormzSubmissionStatus.failure,
         ),
       );
     } catch (_) {
-      emit(state.copyWith(status: FormzStatus.submissionFailure));
+      emit(state.copyWith(status: FormzSubmissionStatus.failure));
     }
   }
 }

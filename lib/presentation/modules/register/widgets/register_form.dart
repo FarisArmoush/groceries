@@ -29,7 +29,7 @@ class RegisterForm extends StatelessWidget {
     return Scaffold(
       body: BlocListener<RegisterCubit, RegisterState>(
         listener: (context, state) {
-          if (state.status.isSubmissionFailure) {
+          if (state.status.isFailure) {
             ScaffoldMessenger.of(context)
               ..hideCurrentSnackBar()
               ..showSnackBar(
@@ -39,7 +39,7 @@ class RegisterForm extends StatelessWidget {
               );
           }
 
-          if (state.status.isSubmissionSuccess) {
+          if (state.status.isSuccess) {
             ScaffoldMessenger.of(context)
               ..hideCurrentSnackBar()
               ..showSnackBar(
