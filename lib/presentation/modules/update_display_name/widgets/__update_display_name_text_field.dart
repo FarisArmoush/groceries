@@ -12,7 +12,7 @@ class _UpdateDisplayNameTextField extends StatelessWidget {
           labelText: 'New username',
           onChanged: (name) =>
               context.read<UpdateDisplayNameCubit>().nameChanged(name),
-          errorText: state.name.error,
+          errorText: state.name.displayError,
           validator: (value) => state.name.validator(value),
         );
       },

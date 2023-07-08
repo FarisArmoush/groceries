@@ -12,7 +12,7 @@ class _UpdateEmailTextField extends StatelessWidget {
           labelText: 'New username',
           onChanged: (email) =>
               context.read<UpdateEmailCubit>().emailChanged(email),
-          errorText: state.email.error,
+          errorText: state.email.displayError,
           validator: (value) => state.email.validator(value),
         );
       },

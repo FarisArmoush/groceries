@@ -17,7 +17,7 @@ class _RegisterPasswordTextField extends StatelessWidget {
             context.read<RegisterCubit>().passwordChanged(password);
           },
           labelText: AppTranslations.password,
-          errorText: state.password.error,
+          errorText: state.password.displayError,
         );
       },
     );

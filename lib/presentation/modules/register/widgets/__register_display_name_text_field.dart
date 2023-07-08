@@ -16,7 +16,7 @@ class _RegisterDisplayNameTextField extends StatelessWidget {
           prefixIcon: const Icon(CupertinoIcons.person_circle),
           keyboardType: TextInputType.name,
           labelText: AppTranslations.username,
-          errorText: state.displayName.error,
+          errorText: state.displayName.displayError,
           validator: (value) => state.displayName.validator(value),
         );
       },

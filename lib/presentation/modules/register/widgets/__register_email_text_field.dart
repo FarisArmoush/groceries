@@ -18,7 +18,7 @@ class _RegisterEmailTextField extends StatelessWidget {
           keyboardType: TextInputType.emailAddress,
           labelText: AppTranslations.email,
           validator: (value) => state.email.validator(value),
-          errorText: state.email.error,
+          errorText: state.email.displayError,
         );
       },
     );

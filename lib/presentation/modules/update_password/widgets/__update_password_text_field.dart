@@ -12,7 +12,7 @@ class _UpdatePasswordTextField extends StatelessWidget {
           labelText: 'New Password',
           onChanged: (email) =>
               context.read<UpdatePasswordCubit>().emailChanged(email),
-          errorText: state.email.error,
+          errorText: state.email.displayError,
           validator: (value) => state.email.validator(value),
         );
       },
