@@ -13,7 +13,6 @@ class _SubmitNewDisplayNameButton extends StatelessWidget {
       child: SizedBox(
         width: context.deviceHeight,
         child: BlocBuilder<UpdateDisplayNameCubit, UpdateDisplayNameState>(
-          buildWhen: (previous, current) => previous.status != current.status,
           builder: (context, state) {
             if (state.status.isInProgress) {
               // An untapable button with a loading indicator.
@@ -26,7 +25,7 @@ class _SubmitNewDisplayNameButton extends StatelessWidget {
               );
             }
             return ElevatedButton(
-              onPressed: state.isValid
+              onPressed: !state.isValid
                   ? null
                   : () => context
                       .read<UpdateDisplayNameCubit>()
