@@ -381,7 +381,35 @@ class AppTranslations {
   /// dont_logout
   static final dontLogout = 'dont_logout'.tr();
 
-  // $_DELETE_ACCOUNT_$
+  /// $_VERIFY_ACCOUNT_$
+
+  /// verify_account
+  static final verifyAccount = 'verify_account'.tr();
+
+  /// send_verification_email
+  static final sendVerificationEmail = 'send_verification_email'.tr();
+
+  /// failed_to_send_verification_email
+  static final failedToSendVerificationEmail =
+      'failed_to_send_verification_email'.tr();
+
+  /// verification_email_sent_successfully_header
+  static final verificationEmailSentSuccessfullyHeader =
+      'verification_email_sent_successfully_header'.tr();
+
+  /// verification_email_sent_successfully_body
+  static final verificationEmailSentSuccessfullyBody =
+      'verification_email_sent_successfully_body'.tr();
+
+  /// sending_verification_email_loading_message
+  static final sendingVerificationEmailLoadingMessage =
+      'sending_verification_email_loading_message'.tr();
+
+  /// your_account_is_verified
+  static final yourAccountIsVerified = 'your_account_is_verified'.tr();
+
+  /// $_DELETE_ACCOUNT_$
+
   /// delete_account
   static final deleteAccount = 'delete_account'.tr();
 

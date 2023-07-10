@@ -150,4 +150,13 @@ class FirebaseAuthRepository implements BaseAuthRepository {
       throw const UpdatePasswordException();
     }
   }
+
+  @override
+  Future<void> sendVerificationEmail() async {
+    try {
+      await currentUser?.sendEmailVerification();
+    } on FirebaseAuthException catch (e) {
+      throw Exception(e.code);
+    }
+  }
 }

@@ -41,6 +41,9 @@ abstract class BaseAuthRepository {
   /// updates the current user's password
   Future<void> updatePassword(String newPassword);
 
+  /// Sends a verification Email
+  Future<void> sendVerificationEmail();
+
   /// A stream of authentication state changes.
   Stream<dynamic> get authStateChanges;
 
