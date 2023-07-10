@@ -9,7 +9,7 @@ class _UpdateEmailTextField extends StatelessWidget {
       buildWhen: (previous, current) => previous.email != current.email,
       builder: (context, state) {
         return AppTextField(
-          labelText: 'New username',
+          labelText: 'New Email',
           onChanged: (email) =>
               context.read<UpdateEmailCubit>().emailChanged(email),
           errorText: state.email.displayError,

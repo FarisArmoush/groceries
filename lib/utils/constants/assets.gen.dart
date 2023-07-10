@@ -24,6 +24,10 @@ class $AssetsSvgGen {
   /// File path: assets/svg/icAtSign.svg
   SvgGenImage get icAtSign => const SvgGenImage('assets/svg/icAtSign.svg');
 
+  /// File path: assets/svg/icBadgeAlert.svg
+  SvgGenImage get icBadgeAlert =>
+      const SvgGenImage('assets/svg/icBadgeAlert.svg');
+
   /// File path: assets/svg/icBell.svg
   SvgGenImage get icBell => const SvgGenImage('assets/svg/icBell.svg');
 
@@ -166,6 +170,7 @@ class $AssetsSvgGen {
         icAlertTriangle,
         icArchive,
         icAtSign,
+        icBadgeAlert,
         icBell,
         icCamera,
         icCheckCircle,

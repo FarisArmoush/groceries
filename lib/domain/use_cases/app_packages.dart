@@ -33,6 +33,7 @@ class AppPackages {
     AppPackage('Very Good Analysis'),
     AppPackage('Json Serializable'),
     AppPackage('Flutter Gen Runner'),
+    AppPackage('Flutter Animate'),
   ];
 
   void sortAppPackages() {
