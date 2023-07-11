@@ -1,4 +1,4 @@
-import 'package:groceries/data/models/task_model.dart';
+import 'package:groceries/data/models/task_model/task_model.dart';
 import 'package:groceries/domain/repositories/base_my_tasks_repository.dart';
 
 class MockTasksRepository extends BaseTasksRepository {

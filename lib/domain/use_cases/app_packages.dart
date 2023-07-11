@@ -21,7 +21,6 @@ class AppPackages {
     AppPackage('Flutter SVG'),
     AppPackage('Formz'),
     AppPackage('Go Router'),
-    AppPackage('Google Sign in'),
     AppPackage('HTTP'),
     AppPackage('Image Picker'),
     AppPackage('Shared Preferences'),
@@ -34,6 +33,9 @@ class AppPackages {
     AppPackage('Json Serializable'),
     AppPackage('Flutter Gen Runner'),
     AppPackage('Flutter Animate'),
+    AppPackage('Freezed Annotation'),
+    AppPackage('Json Annotation'),
+    AppPackage('Freezed'),
   ];
 
   void sortAppPackages() {
