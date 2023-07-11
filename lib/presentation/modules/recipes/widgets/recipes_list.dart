@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/data/models/recipe_model.dart';
+import 'package:groceries/data/models/recipe_model/recipe_model.dart';
 import 'package:groceries/presentation/modules/recipes/widgets/recipe_card/recipe_card.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
@@ -24,7 +24,7 @@ class RecipesList extends StatelessWidget {
       itemBuilder: (context, index) {
         return RecipeCard(
           recipeModel: RecipeModel(
-            id: recipes[index].id,
+            uid: recipes[index].uid,
             name: recipes[index].name,
             imageUrl: recipes[index].imageUrl,
             items: recipes[index].items,

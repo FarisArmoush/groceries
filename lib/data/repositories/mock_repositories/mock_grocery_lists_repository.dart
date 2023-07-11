@@ -1,6 +1,7 @@
 import 'package:faker/faker.dart';
-import 'package:groceries/data/models/grocery_list_model.dart';
-import 'package:groceries/data/models/user_model.dart';
+import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
+import 'package:groceries/data/models/grocery_model/grocery_model.dart';
+import 'package:groceries/data/models/user_model/user_model.dart';
 import 'package:groceries/domain/repositories/base_grocery_lists_repository.dart';
 
 class MockGroceryListsRepository extends BaseGroceryListsRepository {
@@ -15,22 +16,22 @@ class MockGroceryListsRepository extends BaseGroceryListsRepository {
           name: 'Work',
           imageUrl: faker.image.image(),
           uid: 123,
-          tasksAmount: faker.randomGenerator.integer(10),
           members: const <UserModel>[],
+          items: const <GroceryModel>[],
         ),
         GroceryListModel(
           name: 'Home',
           imageUrl: faker.image.image(),
           uid: 345,
-          tasksAmount: faker.randomGenerator.integer(10),
           members: const <UserModel>[],
+          items: const <GroceryModel>[],
         ),
         GroceryListModel(
           name: 'Friends',
           imageUrl: faker.image.image(),
           uid: 567,
-          tasksAmount: faker.randomGenerator.integer(10),
           members: const <UserModel>[],
+          items: const <GroceryModel>[],
         ),
       ];
 }

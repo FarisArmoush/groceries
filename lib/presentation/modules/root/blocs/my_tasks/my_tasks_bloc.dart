@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:groceries/data/models/task_model.dart';
+import 'package:groceries/data/models/task_model/task_model.dart';
 import 'package:groceries/data/repositories/mock_repositories/mock_tasks_repository.dart';
 import 'package:groceries/domain/repositories/base_my_tasks_repository.dart';
 

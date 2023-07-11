@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/data/models/grocery_list_model.dart';
+import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/widgets/grocery_list_options_button.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
@@ -53,7 +53,7 @@ class GroceryListCard extends StatelessWidget {
                   SizedBox(
                     height: context.deviceHeight * 0.01,
                   ),
-                  if (listModel.tasksAmount != 0)
+                  if (listModel.items.isNotEmpty)
                     _newTasksBox(context)
                   else
                     const SizedBox(),
@@ -81,7 +81,8 @@ class GroceryListCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       child: Text(
-        '${listModel.tasksAmount} ${AppTranslations.newTasks}',
+        // TODO: Switch to `itemsInList` or something
+        '${listModel.items.length} ${AppTranslations.newTasks}',
         style: TextStyle(
           fontFamily: AppFonts.light(context),
           color: context.theme.colorScheme.secondary,

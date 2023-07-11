@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/data/models/recipe_model.dart';
+import 'package:groceries/data/models/recipe_model/recipe_model.dart';
 import 'package:groceries/presentation/modules/recipes/widgets/recipe_card/recipe_card_actions_row.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
