@@ -1,7 +1,8 @@
-part of 'category_box.dart';
+import 'package:flutter/material.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 
-class _AddItemsButton extends StatelessWidget {
-  const _AddItemsButton();
+class CategoryBoxAddItemsButton extends StatelessWidget {
+  const CategoryBoxAddItemsButton({super.key});
 
   @override
   Widget build(BuildContext context) {

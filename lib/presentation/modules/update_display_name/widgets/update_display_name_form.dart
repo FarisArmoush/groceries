@@ -4,16 +4,12 @@ import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/modules/update_display_name/cubit/update_display_name_cubit.dart';
-import 'package:groceries/presentation/widgets/app_snackbars/app_snack_bars.dart';
-import 'package:groceries/presentation/widgets/app_text_field.dart';
-import 'package:groceries/presentation/widgets/buttons_loading_indicator.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/presentation/modules/update_display_name/widgets/submit_new_display_name_button.dart';
+import 'package:groceries/presentation/modules/update_display_name/widgets/update_display_name_body_text.dart';
+import 'package:groceries/presentation/modules/update_display_name/widgets/update_display_name_header_text.dart';
+import 'package:groceries/presentation/modules/update_display_name/widgets/update_display_name_text_field.dart';
+import 'package:groceries/presentation/widgets/app_snack_bars.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
-
-part '__submit_new_display_name_button.dart';
-part '__update_display_name_body_text.dart';
-part '__update_display_name_header_text.dart';
-part '__update_display_name_text_field.dart';
 
 class UpdateDisplayNameForm extends StatelessWidget {
   const UpdateDisplayNameForm({super.key});
@@ -55,19 +51,19 @@ class UpdateDisplayNameForm extends StatelessWidget {
               horizontal: 24,
             ),
             children: [
-              const _UpdateDisplayNameHeaderText(),
+              const UpdateDisplayNameHeaderText(),
               SizedBox(
                 height: context.deviceHeight * 0.01,
               ),
-              const _UpdateDisplayNameBodyText(),
+              const UpdateDisplayNameBodyText(),
               SizedBox(
                 height: context.deviceHeight * 0.05,
               ),
-              const _UpdateDisplayNameTextField(),
+              const UpdateDisplayNameTextField(),
             ],
           ),
         ),
-        bottomSheet: const _SubmitNewDisplayNameButton(),
+        bottomSheet: const SubmitNewDisplayNameButton(),
       ),
     );
   }

@@ -1,20 +1,17 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/modules/forgot_password/cubit/forgot_password_cubit.dart';
 import 'package:groceries/presentation/modules/forgot_password/widgets/cancel_forgot_password_dialog.dart';
+import 'package:groceries/presentation/modules/forgot_password/widgets/forgot_password_body_text.dart';
+import 'package:groceries/presentation/modules/forgot_password/widgets/forgot_password_email_text_field.dart';
+import 'package:groceries/presentation/modules/forgot_password/widgets/forgot_password_header_text.dart';
+import 'package:groceries/presentation/modules/forgot_password/widgets/send_forgot_password_email_button.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
-import 'package:groceries/presentation/widgets/app_snackbars/app_snack_bars.dart';
-import 'package:groceries/presentation/widgets/app_text_field.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/presentation/widgets/app_snack_bars.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
-
-part '__email_text_field.dart';
-part '__send_button.dart';
 
 class ForgotPasswordForm extends StatelessWidget {
   const ForgotPasswordForm({super.key});
@@ -47,14 +44,7 @@ class ForgotPasswordForm extends StatelessWidget {
       child: SafeArea(
         top: false,
         child: Scaffold(
-          appBar: AppBar(
-            leading: BackButton(
-              onPressed: () => showDialog<CancelForgotPasswordDialog>(
-                context: context,
-                builder: (context) => const CancelForgotPasswordDialog(),
-              ),
-            ),
-          ),
+          appBar: _appBar(context),
           body: ListView(
             padding: const EdgeInsets.symmetric(
               horizontal: 24,
@@ -64,32 +54,29 @@ class ForgotPasswordForm extends StatelessWidget {
               SizedBox(
                 height: context.deviceWidth * 0.02,
               ),
-              Text(
-                AppTranslations.forgotPassword,
-                style: TextStyle(
-                  fontFamily: AppFonts.semiBold(context),
-                  color: context.theme.primaryColorLight,
-                  fontSize: 32,
-                ),
-              ),
+              const ForgotPasswordHeaderText(),
               SizedBox(
                 height: context.deviceHeight * 0.02,
               ),
-              Text(
-                AppTranslations.forgotPasswordBody,
-                style: TextStyle(
-                  fontFamily: AppFonts.regular(context),
-                  color: context.theme.primaryColor,
-                  fontSize: 18,
-                ),
-              ),
+              const ForgotPasswordBodyText(),
               SizedBox(
                 height: context.deviceHeight * 0.06,
               ),
-              const _EmailTextField(),
+              const ForgotPasswordEmailTextField(),
             ],
           ),
-          bottomSheet: const _SendButton(),
+          bottomSheet: const SendForgotPasswordEmailButton(),
+        ),
+      ),
+    );
+  }
+
+  AppBar _appBar(BuildContext context) {
+    return AppBar(
+      leading: BackButton(
+        onPressed: () => showDialog<CancelForgotPasswordDialog>(
+          context: context,
+          builder: (context) => const CancelForgotPasswordDialog(),
         ),
       ),
     );

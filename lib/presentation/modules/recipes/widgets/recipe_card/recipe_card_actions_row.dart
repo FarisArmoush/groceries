@@ -3,7 +3,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/recipes/widgets/bottom_sheets/add_recipe_to_list_bottom_sheet.dart';
 import 'package:groceries/presentation/modules/recipes/widgets/bottom_sheets/delete_recipe_bottom_sheet.dart';
 import 'package:groceries/presentation/modules/recipes/widgets/recipe_card/recipe_card_action_button.dart';
-import 'package:groceries/presentation/widgets/app_snackbars/app_snack_bars.dart';
+import 'package:groceries/presentation/widgets/app_snack_bars.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 

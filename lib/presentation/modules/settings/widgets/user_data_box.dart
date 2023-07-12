@@ -5,20 +5,8 @@ import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
-part '__display_name.dart';
-part '__email.dart';
-
 class UserDataBox extends StatelessWidget {
-  const UserDataBox({
-    // required this.imageUrl,
-    // required this.displayName,
-    // required this.email,
-    super.key,
-  });
-
-  // final String? imageUrl;
-  // final String? displayName;
-  // final String? email;
+  const UserDataBox({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -35,14 +23,26 @@ class UserDataBox extends StatelessWidget {
         SizedBox(
           height: context.deviceHeight * 0.02,
         ),
-        _DisplayName(
-          name: user?.displayName,
+        SelectableText(
+          user?.displayName ?? '',
+          style: TextStyle(
+            fontFamily: AppFonts.medium(context),
+            color: context.theme.primaryColor,
+            fontSize: 16,
+          ),
+          textAlign: TextAlign.center,
         ),
         SizedBox(
           height: context.deviceHeight * 0.005,
         ),
-        _Email(
-          email: user?.email,
+        SelectableText(
+          user?.email ?? '',
+          style: TextStyle(
+            fontFamily: AppFonts.light(context),
+            color: context.theme.hintColor,
+            fontSize: 12,
+          ),
+          textAlign: TextAlign.center,
         ),
       ],
     );
