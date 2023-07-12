@@ -76,9 +76,6 @@ class AppNamedRoutes {
   /// Update Email View
   static const String updateEmail = 'updateEmail';
 
-  /// Update Password View
-  static const String updatePassword = 'updatePassword';
-
   /// Verify Account View
   static const String verifyAccount = 'verifyAccount';
 

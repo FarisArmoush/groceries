@@ -29,38 +29,29 @@ class VerifyUserForm extends StatelessWidget {
           if (state is VerificationFailed) {
             return const FailedToSendVerificationEmail();
           }
-          return const _OnInitial();
+          return Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Assets.svg.illBirdWatching.svg(
+                  height: context.deviceHeight * 0.3,
+                ),
+                SizedBox(
+                  height: context.deviceHeight * 0.03,
+                ),
+                Text(
+                  AppTranslations.sendVerificationEmail,
+                  style: context.theme.dialogTheme.titleTextStyle,
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(
+                  height: context.deviceHeight * 0.03,
+                ),
+                const SendVerificationEmailButton(),
+              ],
+            ),
+          );
         },
-      ),
-    );
-  }
-}
-
-class _OnInitial extends StatelessWidget {
-  const _OnInitial();
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Assets.svg.illBirdWatching.svg(
-            height: context.deviceHeight * 0.3,
-          ),
-          SizedBox(
-            height: context.deviceHeight * 0.03,
-          ),
-          Text(
-            AppTranslations.sendVerificationEmail,
-            style: context.theme.dialogTheme.titleTextStyle,
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(
-            height: context.deviceHeight * 0.03,
-          ),
-          const SendVerificationEmailButton(),
-        ],
       ),
     );
   }

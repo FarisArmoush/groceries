@@ -26,10 +26,7 @@ class _SwitchListTile extends StatelessWidget {
       builder: (context, state) {
         return SwitchListTile.adaptive(
           value: state,
-          onChanged: (value) {
-            // value = state;
-            context.read<SendCrashReportsCubit>().toggle();
-          },
+          onChanged: (_) => context.read<SendCrashReportsCubit>().toggle(),
           inactiveTrackColor: AppColors.black,
           activeColor: context.theme.primaryColorLight,
           inactiveThumbColor: AppColors.veryLightGrey,

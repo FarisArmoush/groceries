@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/presentation/modules/add_items/widgets/_add_items_button.dart';
+import 'package:groceries/presentation/modules/add_items/widgets/category_box_divider.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
-
-part '_add_items_button.dart';
-part '_category_box_divider.dart';
 
 class CategoryBox extends StatelessWidget {
   const CategoryBox({
@@ -21,7 +19,7 @@ class CategoryBox extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const _CategoryBoxDivider(),
+          const CategoryBoxDivider(),
           Padding(
             padding: EdgeInsets.symmetric(
               vertical: context.deviceHeight * 0.0175,
@@ -36,14 +34,14 @@ class CategoryBox extends StatelessWidget {
               ),
             ),
           ),
-          const _CategoryBoxDivider(),
+          const CategoryBoxDivider(),
           Padding(
             padding: EdgeInsets.symmetric(
               horizontal: context.deviceWidth * 0.1,
             ),
-            child: const _AddItemsButton(),
+            child: const CategoryBoxAddItemsButton(),
           ),
-          const _CategoryBoxDivider(),
+          const CategoryBoxDivider(),
         ],
       ),
     );
