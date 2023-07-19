@@ -8,7 +8,7 @@ import 'package:groceries/presentation/modules/login/widgets/login_body_text.dar
 import 'package:groceries/presentation/modules/login/widgets/login_button.dart';
 import 'package:groceries/presentation/modules/login/widgets/login_email_text_field.dart';
 import 'package:groceries/presentation/modules/login/widgets/login_forgot_password_button.dart';
-import 'package:groceries/presentation/modules/login/widgets/login_header.dart';
+import 'package:groceries/presentation/modules/login/widgets/login_header_text.dart';
 import 'package:groceries/presentation/modules/login/widgets/login_other_options_text_button.dart';
 import 'package:groceries/presentation/modules/login/widgets/login_password_text_field.dart';
 import 'package:groceries/presentation/widgets/app_snack_bars.dart';
@@ -32,7 +32,7 @@ class LoginForm extends StatelessWidget {
             SizedBox(
               height: context.deviceHeight * 0.09,
             ),
-            const LoginHeader(),
+            const LoginHeaderText(),
             SizedBox(
               height: context.deviceHeight * 0.01,
             ),

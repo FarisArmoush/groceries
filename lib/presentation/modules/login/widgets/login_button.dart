@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/login/cubit/login_cubit.dart';
+import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/presentation/widgets/buttons_loading_indicator.dart';
 
 class LoginButton extends StatelessWidget {
@@ -21,7 +21,7 @@ class LoginButton extends StatelessWidget {
               icon: const ButtonsLoadingIndicator(),
               label: _text(),
             ),
-          ).animate();
+          );
         }
         return FilledButton(
           onPressed:
@@ -32,5 +32,10 @@ class LoginButton extends StatelessWidget {
     );
   }
 
-  Animate _text() => Text(AppTranslations.login).animate().fadeIn();
+  Widget _text() {
+    return FadeInAnimation(
+      duration: const Duration(milliseconds: 200),
+      child: Text(AppTranslations.login),
+    );
+  }
 }

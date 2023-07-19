@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
 
 /// {@template buttons_loading_indicator}
@@ -10,13 +10,15 @@ class ButtonsLoadingIndicator extends StatelessWidget {
   const ButtonsLoadingIndicator({super.key});
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
-      height: 20,
-      width: 20,
-      child: CircularProgressIndicator.adaptive(
-        strokeWidth: 2,
-        backgroundColor: AppColors.white,
+    return FadeInAnimation(
+      child: const SizedBox(
+        height: 20,
+        width: 20,
+        child: CircularProgressIndicator.adaptive(
+          strokeWidth: 2,
+          backgroundColor: AppColors.white,
+        ),
       ),
-    ).animate().fadeIn();
+    );
   }
 }

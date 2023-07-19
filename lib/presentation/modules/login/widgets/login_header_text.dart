@@ -3,8 +3,8 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
-class LoginHeader extends StatelessWidget {
-  const LoginHeader({super.key});
+class LoginHeaderText extends StatelessWidget {
+  const LoginHeaderText({super.key});
 
   @override
   Widget build(BuildContext context) {
