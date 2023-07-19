@@ -1,9 +1,7 @@
-// ignore_for_file: lines_longer_than_80_chars
-
 part of 'app_animations.dart';
 
-class FadeInRightAnimation extends StatefulWidget {
-  FadeInRightAnimation({
+class UpFadeInAnimation extends StatefulWidget {
+  UpFadeInAnimation({
     required this.child,
     this.duration = const Duration(milliseconds: 800),
     this.delay = Duration.zero,
@@ -22,7 +20,6 @@ Then you must provide the controller property, that is a callback like:\n\n
       );
     }
   }
-
   final Widget child;
   final Duration duration;
   final Duration delay;
@@ -33,15 +30,19 @@ Then you must provide the controller property, that is a callback like:\n\n
   final double from;
 
   @override
-  State<FadeInRightAnimation> createState() => _FadeInRightAnimationState();
+  State<UpFadeInAnimation> createState() => _UpFadeInAnimationState();
 }
 
-class _FadeInRightAnimationState extends State<FadeInRightAnimation>
+class _UpFadeInAnimationState extends State<UpFadeInAnimation>
     with SingleTickerProviderStateMixin {
   AnimationController? controller;
+
   bool disposed = false;
+
   late Animation<double> animation;
+
   late Animation<double> opacity;
+
   @override
   void dispose() {
     disposed = true;
@@ -99,15 +100,16 @@ class _FadeInRightAnimationState extends State<FadeInRightAnimation>
       controller?.forward();
     }
 
+    /// If FALSE, animate everything back to the original state
     if (!widget.animate) {
       controller?.animateBack(0);
     }
 
     return AnimatedBuilder(
       animation: controller!,
-      builder: (context, child) {
+      builder: (BuildContext context, Widget? child) {
         return Transform.translate(
-          offset: Offset(animation.value, 0),
+          offset: Offset(0, animation.value),
           child: Opacity(
             opacity: opacity.value,
             child: widget.child,

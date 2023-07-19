@@ -2,8 +2,8 @@
 
 part of 'app_animations.dart';
 
-class FadeInLeftAnimation extends StatefulWidget {
-  FadeInLeftAnimation({
+class LeftFadeInAnimation extends StatefulWidget {
+  LeftFadeInAnimation({
     required this.child,
     this.duration = const Duration(milliseconds: 800),
     this.delay = Duration.zero,
@@ -32,10 +32,10 @@ Then you must provide the controller property, that is a callback like:\n\n
   final double from;
 
   @override
-  State<FadeInLeftAnimation> createState() => _FadeInLeftAnimationState();
+  State<LeftFadeInAnimation> createState() => _LeftFadeInAnimationState();
 }
 
-class _FadeInLeftAnimationState extends State<FadeInLeftAnimation>
+class _LeftFadeInAnimationState extends State<LeftFadeInAnimation>
     with SingleTickerProviderStateMixin {
   AnimationController? controller;
   bool disposed = false;

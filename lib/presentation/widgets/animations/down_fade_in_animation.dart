@@ -1,7 +1,7 @@
 part of 'app_animations.dart';
 
-class FadeInDownAnimation extends StatefulWidget {
-  FadeInDownAnimation({
+class DownFadeInAnimation extends StatefulWidget {
+  DownFadeInAnimation({
     required this.child,
     this.duration = const Duration(milliseconds: 800),
     this.delay = Duration.zero,
@@ -30,10 +30,10 @@ Then you must provide the controller property, that is a callback like:\n\n
   final double from;
 
   @override
-  State<FadeInDownAnimation> createState() => _FadeInDownAnimationState();
+  State<DownFadeInAnimation> createState() => _DownFadeInAnimationState();
 }
 
-class _FadeInDownAnimationState extends State<FadeInDownAnimation>
+class _DownFadeInAnimationState extends State<DownFadeInAnimation>
     with SingleTickerProviderStateMixin {
   AnimationController? controller;
 
