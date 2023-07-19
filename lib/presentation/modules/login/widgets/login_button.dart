@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:groceries/config/localization/app_translations.dart';
@@ -18,16 +19,18 @@ class LoginButton extends StatelessWidget {
             child: FilledButton.icon(
               onPressed: () {},
               icon: const ButtonsLoadingIndicator(),
-              label: Text(AppTranslations.login),
+              label: _text(),
             ),
-          );
+          ).animate();
         }
         return FilledButton(
           onPressed:
               state.isValid ? () => context.read<LoginCubit>().login() : null,
-          child: Text(AppTranslations.login),
+          child: _text(),
         );
       },
     );
   }
+
+  Animate _text() => Text(AppTranslations.login).animate().fadeIn();
 }

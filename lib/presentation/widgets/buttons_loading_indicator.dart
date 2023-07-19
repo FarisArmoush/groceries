@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
 
 /// {@template buttons_loading_indicator}
@@ -16,6 +17,6 @@ class ButtonsLoadingIndicator extends StatelessWidget {
         strokeWidth: 2,
         backgroundColor: AppColors.white,
       ),
-    );
+    ).animate().fadeIn();
   }
 }

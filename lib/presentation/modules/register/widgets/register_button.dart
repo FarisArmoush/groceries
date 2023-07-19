@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:groceries/config/localization/app_translations.dart';
@@ -17,7 +18,7 @@ class RegisterButton extends StatelessWidget {
             child: FilledButton.icon(
               onPressed: () {},
               icon: const ButtonsLoadingIndicator(),
-              label: Text(AppTranslations.register),
+              label: _text(),
             ),
           );
         }
@@ -25,11 +26,11 @@ class RegisterButton extends StatelessWidget {
           onPressed: state.isValid
               ? () => context.read<RegisterCubit>().register()
               : null,
-          child: Text(
-            AppTranslations.register,
-          ),
+          child: _text(),
         );
       },
     );
   }
+
+  Animate _text() => Text(AppTranslations.register).animate().fadeIn();
 }

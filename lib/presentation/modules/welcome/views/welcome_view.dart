@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
@@ -22,11 +23,11 @@ class WelcomeView extends StatelessWidget {
             SizedBox(
               height: context.deviceHeight * 0.15,
             ),
-            const WelcomeViewHeaderText(),
+            const WelcomeViewHeaderText().animate().moveX(),
             SizedBox(
               height: context.deviceHeight * 0.065,
             ),
-            const WelcomeViewBodyText(),
+            const WelcomeViewBodyText().animate().moveX(),
             SizedBox(
               height: context.deviceHeight * 0.09,
             ),
@@ -35,7 +36,7 @@ class WelcomeView extends StatelessWidget {
               onPressed: () => context.pushReplacementNamed(
                 AppNamedRoutes.register,
               ),
-            ),
+            ).animate().moveX(),
             SizedBox(
               height: context.deviceHeight * 0.02,
             ),
@@ -44,8 +45,8 @@ class WelcomeView extends StatelessWidget {
               onPressed: () => context.pushReplacementNamed(
                 AppNamedRoutes.login,
               ),
-            ),
-          ],
+            ).animate().moveX(),
+          ].animate().fadeIn(duration: 300.ms).moveX(),
         ),
       ),
     );

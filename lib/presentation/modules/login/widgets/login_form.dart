@@ -21,27 +21,7 @@ class LoginForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocListener<LoginCubit, LoginState>(
-        listener: (context, state) {
-          if (state.status.isFailure) {
-            ScaffoldMessenger.of(context)
-              ..hideCurrentSnackBar()
-              ..showSnackBar(
-                AppSnackBars.error(
-                  error: state.errorMessage ?? 'Authentication Failure',
-                ),
-              );
-          }
-          if (state.status.isSuccess) {
-            ScaffoldMessenger.of(context)
-              ..hideCurrentSnackBar()
-              ..showSnackBar(
-                AppSnackBars.success(
-                  message: 'Welcome Back',
-                ),
-              );
-            context.pushReplacementNamed(AppNamedRoutes.root);
-          }
-        },
+        listener: listener,
         child: ListView(
           physics: const BouncingScrollPhysics(),
           padding: const EdgeInsets.symmetric(
@@ -81,5 +61,27 @@ class LoginForm extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void listener(BuildContext context, LoginState state) {
+    if (state.status.isFailure) {
+      ScaffoldMessenger.of(context)
+        ..hideCurrentSnackBar()
+        ..showSnackBar(
+          AppSnackBars.error(
+            error: state.errorMessage ?? 'Authentication Failure',
+          ),
+        );
+    }
+    if (state.status.isSuccess) {
+      ScaffoldMessenger.of(context)
+        ..hideCurrentSnackBar()
+        ..showSnackBar(
+          AppSnackBars.success(
+            message: 'Welcome Back',
+          ),
+        );
+      context.pushReplacementNamed(AppNamedRoutes.root);
+    }
   }
 }
