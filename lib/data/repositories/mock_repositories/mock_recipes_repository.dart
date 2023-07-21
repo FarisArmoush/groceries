@@ -31,6 +31,90 @@ class MockRecipesRepository extends BaseRecipesRepository {
             'https://www.daysoftheyear.com/wp-content/uploads/national-fast-food-day.jpg',
         items: [],
       ),
+      const RecipeModel(
+        uid: '345',
+        name: 'Beef Burger & Fries',
+        imageUrl:
+            'https://www.daysoftheyear.com/wp-content/uploads/national-fast-food-day.jpg',
+        items: [],
+      ),
+      const RecipeModel(
+        uid: '345',
+        name: 'Beef Burger & Fries',
+        imageUrl:
+            'https://www.daysoftheyear.com/wp-content/uploads/national-fast-food-day.jpg',
+        items: [],
+      ),
+      const RecipeModel(
+        uid: '345',
+        name: 'Beef Burger & Fries',
+        imageUrl:
+            'https://www.daysoftheyear.com/wp-content/uploads/national-fast-food-day.jpg',
+        items: [],
+      ),
+      const RecipeModel(
+        uid: '345',
+        name: 'Beef Burger & Fries',
+        imageUrl:
+            'https://www.daysoftheyear.com/wp-content/uploads/national-fast-food-day.jpg',
+        items: [],
+      ),
+      const RecipeModel(
+        uid: '345',
+        name: 'Beef Burger & Fries',
+        imageUrl:
+            'https://www.daysoftheyear.com/wp-content/uploads/national-fast-food-day.jpg',
+        items: [],
+      ),
+      const RecipeModel(
+        uid: '345',
+        name: 'Beef Burger & Fries',
+        imageUrl:
+            'https://www.daysoftheyear.com/wp-content/uploads/national-fast-food-day.jpg',
+        items: [],
+      ),
+      const RecipeModel(
+        uid: '345',
+        name: 'Beef Burger & Fries',
+        imageUrl:
+            'https://www.daysoftheyear.com/wp-content/uploads/national-fast-food-day.jpg',
+        items: [],
+      ),
+      const RecipeModel(
+        uid: '345',
+        name: 'Beef Burger & Fries',
+        imageUrl:
+            'https://www.daysoftheyear.com/wp-content/uploads/national-fast-food-day.jpg',
+        items: [],
+      ),
+      const RecipeModel(
+        uid: '345',
+        name: 'Beef Burger & Fries',
+        imageUrl:
+            'https://www.daysoftheyear.com/wp-content/uploads/national-fast-food-day.jpg',
+        items: [],
+      ),
+      const RecipeModel(
+        uid: '345',
+        name: 'Beef Burger & Fries',
+        imageUrl:
+            'https://www.daysoftheyear.com/wp-content/uploads/national-fast-food-day.jpg',
+        items: [],
+      ),
+      const RecipeModel(
+        uid: '345',
+        name: 'Beef Burger & Fries',
+        imageUrl:
+            'https://www.daysoftheyear.com/wp-content/uploads/national-fast-food-day.jpg',
+        items: [],
+      ),
+      const RecipeModel(
+        uid: '345',
+        name: 'Beef Burger & Fries',
+        imageUrl:
+            'https://www.daysoftheyear.com/wp-content/uploads/national-fast-food-day.jpg',
+        items: [],
+      ),
     ];
   }
 }

@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/data/models/recipe_model/recipe_model.dart';
 import 'package:groceries/presentation/modules/recipes/widgets/recipe_card/recipe_card.dart';
+import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class RecipesList extends StatelessWidget {
@@ -22,14 +23,19 @@ class RecipesList extends StatelessWidget {
       ),
       itemCount: recipes.length,
       itemBuilder: (context, index) {
-        return RecipeCard(
-          recipeModel: RecipeModel(
-            uid: recipes[index].uid,
-            name: recipes[index].name,
-            imageUrl: recipes[index].imageUrl,
-            items: recipes[index].items,
+        return LeftFadeInAnimation(
+          duration: Duration(
+            milliseconds: 500 + (index + 100),
           ),
-          onTap: () => context.pushNamed(AppNamedRoutes.recipeDetails),
+          child: RecipeCard(
+            recipeModel: RecipeModel(
+              uid: recipes[index].uid,
+              name: recipes[index].name,
+              imageUrl: recipes[index].imageUrl,
+              items: recipes[index].items,
+            ),
+            onTap: () => context.pushNamed(AppNamedRoutes.recipeDetails),
+          ),
         );
       },
       separatorBuilder: (context, index) {
