@@ -4,6 +4,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/modules/settings/widgets/settings_list_tile.dart';
 import 'package:groceries/presentation/modules/settings/widgets/user_data_box.dart';
+import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
@@ -14,7 +15,9 @@ class SettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppTranslations.settings),
+        title: FadeInAnimation(
+          child: Text(AppTranslations.settings),
+        ),
         leading: const SizedBox.shrink(),
       ),
       body: ListView(
@@ -27,32 +30,39 @@ class SettingsView extends StatelessWidget {
           Divider(
             height: context.deviceHeight * 0.05,
           ),
-          SettingsListTile(
-            title: AppTranslations.accountSettings,
-            subtitle: AppTranslations.accountSettingsDescription,
-            iconPath: Assets.svg.icUser.path,
-            onTap: () => context.pushNamed(AppNamedRoutes.accountSettings),
+          LeftFadeInAnimation(
+            duration: const Duration(milliseconds: 700),
+            child: SettingsListTile(
+              title: AppTranslations.accountSettings,
+              subtitle: AppTranslations.accountSettingsDescription,
+              iconPath: Assets.svg.icUser.path,
+              onTap: () => context.pushNamed(AppNamedRoutes.accountSettings),
+            ),
           ),
           SizedBox(
             height: context.deviceHeight * 0.01,
           ),
+          LeftFadeInAnimation(
+            duration: const Duration(milliseconds: 600),
+            child: SettingsListTile(
+              title: AppTranslations.theme,
+              subtitle: AppTranslations.themeHeader,
+              iconPath: Assets.svg.icPalette.path,
+              onTap: () => context.pushNamed(AppNamedRoutes.themeSettings),
+            ),
+          ),
           SizedBox(
             height: context.deviceHeight * 0.01,
           ),
-          SettingsListTile(
-            title: AppTranslations.theme,
-            subtitle: AppTranslations.themeHeader,
-            iconPath: Assets.svg.icPalette.path,
-            onTap: () => context.pushNamed(AppNamedRoutes.themeSettings),
-          ),
-          SizedBox(
-            height: context.deviceHeight * 0.01,
-          ),
-          SettingsListTile(
-            title: AppTranslations.additionalResources,
-            subtitle: AppTranslations.additionalResourcesDescription,
-            iconPath: Assets.svg.icVerticalThreeDots.path,
-            onTap: () => context.pushNamed(AppNamedRoutes.additionalResources),
+          LeftFadeInAnimation(
+            duration: const Duration(milliseconds: 500),
+            child: SettingsListTile(
+              title: AppTranslations.additionalResources,
+              subtitle: AppTranslations.additionalResourcesDescription,
+              iconPath: Assets.svg.icVerticalThreeDots.path,
+              onTap: () =>
+                  context.pushNamed(AppNamedRoutes.additionalResources),
+            ),
           ),
           SizedBox(
             height: context.deviceHeight * 0.01,
