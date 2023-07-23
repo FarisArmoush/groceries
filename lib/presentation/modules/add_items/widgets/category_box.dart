@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/presentation/modules/add_items/widgets/_add_items_button.dart';
+import 'package:groceries/presentation/modules/add_items/widgets/category_box_add_items_button.dart';
 import 'package:groceries/presentation/modules/add_items/widgets/category_box_divider.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class CategoryBox extends StatelessWidget {
-  const CategoryBox({
-    required this.category,
-    super.key,
-  });
+  const CategoryBox({required this.category, super.key});
 
   final String category;
 
