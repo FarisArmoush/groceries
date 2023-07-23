@@ -7,6 +7,7 @@ import 'package:groceries/presentation/modules/create_list/widgets/cancel_list_c
 import 'package:groceries/presentation/modules/create_list/widgets/create_new_list_fab.dart';
 import 'package:groceries/presentation/modules/create_list/widgets/invite_users_to_list_form.dart';
 import 'package:groceries/presentation/widgets/page_indicator.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class CreateListView extends StatelessWidget {
   CreateListView({super.key});
@@ -15,7 +16,6 @@ class CreateListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         leading: BackButton(
@@ -28,7 +28,7 @@ class CreateListView extends StatelessWidget {
           AppTranslations.createNewList,
         ),
         bottom: PreferredSize(
-          preferredSize: size * 0.025,
+          preferredSize: context.deviceSize * 0.025,
           child: PageIndicator(
             count: 2,
             pageController: _pageController,

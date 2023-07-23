@@ -81,7 +81,6 @@ class GroceryListCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       child: Text(
-        // TODO: Switch to `itemsInList` or something
         '${listModel.items.length} ${AppTranslations.newTasks}',
         style: TextStyle(
           fontFamily: AppFonts.light(context),

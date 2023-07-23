@@ -9,7 +9,7 @@ import 'package:groceries/presentation/modules/register/widgets/register_button.
 import 'package:groceries/presentation/modules/register/widgets/register_confirm_password_text_field.dart';
 import 'package:groceries/presentation/modules/register/widgets/register_display_name_text_field.dart';
 import 'package:groceries/presentation/modules/register/widgets/register_email_text_field.dart';
-import 'package:groceries/presentation/modules/register/widgets/register_header.dart';
+import 'package:groceries/presentation/modules/register/widgets/register_header_text.dart';
 import 'package:groceries/presentation/modules/register/widgets/register_other_option_text_button.dart';
 import 'package:groceries/presentation/modules/register/widgets/register_password_text_field.dart';
 import 'package:groceries/presentation/widgets/app_snack_bars.dart';
@@ -54,7 +54,7 @@ class RegisterForm extends StatelessWidget {
             SizedBox(
               height: context.deviceHeight * 0.09,
             ),
-            const RegisterHeader(),
+            const RegisterHeaderText(),
             SizedBox(
               height: context.deviceHeight * 0.01,
             ),

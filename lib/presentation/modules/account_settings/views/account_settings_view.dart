@@ -8,6 +8,7 @@ import 'package:groceries/presentation/modules/account_settings/widgets/user_cre
 import 'package:groceries/presentation/modules/account_settings/widgets/user_image/edit_user_image_button.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/user_image/user_image.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/verification/is_user_verified_list_tile.dart';
+import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class AccountSettingsView extends StatelessWidget {
@@ -17,7 +18,9 @@ class AccountSettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppTranslations.accountSettings),
+        title: FadeInAnimation(
+          child: Text(AppTranslations.accountSettings),
+        ),
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(

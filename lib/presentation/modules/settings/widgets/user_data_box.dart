@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
+import 'package:groceries/presentation/modules/account_settings/widgets/user_image/user_image.dart';
 import 'package:groceries/presentation/widgets/animations/app_animations.dart';
-import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
@@ -18,13 +18,7 @@ class UserDataBox extends StatelessWidget {
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         children: [
-          FadeInAnimation(
-            child: CachedImage(
-              imageUrl: user?.photoURL,
-              height: context.deviceHeight * 0.2,
-              boxFit: BoxFit.contain,
-            ),
-          ),
+          const UserImage(),
           SizedBox(
             height: context.deviceHeight * 0.02,
           ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
@@ -12,34 +13,36 @@ class YouDontHaveGroceryLists extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Assets.svg.illComputer.svg(
-          height: context.deviceHeight * 0.2,
-        ),
-        SizedBox(
-          height: context.deviceHeight * 0.015,
-        ),
-        Text(
-          AppTranslations.youDontHaveGroceryLists,
-          style: TextStyle(
-            fontFamily: AppFonts.medium(context),
-            fontSize: 16,
-            color: context.theme.primaryColor,
+    return DownFadeInAnimation(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Assets.svg.illComputer.svg(
+            height: context.deviceHeight * 0.2,
           ),
-          textAlign: TextAlign.center,
-        ),
-        SizedBox(
-          height: context.deviceHeight * 0.015,
-        ),
-        FilledButton.icon(
-          onPressed: () => context.pushNamed(AppNamedRoutes.createList),
-          icon: const Icon(CupertinoIcons.add),
-          label: Text(AppTranslations.createYourFirstList),
-        ),
-      ],
+          SizedBox(
+            height: context.deviceHeight * 0.015,
+          ),
+          Text(
+            AppTranslations.youDontHaveGroceryLists,
+            style: TextStyle(
+              fontFamily: AppFonts.medium(context),
+              fontSize: 16,
+              color: context.theme.primaryColor,
+            ),
+            textAlign: TextAlign.center,
+          ),
+          SizedBox(
+            height: context.deviceHeight * 0.015,
+          ),
+          FilledButton.icon(
+            onPressed: () => context.pushNamed(AppNamedRoutes.createList),
+            icon: const Icon(CupertinoIcons.add),
+            label: Text(AppTranslations.createYourFirstList),
+          ),
+        ],
+      ),
     );
   }
 }

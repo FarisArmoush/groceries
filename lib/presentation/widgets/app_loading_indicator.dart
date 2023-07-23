@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 /// {@template app_loading_indicator}
@@ -13,8 +14,10 @@ class AppLoadingIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: CircularProgressIndicator(
-        color: context.theme.primaryColorLight,
+      child: FadeInAnimation(
+        child: CircularProgressIndicator(
+          color: context.theme.primaryColorLight,
+        ),
       ),
     );
   }

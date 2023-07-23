@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/modules/account_settings/views/account_settings_view.dart';
@@ -160,44 +161,73 @@ class AppGoRouter {
               GoRoute(
                 name: AppNamedRoutes.themeSettings,
                 path: 'themeSettings',
-                builder: (context, state) => const ThemeSettingsView(),
+                pageBuilder: (context, state) => CupertinoPage(
+                  key: state.pageKey,
+                  child: const ThemeSettingsView(),
+                ),
               ),
               GoRoute(
                 name: AppNamedRoutes.additionalResources,
                 path: 'additionalResources',
-                builder: (context, state) => const AdditionalResourcesView(),
+                pageBuilder: (context, state) => CupertinoPage(
+                  key: state.pageKey,
+                  child: const AdditionalResourcesView(),
+                ),
                 routes: [
                   GoRoute(
                     name: AppNamedRoutes.credits,
                     path: 'credits',
-                    builder: (context, state) => const CreditsView(),
+                    pageBuilder: (context, state) => CupertinoPage(
+                      key: state.pageKey,
+                      fullscreenDialog: true,
+                      child: const CreditsView(),
+                    ),
                   ),
                 ],
               ),
               GoRoute(
                 name: AppNamedRoutes.accountSettings,
                 path: 'accountSettings',
-                builder: (context, state) => const AccountSettingsView(),
+                pageBuilder: (context, state) => CupertinoPage(
+                  key: state.pageKey,
+                  child: const AccountSettingsView(),
+                ),
                 routes: [
                   GoRoute(
                     name: AppNamedRoutes.deleteAccount,
                     path: 'deleteAccount',
-                    builder: (context, state) => const DeleteAccountView(),
+                    pageBuilder: (context, state) => CupertinoPage(
+                      key: state.pageKey,
+                      fullscreenDialog: true,
+                      child: const DeleteAccountView(),
+                    ),
                   ),
                   GoRoute(
                     name: AppNamedRoutes.updateDisplayName,
                     path: 'updateUsername',
-                    builder: (context, state) => const UpdateDisplayNameView(),
+                    pageBuilder: (context, state) => CupertinoPage(
+                      key: state.pageKey,
+                      fullscreenDialog: true,
+                      child: const UpdateDisplayNameView(),
+                    ),
                   ),
                   GoRoute(
                     name: AppNamedRoutes.updateEmail,
                     path: 'updateEmail',
-                    builder: (context, state) => const UpdateEmailView(),
+                    pageBuilder: (context, state) => CupertinoPage(
+                      key: state.pageKey,
+                      fullscreenDialog: true,
+                      child: const UpdateEmailView(),
+                    ),
                   ),
                   GoRoute(
                     name: AppNamedRoutes.verifyAccount,
                     path: 'verifyAccount',
-                    builder: (context, state) => const VerifyUserView(),
+                    pageBuilder: (context, state) => CupertinoPage(
+                      key: state.pageKey,
+                      fullscreenDialog: true,
+                      child: const VerifyUserView(),
+                    ),
                   ),
                 ],
               ),
