@@ -34,39 +34,4 @@ class RemoteConfigRepository {
   }
 
   String get appVersion => _remoteConfigApi.getAppVersion();
-
-  String get developerTwitterAccountPath =>
-      _remoteConfigApi.getDeveloperTwitterAccountLink()['path'] as String;
-
-  String get developerTwitterAccountAuthority =>
-      _remoteConfigApi.getDeveloperTwitterAccountLink()['authority'] as String;
-
-  String get appWebsitePath =>
-      _remoteConfigApi.getAppWebsiteLink()['path'] as String;
-
-  String get appWebsiteAuthority =>
-      _remoteConfigApi.getAppWebsiteLink()['authority'] as String;
-
-  String get appTwitterAccountPath =>
-      _remoteConfigApi.getAppTwitterAccountLink()['path'] as String;
-
-  String get appTwitterAccountAuthority =>
-      _remoteConfigApi.getAppTwitterAccountLink()['authority'] as String;
-
-  String get aboutAppAuthority =>
-      _remoteConfigApi.getAboutAppLink()['authority'] as String;
-
-  String get aboutAppPath =>
-      _remoteConfigApi.getAboutAppLink()['path'] as String;
-
-  String get privacyPolicyAuthority =>
-      _remoteConfigApi.getPrivacyPolicyLink()['authority'] as String;
-
-  String get privacyPolicyPath =>
-      _remoteConfigApi.getPrivacyPolicyLink()['path'] as String;
-
-  String get termsOfUsePath =>
-      _remoteConfigApi.getTermsOfUseLink()['path'] as String;
-  String get termsOfUseAuthority =>
-      _remoteConfigApi.getTermsOfUseLink()['authority'] as String;
 }
