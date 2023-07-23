@@ -8,7 +8,7 @@ import 'package:groceries/presentation/modules/login/widgets/login_body_text.dar
 import 'package:groceries/presentation/modules/login/widgets/login_button.dart';
 import 'package:groceries/presentation/modules/login/widgets/login_email_text_field.dart';
 import 'package:groceries/presentation/modules/login/widgets/login_forgot_password_button.dart';
-import 'package:groceries/presentation/modules/login/widgets/login_header.dart';
+import 'package:groceries/presentation/modules/login/widgets/login_header_text.dart';
 import 'package:groceries/presentation/modules/login/widgets/login_other_options_text_button.dart';
 import 'package:groceries/presentation/modules/login/widgets/login_password_text_field.dart';
 import 'package:groceries/presentation/widgets/app_snack_bars.dart';
@@ -21,27 +21,7 @@ class LoginForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocListener<LoginCubit, LoginState>(
-        listener: (context, state) {
-          if (state.status.isFailure) {
-            ScaffoldMessenger.of(context)
-              ..hideCurrentSnackBar()
-              ..showSnackBar(
-                AppSnackBars.error(
-                  error: state.errorMessage ?? 'Authentication Failure',
-                ),
-              );
-          }
-          if (state.status.isSuccess) {
-            ScaffoldMessenger.of(context)
-              ..hideCurrentSnackBar()
-              ..showSnackBar(
-                AppSnackBars.success(
-                  message: 'Welcome Back',
-                ),
-              );
-            context.pushReplacementNamed(AppNamedRoutes.root);
-          }
-        },
+        listener: listener,
         child: ListView(
           physics: const BouncingScrollPhysics(),
           padding: const EdgeInsets.symmetric(
@@ -52,7 +32,7 @@ class LoginForm extends StatelessWidget {
             SizedBox(
               height: context.deviceHeight * 0.09,
             ),
-            const LoginHeader(),
+            const LoginHeaderText(),
             SizedBox(
               height: context.deviceHeight * 0.01,
             ),
@@ -81,5 +61,27 @@ class LoginForm extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void listener(BuildContext context, LoginState state) {
+    if (state.status.isFailure) {
+      ScaffoldMessenger.of(context)
+        ..hideCurrentSnackBar()
+        ..showSnackBar(
+          AppSnackBars.error(
+            error: state.errorMessage ?? 'Authentication Failure',
+          ),
+        );
+    }
+    if (state.status.isSuccess) {
+      ScaffoldMessenger.of(context)
+        ..hideCurrentSnackBar()
+        ..showSnackBar(
+          AppSnackBars.success(
+            message: 'Welcome Back',
+          ),
+        );
+      context.pushReplacementNamed(AppNamedRoutes.root);
+    }
   }
 }

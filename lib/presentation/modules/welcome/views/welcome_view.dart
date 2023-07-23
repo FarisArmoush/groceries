@@ -4,6 +4,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/modules/welcome/widgets/welcome_view_body_text.dart';
 import 'package:groceries/presentation/modules/welcome/widgets/welcome_view_header_text.dart';
+import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class WelcomeView extends StatelessWidget {
@@ -30,23 +31,32 @@ class WelcomeView extends StatelessWidget {
             SizedBox(
               height: context.deviceHeight * 0.09,
             ),
-            FilledButton(
-              child: Text(AppTranslations.register),
-              onPressed: () => context.pushReplacementNamed(
-                AppNamedRoutes.register,
-              ),
-            ),
+            _navigateToRegisterButton(context),
             SizedBox(
-              height: context.deviceHeight * 0.02,
+              height: context.deviceHeight * 0.01,
             ),
-            OutlinedButton(
-              child: Text(AppTranslations.login),
-              onPressed: () => context.pushReplacementNamed(
-                AppNamedRoutes.login,
-              ),
-            ),
+            _navigateToLoginButton(context),
           ],
         ),
+      ),
+    );
+  }
+
+  UpFadeInAnimation _navigateToLoginButton(BuildContext context) {
+    return UpFadeInAnimation(
+      duration: const Duration(milliseconds: 1000),
+      child: OutlinedButton(
+        child: Text(AppTranslations.login),
+        onPressed: () => context.pushReplacementNamed(AppNamedRoutes.login),
+      ),
+    );
+  }
+
+  UpFadeInAnimation _navigateToRegisterButton(BuildContext context) {
+    return UpFadeInAnimation(
+      child: FilledButton(
+        child: Text(AppTranslations.register),
+        onPressed: () => context.pushReplacementNamed(AppNamedRoutes.register),
       ),
     );
   }

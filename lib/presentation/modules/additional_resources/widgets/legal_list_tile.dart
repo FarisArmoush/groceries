@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/presentation/widgets/next_arrow_icon.dart';
 
 class LegalListTile extends StatelessWidget {
@@ -13,11 +14,13 @@ class LegalListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      onTap: onTap,
-      title: Text(title),
-      tileColor: Colors.transparent,
-      trailing: const NextArrowIcon(),
+    return FadeInAnimation(
+      child: ListTile(
+        onTap: onTap,
+        title: Text(title),
+        tileColor: Colors.transparent,
+        trailing: const NextArrowIcon(),
+      ),
     );
   }
 }

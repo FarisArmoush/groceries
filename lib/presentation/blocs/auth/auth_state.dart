@@ -15,6 +15,6 @@ final class Authenticated extends AuthState {
   List<Object?> get props => [user];
 }
 
-final class Unauthenticated extends AuthState {
+class Unauthenticated extends AuthState {
   const Unauthenticated();
 }

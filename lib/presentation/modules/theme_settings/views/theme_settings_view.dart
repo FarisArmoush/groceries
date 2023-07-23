@@ -3,6 +3,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/theme_settings/widgets/theme_header_text.dart';
 import 'package:groceries/presentation/modules/theme_settings/widgets/theme_hint_text.dart';
 import 'package:groceries/presentation/modules/theme_settings/widgets/theme_radios_list.dart';
+import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class ThemeSettingsView extends StatelessWidget {
@@ -12,8 +13,9 @@ class ThemeSettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          AppTranslations.theme,
+        title: FadeInAnimation(
+          duration: const Duration(milliseconds: 550),
+          child: Text(AppTranslations.theme),
         ),
       ),
       body: ListView(

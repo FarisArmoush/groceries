@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
@@ -8,12 +9,15 @@ class LoginBodyText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      AppTranslations.loginBody,
-      style: TextStyle(
-        fontFamily: AppFonts.regular(context),
-        color: context.theme.primaryColor,
-        fontSize: 22,
+    return LeftFadeInAnimation(
+      duration: const Duration(milliseconds: 1100),
+      child: Text(
+        AppTranslations.loginBody,
+        style: TextStyle(
+          fontFamily: AppFonts.regular(context),
+          color: context.theme.primaryColor,
+          fontSize: 22,
+        ),
       ),
     );
   }

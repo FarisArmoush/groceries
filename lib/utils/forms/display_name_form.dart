@@ -23,7 +23,7 @@ class DisplayNameForm extends FormzInput<String, String> {
 
   @override
   String? validator(String? value) {
-    var englishLettersCount =
+    final englishLettersCount =
         AppRegExps.englishLetters.allMatches(value!).length;
 
     if (value.isEmpty) {

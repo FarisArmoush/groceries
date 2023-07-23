@@ -8,6 +8,7 @@ import 'package:groceries/presentation/modules/additional_resources/widgets/addi
 import 'package:groceries/presentation/modules/additional_resources/widgets/app_version_list_tile.dart';
 import 'package:groceries/presentation/modules/additional_resources/widgets/legal_list_tile.dart';
 import 'package:groceries/presentation/modules/additional_resources/widgets/send_crash_reports_switch_tile.dart';
+import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class AdditionalResourcesView extends StatelessWidget {
@@ -18,7 +19,9 @@ class AdditionalResourcesView extends StatelessWidget {
     final urlLauncher = context.read<RemoteConfigCubit>().urlLauncherRepo;
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppTranslations.additionalResources),
+        title: FadeInAnimation(
+          child: Text(AppTranslations.additionalResources),
+        ),
       ),
       body: ListView(
         physics: const BouncingScrollPhysics(),

@@ -3,5 +3,6 @@ linter:
   rules:
     flutter_style_todos: false
     sort_pub_dependencies: false
-    prefer_final_locals: false
+    prefer_final_locals: true
     public_member_api_docs: false
+    avoid_annotating_with_dynamic: true

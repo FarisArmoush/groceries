@@ -4,6 +4,7 @@ import 'package:groceries/data/models/task_model/task_model.dart';
 import 'package:groceries/presentation/modules/home/widgets/my_tasks/my_tasks_list.dart';
 import 'package:groceries/presentation/modules/home/widgets/my_tasks/you_have_no_tasks.dart';
 import 'package:groceries/presentation/modules/home/widgets/rail_title.dart';
+import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class MyTasksRail extends StatelessWidget {
@@ -20,8 +21,10 @@ class MyTasksRail extends StatelessWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       children: [
-        RailTitle(
-          title: AppTranslations.myTasks,
+        LeftFadeInAnimation(
+          child: RailTitle(
+            title: AppTranslations.myTasks,
+          ),
         ),
         SizedBox(
           height: tasks.isNotEmpty

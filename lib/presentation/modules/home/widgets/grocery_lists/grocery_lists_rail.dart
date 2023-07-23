@@ -5,6 +5,7 @@ import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocer
 import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocery_lists_rail_header.dart';
 import 'package:groceries/presentation/modules/home/widgets/grocery_lists/you_have_no_grocery_lists.dart';
 import 'package:groceries/presentation/modules/home/widgets/rail_title.dart';
+import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class GroceryListsRail extends StatelessWidget {
@@ -24,7 +25,7 @@ class GroceryListsRail extends StatelessWidget {
         if (lists.isNotEmpty)
           const GroceryListsRailHeader()
         else
-          RailTitle(title: AppTranslations.myLists),
+          LeftFadeInAnimation(child: RailTitle(title: AppTranslations.myLists)),
         SizedBox(
           height: lists.isNotEmpty
               ? context.deviceHeight * 0.025
