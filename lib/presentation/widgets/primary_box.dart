@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
-/// {@template primary_box}
-/// A widget that represents a primary box container
-/// with optional header and customizable styling.
-/// {@endtemplate}
 class PrimaryBox extends StatelessWidget {
-  /// {@macro primary_box}
   const PrimaryBox({
     required this.child,
     this.header,
@@ -15,16 +11,9 @@ class PrimaryBox extends StatelessWidget {
     super.key,
   });
 
-  /// The main content of the box.
   final Widget child;
-
-  /// An optional header widget displayed above the main content.
   final Widget? header;
-
-  /// The background color of the box.
   final Color? backgroundColor;
-
-  /// The border radius of the box.
   final BorderRadiusGeometry? borderRadius;
 
   @override
@@ -37,21 +26,28 @@ class PrimaryBox extends StatelessWidget {
       ),
       child: Material(
         color: Colors.transparent,
-        child: _child(),
+        child: _child(context),
       ),
     );
   }
 
-  Widget _child() {
-    return header == null ? child : _childWithHeader();
+  Widget _child(BuildContext context) {
+    return header == null ? child : _childWithHeader(context);
   }
 
-  Column _childWithHeader() {
+  Widget _childWithHeader(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        header ?? const SizedBox.shrink(),
+        DefaultTextStyle.merge(
+          style: TextStyle(
+            fontFamily: AppFonts.regular(context),
+            color: context.theme.primaryColor,
+            fontSize: 16,
+          ),
+          child: header ?? const SizedBox.shrink(),
+        ),
         const SizedBox(height: 12),
         child,
       ],

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/domain/use_cases/app_packages.dart';
+import 'package:groceries/domain/entities/app_packages.dart';
 
 class CreditsView extends StatelessWidget {
   const CreditsView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final appPackages = AppPackages()..sortAppPackages();
-    final packages = appPackages.getAllPackages;
+    final appPackages = AppPackages();
+    final packages = appPackages.fetchAppPackages();
 
     return Scaffold(
       appBar: AppBar(
