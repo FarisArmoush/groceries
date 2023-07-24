@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:groceries/presentation/modules/home/blocs/grocery_lists/grocery_lists_bloc.dart';
+import 'package:groceries/presentation/modules/home/blocs/my_tasks/my_tasks_bloc.dart';
 import 'package:groceries/presentation/modules/home/views/home_view.dart';
+import 'package:groceries/presentation/modules/recipes/bloc/recipes_bloc.dart';
 import 'package:groceries/presentation/modules/recipes/views/recipes_view.dart';
-import 'package:groceries/presentation/modules/root/blocs/grocery_lists/grocery_lists_bloc.dart';
-import 'package:groceries/presentation/modules/root/blocs/my_tasks/my_tasks_bloc.dart';
 import 'package:groceries/presentation/modules/settings/views/settings_view.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
@@ -25,9 +26,15 @@ class _RootViewState extends State<RootView> {
       providers: [
         BlocProvider<GroceryListsBloc>(
           create: (context) => GroceryListsBloc()..add(LoadGroceryLists()),
+          child: const HomeView(),
         ),
         BlocProvider<MyTasksBloc>(
           create: (context) => MyTasksBloc()..add(LoadMyTasks()),
+          child: const HomeView(),
+        ),
+        BlocProvider<RecipesBloc>(
+          create: (context) => RecipesBloc()..add(LoadRecipes()),
+          child: const RecipesView(),
         ),
       ],
       child: Scaffold(
@@ -86,7 +93,7 @@ class _RootViewState extends State<RootView> {
       activeIcon: SvgPicture.asset(
         asset,
         // ignore: deprecated_member_use
-        color: context.theme.primaryColor,
+        color: context.theme.primaryColorLight,
       ),
     );
   }
