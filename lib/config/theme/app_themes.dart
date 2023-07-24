@@ -56,6 +56,7 @@ class AppThemes {
             _AppFloatingActionButtonThemeData.light(context),
         dividerTheme: _AppDividerThemeData.light,
         iconButtonTheme: __AppIconButtonThemeData.light,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       );
 
   /// Returns the dark theme for the application.

@@ -1,3 +1,4 @@
+// ignore_for_file: deprecated_member_use
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -9,6 +10,7 @@ import 'package:groceries/presentation/modules/recipes/views/recipes_view.dart';
 import 'package:groceries/presentation/modules/settings/views/settings_view.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 class RootView extends StatefulWidget {
   const RootView({super.key});
@@ -38,38 +40,35 @@ class _RootViewState extends State<RootView> {
         ),
       ],
       child: Scaffold(
-        body: views[currentIndex],
-        bottomNavigationBar: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
+        body: _views[currentIndex],
+        bottomNavigationBar: SalomonBottomBar(
           backgroundColor: context.theme.scaffoldBackgroundColor,
           currentIndex: currentIndex,
           onTap: (int index) => setState(() => currentIndex = index),
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          items: bnb(context),
+          items: _bnb(context),
         ),
       ),
     );
   }
 
-  final List<Widget> views = [
-    const HomeView(),
-    const RecipesView(),
-    const SettingsView(),
+  static const List<Widget> _views = [
+    HomeView(),
+    RecipesView(),
+    SettingsView(),
   ];
-  List<BottomNavigationBarItem> bnb(BuildContext context) {
+  List<SalomonBottomBarItem> _bnb(BuildContext context) {
     return [
-      bnbItem(
+      _bnbItem(
         context,
         label: 'Home',
         asset: Assets.svg.icHome.path,
       ),
-      bnbItem(
+      _bnbItem(
         context,
         label: 'Recipes',
         asset: Assets.svg.icChefHat.path,
       ),
-      bnbItem(
+      _bnbItem(
         context,
         label: 'Settings',
         asset: Assets.svg.icSettings.path,
@@ -77,24 +76,22 @@ class _RootViewState extends State<RootView> {
     ];
   }
 
-  BottomNavigationBarItem bnbItem(
+  SalomonBottomBarItem _bnbItem(
     BuildContext context, {
     required String label,
     required String asset,
   }) {
-    return BottomNavigationBarItem(
+    return SalomonBottomBarItem(
       icon: SvgPicture.asset(
         asset,
-        // ignore: deprecated_member_use
         color: context.theme.hintColor,
       ),
-      label: label,
-      tooltip: label,
+      title: Text(label),
       activeIcon: SvgPicture.asset(
         asset,
-        // ignore: deprecated_member_use
-        color: context.theme.primaryColorLight,
+        color: context.theme.primaryColor,
       ),
+      selectedColor: context.theme.primaryColor,
     );
   }
 }

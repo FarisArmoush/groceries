@@ -12,6 +12,7 @@ class AppPackages {
       AppPackage('Easy Localization'),
       AppPackage('Email Validator'),
       AppPackage('Equatable'),
+      AppPackage('Salomon Bottom Bar'),
       AppPackage('Faker'),
       AppPackage('Firebase Auth'),
       AppPackage('Firebase Analytics'),
