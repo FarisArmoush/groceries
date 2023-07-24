@@ -86,5 +86,3 @@ class CachedImage extends StatelessWidget {
     );
   }
 }
-
-// sealed  class Omal {}

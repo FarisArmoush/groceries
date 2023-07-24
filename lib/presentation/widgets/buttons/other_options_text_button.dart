@@ -1,3 +1,4 @@
+// ignore_for_file: prefer_interpolation_to_compose_strings
 import 'package:flutter/material.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
@@ -22,7 +23,7 @@ class OtherOptionTextButton extends StatelessWidget {
         text: TextSpan(
           children: <TextSpan>[
             TextSpan(
-              text: '$upperText\n',
+              text: upperText + '\n',
               style: TextStyle(
                 fontFamily: AppFonts.light(context),
                 color: context.theme.hintColor,

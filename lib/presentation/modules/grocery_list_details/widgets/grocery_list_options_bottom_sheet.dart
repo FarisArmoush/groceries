@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/presentation/widgets/bottom_sheets_header.dart';
+import 'package:groceries/presentation/modules/grocery_list_details/widgets/grocery_list_options_bottom_sheet_header.dart';
 import 'package:groceries/presentation/widgets/buttons/bottom_sheet_button.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
@@ -24,9 +24,7 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
           shrinkWrap: true,
           physics: const BouncingScrollPhysics(),
           children: [
-            BottomSheetsHeader(
-              header: AppTranslations.listOptions,
-            ),
+            const GroceryListOptionsBottomSheetHeader(),
             BottomSheetButton(
               text: AppTranslations.sendListAsText,
               iconPath: Assets.svg.icSend.path,

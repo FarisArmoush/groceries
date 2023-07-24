@@ -8,9 +8,9 @@ import 'package:groceries/presentation/modules/home/views/home_view.dart';
 import 'package:groceries/presentation/modules/recipes/bloc/recipes_bloc.dart';
 import 'package:groceries/presentation/modules/recipes/views/recipes_view.dart';
 import 'package:groceries/presentation/modules/settings/views/settings_view.dart';
+import 'package:groceries/presentation/widgets/app_bottom_navigation_bar.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 class RootView extends StatefulWidget {
   const RootView({super.key});
@@ -41,7 +41,7 @@ class _RootViewState extends State<RootView> {
       ],
       child: Scaffold(
         body: _views[currentIndex],
-        bottomNavigationBar: SalomonBottomBar(
+        bottomNavigationBar: AppBottomNavigationBar(
           backgroundColor: context.theme.scaffoldBackgroundColor,
           currentIndex: currentIndex,
           onTap: (int index) => setState(() => currentIndex = index),
@@ -56,7 +56,7 @@ class _RootViewState extends State<RootView> {
     RecipesView(),
     SettingsView(),
   ];
-  List<SalomonBottomBarItem> _bnb(BuildContext context) {
+  List<AppBottomNavigationBarItem> _bnb(BuildContext context) {
     return [
       _bnbItem(
         context,
@@ -76,12 +76,12 @@ class _RootViewState extends State<RootView> {
     ];
   }
 
-  SalomonBottomBarItem _bnbItem(
+  AppBottomNavigationBarItem _bnbItem(
     BuildContext context, {
     required String label,
     required String asset,
   }) {
-    return SalomonBottomBarItem(
+    return AppBottomNavigationBarItem(
       icon: SvgPicture.asset(
         asset,
         color: context.theme.hintColor,
