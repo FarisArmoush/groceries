@@ -9,7 +9,7 @@ class VerifyUserView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
+    return BlocProvider<VerifyUserCubit>(
       create: (context) => VerifyUserCubit(
         context.read<AuthBloc>().authRepo,
       ),

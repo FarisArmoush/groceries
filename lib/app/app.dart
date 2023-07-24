@@ -23,7 +23,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return RepositoryProvider.value(
       value: authRepository,
-      child: BlocProvider(
+      child: BlocProvider<AuthBloc>(
         create: (context) => AuthBloc(
           authRepo: authRepository,
         ),

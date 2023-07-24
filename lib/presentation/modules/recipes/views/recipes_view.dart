@@ -29,10 +29,6 @@ class RecipesView extends StatelessWidget {
           ),
         ],
       ),
-      // body: BlocProvider<RecipesBloc>(
-      //   create: (context) => RecipesBloc()..add(LoadRecipes()),
-      //   child: const RecipesForm(),
-      // ),
       body: const RecipesForm(),
     );
   }

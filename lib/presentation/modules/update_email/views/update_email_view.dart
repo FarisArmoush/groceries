@@ -9,7 +9,7 @@ class UpdateEmailView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
+    return BlocProvider<UpdateEmailCubit>(
       create: (context) => UpdateEmailCubit(
         context.read<AuthBloc>().authRepo,
       ),

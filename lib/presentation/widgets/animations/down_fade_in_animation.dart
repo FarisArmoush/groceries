@@ -23,8 +23,7 @@ Then you must provide the controller property, that is a callback like:\n\n
   final Widget child;
   final Duration duration;
   final Duration delay;
-  // ignore: inference_failure_on_function_return_type
-  final Function(AnimationController)? controller;
+  final void Function(AnimationController)? controller;
   final bool manualTrigger;
   final bool animate;
   final double from;

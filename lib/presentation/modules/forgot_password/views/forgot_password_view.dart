@@ -9,7 +9,7 @@ class ForgotPasswordView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
+    return BlocProvider<ForgotPasswordCubit>(
       create: (context) => ForgotPasswordCubit(
         context.read<AuthBloc>().authRepo,
       ),

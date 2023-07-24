@@ -39,10 +39,6 @@ class AdditionalResourcesView extends StatelessWidget {
           Divider(
             height: context.deviceHeight * 0.075,
           ),
-          AdditionalResourcesTitle(AppTranslations.legal),
-          SizedBox(
-            height: context.deviceHeight * 0.02,
-          ),
           LegalListTile(
             title: AppTranslations.credits,
             onTap: () => context.pushNamed(AppNamedRoutes.credits),

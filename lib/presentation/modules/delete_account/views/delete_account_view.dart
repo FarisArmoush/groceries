@@ -9,7 +9,7 @@ class DeleteAccountView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
+    return BlocProvider<DeleteAccountCubit>(
       create: (context) => DeleteAccountCubit(
         authRepo: context.read<FirebaseAuthRepository>(),
       ),

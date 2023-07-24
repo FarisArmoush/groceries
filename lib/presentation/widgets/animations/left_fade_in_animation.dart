@@ -1,5 +1,3 @@
-// ignore_for_file: lines_longer_than_80_chars, inference_failure_on_function_return_type
-
 part of 'app_animations.dart';
 
 class LeftFadeInAnimation extends StatefulWidget {
@@ -26,11 +24,10 @@ Then you must provide the controller property, that is a callback like:\n\n
   final Widget child;
   final Duration duration;
   final Duration delay;
-  final Function(AnimationController)? controller;
+  final void Function(AnimationController)? controller;
   final bool manualTrigger;
   final bool animate;
   final double from;
-
   @override
   State<LeftFadeInAnimation> createState() => _LeftFadeInAnimationState();
 }

@@ -325,9 +325,6 @@ class AppTranslations {
   /// app_version
   static final appVersion = 'app_version'.tr();
 
-  /// legal
-  static final legal = 'legal'.tr();
-
   /// help_improve_app
   static final helpImproveApp = 'help_improve_app'.tr();
 
@@ -337,15 +334,6 @@ class AppTranslations {
   /// send_crash_reports_description
   static final sendCrashReportsDescription =
       'send_crash_reports_description'.tr();
-
-  /// about
-  static final about = 'about'.tr();
-
-  /// privacy_policy
-  static final privacyPolicy = 'privacy_policy'.tr();
-
-  /// terms_of_use
-  static final termsOfUse = 'terms_of_use'.tr();
 
   /// credits
   static final credits = 'credits'.tr();

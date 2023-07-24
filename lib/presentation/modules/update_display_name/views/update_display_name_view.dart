@@ -9,7 +9,7 @@ class UpdateDisplayNameView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
+    return BlocProvider<UpdateDisplayNameCubit>(
       create: (context) => UpdateDisplayNameCubit(
         context.read<AuthBloc>().authRepo,
       ),
