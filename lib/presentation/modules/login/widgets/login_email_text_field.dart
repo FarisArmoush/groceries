@@ -12,7 +12,6 @@ class LoginEmailTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LeftFadeInAnimation(
-      // duration: const Duration(milliseconds: 1000),
       duration: 1000.milliseconds,
       child: BlocBuilder<LoginCubit, LoginState>(
         buildWhen: (previous, current) => previous.email != current.email,

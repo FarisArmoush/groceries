@@ -13,7 +13,6 @@ class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LeftFadeInAnimation(
-      // duration: const Duration(milliseconds: 700),
       duration: 700.milliseconds,
       child: BlocBuilder<LoginCubit, LoginState>(
         builder: (context, state) {
@@ -39,7 +38,7 @@ class LoginButton extends StatelessWidget {
 
   Widget _text() {
     return FadeInAnimation(
-      duration: const Duration(milliseconds: 200),
+      duration: 200.milliseconds,
       child: Text(AppTranslations.login),
     );
   }

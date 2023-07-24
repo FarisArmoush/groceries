@@ -3,6 +3,7 @@ import 'dart:developer' as dev;
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:groceries/data/data_sources/remote_config_api.dart';
+import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 
 class RemoteConfigRepository {
   RemoteConfigRepository({
@@ -19,7 +20,7 @@ class RemoteConfigRepository {
       await _remoteConfig.ensureInitialized();
       await _remoteConfig.setConfigSettings(
         RemoteConfigSettings(
-          fetchTimeout: const Duration(seconds: 10),
+          fetchTimeout: 10.seconds,
           minimumFetchInterval: Duration.zero,
         ),
       );

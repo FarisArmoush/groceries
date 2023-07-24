@@ -8,6 +8,7 @@ import 'package:groceries/presentation/modules/create_list/widgets/create_new_li
 import 'package:groceries/presentation/modules/create_list/widgets/invite_users_to_list_form.dart';
 import 'package:groceries/presentation/widgets/page_indicator.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 
 class CreateListView extends StatelessWidget {
   CreateListView({super.key});
@@ -55,7 +56,7 @@ class CreateListView extends StatelessWidget {
       // context.pushReplacementNamed(AppNamedRoutes.listCreatedUnsuccessfully);
     } else {
       _pageController.nextPage(
-        duration: const Duration(milliseconds: 750),
+        duration: 750.milliseconds,
         curve: Curves.fastOutSlowIn,
       );
     }

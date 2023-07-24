@@ -11,7 +11,6 @@ class LoginHeaderText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LeftFadeInAnimation(
-      // duration: const Duration(milliseconds: 1200),
       duration: 1200.milliseconds,
       child: Text(
         AppTranslations.loginHeader,

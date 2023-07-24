@@ -12,7 +12,6 @@ class LoginOtherOptionsTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LeftFadeInAnimation(
-      // duration: const Duration(milliseconds: 600),
       duration: 600.milliseconds,
       child: OtherOptionTextButton(
         upperText: AppTranslations.dontHaveAnAccount,

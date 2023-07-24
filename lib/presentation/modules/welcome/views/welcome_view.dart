@@ -6,6 +6,7 @@ import 'package:groceries/presentation/modules/welcome/widgets/welcome_view_body
 import 'package:groceries/presentation/modules/welcome/widgets/welcome_view_header_text.dart';
 import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 
 class WelcomeView extends StatelessWidget {
   const WelcomeView({super.key});
@@ -44,7 +45,7 @@ class WelcomeView extends StatelessWidget {
 
   UpFadeInAnimation _navigateToLoginButton(BuildContext context) {
     return UpFadeInAnimation(
-      duration: const Duration(milliseconds: 1000),
+      duration: 1000.milliseconds,
       child: OutlinedButton(
         child: Text(AppTranslations.login),
         onPressed: () => context.pushReplacementNamed(AppNamedRoutes.login),

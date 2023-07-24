@@ -3,6 +3,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/presentation/widgets/next_arrow_icon.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
+import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 
 class OnboardingNextPageButton extends StatelessWidget {
   const OnboardingNextPageButton({
@@ -19,9 +20,7 @@ class OnboardingNextPageButton extends StatelessWidget {
         tooltip: AppTranslations.nextPage,
         onPressed: () => controller.nextPage(
           curve: Curves.easeInOut,
-          duration: const Duration(
-            milliseconds: 1000,
-          ),
+          duration: 1000.milliseconds,
         ),
         child: const NextArrowIcon(
           color: AppColors.white,
