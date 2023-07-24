@@ -3,6 +3,7 @@ import 'package:groceries/data/models/task_model/task_model.dart';
 import 'package:groceries/presentation/modules/home/widgets/my_tasks/my_tasks_card.dart';
 import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 
 class MyTasksList extends StatelessWidget {
   const MyTasksList({
@@ -20,7 +21,7 @@ class MyTasksList extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       itemBuilder: (context, index) {
         return LeftFadeInAnimation(
-          duration: Duration(milliseconds: 500 + (index * 200)),
+          duration: (500 + (index * 200)).milliseconds,
           child: MyTasksCard(
             taskModel: TaskModel(
               uid: tasks[index].uid,

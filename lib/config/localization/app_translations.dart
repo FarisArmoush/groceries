@@ -116,6 +116,9 @@ class AppTranslations {
   static final dontCancelForgotPassword = 'dont_cancel_forgot_password'.tr();
 
   // $_HOME_$
+  /// home
+  static final home = 'home'.tr();
+
   /// home_greeting
   static final homeGreeting = 'home_greeting'.tr();
 

@@ -7,6 +7,7 @@ import 'package:groceries/presentation/modules/settings/widgets/user_data_box.da
 import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});
@@ -31,7 +32,7 @@ class SettingsView extends StatelessWidget {
             height: context.deviceHeight * 0.05,
           ),
           LeftFadeInAnimation(
-            duration: const Duration(milliseconds: 700),
+            duration: 700.milliseconds,
             child: SettingsListTile(
               title: AppTranslations.accountSettings,
               subtitle: AppTranslations.accountSettingsDescription,
@@ -43,7 +44,7 @@ class SettingsView extends StatelessWidget {
             height: context.deviceHeight * 0.01,
           ),
           LeftFadeInAnimation(
-            duration: const Duration(milliseconds: 600),
+            duration: 600.milliseconds,
             child: SettingsListTile(
               title: AppTranslations.theme,
               subtitle: AppTranslations.themeHeader,
@@ -55,7 +56,7 @@ class SettingsView extends StatelessWidget {
             height: context.deviceHeight * 0.01,
           ),
           LeftFadeInAnimation(
-            duration: const Duration(milliseconds: 500),
+            duration: 500.milliseconds,
             child: SettingsListTile(
               title: AppTranslations.additionalResources,
               subtitle: AppTranslations.additionalResourcesDescription,

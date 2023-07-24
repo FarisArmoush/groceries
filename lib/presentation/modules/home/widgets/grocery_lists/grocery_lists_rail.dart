@@ -25,7 +25,9 @@ class GroceryListsRail extends StatelessWidget {
         if (lists.isNotEmpty)
           const GroceryListsRailHeader()
         else
-          LeftFadeInAnimation(child: RailTitle(title: AppTranslations.myLists)),
+          LeftFadeInAnimation(
+            child: RailTitle(title: AppTranslations.myLists),
+          ),
         SizedBox(
           height: lists.isNotEmpty
               ? context.deviceHeight * 0.025

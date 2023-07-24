@@ -5,6 +5,7 @@ import 'package:groceries/presentation/modules/account_settings/widgets/user_ima
 import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 
 class UserDataBox extends StatelessWidget {
   const UserDataBox({super.key});
@@ -13,7 +14,7 @@ class UserDataBox extends StatelessWidget {
   Widget build(BuildContext context) {
     final user = context.watch<AuthBloc>().authRepo.currentUser;
     return DownFadeInAnimation(
-      duration: const Duration(milliseconds: 500),
+      duration: 500.milliseconds,
       child: ListView(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),

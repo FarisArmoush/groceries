@@ -35,7 +35,6 @@ class AppPackages {
       AppPackage('Very Good Analysis'),
       AppPackage('Json Serializable'),
       AppPackage('Flutter Gen Runner'),
-      AppPackage('Flutter Animate'),
       AppPackage('Freezed Annotation'),
       AppPackage('Json Annotation'),
       AppPackage('Freezed'),

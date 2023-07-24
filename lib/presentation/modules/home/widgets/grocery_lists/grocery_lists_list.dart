@@ -5,6 +5,7 @@ import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart
 import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocery_list_card.dart';
 import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 
 class GroceryListsList extends StatelessWidget {
   const GroceryListsList({required this.lists, super.key});
@@ -20,9 +21,7 @@ class GroceryListsList extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 4),
       itemBuilder: (context, index) {
         return LeftFadeInAnimation(
-          duration: Duration(
-            milliseconds: 500 + (index * 200),
-          ),
+          duration: (500 + (index * 200)).milliseconds,
           child: GroceryListCard(
             listModel: GroceryListModel(
               uid: lists[index].uid,

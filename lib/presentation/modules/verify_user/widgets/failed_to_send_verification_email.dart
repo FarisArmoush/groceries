@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
@@ -18,15 +17,9 @@ class FailedToSendVerificationEmail extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Assets.svg.illError
-                .svg(
-                  height: context.deviceHeight * 0.3,
-                )
-                .animate()
-                .shakeY()
-                .shakeX()
-                .shakeY()
-                .shakeX(),
+            Assets.svg.illError.svg(
+              height: context.deviceHeight * 0.3,
+            ),
             SizedBox(
               height: context.deviceHeight * 0.02,
             ),
@@ -36,7 +29,7 @@ class FailedToSendVerificationEmail extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
           ],
-        ).animate().fadeIn(),
+        ),
       ),
     );
   }

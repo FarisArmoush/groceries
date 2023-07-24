@@ -4,6 +4,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/login/cubit/login_cubit.dart';
 import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/presentation/widgets/app_text_field.dart';
+import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 
 class LoginEmailTextField extends StatelessWidget {
   const LoginEmailTextField({super.key});
@@ -11,7 +12,8 @@ class LoginEmailTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LeftFadeInAnimation(
-      duration: const Duration(milliseconds: 1000),
+      // duration: const Duration(milliseconds: 1000),
+      duration: 1000.milliseconds,
       child: BlocBuilder<LoginCubit, LoginState>(
         buildWhen: (previous, current) => previous.email != current.email,
         builder: (context, state) {

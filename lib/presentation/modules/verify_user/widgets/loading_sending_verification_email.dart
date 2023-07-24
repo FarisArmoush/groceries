@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
@@ -31,7 +30,7 @@ class LoadingSendingVerificationEmail extends StatelessWidget {
               height: context.deviceHeight * 0.025,
             ),
           ],
-        ).animate().fadeIn(),
+        ),
       ),
     );
   }

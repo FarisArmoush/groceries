@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/register/cubit/register_cubit.dart';
 import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/presentation/widgets/buttons_loading_indicator.dart';
+import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 
 class RegisterButton extends StatelessWidget {
   const RegisterButton({super.key});
@@ -13,7 +13,7 @@ class RegisterButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LeftFadeInAnimation(
-      duration: const Duration(milliseconds: 600),
+      duration: 600.milliseconds,
       child: BlocBuilder<RegisterCubit, RegisterState>(
         builder: (context, state) {
           if (state.status.isInProgress) {
@@ -36,5 +36,7 @@ class RegisterButton extends StatelessWidget {
     );
   }
 
-  Animate _text() => Text(AppTranslations.register).animate().fadeIn();
+  Widget _text() => FadeInAnimation(
+        child: Text(AppTranslations.register),
+      );
 }

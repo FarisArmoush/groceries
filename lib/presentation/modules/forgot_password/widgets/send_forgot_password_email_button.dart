@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/forgot_password/cubit/forgot_password_cubit.dart';
 import 'package:groceries/presentation/widgets/animations/app_animations.dart';
+import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 
 class SendForgotPasswordEmailButton extends StatelessWidget {
   const SendForgotPasswordEmailButton({super.key});
@@ -10,7 +11,7 @@ class SendForgotPasswordEmailButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LeftFadeInAnimation(
-      duration: const Duration(milliseconds: 700),
+      duration: 700.milliseconds,
       child: SizedBox(
         width: double.infinity,
         child: Padding(

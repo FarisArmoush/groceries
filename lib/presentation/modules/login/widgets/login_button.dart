@@ -5,6 +5,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/login/cubit/login_cubit.dart';
 import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/presentation/widgets/buttons_loading_indicator.dart';
+import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton({super.key});
@@ -12,7 +13,8 @@ class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LeftFadeInAnimation(
-      duration: const Duration(milliseconds: 700),
+      // duration: const Duration(milliseconds: 700),
+      duration: 700.milliseconds,
       child: BlocBuilder<LoginCubit, LoginState>(
         builder: (context, state) {
           if (state.status.isInProgress) {

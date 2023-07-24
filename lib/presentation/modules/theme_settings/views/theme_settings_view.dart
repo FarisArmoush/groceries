@@ -5,6 +5,7 @@ import 'package:groceries/presentation/modules/theme_settings/widgets/theme_hint
 import 'package:groceries/presentation/modules/theme_settings/widgets/theme_radios_list.dart';
 import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 
 class ThemeSettingsView extends StatelessWidget {
   const ThemeSettingsView({super.key});
@@ -14,7 +15,7 @@ class ThemeSettingsView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: FadeInAnimation(
-          duration: const Duration(milliseconds: 550),
+          duration: 550.milliseconds,
           child: Text(AppTranslations.theme),
         ),
       ),

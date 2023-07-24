@@ -3,6 +3,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 
 class ForgotPasswordHeaderText extends StatelessWidget {
   const ForgotPasswordHeaderText({super.key});
@@ -10,7 +11,7 @@ class ForgotPasswordHeaderText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LeftFadeInAnimation(
-      duration: const Duration(milliseconds: 1000),
+      duration: 1000.milliseconds,
       child: Text(
         AppTranslations.forgotPassword,
         style: TextStyle(

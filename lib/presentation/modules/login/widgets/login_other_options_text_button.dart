@@ -4,6 +4,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/presentation/widgets/buttons/other_options_text_button.dart';
+import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 
 class LoginOtherOptionsTextButton extends StatelessWidget {
   const LoginOtherOptionsTextButton({super.key});
@@ -11,7 +12,8 @@ class LoginOtherOptionsTextButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LeftFadeInAnimation(
-      duration: const Duration(milliseconds: 600),
+      // duration: const Duration(milliseconds: 600),
+      duration: 600.milliseconds,
       child: OtherOptionTextButton(
         upperText: AppTranslations.dontHaveAnAccount,
         lowerText: AppTranslations.registerNow,

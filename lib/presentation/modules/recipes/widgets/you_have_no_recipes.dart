@@ -4,6 +4,7 @@ import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 
 class YouHaveNoRecipes extends StatelessWidget {
   const YouHaveNoRecipes({super.key});
@@ -11,7 +12,7 @@ class YouHaveNoRecipes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LeftFadeInAnimation(
-      duration: const Duration(milliseconds: 250),
+      duration: 250.milliseconds,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
