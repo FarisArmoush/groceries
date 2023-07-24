@@ -3,8 +3,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/data/models/user_model/user_model.dart';
 
-part 'grocery_list_model.g.dart';
 part 'grocery_list_model.freezed.dart';
+part 'grocery_list_model.g.dart';
 
 @freezed
 class GroceryListModel with _$GroceryListModel {

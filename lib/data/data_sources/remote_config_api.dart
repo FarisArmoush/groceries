@@ -7,10 +7,5 @@ class RemoteConfigApi {
 
   final FirebaseRemoteConfig _remoteConfig;
 
-  String getAppVersion() {
-    final version = _remoteConfig.getString('app_version');
-    return version;
-  }
-
-  String fetchTestUri() => _remoteConfig.getString('test_url');
+  String getAppVersion() => _remoteConfig.getString('app_version');
 }
