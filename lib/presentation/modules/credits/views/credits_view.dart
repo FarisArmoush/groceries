@@ -1,51 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/domain/entities/app_packages.dart';
+import 'package:groceries/presentation/modules/credits/widgets/credits_flutter_packages_text.dart';
+import 'package:groceries/presentation/modules/credits/widgets/flutter_packages_list.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class CreditsView extends StatelessWidget {
   const CreditsView({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final appPackages = AppPackages();
-    final packages = appPackages.fetchAppPackages();
-
     return Scaffold(
       appBar: AppBar(
         title: Text(AppTranslations.credits),
       ),
-      body: ListView.builder(
-        itemCount: packages.length,
+      body: ListView(
+        padding: const EdgeInsets.all(16),
         physics: const BouncingScrollPhysics(),
-        padding: const EdgeInsets.symmetric(
-          vertical: 12,
-          horizontal: 12,
-        ),
-        itemBuilder: (context, index) => _listTile(index, packages),
-      ),
-    );
-  }
-
-  ListTile _listTile(int index, List<AppPackage> packages) {
-    return ListTile(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(
-            index == 0 ? 15 : 0,
+        children: [
+          const CreditsFlutterPackagesText(),
+          SizedBox(
+            height: context.deviceHeight * 0.01,
           ),
-          topRight: Radius.circular(
-            index == 0 ? 15 : 0,
-          ),
-          bottomLeft: Radius.circular(
-            index == packages.length - 1 ? 15 : 0,
-          ),
-          bottomRight: Radius.circular(
-            index == packages.length - 1 ? 15 : 0,
-          ),
-        ),
-      ),
-      title: Text(
-        packages[index].name,
+          const FlutterPackagesList(),
+        ],
       ),
     );
   }
