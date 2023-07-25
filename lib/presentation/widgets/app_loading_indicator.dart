@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/presentation/widgets/animations/app_animations.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 /// {@template app_loading_indicator}
 /// A widget that displays a loading indicator.

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/presentation/widgets/next_arrow_icon.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class SettingsListTile extends StatelessWidget {
   const SettingsListTile({

@@ -9,7 +9,7 @@ import 'package:groceries/presentation/modules/update_email/widgets/update_email
 import 'package:groceries/presentation/modules/update_email/widgets/update_email_header_text.dart';
 import 'package:groceries/presentation/modules/update_email/widgets/update_email_text_field.dart';
 import 'package:groceries/presentation/widgets/app_snack_bars.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class UpdateEmailForm extends StatelessWidget {
   const UpdateEmailForm({super.key});

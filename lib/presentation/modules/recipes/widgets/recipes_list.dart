@@ -4,8 +4,7 @@ import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/data/models/recipe_model/recipe_model.dart';
 import 'package:groceries/presentation/modules/recipes/widgets/recipe_card/recipe_card.dart';
 import 'package:groceries/presentation/widgets/animations/app_animations.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class RecipesList extends StatelessWidget {
   const RecipesList({

@@ -7,7 +7,7 @@ import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/data/repositories/firebase_auth_repository.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/email/verify_to_update_email_bottom_sheet.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class UserEmailListTile extends StatelessWidget {
   const UserEmailListTile({super.key});

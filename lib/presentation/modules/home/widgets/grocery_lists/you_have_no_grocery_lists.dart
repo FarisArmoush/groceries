@@ -6,7 +6,7 @@ import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class YouDontHaveGroceryLists extends StatelessWidget {
   const YouDontHaveGroceryLists({super.key});

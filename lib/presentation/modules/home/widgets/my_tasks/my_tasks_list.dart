@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries/data/models/task_model/task_model.dart';
 import 'package:groceries/presentation/modules/home/widgets/my_tasks/my_tasks_card.dart';
 import 'package:groceries/presentation/widgets/animations/app_animations.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class MyTasksList extends StatelessWidget {
   const MyTasksList({

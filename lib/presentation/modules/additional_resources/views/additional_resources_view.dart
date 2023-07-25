@@ -7,7 +7,7 @@ import 'package:groceries/presentation/modules/additional_resources/widgets/app_
 import 'package:groceries/presentation/modules/additional_resources/widgets/legal_list_tile.dart';
 import 'package:groceries/presentation/modules/additional_resources/widgets/send_crash_reports_switch_tile.dart';
 import 'package:groceries/presentation/widgets/animations/app_animations.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class AdditionalResourcesView extends StatelessWidget {
   const AdditionalResourcesView({super.key});

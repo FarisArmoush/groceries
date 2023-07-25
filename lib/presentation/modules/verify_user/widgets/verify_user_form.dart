@@ -7,7 +7,7 @@ import 'package:groceries/presentation/modules/verify_user/widgets/loading_sendi
 import 'package:groceries/presentation/modules/verify_user/widgets/send_verification_email_button.dart';
 import 'package:groceries/presentation/modules/verify_user/widgets/verification_email_sent_successfully.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class VerifyUserForm extends StatelessWidget {
   const VerifyUserForm({super.key});

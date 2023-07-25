@@ -3,7 +3,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/task_model/task_model.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class MyTasksCard extends StatelessWidget {
   const MyTasksCard({

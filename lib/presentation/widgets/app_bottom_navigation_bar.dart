@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 //Took this code from the `salomon_bottom_bar` package and modified some of it.
 // https://pub.dev/packages/salomon_bottom_bar

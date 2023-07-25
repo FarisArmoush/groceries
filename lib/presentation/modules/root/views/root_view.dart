@@ -11,7 +11,7 @@ import 'package:groceries/presentation/modules/recipes/views/recipes_view.dart';
 import 'package:groceries/presentation/modules/settings/views/settings_view.dart';
 import 'package:groceries/presentation/widgets/app_bottom_navigation_bar.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class RootView extends StatefulWidget {
   const RootView({super.key});

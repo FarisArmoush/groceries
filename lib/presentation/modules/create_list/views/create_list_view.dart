@@ -7,8 +7,7 @@ import 'package:groceries/presentation/modules/create_list/widgets/cancel_list_c
 import 'package:groceries/presentation/modules/create_list/widgets/create_new_list_fab.dart';
 import 'package:groceries/presentation/modules/create_list/widgets/invite_users_to_list_form.dart';
 import 'package:groceries/presentation/widgets/page_indicator.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class CreateListView extends StatelessWidget {
   CreateListView({super.key});

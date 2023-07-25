@@ -5,7 +5,7 @@ import 'package:groceries/presentation/modules/grocery_list_settings/widgets/edi
 import 'package:groceries/presentation/modules/grocery_list_settings/widgets/grocery_list_name_text_field.dart';
 import 'package:groceries/presentation/modules/grocery_list_settings/widgets/list_members_box.dart';
 import 'package:groceries/presentation/modules/grocery_list_settings/widgets/save_grocery_list_changes_button.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class GroceryListForm extends StatelessWidget {
   const GroceryListForm({super.key});

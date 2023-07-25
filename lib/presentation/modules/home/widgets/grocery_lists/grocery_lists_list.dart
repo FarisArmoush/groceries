@@ -4,8 +4,7 @@ import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
 import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocery_list_card.dart';
 import 'package:groceries/presentation/widgets/animations/app_animations.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class GroceryListsList extends StatelessWidget {
   const GroceryListsList({required this.lists, super.key});

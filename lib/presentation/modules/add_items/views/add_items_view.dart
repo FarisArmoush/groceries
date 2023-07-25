@@ -3,7 +3,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/presentation/modules/add_items/widgets/add_items_fab.dart';
 import 'package:groceries/presentation/modules/add_items/widgets/grocery_item_card.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class AddItemsView extends StatelessWidget {
   const AddItemsView({super.key});

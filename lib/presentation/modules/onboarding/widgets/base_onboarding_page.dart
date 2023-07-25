@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class BaseOnboardingPage extends StatelessWidget {
   const BaseOnboardingPage({
@@ -24,12 +24,7 @@ class BaseOnboardingPage extends StatelessWidget {
       child: Column(
         children: [
           const Spacer(),
-          Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16,
-            ),
-            child: SvgPicture.asset(illustrationPath),
-          ),
+          SvgPicture.asset(illustrationPath).symmetricPadding(horizontal: 16),
           const Spacer(),
           Container(
             width: double.infinity,

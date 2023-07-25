@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of 'app_extensions.dart';
 
 extension ContextExtensions on BuildContext {
   double get deviceWidth => MediaQuery.sizeOf(this).width;

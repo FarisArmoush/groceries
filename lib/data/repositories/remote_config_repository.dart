@@ -3,7 +3,7 @@ import 'dart:developer' as dev;
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:groceries/data/data_sources/remote_config_api.dart';
-import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class RemoteConfigRepository {
   RemoteConfigRepository({

@@ -5,7 +5,7 @@ import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/modules/recipes/widgets/recipes_form.dart';
 import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class RecipesView extends StatelessWidget {
   const RecipesView({super.key});

@@ -11,7 +11,7 @@ import 'package:groceries/presentation/modules/forgot_password/widgets/forgot_pa
 import 'package:groceries/presentation/modules/forgot_password/widgets/send_forgot_password_email_button.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/app_snack_bars.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class ForgotPasswordForm extends StatelessWidget {
   const ForgotPasswordForm({super.key});

@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
-import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class RequestToDeleteAccountButton extends StatelessWidget {
   const RequestToDeleteAccountButton({super.key});

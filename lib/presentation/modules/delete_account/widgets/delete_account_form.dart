@@ -4,7 +4,7 @@ import 'package:groceries/presentation/modules/delete_account/widgets/delete_acc
 import 'package:groceries/presentation/modules/delete_account/widgets/delete_account_button.dart';
 import 'package:groceries/presentation/modules/delete_account/widgets/delete_account_header_text.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class DeleteAccountForm extends StatelessWidget {
   const DeleteAccountForm({super.key});

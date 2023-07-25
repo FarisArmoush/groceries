@@ -6,8 +6,7 @@ import 'package:groceries/presentation/modules/settings/widgets/settings_list_ti
 import 'package:groceries/presentation/modules/settings/widgets/user_data_box.dart';
 import 'package:groceries/presentation/widgets/animations/app_animations.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});

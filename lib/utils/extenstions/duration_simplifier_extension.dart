@@ -1,3 +1,5 @@
+part of 'app_extensions.dart';
+
 extension DurationSimplifier on int {
   Duration get milliseconds => Duration(milliseconds: this);
   Duration get seconds => Duration(seconds: this);

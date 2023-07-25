@@ -12,7 +12,7 @@ import 'package:groceries/presentation/modules/login/widgets/login_header_text.d
 import 'package:groceries/presentation/modules/login/widgets/login_other_options_text_button.dart';
 import 'package:groceries/presentation/modules/login/widgets/login_password_text_field.dart';
 import 'package:groceries/presentation/widgets/app_snack_bars.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class LoginForm extends StatelessWidget {
   const LoginForm({super.key});

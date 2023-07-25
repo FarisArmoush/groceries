@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class VerifyToUpdateEmailBottomSheet extends StatelessWidget {
   const VerifyToUpdateEmailBottomSheet({super.key});

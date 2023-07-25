@@ -13,7 +13,7 @@ import 'package:groceries/presentation/modules/register/widgets/register_header_
 import 'package:groceries/presentation/modules/register/widgets/register_other_option_text_button.dart';
 import 'package:groceries/presentation/modules/register/widgets/register_password_text_field.dart';
 import 'package:groceries/presentation/widgets/app_snack_bars.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class RegisterForm extends StatelessWidget {
   const RegisterForm({super.key});

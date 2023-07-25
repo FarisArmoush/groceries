@@ -4,8 +4,7 @@ import 'package:groceries/presentation/modules/theme_settings/widgets/theme_head
 import 'package:groceries/presentation/modules/theme_settings/widgets/theme_hint_text.dart';
 import 'package:groceries/presentation/modules/theme_settings/widgets/theme_radios_list.dart';
 import 'package:groceries/presentation/widgets/animations/app_animations.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class ThemeSettingsView extends StatelessWidget {
   const ThemeSettingsView({super.key});

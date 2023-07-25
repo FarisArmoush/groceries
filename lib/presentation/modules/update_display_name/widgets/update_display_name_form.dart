@@ -9,7 +9,7 @@ import 'package:groceries/presentation/modules/update_display_name/widgets/updat
 import 'package:groceries/presentation/modules/update_display_name/widgets/update_display_name_header_text.dart';
 import 'package:groceries/presentation/modules/update_display_name/widgets/update_display_name_text_field.dart';
 import 'package:groceries/presentation/widgets/app_snack_bars.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class UpdateDisplayNameForm extends StatelessWidget {
   const UpdateDisplayNameForm({super.key});
