@@ -21,7 +21,7 @@ class AppView extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<ThemeCubit>(
-          create: (context) => ThemeCubit()..load(),
+          create: (context) => ThemeCubit()..loadValue(),
         ),
         BlocProvider<RemoteConfigCubit>(
           create: (context) => RemoteConfigCubit(),

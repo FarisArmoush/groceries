@@ -1,5 +1,5 @@
 abstract interface class SharedPreferencesUtil<T> {
-  Future<void> cache(T value);
-  Future<void> load();
-  Future<void> set(T value);
+  Future<void> cacheValue(T value);
+  Future<void> loadValue();
+  Future<void> setValue(T value);
 }
