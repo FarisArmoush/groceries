@@ -3,13 +3,13 @@
 ///  FlutterGen
 /// *****************************************************
 
-import 'package:flutter/services.dart';
 // coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/services.dart';
 
 class $AssetsSvgGen {
   const $AssetsSvgGen();
@@ -92,6 +92,9 @@ class $AssetsSvgGen {
 
   /// File path: assets/svg/icSettings.svg
   SvgGenImage get icSettings => const SvgGenImage('assets/svg/icSettings.svg');
+
+  /// File path: assets/svg/icShare.svg
+  SvgGenImage get icShare => const SvgGenImage('assets/svg/icShare.svg');
 
   /// File path: assets/svg/icTrash.svg
   SvgGenImage get icTrash => const SvgGenImage('assets/svg/icTrash.svg');
@@ -191,6 +194,7 @@ class $AssetsSvgGen {
         icSearch,
         icSend,
         icSettings,
+        icShare,
         icTrash,
         icTwitter,
         icUser,
@@ -318,8 +322,8 @@ class SvgGenImage {
     ColorFilter? colorFilter,
     Clip clipBehavior = Clip.hardEdge,
     Color? color,
-    BlendMode colorBlendMode = BlendMode.srcIn,
-    bool cacheColorFilter = false,
+    @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
+    @deprecated bool cacheColorFilter = false,
   }) {
     return SvgPicture.asset(
       _assetName,
