@@ -12,8 +12,19 @@ import 'package:groceries/utils/exceptions/send_password_reset_email_exception.d
 import 'package:groceries/utils/exceptions/update_email_exception.dart';
 import 'package:groceries/utils/exceptions/update_password_exception.dart';
 
-/// Authentication Repository that uses the Firebase Auth Service
+/// Authentication Repository that uses the Firebase Auth Service.
+///
+/// This class implements the [BaseAuthRepository] interface, which defines
+/// the contract for authentication-related operations. The repository leverages
+/// Firebase Auth to handle user authentication and provides various methods for
+/// user sign-up, sign-in, password management, and other related operations.
 class FirebaseAuthRepository implements BaseAuthRepository {
+  /// Creates an instance of [FirebaseAuthRepository].
+  ///
+  /// The optional [firebaseAuth] and [firestore] parameters allow you to
+  /// provide custom instances of [FirebaseAuth] and [FirebaseFirestore],
+  /// respectively. If these parameters are not provided, the default instances
+  /// from the Firebase SDK will be used.
   FirebaseAuthRepository({
     FirebaseAuth? firebaseAuth,
     FirebaseFirestore? firestore,

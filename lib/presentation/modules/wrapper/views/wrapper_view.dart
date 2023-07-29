@@ -5,7 +5,10 @@ import 'package:groceries/presentation/modules/root/views/root_view.dart';
 import 'package:groceries/presentation/modules/welcome/views/welcome_view.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 
+/// A widget that acts as a wrapper around the main content of the application
+/// and handles the display of different views based on the authentication state
 class WrapperView extends StatelessWidget {
+  /// Creates a [WrapperView] widget.
   const WrapperView({super.key});
 
   @override

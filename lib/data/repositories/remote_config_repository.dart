@@ -15,6 +15,7 @@ class RemoteConfigRepository {
   final FirebaseRemoteConfig _remoteConfig;
   final RemoteConfigApi _remoteConfigApi;
 
+  /// Initalizes Remote Config.
   Future<void> init() async {
     try {
       await _remoteConfig.ensureInitialized();
@@ -34,5 +35,6 @@ class RemoteConfigRepository {
     }
   }
 
+  /// App Version
   String get appVersion => _remoteConfigApi.getAppVersion();
 }
