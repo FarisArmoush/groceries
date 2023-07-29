@@ -84,6 +84,9 @@ class $AssetsSvgGen {
   SvgGenImage get icRightArrow =>
       const SvgGenImage('assets/svg/icRightArrow.svg');
 
+  /// File path: assets/svg/icSave.svg
+  SvgGenImage get icSave => const SvgGenImage('assets/svg/icSave.svg');
+
   /// File path: assets/svg/icSearch.svg
   SvgGenImage get icSearch => const SvgGenImage('assets/svg/icSearch.svg');
 
@@ -92,6 +95,9 @@ class $AssetsSvgGen {
 
   /// File path: assets/svg/icSettings.svg
   SvgGenImage get icSettings => const SvgGenImage('assets/svg/icSettings.svg');
+
+  /// File path: assets/svg/icShare.svg
+  SvgGenImage get icShare => const SvgGenImage('assets/svg/icShare.svg');
 
   /// File path: assets/svg/icTrash.svg
   SvgGenImage get icTrash => const SvgGenImage('assets/svg/icTrash.svg');
@@ -188,9 +194,11 @@ class $AssetsSvgGen {
         icPlusCircle,
         icPrinter,
         icRightArrow,
+        icSave,
         icSearch,
         icSend,
         icSettings,
+        icShare,
         icTrash,
         icTwitter,
         icUser,
@@ -318,8 +326,8 @@ class SvgGenImage {
     ColorFilter? colorFilter,
     Clip clipBehavior = Clip.hardEdge,
     Color? color,
-    BlendMode colorBlendMode = BlendMode.srcIn,
-    bool cacheColorFilter = false,
+    @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
+    @deprecated bool cacheColorFilter = false,
   }) {
     return SvgPicture.asset(
       _assetName,

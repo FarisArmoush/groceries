@@ -25,7 +25,7 @@ class RecipeCard extends StatelessWidget {
           height: context.deviceHeight * 0.01,
         ),
         RecipeCardImage(
-          imageUrl: recipeModel.imageUrl,
+          recipeModel: recipeModel,
           onTap: onTap,
         ),
         SizedBox(

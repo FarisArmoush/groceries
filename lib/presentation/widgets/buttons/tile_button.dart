@@ -14,7 +14,7 @@ class TileButton extends StatelessWidget {
   final String title;
   final String icon;
   final Color? color;
-  final VoidCallback onTap;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {

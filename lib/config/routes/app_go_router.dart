@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
+import 'package:groceries/data/models/recipe_model/recipe_model.dart';
 import 'package:groceries/presentation/modules/account_settings/views/account_settings_view.dart';
 import 'package:groceries/presentation/modules/add_items/views/add_items_view.dart';
 import 'package:groceries/presentation/modules/additional_resources/views/additional_resources_view.dart';
@@ -119,12 +121,19 @@ class AppGoRouter {
               GoRoute(
                 name: AppNamedRoutes.groceryListDetails,
                 path: 'groceryListDetails',
-                builder: (context, state) => const GroceryListDetailsView(),
+                pageBuilder: (context, state) => CupertinoPage(
+                  child: GroceryListDetailsView(
+                    listModel: state.extra! as GroceryListModel,
+                  ),
+                ),
                 routes: [
                   GoRoute(
                     name: AppNamedRoutes.addItems,
                     path: 'addItems',
-                    builder: (context, state) => const AddItemsView(),
+                    pageBuilder: (context, state) => const CupertinoPage(
+                      child: AddItemsView(),
+                      fullscreenDialog: true,
+                    ),
                   ),
                   GoRoute(
                     name: AppNamedRoutes.goceryListSettings,
@@ -144,7 +153,9 @@ class AppGoRouter {
               GoRoute(
                 name: AppNamedRoutes.recipeDetails,
                 path: 'recipeDetails',
-                builder: (context, state) => const RecipeDetailsView(),
+                builder: (context, state) => RecipeDetailsView(
+                  recipeModel: state.extra! as RecipeModel,
+                ),
               ),
               GoRoute(
                 name: AppNamedRoutes.createRecipe,

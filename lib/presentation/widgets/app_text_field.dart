@@ -35,6 +35,10 @@ class AppTextField extends StatelessWidget {
     this.suffix,
     this.validator,
     this.autovalidateMode,
+    this.labelStyle,
+    this.contentPadding,
+    this.floatingLabelStyle,
+    this.style,
   });
 
   /// The text displayed as the label of the text field.
@@ -106,6 +110,13 @@ class AppTextField extends StatelessWidget {
   /// Specifies validation mode.
   final AutovalidateMode? autovalidateMode;
 
+  final TextStyle? labelStyle;
+  final TextStyle? style;
+
+  final TextStyle? floatingLabelStyle;
+
+  final EdgeInsetsGeometry? contentPadding;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
@@ -122,13 +133,15 @@ class AppTextField extends StatelessWidget {
       cursorColor: context.theme.primaryColorLight,
       cursorWidth: 1,
       onEditingComplete: onEditingComplete,
-      style: TextStyle(
-        fontFamily: AppFonts.regular(context),
-        color: context.theme.primaryColor,
-        fontSize: 14,
-      ),
+      style: style ??
+          TextStyle(
+            fontFamily: AppFonts.regular(context),
+            color: context.theme.primaryColor,
+            fontSize: 14,
+          ),
       autovalidateMode: autovalidateMode,
       decoration: InputDecoration(
+        contentPadding: contentPadding,
         suffixIconColor: context.theme.primaryColor,
         suffix: suffix,
         prefix: prefix,
@@ -142,16 +155,18 @@ class AppTextField extends StatelessWidget {
         errorBorder: errorBorder,
         disabledBorder: disabledBorder,
         focusedErrorBorder: focusedBorder,
-        labelStyle: TextStyle(
-          fontFamily: AppFonts.regular(context),
-          color: context.theme.hintColor,
-          fontSize: 16,
-        ),
-        floatingLabelStyle: TextStyle(
-          fontFamily: AppFonts.regular(context),
-          color: context.theme.primaryColor,
-          fontSize: 16,
-        ),
+        labelStyle: labelStyle ??
+            TextStyle(
+              fontFamily: AppFonts.regular(context),
+              color: context.theme.hintColor,
+              fontSize: 16,
+            ),
+        floatingLabelStyle: floatingLabelStyle ??
+            TextStyle(
+              fontFamily: AppFonts.regular(context),
+              color: context.theme.primaryColor,
+              fontSize: 16,
+            ),
       ),
     );
   }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
-import 'package:groceries/presentation/modules/add_items/widgets/add_items_fab.dart';
+import 'package:groceries/presentation/modules/add_items/widgets/add_items_text_field.dart';
 import 'package:groceries/presentation/modules/add_items/widgets/grocery_item_card.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 
@@ -26,15 +26,10 @@ class AddItemsView extends StatelessWidget {
             16,
             24,
             16,
-            context.deviceHeight * 0.1,
+            context.deviceHeight * 0.11,
           ),
           physics: const BouncingScrollPhysics(),
           itemCount: _list.length,
-          separatorBuilder: (context, index) {
-            return const SizedBox(
-              height: 12,
-            );
-          },
           itemBuilder: (context, index) => GroceryItemCard(
             groceryModel: GroceryModel(
               id: _list[index],
@@ -43,18 +38,31 @@ class AddItemsView extends StatelessWidget {
               notes: _list[index],
             ),
           ),
+          separatorBuilder: (context, index) {
+            return SizedBox(height: context.deviceHeight * 0.01);
+          },
         ),
-        floatingActionButton: const AddItemsFab(),
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        bottomSheet: const AddItemsTextField().allPadding(16),
       ),
     );
   }
 }
 
-List<String> _list = [
+const _list = <String>[
   'All',
   'Meats',
   'Fruits and Vegetables',
   'Poultry',
+  'Health Care',
+  'Health Care',
+  'Health Care',
+  'Health Care',
+  'Health Care',
+  'Health Care',
+  'Health Care',
+  'Health Care',
+  'Health Care',
+  'Health Care',
+  'Health Care',
   'Health Care',
 ];

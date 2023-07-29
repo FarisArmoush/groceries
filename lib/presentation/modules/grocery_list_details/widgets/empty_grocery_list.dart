@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
@@ -9,14 +11,15 @@ class EmptyGroceryList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      physics: const BouncingScrollPhysics(),
-      shrinkWrap: true,
-      padding: const EdgeInsets.symmetric(
-        horizontal: 16,
-      ),
+    return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
-        Assets.svg.illWriting.svg(),
+        Assets.svg.illWriting.svg(
+          height: context.deviceHeight * 0.35,
+        ),
+        SizedBox(
+          height: context.deviceHeight * 0.015,
+        ),
         Text(
           AppTranslations.emptyListHeader,
           style: TextStyle(
@@ -42,15 +45,13 @@ class EmptyGroceryList extends StatelessWidget {
           height: context.deviceHeight * 0.02,
         ),
         ElevatedButton.icon(
-          onPressed: () {},
+          onPressed: () => context.pushNamed(AppNamedRoutes.addItems),
+          label: Text(AppTranslations.browseGroceries),
           icon: Assets.svg.icSearch.svg(
             color: context.theme.colorScheme.secondary,
           ),
-          label: Text(
-            AppTranslations.browseGroceries,
-          ),
         ),
       ],
-    );
+    ).centered().allPadding(16);
   }
 }
