@@ -31,7 +31,38 @@ class MockGroceryListsRepository extends BaseGroceryListsRepository {
           imageUrl: faker.image.image(),
           uid: 567,
           members: const <UserModel>[],
-          items: const <GroceryModel>[],
+          items: const <GroceryModel>[
+            GroceryModel(
+              id: 'asFDE[JOMI]',
+              name: 'Carrots',
+              category: 'Fruits and Vegetables',
+              notes: '2 KG',
+            ),
+            GroceryModel(
+              id: 'asFDE[JOMI]',
+              name: 'Cucumbers',
+              category: 'Fruits and Vegetables',
+              notes: '2 KG',
+            ),
+            GroceryModel(
+              id: 'asFDE[JOMI]',
+              name: 'Tomatoes',
+              category: 'Fruits and Vegetables',
+              notes: '2 KG',
+            ),
+            GroceryModel(
+              id: 'asFDE[JOMI]',
+              name: 'Eggplants',
+              category: 'Fruits and Vegetables',
+              notes: '2 KG',
+            ),
+            GroceryModel(
+              id: 'asFDE[JOMI]',
+              name: 'Parsley',
+              category: 'Fruits and Vegetables',
+              notes: '2 KG',
+            ),
+          ],
         ),
       ];
 }
