@@ -45,8 +45,8 @@ abstract class AuthenticationRepository {
   Future<void> sendVerificationEmail();
 
   /// A stream of authentication state changes.
-  Stream<dynamic> get authStateChanges;
+  Stream<Object?> get authStateChanges;
 
   /// The currently authenticated user.
-  dynamic get currentUser;
+  Object? get currentUser;
 }
