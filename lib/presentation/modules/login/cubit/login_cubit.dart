@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
-import 'package:groceries/data/repositories/authentication_repository_impl.dart';
+import 'package:groceries/domain/repositories/authentication_repository.dart';
 import 'package:groceries/utils/exceptions/login_with_email_password_exception.dart';
 import 'package:groceries/utils/forms/email_form.dart';
 import 'package:groceries/utils/forms/login_password_form.dart';
@@ -9,9 +9,9 @@ import 'package:groceries/utils/forms/login_password_form.dart';
 part 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
-  LoginCubit(this.authRepo) : super(const LoginState());
+  LoginCubit(this.authenticationRepository) : super(const LoginState());
 
-  final AuthenticationRepositoryImpl authRepo;
+  final AuthenticationRepository authenticationRepository;
 
   void emailChanged(String value) {
     final email = EmailForm.dirty(value);
@@ -39,7 +39,7 @@ class LoginCubit extends Cubit<LoginState> {
       state.copyWith(status: FormzSubmissionStatus.inProgress),
     );
     try {
-      await authRepo.signInWithEmailAndPassword(
+      await authenticationRepository.signInWithEmailAndPassword(
         email: state.email.value,
         password: state.password.value,
       );

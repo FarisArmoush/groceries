@@ -10,8 +10,11 @@ class GreetingText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final displayName =
-        context.watch<AuthBloc>().authRepo.currentUser!.displayName;
+    final displayName = context
+        .watch<AuthBloc>()
+        .authenticationRepository
+        .currentUser!
+        .displayName;
 
     return RichText(
       text: TextSpan(

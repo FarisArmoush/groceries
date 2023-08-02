@@ -1,17 +1,17 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
-import 'package:groceries/data/repositories/authentication_repository_impl.dart';
+import 'package:groceries/domain/repositories/authentication_repository.dart';
 import 'package:groceries/utils/forms/email_form.dart';
 
 part 'update_email_state.dart';
 
 class UpdateEmailCubit extends Cubit<UpdateEmailState> {
   UpdateEmailCubit(
-    this.authRepository,
+    this.authenticationRepository,
   ) : super(const UpdateEmailState());
 
-  final AuthenticationRepositoryImpl authRepository;
+  final AuthenticationRepository authenticationRepository;
   void emailChanged(String value) {
     final email = EmailForm.dirty(value);
     emit(
@@ -25,7 +25,7 @@ class UpdateEmailCubit extends Cubit<UpdateEmailState> {
   Future<void> updateEmail() async {
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
     try {
-      await authRepository.updateEmail(state.email.value);
+      await authenticationRepository.updateEmail(state.email.value);
       emit(state.copyWith(status: FormzSubmissionStatus.success));
     } catch (_) {
       emit(

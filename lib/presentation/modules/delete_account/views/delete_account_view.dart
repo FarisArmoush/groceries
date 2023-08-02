@@ -11,7 +11,7 @@ class DeleteAccountView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<DeleteAccountCubit>(
       create: (context) => DeleteAccountCubit(
-        authRepo: context.read<AuthBloc>().authRepo,
+        authRepo: context.read<AuthBloc>().authenticationRepository,
       ),
       child: const DeleteAccountForm(),
     );

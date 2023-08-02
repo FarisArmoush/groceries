@@ -16,13 +16,13 @@ void main() {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
-    final authRepo = AuthenticationRepositoryImpl();
-    await authRepo.authStateChanges.first;
+    final authenticationRepository = AuthenticationRepositoryImpl();
+    await authenticationRepository.authStateChanges.first;
     final remoteConfigRepo = RemoteConfigRepositoryImpl();
     await remoteConfigRepo.init();
     await EasyLocalization.ensureInitialized();
     return App(
-      authRepository: authRepo,
+      authenticationRepository: authenticationRepository,
     );
   });
 }

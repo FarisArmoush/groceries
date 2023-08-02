@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/data/repositories/authentication_repository_impl.dart';
+import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/verification/your_account_is_verified_bottom_sheet.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 
@@ -13,8 +13,11 @@ class IsUserVerifiedListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isVerified =
-        context.read<AuthenticationRepositoryImpl>().currentUser?.emailVerified;
+    final isVerified = context
+        .read<AuthBloc>()
+        .authenticationRepository
+        .currentUser
+        ?.emailVerified;
     return ListTile(
       title: Text(AppTranslations.verified),
       subtitle: isVerified == true ? const Text('Verified') : null,

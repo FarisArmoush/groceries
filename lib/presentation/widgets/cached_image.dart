@@ -24,17 +24,18 @@ import 'package:groceries/utils/extenstions/app_extensions.dart';
 class CachedImage extends StatelessWidget {
   /// {@macro cached_image}
   const CachedImage({
-    required this.imageUrl,
+    this.imageUrl =
+        'https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png',
     this.height,
     this.width,
-    this.boxFit,
-    this.boxShape,
+    this.boxFit = BoxFit.cover,
+    this.boxShape = BoxShape.circle,
     this.borderRadius,
     super.key,
   });
 
   /// The URL of the image to display.
-  final String? imageUrl;
+  final String imageUrl;
 
   /// The height of the image widget.
   final double? height;
@@ -45,12 +46,12 @@ class CachedImage extends StatelessWidget {
   /// How the image should be fit within the widget's bounds.
   ///
   /// @Defaults to [BoxFit.cover]
-  final BoxFit? boxFit;
+  final BoxFit boxFit;
 
   /// The shape of the container that holds the image.
   ///
   /// @Defaults to [BoxShape.circle]
-  final BoxShape? boxShape;
+  final BoxShape boxShape;
 
   /// The border radius of the container.
   final BorderRadiusGeometry? borderRadius;
@@ -60,17 +61,16 @@ class CachedImage extends StatelessWidget {
     return CachedNetworkImage(
       height: height,
       width: width,
-      imageUrl: imageUrl ??
-          'https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png',
+      imageUrl: imageUrl,
       placeholderFadeInDuration: Duration.zero,
       imageBuilder: (context, imageProvider) {
         return Container(
           decoration: BoxDecoration(
             borderRadius: borderRadius,
-            shape: boxShape ?? BoxShape.circle,
+            shape: boxShape,
             image: DecorationImage(
               image: imageProvider,
-              fit: boxFit ?? BoxFit.cover,
+              fit: boxFit,
             ),
           ),
         );
