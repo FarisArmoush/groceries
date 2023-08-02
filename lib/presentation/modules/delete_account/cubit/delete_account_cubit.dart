@@ -1,22 +1,21 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:groceries/data/repositories/firebase_auth_repository.dart';
+import 'package:groceries/domain/repositories/authentication_repository.dart';
 import 'package:groceries/utils/exceptions/delete_account_exception.dart';
 
 part 'delete_account_state.dart';
 
 class DeleteAccountCubit extends Cubit<DeleteAccountState> {
   DeleteAccountCubit({
-    FirebaseAuthRepository? authRepo,
-  })  : _authRepo = authRepo ?? FirebaseAuthRepository(),
-        super(DeleteAccountInitial());
+    required this.authRepo,
+  }) : super(DeleteAccountInitial());
 
-  final FirebaseAuthRepository _authRepo;
+  final AuthenticationRepository authRepo;
 
   Future<void> deleteAccount() async {
     emit(DeleteAccountLoading());
     try {
-      await _authRepo.deleteAccount();
+      await authRepo.deleteAccount();
       emit(AccountDeleteSuccess());
     } on DeleteAccountException catch (_) {
       emit(AccountDeleteFailed());

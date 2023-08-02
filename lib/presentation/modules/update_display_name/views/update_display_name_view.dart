@@ -11,7 +11,7 @@ class UpdateDisplayNameView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<UpdateDisplayNameCubit>(
       create: (context) => UpdateDisplayNameCubit(
-        context.read<AuthBloc>().authRepo,
+        context.read<AuthBloc>().authenticationRepository,
       ),
       child: const UpdateDisplayNameForm(),
     );

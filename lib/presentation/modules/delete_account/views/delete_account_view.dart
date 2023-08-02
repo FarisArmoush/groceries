@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/data/repositories/firebase_auth_repository.dart';
+import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
 import 'package:groceries/presentation/modules/delete_account/cubit/delete_account_cubit.dart';
 import 'package:groceries/presentation/modules/delete_account/widgets/delete_account_form.dart';
 
@@ -11,7 +11,7 @@ class DeleteAccountView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<DeleteAccountCubit>(
       create: (context) => DeleteAccountCubit(
-        authRepo: context.read<FirebaseAuthRepository>(),
+        authRepo: context.read<AuthBloc>().authenticationRepository,
       ),
       child: const DeleteAccountForm(),
     );

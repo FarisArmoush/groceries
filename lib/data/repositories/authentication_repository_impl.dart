@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:groceries/domain/repositories/base_auth_repository.dart';
+import 'package:groceries/domain/repositories/authentication_repository.dart';
 import 'package:groceries/domain/use_cases/set_user_data_in_firestore_use_case.dart';
 import 'package:groceries/domain/use_cases/update_display_name_in_firestore_use_case.dart';
 import 'package:groceries/domain/use_cases/update_email_in_firestore_use_case.dart';
@@ -14,18 +14,19 @@ import 'package:groceries/utils/exceptions/update_password_exception.dart';
 
 /// Authentication Repository that uses the Firebase Auth Service.
 ///
-/// This class implements the [BaseAuthRepository] interface, which defines
-/// the contract for authentication-related operations. The repository leverages
-/// Firebase Auth to handle user authentication and provides various methods for
-/// user sign-up, sign-in, password management, and other related operations.
-class FirebaseAuthRepository implements BaseAuthRepository {
-  /// Creates an instance of [FirebaseAuthRepository].
+/// This class implements the [AuthenticationRepository] interface, which
+/// defines the contract for authentication-related operations. The repository
+/// leverages Firebase Auth to handle user authentication and provides various
+/// methods for user sign-up, sign-in, password management, and other related
+/// operations.
+class AuthenticationRepositoryImpl extends AuthenticationRepository {
+  /// Creates an instance of [AuthenticationRepositoryImpl].
   ///
   /// The optional [firebaseAuth] and [firestore] parameters allow you to
   /// provide custom instances of [FirebaseAuth] and [FirebaseFirestore],
   /// respectively. If these parameters are not provided, the default instances
   /// from the Firebase SDK will be used.
-  FirebaseAuthRepository({
+  AuthenticationRepositoryImpl({
     FirebaseAuth? firebaseAuth,
     FirebaseFirestore? firestore,
   })  : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance,

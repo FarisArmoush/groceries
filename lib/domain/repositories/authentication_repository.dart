@@ -1,6 +1,6 @@
 /// This abstract class defines a set of common methods
 /// and properties for authentication repositories.
-abstract class BaseAuthRepository {
+abstract class AuthenticationRepository {
   /// Signs in a user with email and password.
   ///
   /// Required parameters:

@@ -1,21 +1,16 @@
-import 'dart:developer' as dev;
+import 'dart:developer' as developer;
 
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
-import 'package:groceries/data/data_sources/remote_config_api.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 
-class RemoteConfigRepository {
-  RemoteConfigRepository({
+class RemoteConfigDataSource {
+  RemoteConfigDataSource({
     FirebaseRemoteConfig? remoteConfig,
-    RemoteConfigApi? remoteConfigApi,
-  })  : _remoteConfig = remoteConfig ?? FirebaseRemoteConfig.instance,
-        _remoteConfigApi = remoteConfigApi ?? RemoteConfigApi();
+  }) : _remoteConfig = remoteConfig ?? FirebaseRemoteConfig.instance;
 
   final FirebaseRemoteConfig _remoteConfig;
-  final RemoteConfigApi _remoteConfigApi;
 
-  /// Initalizes Remote Config.
   Future<void> init() async {
     try {
       await _remoteConfig.ensureInitialized();
@@ -27,7 +22,7 @@ class RemoteConfigRepository {
       );
       await _remoteConfig.fetchAndActivate();
     } on FirebaseException catch (e, stackTrace) {
-      dev.log(
+      developer.log(
         'Unable to initialize remote config',
         error: e,
         stackTrace: stackTrace,
@@ -35,6 +30,5 @@ class RemoteConfigRepository {
     }
   }
 
-  /// App Version
-  String get appVersion => _remoteConfigApi.getAppVersion();
+  String getAppVersion() => _remoteConfig.getString('app_version');
 }

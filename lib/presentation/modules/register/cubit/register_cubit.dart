@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
-import 'package:groceries/data/repositories/firebase_auth_repository.dart';
+import 'package:groceries/domain/repositories/authentication_repository.dart';
 import 'package:groceries/utils/exceptions/register_with_email_and_password_exception.dart';
 import 'package:groceries/utils/forms/confirmed_password_form.dart';
 import 'package:groceries/utils/forms/display_name_form.dart';
@@ -11,9 +11,11 @@ import 'package:groceries/utils/forms/register_password_form.dart';
 part 'register_state.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
-  RegisterCubit(this.authRepo) : super(const RegisterState());
+  RegisterCubit(
+    this.authenticationRepository,
+  ) : super(const RegisterState());
 
-  final FirebaseAuthRepository authRepo;
+  final AuthenticationRepository authenticationRepository;
 
   void displayNameChanged(String value) {
     final displayName = DisplayNameForm.dirty(value);
@@ -87,7 +89,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     if (!state.isValid) return;
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
     try {
-      await authRepo.signUpWithEmailAndPassword(
+      await authenticationRepository.signUpWithEmailAndPassword(
         email: state.email.value,
         password: state.password.value,
         displayName: state.displayName.value,

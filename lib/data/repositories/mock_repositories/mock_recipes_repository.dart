@@ -1,10 +1,10 @@
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/data/models/recipe_model/recipe_model.dart';
-import 'package:groceries/domain/repositories/base_recipes_repository.dart';
+import 'package:groceries/domain/repositories/recipes_repository.dart';
 
-class MockRecipesRepository extends BaseRecipesRepository {
+class MockRecipesRepository extends RecipesRepository {
   @override
-  Future<List<RecipeModel>> getRecipes() async {
+  Future<List<RecipeModel>> fetchRecipes() async {
     return recipes;
   }
 
@@ -78,5 +78,15 @@ class MockRecipesRepository extends BaseRecipesRepository {
         ],
       ),
     ];
+  }
+
+  @override
+  Future<RecipeModel> createRecipe(RecipeModel recipe) {
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<RecipeModel> deleteRecipe(RecipeModel recipe) {
+    throw UnimplementedError();
   }
 }

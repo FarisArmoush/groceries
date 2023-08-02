@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/data/repositories/firebase_auth_repository.dart';
+import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
 
 class UserCreationMetaDataListTile extends StatelessWidget {
   const UserCreationMetaDataListTile({super.key});
@@ -9,7 +9,8 @@ class UserCreationMetaDataListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final creationTime = context
-        .read<FirebaseAuthRepository>()
+        .read<AuthBloc>()
+        .authenticationRepository
         .currentUser
         ?.metadata
         .creationTime

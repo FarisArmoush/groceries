@@ -11,7 +11,7 @@ class VerifyUserView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<VerifyUserCubit>(
       create: (context) => VerifyUserCubit(
-        context.read<AuthBloc>().authRepo,
+        context.read<AuthBloc>().authenticationRepository,
       ),
       child: const VerifyUserForm(),
     );

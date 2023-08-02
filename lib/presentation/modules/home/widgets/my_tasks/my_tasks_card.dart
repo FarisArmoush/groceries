@@ -22,7 +22,6 @@ class MyTasksCard extends StatelessWidget {
         imageUrl: taskModel.listModel.imageUrl,
         width: context.deviceWidth * 0.15,
         height: context.deviceHeight * 0.1,
-        boxFit: BoxFit.cover,
       ),
       title: Row(
         children: [
