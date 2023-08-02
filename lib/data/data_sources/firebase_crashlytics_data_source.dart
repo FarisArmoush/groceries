@@ -3,8 +3,8 @@ import 'package:flutter/foundation.dart';
 
 /// An API class for initializing and handling
 /// crash reporting using Firebase Crashlytics.
-class FirebaseCrashlyticsApi {
-  FirebaseCrashlyticsApi({
+class FirebaseCrashlyticsDataSource {
+  FirebaseCrashlyticsDataSource({
     FirebaseCrashlytics? crashlytics,
     PlatformDispatcher? platformDispatcher,
   })  : _crashlytics = crashlytics ?? FirebaseCrashlytics.instance,

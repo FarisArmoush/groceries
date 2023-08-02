@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
-import 'package:groceries/data/repositories/firebase_auth_repository.dart';
+import 'package:groceries/data/repositories/authentication_repository_impl.dart';
 import 'package:groceries/utils/forms/email_form.dart';
 
 part 'update_email_state.dart';
@@ -11,7 +11,7 @@ class UpdateEmailCubit extends Cubit<UpdateEmailState> {
     this.authRepository,
   ) : super(const UpdateEmailState());
 
-  final FirebaseAuthRepository authRepository;
+  final AuthenticationRepositoryImpl authRepository;
   void emailChanged(String value) {
     final email = EmailForm.dirty(value);
     emit(

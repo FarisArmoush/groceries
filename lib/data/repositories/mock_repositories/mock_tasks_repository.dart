@@ -3,11 +3,11 @@ import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/data/models/task_model/task_model.dart';
 import 'package:groceries/data/models/user_model/user_model.dart';
-import 'package:groceries/domain/repositories/base_my_tasks_repository.dart';
+import 'package:groceries/domain/repositories/my_tasks_repository.dart';
 
-class MockTasksRepository extends BaseTasksRepository {
+class MockTasksRepository extends MyTasksRepository {
   @override
-  Future<List<TaskModel>> getMyTasks() async {
+  Future<List<TaskModel>> fetchMyTasks() async {
     return myTasks;
   }
 
@@ -71,4 +71,9 @@ class MockTasksRepository extends BaseTasksRepository {
           ],
         ),
       ];
+
+  @override
+  Future<void> markTaskAsDone(TaskModel task) {
+    throw UnimplementedError('Hasnt been implemented yet.');
+  }
 }

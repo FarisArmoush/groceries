@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:groceries/data/repositories/firebase_auth_repository.dart';
+import 'package:groceries/data/repositories/authentication_repository_impl.dart';
 
 part 'auth_event.dart';
 part 'auth_state.dart';
@@ -26,7 +26,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   }
   late final StreamSubscription<User?> _userSubscription;
 
-  final FirebaseAuthRepository authRepo;
+  final AuthenticationRepositoryImpl authRepo;
 
   void _onUserChanged(_AppUserChanged event, Emitter<AuthState> emit) {
     emit(

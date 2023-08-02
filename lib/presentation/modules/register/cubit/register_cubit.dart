@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
-import 'package:groceries/data/repositories/firebase_auth_repository.dart';
+import 'package:groceries/data/repositories/authentication_repository_impl.dart';
 import 'package:groceries/utils/exceptions/register_with_email_and_password_exception.dart';
 import 'package:groceries/utils/forms/confirmed_password_form.dart';
 import 'package:groceries/utils/forms/display_name_form.dart';
@@ -13,7 +13,7 @@ part 'register_state.dart';
 class RegisterCubit extends Cubit<RegisterState> {
   RegisterCubit(this.authRepo) : super(const RegisterState());
 
-  final FirebaseAuthRepository authRepo;
+  final AuthenticationRepositoryImpl authRepo;
 
   void displayNameChanged(String value) {
     final displayName = DisplayNameForm.dirty(value);

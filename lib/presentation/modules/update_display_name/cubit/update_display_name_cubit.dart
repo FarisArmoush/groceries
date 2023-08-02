@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
-import 'package:groceries/data/repositories/firebase_auth_repository.dart';
+import 'package:groceries/data/repositories/authentication_repository_impl.dart';
 import 'package:groceries/utils/forms/display_name_form.dart';
 
 part 'update_display_name_state.dart';
@@ -11,7 +11,7 @@ class UpdateDisplayNameCubit extends Cubit<UpdateDisplayNameState> {
     this.authRepository,
   ) : super(const UpdateDisplayNameState());
 
-  final FirebaseAuthRepository authRepository;
+  final AuthenticationRepositoryImpl authRepository;
   void nameChanged(String value) {
     final name = DisplayNameForm.dirty(value);
     emit(

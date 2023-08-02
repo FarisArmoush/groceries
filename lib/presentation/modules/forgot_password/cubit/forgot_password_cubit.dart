@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
-import 'package:groceries/data/repositories/firebase_auth_repository.dart';
+import 'package:groceries/data/repositories/authentication_repository_impl.dart';
 import 'package:groceries/utils/exceptions/send_password_reset_email_exception.dart';
 import 'package:groceries/utils/forms/email_form.dart';
 
@@ -10,7 +10,7 @@ part 'forgot_password_state.dart';
 class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
   ForgotPasswordCubit(this.authRepo) : super(const ForgotPasswordState());
 
-  final FirebaseAuthRepository authRepo;
+  final AuthenticationRepositoryImpl authRepo;
 
   void emailChanged(String value) {
     final email = EmailForm.dirty(value);

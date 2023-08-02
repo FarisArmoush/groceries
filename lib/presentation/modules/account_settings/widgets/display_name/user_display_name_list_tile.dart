@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/data/repositories/firebase_auth_repository.dart';
+import 'package:groceries/data/repositories/authentication_repository_impl.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 
@@ -13,7 +13,7 @@ class UserDisplayNameListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final displayName =
-        context.read<FirebaseAuthRepository>().currentUser?.displayName;
+        context.read<AuthenticationRepositoryImpl>().currentUser?.displayName;
     return ListTile(
       title: Text(AppTranslations.username),
       subtitle: Text(displayName ?? ''),

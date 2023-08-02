@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
-import 'package:groceries/data/repositories/firebase_auth_repository.dart';
+import 'package:groceries/data/repositories/authentication_repository_impl.dart';
 import 'package:groceries/utils/exceptions/login_with_email_password_exception.dart';
 import 'package:groceries/utils/forms/email_form.dart';
 import 'package:groceries/utils/forms/login_password_form.dart';
@@ -11,7 +11,7 @@ part 'login_state.dart';
 class LoginCubit extends Cubit<LoginState> {
   LoginCubit(this.authRepo) : super(const LoginState());
 
-  final FirebaseAuthRepository authRepo;
+  final AuthenticationRepositoryImpl authRepo;
 
   void emailChanged(String value) {
     final email = EmailForm.dirty(value);

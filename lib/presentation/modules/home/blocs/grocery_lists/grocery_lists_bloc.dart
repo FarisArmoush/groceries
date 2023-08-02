@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
 import 'package:groceries/data/repositories/mock_repositories/mock_grocery_lists_repository.dart';
-import 'package:groceries/domain/repositories/base_grocery_lists_repository.dart';
+import 'package:groceries/domain/repositories/grocery_lists_repository.dart';
 
 part 'grocery_lists_event.dart';
 part 'grocery_lists_state.dart';
@@ -12,8 +12,7 @@ class GroceryListsBloc extends Bloc<GroceryListsEvent, GroceryListsState> {
     on<LoadGroceryLists>(_onLoadGroceryLists);
     on<LeaveGroceryList>(_onLeaveGroceryList);
   }
-  final BaseGroceryListsRepository listsRepository =
-      MockGroceryListsRepository();
+  final GroceryListsRepository listsRepository = MockGroceryListsRepository();
 
   Future<void> _onLeaveGroceryList(
     LeaveGroceryList event,
@@ -34,7 +33,7 @@ class GroceryListsBloc extends Bloc<GroceryListsEvent, GroceryListsState> {
     LoadGroceryLists event,
     Emitter<GroceryListsState> emit,
   ) async {
-    await listsRepository.getLists();
+    await listsRepository.fetchMyGroceryLists();
     emit(
       GroceryListsLoaded(
         lists: listsRepository.lists,

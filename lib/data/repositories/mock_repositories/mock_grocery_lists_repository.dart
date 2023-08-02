@@ -2,11 +2,11 @@ import 'package:faker/faker.dart';
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/data/models/user_model/user_model.dart';
-import 'package:groceries/domain/repositories/base_grocery_lists_repository.dart';
+import 'package:groceries/domain/repositories/grocery_lists_repository.dart';
 
-class MockGroceryListsRepository extends BaseGroceryListsRepository {
+class MockGroceryListsRepository extends GroceryListsRepository {
   @override
-  Future<List<GroceryListModel>> getLists() async {
+  Future<List<GroceryListModel>> fetchMyGroceryLists() async {
     return lists;
   }
 

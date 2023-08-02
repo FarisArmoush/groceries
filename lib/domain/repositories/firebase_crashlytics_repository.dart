@@ -1,4 +1,4 @@
-abstract class BaseFirebaseCrashlyticsRepository {
+abstract class FirebaseCrashlyticsRepository {
   void initCrashlytics();
   void initPlatformErrorsHandler();
 }
