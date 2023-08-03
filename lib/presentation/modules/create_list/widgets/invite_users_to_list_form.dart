@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../create_list.dart';
 
 class InviteUsersToListForm extends StatelessWidget {
   const InviteUsersToListForm({super.key});

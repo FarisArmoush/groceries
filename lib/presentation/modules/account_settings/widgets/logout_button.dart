@@ -1,9 +1,38 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../account_settings.dart';
+
+class LogoutButton extends StatelessWidget {
+  const LogoutButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocListener<AuthBloc, AuthState>(
+      listenWhen: (previous, current) => previous != current,
+      listener: (context, state) {
+        if (state is Unauthenticated) {
+          ScaffoldMessenger.of(context)
+            ..hideCurrentSnackBar()
+            ..showSnackBar(
+              AppSnackBars.informative(
+                message: "We'll Miss you.",
+              ),
+            );
+          context.pushReplacementNamed(AppNamedRoutes.welcome);
+        }
+      },
+      child: TileButton(
+        title: AppTranslations.logout,
+        icon: Assets.svg.icLogout.path,
+        color: context.theme.primaryColorLight,
+        onTap: () => showModalBottomSheet<LogoutBottomSheet>(
+          context: context,
+          showDragHandle: true,
+          elevation: 0,
+          builder: (context) => const LogoutBottomSheet(),
+        ),
+      ),
+    );
+  }
+}
 
 class LogoutBottomSheet extends StatelessWidget {
   const LogoutBottomSheet({super.key});

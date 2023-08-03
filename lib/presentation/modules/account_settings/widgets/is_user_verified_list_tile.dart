@@ -1,12 +1,5 @@
 // ignore_for_file: use_if_null_to_convert_nulls_to_bools
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
-import 'package:groceries/presentation/modules/account_settings/widgets/verification/your_account_is_verified_bottom_sheet.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
+part of '../account_settings.dart';
 
 class IsUserVerifiedListTile extends StatelessWidget {
   const IsUserVerifiedListTile({super.key});
@@ -37,4 +30,37 @@ class IsUserVerifiedListTile extends StatelessWidget {
         elevation: 0,
         builder: (context) => const YourAccountIsVerifiedBottomSheet(),
       );
+}
+
+class YourAccountIsVerifiedBottomSheet extends StatelessWidget {
+  const YourAccountIsVerifiedBottomSheet({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      padding: const EdgeInsets.symmetric(
+        vertical: 12,
+        horizontal: 24,
+      ),
+      children: [
+        Assets.svg.icVerified.svg(
+          height: context.deviceHeight * 0.2,
+          color: Colors.green,
+        ),
+        SizedBox(
+          height: context.deviceHeight * 0.03,
+        ),
+        Text(
+          AppTranslations.yourAccountIsVerified,
+          style: context.theme.dialogTheme.titleTextStyle,
+          textAlign: TextAlign.center,
+        ),
+        SizedBox(
+          height: context.deviceHeight * 0.03,
+        ),
+      ],
+    );
+  }
 }

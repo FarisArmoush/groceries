@@ -1,12 +1,4 @@
-import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
-import 'package:formz/formz.dart';
-import 'package:groceries/domain/repositories/authentication_repository.dart';
-import 'package:groceries/utils/exceptions/login_with_email_password_exception.dart';
-import 'package:groceries/utils/forms/email_form.dart';
-import 'package:groceries/utils/forms/login_password_form.dart';
-
-part 'login_state.dart';
+part of '../login.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   LoginCubit(this.authenticationRepository) : super(const LoginState());

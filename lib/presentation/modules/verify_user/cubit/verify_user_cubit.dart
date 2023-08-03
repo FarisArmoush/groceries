@@ -1,8 +1,4 @@
-import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
-import 'package:groceries/domain/repositories/authentication_repository.dart';
-
-part 'verify_user_state.dart';
+part of '../verify_user.dart';
 
 class VerifyUserCubit extends Cubit<VerifyUserState> {
   VerifyUserCubit(this.authenticationRepository) : super(VerifyUserInitial());

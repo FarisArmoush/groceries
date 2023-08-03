@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/presentation/modules/grocery_list_settings/widgets/edit_list_image_bottom_sheet.dart';
-import 'package:groceries/presentation/widgets/cached_image.dart';
-import 'package:groceries/utils/constants/app_colors.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../grocery_list_settings.dart';
 
 class EditListImage extends StatelessWidget {
   const EditListImage({super.key});
@@ -37,6 +32,34 @@ class EditListImage extends StatelessWidget {
             ),
           ),
         ).allPadding(8),
+      ],
+    );
+  }
+}
+
+class EditListImageBottomSheet extends StatelessWidget {
+  const EditListImageBottomSheet({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      padding: const EdgeInsets.symmetric(
+        vertical: 12,
+        horizontal: 24,
+      ),
+      shrinkWrap: true,
+      physics: const BouncingScrollPhysics(),
+      children: [
+        BottomSheetButton(
+          text: AppTranslations.takePhoto,
+          iconPath: Assets.svg.icCamera.path,
+          onTap: () {},
+        ),
+        BottomSheetButton(
+          text: AppTranslations.uploadPhotoFromGallery,
+          iconPath: Assets.svg.icImage.path,
+          onTap: () {},
+        ),
       ],
     );
   }

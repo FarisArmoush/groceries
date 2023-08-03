@@ -1,10 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/presentation/modules/register/cubit/register_cubit.dart';
-import 'package:groceries/presentation/widgets/animations/app_animations.dart';
-import 'package:groceries/presentation/widgets/app_text_field.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../register.dart';
 
 class RegisterConfirmPasswordTextField extends StatelessWidget {
   const RegisterConfirmPasswordTextField({super.key});

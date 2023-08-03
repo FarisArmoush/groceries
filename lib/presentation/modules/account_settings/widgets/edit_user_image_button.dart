@@ -1,6 +1,24 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/presentation/widgets/buttons/bottom_sheet_button.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
+part of '../account_settings.dart';
+
+class EditUserImageButton extends StatelessWidget {
+  const EditUserImageButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton.icon(
+      onPressed: () => showModalBottomSheet<EditUserImageBottomSheet>(
+        context: context,
+        showDragHandle: true,
+        elevation: 0,
+        builder: (context) => const EditUserImageBottomSheet(),
+      ),
+      icon: Assets.svg.icEdit.svg(
+        color: context.theme.primaryColorLight,
+      ),
+      label: Text(AppTranslations.editUserImage),
+    );
+  }
+}
 
 class EditUserImageBottomSheet extends StatelessWidget {
   const EditUserImageBottomSheet({super.key});

@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/presentation/modules/create_recipe/bloc/create_recipe_bloc.dart';
-import 'package:groceries/presentation/modules/create_recipe/widgets/create_recipe_form.dart';
+part of '../create_recipe.dart';
 
 class CreateRecipeView extends StatelessWidget {
   const CreateRecipeView({super.key});

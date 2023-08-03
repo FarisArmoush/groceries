@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
-import 'package:groceries/presentation/modules/update_email/cubit/update_email_cubit.dart';
-import 'package:groceries/presentation/modules/update_email/widgets/update_email_form.dart';
+part of '../update_email.dart';
 
 class UpdateEmailView extends StatelessWidget {
   const UpdateEmailView({super.key});

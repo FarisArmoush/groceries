@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/presentation/modules/theme_settings/widgets/theme_header_text.dart';
-import 'package:groceries/presentation/modules/theme_settings/widgets/theme_hint_text.dart';
-import 'package:groceries/presentation/modules/theme_settings/widgets/theme_radios_list.dart';
-import 'package:groceries/presentation/widgets/animations/app_animations.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../theme_settings.dart';
 
 class ThemeSettingsView extends StatelessWidget {
   const ThemeSettingsView({super.key});

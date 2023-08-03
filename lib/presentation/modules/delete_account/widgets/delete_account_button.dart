@@ -1,12 +1,4 @@
-import 'dart:developer' as dev;
-
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/presentation/modules/delete_account/cubit/delete_account_cubit.dart';
-import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../delete_account.dart';
 
 class DeleteAccountButton extends StatelessWidget {
   const DeleteAccountButton({super.key});
@@ -20,15 +12,15 @@ class DeleteAccountButton extends StatelessWidget {
             context: context,
             builder: (context) => const AppLoadingIndicator(),
           );
-          dev.log('DeleteAccountLoading');
+          developer.log('DeleteAccountLoading');
         }
         if (state is AccountDeleteSuccess) {
           context.pop();
-          dev.log('AccountDeleteSuccess');
+          developer.log('AccountDeleteSuccess');
         }
         if (state is AccountDeleteFailed) {
           context.pop();
-          dev.log('AccountDeleteFailed');
+          developer.log('AccountDeleteFailed');
         }
       },
       child: SizedBox(

@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
-import 'package:groceries/presentation/modules/root/views/root_view.dart';
-import 'package:groceries/presentation/modules/welcome/views/welcome_view.dart';
-import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
+part of '../wrapper.dart';
 
 /// A widget that acts as a wrapper around the main content of the application
 /// and handles the display of different views based on the authentication state

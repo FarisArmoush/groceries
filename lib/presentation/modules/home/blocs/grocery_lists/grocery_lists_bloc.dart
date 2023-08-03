@@ -1,11 +1,4 @@
-import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
-import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
-import 'package:groceries/data/repositories/mock_repositories/mock_grocery_lists_repository.dart';
-import 'package:groceries/domain/repositories/grocery_lists_repository.dart';
-
-part 'grocery_lists_event.dart';
-part 'grocery_lists_state.dart';
+part of '../../home.dart';
 
 class GroceryListsBloc extends Bloc<GroceryListsEvent, GroceryListsState> {
   GroceryListsBloc() : super(GroceryListsInitial()) {

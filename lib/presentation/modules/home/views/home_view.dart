@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocery_lists_form.dart';
-import 'package:groceries/presentation/modules/home/widgets/home_header.dart';
-import 'package:groceries/presentation/modules/home/widgets/my_tasks/my_tasks_form.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../home.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});

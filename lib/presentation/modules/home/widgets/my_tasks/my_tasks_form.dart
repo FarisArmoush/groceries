@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/presentation/modules/home/blocs/my_tasks/my_tasks_bloc.dart';
-import 'package:groceries/presentation/modules/home/widgets/my_tasks/my_tasks_rail.dart';
-import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
+part of '../../home.dart';
 
 class MyTasksForm extends StatelessWidget {
   const MyTasksForm({super.key});

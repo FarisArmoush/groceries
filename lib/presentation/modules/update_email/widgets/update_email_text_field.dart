@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/presentation/modules/update_email/cubit/update_email_cubit.dart';
-import 'package:groceries/presentation/widgets/app_text_field.dart';
+part of '../update_email.dart';
 
 class UpdateEmailTextField extends StatelessWidget {
   const UpdateEmailTextField({super.key});

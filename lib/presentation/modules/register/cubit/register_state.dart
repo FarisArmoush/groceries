@@ -1,4 +1,4 @@
-part of 'register_cubit.dart';
+part of '../register.dart';
 
 final class RegisterState extends Equatable {
   const RegisterState({

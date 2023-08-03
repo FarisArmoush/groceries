@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/presentation/modules/home/widgets/rail_title.dart';
-import 'package:groceries/presentation/widgets/animations/app_animations.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../../home.dart';
 
 class GroceryListsRailHeader extends StatelessWidget {
   const GroceryListsRailHeader({super.key});

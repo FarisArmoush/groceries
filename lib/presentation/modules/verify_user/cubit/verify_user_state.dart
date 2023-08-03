@@ -1,4 +1,4 @@
-part of 'verify_user_cubit.dart';
+part of '../verify_user.dart';
 
 sealed class VerifyUserState extends Equatable {
   const VerifyUserState();

@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/presentation/modules/grocery_list_settings/widgets/delete_grocery_list_button.dart';
-import 'package:groceries/presentation/modules/grocery_list_settings/widgets/edit_list_image.dart';
-import 'package:groceries/presentation/modules/grocery_list_settings/widgets/grocery_list_name_text_field.dart';
-import 'package:groceries/presentation/modules/grocery_list_settings/widgets/list_members_box.dart';
-import 'package:groceries/presentation/modules/grocery_list_settings/widgets/save_grocery_list_changes_button.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../grocery_list_settings.dart';
 
 class GroceryListForm extends StatelessWidget {
   const GroceryListForm({super.key});

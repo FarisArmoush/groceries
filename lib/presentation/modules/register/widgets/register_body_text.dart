@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/presentation/widgets/animations/app_animations.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../register.dart';
 
 class RegisterBodyText extends StatelessWidget {
   const RegisterBodyText({super.key});

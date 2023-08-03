@@ -1,13 +1,5 @@
 // ignore_for_file: use_if_null_to_convert_nulls_to_bools
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
-import 'package:groceries/presentation/modules/account_settings/widgets/email/verify_to_update_email_bottom_sheet.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../account_settings.dart';
 
 class UserEmailListTile extends StatelessWidget {
   const UserEmailListTile({super.key});
@@ -31,6 +23,38 @@ class UserEmailListTile extends StatelessWidget {
                 elevation: 0,
                 builder: (context) => const VerifyToUpdateEmailBottomSheet(),
               ),
+    );
+  }
+}
+
+class VerifyToUpdateEmailBottomSheet extends StatelessWidget {
+  const VerifyToUpdateEmailBottomSheet({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      physics: const BouncingScrollPhysics(),
+      shrinkWrap: true,
+      padding: const EdgeInsets.symmetric(
+        vertical: 12,
+        horizontal: 24,
+      ),
+      children: [
+        Assets.svg.illWriting.svg(
+          height: context.deviceHeight * 0.25,
+        ),
+        SizedBox(
+          height: context.deviceHeight * 0.05,
+        ),
+        Text(
+          'You need to verify your account in order to change your email.',
+          style: context.theme.dialogTheme.titleTextStyle,
+          textAlign: TextAlign.center,
+        ),
+        SizedBox(
+          height: context.deviceHeight * 0.03,
+        ),
+      ],
     );
   }
 }

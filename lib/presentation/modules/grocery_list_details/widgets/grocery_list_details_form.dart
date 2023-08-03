@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../grocery_list_details.dart';
 
 class GroceryListDetailsForm extends StatelessWidget {
   const GroceryListDetailsForm({super.key});

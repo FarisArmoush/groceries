@@ -1,10 +1,4 @@
-import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
-import 'package:formz/formz.dart';
-import 'package:groceries/domain/repositories/authentication_repository.dart';
-import 'package:groceries/utils/forms/email_form.dart';
-
-part 'update_email_state.dart';
+part of '../update_email.dart';
 
 class UpdateEmailCubit extends Cubit<UpdateEmailState> {
   UpdateEmailCubit(

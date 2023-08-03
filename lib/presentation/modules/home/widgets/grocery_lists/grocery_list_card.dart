@@ -1,10 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
-import 'package:groceries/presentation/modules/grocery_list_details/widgets/grocery_list_options_button.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../../home.dart';
 
 class GroceryListCard extends StatelessWidget {
   const GroceryListCard({

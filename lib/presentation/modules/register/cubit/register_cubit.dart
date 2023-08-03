@@ -1,14 +1,4 @@
-import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
-import 'package:formz/formz.dart';
-import 'package:groceries/domain/repositories/authentication_repository.dart';
-import 'package:groceries/utils/exceptions/register_with_email_and_password_exception.dart';
-import 'package:groceries/utils/forms/confirmed_password_form.dart';
-import 'package:groceries/utils/forms/display_name_form.dart';
-import 'package:groceries/utils/forms/email_form.dart';
-import 'package:groceries/utils/forms/register_password_form.dart';
-
-part 'register_state.dart';
+part of '../register.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
   RegisterCubit(

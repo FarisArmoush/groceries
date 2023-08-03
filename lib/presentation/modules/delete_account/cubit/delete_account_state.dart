@@ -1,4 +1,4 @@
-part of 'delete_account_cubit.dart';
+part of '../delete_account.dart';
 
 sealed class DeleteAccountState extends Equatable {
   const DeleteAccountState();

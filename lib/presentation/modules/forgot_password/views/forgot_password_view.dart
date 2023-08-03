@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
-import 'package:groceries/presentation/modules/forgot_password/cubit/forgot_password_cubit.dart';
-import 'package:groceries/presentation/modules/forgot_password/widgets/forgot_password_form.dart';
+part of '../forgot_password.dart';
 
 class ForgotPasswordView extends StatelessWidget {
   const ForgotPasswordView({super.key});

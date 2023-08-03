@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/data/models/recipe_model/recipe_model.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../recipes.dart';
 
 class RecipeItemsList extends StatelessWidget {
   const RecipeItemsList({

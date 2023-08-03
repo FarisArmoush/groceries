@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../forgot_password.dart';
 
 class ResetPasswordSentSuccessfullyView extends StatelessWidget {
   const ResetPasswordSentSuccessfullyView({super.key});

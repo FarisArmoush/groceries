@@ -1,10 +1,4 @@
-import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
-import 'package:formz/formz.dart';
-import 'package:groceries/domain/repositories/authentication_repository.dart';
-import 'package:groceries/utils/forms/display_name_form.dart';
-
-part 'update_display_name_state.dart';
+part of '../update_display_name.dart';
 
 class UpdateDisplayNameCubit extends Cubit<UpdateDisplayNameState> {
   UpdateDisplayNameCubit(

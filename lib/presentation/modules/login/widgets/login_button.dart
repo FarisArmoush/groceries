@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:formz/formz.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/presentation/modules/login/cubit/login_cubit.dart';
-import 'package:groceries/presentation/widgets/animations/app_animations.dart';
-import 'package:groceries/presentation/widgets/buttons_loading_indicator.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../login.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton({super.key});

@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../update_email.dart';
 
 class UpdateEmailHeaderText extends StatelessWidget {
   const UpdateEmailHeaderText({super.key});

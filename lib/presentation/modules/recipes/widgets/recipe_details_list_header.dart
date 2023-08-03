@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../recipes.dart';
 
 class RecipeDetailsListHeader extends StatelessWidget {
   const RecipeDetailsListHeader(this.text, {super.key});

@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
-import 'package:groceries/presentation/modules/verify_user/cubit/verify_user_cubit.dart';
-import 'package:groceries/presentation/modules/verify_user/widgets/verify_user_form.dart';
+part of '../verify_user.dart';
 
 class VerifyUserView extends StatelessWidget {
   const VerifyUserView({super.key});

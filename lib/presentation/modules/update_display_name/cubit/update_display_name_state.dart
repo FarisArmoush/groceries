@@ -1,4 +1,4 @@
-part of 'update_display_name_cubit.dart';
+part of '../update_display_name.dart';
 
 final class UpdateDisplayNameState extends Equatable {
   const UpdateDisplayNameState({

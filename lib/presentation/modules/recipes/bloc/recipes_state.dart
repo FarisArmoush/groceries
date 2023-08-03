@@ -1,4 +1,4 @@
-part of 'recipes_bloc.dart';
+part of '../recipes.dart';
 
 abstract class RecipesState extends Equatable {
   const RecipesState();

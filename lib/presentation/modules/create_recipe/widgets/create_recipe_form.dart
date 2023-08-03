@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of '../create_recipe.dart';
 
 class CreateRecipeForm extends StatelessWidget {
   const CreateRecipeForm({super.key});

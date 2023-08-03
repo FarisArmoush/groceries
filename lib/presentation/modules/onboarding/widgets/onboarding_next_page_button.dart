@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/presentation/widgets/animations/app_animations.dart';
-import 'package:groceries/presentation/widgets/next_arrow_icon.dart';
-import 'package:groceries/utils/constants/app_colors.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../onborading.dart';
 
 class OnboardingNextPageButton extends StatelessWidget {
   const OnboardingNextPageButton({

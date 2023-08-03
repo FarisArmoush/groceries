@@ -1,12 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/presentation/modules/settings/widgets/settings_list_tile.dart';
-import 'package:groceries/presentation/modules/settings/widgets/user_data_box.dart';
-import 'package:groceries/presentation/widgets/animations/app_animations.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../settings.dart';
 
 class SettingsView extends StatelessWidget {
   const SettingsView({super.key});

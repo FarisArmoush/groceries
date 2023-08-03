@@ -1,4 +1,4 @@
-part of 'grocery_lists_bloc.dart';
+part of '../../home.dart';
 
 abstract class GroceryListsState extends Equatable {
   const GroceryListsState();

@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../verify_user.dart';
 
 class FailedToSendVerificationEmail extends StatelessWidget {
   const FailedToSendVerificationEmail({super.key});

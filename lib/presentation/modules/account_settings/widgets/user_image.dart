@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/presentation/widgets/cached_image.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../account_settings.dart';
 
 class UserImage extends StatelessWidget {
   const UserImage({super.key});

@@ -1,0 +1,34 @@
+library recipes;
+
+import 'package:equatable/equatable.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/data/models/recipe_model/recipe_model.dart';
+import 'package:groceries/data/repositories/mock_repositories/mock_recipes_repository.dart';
+import 'package:groceries/domain/repositories/recipes_repository.dart';
+import 'package:groceries/presentation/widgets/animations/app_animations.dart';
+import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
+import 'package:groceries/presentation/widgets/cached_image.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
+
+part 'views/recipes_view.dart';
+part 'views/recipe_details_view.dart';
+part 'widgets/recipe_card/recipe_card.dart';
+part 'widgets/recipe_card/recipe_card_image.dart';
+part 'widgets/recipe_card/recipe_card_title.dart';
+part 'widgets/add_recipe_to_list_bottom_sheet.dart';
+part 'widgets/delete_recipe_bottom_sheet.dart';
+part 'widgets/recipe_details_list_header.dart';
+part 'widgets/recipe_items_list.dart';
+part 'widgets/recipe_steps_list.dart';
+part 'widgets/recipes_form.dart';
+part 'widgets/recipes_list.dart';
+part 'widgets/you_have_no_recipes.dart';
+part 'bloc/recipes_bloc.dart';
+part 'bloc/recipes_event.dart';
+part 'bloc/recipes_state.dart';
