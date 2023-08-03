@@ -101,7 +101,7 @@ class _LeftFadeInAnimationState extends State<LeftFadeInAnimation>
 
     return AnimatedBuilder(
       animation: controller!,
-      builder: (BuildContext context, Widget? child) {
+      builder: (context, child) {
         return Transform.translate(
           offset: Offset(animation.value, 0),
           child: Opacity(

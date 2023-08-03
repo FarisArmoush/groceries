@@ -106,7 +106,7 @@ class _UpFadeInAnimationState extends State<UpFadeInAnimation>
 
     return AnimatedBuilder(
       animation: controller!,
-      builder: (BuildContext context, Widget? child) {
+      builder: (context, child) {
         return Transform.translate(
           offset: Offset(0, animation.value),
           child: Opacity(

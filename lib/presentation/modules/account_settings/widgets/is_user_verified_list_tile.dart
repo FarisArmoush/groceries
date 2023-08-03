@@ -1,4 +1,3 @@
-// ignore_for_file: use_if_null_to_convert_nulls_to_bools
 part of '../account_settings.dart';
 
 class IsUserVerifiedListTile extends StatelessWidget {

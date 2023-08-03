@@ -1,5 +1,3 @@
-// ignore_for_file: lines_longer_than_80_chars
-
 part of 'app_animations.dart';
 
 class FadeInAnimation extends StatefulWidget {
