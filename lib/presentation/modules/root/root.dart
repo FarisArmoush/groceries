@@ -7,7 +7,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/home/home.dart';
 import 'package:groceries/presentation/modules/recipes/recipes.dart';
 import 'package:groceries/presentation/modules/settings/settings.dart';
-import 'package:groceries/presentation/widgets/app_bottom_navigation_bar.dart';
+import 'package:groceries/presentation/widgets/widgets.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 

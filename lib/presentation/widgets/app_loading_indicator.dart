@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/presentation/widgets/animations/app_animations.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of 'widgets.dart';
 
 class AppLoadingIndicator extends StatelessWidget {
   const AppLoadingIndicator({super.key});

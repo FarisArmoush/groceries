@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of 'widgets.dart';
 
 class BottomSheetButton extends StatelessWidget {
   const BottomSheetButton({

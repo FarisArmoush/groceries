@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+// ignore_for_file: unrelated_type_equality_checks
+
+part of 'widgets.dart';
 
 //Took this code from the `salomon_bottom_bar` package and modified some of it.
 // https://pub.dev/packages/salomon_bottom_bar
@@ -91,7 +91,7 @@ class AppBottomNavigationBar extends StatelessWidget {
                       hoverColor: selectedColor.withOpacity(0.1),
                       child: Padding(
                         padding: itemPadding -
-                            (Directionality.of(context) == TextDirection.ltr
+                            (Directionality.of(context) == TextDirection.LTR
                                 ? EdgeInsets.only(right: itemPadding.right * t)
                                 : EdgeInsets.only(
                                     left: itemPadding.left * t,
@@ -120,7 +120,7 @@ class AppBottomNavigationBar extends StatelessWidget {
                                   widthFactor: t,
                                   child: Padding(
                                     padding: Directionality.of(context) ==
-                                            TextDirection.ltr
+                                            TextDirection.LTR
                                         ? EdgeInsets.only(
                                             left: itemPadding.left / 2,
                                             right: itemPadding.right,

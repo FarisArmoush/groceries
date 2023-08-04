@@ -1,4 +1,4 @@
-part of 'app_animations.dart';
+part of '../widgets.dart';
 
 class UpFadeInAnimation extends StatefulWidget {
   UpFadeInAnimation({

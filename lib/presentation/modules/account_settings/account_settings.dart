@@ -8,13 +8,8 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
+import 'package:groceries/presentation/widgets/widgets.dart';
 
-import 'package:groceries/presentation/widgets/animations/app_animations.dart';
-import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
-import 'package:groceries/presentation/widgets/app_snack_bars.dart';
-import 'package:groceries/presentation/widgets/buttons/bottom_sheet_button.dart';
-import 'package:groceries/presentation/widgets/buttons/tile_button.dart';
-import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 
