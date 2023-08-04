@@ -1,4 +1,4 @@
-part of '../recipes.dart';
+part of '../recipe_details.dart';
 
 class RecipeDetailsListHeader extends StatelessWidget {
   const RecipeDetailsListHeader(this.text, {super.key});

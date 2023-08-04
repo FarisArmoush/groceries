@@ -1,4 +1,4 @@
-part of '../recipes.dart';
+part of '../recipe_details.dart';
 
 class RecipeStepsList extends StatelessWidget {
   const RecipeStepsList({super.key});
@@ -7,10 +7,10 @@ class RecipeStepsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: List.generate(
-        10,
+        5,
         (index) => RecipeStep(
           stepNumber: index,
-          step: 'Put the thing in the thing $index',
+          step: 'Put the thing in the thing\n' * (index + 1),
         ),
       ),
     );
@@ -44,7 +44,7 @@ class RecipeStep extends StatelessWidget {
             style: TextStyle(
               fontFamily: AppFonts.regular(context),
               fontSize: 16,
-              color: context.theme.primaryColor,
+              color: AppColors.white,
             ),
           ).centered(),
         ),
@@ -53,7 +53,7 @@ class RecipeStep extends StatelessWidget {
         ),
         Flexible(
           child: Text(
-            'Put the thing in the thing. ' * (stepNumber + 1),
+            step,
             style: TextStyle(
               fontSize: 14,
               color: context.theme.primaryColor,

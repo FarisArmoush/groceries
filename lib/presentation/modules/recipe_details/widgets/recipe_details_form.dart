@@ -1,10 +1,11 @@
-part of '../recipes.dart';
+part of '../recipe_details.dart';
 
-class RecipeDetailsView extends StatelessWidget {
-  const RecipeDetailsView({
+class RecipeDetailsForm extends StatelessWidget {
+  const RecipeDetailsForm({
     required this.recipeModel,
     super.key,
   });
+
   final RecipeModel recipeModel;
 
   @override
@@ -16,6 +17,12 @@ class RecipeDetailsView extends StatelessWidget {
           IconButton(
             onPressed: () {},
             icon: Assets.svg.icShare.svg(
+              color: context.theme.hintColor,
+            ),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Assets.svg.icVerticalThreeDots.svg(
               color: context.theme.hintColor,
             ),
           ),

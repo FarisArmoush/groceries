@@ -1,4 +1,4 @@
-part of '../recipes.dart';
+part of '../recipe_details.dart';
 
 class RecipeItemsList extends StatelessWidget {
   const RecipeItemsList({

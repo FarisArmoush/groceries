@@ -15,15 +15,9 @@ import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 part 'views/recipes_view.dart';
-part 'views/recipe_details_view.dart';
 part 'widgets/recipe_card/recipe_card.dart';
 part 'widgets/recipe_card/recipe_card_image.dart';
 part 'widgets/recipe_card/recipe_card_title.dart';
-part 'widgets/add_recipe_to_list_bottom_sheet.dart';
-part 'widgets/delete_recipe_bottom_sheet.dart';
-part 'widgets/recipe_details_list_header.dart';
-part 'widgets/recipe_items_list.dart';
-part 'widgets/recipe_steps_list.dart';
 part 'widgets/recipes_form.dart';
 part 'widgets/recipes_list.dart';
 part 'widgets/you_have_no_recipes.dart';

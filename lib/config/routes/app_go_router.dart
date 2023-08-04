@@ -17,6 +17,7 @@ import 'package:groceries/presentation/modules/home/home.dart';
 import 'package:groceries/presentation/modules/login/login.dart';
 import 'package:groceries/presentation/modules/onboarding/onborading.dart';
 import 'package:groceries/presentation/modules/page_not_found/page_not_found.dart';
+import 'package:groceries/presentation/modules/recipe_details/recipe_details.dart';
 import 'package:groceries/presentation/modules/recipes/recipes.dart';
 import 'package:groceries/presentation/modules/register/register.dart';
 import 'package:groceries/presentation/modules/root/root.dart';
