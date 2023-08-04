@@ -44,9 +44,8 @@ class YourAccountIsVerifiedBottomSheet extends StatelessWidget {
         horizontal: 24,
       ),
       children: [
-        Assets.svg.icVerified.svg(
+        Assets.svg.illCelebrating.svg(
           height: context.deviceHeight * 0.2,
-          color: Colors.green,
         ),
         SizedBox(
           height: context.deviceHeight * 0.03,
