@@ -15,7 +15,6 @@ class _RootFormState extends State<RootForm> {
     return Scaffold(
       body: _views[currentIndex],
       bottomNavigationBar: AppBottomNavigationBar(
-        backgroundColor: context.theme.scaffoldBackgroundColor,
         currentIndex: currentIndex,
         onTap: (index) => setState(() => currentIndex = index),
         items: _bnb(context),
