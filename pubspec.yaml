@@ -3,7 +3,6 @@ version: 1.0.0+1
 repository: https://github.com/FarisArmoush/groceries
 issue_tracker: https://github.com/FarisArmoush/groceries/issues
 
-
 publish_to: none
 description: an amazing app
 environment:
@@ -49,9 +48,10 @@ dev_dependencies:
   json_serializable: ^6.6.1
   flutter_native_splash: ^2.0.5
   flutter_gen_runner: ^5.3.1
-  flutter_test:
-    sdk: flutter
   freezed: ^2.4.0
+  flutter_test: 
+    sdk: flutter
+  test: ^1.24.1
 
 flutter_native_splash:
   background_image: assets/icons/splashBackground.png
@@ -69,7 +69,6 @@ flutter:
   uses-material-design: true
   assets:
     - assets/svg/
-    - assets/png/
   fonts:
     - family: PoppinsThin
       fonts:
