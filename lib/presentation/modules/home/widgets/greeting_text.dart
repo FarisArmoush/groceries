@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../home.dart';
 
 class GreetingText extends StatelessWidget {
   const GreetingText({super.key});
@@ -11,7 +6,7 @@ class GreetingText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final displayName = context
-        .watch<AuthBloc>()
+        .watch<AuthenticationBloc>()
         .authenticationRepository
         .currentUser!
         .displayName;

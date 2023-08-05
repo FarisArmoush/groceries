@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of '../create_list.dart';
 
 class InviteUsersToListView extends StatelessWidget {
   const InviteUsersToListView({super.key});

@@ -1,4 +1,4 @@
-part of 'update_email_cubit.dart';
+part of '../update_email.dart';
 
 final class UpdateEmailState extends Equatable {
   const UpdateEmailState({

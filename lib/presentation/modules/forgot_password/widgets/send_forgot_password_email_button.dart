@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/presentation/modules/forgot_password/cubit/forgot_password_cubit.dart';
-import 'package:groceries/presentation/widgets/animations/app_animations.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../forgot_password.dart';
 
 class SendForgotPasswordEmailButton extends StatelessWidget {
   const SendForgotPasswordEmailButton({super.key});

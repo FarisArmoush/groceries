@@ -1,6 +1,5 @@
-// ignore_for_file: comment_references
 /// Creates a new instance of [RegisterWithEmailAndPasswordException]
-/// from a Firebase error [code].
+/// from a Firebase error code.
 ///
 /// The following error codes are supported:
 ///

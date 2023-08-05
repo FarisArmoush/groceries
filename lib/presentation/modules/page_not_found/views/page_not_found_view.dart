@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+part of '../page_not_found.dart';
 
 class PageNotFoundView extends StatelessWidget {
   const PageNotFoundView({super.key});

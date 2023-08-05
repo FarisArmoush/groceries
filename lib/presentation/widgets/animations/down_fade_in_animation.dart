@@ -1,4 +1,4 @@
-part of 'app_animations.dart';
+part of '../widgets.dart';
 
 class DownFadeInAnimation extends StatefulWidget {
   DownFadeInAnimation({
@@ -106,7 +106,7 @@ class _DownFadeInAnimationState extends State<DownFadeInAnimation>
 
     return AnimatedBuilder(
       animation: controller!,
-      builder: (BuildContext context, Widget? child) {
+      builder: (context, child) {
         return Transform.translate(
           offset: Offset(0, animation.value),
           child: Opacity(

@@ -1,0 +1,33 @@
+library register;
+
+import 'package:equatable/equatable.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:formz/formz.dart';
+import 'package:go_router/go_router.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/domain/repositories/authentication_repository.dart';
+import 'package:groceries/presentation/blocs/authentication/authentication_bloc.dart';
+import 'package:groceries/presentation/widgets/widgets.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/exceptions/register_with_email_and_password_exception.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
+import 'package:groceries/utils/forms/confirmed_password_form.dart';
+import 'package:groceries/utils/forms/display_name_form.dart';
+import 'package:groceries/utils/forms/email_form.dart';
+import 'package:groceries/utils/forms/register_password_form.dart';
+
+part 'cubit/register_cubit.dart';
+part 'cubit/register_state.dart';
+part 'views/register_view.dart';
+part 'widgets/register_body_text.dart';
+part 'widgets/register_button.dart';
+part 'widgets/register_confirm_password_text_field.dart';
+part 'widgets/register_display_name_text_field.dart';
+part 'widgets/register_email_text_field.dart';
+part 'widgets/register_form.dart';
+part 'widgets/register_header_text.dart';
+part 'widgets/register_other_option_text_button.dart';
+part 'widgets/register_password_text_field.dart';

@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/data/models/grocery_model/grocery_model.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../add_items.dart';
 
 class GroceryItemCard extends StatelessWidget {
   const GroceryItemCard({

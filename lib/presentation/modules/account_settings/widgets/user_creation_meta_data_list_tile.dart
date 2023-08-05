@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
+part of '../account_settings.dart';
 
 class UserCreationMetaDataListTile extends StatelessWidget {
   const UserCreationMetaDataListTile({super.key});
@@ -9,7 +6,7 @@ class UserCreationMetaDataListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final creationTime = context
-        .read<AuthBloc>()
+        .read<AuthenticationBloc>()
         .authenticationRepository
         .currentUser
         ?.metadata

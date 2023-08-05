@@ -1,13 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/presentation/modules/create_list/views/add_list_name_and_image_view.dart';
-import 'package:groceries/presentation/modules/create_list/widgets/cancel_list_creation_dialog.dart';
-import 'package:groceries/presentation/modules/create_list/widgets/create_new_list_fab.dart';
-import 'package:groceries/presentation/modules/create_list/widgets/invite_users_to_list_form.dart';
-import 'package:groceries/presentation/widgets/page_indicator.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../create_list.dart';
 
 class CreateListView extends StatelessWidget {
   CreateListView({super.key});

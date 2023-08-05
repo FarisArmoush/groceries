@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/presentation/widgets/animations/app_animations.dart';
-import 'package:groceries/presentation/widgets/next_arrow_icon.dart';
+part of '../additional_resources.dart';
 
 class LegalListTile extends StatelessWidget {
   const LegalListTile({

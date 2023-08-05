@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../verify_user.dart';
 
 class VerificationEmailSentSuccessfully extends StatelessWidget {
   const VerificationEmailSentSuccessfully({super.key});
@@ -39,7 +33,7 @@ class VerificationEmailSentSuccessfully extends StatelessWidget {
         FilledButton(
           onPressed: () {
             context
-              ..read<AuthBloc>().add(const AppLogoutRequested())
+              ..read<AuthenticationBloc>().add(const AppLogoutRequested())
               ..pop();
           },
           child: Text(AppTranslations.logout),

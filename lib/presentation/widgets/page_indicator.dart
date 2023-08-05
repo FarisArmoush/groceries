@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_colors.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+part of 'widgets.dart';
 
 class PageIndicator extends StatelessWidget {
   const PageIndicator({

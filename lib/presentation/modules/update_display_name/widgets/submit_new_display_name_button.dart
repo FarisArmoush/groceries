@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:formz/formz.dart';
-import 'package:groceries/presentation/modules/update_display_name/cubit/update_display_name_cubit.dart';
-import 'package:groceries/presentation/widgets/buttons_loading_indicator.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../update_display_name.dart';
 
 class SubmitNewDisplayNameButton extends StatelessWidget {
   const SubmitNewDisplayNameButton({super.key});

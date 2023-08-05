@@ -1,13 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/presentation/modules/verify_user/cubit/verify_user_cubit.dart';
-import 'package:groceries/presentation/modules/verify_user/widgets/failed_to_send_verification_email.dart';
-import 'package:groceries/presentation/modules/verify_user/widgets/loading_sending_verification_email.dart';
-import 'package:groceries/presentation/modules/verify_user/widgets/send_verification_email_button.dart';
-import 'package:groceries/presentation/modules/verify_user/widgets/verification_email_sent_successfully.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../verify_user.dart';
 
 class VerifyUserForm extends StatelessWidget {
   const VerifyUserForm({super.key});

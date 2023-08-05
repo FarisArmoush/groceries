@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../grocery_list_details.dart';
 
 class GroceryListDetailsFab extends StatelessWidget {
   const GroceryListDetailsFab({super.key});

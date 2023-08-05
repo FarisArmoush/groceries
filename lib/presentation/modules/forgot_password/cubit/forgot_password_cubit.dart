@@ -1,11 +1,4 @@
-import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
-import 'package:formz/formz.dart';
-import 'package:groceries/domain/repositories/authentication_repository.dart';
-import 'package:groceries/utils/exceptions/send_password_reset_email_exception.dart';
-import 'package:groceries/utils/forms/email_form.dart';
-
-part 'forgot_password_state.dart';
+part of '../forgot_password.dart';
 
 class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
   ForgotPasswordCubit(this.authenticationRepository)

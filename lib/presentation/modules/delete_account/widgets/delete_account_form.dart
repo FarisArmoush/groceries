@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/presentation/modules/delete_account/widgets/delete_account_body_text.dart';
-import 'package:groceries/presentation/modules/delete_account/widgets/delete_account_button.dart';
-import 'package:groceries/presentation/modules/delete_account/widgets/delete_account_header_text.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../delete_account.dart';
 
 class DeleteAccountForm extends StatelessWidget {
   const DeleteAccountForm({super.key});

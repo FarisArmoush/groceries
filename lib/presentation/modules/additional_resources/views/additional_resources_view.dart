@@ -1,13 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/presentation/modules/additional_resources/widgets/additional_resources_title.dart';
-import 'package:groceries/presentation/modules/additional_resources/widgets/app_version_list_tile.dart';
-import 'package:groceries/presentation/modules/additional_resources/widgets/legal_list_tile.dart';
-import 'package:groceries/presentation/modules/additional_resources/widgets/send_crash_reports_switch_tile.dart';
-import 'package:groceries/presentation/widgets/animations/app_animations.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../additional_resources.dart';
 
 class AdditionalResourcesView extends StatelessWidget {
   const AdditionalResourcesView({super.key});

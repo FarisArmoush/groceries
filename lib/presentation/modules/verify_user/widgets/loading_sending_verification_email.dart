@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../verify_user.dart';
 
 class LoadingSendingVerificationEmail extends StatelessWidget {
   const LoadingSendingVerificationEmail({super.key});

@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/presentation/blocs/remote_config/remote_config_cubit.dart';
-import 'package:groceries/presentation/widgets/animations/app_animations.dart';
+part of '../additional_resources.dart';
 
 /// A [ListTile] widget that shows the app's current version.
 class AppVersionListTile extends StatelessWidget {

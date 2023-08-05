@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../theme_settings.dart';
 
 class ThemeRadio extends StatelessWidget {
   const ThemeRadio({

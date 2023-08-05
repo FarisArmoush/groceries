@@ -1,8 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:groceries/presentation/widgets/app_text_field.dart';
-import 'package:groceries/utils/constants/app_colors.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
+part of '../add_items.dart';
 
 class AddItemsTextField extends StatelessWidget {
   const AddItemsTextField({super.key});

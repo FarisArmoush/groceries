@@ -1,8 +1,4 @@
-import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/material.dart';
-import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of 'widgets.dart';
 
 /// {@template cached_image}
 /// A widget that displays a cached network image.

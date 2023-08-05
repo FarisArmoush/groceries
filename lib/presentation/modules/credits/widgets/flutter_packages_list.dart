@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/domain/entities/app_packages.dart';
+part of '../credits.dart';
 
 class FlutterPackagesList extends StatelessWidget {
   const FlutterPackagesList({super.key});

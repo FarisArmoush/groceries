@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/presentation/modules/onboarding/widgets/base_onboarding_page.dart';
-import 'package:groceries/presentation/modules/onboarding/widgets/leave_onboarding_button.dart';
-import 'package:groceries/presentation/modules/onboarding/widgets/onboarding_next_page_button.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
+part of '../onborading.dart';
 
 class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});

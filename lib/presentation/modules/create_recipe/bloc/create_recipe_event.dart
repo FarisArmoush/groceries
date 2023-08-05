@@ -1,4 +1,4 @@
-part of 'create_recipe_bloc.dart';
+part of '../create_recipe.dart';
 
 sealed class CreateRecipeEvent extends Equatable {
   const CreateRecipeEvent();

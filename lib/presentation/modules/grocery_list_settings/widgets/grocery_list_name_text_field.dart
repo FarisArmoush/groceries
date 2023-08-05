@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/presentation/widgets/app_text_field.dart';
+part of '../grocery_list_settings.dart';
 
 class GroceryListNameTextField extends StatelessWidget {
   const GroceryListNameTextField({super.key});

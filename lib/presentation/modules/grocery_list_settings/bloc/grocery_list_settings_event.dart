@@ -1,4 +1,4 @@
-part of 'grocery_list_settings_bloc.dart';
+part of '../grocery_list_settings.dart';
 
 sealed class GroceryListSettingsEvent extends Equatable {
   const GroceryListSettingsEvent();

@@ -1,4 +1,4 @@
-import 'package:bloc/bloc.dart';
+part of '../additional_resources.dart';
 
 class SendCrashReportsCubit extends Cubit<bool> {
   SendCrashReportsCubit() : super(false);

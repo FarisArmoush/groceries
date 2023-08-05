@@ -1,4 +1,4 @@
-part of 'recipes_bloc.dart';
+part of '../recipes.dart';
 
 sealed class RecipesEvent extends Equatable {
   const RecipesEvent();

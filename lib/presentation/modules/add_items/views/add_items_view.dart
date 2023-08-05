@@ -1,9 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/data/models/grocery_model/grocery_model.dart';
-import 'package:groceries/presentation/modules/add_items/widgets/add_items_text_field.dart';
-import 'package:groceries/presentation/modules/add_items/widgets/grocery_item_card.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../add_items.dart';
 
 class AddItemsView extends StatelessWidget {
   const AddItemsView({super.key});

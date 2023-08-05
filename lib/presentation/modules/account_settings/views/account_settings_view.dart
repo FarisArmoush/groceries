@@ -1,15 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/presentation/modules/account_settings/widgets/display_name/user_display_name_list_tile.dart';
-import 'package:groceries/presentation/modules/account_settings/widgets/email/user_email_list_tile.dart';
-import 'package:groceries/presentation/modules/account_settings/widgets/logout/logout_button.dart';
-import 'package:groceries/presentation/modules/account_settings/widgets/request_to_delete_account_button.dart';
-import 'package:groceries/presentation/modules/account_settings/widgets/user_creation_meta_data_list_tile.dart';
-import 'package:groceries/presentation/modules/account_settings/widgets/user_image/edit_user_image_button.dart';
-import 'package:groceries/presentation/modules/account_settings/widgets/user_image/user_image.dart';
-import 'package:groceries/presentation/modules/account_settings/widgets/verification/is_user_verified_list_tile.dart';
-import 'package:groceries/presentation/widgets/animations/app_animations.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../account_settings.dart';
 
 class AccountSettingsView extends StatelessWidget {
   const AccountSettingsView({super.key});

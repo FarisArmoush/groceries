@@ -1,19 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:formz/formz.dart';
-import 'package:go_router/go_router.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/presentation/modules/register/cubit/register_cubit.dart';
-import 'package:groceries/presentation/modules/register/widgets/register_body_text.dart';
-import 'package:groceries/presentation/modules/register/widgets/register_button.dart';
-import 'package:groceries/presentation/modules/register/widgets/register_confirm_password_text_field.dart';
-import 'package:groceries/presentation/modules/register/widgets/register_display_name_text_field.dart';
-import 'package:groceries/presentation/modules/register/widgets/register_email_text_field.dart';
-import 'package:groceries/presentation/modules/register/widgets/register_header_text.dart';
-import 'package:groceries/presentation/modules/register/widgets/register_other_option_text_button.dart';
-import 'package:groceries/presentation/modules/register/widgets/register_password_text_field.dart';
-import 'package:groceries/presentation/widgets/app_snack_bars.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../register.dart';
 
 class RegisterForm extends StatelessWidget {
   const RegisterForm({super.key});

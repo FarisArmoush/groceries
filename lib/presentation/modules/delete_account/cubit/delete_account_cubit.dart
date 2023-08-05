@@ -1,9 +1,4 @@
-import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
-import 'package:groceries/domain/repositories/authentication_repository.dart';
-import 'package:groceries/utils/exceptions/delete_account_exception.dart';
-
-part 'delete_account_state.dart';
+part of '../delete_account.dart';
 
 class DeleteAccountCubit extends Cubit<DeleteAccountState> {
   DeleteAccountCubit({

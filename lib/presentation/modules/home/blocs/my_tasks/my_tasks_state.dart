@@ -1,4 +1,4 @@
-part of 'my_tasks_bloc.dart';
+part of '../../home.dart';
 
 abstract class MyTasksState extends Equatable {
   const MyTasksState();

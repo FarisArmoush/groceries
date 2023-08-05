@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+part of '../add_items.dart';
 
 class CategoryBoxAddItemsButton extends StatelessWidget {
   const CategoryBoxAddItemsButton({super.key});
