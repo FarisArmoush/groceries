@@ -6,7 +6,7 @@ class UserCreationMetaDataListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final creationTime = context
-        .read<AuthBloc>()
+        .read<AuthenticationBloc>()
         .authenticationRepository
         .currentUser
         ?.metadata

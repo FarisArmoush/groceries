@@ -5,7 +5,10 @@ class UserDataBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = context.watch<AuthBloc>().authenticationRepository.currentUser;
+    final user = context
+        .watch<AuthenticationBloc>()
+        .authenticationRepository
+        .currentUser;
     return DownFadeInAnimation(
       duration: 500.milliseconds,
       child: ListView(

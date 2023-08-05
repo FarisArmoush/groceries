@@ -8,7 +8,7 @@ class WrapperView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AuthBloc, AuthState>(
+    return BlocBuilder<AuthenticationBloc, AuthenticationState>(
       buildWhen: (previous, current) => previous != current,
       builder: (context, state) {
         if (state is Unauthenticated) {

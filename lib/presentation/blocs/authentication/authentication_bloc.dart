@@ -5,11 +5,12 @@ import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:groceries/data/repositories/authentication_repository_impl.dart';
 
-part 'auth_event.dart';
-part 'auth_state.dart';
+part 'authentication_event.dart';
+part 'authentication_state.dart';
 
-class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  AuthBloc({required this.authenticationRepository})
+class AuthenticationBloc
+    extends Bloc<AuthenticationEvent, AuthenticationState> {
+  AuthenticationBloc({required this.authenticationRepository})
       : super(
           authenticationRepository.currentUser != null
               ? Authenticated(authenticationRepository.currentUser)
@@ -28,7 +29,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   final AuthenticationRepositoryImpl authenticationRepository;
 
-  void _onUserChanged(_AppUserChanged event, Emitter<AuthState> emit) {
+  void _onUserChanged(
+    _AppUserChanged event,
+    Emitter<AuthenticationState> emit,
+  ) {
     emit(
       event.user != null
           ? Authenticated(authenticationRepository.currentUser)
@@ -38,7 +42,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   Future<void> _onLogoutRequested(
     AppLogoutRequested event,
-    Emitter<AuthState> emit,
+    Emitter<AuthenticationState> emit,
   ) async {
     await authenticationRepository.logOut();
   }

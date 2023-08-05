@@ -8,7 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/domain/repositories/authentication_repository.dart';
-import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
+import 'package:groceries/presentation/blocs/authentication/authentication_bloc.dart';
 import 'package:groceries/presentation/widgets/widgets.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';

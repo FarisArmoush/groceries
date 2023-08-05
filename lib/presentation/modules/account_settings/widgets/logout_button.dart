@@ -5,7 +5,7 @@ class LogoutButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<AuthBloc, AuthState>(
+    return BlocListener<AuthenticationBloc, AuthenticationState>(
       listenWhen: (previous, current) => previous != current,
       listener: (context, state) {
         if (state is Unauthenticated) {
@@ -65,7 +65,7 @@ class LogoutBottomSheet extends StatelessWidget {
         ),
         FilledButton(
           onPressed: () => context
-            ..read<AuthBloc>().add(const AppLogoutRequested())
+            ..read<AuthenticationBloc>().add(const AppLogoutRequested())
             ..pop(),
           child: Text(AppTranslations.yesLogout),
         ),

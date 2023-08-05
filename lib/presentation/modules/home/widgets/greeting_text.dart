@@ -6,7 +6,7 @@ class GreetingText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final displayName = context
-        .watch<AuthBloc>()
+        .watch<AuthenticationBloc>()
         .authenticationRepository
         .currentUser!
         .displayName;

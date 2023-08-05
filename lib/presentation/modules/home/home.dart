@@ -13,7 +13,7 @@ import 'package:groceries/data/repositories/mock_repositories/mock_grocery_lists
 import 'package:groceries/data/repositories/mock_repositories/mock_tasks_repository.dart';
 import 'package:groceries/domain/repositories/grocery_lists_repository.dart';
 import 'package:groceries/domain/repositories/my_tasks_repository.dart';
-import 'package:groceries/presentation/blocs/auth/auth_bloc.dart';
+import 'package:groceries/presentation/blocs/authentication/authentication_bloc.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/grocery_list_details.dart';
 import 'package:groceries/presentation/widgets/widgets.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';

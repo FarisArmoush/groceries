@@ -6,7 +6,7 @@ class UserDisplayNameListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final displayName = context
-        .read<AuthBloc>()
+        .read<AuthenticationBloc>()
         .authenticationRepository
         .currentUser
         ?.displayName;

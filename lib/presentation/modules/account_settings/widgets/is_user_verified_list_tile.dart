@@ -6,7 +6,7 @@ class IsUserVerifiedListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isVerified = context
-        .read<AuthBloc>()
+        .read<AuthenticationBloc>()
         .authenticationRepository
         .currentUser
         ?.emailVerified;
