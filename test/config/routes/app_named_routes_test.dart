@@ -73,10 +73,6 @@ void main() {
             equals('createList'),
           );
           expect(
-            AppNamedRoutes.inviteUsersToList,
-            equals('inviteUsersToList'),
-          );
-          expect(
             AppNamedRoutes.listCreatedSuccessfully,
             equals('listCreatedSuccessfully'),
           );
