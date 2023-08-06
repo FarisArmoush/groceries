@@ -93,13 +93,8 @@ class AppGoRouter {
               GoRoute(
                 name: AppNamedRoutes.createList,
                 path: 'createList',
-                builder: (context, state) => CreateListView(),
+                builder: (context, state) => const CreateListView(),
                 routes: [
-                  GoRoute(
-                    path: 'inviteUsersToList',
-                    name: AppNamedRoutes.inviteUsersToList,
-                    builder: (context, state) => const InviteUsersToListView(),
-                  ),
                   GoRoute(
                     path: 'listCreatedSuccessfully',
                     name: AppNamedRoutes.listCreatedSuccessfully,

@@ -1,6 +1,6 @@
 part of '../create_list.dart';
 
-abstract class CreateListState extends Equatable {
+sealed class CreateListState extends Equatable {
   const CreateListState();
 
   @override
@@ -8,3 +8,9 @@ abstract class CreateListState extends Equatable {
 }
 
 class CreateListInitial extends CreateListState {}
+
+class CreateListSucceded extends CreateListState {}
+
+class CreateListLoading extends CreateListState {}
+
+class CreateListFailed extends CreateListState {}

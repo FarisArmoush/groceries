@@ -1,39 +1,10 @@
 part of '../create_list.dart';
 
-class InviteUsersToListForm extends StatelessWidget {
-  const InviteUsersToListForm({super.key});
+class InviteViaButtonsColumn extends StatelessWidget {
+  const InviteViaButtonsColumn({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      shrinkWrap: true,
-      physics: const BouncingScrollPhysics(),
-      padding: const EdgeInsets.symmetric(
-        horizontal: 32,
-      ),
-      children: [
-        Assets.svg.illCall.svg(),
-        Text(
-          AppTranslations.invitePeopleToList,
-          style: TextStyle(
-            fontFamily: AppFonts.semiBold(context),
-            color: context.theme.primaryColor,
-            fontSize: 28,
-          ),
-          textAlign: TextAlign.center,
-        ),
-        SizedBox(
-          height: context.deviceHeight * 0.04,
-        ),
-        _buttonsRow(context),
-        SizedBox(
-          height: context.deviceHeight * 0.06,
-        ),
-      ],
-    );
-  }
-
-  Column _buttonsRow(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,

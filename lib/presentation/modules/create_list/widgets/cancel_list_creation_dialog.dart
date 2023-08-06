@@ -1,7 +1,9 @@
 part of '../create_list.dart';
 
 class CancelListCreationDialog extends StatelessWidget {
-  const CancelListCreationDialog({super.key});
+  const CancelListCreationDialog({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

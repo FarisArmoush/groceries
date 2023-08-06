@@ -51,9 +51,6 @@ class AppNamedRoutes {
   /// Create View
   static const String createList = 'createList';
 
-  /// Invite Users To List View
-  static const String inviteUsersToList = 'inviteUsersToList';
-
   /// List Created Successfully View
   ///
   /// Use when the list's creation passed
