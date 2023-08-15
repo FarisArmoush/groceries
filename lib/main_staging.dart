@@ -22,8 +22,9 @@ void main() {
     final remoteConfigRepo = RemoteConfigRepositoryImpl();
     await remoteConfigRepo.init();
     await EasyLocalization.ensureInitialized();
-    FirebaseCrashlyticsRepositoryImpl().initPlatformErrorsHandler();
-    FirebaseCrashlyticsRepositoryImpl().initCrashlytics();
+    FirebaseCrashlyticsRepositoryImpl()
+      ..initPlatformErrorsHandler()
+      ..initCrashlytics();
     return App(
       authenticationRepository: authenticationRepository,
     );
