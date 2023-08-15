@@ -21,7 +21,7 @@ class CachedImage extends StatelessWidget {
   /// {@macro cached_image}
   const CachedImage({
     this.imageUrl =
-        'https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png',
+        'https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80',
     this.height,
     this.width,
     this.boxFit = BoxFit.cover,

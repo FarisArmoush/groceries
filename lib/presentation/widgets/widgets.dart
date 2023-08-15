@@ -27,3 +27,4 @@ part 'animations/left_fade_in_animation.dart';
 part 'animations/right_fade_in_animation.dart';
 part 'animations/up_fade_in_animation.dart';
 part 'other_options_text_button.dart';
+part 'cached_image_with_edit_button.dart';

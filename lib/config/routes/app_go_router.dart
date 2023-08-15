@@ -152,7 +152,21 @@ class AppGoRouter {
                 name: AppNamedRoutes.createRecipe,
                 path: 'createRecipe',
                 builder: (context, state) => const CreateRecipeView(),
-              )
+                routes: [
+                  GoRoute(
+                    name: AppNamedRoutes.recipeCreatedSuccessfully,
+                    path: 'recipeCreatedSuccessfully',
+                    builder: (context, state) =>
+                        const RecipeCreatedSuccessfullyView(),
+                  ),
+                  GoRoute(
+                    name: AppNamedRoutes.recipeCreatedUnsuccessfully,
+                    path: 'recipeCreatedUnsuccessfully',
+                    builder: (context, state) =>
+                        const RecipeCreatedUnsuccessfullyView(),
+                  ),
+                ],
+              ),
             ],
           ),
           GoRoute(

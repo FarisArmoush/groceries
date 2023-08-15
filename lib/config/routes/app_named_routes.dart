@@ -39,6 +39,13 @@ class AppNamedRoutes {
   /// Create Recipe View
   static const String createRecipe = 'createRecipe';
 
+  /// Recipe Created Successfully View
+  static const String recipeCreatedSuccessfully = 'recipeCreatedSuccessfully';
+
+  /// Recipe Created Unsuccessfully View
+  static const String recipeCreatedUnsuccessfully =
+      'recipeCreatedUnsuccessfully';
+
   /// Add Items to list View
   static const String addItems = 'addItems';
 
