@@ -1,4 +1,4 @@
-import 'package:groceries/data/data_sources/firebase_crashlytics_data_source.dart';
+import 'package:groceries/data/data_sources/remote_data_sources/firebase_crashlytics_data_source.dart';
 import 'package:groceries/domain/repositories/firebase_crashlytics_repository.dart';
 
 class FirebaseCrashlyticsRepositoryImpl extends FirebaseCrashlyticsRepository {
