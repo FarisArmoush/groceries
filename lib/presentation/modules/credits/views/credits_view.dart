@@ -5,21 +5,11 @@ class CreditsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(AppTranslations.credits),
+    return BlocProvider(
+      create: (context) => CreditsCubit(
+        context.read<FetchCreditsUseCase>(),
       ),
-      body: ListView(
-        padding: const EdgeInsets.all(16),
-        physics: const BouncingScrollPhysics(),
-        children: [
-          const CreditsFlutterPackagesText(),
-          SizedBox(
-            height: context.deviceHeight * 0.01,
-          ),
-          const FlutterPackagesList(),
-        ],
-      ),
+      child: const CreditsForm(),
     );
   }
 }

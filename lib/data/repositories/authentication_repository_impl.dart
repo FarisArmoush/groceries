@@ -1,174 +1,65 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:groceries/data/data_sources/remote_data_sources/authentication_data_source.dart';
 import 'package:groceries/domain/repositories/authentication_repository.dart';
-import 'package:groceries/domain/use_cases/set_user_data_in_firestore_use_case.dart';
-import 'package:groceries/domain/use_cases/update_display_name_in_firestore_use_case.dart';
-import 'package:groceries/domain/use_cases/update_email_in_firestore_use_case.dart';
-import 'package:groceries/utils/exceptions/delete_account_exception.dart';
-import 'package:groceries/utils/exceptions/login_with_email_password_exception.dart';
-import 'package:groceries/utils/exceptions/logout_failure.dart';
-import 'package:groceries/utils/exceptions/register_with_email_and_password_exception.dart';
-import 'package:groceries/utils/exceptions/send_password_reset_email_exception.dart';
-import 'package:groceries/utils/exceptions/update_email_exception.dart';
-import 'package:groceries/utils/exceptions/update_password_exception.dart';
+import 'package:groceries/utils/params/login_param/login_param.dart';
+import 'package:groceries/utils/params/register_param/register_param.dart';
 
-/// Authentication Repository that uses the Firebase Auth Service.
-///
-/// This class implements the [AuthenticationRepository] interface, which
-/// defines the contract for authentication-related operations. The repository
-/// leverages Firebase Auth to handle user authentication and provides various
-/// methods for user sign-up, sign-in, password management, and other related
-/// operations.
 class AuthenticationRepositoryImpl extends AuthenticationRepository {
-  /// Creates an instance of [AuthenticationRepositoryImpl].
-  ///
-  /// The optional [firebaseAuth] and [firestore] parameters allow you to
-  /// provide custom instances of [FirebaseAuth] and [FirebaseFirestore],
-  /// respectively. If these parameters are not provided, the default instances
-  /// from the Firebase SDK will be used.
-  AuthenticationRepositoryImpl({
-    FirebaseAuth? firebaseAuth,
-    FirebaseFirestore? firestore,
-  })  : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance,
-        _firestore = firestore ?? FirebaseFirestore.instance;
+  AuthenticationRepositoryImpl(
+    this._authenticationDataSource,
+  );
 
-  final FirebaseAuth _firebaseAuth;
-  final FirebaseFirestore _firestore;
+  final AuthenticationDataSource _authenticationDataSource;
   @override
-  Stream<User?> get authStateChanges => _firebaseAuth.userChanges().map(
-        (fbUser) => fbUser,
-      );
+  Stream<User?> get authStateChanges =>
+      _authenticationDataSource.authStateChanges;
 
   @override
-  User? get currentUser => _firebaseAuth.currentUser;
+  User? get currentUser => _authenticationDataSource.currentUser;
 
   @override
-  Future<void> signUpWithEmailAndPassword({
-    required String email,
-    required String password,
-    required String displayName,
-  }) async {
-    try {
-      await _firebaseAuth
-          .createUserWithEmailAndPassword(
-            email: email,
-            password: password,
-          )
-          .then(
-            (currentUser) => SetUserDataInFirestoreUseCase(_firestore).setData(
-              uid: currentUser.user!.uid,
-              email: email,
-              displayName: displayName,
-            ),
-          )
-          .then(
-            (_) => _firebaseAuth.currentUser!.updateDisplayName(displayName),
-          );
-    } on FirebaseAuthException catch (e) {
-      throw RegisterWithEmailAndPasswordException.fromCode(e.code);
-    } catch (_) {
-      throw const RegisterWithEmailAndPasswordException();
-    }
-  }
+  Future<void> signUpWithEmailAndPassword(RegisterParam registerParam) =>
+      _authenticationDataSource.signUpWithEmailAndPassword(registerParam);
 
   @override
-  Future<void> deleteAccount() async {
-    try {
-      await _firestore.collection('users').doc(currentUser?.uid).delete();
-      await currentUser?.delete();
-    } catch (e) {
-      throw DeleteAccountException();
-    }
-  }
+  Future<void> deleteAccount() => _authenticationDataSource.deleteAccount();
 
   @override
-  Future<void> logOut() async {
-    try {
-      await Future.wait([
-        _firebaseAuth.signOut(),
-      ]);
-    } catch (_) {
-      throw LogoutFailure();
-    }
-  }
+  Future<void> logOut() => _authenticationDataSource.logOut();
 
   @override
-  Future<void> signInWithEmailAndPassword({
-    required String email,
-    required String password,
-  }) async {
-    try {
-      await _firebaseAuth.signInWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
-    } on FirebaseAuthException catch (e) {
-      throw LoginWithEmailAndPasswordException.fromCode(e.code);
-    } catch (_) {
-      throw const LoginWithEmailAndPasswordException();
-    }
-  }
+  Future<void> signInWithEmailAndPassword(LoginParam loginParam) =>
+      _authenticationDataSource.signInWithEmailAndPassword(loginParam);
 
   @override
-  Future<void> sendPasswordResetEmail({required String email}) async {
-    try {
-      await _firebaseAuth.sendPasswordResetEmail(email: email);
-    } on FirebaseAuthException catch (e) {
-      throw SendPasswordResetEmailException.fromCode(e.code);
-    } catch (_) {
-      throw const SendPasswordResetEmailException();
-    }
-  }
+  Future<void> sendPasswordResetEmail(String email) =>
+      _authenticationDataSource.sendPasswordResetEmail(email);
 
   @override
-  Future<void> updateDisplayName(String newName) async {
-    try {
-      await currentUser?.updateDisplayName(newName).then(
-            (_) => {
-              UpdateDisplayNameInFirestoreUseCase(_firestore).update(
-                newName: newName,
-                uid: currentUser!.uid,
-              ),
-            },
-          );
-    } on FirebaseAuthException catch (e) {
-      throw Exception(e.code);
-    }
-  }
+  Future<void> updateDisplayName(String displayName) =>
+      _authenticationDataSource.updateDisplayName(displayName);
 
   @override
-  Future<void> updateEmail(String newEmail) async {
-    try {
-      await currentUser?.updateEmail(newEmail).then(
-            (_) => UpdateEmailInFirestoreUseCase(_firestore).setEmail(
-              uid: currentUser?.uid,
-              email: newEmail,
-            ),
-          );
-    } on FirebaseAuthException catch (e) {
-      throw UpdateEmailException.fromCode(e.code);
-    } catch (_) {
-      throw const UpdateEmailException();
-    }
-  }
+  Future<void> updateEmail(String email) =>
+      _authenticationDataSource.updateEmail(email);
 
   @override
-  Future<void> updatePassword(String newPassword) async {
-    try {
-      await currentUser?.updatePassword(newPassword);
-    } on FirebaseAuthException catch (e) {
-      throw UpdatePasswordException.fromCode(e.code);
-    } catch (_) {
-      throw const UpdatePasswordException();
-    }
-  }
+  Future<void> updatePassword(String password) =>
+      _authenticationDataSource.updatePassword(password);
 
   @override
-  Future<void> sendVerificationEmail() async {
-    try {
-      await currentUser?.sendEmailVerification();
-    } on FirebaseAuthException catch (e) {
-      throw Exception(e.code);
-    }
-  }
+  Future<void> sendVerificationEmail() =>
+      _authenticationDataSource.sendVerificationEmail();
+
+  @override
+  String? get displayName => _authenticationDataSource.displayName;
+
+  @override
+  String? get email => _authenticationDataSource.email;
+
+  @override
+  bool? get emailVerified => _authenticationDataSource.emailVerified;
+
+  @override
+  String? get creationDate => _authenticationDataSource.creationDate;
 }

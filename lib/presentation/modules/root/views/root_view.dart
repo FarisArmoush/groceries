@@ -8,15 +8,27 @@ class RootView extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<GroceryListsBloc>(
-          create: (context) => GroceryListsBloc()..add(LoadGroceryLists()),
+          create: (context) => GroceryListsBloc(
+            context.read<GroceryListsUseCase>(),
+          )..add(
+              LoadGroceryLists(),
+            ),
           child: const HomeView(),
         ),
         BlocProvider<MyTasksBloc>(
-          create: (context) => MyTasksBloc()..add(LoadMyTasks()),
+          create: (context) => MyTasksBloc(
+            context.read<MyTasksUseCase>(),
+          )..add(
+              LoadMyTasks(),
+            ),
           child: const HomeView(),
         ),
         BlocProvider<RecipesBloc>(
-          create: (context) => RecipesBloc()..add(LoadRecipes()),
+          create: (context) => RecipesBloc(
+            context.read<RecipesUseCase>(),
+          )..add(
+              LoadRecipes(),
+            ),
           child: const RecipesView(),
         ),
       ],

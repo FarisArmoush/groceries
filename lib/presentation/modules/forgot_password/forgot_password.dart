@@ -8,8 +8,7 @@ import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/domain/repositories/authentication_repository.dart';
-import 'package:groceries/presentation/blocs/authentication/authentication_bloc.dart';
+import 'package:groceries/domain/use_cases/authentication_use_cases/send_password_reset_email_use_case.dart';
 import 'package:groceries/presentation/widgets/widgets.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -17,6 +16,8 @@ import 'package:groceries/utils/exceptions/send_password_reset_email_exception.d
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 import 'package:groceries/utils/forms/email_form.dart';
 
+part 'cubit/forgot_password_cubit.dart';
+part 'cubit/forgot_password_state.dart';
 part 'views/forgot_password_view.dart';
 part 'views/reset_password_sent_successfully.dart';
 part 'widgets/cancel_forgot_password_dialog.dart';
@@ -25,5 +26,3 @@ part 'widgets/forgot_password_email_text_field.dart';
 part 'widgets/forgot_password_form.dart';
 part 'widgets/forgot_password_header_text.dart';
 part 'widgets/send_forgot_password_email_button.dart';
-part 'cubit/forgot_password_cubit.dart';
-part 'cubit/forgot_password_state.dart';

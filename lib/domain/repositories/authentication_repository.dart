@@ -1,3 +1,6 @@
+import 'package:groceries/utils/params/login_param/login_param.dart';
+import 'package:groceries/utils/params/register_param/register_param.dart';
+
 /// This abstract class defines a set of common methods
 /// and properties for authentication repositories.
 abstract class AuthenticationRepository {
@@ -6,10 +9,7 @@ abstract class AuthenticationRepository {
   /// Required parameters:
   /// * [email]: The email address of the user.
   /// * [password]: The password of the user.
-  Future<void> signInWithEmailAndPassword({
-    required String email,
-    required String password,
-  });
+  Future<void> signInWithEmailAndPassword(LoginParam loginParam);
 
   /// Signs up a user with email, password, and display name.
   ///
@@ -17,17 +17,13 @@ abstract class AuthenticationRepository {
   /// * [email]: The email address of the user.
   /// * [password]: The password of the user.
   /// * [displayName]: The display name of the user.
-  Future<void> signUpWithEmailAndPassword({
-    required String email,
-    required String password,
-    required String displayName,
-  });
+  Future<void> signUpWithEmailAndPassword(RegisterParam registerParam);
 
   /// Sends an email to the user to reset their password
-  Future<void> sendPasswordResetEmail({required String email});
+  Future<void> sendPasswordResetEmail(String email);
 
   /// Updates the user's display name
-  Future<void> updateDisplayName(String newName);
+  Future<void> updateDisplayName(String displayName);
 
   /// Signs out the current user.
   Future<void> logOut();
@@ -36,10 +32,10 @@ abstract class AuthenticationRepository {
   Future<void> deleteAccount();
 
   /// updates the current user's email
-  Future<void> updateEmail(String newEmail);
+  Future<void> updateEmail(String email);
 
   /// updates the current user's password
-  Future<void> updatePassword(String newPassword);
+  Future<void> updatePassword(String password);
 
   /// Sends a verification Email
   Future<void> sendVerificationEmail();
@@ -49,4 +45,9 @@ abstract class AuthenticationRepository {
 
   /// The currently authenticated user.
   Object? get currentUser;
+
+  String? get email;
+  String? get displayName;
+  String? get creationDate;
+  bool? get emailVerified;
 }

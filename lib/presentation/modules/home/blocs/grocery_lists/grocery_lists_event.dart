@@ -8,11 +8,3 @@ sealed class GroceryListsEvent extends Equatable {
 }
 
 final class LoadGroceryLists extends GroceryListsEvent {}
-
-final class LeaveGroceryList extends GroceryListsEvent {
-  const LeaveGroceryList({required this.list});
-  final GroceryListModel list;
-
-  @override
-  List<Object> get props => [list];
-}

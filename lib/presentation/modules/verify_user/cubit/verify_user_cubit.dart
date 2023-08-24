@@ -1,14 +1,14 @@
 part of '../verify_user.dart';
 
 class VerifyUserCubit extends Cubit<VerifyUserState> {
-  VerifyUserCubit(this.authenticationRepository) : super(VerifyUserInitial());
+  VerifyUserCubit(this._verifyUserUseCase) : super(VerifyUserInitial());
 
-  final AuthenticationRepository authenticationRepository;
+  final VerifyUserUseCase _verifyUserUseCase;
 
   Future<void> sendVerificationEmail() async {
     emit(VerificationLoading());
     try {
-      await authenticationRepository.sendVerificationEmail();
+      await _verifyUserUseCase.call();
       emit(VerifiedSuccessfully());
     } catch (e) {
       emit(VerificationFailed());

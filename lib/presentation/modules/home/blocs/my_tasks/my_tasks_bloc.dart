@@ -1,16 +1,15 @@
 part of '../../home.dart';
 
 class MyTasksBloc extends Bloc<MyTasksEvent, MyTasksState> {
-  MyTasksBloc() : super(MyTasksInitial()) {
-    final MyTasksRepository tasksRepository = MockTasksRepository();
-
+  MyTasksBloc(this._myTasksUseCase) : super(MyTasksInitial()) {
     on<LoadMyTasks>(
       (event, emit) async {
-        await tasksRepository.fetchMyTasks();
+        final myTasks = await _myTasksUseCase.fetchMyTasks();
         emit(
-          MyTasksLoaded(myTasks: tasksRepository.myTasks),
+          MyTasksLoaded(myTasks: myTasks),
         );
       },
     );
   }
+  final MyTasksUseCase _myTasksUseCase;
 }

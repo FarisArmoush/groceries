@@ -7,7 +7,7 @@ class LoginView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<LoginCubit>(
       create: (context) => LoginCubit(
-        context.read<AuthenticationBloc>().authenticationRepository,
+        context.read<LoginWithEmailAndPasswordUseCase>(),
       ),
       child: const LoginForm(),
     );

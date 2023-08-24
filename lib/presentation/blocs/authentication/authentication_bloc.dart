@@ -3,31 +3,31 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:groceries/data/repositories/authentication_repository_impl.dart';
+import 'package:groceries/domain/repositories/authentication_repository.dart';
 
 part 'authentication_event.dart';
 part 'authentication_state.dart';
 
 class AuthenticationBloc
     extends Bloc<AuthenticationEvent, AuthenticationState> {
-  AuthenticationBloc({required this.authenticationRepository})
+  AuthenticationBloc(this._authenticationRepository)
       : super(
-          authenticationRepository.currentUser != null
-              ? Authenticated(authenticationRepository.currentUser)
+          _authenticationRepository.currentUser != null
+              ? Authenticated(_authenticationRepository.currentUser)
               : const Unauthenticated(),
         ) {
     on<_AppUserChanged>(_onUserChanged);
     on<AppLogoutRequested>(_onLogoutRequested);
 
-    _userSubscription = authenticationRepository.authStateChanges.listen(
+    _userSubscription = _authenticationRepository.authStateChanges.listen(
       (user) => add(
         _AppUserChanged(user),
       ),
-    );
+    ) as StreamSubscription<User?>;
   }
-  late final StreamSubscription<User?> _userSubscription;
+  late final StreamSubscription<Object?> _userSubscription;
 
-  final AuthenticationRepositoryImpl authenticationRepository;
+  final AuthenticationRepository _authenticationRepository;
 
   void _onUserChanged(
     _AppUserChanged event,
@@ -35,7 +35,7 @@ class AuthenticationBloc
   ) {
     emit(
       event.user != null
-          ? Authenticated(authenticationRepository.currentUser)
+          ? Authenticated(_authenticationRepository.currentUser)
           : const Unauthenticated(),
     );
   }
@@ -44,7 +44,7 @@ class AuthenticationBloc
     AppLogoutRequested event,
     Emitter<AuthenticationState> emit,
   ) async {
-    await authenticationRepository.logOut();
+    await _authenticationRepository.logOut();
   }
 
   @override

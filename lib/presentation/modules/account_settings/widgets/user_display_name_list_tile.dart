@@ -5,11 +5,7 @@ class UserDisplayNameListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final displayName = context
-        .read<AuthenticationBloc>()
-        .authenticationRepository
-        .currentUser
-        ?.displayName;
+    final displayName = context.read<UserCubit>().displayName;
     return ListTile(
       title: Text(AppTranslations.username),
       subtitle: Text(displayName ?? ''),

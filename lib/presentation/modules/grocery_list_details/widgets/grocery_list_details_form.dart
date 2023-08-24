@@ -25,7 +25,7 @@ class GroceryListDetailsForm extends StatelessWidget {
           child: SizedBox(
             height: context.deviceHeight * 0.1,
           ),
-        )
+        ),
       ],
     );
   }

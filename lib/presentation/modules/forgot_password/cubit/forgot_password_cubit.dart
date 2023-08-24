@@ -1,10 +1,9 @@
 part of '../forgot_password.dart';
 
 class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
-  ForgotPasswordCubit(this.authenticationRepository)
+  ForgotPasswordCubit(this._sendPasswordResetEmailUseCase)
       : super(const ForgotPasswordState());
-
-  final AuthenticationRepository authenticationRepository;
+  final SendPasswordResetEmailUseCase _sendPasswordResetEmailUseCase;
 
   void emailChanged(String value) {
     final email = EmailForm.dirty(value);
@@ -24,9 +23,7 @@ class ForgotPasswordCubit extends Cubit<ForgotPasswordState> {
       ),
     );
     try {
-      await authenticationRepository.sendPasswordResetEmail(
-        email: state.email.value,
-      );
+      await _sendPasswordResetEmailUseCase.call(state.email.value);
       emit(
         state.copyWith(
           status: FormzSubmissionStatus.success,
