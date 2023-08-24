@@ -5,7 +5,7 @@ class App extends StatelessWidget {
     required this.authenticationRepository,
     super.key,
   });
-  final AuthenticationRepositoryImpl authenticationRepository;
+  final AuthenticationRepository authenticationRepository;
 
   @override
   Widget build(BuildContext context) {
