@@ -1,9 +1,9 @@
 part of '../update_display_name.dart';
 
 class UpdateDisplayNameCubit extends Cubit<UpdateDisplayNameState> {
-  UpdateDisplayNameCubit(this.updateDisplayNameUseCase)
+  UpdateDisplayNameCubit(this._updateDisplayNameUseCase)
       : super(const UpdateDisplayNameState());
-  final UpdateDisplayNameUseCase updateDisplayNameUseCase;
+  final UpdateDisplayNameUseCase _updateDisplayNameUseCase;
   void nameChanged(String value) {
     final name = DisplayNameForm.dirty(value);
     emit(
@@ -17,7 +17,7 @@ class UpdateDisplayNameCubit extends Cubit<UpdateDisplayNameState> {
   Future<void> updateDisplayName() async {
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
     try {
-      await updateDisplayNameUseCase.call(state.name.value);
+      await _updateDisplayNameUseCase.call(state.name.value);
       emit(state.copyWith(status: FormzSubmissionStatus.success));
     } catch (_) {
       emit(

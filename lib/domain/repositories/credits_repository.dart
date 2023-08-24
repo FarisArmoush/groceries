@@ -1,4 +1,4 @@
-import 'package:groceries/data/models/credit_model.dart';
+import 'package:groceries/data/models/credit_model/credit_model.dart';
 
 abstract class CreditsRepository {
   List<CreditModel> get uiPackages;

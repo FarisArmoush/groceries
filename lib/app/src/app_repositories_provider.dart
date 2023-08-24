@@ -8,14 +8,11 @@ class AppRepositoriesProvider extends StatelessWidget {
     /// DATA SOURCES PROVIDER
     return MultiRepositoryProvider(
       providers: [
-        RepositoryProvider<AuthenticationRemoteDataSource>(
-          create: (context) => AuthenticationRemoteDataSource(),
+        RepositoryProvider<AuthenticationDataSource>(
+          create: (context) => AuthenticationDataSource(),
         ),
         RepositoryProvider<CreditsDataSource>(
           create: (context) => CreditsDataSource(),
-        ),
-        RepositoryProvider<FirebaseCrashlyticsDataSource>(
-          create: (context) => FirebaseCrashlyticsDataSource(),
         ),
         RepositoryProvider<RemoteConfigDataSource>(
           create: (context) => RemoteConfigDataSource(),

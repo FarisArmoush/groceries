@@ -1,5 +1,5 @@
 import 'package:groceries/data/data_sources/local_data_sources/credits_data_source.dart';
-import 'package:groceries/data/models/credit_model.dart';
+import 'package:groceries/data/models/credit_model/credit_model.dart';
 import 'package:groceries/domain/repositories/credits_repository.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 

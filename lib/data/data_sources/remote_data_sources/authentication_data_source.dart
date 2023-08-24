@@ -10,8 +10,8 @@ import 'package:groceries/utils/exceptions/update_password_exception.dart';
 import 'package:groceries/utils/params/login_param/login_param.dart';
 import 'package:groceries/utils/params/register_param/register_param.dart';
 
-class AuthenticationRemoteDataSource {
-  AuthenticationRemoteDataSource({
+class AuthenticationDataSource {
+  AuthenticationDataSource({
     FirebaseAuth? firebaseAuth,
     FirebaseFirestore? firestore,
   })  : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance,

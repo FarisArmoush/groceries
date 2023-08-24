@@ -1,4 +1,4 @@
-import 'package:groceries/data/models/credit_model.dart';
+import 'package:groceries/data/models/credit_model/credit_model.dart';
 import 'package:groceries/domain/repositories/credits_repository.dart';
 
 class FetchCreditsUseCase {

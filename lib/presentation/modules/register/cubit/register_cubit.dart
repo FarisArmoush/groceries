@@ -1,10 +1,11 @@
 part of '../register.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
-  RegisterCubit(this.registerWithEmailAndPasswordUseCase)
+  RegisterCubit(this._registerWithEmailAndPasswordUseCase)
       : super(const RegisterState());
 
-  final RegisterWithEmailAndPasswordUseCase registerWithEmailAndPasswordUseCase;
+  final RegisterWithEmailAndPasswordUseCase
+      _registerWithEmailAndPasswordUseCase;
   void displayNameChanged(String value) {
     final displayName = DisplayNameForm.dirty(value);
     emit(
@@ -77,7 +78,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     if (!state.isValid) return;
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
     try {
-      await registerWithEmailAndPasswordUseCase.call(
+      await _registerWithEmailAndPasswordUseCase.call(
         RegisterParam(
           email: state.email.value,
           password: state.password.value,

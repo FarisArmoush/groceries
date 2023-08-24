@@ -9,8 +9,7 @@ import 'package:groceries/config/localization/remote_config_translations_loader.
 import 'package:groceries/config/routes/app_go_router.dart';
 import 'package:groceries/config/theme/app_themes.dart';
 import 'package:groceries/data/data_sources/local_data_sources/credits_data_source.dart';
-import 'package:groceries/data/data_sources/remote_data_sources/authentication_remote_data_source.dart';
-import 'package:groceries/data/data_sources/remote_data_sources/firebase_crashlytics_data_source.dart';
+import 'package:groceries/data/data_sources/remote_data_sources/authentication_data_source.dart';
 import 'package:groceries/data/data_sources/remote_data_sources/grocery_lists_data_source.dart';
 import 'package:groceries/data/data_sources/remote_data_sources/my_tasks_data_source.dart';
 import 'package:groceries/data/data_sources/remote_data_sources/recipes_data_source.dart';
@@ -27,6 +26,7 @@ import 'package:groceries/domain/repositories/my_tasks_repository.dart';
 import 'package:groceries/domain/repositories/recipes_repository.dart';
 import 'package:groceries/domain/repositories/remote_config_repository.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/delete_account_use_case.dart';
+import 'package:groceries/domain/use_cases/authentication_use_cases/fetch_user_data_use_case.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/login_with_email_and_password_use_case.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/register_with_email_and_password_use_case.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/send_password_reset_email_use_case.dart';
@@ -35,7 +35,6 @@ import 'package:groceries/domain/use_cases/authentication_use_cases/update_email
 import 'package:groceries/domain/use_cases/authentication_use_cases/verify_user_use_case.dart';
 import 'package:groceries/domain/use_cases/local_use_cases/fetch_credits_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/fetch_app_version_use_case.dart';
-import 'package:groceries/domain/use_cases/remote_use_cases/fetch_user_data_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/grocery_lists_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/my_tasks_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/recipes_use_case.dart';

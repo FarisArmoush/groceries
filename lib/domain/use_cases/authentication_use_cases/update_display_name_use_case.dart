@@ -1,9 +1,7 @@
 import 'package:groceries/domain/repositories/authentication_repository.dart';
 
 class UpdateDisplayNameUseCase {
-  const UpdateDisplayNameUseCase(
-    this._authenticationRepository,
-  );
+  const UpdateDisplayNameUseCase(this._authenticationRepository);
 
   final AuthenticationRepository _authenticationRepository;
 

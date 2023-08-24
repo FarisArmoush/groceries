@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:groceries/data/data_sources/remote_data_sources/authentication_remote_data_source.dart';
+import 'package:groceries/data/data_sources/remote_data_sources/authentication_data_source.dart';
 import 'package:groceries/domain/repositories/authentication_repository.dart';
 import 'package:groceries/utils/params/login_param/login_param.dart';
 import 'package:groceries/utils/params/register_param/register_param.dart';
@@ -9,7 +9,7 @@ class AuthenticationRepositoryImpl extends AuthenticationRepository {
     this._authenticationDataSource,
   );
 
-  final AuthenticationRemoteDataSource _authenticationDataSource;
+  final AuthenticationDataSource _authenticationDataSource;
   @override
   Stream<User?> get authStateChanges =>
       _authenticationDataSource.authStateChanges;
