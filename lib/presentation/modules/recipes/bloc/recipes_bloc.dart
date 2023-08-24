@@ -1,16 +1,15 @@
 part of '../recipes.dart';
 
 class RecipesBloc extends Bloc<RecipesEvent, RecipesState> {
-  RecipesBloc() : super(RecipesInitial()) {
-    final RecipesRepository recipesRepo = MockRecipesRepository();
-
+  RecipesBloc(this._recipesUseCase) : super(RecipesInitial()) {
     on<LoadRecipes>(
       (event, emit) async {
-        await recipesRepo.fetchRecipes();
+        final recipes = await _recipesUseCase.fetchRecipes();
         emit(
-          RecipesLoaded(recipes: recipesRepo.recipes),
+          RecipesLoaded(recipes: recipes),
         );
       },
     );
   }
+  final RecipesUseCase _recipesUseCase;
 }

@@ -1,16 +1,9 @@
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/data/models/recipe_model/recipe_model.dart';
-import 'package:groceries/domain/repositories/recipes_repository.dart';
 
-class MockRecipesRepository extends RecipesRepository {
-  @override
+class RecipesDataSource {
   Future<List<RecipeModel>> fetchRecipes() async {
-    return recipes;
-  }
-
-  @override
-  List<RecipeModel> get recipes {
-    return [
+    final recipes = [
       const RecipeModel(
         uid: '123',
         name: 'Vegetables Salad',
@@ -78,14 +71,13 @@ class MockRecipesRepository extends RecipesRepository {
         ],
       ),
     ];
+    return recipes;
   }
 
-  @override
   Future<RecipeModel> createRecipe(RecipeModel recipe) {
     throw UnimplementedError();
   }
 
-  @override
   Future<RecipeModel> deleteRecipe(RecipeModel recipe) {
     throw UnimplementedError();
   }

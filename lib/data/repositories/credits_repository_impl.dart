@@ -4,8 +4,7 @@ import 'package:groceries/domain/repositories/credits_repository.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class CreditsRepositoryImpl extends CreditsRepository {
-  CreditsRepositoryImpl({CreditsDataSource? creditsDataSource})
-      : _creditsDataSource = creditsDataSource ?? CreditsDataSource();
+  CreditsRepositoryImpl(this._creditsDataSource);
 
   final CreditsDataSource _creditsDataSource;
   @override

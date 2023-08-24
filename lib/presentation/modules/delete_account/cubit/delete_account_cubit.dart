@@ -1,16 +1,14 @@
 part of '../delete_account.dart';
 
 class DeleteAccountCubit extends Cubit<DeleteAccountState> {
-  DeleteAccountCubit({
-    required this.authRepo,
-  }) : super(DeleteAccountInitial());
+  DeleteAccountCubit(this.deleteAccountUseCase) : super(DeleteAccountInitial());
 
-  final AuthenticationRepository authRepo;
+  final DeleteAccountUseCase deleteAccountUseCase;
 
   Future<void> deleteAccount() async {
     emit(DeleteAccountLoading());
     try {
-      await authRepo.deleteAccount();
+      await deleteAccountUseCase.call();
       emit(AccountDeleteSuccess());
     } on DeleteAccountException catch (_) {
       emit(AccountDeleteFailed());

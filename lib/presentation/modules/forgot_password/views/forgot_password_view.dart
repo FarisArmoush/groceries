@@ -7,7 +7,7 @@ class ForgotPasswordView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider<ForgotPasswordCubit>(
       create: (context) => ForgotPasswordCubit(
-        context.read<AuthenticationBloc>().authenticationRepository,
+        context.read<SendPasswordResetEmailUseCase>(),
       ),
       child: const ForgotPasswordForm(),
     );

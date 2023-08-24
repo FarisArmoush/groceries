@@ -5,10 +5,7 @@ class UserDataBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = context
-        .watch<AuthenticationBloc>()
-        .authenticationRepository
-        .currentUser;
+    final user = context.watch<UserCubit>();
     return DownFadeInAnimation(
       duration: 500.milliseconds,
       child: ListView(
@@ -21,7 +18,7 @@ class UserDataBox extends StatelessWidget {
           ),
           FadeInAnimation(
             child: SelectableText(
-              user?.displayName ?? '',
+              user.displayName ?? '',
               style: TextStyle(
                 fontFamily: AppFonts.medium(context),
                 color: context.theme.primaryColor,
@@ -35,7 +32,7 @@ class UserDataBox extends StatelessWidget {
           ),
           FadeInAnimation(
             child: SelectableText(
-              user?.email ?? '',
+              user.email ?? '',
               style: TextStyle(
                 fontFamily: AppFonts.light(context),
                 color: context.theme.hintColor,

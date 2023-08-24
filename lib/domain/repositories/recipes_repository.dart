@@ -6,6 +6,4 @@ abstract class RecipesRepository {
   Future<RecipeModel> createRecipe(RecipeModel recipe);
 
   Future<RecipeModel> deleteRecipe(RecipeModel recipe);
-
-  List<RecipeModel> get recipes;
 }

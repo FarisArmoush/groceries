@@ -6,7 +6,9 @@ class CreditsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => CreditsCubit(),
+      create: (context) => CreditsCubit(
+        context.read<FetchCreditsUseCase>(),
+      ),
       child: const CreditsForm(),
     );
   }

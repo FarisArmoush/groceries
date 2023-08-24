@@ -3,7 +3,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/app/app_bloc_observer.dart';
+import 'package:groceries/app/app.dart';
 
 /// Bootstraps the Flutter application by setting up error handling and
 /// configuring the global [Bloc.observer]

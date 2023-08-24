@@ -1,10 +1,9 @@
 import 'package:groceries/data/models/credit_model.dart';
-import 'package:groceries/data/repositories/credits_repository_impl.dart';
 import 'package:groceries/domain/repositories/credits_repository.dart';
 
 class FetchCreditsUseCase {
-  FetchCreditsUseCase({CreditsRepository? creditsRepository})
-      : _creditsRepository = creditsRepository ?? CreditsRepositoryImpl();
+  FetchCreditsUseCase(this._creditsRepository);
+
   final CreditsRepository _creditsRepository;
 
   List<CreditModel> get uiPackages {

@@ -1,7 +1,5 @@
 // ignore_for_file: strict_raw_type
-import 'dart:developer' as dev;
-
-import 'package:flutter_bloc/flutter_bloc.dart';
+part of '../app.dart';
 
 class AppBlocObserver extends BlocObserver {
   const AppBlocObserver();

@@ -1,9 +1,9 @@
 part of '../login.dart';
 
 class LoginCubit extends Cubit<LoginState> {
-  LoginCubit(this.authenticationRepository) : super(const LoginState());
+  LoginCubit(this.loginWithEmailAndPasswordUseCase) : super(const LoginState());
 
-  final AuthenticationRepository authenticationRepository;
+  final LoginWithEmailAndPasswordUseCase loginWithEmailAndPasswordUseCase;
 
   void emailChanged(String value) {
     final email = EmailForm.dirty(value);
@@ -31,9 +31,11 @@ class LoginCubit extends Cubit<LoginState> {
       state.copyWith(status: FormzSubmissionStatus.inProgress),
     );
     try {
-      await authenticationRepository.signInWithEmailAndPassword(
-        email: state.email.value,
-        password: state.password.value,
+      await loginWithEmailAndPasswordUseCase.call(
+        LoginParam(
+          email: state.email.value,
+          password: state.password.value,
+        ),
       );
       emit(state.copyWith(status: FormzSubmissionStatus.success));
     } on LoginWithEmailAndPasswordException catch (e) {

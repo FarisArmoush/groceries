@@ -1,26 +1,52 @@
+library app;
+
+import 'dart:developer' as dev;
+
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/app/app_easy_localization.dart';
+import 'package:groceries/config/localization/remote_config_translations_loader.dart';
+import 'package:groceries/config/routes/app_go_router.dart';
+import 'package:groceries/config/theme/app_themes.dart';
+import 'package:groceries/data/data_sources/local_data_sources/credits_data_source.dart';
+import 'package:groceries/data/data_sources/remote_data_sources/authentication_remote_data_source.dart';
+import 'package:groceries/data/data_sources/remote_data_sources/firebase_crashlytics_data_source.dart';
+import 'package:groceries/data/data_sources/remote_data_sources/grocery_lists_data_source.dart';
+import 'package:groceries/data/data_sources/remote_data_sources/my_tasks_data_source.dart';
+import 'package:groceries/data/data_sources/remote_data_sources/recipes_data_source.dart';
+import 'package:groceries/data/data_sources/remote_data_sources/remote_config_data_source.dart';
 import 'package:groceries/data/repositories/authentication_repository_impl.dart';
+import 'package:groceries/data/repositories/credits_repository_impl.dart';
+import 'package:groceries/data/repositories/grocery_lists_repository_impl.dart';
+import 'package:groceries/data/repositories/my_tasks_repository_impl.dart';
+import 'package:groceries/data/repositories/recipes_repository_impl.dart';
+import 'package:groceries/data/repositories/remote_config_repository_impl.dart';
+import 'package:groceries/domain/repositories/authentication_repository.dart';
+import 'package:groceries/domain/repositories/credits_repository.dart';
+import 'package:groceries/domain/repositories/grocery_lists_repository.dart';
+import 'package:groceries/domain/repositories/my_tasks_repository.dart';
+import 'package:groceries/domain/repositories/recipes_repository.dart';
+import 'package:groceries/domain/repositories/remote_config_repository.dart';
+import 'package:groceries/domain/use_cases/authentication_use_cases/delete_account_use_case.dart';
+import 'package:groceries/domain/use_cases/authentication_use_cases/login_with_email_and_password_use_case.dart';
+import 'package:groceries/domain/use_cases/authentication_use_cases/register_with_email_and_password_use_case.dart';
+import 'package:groceries/domain/use_cases/authentication_use_cases/send_password_reset_email_use_case.dart';
+import 'package:groceries/domain/use_cases/authentication_use_cases/update_display_name_use_case.dart';
+import 'package:groceries/domain/use_cases/authentication_use_cases/update_email_use_case.dart';
+import 'package:groceries/domain/use_cases/authentication_use_cases/verify_user_use_case.dart';
+import 'package:groceries/domain/use_cases/local_use_cases/fetch_credits_use_case.dart';
+import 'package:groceries/domain/use_cases/remote_use_cases/fetch_app_version_use_case.dart';
+import 'package:groceries/domain/use_cases/remote_use_cases/fetch_user_data_use_case.dart';
+import 'package:groceries/domain/use_cases/remote_use_cases/grocery_lists_use_case.dart';
+import 'package:groceries/domain/use_cases/remote_use_cases/my_tasks_use_case.dart';
+import 'package:groceries/domain/use_cases/remote_use_cases/recipes_use_case.dart';
 import 'package:groceries/presentation/blocs/authentication/authentication_bloc.dart';
+import 'package:groceries/presentation/blocs/remote_config/remote_config_cubit.dart';
+import 'package:groceries/presentation/blocs/theme/theme_cubit.dart';
+import 'package:groceries/presentation/blocs/user/user_cubit.dart';
 
-class App extends StatelessWidget {
-  const App({
-    required this.authenticationRepository,
-    super.key,
-  });
-  final AuthenticationRepositoryImpl authenticationRepository;
-
-  @override
-  Widget build(BuildContext context) {
-    return RepositoryProvider.value(
-      value: authenticationRepository,
-      child: BlocProvider<AuthenticationBloc>(
-        create: (context) => AuthenticationBloc(
-          authenticationRepository: authenticationRepository,
-        ),
-        child: const AppEasyLocalization(),
-      ),
-    );
-  }
-}
+part 'src/app.dart';
+part 'src/app_bloc_observer.dart';
+part 'src/app_easy_localization.dart';
+part 'src/app_repositories_provider.dart';
+part 'src/app_view.dart';
