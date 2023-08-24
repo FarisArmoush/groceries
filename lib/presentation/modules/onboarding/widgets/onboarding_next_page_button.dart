@@ -12,7 +12,7 @@ class OnboardingNextPageButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FadeInAnimation(
       child: FloatingActionButton.small(
-        tooltip: AppTranslations.nextPage,
+        tooltip: AppTranslations.onboarding.nextPage,
         onPressed: () => controller.nextPage(
           curve: Curves.easeInOut,
           duration: 1000.milliseconds,

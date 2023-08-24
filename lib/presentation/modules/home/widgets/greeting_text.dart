@@ -9,7 +9,7 @@ class GreetingText extends StatelessWidget {
 
     return RichText(
       text: TextSpan(
-        text: '${AppTranslations.homeGreeting} ',
+        text: '${AppTranslations.home.homeGreeting} ',
         style: TextStyle(
           fontFamily: AppFonts.semiBold(context),
           color: context.theme.primaryColor,

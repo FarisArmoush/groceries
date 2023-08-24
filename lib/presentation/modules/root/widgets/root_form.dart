@@ -31,17 +31,17 @@ class _RootFormState extends State<RootForm> {
     return [
       _bnbItem(
         context,
-        label: AppTranslations.home,
+        label: AppTranslations.home.home,
         asset: Assets.svg.icHome.path,
       ),
       _bnbItem(
         context,
-        label: AppTranslations.recipes,
+        label: AppTranslations.recipes.recipes,
         asset: Assets.svg.icChefHat.path,
       ),
       _bnbItem(
         context,
-        label: AppTranslations.settings,
+        label: AppTranslations.settings.settings,
         asset: Assets.svg.icSettings.path,
       ),
     ];

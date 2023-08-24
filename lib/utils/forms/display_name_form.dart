@@ -1,3 +1,5 @@
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:formz/formz.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/app_reg_exps.dart';
@@ -27,20 +29,24 @@ class DisplayNameForm extends FormzInput<String, String> {
         AppRegExps.englishLetters.allMatches(value!).length;
 
     if (value.isEmpty) {
-      return AppTranslations.fieldCannotBeEmpty;
+      return AppTranslations.inputValidationMessages.fieldCannotBeEmpty;
     }
     var errors = '';
     if (value.length < 8) {
-      errors += '${AppTranslations.fieldMustHaveAtLeastEightCharacters}\n';
+      errors +=
+          '${AppTranslations.inputValidationMessages.fieldMustHaveAtLeastEightCharacters}\n';
     }
     if (value.contains(AppRegExps.specialCharacters)) {
-      errors += '${AppTranslations.fieldMustNotContainSpecialCharacters}\n';
+      errors +=
+          '${AppTranslations.inputValidationMessages.fieldMustNotContainSpecialCharacters}\n';
     }
     if (englishLettersCount < 4) {
-      errors += '${AppTranslations.fieldMustAtLeastContainFourLetters}\n';
+      errors +=
+          '${AppTranslations.inputValidationMessages.fieldMustAtLeastContainFourLetters}\n';
     }
     if (value.contains(' ')) {
-      errors += '${AppTranslations.fieldMustNotHaveSpace}\n';
+      errors +=
+          '${AppTranslations.inputValidationMessages.fieldMustNotHaveSpace}\n';
     }
     if (errors.isEmpty) {
       return null;

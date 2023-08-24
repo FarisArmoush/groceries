@@ -25,10 +25,11 @@ class LoginPasswordForm extends FormzInput<String, String> {
   String? validator(String? value) {
     var errors = '';
     if (value!.isEmpty) {
-      return AppTranslations.fieldCannotBeEmpty;
+      return AppTranslations.inputValidationMessages.fieldCannotBeEmpty;
     }
     if (value.length < 8) {
-      errors += AppTranslations.fieldMustHaveAtLeastEightCharacters;
+      errors += AppTranslations
+          .inputValidationMessages.fieldMustHaveAtLeastEightCharacters;
     }
     if (errors.isEmpty) {
       return null;

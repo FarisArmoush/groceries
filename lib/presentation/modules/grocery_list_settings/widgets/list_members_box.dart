@@ -7,7 +7,7 @@ class ListMembersBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return PrimaryBox(
       header: Text(
-        AppTranslations.listMembers,
+        AppTranslations.groceryListSettings.listMembers,
       ),
       child: ListView.builder(
         itemCount: 2,

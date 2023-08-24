@@ -8,7 +8,7 @@ class AccountSettingsView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: FadeInAnimation(
-          child: Text(AppTranslations.accountSettings),
+          child: Text(AppTranslations.accountSettings.accountSettings),
         ),
       ),
       body: ListView(

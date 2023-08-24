@@ -9,7 +9,7 @@ class LoadingSendingVerificationEmail extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          AppTranslations.sendingVerificationEmailLoadingMessage,
+          AppTranslations.verifyAccount.sendingVerificationEmailLoadingMessage,
           style: context.theme.dialogTheme.titleTextStyle,
           textAlign: TextAlign.center,
         ),

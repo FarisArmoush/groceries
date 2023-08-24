@@ -18,7 +18,7 @@ class RegisterEmailTextField extends StatelessWidget {
             },
             prefixIcon: const Icon(CupertinoIcons.mail),
             keyboardType: TextInputType.emailAddress,
-            labelText: AppTranslations.email,
+            labelText: AppTranslations.general.email,
             validator: (value) => state.email.validator(value),
             errorText: state.email.displayError,
           );

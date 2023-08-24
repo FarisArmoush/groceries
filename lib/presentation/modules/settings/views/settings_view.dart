@@ -8,7 +8,7 @@ class SettingsView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: FadeInAnimation(
-          child: Text(AppTranslations.settings),
+          child: Text(AppTranslations.settings.settings),
         ),
         leading: const SizedBox.shrink(),
       ),
@@ -25,8 +25,9 @@ class SettingsView extends StatelessWidget {
           LeftFadeInAnimation(
             duration: 700.milliseconds,
             child: SettingsListTile(
-              title: AppTranslations.accountSettings,
-              subtitle: AppTranslations.accountSettingsDescription,
+              title: AppTranslations.accountSettings.accountSettings,
+              subtitle:
+                  AppTranslations.accountSettings.accountSettingsDescription,
               iconPath: Assets.svg.icUser.path,
               onTap: () => context.pushNamed(AppNamedRoutes.accountSettings),
             ),
@@ -37,8 +38,8 @@ class SettingsView extends StatelessWidget {
           LeftFadeInAnimation(
             duration: 600.milliseconds,
             child: SettingsListTile(
-              title: AppTranslations.theme,
-              subtitle: AppTranslations.themeHeader,
+              title: AppTranslations.theme.theme,
+              subtitle: AppTranslations.theme.themeHeader,
               iconPath: Assets.svg.icPalette.path,
               onTap: () => context.pushNamed(AppNamedRoutes.themeSettings),
             ),
@@ -49,8 +50,9 @@ class SettingsView extends StatelessWidget {
           LeftFadeInAnimation(
             duration: 500.milliseconds,
             child: SettingsListTile(
-              title: AppTranslations.additionalResources,
-              subtitle: AppTranslations.additionalResourcesDescription,
+              title: AppTranslations.additionalResources.additionalResources,
+              subtitle: AppTranslations
+                  .additionalResources.additionalResourcesDescription,
               iconPath: Assets.svg.icVerticalThreeDots.path,
               onTap: () =>
                   context.pushNamed(AppNamedRoutes.additionalResources),

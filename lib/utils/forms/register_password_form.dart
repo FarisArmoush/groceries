@@ -1,3 +1,5 @@
+// ignore_for_file: lines_longer_than_80_chars
+
 import 'package:formz/formz.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/app_reg_exps.dart';
@@ -26,18 +28,20 @@ class RegisterPasswordForm extends FormzInput<String, String> {
   String? validator(String? value) {
     var errors = '';
     if (value!.isEmpty) {
-      return AppTranslations.fieldCannotBeEmpty;
+      return AppTranslations.inputValidationMessages.fieldCannotBeEmpty;
     }
     if (value.length < 8) {
       errors += 'Cannot be less than 8 letters.\n';
-      errors += '${AppTranslations.fieldMustHaveAtLeastEightCharacters}\n';
+      errors +=
+          '${AppTranslations.inputValidationMessages.fieldMustHaveAtLeastEightCharacters}\n';
     }
     if (!value.contains(AppRegExps.specialCharacters)) {
       errors +=
-          '${AppTranslations.fieldMustContainAtLeastOneSpecialCharacter}\n';
+          '${AppTranslations.inputValidationMessages.fieldMustContainAtLeastOneSpecialCharacter}\n';
     }
     if (!value.contains(AppRegExps.numbers)) {
-      errors += '${AppTranslations.fieldMustContainAtLeastOneNumber}\n';
+      errors +=
+          '${AppTranslations.inputValidationMessages.fieldMustContainAtLeastOneNumber}\n';
     }
     if (errors.isEmpty) {
       return null;

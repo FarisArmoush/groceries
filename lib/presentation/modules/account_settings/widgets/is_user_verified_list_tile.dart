@@ -7,8 +7,10 @@ class IsUserVerifiedListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final isVerified = context.read<UserCubit>().emailVerified;
     return ListTile(
-      title: Text(AppTranslations.verified),
-      subtitle: isVerified == true ? const Text('Verified') : null,
+      title: Text(AppTranslations.accountSettings.verified),
+      subtitle: isVerified == true
+          ? Text(AppTranslations.accountSettings.verified)
+          : null,
       trailing: isVerified == true
           ? Assets.svg.icVerified.svg(color: Colors.green)
           : Assets.svg.icBadgeAlert.svg(color: Colors.red),
@@ -47,7 +49,7 @@ class YourAccountIsVerifiedBottomSheet extends StatelessWidget {
           height: context.deviceHeight * 0.03,
         ),
         Text(
-          AppTranslations.yourAccountIsVerified,
+          AppTranslations.verifyAccount.yourAccountIsVerified,
           style: context.theme.dialogTheme.titleTextStyle,
           textAlign: TextAlign.center,
         ),

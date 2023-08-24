@@ -8,7 +8,7 @@ class WelcomeViewHeaderText extends StatelessWidget {
     return LeftFadeInAnimation(
       duration: 1000.milliseconds,
       child: Text(
-        AppTranslations.welcomeHeader,
+        AppTranslations.welcome.welcomeHeader,
         textAlign: TextAlign.start,
         style: TextStyle(
           fontFamily: AppFonts.bold(context),

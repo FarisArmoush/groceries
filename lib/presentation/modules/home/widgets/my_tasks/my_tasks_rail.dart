@@ -16,7 +16,7 @@ class MyTasksRail extends StatelessWidget {
       children: [
         LeftFadeInAnimation(
           child: RailTitle(
-            title: AppTranslations.myTasks,
+            title: AppTranslations.home.myTasks,
           ),
         ),
         SizedBox(

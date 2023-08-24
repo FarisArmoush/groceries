@@ -8,7 +8,7 @@ class RegisterBodyText extends StatelessWidget {
     return LeftFadeInAnimation(
       duration: 1100.milliseconds,
       child: Text(
-        AppTranslations.registerBody,
+        AppTranslations.register.registerBody,
         style: TextStyle(
           fontFamily: AppFonts.regular(context),
           color: context.theme.primaryColor,

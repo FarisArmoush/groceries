@@ -17,7 +17,7 @@ class YouDontHaveGroceryLists extends StatelessWidget {
             height: context.deviceHeight * 0.015,
           ),
           Text(
-            AppTranslations.youDontHaveGroceryLists,
+            AppTranslations.home.youDontHaveGroceryLists,
             style: TextStyle(
               fontFamily: AppFonts.medium(context),
               fontSize: 16,
@@ -31,7 +31,7 @@ class YouDontHaveGroceryLists extends StatelessWidget {
           FilledButton.icon(
             onPressed: () => context.pushNamed(AppNamedRoutes.createList),
             icon: const Icon(CupertinoIcons.add),
-            label: Text(AppTranslations.createYourFirstList),
+            label: Text(AppTranslations.home.createYourFirstList),
           ),
         ],
       ),

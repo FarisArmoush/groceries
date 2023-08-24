@@ -22,20 +22,20 @@ class _OnboardingViewState extends State<OnboardingView> {
         children: [
           BaseOnboardingPage(
             illustrationPath: Assets.svg.illCelebrating.path,
-            title: AppTranslations.onboardingFirstTitle,
-            body: AppTranslations.onboardingFirstBody,
+            title: AppTranslations.onboarding.onboardingFirstTitle,
+            body: AppTranslations.onboarding.onboardingFirstBody,
             backgroundColor: Colors.amber,
           ),
           BaseOnboardingPage(
             illustrationPath: Assets.svg.illMail.path,
-            title: AppTranslations.onboardingSecondTitle,
-            body: AppTranslations.onboardingSecondBody,
+            title: AppTranslations.onboarding.onboardingSecondTitle,
+            body: AppTranslations.onboarding.onboardingSecondBody,
             backgroundColor: Colors.purple,
           ),
           BaseOnboardingPage(
             illustrationPath: Assets.svg.illEating.path,
-            title: AppTranslations.onboardingThirdTitle,
-            body: AppTranslations.onboardingThirdBody,
+            title: AppTranslations.onboarding.onboardingThirdTitle,
+            body: AppTranslations.onboarding.onboardingThirdBody,
             backgroundColor: Colors.blue,
           ),
         ],

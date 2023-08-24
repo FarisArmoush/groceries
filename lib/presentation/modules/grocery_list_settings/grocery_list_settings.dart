@@ -10,6 +10,9 @@ import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 
+part 'bloc/grocery_list_settings_bloc.dart';
+part 'bloc/grocery_list_settings_event.dart';
+part 'bloc/grocery_list_settings_state.dart';
 part 'views/grocery_list_settings_view.dart';
 part 'widgets/delete_grocery_list_button.dart';
 part 'widgets/edit_list_image.dart';
@@ -19,6 +22,3 @@ part 'widgets/list_members_box.dart';
 part 'widgets/member_card.dart';
 part 'widgets/remove_list_member_bottom_sheet.dart';
 part 'widgets/save_grocery_list_changes_button.dart';
-part 'bloc/grocery_list_settings_bloc.dart';
-part 'bloc/grocery_list_settings_event.dart';
-part 'bloc/grocery_list_settings_state.dart';

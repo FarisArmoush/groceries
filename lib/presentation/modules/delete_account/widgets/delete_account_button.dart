@@ -27,7 +27,7 @@ class DeleteAccountButton extends StatelessWidget {
         width: context.deviceWidth,
         child: FilledButton(
           onPressed: () => context.read<DeleteAccountCubit>().deleteAccount(),
-          child: Text(AppTranslations.yesDeleteAccount),
+          child: Text(AppTranslations.deleteAccount.yesDeleteAccount),
         ),
       ).symmetricPadding(
         vertical: 16,

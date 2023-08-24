@@ -9,7 +9,7 @@ class CreditsForm extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppTranslations.credits),
+        title: Text(AppTranslations.additionalResources.credits),
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),

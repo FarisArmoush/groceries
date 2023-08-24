@@ -9,7 +9,7 @@ class LeaveOnboardingButton extends StatelessWidget {
       child: FloatingActionButton.extended(
         onPressed: () => context.pushReplacementNamed(AppNamedRoutes.welcome),
         label: Text(
-          AppTranslations.finishIntroduction,
+          AppTranslations.onboarding.finishIntroduction,
         ),
         backgroundColor: context.theme.primaryColorLight,
       ),

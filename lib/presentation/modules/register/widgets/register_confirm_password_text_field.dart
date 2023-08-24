@@ -21,7 +21,7 @@ class RegisterConfirmPasswordTextField extends StatelessWidget {
                   .confirmedPasswordChanged(confirmPassword);
             },
             obscureText: true,
-            labelText: AppTranslations.repeatPassword,
+            labelText: AppTranslations.register.repeatPassword,
             validator: (value) => state.confirmedPassword.validator(value),
             errorText: state.confirmedPassword.displayError,
           );

@@ -9,7 +9,7 @@ class AddItemsView extends StatelessWidget {
       length: _list.length,
       child: Scaffold(
         appBar: AppBar(
-          title: Text(AppTranslations.addItems),
+          title: Text(AppTranslations.addItems.addItems),
           bottom: TabBar(
             physics: const BouncingScrollPhysics(),
             isScrollable: true,

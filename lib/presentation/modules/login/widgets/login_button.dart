@@ -32,7 +32,7 @@ class LoginButton extends StatelessWidget {
   Widget _text() {
     return FadeInAnimation(
       duration: 200.milliseconds,
-      child: Text(AppTranslations.login),
+      child: Text(AppTranslations.login.login),
     );
   }
 }

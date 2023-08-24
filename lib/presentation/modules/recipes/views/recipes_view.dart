@@ -8,7 +8,7 @@ class RecipesView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: FadeInAnimation(
-          child: Text(AppTranslations.recipes),
+          child: Text(AppTranslations.recipes.recipes),
         ),
         leading: const SizedBox.shrink(),
         actions: [

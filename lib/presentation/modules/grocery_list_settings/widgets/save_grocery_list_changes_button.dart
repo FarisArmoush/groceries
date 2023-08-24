@@ -7,7 +7,7 @@ class SaveGroceryListChangesButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () => context.pop(),
-      child: Text(AppTranslations.saveListChanges),
+      child: Text(AppTranslations.groceryListSettings.saveListChanges),
     );
   }
 }

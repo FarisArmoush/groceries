@@ -46,7 +46,9 @@ class _CreateListIconsGridState extends State<CreateListIconsGrid> {
           crossAxisSpacing: 15,
         ),
         itemBuilder: (context, index) {
-          return Container(
+          return AnimatedContainer(
+            duration: 400.milliseconds,
+            curve: Curves.easeInOut,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(

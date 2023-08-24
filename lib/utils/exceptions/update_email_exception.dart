@@ -1,3 +1,5 @@
+import 'package:groceries/config/localization/app_translations.dart';
+
 class UpdateEmailException implements Exception {
   const UpdateEmailException([
     this.message = 'Something went wrong...',
@@ -6,16 +8,16 @@ class UpdateEmailException implements Exception {
   factory UpdateEmailException.fromCode(String code) {
     switch (code) {
       case 'invalid-email':
-        return const UpdateEmailException(
-          'Email is invalid or badly formatted.',
+        return UpdateEmailException(
+          AppTranslations.errorMessages.invalidEmail,
         );
       case 'requires-recent-login':
-        return const UpdateEmailException(
-          'Email is invalid or badly formatted.',
+        return UpdateEmailException(
+          AppTranslations.errorMessages.requiresRecentLogin,
         );
       case 'email-already-in-use':
-        return const UpdateEmailException(
-          'Email is already in use by another account.',
+        return UpdateEmailException(
+          AppTranslations.errorMessages.emailAlreadyInUse,
         );
       default:
         return const UpdateEmailException();

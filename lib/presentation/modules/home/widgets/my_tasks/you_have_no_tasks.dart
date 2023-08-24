@@ -17,7 +17,7 @@ class YouHaveNoTasks extends StatelessWidget {
             height: context.deviceHeight * 0.015,
           ),
           Text(
-            AppTranslations.youDontHaveTasks,
+            AppTranslations.home.youDontHaveTasks,
             style: TextStyle(
               fontFamily: AppFonts.medium(context),
               fontSize: 16,

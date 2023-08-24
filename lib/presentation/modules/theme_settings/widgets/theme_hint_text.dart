@@ -7,7 +7,7 @@ class ThemeHintText extends StatelessWidget {
   Widget build(BuildContext context) {
     return FadeInAnimation(
       child: Text(
-        AppTranslations.themeHint,
+        AppTranslations.theme.themeHint,
         style: TextStyle(
           fontFamily: AppFonts.light(context),
           color: context.theme.hintColor,

@@ -1,3 +1,5 @@
+import 'package:groceries/config/localization/app_translations.dart';
+
 /// Creates a new instance of [RegisterWithEmailAndPasswordException]
 /// from a Firebase error code.
 ///
@@ -23,24 +25,24 @@ class RegisterWithEmailAndPasswordException implements Exception {
   factory RegisterWithEmailAndPasswordException.fromCode(String code) {
     switch (code) {
       case 'invalid-email':
-        return const RegisterWithEmailAndPasswordException(
-          'Email is not valid or badly formatted.',
+        return RegisterWithEmailAndPasswordException(
+          AppTranslations.errorMessages.invalidEmail,
         );
       case 'user-disabled':
-        return const RegisterWithEmailAndPasswordException(
-          'This user has been disabled. Please contact support for help.',
+        return RegisterWithEmailAndPasswordException(
+          AppTranslations.errorMessages.userDisabled,
         );
       case 'email-already-in-use':
-        return const RegisterWithEmailAndPasswordException(
-          'An account already exists for that email.',
+        return RegisterWithEmailAndPasswordException(
+          AppTranslations.errorMessages.emailAlreadyInUse,
         );
       case 'operation-not-allowed':
-        return const RegisterWithEmailAndPasswordException(
-          'Operation is not allowed.  Please contact support.',
+        return RegisterWithEmailAndPasswordException(
+          AppTranslations.errorMessages.operationNotAllowed,
         );
       case 'weak-password':
-        return const RegisterWithEmailAndPasswordException(
-          'Please enter a stronger password.',
+        return RegisterWithEmailAndPasswordException(
+          AppTranslations.errorMessages.weakPassword,
         );
       default:
         return const RegisterWithEmailAndPasswordException();

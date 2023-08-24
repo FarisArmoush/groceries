@@ -10,7 +10,7 @@ class CreateListForm extends StatelessWidget {
       listener: _listener,
       child: Scaffold(
         appBar: AppBar(
-          title: Text(AppTranslations.createNewList),
+          title: Text(AppTranslations.createGroceryList.createNewList),
           leading: BackButton(
             onPressed: () => showDialog<CancelListCreationDialog>(
               context: context,
@@ -24,7 +24,7 @@ class CreateListForm extends StatelessWidget {
           padding: const EdgeInsets.all(32),
           children: [
             AppTextField(
-              labelText: AppTranslations.listName,
+              labelText: AppTranslations.general.listName,
               onTapOutside: (_) => FocusScope.of(context).unfocus(),
             ),
             SizedBox(
@@ -35,7 +35,7 @@ class CreateListForm extends StatelessWidget {
               height: context.deviceHeight * 0.1,
             ),
             Text(
-              AppTranslations.invitePeopleToList,
+              AppTranslations.createGroceryList.invitePeopleToList,
               style: TextStyle(
                 fontFamily: AppFonts.semiBold(context),
                 color: context.theme.primaryColor,
@@ -51,7 +51,7 @@ class CreateListForm extends StatelessWidget {
               height: context.deviceHeight * 0.06,
             ),
             ElevatedButton.icon(
-              label: const Text('Create List'),
+              label: Text(AppTranslations.createGroceryList.createList),
               icon: Assets.svg.icPlus.svg(
                 color: context.theme.colorScheme.secondary,
               ),

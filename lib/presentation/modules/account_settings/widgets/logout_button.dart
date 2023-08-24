@@ -20,7 +20,7 @@ class LogoutButton extends StatelessWidget {
         }
       },
       child: TileButton(
-        title: AppTranslations.logout,
+        title: AppTranslations.accountSettings.logout,
         icon: Assets.svg.icLogout.path,
         color: context.theme.primaryColorLight,
         onTap: () => showModalBottomSheet<LogoutBottomSheet>(
@@ -48,7 +48,7 @@ class LogoutBottomSheet extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       children: [
         Text(
-          AppTranslations.logoutBottomSheetHeader,
+          AppTranslations.accountSettings.logoutBottomSheetHeader,
           style: context.theme.dialogTheme.titleTextStyle,
           textAlign: TextAlign.center,
         ),
@@ -56,7 +56,7 @@ class LogoutBottomSheet extends StatelessWidget {
           height: context.deviceHeight * 0.02,
         ),
         Text(
-          AppTranslations.logoutBottomSheetBody,
+          AppTranslations.accountSettings.logoutBottomSheetBody,
           style: context.theme.dialogTheme.contentTextStyle,
           textAlign: TextAlign.center,
         ),
@@ -67,11 +67,11 @@ class LogoutBottomSheet extends StatelessWidget {
           onPressed: () => context
             ..read<AuthenticationBloc>().add(const AppLogoutRequested())
             ..pop(),
-          child: Text(AppTranslations.yesLogout),
+          child: Text(AppTranslations.accountSettings.yesLogout),
         ),
         OutlinedButton(
           onPressed: () => context.pop(),
-          child: Text(AppTranslations.dontLogout),
+          child: Text(AppTranslations.accountSettings.dontLogout),
         ),
       ],
     );

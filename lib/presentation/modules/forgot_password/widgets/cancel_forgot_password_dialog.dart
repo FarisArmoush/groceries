@@ -7,7 +7,7 @@ class CancelForgotPasswordDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return SimpleDialog(
       title: Text(
-        AppTranslations.cancelForgotPassowordDialogHeader,
+        AppTranslations.forgotPassword.cancelForgotPassowordDialogHeader,
         textAlign: TextAlign.center,
       ),
       contentPadding: const EdgeInsets.symmetric(
@@ -22,11 +22,11 @@ class CancelForgotPasswordDialog extends StatelessWidget {
           onPressed: () => context
             ..pop()
             ..pop(),
-          child: Text(AppTranslations.yesCancelForgotPassword),
+          child: Text(AppTranslations.forgotPassword.yesCancelForgotPassword),
         ),
         OutlinedButton(
           onPressed: () => context.pop(),
-          child: Text(AppTranslations.dontCancelForgotPassword),
+          child: Text(AppTranslations.forgotPassword.dontCancelForgotPassword),
         ),
       ],
     );
