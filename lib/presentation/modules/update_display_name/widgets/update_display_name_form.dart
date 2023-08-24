@@ -8,6 +8,7 @@ class UpdateDisplayNameForm extends StatelessWidget {
     return BlocListener<UpdateDisplayNameCubit, UpdateDisplayNameState>(
       listener: (context, state) {
         if (state.status.isSuccess) {
+          context.pop();
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(
@@ -18,6 +19,7 @@ class UpdateDisplayNameForm extends StatelessWidget {
           context.pushReplacementNamed(AppNamedRoutes.root);
         }
         if (state.status.isFailure) {
+          context.pop();
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(
@@ -27,6 +29,13 @@ class UpdateDisplayNameForm extends StatelessWidget {
               ),
             );
           context.pushReplacementNamed(AppNamedRoutes.root);
+        }
+        if (state.status.isInProgress) {
+          showDialog<AppLoadingIndicator>(
+            context: context,
+            builder: (context) => const AppLoadingIndicator(),
+            barrierDismissible: false,
+          );
         }
       },
       child: Scaffold(

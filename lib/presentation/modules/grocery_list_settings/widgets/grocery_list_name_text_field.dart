@@ -6,7 +6,7 @@ class GroceryListNameTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppTextField(
-      labelText: AppTranslations.listName,
+      labelText: AppTranslations.general.listName,
     );
   }
 }

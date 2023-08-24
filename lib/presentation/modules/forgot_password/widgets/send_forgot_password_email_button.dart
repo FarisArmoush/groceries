@@ -15,7 +15,7 @@ class SendForgotPasswordEmailButton extends StatelessWidget {
               onPressed: state.isValid
                   ? () => context.read<ForgotPasswordCubit>().sendEmail()
                   : null,
-              child: Text(AppTranslations.sendResetPassword),
+              child: Text(AppTranslations.forgotPassword.sendResetPassword),
             );
           },
         ),

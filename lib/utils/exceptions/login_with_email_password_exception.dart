@@ -1,3 +1,5 @@
+import 'package:groceries/config/localization/app_translations.dart';
+
 /// Creates a new instance of [LoginWithEmailAndPasswordException]
 /// from a Firebase error [message].
 ///
@@ -23,20 +25,20 @@ class LoginWithEmailAndPasswordException implements Exception {
   factory LoginWithEmailAndPasswordException.fromCode(String code) {
     switch (code) {
       case 'invalid-email':
-        return const LoginWithEmailAndPasswordException(
-          'Email is not valid or badly formatted.',
+        return LoginWithEmailAndPasswordException(
+          AppTranslations.errorMessages.invalidEmail,
         );
       case 'user-disabled':
-        return const LoginWithEmailAndPasswordException(
-          'This user has been disabled. Please contact support for help.',
+        return LoginWithEmailAndPasswordException(
+          AppTranslations.errorMessages.userDisabled,
         );
       case 'user-not-found':
-        return const LoginWithEmailAndPasswordException(
-          'Email is not found, please create an account.',
+        return LoginWithEmailAndPasswordException(
+          AppTranslations.errorMessages.userNotFound,
         );
       case 'wrong-password':
-        return const LoginWithEmailAndPasswordException(
-          'Incorrect password, please try again.',
+        return LoginWithEmailAndPasswordException(
+          AppTranslations.errorMessages.wrongPassword,
         );
       default:
         return const LoginWithEmailAndPasswordException();

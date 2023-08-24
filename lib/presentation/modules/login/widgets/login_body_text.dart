@@ -8,7 +8,7 @@ class LoginBodyText extends StatelessWidget {
     return LeftFadeInAnimation(
       duration: 1100.milliseconds,
       child: Text(
-        AppTranslations.loginBody,
+        AppTranslations.login.loginBody,
         style: TextStyle(
           fontFamily: AppFonts.regular(context),
           color: context.theme.primaryColor,

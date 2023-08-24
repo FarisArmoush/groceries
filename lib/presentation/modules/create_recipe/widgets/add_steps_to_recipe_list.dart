@@ -56,7 +56,7 @@ class _AddStepsToRecipeListState extends State<AddStepsToRecipeList> {
           icon: Assets.svg.icPlusCircle.svg(
             color: context.theme.primaryColorLight,
           ),
-          label: const Text('Add a step'),
+          label: Text(AppTranslations.createRecipe.addStep),
         ),
       ],
     );

@@ -7,7 +7,7 @@ class VerifyUserForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppTranslations.verifyAccount),
+        title: Text(AppTranslations.verifyAccount.verifyAccount),
       ),
       body: BlocBuilder<VerifyUserCubit, VerifyUserState>(
         builder: (context, state) {
@@ -31,7 +31,7 @@ class VerifyUserForm extends StatelessWidget {
                   height: context.deviceHeight * 0.03,
                 ),
                 Text(
-                  AppTranslations.sendVerificationEmail,
+                  AppTranslations.verifyAccount.sendVerificationEmail,
                   style: context.theme.dialogTheme.titleTextStyle,
                   textAlign: TextAlign.center,
                 ),

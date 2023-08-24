@@ -1,3 +1,5 @@
+import 'package:groceries/config/localization/app_translations.dart';
+
 /// Creates a new instance of [SendPasswordResetEmailException]
 /// from a Firebase error [message].
 ///
@@ -27,37 +29,37 @@ class SendPasswordResetEmailException implements Exception {
   factory SendPasswordResetEmailException.fromCode(String code) {
     switch (code) {
       case 'invalid-email':
-        return const SendPasswordResetEmailException(
-          'Email is not valid or badly formatted.',
+        return SendPasswordResetEmailException(
+          AppTranslations.errorMessages.invalidEmail,
         );
       case 'user-not-found':
-        return const SendPasswordResetEmailException(
-          'There is no user associated with the provided email.',
+        return SendPasswordResetEmailException(
+          AppTranslations.errorMessages.userNotFound,
         );
 
       case 'unauthorized-continue-uri':
-        return const SendPasswordResetEmailException(
-          'Unauthorized continue uri message, contact support.',
+        return SendPasswordResetEmailException(
+          AppTranslations.errorMessages.unauthorizedContinueUri,
         );
 
       case 'invalid-continue-uri':
-        return const SendPasswordResetEmailException(
-          'Invalid continue uri message, contact support.',
+        return SendPasswordResetEmailException(
+          AppTranslations.errorMessages.invalidContinueUri,
         );
 
       case 'missing-ios-bundle-id':
-        return const SendPasswordResetEmailException(
-          'Missing IOS bundle id, contact support.',
+        return SendPasswordResetEmailException(
+          AppTranslations.errorMessages.missingIosBundleId,
         );
 
       case 'missing-continue-uri':
-        return const SendPasswordResetEmailException(
-          'Missing continue URI, contact support.',
+        return SendPasswordResetEmailException(
+          AppTranslations.errorMessages.missingContinueUri,
         );
 
       case 'missing-android-pkg-name':
-        return const SendPasswordResetEmailException(
-          'Missing android package name, contact support.',
+        return SendPasswordResetEmailException(
+          AppTranslations.errorMessages.missingAndroidPackageName,
         );
       default:
         return const SendPasswordResetEmailException();

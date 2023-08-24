@@ -9,7 +9,7 @@ class AppVersionListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return FadeInAnimation(
       child: ListTile(
-        title: Text(AppTranslations.appVersion),
+        title: Text(AppTranslations.additionalResources.appVersion),
         trailing: Text(
           context.read<RemoteConfigCubit>().appVersion,
         ),

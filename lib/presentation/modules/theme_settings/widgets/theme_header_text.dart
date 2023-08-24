@@ -7,7 +7,7 @@ class ThemeHeaderText extends StatelessWidget {
   Widget build(BuildContext context) {
     return FadeInAnimation(
       child: Text(
-        AppTranslations.themeHeader,
+        AppTranslations.theme.themeHeader,
         style: TextStyle(
           fontFamily: AppFonts.medium(context),
           color: context.theme.primaryColor,

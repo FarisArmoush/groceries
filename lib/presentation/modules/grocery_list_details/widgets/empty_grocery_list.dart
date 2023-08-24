@@ -15,7 +15,7 @@ class EmptyGroceryList extends StatelessWidget {
           height: context.deviceHeight * 0.015,
         ),
         Text(
-          AppTranslations.emptyListHeader,
+          AppTranslations.groceryLists.emptyListHeader,
           style: TextStyle(
             fontFamily: AppFonts.semiBold(context),
             color: context.theme.primaryColor,
@@ -27,7 +27,7 @@ class EmptyGroceryList extends StatelessWidget {
           height: context.deviceHeight * 0.01,
         ),
         Text(
-          AppTranslations.emptyListBody,
+          AppTranslations.groceryLists.emptyListBody,
           style: TextStyle(
             fontFamily: AppFonts.light(context),
             color: context.theme.hintColor,
@@ -40,7 +40,7 @@ class EmptyGroceryList extends StatelessWidget {
         ),
         ElevatedButton.icon(
           onPressed: () => context.pushNamed(AppNamedRoutes.addItems),
-          label: Text(AppTranslations.browseGroceries),
+          label: Text(AppTranslations.groceryLists.browseGroceries),
           icon: Assets.svg.icSearch.svg(
             color: context.theme.colorScheme.secondary,
           ),

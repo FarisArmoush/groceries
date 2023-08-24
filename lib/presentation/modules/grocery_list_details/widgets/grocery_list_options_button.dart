@@ -6,7 +6,7 @@ class GroceryListOptionsButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      tooltip: AppTranslations.listOptions,
+      tooltip: AppTranslations.groceryLists.listOptions,
       icon: Assets.svg.icVerticalThreeDots.svg(
         color: context.theme.primaryColor,
       ),

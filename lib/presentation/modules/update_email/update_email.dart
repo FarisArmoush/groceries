@@ -9,6 +9,7 @@ import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/update_email_use_case.dart';
 import 'package:groceries/presentation/widgets/widgets.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/exceptions/send_verification_email_exception.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 import 'package:groceries/utils/forms/email_form.dart';
 

@@ -9,11 +9,11 @@ class CancelListCreationDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return AlertDialog(
       title: Text(
-        AppTranslations.listCreationCancelDialogHeader,
+        AppTranslations.createGroceryList.listCreationCancelDialogHeader,
         textAlign: TextAlign.center,
       ),
       content: Text(
-        AppTranslations.listCreationCancelDialogBody,
+        AppTranslations.createGroceryList.listCreationCancelDialogBody,
         textAlign: TextAlign.center,
       ),
       actions: [
@@ -24,7 +24,7 @@ class CancelListCreationDialog extends StatelessWidget {
               ..pop()
               ..pop(),
             child: Text(
-              AppTranslations.yesCancelListCreation,
+              AppTranslations.createGroceryList.yesCancelListCreation,
             ),
           ),
         ),
@@ -33,7 +33,7 @@ class CancelListCreationDialog extends StatelessWidget {
           child: FilledButton(
             onPressed: () => context.pop(),
             child: Text(
-              AppTranslations.dontCancelListCreation,
+              AppTranslations.createGroceryList.dontCancelListCreation,
             ),
           ),
         ),

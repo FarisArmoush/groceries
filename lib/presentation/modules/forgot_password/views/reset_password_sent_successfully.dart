@@ -51,7 +51,7 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
         width: context.deviceWidth,
         child: ElevatedButton(
           onPressed: () => context.pushReplacementNamed(AppNamedRoutes.login),
-          child: Text(AppTranslations.login),
+          child: Text(AppTranslations.login.login),
         ),
       ).symmetricPadding(
         vertical: 16,

@@ -20,11 +20,14 @@ class EditListImage extends StatelessWidget {
           backgroundColor: AppColors.black.withOpacity(0.7),
           child: IconButton(
             onPressed: () {
-              showModalBottomSheet<EditListImageBottomSheet>(
+              showModalBottomSheet<UploadImageBottomSheet>(
                 context: context,
                 elevation: 0,
                 showDragHandle: true,
-                builder: (context) => const EditListImageBottomSheet(),
+                builder: (context) => UploadImageBottomSheet(
+                  onTakePhoto: () {},
+                  onUploadPhoto: () {},
+                ),
               );
             },
             icon: Assets.svg.icEdit.svg(
@@ -32,34 +35,6 @@ class EditListImage extends StatelessWidget {
             ),
           ),
         ).allPadding(8),
-      ],
-    );
-  }
-}
-
-class EditListImageBottomSheet extends StatelessWidget {
-  const EditListImageBottomSheet({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.symmetric(
-        vertical: 12,
-        horizontal: 24,
-      ),
-      shrinkWrap: true,
-      physics: const BouncingScrollPhysics(),
-      children: [
-        BottomSheetButton(
-          text: AppTranslations.takePhoto,
-          iconPath: Assets.svg.icCamera.path,
-          onTap: () {},
-        ),
-        BottomSheetButton(
-          text: AppTranslations.uploadPhotoFromGallery,
-          iconPath: Assets.svg.icImage.path,
-          onTap: () {},
-        ),
       ],
     );
   }

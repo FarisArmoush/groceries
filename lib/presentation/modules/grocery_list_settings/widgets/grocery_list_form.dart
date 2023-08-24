@@ -7,7 +7,7 @@ class GroceryListForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppTranslations.listSettings),
+        title: Text(AppTranslations.groceryListSettings.listSettings),
         actions: const [SaveGroceryListChangesButton()],
       ),
       body: ListView(

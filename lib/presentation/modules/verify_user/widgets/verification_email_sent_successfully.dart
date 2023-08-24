@@ -15,7 +15,7 @@ class VerificationEmailSentSuccessfully extends StatelessWidget {
           height: context.deviceHeight * 0.02,
         ),
         Text(
-          AppTranslations.verificationEmailSentSuccessfullyHeader,
+          AppTranslations.verifyAccount.verificationEmailSentSuccessfullyHeader,
           textAlign: TextAlign.center,
           style: context.theme.dialogTheme.titleTextStyle,
         ),
@@ -23,7 +23,7 @@ class VerificationEmailSentSuccessfully extends StatelessWidget {
           height: context.deviceHeight * 0.01,
         ),
         Text(
-          AppTranslations.verificationEmailSentSuccessfullyBody,
+          AppTranslations.verifyAccount.verificationEmailSentSuccessfullyBody,
           textAlign: TextAlign.center,
           style: context.theme.dialogTheme.contentTextStyle,
         ),
@@ -36,7 +36,7 @@ class VerificationEmailSentSuccessfully extends StatelessWidget {
               ..read<AuthenticationBloc>().add(const AppLogoutRequested())
               ..pop();
           },
-          child: Text(AppTranslations.logout),
+          child: Text(AppTranslations.accountSettings.logout),
         ),
       ],
     ).centered().symmetricPadding(vertical: 12, horizontal: 24);

@@ -19,7 +19,7 @@ class RemoveListMemberBottomSheet extends StatelessWidget {
           ),
           children: [
             Text(
-              AppTranslations.removeMemberFromList,
+              AppTranslations.groceryListSettings.removeMemberFromList,
               style: context.theme.dialogTheme.titleTextStyle,
               textAlign: TextAlign.center,
             ),
@@ -28,11 +28,11 @@ class RemoveListMemberBottomSheet extends StatelessWidget {
             ),
             FilledButton(
               onPressed: () => context.pop(),
-              child: Text(AppTranslations.yesRemoveMember),
+              child: Text(AppTranslations.groceryListSettings.yesRemoveMember),
             ),
             OutlinedButton(
               onPressed: () => context.pop(),
-              child: Text(AppTranslations.dontRemoveMember),
+              child: Text(AppTranslations.groceryListSettings.dontRemoveMember),
             ),
           ],
         );

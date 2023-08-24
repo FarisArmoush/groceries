@@ -18,7 +18,7 @@ class YouHaveNoRecipes extends StatelessWidget {
             height: context.deviceHeight * 0.02,
           ),
           Text(
-            AppTranslations.emptyRecipesHeader,
+            AppTranslations.recipes.emptyRecipesHeader,
             style: TextStyle(
               fontFamily: AppFonts.semiBold(context),
               color: context.theme.primaryColor,
@@ -30,7 +30,7 @@ class YouHaveNoRecipes extends StatelessWidget {
             height: context.deviceHeight * 0.01,
           ),
           Text(
-            AppTranslations.emptyRecipesBody,
+            AppTranslations.recipes.emptyRecipesBody,
             style: TextStyle(
               fontFamily: AppFonts.light(context),
               color: context.theme.hintColor,
@@ -43,7 +43,7 @@ class YouHaveNoRecipes extends StatelessWidget {
           ),
           FilledButton(
             onPressed: () {},
-            child: Text(AppTranslations.createFirstRecipe),
+            child: Text(AppTranslations.recipes.createFirstRecipe),
           ),
         ],
       ),

@@ -8,7 +8,7 @@ class ForgotPasswordHeaderText extends StatelessWidget {
     return LeftFadeInAnimation(
       duration: 1000.milliseconds,
       child: Text(
-        AppTranslations.forgotPassword,
+        AppTranslations.forgotPassword.forgotPassword,
         style: TextStyle(
           fontFamily: AppFonts.semiBold(context),
           color: context.theme.primaryColorLight,

@@ -15,7 +15,7 @@ class FailedToSendVerificationEmail extends StatelessWidget {
           height: context.deviceHeight * 0.02,
         ),
         Text(
-          AppTranslations.failedToSendVerificationEmail,
+          AppTranslations.verifyAccount.failedToSendVerificationEmail,
           style: context.theme.dialogTheme.titleTextStyle,
           textAlign: TextAlign.center,
         ),

@@ -28,8 +28,10 @@ class _SwitchListTile extends StatelessWidget {
             inactiveThumbColor: AppColors.veryLightGrey,
             activeTrackColor: AppColors.veryLightGrey,
             tileColor: Colors.transparent,
-            title: Text(AppTranslations.sendCrashReports),
-            subtitle: Text(AppTranslations.sendCrashReportsDescription),
+            title: Text(AppTranslations.additionalResources.sendCrashReports),
+            subtitle: Text(
+              AppTranslations.additionalResources.sendCrashReportsDescription,
+            ),
           );
         },
       ),

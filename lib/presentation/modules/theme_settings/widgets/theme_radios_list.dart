@@ -15,7 +15,7 @@ class ThemeRadiosList extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: [
             ThemeRadio(
-              title: AppTranslations.lightMode,
+              title: AppTranslations.theme.lightMode,
               value: ThemeMode.light,
               groupValue: groupValue,
               onChanged: (_) => context.read<ThemeCubit>().setValue(
@@ -23,7 +23,7 @@ class ThemeRadiosList extends StatelessWidget {
                   ),
             ),
             ThemeRadio(
-              title: AppTranslations.darkMode,
+              title: AppTranslations.theme.darkMode,
               value: ThemeMode.dark,
               groupValue: groupValue,
               onChanged: (_) => context.read<ThemeCubit>().setValue(
@@ -31,7 +31,7 @@ class ThemeRadiosList extends StatelessWidget {
                   ),
             ),
             ThemeRadio(
-              title: AppTranslations.systemMode,
+              title: AppTranslations.theme.systemMode,
               value: ThemeMode.system,
               groupValue: groupValue,
               onChanged: (_) => context.read<ThemeCubit>().setValue(

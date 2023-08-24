@@ -12,7 +12,7 @@ class ForgotPasswordEmailTextField extends StatelessWidget {
           return AppTextField(
             onChanged: (value) =>
                 context.read<ForgotPasswordCubit>().emailChanged(value),
-            labelText: AppTranslations.email,
+            labelText: AppTranslations.general.email,
             keyboardType: TextInputType.emailAddress,
             validator: (value) => state.email.validator(value),
             errorText: state.email.displayError,

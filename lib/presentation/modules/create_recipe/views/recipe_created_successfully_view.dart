@@ -47,7 +47,7 @@ class RecipeCreatedSuccessfullyView extends StatelessWidget {
               onPressed: () =>
                   context.pushReplacementNamed(AppNamedRoutes.root),
               child: Text(
-                AppTranslations.goHome,
+                AppTranslations.createGroceryList.goHome,
               ),
             ),
           ],

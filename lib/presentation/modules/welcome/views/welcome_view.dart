@@ -39,7 +39,7 @@ class WelcomeView extends StatelessWidget {
     return UpFadeInAnimation(
       duration: 1000.milliseconds,
       child: OutlinedButton(
-        child: Text(AppTranslations.login),
+        child: Text(AppTranslations.login.login),
         onPressed: () => context.pushReplacementNamed(AppNamedRoutes.login),
       ),
     );
@@ -48,7 +48,7 @@ class WelcomeView extends StatelessWidget {
   UpFadeInAnimation _navigateToRegisterButton(BuildContext context) {
     return UpFadeInAnimation(
       child: FilledButton(
-        child: Text(AppTranslations.register),
+        child: Text(AppTranslations.register.register),
         onPressed: () => context.pushReplacementNamed(AppNamedRoutes.register),
       ),
     );

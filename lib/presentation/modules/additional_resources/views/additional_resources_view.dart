@@ -8,7 +8,7 @@ class AdditionalResourcesView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: FadeInAnimation(
-          child: Text(AppTranslations.additionalResources),
+          child: Text(AppTranslations.additionalResources.additionalResources),
         ),
       ),
       body: ListView(
@@ -22,7 +22,9 @@ class AdditionalResourcesView extends StatelessWidget {
           Divider(
             height: context.deviceHeight * 0.04,
           ),
-          AdditionalResourcesTitle(AppTranslations.helpImproveApp),
+          AdditionalResourcesTitle(
+            AppTranslations.additionalResources.helpImproveApp,
+          ),
           SizedBox(
             height: context.deviceHeight * 0.02,
           ),
@@ -31,7 +33,7 @@ class AdditionalResourcesView extends StatelessWidget {
             height: context.deviceHeight * 0.075,
           ),
           LegalListTile(
-            title: AppTranslations.credits,
+            title: AppTranslations.additionalResources.credits,
             onTap: () => context.pushNamed(AppNamedRoutes.credits),
           ),
         ],

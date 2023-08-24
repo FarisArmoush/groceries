@@ -6,4 +6,5 @@ part 'duration_simplifier_extension.dart';
 part 'context_extensions.dart';
 part 'padding_extensions.dart';
 part 'widgets_as_extensions.dart';
+part 'date_time_parser_extension.dart';
 part 'sort_credits_extension.dart';

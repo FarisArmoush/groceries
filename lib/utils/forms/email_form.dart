@@ -26,10 +26,10 @@ class EmailForm extends FormzInput<String, String> {
   @override
   String? validator(String? value) {
     if (value!.isEmpty) {
-      return AppTranslations.fieldCannotBeEmpty;
+      return AppTranslations.inputValidationMessages.fieldCannotBeEmpty;
     }
     if (!EmailValidator.validate(value)) {
-      return AppTranslations.emailIsntValid;
+      return AppTranslations.inputValidationMessages.emailIsntValid;
     }
     return null;
   }

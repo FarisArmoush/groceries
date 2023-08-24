@@ -14,7 +14,7 @@ class DeleteGroceryListButton extends StatelessWidget {
           builder: (context) => const DeleteGroceryListBottomSheet(),
         );
       },
-      child: Text(AppTranslations.deleteList),
+      child: Text(AppTranslations.groceryListSettings.deleteList),
     );
   }
 }
@@ -33,7 +33,8 @@ class DeleteGroceryListBottomSheet extends StatelessWidget {
       ),
       children: [
         Text(
-          AppTranslations.deleteGroceryListBottomSheetHeader,
+          AppTranslations
+              .groceryListSettings.deleteGroceryListBottomSheetHeader,
           style: context.theme.dialogTheme.titleTextStyle,
           textAlign: TextAlign.center,
         ),
@@ -41,7 +42,7 @@ class DeleteGroceryListBottomSheet extends StatelessWidget {
           height: context.deviceHeight * 0.01,
         ),
         Text(
-          AppTranslations.deleteGroceryListBottomSheetBody,
+          AppTranslations.groceryListSettings.deleteGroceryListBottomSheetBody,
           style: context.theme.dialogTheme.contentTextStyle,
           textAlign: TextAlign.center,
         ),
@@ -51,13 +52,13 @@ class DeleteGroceryListBottomSheet extends StatelessWidget {
         FilledButton(
           onPressed: () => context.pop(),
           child: Text(
-            AppTranslations.yesDeleteList,
+            AppTranslations.groceryListSettings.yesDeleteList,
           ),
         ),
         OutlinedButton(
           onPressed: () => context.pop(),
           child: Text(
-            AppTranslations.dontDeleteList,
+            AppTranslations.groceryListSettings.dontDeleteList,
           ),
         ),
       ],

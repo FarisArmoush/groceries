@@ -7,7 +7,7 @@ class DeleteAccountForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppTranslations.deleteAccount),
+        title: Text(AppTranslations.deleteAccount.deleteAccount),
       ),
       body: ListView(
         shrinkWrap: true,

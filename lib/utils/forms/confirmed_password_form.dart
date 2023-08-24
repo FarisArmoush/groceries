@@ -34,10 +34,10 @@ class ConfirmedPasswordForm extends FormzInput<String, String> {
   @override
   String? validator(String? value) {
     if (password.isEmpty) {
-      return AppTranslations.fieldCannotBeEmpty;
+      return AppTranslations.inputValidationMessages.fieldCannotBeEmpty;
     }
     if (password != value) {
-      return AppTranslations.passwordsDoNotMatch;
+      return AppTranslations.inputValidationMessages.passwordsDoNotMatch;
     }
 
     return null;

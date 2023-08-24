@@ -6,7 +6,7 @@ class AppTipText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      AppTranslations.homeTip,
+      AppTranslations.home.homeTip,
       style: TextStyle(
         fontFamily: AppFonts.medium(context),
         color: context.theme.hintColor,

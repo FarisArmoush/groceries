@@ -30,6 +30,6 @@ class RegisterButton extends StatelessWidget {
   }
 
   Widget _text() => FadeInAnimation(
-        child: Text(AppTranslations.register),
+        child: Text(AppTranslations.register.register),
       );
 }

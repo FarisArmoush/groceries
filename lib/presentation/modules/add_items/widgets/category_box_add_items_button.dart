@@ -7,7 +7,7 @@ class CategoryBoxAddItemsButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () {},
-      child: Text(AppTranslations.addItems),
+      child: Text(AppTranslations.addItems.addItems),
     ).symmetricPadding(
       horizontal: context.deviceWidth * 0.1,
     );

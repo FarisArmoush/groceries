@@ -22,7 +22,7 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  AppTranslations.listOptions,
+                  AppTranslations.groceryLists.listOptions,
                   style: TextStyle(
                     fontFamily: AppFonts.regular(context),
                     color: context.theme.primaryColor,
@@ -31,7 +31,7 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
                 ),
                 TextButton(
                   child: Text(
-                    AppTranslations.close,
+                    AppTranslations.general.close,
                   ),
                   onPressed: () => context.pop(),
                 ),
@@ -41,17 +41,17 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
               height: context.deviceHeight * 0.01,
             ),
             BottomSheetButton(
-              text: AppTranslations.sendListAsText,
+              text: AppTranslations.groceryLists.sendListAsText,
               iconPath: Assets.svg.icSend.path,
               onTap: () {},
             ),
             BottomSheetButton(
-              text: AppTranslations.printList,
+              text: AppTranslations.groceryLists.printList,
               iconPath: Assets.svg.icPrinter.path,
               onTap: () {},
             ),
             BottomSheetButton(
-              text: AppTranslations.listSettings,
+              text: AppTranslations.groceryListSettings.listSettings,
               iconPath: Assets.svg.icSettings.path,
               onTap: () => context
                 ..pop()

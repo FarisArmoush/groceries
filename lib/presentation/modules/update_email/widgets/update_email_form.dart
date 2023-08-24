@@ -28,6 +28,13 @@ class UpdateEmailForm extends StatelessWidget {
             );
           context.pushReplacementNamed(AppNamedRoutes.root);
         }
+        if (state.status.isInProgress) {
+          showDialog<AppLoadingIndicator>(
+            context: context,
+            builder: (context) => const AppLoadingIndicator(),
+            barrierDismissible: false,
+          );
+        }
       },
       child: Scaffold(
         appBar: AppBar(),

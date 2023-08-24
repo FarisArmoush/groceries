@@ -8,8 +8,8 @@ class LoginOtherOptionsTextButton extends StatelessWidget {
     return LeftFadeInAnimation(
       duration: 600.milliseconds,
       child: OtherOptionTextButton(
-        upperText: AppTranslations.dontHaveAnAccount,
-        lowerText: AppTranslations.registerNow,
+        upperText: AppTranslations.login.dontHaveAnAccount,
+        lowerText: AppTranslations.login.registerNow,
         onTap: () => context.pushReplacementNamed(AppNamedRoutes.register),
       ),
     );

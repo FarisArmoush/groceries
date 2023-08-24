@@ -10,7 +10,7 @@ void main() {
       expect(
         error?.split('\n'),
         containsAll([
-          AppTranslations.fieldCannotBeEmpty,
+          AppTranslations.inputValidationMessages.fieldCannotBeEmpty,
         ]),
       );
     });
@@ -21,7 +21,8 @@ void main() {
       expect(
         error?.split('\n'),
         containsAll([
-          AppTranslations.fieldMustHaveAtLeastEightCharacters,
+          AppTranslations
+              .inputValidationMessages.fieldMustHaveAtLeastEightCharacters,
         ]),
       );
     });
@@ -32,7 +33,8 @@ void main() {
       expect(
         error?.split('\n'),
         containsAll([
-          AppTranslations.fieldMustNotContainSpecialCharacters,
+          AppTranslations
+              .inputValidationMessages.fieldMustNotContainSpecialCharacters,
         ]),
       );
     });
@@ -43,7 +45,8 @@ void main() {
       expect(
         error?.split('\n'),
         containsAll([
-          AppTranslations.fieldMustAtLeastContainFourLetters,
+          AppTranslations
+              .inputValidationMessages.fieldMustAtLeastContainFourLetters,
         ]),
       );
     });
@@ -54,7 +57,7 @@ void main() {
       expect(
         error?.split('\n'),
         containsAll([
-          AppTranslations.fieldMustNotHaveSpace,
+          AppTranslations.inputValidationMessages.fieldMustNotHaveSpace,
         ]),
       );
     });

@@ -8,7 +8,7 @@ class RegisterHeaderText extends StatelessWidget {
     return LeftFadeInAnimation(
       duration: 1200.milliseconds,
       child: Text(
-        AppTranslations.registerHeader,
+        AppTranslations.register.registerHeader,
         style: TextStyle(
           fontFamily: AppFonts.semiBold(context),
           color: context.theme.primaryColorLight,

@@ -20,7 +20,7 @@ class ListCreatedSuccessfullyView extends StatelessWidget {
               height: context.deviceHeight * 0.35,
             ),
             Text(
-              AppTranslations.listCreatedSuccessfullyHeader,
+              AppTranslations.createGroceryList.listCreatedSuccessfullyHeader,
               style: TextStyle(
                 fontFamily: AppFonts.semiBold(context),
                 color: context.theme.primaryColor,
@@ -32,7 +32,7 @@ class ListCreatedSuccessfullyView extends StatelessWidget {
               height: context.deviceHeight * 0.01,
             ),
             Text(
-              AppTranslations.listCreatedSuccessfullyBody,
+              AppTranslations.createGroceryList.listCreatedSuccessfullyBody,
               style: TextStyle(
                 fontFamily: AppFonts.regular(context),
                 color: context.theme.hintColor,
@@ -46,7 +46,7 @@ class ListCreatedSuccessfullyView extends StatelessWidget {
             FilledButton(
               onPressed: () {},
               child: Text(
-                AppTranslations.goToList,
+                AppTranslations.createGroceryList.goToList,
               ),
             ),
             SizedBox(
@@ -56,7 +56,7 @@ class ListCreatedSuccessfullyView extends StatelessWidget {
               onPressed: () =>
                   context.pushReplacementNamed(AppNamedRoutes.root),
               child: Text(
-                AppTranslations.goHome,
+                AppTranslations.createGroceryList.goHome,
               ),
             ),
           ],

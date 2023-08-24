@@ -5,10 +5,10 @@ class UserCreationMetaDataListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final creationDate = context.read<UserCubit>().creationDate;
+    final creationDate = context.read<UserCubit>().creationDate?.formatDate();
     return ListTile(
-      title: Text(AppTranslations.accountMetaData),
-      subtitle: Text(creationDate ?? ''),
+      title: Text(AppTranslations.accountSettings.accountMetaData),
+      subtitle: Text(creationDate ?? 'null'),
     );
   }
 }

@@ -44,7 +44,7 @@ class MyTasksCard extends StatelessWidget {
       ),
       subtitle: taskModel.groceries.isNotEmpty
           ? Text(
-              '${taskModel.groceries.length} ${AppTranslations.newTasks}',
+              '${taskModel.groceries.length} ${AppTranslations.home.newTasks}',
               style: context.theme.listTileTheme.subtitleTextStyle?.copyWith(
                 color: context.theme.primaryColorLight,
               ),

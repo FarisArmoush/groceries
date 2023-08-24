@@ -20,7 +20,7 @@ class LoginPasswordTextField extends StatelessWidget {
             onChanged: (password) {
               context.read<LoginCubit>().passwordChanged(password);
             },
-            labelText: AppTranslations.password,
+            labelText: AppTranslations.general.password,
             errorText: state.password.displayError,
             validator: (value) => state.password.validator(value),
           );

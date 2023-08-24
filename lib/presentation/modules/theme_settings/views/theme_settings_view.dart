@@ -9,7 +9,7 @@ class ThemeSettingsView extends StatelessWidget {
       appBar: AppBar(
         title: FadeInAnimation(
           duration: 550.milliseconds,
-          child: Text(AppTranslations.theme),
+          child: Text(AppTranslations.theme.theme),
         ),
       ),
       body: ListView(

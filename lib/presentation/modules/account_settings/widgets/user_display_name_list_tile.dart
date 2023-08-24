@@ -7,7 +7,7 @@ class UserDisplayNameListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final displayName = context.read<UserCubit>().displayName;
     return ListTile(
-      title: Text(AppTranslations.username),
+      title: Text(AppTranslations.general.username),
       subtitle: Text(displayName ?? ''),
       trailing: Assets.svg.icEdit.svg(color: context.theme.hintColor),
       onTap: () => context.pushNamed(AppNamedRoutes.updateDisplayName),

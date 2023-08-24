@@ -22,7 +22,7 @@ class RequestToDeleteAccountButton extends StatelessWidget {
           },
         );
       },
-      child: Text(AppTranslations.deleteAccount),
+      child: Text(AppTranslations.deleteAccount.deleteAccount),
     );
   }
 }

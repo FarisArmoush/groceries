@@ -16,7 +16,7 @@ class InviteViaButtonsColumn extends StatelessWidget {
             height: context.deviceHeight * 0.03,
           ),
           label: Text(
-            AppTranslations.email,
+            AppTranslations.general.email,
             style: TextStyle(
               fontFamily: AppFonts.regular(context),
               color: context.theme.primaryColor,
@@ -31,7 +31,7 @@ class InviteViaButtonsColumn extends StatelessWidget {
             height: context.deviceHeight * 0.03,
           ),
           label: Text(
-            AppTranslations.copyInvitationLink,
+            AppTranslations.createGroceryList.copyInvitationLink,
             style: TextStyle(
               fontFamily: AppFonts.regular(context),
               color: context.theme.primaryColor,
