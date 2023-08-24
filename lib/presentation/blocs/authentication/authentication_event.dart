@@ -4,7 +4,7 @@ sealed class AuthenticationEvent extends Equatable {
   const AuthenticationEvent();
 
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [];
 }
 
 final class AppLogoutRequested extends AuthenticationEvent {
@@ -14,5 +14,7 @@ final class AppLogoutRequested extends AuthenticationEvent {
 final class _AppUserChanged extends AuthenticationEvent {
   const _AppUserChanged(this.user);
 
-  final User? user;
+  final Object? user;
+  @override
+  List<Object?> get props => [user];
 }

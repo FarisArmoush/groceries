@@ -9,7 +9,7 @@ sealed class AuthenticationState extends Equatable {
 
 final class Authenticated extends AuthenticationState {
   const Authenticated(this.user);
-  final User? user;
+  final Object? user;
 
   @override
   List<Object?> get props => [user];
