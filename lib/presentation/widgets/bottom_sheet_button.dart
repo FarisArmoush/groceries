@@ -24,6 +24,7 @@ class BottomSheetButton extends StatelessWidget {
         iconPath,
         // ignore: deprecated_member_use
         color: context.theme.primaryColor,
+        height: context.deviceHeight * 0.03,
       ),
     );
   }

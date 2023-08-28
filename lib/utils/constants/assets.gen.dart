@@ -3,13 +3,13 @@
 ///  FlutterGen
 /// *****************************************************
 
-import 'package:flutter/services.dart';
 // coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/services.dart';
 
 class $AssetsSvgGen {
   const $AssetsSvgGen();
@@ -24,22 +24,41 @@ class $AssetsSvgGen {
   /// File path: assets/svg/icAtSign.svg
   SvgGenImage get icAtSign => const SvgGenImage('assets/svg/icAtSign.svg');
 
+  /// File path: assets/svg/icBaby.svg
+  SvgGenImage get icBaby => const SvgGenImage('assets/svg/icBaby.svg');
+
   /// File path: assets/svg/icBadgeAlert.svg
   SvgGenImage get icBadgeAlert =>
       const SvgGenImage('assets/svg/icBadgeAlert.svg');
 
+  /// File path: assets/svg/icBeef.svg
+  SvgGenImage get icBeef => const SvgGenImage('assets/svg/icBeef.svg');
+
   /// File path: assets/svg/icBell.svg
   SvgGenImage get icBell => const SvgGenImage('assets/svg/icBell.svg');
 
+  /// File path: assets/svg/icBook.svg
+  SvgGenImage get icBook => const SvgGenImage('assets/svg/icBook.svg');
+
+  /// File path: assets/svg/icBriefcase.svg
+  SvgGenImage get icBriefcase =>
+      const SvgGenImage('assets/svg/icBriefcase.svg');
+
+  /// File path: assets/svg/icCake.svg
+  SvgGenImage get icCake => const SvgGenImage('assets/svg/icCake.svg');
+
   /// File path: assets/svg/icCamera.svg
   SvgGenImage get icCamera => const SvgGenImage('assets/svg/icCamera.svg');
+
+  /// File path: assets/svg/icCar.svg
+  SvgGenImage get icCar => const SvgGenImage('assets/svg/icCar.svg');
 
   /// File path: assets/svg/icCheckCircle.svg
   SvgGenImage get icCheckCircle =>
       const SvgGenImage('assets/svg/icCheckCircle.svg');
 
-  /// File path: assets/svg/icChefHat.svg
-  SvgGenImage get icChefHat => const SvgGenImage('assets/svg/icChefHat.svg');
+  /// File path: assets/svg/icChurch.svg
+  SvgGenImage get icChurch => const SvgGenImage('assets/svg/icChurch.svg');
 
   /// File path: assets/svg/icCircleX.svg
   SvgGenImage get icCircleX => const SvgGenImage('assets/svg/icCircleX.svg');
@@ -47,6 +66,17 @@ class $AssetsSvgGen {
   /// File path: assets/svg/icClipboardCopy.svg
   SvgGenImage get icClipboardCopy =>
       const SvgGenImage('assets/svg/icClipboardCopy.svg');
+
+  /// File path: assets/svg/icCookingPot.svg
+  SvgGenImage get icCookingPot =>
+      const SvgGenImage('assets/svg/icCookingPot.svg');
+
+  /// File path: assets/svg/icCookingPotFilled.svg
+  SvgGenImage get icCookingPotFilled =>
+      const SvgGenImage('assets/svg/icCookingPotFilled.svg');
+
+  /// File path: assets/svg/icDumbbell.svg
+  SvgGenImage get icDumbbell => const SvgGenImage('assets/svg/icDumbbell.svg');
 
   /// File path: assets/svg/icEdit.svg
   SvgGenImage get icEdit => const SvgGenImage('assets/svg/icEdit.svg');
@@ -58,8 +88,22 @@ class $AssetsSvgGen {
   SvgGenImage get icEyeClosed =>
       const SvgGenImage('assets/svg/icEyeClosed.svg');
 
-  /// File path: assets/svg/icHome.svg
-  SvgGenImage get icHome => const SvgGenImage('assets/svg/icHome.svg');
+  /// File path: assets/svg/icGear.svg
+  SvgGenImage get icGear => const SvgGenImage('assets/svg/icGear.svg');
+
+  /// File path: assets/svg/icGearFilled.svg
+  SvgGenImage get icGearFilled =>
+      const SvgGenImage('assets/svg/icGearFilled.svg');
+
+  /// File path: assets/svg/icHammer.svg
+  SvgGenImage get icHammer => const SvgGenImage('assets/svg/icHammer.svg');
+
+  /// File path: assets/svg/icHouse.svg
+  SvgGenImage get icHouse => const SvgGenImage('assets/svg/icHouse.svg');
+
+  /// File path: assets/svg/icHouseFilled.svg
+  SvgGenImage get icHouseFilled =>
+      const SvgGenImage('assets/svg/icHouseFilled.svg');
 
   /// File path: assets/svg/icImage.svg
   SvgGenImage get icImage => const SvgGenImage('assets/svg/icImage.svg');
@@ -74,8 +118,11 @@ class $AssetsSvgGen {
   /// File path: assets/svg/icLogout.svg
   SvgGenImage get icLogout => const SvgGenImage('assets/svg/icLogout.svg');
 
-  /// File path: assets/svg/icPalette.svg
-  SvgGenImage get icPalette => const SvgGenImage('assets/svg/icPalette.svg');
+  /// File path: assets/svg/icPalmTree.svg
+  SvgGenImage get icPalmTree => const SvgGenImage('assets/svg/icPalmTree.svg');
+
+  /// File path: assets/svg/icPaw.svg
+  SvgGenImage get icPaw => const SvgGenImage('assets/svg/icPaw.svg');
 
   /// File path: assets/svg/icPlus.svg
   SvgGenImage get icPlus => const SvgGenImage('assets/svg/icPlus.svg');
@@ -94,17 +141,23 @@ class $AssetsSvgGen {
   /// File path: assets/svg/icSave.svg
   SvgGenImage get icSave => const SvgGenImage('assets/svg/icSave.svg');
 
+  /// File path: assets/svg/icScissors.svg
+  SvgGenImage get icScissors => const SvgGenImage('assets/svg/icScissors.svg');
+
   /// File path: assets/svg/icSearch.svg
   SvgGenImage get icSearch => const SvgGenImage('assets/svg/icSearch.svg');
 
   /// File path: assets/svg/icSend.svg
   SvgGenImage get icSend => const SvgGenImage('assets/svg/icSend.svg');
 
-  /// File path: assets/svg/icSettings.svg
-  SvgGenImage get icSettings => const SvgGenImage('assets/svg/icSettings.svg');
-
   /// File path: assets/svg/icShare.svg
   SvgGenImage get icShare => const SvgGenImage('assets/svg/icShare.svg');
+
+  /// File path: assets/svg/icStore.svg
+  SvgGenImage get icStore => const SvgGenImage('assets/svg/icStore.svg');
+
+  /// File path: assets/svg/icSunMoon.svg
+  SvgGenImage get icSunMoon => const SvgGenImage('assets/svg/icSunMoon.svg');
 
   /// File path: assets/svg/icTrash.svg
   SvgGenImage get icTrash => const SvgGenImage('assets/svg/icTrash.svg');
@@ -183,31 +236,47 @@ class $AssetsSvgGen {
         icAlertTriangle,
         icArchive,
         icAtSign,
+        icBaby,
         icBadgeAlert,
+        icBeef,
         icBell,
+        icBook,
+        icBriefcase,
+        icCake,
         icCamera,
+        icCar,
         icCheckCircle,
-        icChefHat,
+        icChurch,
         icCircleX,
         icClipboardCopy,
+        icCookingPot,
+        icCookingPotFilled,
+        icDumbbell,
         icEdit,
         icEye,
         icEyeClosed,
-        icHome,
+        icGear,
+        icGearFilled,
+        icHammer,
+        icHouse,
+        icHouseFilled,
         icImage,
         icInfo,
         icLeftArrow,
         icLogout,
-        icPalette,
+        icPalmTree,
+        icPaw,
         icPlus,
         icPlusCircle,
         icPrinter,
         icRightArrow,
         icSave,
+        icScissors,
         icSearch,
         icSend,
-        icSettings,
         icShare,
+        icStore,
+        icSunMoon,
         icTrash,
         icTwitter,
         icUser,

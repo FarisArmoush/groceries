@@ -52,7 +52,7 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
             ),
             BottomSheetButton(
               text: AppTranslations.groceryListSettings.listSettings,
-              iconPath: Assets.svg.icSettings.path,
+              iconPath: Assets.svg.icGear.path,
               onTap: () => context
                 ..pop()
                 ..pushNamed(

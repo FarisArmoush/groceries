@@ -40,7 +40,7 @@ class SettingsView extends StatelessWidget {
             child: SettingsListTile(
               title: AppTranslations.theme.theme,
               subtitle: AppTranslations.theme.themeHeader,
-              iconPath: Assets.svg.icPalette.path,
+              iconPath: Assets.svg.icSunMoon.path,
               onTap: () => context.pushNamed(AppNamedRoutes.themeSettings),
             ),
           ),

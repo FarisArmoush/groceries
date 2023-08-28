@@ -8,24 +8,23 @@ class CreateListIconsGrid extends StatefulWidget {
 }
 
 class _CreateListIconsGridState extends State<CreateListIconsGrid> {
-  IconData? _selectedIcon;
+  String? _selectedIcon = _icons[0];
 
-  final _mockIcons = <IconData>[
-    Icons.abc,
-    Icons.phone,
-    Icons.baby_changing_station,
-    Icons.u_turn_left,
-    Icons.padding,
-    Icons.zoom_out_sharp,
-    Icons.accessibility_new_rounded,
-    Icons.dangerous,
-    Icons.youtube_searched_for,
-    Icons.account_circle_rounded,
-    Icons.data_array,
-    Icons.power_input,
-    Icons.g_mobiledata,
-    Icons.home,
-    Icons.receipt,
+  static final _icons = <String>[
+    Assets.svg.icHouse.path,
+    Assets.svg.icBeef.path,
+    Assets.svg.icBook.path,
+    Assets.svg.icBriefcase.path,
+    Assets.svg.icCake.path,
+    Assets.svg.icCar.path,
+    Assets.svg.icChurch.path,
+    Assets.svg.icDumbbell.path,
+    Assets.svg.icHammer.path,
+    Assets.svg.icPalmTree.path,
+    Assets.svg.icPaw.path,
+    Assets.svg.icScissors.path,
+    Assets.svg.icStore.path,
+    Assets.svg.icBaby.path,
   ];
   @override
   Widget build(BuildContext context) {
@@ -36,7 +35,7 @@ class _CreateListIconsGridState extends State<CreateListIconsGrid> {
       ),
       padding: const EdgeInsets.all(16),
       child: GridView.builder(
-        itemCount: _mockIcons.length,
+        itemCount: _icons.length,
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         primary: false,
@@ -52,19 +51,21 @@ class _CreateListIconsGridState extends State<CreateListIconsGrid> {
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               border: Border.all(
-                color: _selectedIcon == _mockIcons[index]
+                color: _selectedIcon == _icons[index]
                     ? context.theme.primaryColorLight
                     : Colors.transparent,
                 width: 2,
               ),
             ),
             child: IconButton(
-              icon: Icon(
-                _mockIcons[index],
+              icon: SvgPicture.asset(
+                _icons[index],
+                // ignore: deprecated_member_use
                 color: context.theme.primaryColor,
+                height: context.deviceHeight * 0.03,
               ),
               onPressed: () => setState(
-                () => _selectedIcon = _mockIcons[index],
+                () => _selectedIcon = _icons[index],
               ),
             ),
           );
