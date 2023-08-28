@@ -15,7 +15,10 @@ class RegisterDisplayNameTextField extends StatelessWidget {
           return AppTextField(
             onChanged: (name) =>
                 context.read<RegisterCubit>().displayNameChanged(name),
-            prefixIcon: const Icon(CupertinoIcons.person_circle),
+            prefixIcon: Assets.svg.icUser.svg(
+              color: context.theme.inputDecorationTheme.prefixIconColor,
+              fit: BoxFit.scaleDown,
+            ),
             keyboardType: TextInputType.name,
             labelText: AppTranslations.general.username,
             errorText: state.displayName.displayError,

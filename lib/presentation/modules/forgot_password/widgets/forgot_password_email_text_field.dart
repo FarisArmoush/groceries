@@ -16,7 +16,10 @@ class ForgotPasswordEmailTextField extends StatelessWidget {
             keyboardType: TextInputType.emailAddress,
             validator: (value) => state.email.validator(value),
             errorText: state.email.displayError,
-            prefixIcon: const Icon(CupertinoIcons.mail),
+            prefixIcon: Assets.svg.icMail.svg(
+              color: context.theme.inputDecorationTheme.prefixIconColor,
+              fit: BoxFit.scaleDown,
+            ),
           );
         },
       ),

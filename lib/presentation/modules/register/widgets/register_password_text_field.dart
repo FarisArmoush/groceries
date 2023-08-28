@@ -12,7 +12,10 @@ class RegisterPasswordTextField extends StatelessWidget {
             previous.isObscure != current.isObscure,
         builder: (context, state) {
           return AppTextField(
-            prefixIcon: const Icon(CupertinoIcons.lock),
+            prefixIcon: Assets.svg.icLock.svg(
+              color: context.theme.inputDecorationTheme.prefixIconColor,
+              fit: BoxFit.scaleDown,
+            ),
             autofillHints: const [AutofillHints.password],
             keyboardType: TextInputType.visiblePassword,
             onChanged: (password) {

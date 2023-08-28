@@ -3,13 +3,13 @@
 ///  FlutterGen
 /// *****************************************************
 
+import 'package:flutter/services.dart';
 // coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter/services.dart';
 
 class $AssetsSvgGen {
   const $AssetsSvgGen();
@@ -115,8 +115,14 @@ class $AssetsSvgGen {
   SvgGenImage get icLeftArrow =>
       const SvgGenImage('assets/svg/icLeftArrow.svg');
 
+  /// File path: assets/svg/icLock.svg
+  SvgGenImage get icLock => const SvgGenImage('assets/svg/icLock.svg');
+
   /// File path: assets/svg/icLogout.svg
   SvgGenImage get icLogout => const SvgGenImage('assets/svg/icLogout.svg');
+
+  /// File path: assets/svg/icMail.svg
+  SvgGenImage get icMail => const SvgGenImage('assets/svg/icMail.svg');
 
   /// File path: assets/svg/icPalmTree.svg
   SvgGenImage get icPalmTree => const SvgGenImage('assets/svg/icPalmTree.svg');
@@ -133,6 +139,9 @@ class $AssetsSvgGen {
 
   /// File path: assets/svg/icPrinter.svg
   SvgGenImage get icPrinter => const SvgGenImage('assets/svg/icPrinter.svg');
+
+  /// File path: assets/svg/icRepeat.svg
+  SvgGenImage get icRepeat => const SvgGenImage('assets/svg/icRepeat.svg');
 
   /// File path: assets/svg/icRightArrow.svg
   SvgGenImage get icRightArrow =>
@@ -263,12 +272,15 @@ class $AssetsSvgGen {
         icImage,
         icInfo,
         icLeftArrow,
+        icLock,
         icLogout,
+        icMail,
         icPalmTree,
         icPaw,
         icPlus,
         icPlusCircle,
         icPrinter,
+        icRepeat,
         icRightArrow,
         icSave,
         icScissors,

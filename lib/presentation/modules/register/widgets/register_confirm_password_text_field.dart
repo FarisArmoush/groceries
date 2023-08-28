@@ -14,7 +14,10 @@ class RegisterConfirmPasswordTextField extends StatelessWidget {
             previous.isObscure != current.isObscure,
         builder: (context, state) {
           return AppTextField(
-            prefixIcon: const Icon(CupertinoIcons.repeat),
+            prefixIcon: Assets.svg.icRepeat.svg(
+              color: context.theme.inputDecorationTheme.prefixIconColor,
+              fit: BoxFit.scaleDown,
+            ),
             onChanged: (confirmPassword) {
               context
                   .read<RegisterCubit>()
