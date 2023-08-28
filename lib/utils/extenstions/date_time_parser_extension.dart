@@ -2,7 +2,7 @@ part of 'app_extensions.dart';
 
 extension DateTimeParser on String {
   /// Formats date string to look like `11th of July 2023`
-  String formatDate() {
+  String toDDofMMYYYY() {
     final dateTime = _parseDateString();
 
     final day = _getDayWithSuffix(dateTime.day);
@@ -10,6 +10,14 @@ extension DateTimeParser on String {
     final year = dateTime.year.toString();
 
     return '$day of $month $year';
+  }
+
+  String toDDMMYYYY() {
+    final inputDateParts = split(' ')[0].split('-');
+    final day = inputDateParts[2];
+    final month = inputDateParts[1];
+    final year = inputDateParts[0];
+    return '$day-$month-$year';
   }
 
   DateTime _parseDateString() {
