@@ -26,7 +26,6 @@ class CreditsDataSource {
       const CreditModel(name: 'flutter_gen_runner'),
       const CreditModel(name: 'freezed'),
       const CreditModel(name: 'shared_preferences'),
-      const CreditModel(name: 'faker'),
       const CreditModel(name: 'equatable'),
     ];
   }
@@ -56,7 +55,6 @@ class CreditsDataSource {
       const CreditModel(name: 'firebase_performance'),
       const CreditModel(name: 'firebase_remote_config'),
       const CreditModel(name: 'firebase_storage'),
-      const CreditModel(name: 'http'),
     ];
   }
 }

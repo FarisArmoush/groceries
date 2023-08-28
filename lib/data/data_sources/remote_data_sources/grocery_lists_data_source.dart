@@ -1,4 +1,3 @@
-import 'package:faker/faker.dart';
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/data/models/user_model/user_model.dart';
@@ -6,26 +5,26 @@ import 'package:groceries/data/models/user_model/user_model.dart';
 class GroceryListsDataSource {
   Future<List<GroceryListModel>> fetchMyGroceryLists() async {
     final lists = <GroceryListModel>[
-      GroceryListModel(
+      const GroceryListModel(
         name: 'Work',
-        imageUrl: faker.image.image(),
+        imageUrl: '',
         uid: 123,
-        members: const <UserModel>[],
-        items: const <GroceryModel>[],
+        members: <UserModel>[],
+        items: <GroceryModel>[],
       ),
-      GroceryListModel(
+      const GroceryListModel(
         name: 'Home',
-        imageUrl: faker.image.image(),
+        imageUrl: '',
         uid: 345,
-        members: const <UserModel>[],
-        items: const <GroceryModel>[],
+        members: <UserModel>[],
+        items: <GroceryModel>[],
       ),
-      GroceryListModel(
+      const GroceryListModel(
         name: 'Friends',
-        imageUrl: faker.image.image(),
+        imageUrl: '',
         uid: 567,
-        members: const <UserModel>[],
-        items: const <GroceryModel>[
+        members: <UserModel>[],
+        items: <GroceryModel>[
           GroceryModel(
             id: 'asFDE[JOMI]',
             name: 'Carrots',
