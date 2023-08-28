@@ -74,6 +74,8 @@ class RegisterCubit extends Cubit<RegisterState> {
     );
   }
 
+  void toggleIsObscure() => emit(state.copyWith(isObscure: !state.isObscure));
+
   Future<void> register() async {
     if (!state.isValid) return;
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));

@@ -21,6 +21,7 @@ part 'app_loading_indicator.dart';
 part 'app_snack_bars.dart';
 part 'app_text_field.dart';
 part 'bottom_sheet_button.dart';
+part 'password_input_obscurity_button.dart';
 part 'buttons_loading_indicator.dart';
 part 'cached_image.dart';
 part 'cached_image_with_edit_button.dart';

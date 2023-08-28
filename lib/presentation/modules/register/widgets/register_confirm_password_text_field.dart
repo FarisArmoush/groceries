@@ -8,10 +8,10 @@ class RegisterConfirmPasswordTextField extends StatelessWidget {
     return LeftFadeInAnimation(
       duration: 700.milliseconds,
       child: BlocBuilder<RegisterCubit, RegisterState>(
-        buildWhen: (previous, current) {
-          return previous.password != current.password ||
-              previous.confirmedPassword != current.confirmedPassword;
-        },
+        buildWhen: (previous, current) =>
+            previous.password != current.password ||
+            previous.confirmedPassword != current.confirmedPassword ||
+            previous.isObscure != current.isObscure,
         builder: (context, state) {
           return AppTextField(
             prefixIcon: const Icon(CupertinoIcons.repeat),
@@ -20,10 +20,14 @@ class RegisterConfirmPasswordTextField extends StatelessWidget {
                   .read<RegisterCubit>()
                   .confirmedPasswordChanged(confirmPassword);
             },
-            obscureText: true,
             labelText: AppTranslations.register.repeatPassword,
             validator: (value) => state.confirmedPassword.validator(value),
             errorText: state.confirmedPassword.displayError,
+            obscureText: state.isObscure,
+            suffixIcon: PasswordInputObscurityButton(
+              isObscure: state.isObscure,
+              onPressed: context.read<RegisterCubit>().toggleIsObscure,
+            ),
           );
         },
       ),

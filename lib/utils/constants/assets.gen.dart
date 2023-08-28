@@ -51,6 +51,13 @@ class $AssetsSvgGen {
   /// File path: assets/svg/icEdit.svg
   SvgGenImage get icEdit => const SvgGenImage('assets/svg/icEdit.svg');
 
+  /// File path: assets/svg/icEye.svg
+  SvgGenImage get icEye => const SvgGenImage('assets/svg/icEye.svg');
+
+  /// File path: assets/svg/icEyeClosed.svg
+  SvgGenImage get icEyeClosed =>
+      const SvgGenImage('assets/svg/icEyeClosed.svg');
+
   /// File path: assets/svg/icHome.svg
   SvgGenImage get icHome => const SvgGenImage('assets/svg/icHome.svg');
 
@@ -184,6 +191,8 @@ class $AssetsSvgGen {
         icCircleX,
         icClipboardCopy,
         icEdit,
+        icEye,
+        icEyeClosed,
         icHome,
         icImage,
         icInfo,
