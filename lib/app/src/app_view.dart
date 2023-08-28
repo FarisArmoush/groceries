@@ -14,6 +14,11 @@ class AppView extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        BlocProvider<AuthenticationBloc>(
+          create: (context) => AuthenticationBloc(
+            context.read<AuthenticationRepository>(),
+          ),
+        ),
         BlocProvider<ThemeCubit>(
           create: (context) => ThemeCubit()..loadValue(),
         ),

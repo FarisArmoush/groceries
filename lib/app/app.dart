@@ -14,6 +14,7 @@ import 'package:groceries/data/data_sources/remote_data_sources/grocery_lists_da
 import 'package:groceries/data/data_sources/remote_data_sources/my_tasks_data_source.dart';
 import 'package:groceries/data/data_sources/remote_data_sources/recipes_data_source.dart';
 import 'package:groceries/data/data_sources/remote_data_sources/remote_config_data_source.dart';
+import 'package:groceries/data/repositories/authentication_repository_impl.dart';
 import 'package:groceries/data/repositories/credits_repository_impl.dart';
 import 'package:groceries/data/repositories/grocery_lists_repository_impl.dart';
 import 'package:groceries/data/repositories/my_tasks_repository_impl.dart';
@@ -46,5 +47,4 @@ import 'package:groceries/presentation/blocs/user/user_cubit.dart';
 part 'src/app.dart';
 part 'src/app_bloc_observer.dart';
 part 'src/app_easy_localization.dart';
-part 'src/app_repositories_provider.dart';
 part 'src/app_view.dart';

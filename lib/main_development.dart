@@ -7,8 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:groceries/app/app.dart';
 import 'package:groceries/bootstrap.dart';
 import 'package:groceries/config/services/remote_config_service.dart';
-import 'package:groceries/data/data_sources/remote_data_sources/authentication_data_source.dart';
-import 'package:groceries/data/repositories/authentication_repository_impl.dart';
 import 'package:groceries/firebase_options.dart';
 
 void main() {
@@ -18,16 +16,10 @@ void main() {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
-    final authenticationRepository = AuthenticationRepositoryImpl(
-      AuthenticationDataSource(),
-    );
-    await authenticationRepository.authStateChanges.first;
     final remoteConfig = FirebaseRemoteConfig.instance;
     final remoteConfigService = RemoteConfigService(remoteConfig);
     await remoteConfigService.init();
     await EasyLocalization.ensureInitialized();
-    return App(
-      authenticationRepository: authenticationRepository,
-    );
+    return const App();
   });
 }
