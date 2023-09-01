@@ -5,7 +5,7 @@ class UserDataBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = context.watch<UserCubit>();
+    final user = context.watch<UserDataCubit>();
     return DownFadeInAnimation(
       duration: 500.milliseconds,
       child: ListView(

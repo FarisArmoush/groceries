@@ -5,7 +5,7 @@ class GreetingText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final displayName = context.watch<UserCubit>().displayName;
+    final displayName = context.watch<UserDataCubit>().displayName;
 
     return RichText(
       text: TextSpan(

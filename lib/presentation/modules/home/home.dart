@@ -11,7 +11,7 @@ import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart
 import 'package:groceries/data/models/task_model/task_model.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/grocery_lists_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/my_tasks_use_case.dart';
-import 'package:groceries/presentation/blocs/user/user_cubit.dart';
+import 'package:groceries/presentation/blocs/user_data/user_data_cubit.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/grocery_list_details.dart';
 import 'package:groceries/presentation/widgets/widgets.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';

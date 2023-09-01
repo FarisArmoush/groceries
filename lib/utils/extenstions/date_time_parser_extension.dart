@@ -38,7 +38,7 @@ extension DateTimeParser on String {
       1 => '${day}st',
       2 => '${day}nd',
       3 => '${day}rd',
-      _ => '${day}th'
+      _ => '${day}th',
     };
   }
 

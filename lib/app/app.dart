@@ -42,7 +42,7 @@ import 'package:groceries/domain/use_cases/remote_use_cases/recipes_use_case.dar
 import 'package:groceries/presentation/blocs/authentication/authentication_bloc.dart';
 import 'package:groceries/presentation/blocs/remote_config/remote_config_cubit.dart';
 import 'package:groceries/presentation/blocs/theme/theme_cubit.dart';
-import 'package:groceries/presentation/blocs/user/user_cubit.dart';
+import 'package:groceries/presentation/blocs/user_data/user_data_cubit.dart';
 
 part 'src/app.dart';
 part 'src/app_bloc_observer.dart';

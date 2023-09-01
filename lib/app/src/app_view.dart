@@ -27,8 +27,8 @@ class AppView extends StatelessWidget {
             context.read<FetchAppVersionUseCase>(),
           ),
         ),
-        BlocProvider<UserCubit>(
-          create: (context) => UserCubit(
+        BlocProvider<UserDataCubit>(
+          create: (context) => UserDataCubit(
             context.read<FetchUserDataUseCase>(),
           ),
         ),

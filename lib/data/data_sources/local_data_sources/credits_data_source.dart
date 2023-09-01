@@ -1,5 +1,4 @@
 import 'package:groceries/data/models/credit_model/credit_model.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class CreditsDataSource {
   List<CreditModel> get stateManagementPackages {
@@ -7,13 +6,13 @@ class CreditsDataSource {
       const CreditModel(name: 'bloc'),
       const CreditModel(name: 'bloc_test'),
       const CreditModel(name: 'flutter_bloc'),
-    ]..sortCredits();
+    ].._sortCredits();
   }
 
   List<CreditModel> get miscPackages {
     return [
       const CreditModel(name: 'Lucide'),
-    ]..sortCredits();
+    ].._sortCredits();
   }
 
   List<CreditModel> get devPackages {
@@ -28,7 +27,7 @@ class CreditsDataSource {
       const CreditModel(name: 'freezed'),
       const CreditModel(name: 'shared_preferences'),
       const CreditModel(name: 'equatable'),
-    ]..sortCredits();
+    ].._sortCredits();
   }
 
   List<CreditModel> get uiPackages {
@@ -42,7 +41,7 @@ class CreditsDataSource {
       const CreditModel(name: 'go_router'),
       const CreditModel(name: 'image_picker'),
       const CreditModel(name: 'smooth_page_indicator'),
-    ]..sortCredits();
+    ].._sortCredits();
   }
 
   List<CreditModel> get backendPackages {
@@ -56,6 +55,12 @@ class CreditsDataSource {
       const CreditModel(name: 'firebase_performance'),
       const CreditModel(name: 'firebase_remote_config'),
       const CreditModel(name: 'firebase_storage'),
-    ]..sortCredits();
+    ].._sortCredits();
+  }
+}
+
+extension _SortCredits on List<CreditModel> {
+  void _sortCredits() {
+    sort((a, b) => a.name.compareTo(b.name));
   }
 }
