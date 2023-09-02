@@ -41,6 +41,7 @@ class CreditsDataSource {
       const CreditModel(name: 'go_router'),
       const CreditModel(name: 'image_picker'),
       const CreditModel(name: 'smooth_page_indicator'),
+      const CreditModel(name: 'shimmer'),
     ].._sortCredits();
   }
 

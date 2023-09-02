@@ -8,7 +8,7 @@ class MyTasksForm extends StatelessWidget {
     return BlocBuilder<MyTasksBloc, MyTasksState>(
       builder: (context, state) {
         if (state is MyTasksInitial) {
-          return const AppLoadingIndicator();
+          return const MyTasksShimmeredRail();
         }
         if (state is MyTasksLoaded) {
           return MyTasksRail(

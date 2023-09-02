@@ -12,10 +12,15 @@ class GroceryListsBloc extends Bloc<GroceryListsEvent, GroceryListsState> {
     Emitter<GroceryListsState> emit,
   ) async {
     final lists = await _groceryListsUseCase.fetchMyGroceryLists();
-    emit(
-      GroceryListsLoaded(
-        lists: lists,
-      ),
+    await Future.delayed(
+      2.seconds,
+      () {
+        emit(
+          GroceryListsLoaded(
+            lists: lists,
+          ),
+        );
+      },
     );
   }
 }
