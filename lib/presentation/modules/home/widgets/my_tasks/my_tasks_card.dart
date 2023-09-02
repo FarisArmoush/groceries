@@ -21,7 +21,7 @@ class MyTasksCard extends StatelessWidget {
       title: Row(
         children: [
           Expanded(
-            flex: 2,
+            flex: 5,
             child: Text(
               taskModel.listModel.name,
               style: context.theme.listTileTheme.titleTextStyle,
@@ -29,8 +29,9 @@ class MyTasksCard extends StatelessWidget {
             ),
           ),
           Expanded(
+            flex: 2,
             child: Text(
-              taskModel.dueDate.toString(),
+              taskModel.dueDate.toString().toDDMMYYYY(),
               style: TextStyle(
                 fontFamily: AppFonts.regular(context),
                 color: context.theme.hintColor,

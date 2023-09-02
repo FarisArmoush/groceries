@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// A class that contains constants for commonly used colors in the app.
-class AppColors {
-  AppColors._();
-
+abstract final class AppColors {
   /// Solid Black
   static const Color black = Color.fromARGB(255, 0, 0, 0);
 

@@ -9,6 +9,7 @@ final class RegisterState extends Equatable {
     this.status = FormzSubmissionStatus.initial,
     this.errorMessage,
     this.isValid = false,
+    this.isObscure = true,
   });
   final DisplayNameForm displayName;
   final EmailForm email;
@@ -17,6 +18,7 @@ final class RegisterState extends Equatable {
   final FormzSubmissionStatus status;
   final String? errorMessage;
   final bool isValid;
+  final bool isObscure;
 
   RegisterState copyWith({
     DisplayNameForm? displayName,
@@ -26,6 +28,7 @@ final class RegisterState extends Equatable {
     FormzSubmissionStatus? status,
     String? errorMessage,
     bool? isValid,
+    bool? isObscure,
   }) {
     return RegisterState(
       displayName: displayName ?? this.displayName,
@@ -35,6 +38,7 @@ final class RegisterState extends Equatable {
       status: status ?? this.status,
       errorMessage: errorMessage ?? this.errorMessage,
       isValid: isValid ?? this.isValid,
+      isObscure: isObscure ?? this.isObscure,
     );
   }
 
@@ -47,6 +51,7 @@ final class RegisterState extends Equatable {
       confirmedPassword,
       status,
       isValid,
+      isObscure,
     ];
   }
 }

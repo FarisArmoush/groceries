@@ -3,10 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries/utils/constants/fonts.gen.dart';
 
 /// A class that provides font family names based on the current locale.
-class AppFonts {
-  /// Private constructor to prevent instantiation.
-  AppFonts._();
-
+abstract final class AppFonts {
   /// Returns the font family name for the thin font
   /// weight based on the current locale.
   static String thin(BuildContext context) {

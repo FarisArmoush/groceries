@@ -16,7 +16,10 @@ class RegisterEmailTextField extends StatelessWidget {
             onChanged: (email) {
               context.read<RegisterCubit>().emailChanged(email);
             },
-            prefixIcon: const Icon(CupertinoIcons.mail),
+            prefixIcon: Assets.svg.icMail.svg(
+              color: context.theme.inputDecorationTheme.prefixIconColor,
+              fit: BoxFit.scaleDown,
+            ),
             keyboardType: TextInputType.emailAddress,
             labelText: AppTranslations.general.email,
             validator: (value) => state.email.validator(value),

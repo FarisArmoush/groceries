@@ -26,6 +26,8 @@ class LoginCubit extends Cubit<LoginState> {
     );
   }
 
+  void toggleIsObscure() => emit(state.copyWith(isObscure: !state.isObscure));
+
   Future<void> login() async {
     if (!state.isValid) return;
     emit(

@@ -32,17 +32,20 @@ class _RootFormState extends State<RootForm> {
       _bnbItem(
         context,
         label: AppTranslations.home.home,
-        asset: Assets.svg.icHome.path,
+        icon: Assets.svg.icHouse.path,
+        activeIcon: Assets.svg.icHouseFilled.path,
       ),
       _bnbItem(
         context,
         label: AppTranslations.recipes.recipes,
-        asset: Assets.svg.icChefHat.path,
+        icon: Assets.svg.icCookingPot.path,
+        activeIcon: Assets.svg.icCookingPotFilled.path,
       ),
       _bnbItem(
         context,
         label: AppTranslations.settings.settings,
-        asset: Assets.svg.icSettings.path,
+        icon: Assets.svg.icGear.path,
+        activeIcon: Assets.svg.icGearFilled.path,
       ),
     ];
   }
@@ -50,17 +53,20 @@ class _RootFormState extends State<RootForm> {
   AppBottomNavigationBarItem _bnbItem(
     BuildContext context, {
     required String label,
-    required String asset,
+    required String icon,
+    required String activeIcon,
   }) {
     return AppBottomNavigationBarItem(
       icon: SvgPicture.asset(
-        asset,
+        icon,
         color: context.theme.hintColor,
+        height: context.deviceHeight * 0.03,
       ),
       title: Text(label),
       activeIcon: SvgPicture.asset(
-        asset,
+        activeIcon,
         color: context.theme.primaryColor,
+        height: context.deviceHeight * 0.03,
       ),
       selectedColor: context.theme.primaryColor,
     );

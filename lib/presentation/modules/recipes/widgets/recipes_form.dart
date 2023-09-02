@@ -8,7 +8,7 @@ class RecipesForm extends StatelessWidget {
     return BlocBuilder<RecipesBloc, RecipesState>(
       builder: (context, state) {
         if (state is RecipesInitial) {
-          return const AppLoadingIndicator();
+          return const ShimmeredRecipesList();
         }
         if (state is RecipesLoaded && state.recipes.isEmpty) {
           return const YouHaveNoRecipes();

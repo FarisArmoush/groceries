@@ -6,13 +6,13 @@ class CreditsDataSource {
       const CreditModel(name: 'bloc'),
       const CreditModel(name: 'bloc_test'),
       const CreditModel(name: 'flutter_bloc'),
-    ];
+    ].._sortCredits();
   }
 
   List<CreditModel> get miscPackages {
     return [
       const CreditModel(name: 'Lucide'),
-    ];
+    ].._sortCredits();
   }
 
   List<CreditModel> get devPackages {
@@ -26,9 +26,8 @@ class CreditsDataSource {
       const CreditModel(name: 'flutter_gen_runner'),
       const CreditModel(name: 'freezed'),
       const CreditModel(name: 'shared_preferences'),
-      const CreditModel(name: 'faker'),
       const CreditModel(name: 'equatable'),
-    ];
+    ].._sortCredits();
   }
 
   List<CreditModel> get uiPackages {
@@ -42,13 +41,14 @@ class CreditsDataSource {
       const CreditModel(name: 'go_router'),
       const CreditModel(name: 'image_picker'),
       const CreditModel(name: 'smooth_page_indicator'),
-    ];
+      const CreditModel(name: 'shimmer'),
+    ].._sortCredits();
   }
 
   List<CreditModel> get backendPackages {
     return [
-      const CreditModel(name: 'cloud_firestore'),
       const CreditModel(name: 'firebase_auth'),
+      const CreditModel(name: 'cloud_firestore'),
       const CreditModel(name: 'firebase_analytics'),
       const CreditModel(name: 'firebase_core'),
       const CreditModel(name: 'firebase_crashlytics'),
@@ -56,7 +56,12 @@ class CreditsDataSource {
       const CreditModel(name: 'firebase_performance'),
       const CreditModel(name: 'firebase_remote_config'),
       const CreditModel(name: 'firebase_storage'),
-      const CreditModel(name: 'http'),
-    ];
+    ].._sortCredits();
+  }
+}
+
+extension _SortCredits on List<CreditModel> {
+  void _sortCredits() {
+    sort((a, b) => a.name.compareTo(b.name));
   }
 }

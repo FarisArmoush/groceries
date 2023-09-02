@@ -5,8 +5,9 @@ class RecipesBloc extends Bloc<RecipesEvent, RecipesState> {
     on<LoadRecipes>(
       (event, emit) async {
         final recipes = await _recipesUseCase.fetchRecipes();
-        emit(
-          RecipesLoaded(recipes: recipes),
+        await Future.delayed(
+          4.seconds,
+          () => emit(RecipesLoaded(recipes: recipes)),
         );
       },
     );

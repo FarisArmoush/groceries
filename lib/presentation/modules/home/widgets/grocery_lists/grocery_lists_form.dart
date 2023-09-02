@@ -8,7 +8,7 @@ class GroceryListsForm extends StatelessWidget {
     return BlocBuilder<GroceryListsBloc, GroceryListsState>(
       builder: (context, state) {
         if (state is GroceryListsInitial) {
-          return const AppLoadingIndicator();
+          return const GroceryListsShimmeredRail();
         }
         if (state is GroceryListsLoaded) {
           return GroceryListsRail(

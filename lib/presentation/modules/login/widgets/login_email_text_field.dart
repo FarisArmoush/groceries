@@ -11,7 +11,10 @@ class LoginEmailTextField extends StatelessWidget {
         buildWhen: (previous, current) => previous.email != current.email,
         builder: (context, state) {
           return AppTextField(
-            prefixIcon: const Icon(CupertinoIcons.mail),
+            prefixIcon: Assets.svg.icMail.svg(
+              color: context.theme.inputDecorationTheme.prefixIconColor,
+              fit: BoxFit.scaleDown,
+            ),
             onChanged: (email) =>
                 context.read<LoginCubit>().emailChanged(email),
             keyboardType: TextInputType.emailAddress,
