@@ -12,9 +12,10 @@ class CreateListForm extends StatelessWidget {
         appBar: AppBar(
           title: Text(AppTranslations.createGroceryList.createNewList),
           leading: BackButton(
-            onPressed: () => showDialog<CancelListCreationDialog>(
+            onPressed: () => showModalBottomSheet<CancelBottomSheet>(
+              elevation: 0,
               context: context,
-              builder: (context) => const CancelListCreationDialog(),
+              builder: (context) => const CancelBottomSheet(),
             ),
           ),
         ),

@@ -19,7 +19,6 @@ part 'cubit/forgot_password_cubit.dart';
 part 'cubit/forgot_password_state.dart';
 part 'views/forgot_password_view.dart';
 part 'views/reset_password_sent_successfully.dart';
-part 'widgets/cancel_forgot_password_dialog.dart';
 part 'widgets/forgot_password_body_text.dart';
 part 'widgets/forgot_password_email_text_field.dart';
 part 'widgets/forgot_password_form.dart';

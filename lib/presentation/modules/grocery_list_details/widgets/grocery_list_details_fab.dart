@@ -5,13 +5,15 @@ class GroceryListDetailsFab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton.extended(
-      onPressed: () {
-        context.pushNamed(AppNamedRoutes.addItems);
-      },
-      label: const Text('Add Items'),
-      icon: Assets.svg.icPlus.svg(
-        color: AppColors.white,
+    return FadeInAnimation(
+      child: FloatingActionButton.extended(
+        onPressed: () {
+          context.pushNamed(AppNamedRoutes.addItems);
+        },
+        label: const Text('Add Items'),
+        icon: Assets.svg.icPlus.svg(
+          color: AppColors.white,
+        ),
       ),
     );
   }

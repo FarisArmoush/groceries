@@ -45,27 +45,27 @@ class AppGoRouter {
       ),
       GoRoute(
         name: AppNamedRoutes.onboarding,
-        path: '/onboarding',
+        path: '/${AppNamedRoutes.onboarding}',
         builder: (context, state) => const OnboardingView(),
       ),
       GoRoute(
         name: AppNamedRoutes.welcome,
-        path: '/welcome',
+        path: '/${AppNamedRoutes.welcome}',
         builder: (context, state) => const WelcomeView(),
         routes: [
           GoRoute(
             name: AppNamedRoutes.login,
-            path: 'login',
+            path: AppNamedRoutes.login,
             builder: (context, state) => const LoginView(),
             routes: [
               GoRoute(
                 name: AppNamedRoutes.forgotPassword,
-                path: 'forgotPassword',
+                path: AppNamedRoutes.forgotPassword,
                 builder: (context, state) => const ForgotPasswordView(),
                 routes: [
                   GoRoute(
                     name: AppNamedRoutes.resetPasswordSentSuccessfully,
-                    path: 'resetPasswordSentSuccessfully',
+                    path: AppNamedRoutes.resetPasswordSentSuccessfully,
                     builder: (context, state) =>
                         const ResetPasswordSentSuccessfullyView(),
                   ),
@@ -75,34 +75,38 @@ class AppGoRouter {
           ),
           GoRoute(
             name: AppNamedRoutes.register,
-            path: 'register',
+            path: AppNamedRoutes.register,
             builder: (context, state) => const RegisterView(),
           ),
         ],
       ),
       GoRoute(
         name: AppNamedRoutes.root,
-        path: '/root',
+        path: '/${AppNamedRoutes.root}',
         builder: (context, state) => const RootView(),
         routes: [
           GoRoute(
             name: AppNamedRoutes.home,
-            path: 'home',
+            path: AppNamedRoutes.home,
             builder: (context, state) => const HomeView(),
             routes: [
               GoRoute(
                 name: AppNamedRoutes.createList,
-                path: 'createList',
-                builder: (context, state) => const CreateListView(),
+                path: AppNamedRoutes.createList,
+                pageBuilder: (context, state) => CupertinoPage(
+                  key: state.pageKey,
+                  fullscreenDialog: true,
+                  child: const CreateListView(),
+                ),
                 routes: [
                   GoRoute(
-                    path: 'listCreatedSuccessfully',
+                    path: AppNamedRoutes.listCreatedSuccessfully,
                     name: AppNamedRoutes.listCreatedSuccessfully,
                     builder: (context, state) =>
                         const ListCreatedSuccessfullyView(),
                   ),
                   GoRoute(
-                    path: 'listCreatedUnsuccessfully',
+                    path: AppNamedRoutes.listCreatedUnsuccessfully,
                     name: AppNamedRoutes.listCreatedUnsuccessfully,
                     builder: (context, state) =>
                         const ListCreatedUnsuccessfullyView(),
@@ -111,7 +115,7 @@ class AppGoRouter {
               ),
               GoRoute(
                 name: AppNamedRoutes.groceryListDetails,
-                path: 'groceryListDetails',
+                path: AppNamedRoutes.groceryListDetails,
                 pageBuilder: (context, state) => CupertinoPage(
                   child: GroceryListDetailsView(
                     listModel: state.extra! as GroceryListModel,
@@ -120,7 +124,7 @@ class AppGoRouter {
                 routes: [
                   GoRoute(
                     name: AppNamedRoutes.addItems,
-                    path: 'addItems',
+                    path: AppNamedRoutes.addItems,
                     pageBuilder: (context, state) => const CupertinoPage(
                       child: AddItemsView(),
                       fullscreenDialog: true,
@@ -128,7 +132,7 @@ class AppGoRouter {
                   ),
                   GoRoute(
                     name: AppNamedRoutes.goceryListSettings,
-                    path: 'goceryListSettings',
+                    path: AppNamedRoutes.goceryListSettings,
                     builder: (context, state) =>
                         const GroceryListSettingsView(),
                   ),
@@ -138,30 +142,30 @@ class AppGoRouter {
           ),
           GoRoute(
             name: AppNamedRoutes.recipes,
-            path: 'recipes',
+            path: AppNamedRoutes.recipes,
             builder: (context, state) => const RecipesView(),
             routes: [
               GoRoute(
                 name: AppNamedRoutes.recipeDetails,
-                path: 'recipeDetails',
+                path: AppNamedRoutes.recipeDetails,
                 builder: (context, state) => RecipeDetailsView(
                   recipeModel: state.extra! as RecipeModel,
                 ),
               ),
               GoRoute(
                 name: AppNamedRoutes.createRecipe,
-                path: 'createRecipe',
+                path: AppNamedRoutes.createRecipe,
                 builder: (context, state) => const CreateRecipeView(),
                 routes: [
                   GoRoute(
                     name: AppNamedRoutes.recipeCreatedSuccessfully,
-                    path: 'recipeCreatedSuccessfully',
+                    path: AppNamedRoutes.recipeCreatedSuccessfully,
                     builder: (context, state) =>
                         const RecipeCreatedSuccessfullyView(),
                   ),
                   GoRoute(
                     name: AppNamedRoutes.recipeCreatedUnsuccessfully,
-                    path: 'recipeCreatedUnsuccessfully',
+                    path: AppNamedRoutes.recipeCreatedUnsuccessfully,
                     builder: (context, state) =>
                         const RecipeCreatedUnsuccessfullyView(),
                   ),
@@ -171,12 +175,12 @@ class AppGoRouter {
           ),
           GoRoute(
             name: AppNamedRoutes.settings,
-            path: 'settings',
+            path: AppNamedRoutes.settings,
             builder: (context, state) => const SettingsView(),
             routes: [
               GoRoute(
                 name: AppNamedRoutes.themeSettings,
-                path: 'themeSettings',
+                path: AppNamedRoutes.themeSettings,
                 pageBuilder: (context, state) => CupertinoPage(
                   key: state.pageKey,
                   child: const ThemeSettingsView(),
@@ -184,7 +188,7 @@ class AppGoRouter {
               ),
               GoRoute(
                 name: AppNamedRoutes.additionalResources,
-                path: 'additionalResources',
+                path: AppNamedRoutes.additionalResources,
                 pageBuilder: (context, state) => CupertinoPage(
                   key: state.pageKey,
                   child: const AdditionalResourcesView(),
@@ -192,7 +196,7 @@ class AppGoRouter {
                 routes: [
                   GoRoute(
                     name: AppNamedRoutes.credits,
-                    path: 'credits',
+                    path: AppNamedRoutes.credits,
                     pageBuilder: (context, state) => CupertinoPage(
                       key: state.pageKey,
                       fullscreenDialog: true,
@@ -203,7 +207,7 @@ class AppGoRouter {
               ),
               GoRoute(
                 name: AppNamedRoutes.accountSettings,
-                path: 'accountSettings',
+                path: AppNamedRoutes.accountSettings,
                 pageBuilder: (context, state) => CupertinoPage(
                   key: state.pageKey,
                   child: const AccountSettingsView(),
@@ -211,7 +215,7 @@ class AppGoRouter {
                 routes: [
                   GoRoute(
                     name: AppNamedRoutes.deleteAccount,
-                    path: 'deleteAccount',
+                    path: AppNamedRoutes.deleteAccount,
                     pageBuilder: (context, state) => CupertinoPage(
                       key: state.pageKey,
                       fullscreenDialog: true,
@@ -220,7 +224,7 @@ class AppGoRouter {
                   ),
                   GoRoute(
                     name: AppNamedRoutes.updateDisplayName,
-                    path: 'updateUsername',
+                    path: AppNamedRoutes.updateDisplayName,
                     pageBuilder: (context, state) => CupertinoPage(
                       key: state.pageKey,
                       fullscreenDialog: true,
@@ -229,7 +233,7 @@ class AppGoRouter {
                   ),
                   GoRoute(
                     name: AppNamedRoutes.updateEmail,
-                    path: 'updateEmail',
+                    path: AppNamedRoutes.updateEmail,
                     pageBuilder: (context, state) => CupertinoPage(
                       key: state.pageKey,
                       fullscreenDialog: true,
@@ -238,7 +242,7 @@ class AppGoRouter {
                   ),
                   GoRoute(
                     name: AppNamedRoutes.verifyAccount,
-                    path: 'verifyAccount',
+                    path: AppNamedRoutes.verifyAccount,
                     pageBuilder: (context, state) => CupertinoPage(
                       key: state.pageKey,
                       fullscreenDialog: true,
@@ -253,7 +257,7 @@ class AppGoRouter {
       ),
       GoRoute(
         name: AppNamedRoutes.pageNotFound,
-        path: '/pageNotFound',
+        path: '/${AppNamedRoutes.pageNotFound}',
         builder: (context, state) => const PageNotFoundView(),
       ),
     ],

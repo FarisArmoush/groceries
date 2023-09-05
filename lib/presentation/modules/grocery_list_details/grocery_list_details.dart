@@ -16,6 +16,8 @@ import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 part 'views/grocery_list_details_view.dart';
+part 'widgets/clear_grocery_list_items_bottom_sheet.dart';
+part 'widgets/clear_grocery_list_items_button.dart';
 part 'widgets/empty_grocery_list.dart';
 part 'widgets/groceries_box_header.dart';
 part 'widgets/groceries_box_list.dart';

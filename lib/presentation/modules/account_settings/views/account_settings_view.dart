@@ -20,7 +20,9 @@ class AccountSettingsView extends StatelessWidget {
         children: [
           const UserImage(),
           const EditUserImageButton(),
-          SizedBox(height: context.deviceHeight * 0.02),
+          SizedBox(
+            height: context.deviceHeight * 0.02,
+          ),
           const UserDisplayNameListTile(),
           SizedBox(
             height: context.deviceHeight * 0.01,

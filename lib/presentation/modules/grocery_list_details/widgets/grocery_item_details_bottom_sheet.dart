@@ -21,7 +21,6 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
           height: context.deviceHeight * 0.015,
         ),
         AppTextField(
-          maxLines: 3,
           initialValue: groceryModel.notes,
           labelText: 'Notes',
           enabledBorder: _border(context),
@@ -35,7 +34,17 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
         else
           _addImageButton(context),
         SizedBox(
-          height: context.deviceHeight * 0.01,
+          height: context.deviceHeight * 0.02,
+        ),
+        OutlinedButton.icon(
+          onPressed: () => context.pop(),
+          icon: Assets.svg.icTrash.svg(
+            color: context.theme.primaryColor,
+          ),
+          label: const Text('Remove Item'),
+        ),
+        SizedBox(
+          height: context.deviceHeight * 0.02,
         ),
       ],
     );

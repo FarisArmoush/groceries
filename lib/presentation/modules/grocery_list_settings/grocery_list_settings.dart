@@ -20,5 +20,4 @@ part 'widgets/grocery_list_form.dart';
 part 'widgets/grocery_list_name_text_field.dart';
 part 'widgets/list_members_box.dart';
 part 'widgets/member_card.dart';
-part 'widgets/remove_list_member_bottom_sheet.dart';
 part 'widgets/save_grocery_list_changes_button.dart';

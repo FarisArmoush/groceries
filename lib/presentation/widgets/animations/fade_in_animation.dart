@@ -3,7 +3,7 @@ part of '../widgets.dart';
 class FadeInAnimation extends StatefulWidget {
   FadeInAnimation({
     required this.child,
-    this.duration = const Duration(milliseconds: 500),
+    this.duration = const Duration(milliseconds: 600),
     this.delay = Duration.zero,
     this.controller,
     this.manualTrigger = false,

@@ -1,4 +1,3 @@
-// ignore_for_file: dead_code
 part of '../grocery_list_details.dart';
 
 class GroceryListDetailsView extends StatelessWidget {
@@ -13,20 +12,25 @@ class GroceryListDetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
-          children: [
-            Icon(
-              CupertinoIcons.bag,
-              color: context.theme.primaryColor,
-            ),
-            SizedBox(
-              width: context.deviceWidth * 0.02,
-            ),
-            Text(listModel.name),
-          ],
+        title: FadeInAnimation(
+          child: Row(
+            children: [
+              Icon(
+                CupertinoIcons.bag,
+                color: context.theme.primaryColor,
+              ),
+              SizedBox(
+                width: context.deviceWidth * 0.02,
+              ),
+              Text(listModel.name),
+            ],
+          ),
         ),
-        actions: const [
-          GroceryListOptionsButton(),
+        actions: [
+          FadeInAnimation(
+            child: const GroceryListOptionsButton(),
+          ),
+          const ClearGroceryListItemsButton(),
         ],
       ),
       body: listModel.items.isEmpty

@@ -53,6 +53,9 @@ class $AssetsSvgGen {
   /// File path: assets/svg/icCar.svg
   SvgGenImage get icCar => const SvgGenImage('assets/svg/icCar.svg');
 
+  /// File path: assets/svg/icCheck.svg
+  SvgGenImage get icCheck => const SvgGenImage('assets/svg/icCheck.svg');
+
   /// File path: assets/svg/icCheckCircle.svg
   SvgGenImage get icCheckCircle =>
       const SvgGenImage('assets/svg/icCheckCircle.svg');
@@ -75,11 +78,18 @@ class $AssetsSvgGen {
   SvgGenImage get icCookingPotFilled =>
       const SvgGenImage('assets/svg/icCookingPotFilled.svg');
 
+  /// File path: assets/svg/icDoubleCheck.svg
+  SvgGenImage get icDoubleCheck =>
+      const SvgGenImage('assets/svg/icDoubleCheck.svg');
+
   /// File path: assets/svg/icDumbbell.svg
   SvgGenImage get icDumbbell => const SvgGenImage('assets/svg/icDumbbell.svg');
 
   /// File path: assets/svg/icEdit.svg
   SvgGenImage get icEdit => const SvgGenImage('assets/svg/icEdit.svg');
+
+  /// File path: assets/svg/icEraser.svg
+  SvgGenImage get icEraser => const SvgGenImage('assets/svg/icEraser.svg');
 
   /// File path: assets/svg/icEye.svg
   SvgGenImage get icEye => const SvgGenImage('assets/svg/icEye.svg');
@@ -254,14 +264,17 @@ class $AssetsSvgGen {
         icCake,
         icCamera,
         icCar,
+        icCheck,
         icCheckCircle,
         icChurch,
         icCircleX,
         icClipboardCopy,
         icCookingPot,
         icCookingPotFilled,
+        icDoubleCheck,
         icDumbbell,
         icEdit,
+        icEraser,
         icEye,
         icEyeClosed,
         icGear,
