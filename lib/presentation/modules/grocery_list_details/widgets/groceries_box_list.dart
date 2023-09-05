@@ -42,6 +42,8 @@ class GroceriesBoxList extends StatelessWidget {
                   context: context,
                   elevation: 0,
                   showDragHandle: true,
+                  useSafeArea: true,
+                  isScrollControlled: true,
                   builder: (context) => GroceryItemDetailsBottomSheet(
                     groceryModel: item,
                   ),

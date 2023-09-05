@@ -37,6 +37,8 @@ class AppTextField extends StatelessWidget {
     this.contentPadding,
     this.floatingLabelStyle,
     this.style,
+    this.initialValue,
+    this.maxLines,
   });
 
   /// The text displayed as the label of the text field.
@@ -115,11 +117,18 @@ class AppTextField extends StatelessWidget {
 
   final EdgeInsetsGeometry? contentPadding;
 
+  final String? initialValue;
+
+  final int? maxLines;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       key: key,
+      maxLines: maxLines,
+      textCapitalization: TextCapitalization.words,
       validator: validator,
+      initialValue: initialValue,
       controller: controller,
       obscureText: obscureText,
       autofillHints: autofillHints,

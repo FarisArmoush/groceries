@@ -11,124 +11,103 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      // shrinkWrap: true,
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.symmetric(
-        vertical: 12,
-        horizontal: 24,
+        horizontal: 16,
       ),
       children: [
+        _nameAndDoneButtonRow(context),
+        SizedBox(
+          height: context.deviceHeight * 0.015,
+        ),
+        AppTextField(
+          maxLines: 3,
+          initialValue: groceryModel.notes,
+          labelText: 'Notes',
+          enabledBorder: _border(context),
+          focusedBorder: _border(context),
+        ),
+        SizedBox(
+          height: context.deviceHeight * 0.02,
+        ),
         if (groceryModel.imageUrl.isNotEmpty)
-          CachedImageWithEditButton(
-            imageUrl: groceryModel.imageUrl,
-            onPressed: () {},
-          )
+          _image(context)
         else
-          const SizedBox.shrink(),
+          _addImageButton(context),
         SizedBox(
           height: context.deviceHeight * 0.01,
-        ),
-        _name(context),
-        SizedBox(
-          height: context.deviceHeight * 0.01,
-        ),
-        _category(context),
-        SizedBox(
-          height: context.deviceHeight * 0.01,
-        ),
-        _notes(context),
-      ],
-    );
-  }
-
-  Widget _notes(BuildContext context) {
-    return Row(
-      children: [
-        Container(
-          padding: const EdgeInsets.all(4),
-          decoration: BoxDecoration(
-            color: AppColors.white,
-            borderRadius: BorderRadius.circular(5),
-          ),
-          child: SvgPicture.asset(
-            Assets.svg.icEdit.path,
-            // ignore: deprecated_member_use
-            color: AppColors.black,
-          ),
-        ),
-        SizedBox(
-          width: context.deviceWidth * 0.02,
-        ),
-        Flexible(
-          child: Text(
-            '${groceryModel.notes} ' * 1,
-            style: TextStyle(
-              fontFamily: AppFonts.light(context),
-              color: context.theme.primaryColor,
-              fontSize: 16,
-            ),
-          ),
         ),
       ],
     );
   }
 
-  Widget _name(BuildContext context) {
+  OutlineInputBorder _border(BuildContext context) {
+    return OutlineInputBorder(
+      borderRadius: BorderRadius.circular(16),
+      borderSide: BorderSide(
+        color: context.theme.primaryColorLight,
+      ),
+    );
+  }
+
+  ElevatedButton _addImageButton(BuildContext context) {
+    return ElevatedButton(
+      onPressed: () => showModalBottomSheet<UploadImageBottomSheet>(
+        context: context,
+        elevation: 0,
+        showDragHandle: true,
+        builder: (context) => UploadImageBottomSheet(
+          onTakePhoto: () {},
+          onUploadPhoto: () {},
+        ),
+      ),
+      child: const Text('Add Image'),
+    );
+  }
+
+  Row _nameAndDoneButtonRow(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Container(
-          padding: const EdgeInsets.all(4),
-          decoration: BoxDecoration(
-            color: AppColors.white,
-            borderRadius: BorderRadius.circular(5),
-          ),
-          child: SvgPicture.asset(
-            Assets.svg.icBeef.path,
-            // ignore: deprecated_member_use
-            color: AppColors.black,
-          ),
-        ),
-        SizedBox(
-          width: context.deviceWidth * 0.02,
-        ),
         Text(
           groceryModel.name,
           style: TextStyle(
-            fontFamily: AppFonts.semiBold(context),
             color: context.theme.primaryColor,
-            fontSize: 28,
+            fontSize: 24,
+            fontFamily: AppFonts.semiBold(context),
           ),
+        ),
+        TextButton(
+          onPressed: () => context.pop(),
+          style: TextButton.styleFrom(
+            foregroundColor: context.theme.primaryColor,
+          ),
+          child: Text(AppTranslations.general.done),
         ),
       ],
     );
   }
 
-  Widget _category(BuildContext context) {
-    return Row(
+  Stack _image(BuildContext context) {
+    return Stack(
+      alignment: AlignmentDirectional.topEnd,
       children: [
-        Container(
-          padding: const EdgeInsets.all(4),
-          decoration: BoxDecoration(
-            color: AppColors.white,
-            borderRadius: BorderRadius.circular(5),
-          ),
-          child: SvgPicture.asset(
-            Assets.svg.icBeef.path,
-            // ignore: deprecated_member_use
-            color: AppColors.black,
-          ),
+        CachedImage(
+          height: context.deviceHeight * 0.3,
+          width: double.infinity,
+          boxShape: BoxShape.rectangle,
+          borderRadius: BorderRadius.circular(16),
+          imageUrl: groceryModel.imageUrl,
         ),
-        SizedBox(
-          width: context.deviceWidth * 0.02,
-        ),
-        Text(
-          groceryModel.category,
-          style: TextStyle(
-            fontFamily: AppFonts.medium(context),
-            color: context.theme.primaryColor,
-            fontSize: 20,
+        CircleAvatar(
+          backgroundColor: AppColors.black.withOpacity(0.8),
+          child: IconButton(
+            onPressed: () {},
+            icon: Assets.svg.icTrash.svg(
+              color: AppColors.white,
+            ),
           ),
-        ),
+        ).allPadding(8),
       ],
     );
   }
