@@ -11,7 +11,7 @@ class GroceryListDetailsFab extends StatelessWidget {
       },
       label: const Text('Add Items'),
       icon: Assets.svg.icPlus.svg(
-        color: context.theme.primaryColor,
+        color: AppColors.white,
       ),
     );
   }

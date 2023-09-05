@@ -2,6 +2,7 @@ import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/data/models/task_model/task_model.dart';
 import 'package:groceries/data/models/user_model/user_model.dart';
+import 'package:groceries/utils/constants/app_colors.dart';
 
 class MyTasksDataSource {
   Future<List<TaskModel>> fetchMyTasks() async {
@@ -12,7 +13,7 @@ class MyTasksDataSource {
         listModel: const GroceryListModel(
           uid: 1,
           name: 'Friends',
-          imageUrl: '',
+          imageUrl: mockImage,
           members: <UserModel>[],
           items: <GroceryModel>[],
         ),
@@ -24,7 +25,7 @@ class MyTasksDataSource {
         listModel: const GroceryListModel(
           uid: 1,
           name: 'Work',
-          imageUrl: '',
+          imageUrl: mockImage,
           members: <UserModel>[],
           items: <GroceryModel>[],
         ),
@@ -36,7 +37,7 @@ class MyTasksDataSource {
         listModel: const GroceryListModel(
           uid: 1,
           name: 'Home',
-          imageUrl: '',
+          imageUrl: mockImage,
           members: <UserModel>[],
           items: <GroceryModel>[],
         ),

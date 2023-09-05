@@ -22,8 +22,10 @@ GroceryModel _$GroceryModelFromJson(Map<String, dynamic> json) {
 mixin _$GroceryModel {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  String get imageUrl => throw _privateConstructorUsedError;
   String get category => throw _privateConstructorUsedError;
   String get notes => throw _privateConstructorUsedError;
+  bool get isDone => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,7 +39,13 @@ abstract class $GroceryModelCopyWith<$Res> {
           GroceryModel value, $Res Function(GroceryModel) then) =
       _$GroceryModelCopyWithImpl<$Res, GroceryModel>;
   @useResult
-  $Res call({String id, String name, String category, String notes});
+  $Res call(
+      {String id,
+      String name,
+      String imageUrl,
+      String category,
+      String notes,
+      bool isDone});
 }
 
 /// @nodoc
@@ -55,8 +63,10 @@ class _$GroceryModelCopyWithImpl<$Res, $Val extends GroceryModel>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? imageUrl = null,
     Object? category = null,
     Object? notes = null,
+    Object? isDone = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -67,6 +77,10 @@ class _$GroceryModelCopyWithImpl<$Res, $Val extends GroceryModel>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      imageUrl: null == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
       category: null == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -75,6 +89,10 @@ class _$GroceryModelCopyWithImpl<$Res, $Val extends GroceryModel>
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String,
+      isDone: null == isDone
+          ? _value.isDone
+          : isDone // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -87,7 +105,13 @@ abstract class _$$_GroceryModelCopyWith<$Res>
       __$$_GroceryModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name, String category, String notes});
+  $Res call(
+      {String id,
+      String name,
+      String imageUrl,
+      String category,
+      String notes,
+      bool isDone});
 }
 
 /// @nodoc
@@ -103,8 +127,10 @@ class __$$_GroceryModelCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
+    Object? imageUrl = null,
     Object? category = null,
     Object? notes = null,
+    Object? isDone = null,
   }) {
     return _then(_$_GroceryModel(
       id: null == id
@@ -115,6 +141,10 @@ class __$$_GroceryModelCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      imageUrl: null == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String,
       category: null == category
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -123,6 +153,10 @@ class __$$_GroceryModelCopyWithImpl<$Res>
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String,
+      isDone: null == isDone
+          ? _value.isDone
+          : isDone // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -133,8 +167,10 @@ class _$_GroceryModel with DiagnosticableTreeMixin implements _GroceryModel {
   const _$_GroceryModel(
       {required this.id,
       required this.name,
+      required this.imageUrl,
       required this.category,
-      required this.notes});
+      required this.notes,
+      this.isDone = false});
 
   factory _$_GroceryModel.fromJson(Map<String, dynamic> json) =>
       _$$_GroceryModelFromJson(json);
@@ -144,13 +180,18 @@ class _$_GroceryModel with DiagnosticableTreeMixin implements _GroceryModel {
   @override
   final String name;
   @override
+  final String imageUrl;
+  @override
   final String category;
   @override
   final String notes;
+  @override
+  @JsonKey()
+  final bool isDone;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'GroceryModel(id: $id, name: $name, category: $category, notes: $notes)';
+    return 'GroceryModel(id: $id, name: $name, imageUrl: $imageUrl, category: $category, notes: $notes, isDone: $isDone)';
   }
 
   @override
@@ -160,8 +201,10 @@ class _$_GroceryModel with DiagnosticableTreeMixin implements _GroceryModel {
       ..add(DiagnosticsProperty('type', 'GroceryModel'))
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('name', name))
+      ..add(DiagnosticsProperty('imageUrl', imageUrl))
       ..add(DiagnosticsProperty('category', category))
-      ..add(DiagnosticsProperty('notes', notes));
+      ..add(DiagnosticsProperty('notes', notes))
+      ..add(DiagnosticsProperty('isDone', isDone));
   }
 
   @override
@@ -171,14 +214,18 @@ class _$_GroceryModel with DiagnosticableTreeMixin implements _GroceryModel {
             other is _$_GroceryModel &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
+            (identical(other.imageUrl, imageUrl) ||
+                other.imageUrl == imageUrl) &&
             (identical(other.category, category) ||
                 other.category == category) &&
-            (identical(other.notes, notes) || other.notes == notes));
+            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.isDone, isDone) || other.isDone == isDone));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, category, notes);
+  int get hashCode =>
+      Object.hash(runtimeType, id, name, imageUrl, category, notes, isDone);
 
   @JsonKey(ignore: true)
   @override
@@ -198,8 +245,10 @@ abstract class _GroceryModel implements GroceryModel {
   const factory _GroceryModel(
       {required final String id,
       required final String name,
+      required final String imageUrl,
       required final String category,
-      required final String notes}) = _$_GroceryModel;
+      required final String notes,
+      final bool isDone}) = _$_GroceryModel;
 
   factory _GroceryModel.fromJson(Map<String, dynamic> json) =
       _$_GroceryModel.fromJson;
@@ -209,9 +258,13 @@ abstract class _GroceryModel implements GroceryModel {
   @override
   String get name;
   @override
+  String get imageUrl;
+  @override
   String get category;
   @override
   String get notes;
+  @override
+  bool get isDone;
   @override
   @JsonKey(ignore: true)
   _$$_GroceryModelCopyWith<_$_GroceryModel> get copyWith =>

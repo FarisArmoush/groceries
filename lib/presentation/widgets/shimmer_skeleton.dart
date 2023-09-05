@@ -8,8 +8,8 @@ class ShimmerSkeleton extends StatelessWidget {
     super.key,
   });
 
-  final double height;
-  final double width;
+  final double? height;
+  final double? width;
   final BorderRadiusGeometry? borderRadius;
 
   @override

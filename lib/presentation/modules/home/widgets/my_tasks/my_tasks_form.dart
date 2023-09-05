@@ -6,16 +6,10 @@ class MyTasksForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<MyTasksBloc, MyTasksState>(
-      builder: (context, state) {
-        if (state is MyTasksInitial) {
-          return const MyTasksShimmeredRail();
-        }
-        if (state is MyTasksLoaded) {
-          return MyTasksRail(
-            tasks: state.myTasks,
-          );
-        }
-        return const SizedBox.shrink();
+      builder: (context, state) => switch (state) {
+        MyTasksInitial() => const MyTasksShimmeredRail(),
+        MyTasksLoaded() => MyTasksRail(tasks: state.myTasks),
+        _ => const SizedBox.shrink(),
       },
     );
   }

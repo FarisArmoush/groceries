@@ -7,8 +7,6 @@ class MemberCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: CachedImage(
-        imageUrl:
-            'https://letsenhance.io/static/15912da66660b919112b5dfc9f562f6f/f90fb/SC.jpg',
         width: context.deviceWidth * 0.12,
       ),
       title: const Text('Faris Armoush'),

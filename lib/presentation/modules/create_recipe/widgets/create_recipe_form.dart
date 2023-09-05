@@ -5,8 +5,6 @@ part of '../create_recipe.dart';
 class CreateRecipeForm extends StatelessWidget {
   const CreateRecipeForm({super.key});
   static const _horizontalPadding = 24.0;
-  static const _placeHolderImage =
-      'https://static.photocdn.pt/images/articles/2018/12/05/articles/2017_8/beginner_photography_mistakes-1.webp';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +23,7 @@ class CreateRecipeForm extends StatelessWidget {
             height: context.deviceHeight * 0.02,
           ),
           CachedImageWithEditButton(
-            imageUrl: _placeHolderImage,
+            imageUrl: mockImage,
             onPressed: () => showModalBottomSheet<UploadImageBottomSheet>(
               context: context,
               elevation: 0,

@@ -29,10 +29,14 @@ class GroceryListDetailsView extends StatelessWidget {
           GroceryListOptionsButton(),
         ],
       ),
-      // TEMPORARY: Until connected with bloc and firestore.
-      body: false ? const EmptyGroceryList() : const GroceryListDetailsForm(),
-      floatingActionButton:
-          false ? const SizedBox.shrink() : const GroceryListDetailsFab(),
+      body: listModel.items.isEmpty
+          ? const EmptyGroceryList()
+          : GroceryListDetailsForm(
+              listModel: listModel,
+            ),
+      floatingActionButton: listModel.items.isEmpty
+          ? const SizedBox.shrink()
+          : const GroceryListDetailsFab(),
     );
   }
 }

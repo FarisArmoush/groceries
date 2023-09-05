@@ -34,6 +34,7 @@ part 'widgets/grocery_lists/grocery_lists_list.dart';
 part 'widgets/grocery_lists/grocery_lists_rail.dart';
 part 'widgets/grocery_lists/grocery_lists_rail_header.dart';
 part 'widgets/grocery_lists/grocery_lists_shimmered_rail.dart';
+part 'widgets/grocery_lists/reload_grocery_lists_column.dart';
 part 'widgets/grocery_lists/you_have_no_grocery_lists.dart';
 part 'widgets/home_header.dart';
 part 'widgets/my_tasks/my_tasks_card.dart';

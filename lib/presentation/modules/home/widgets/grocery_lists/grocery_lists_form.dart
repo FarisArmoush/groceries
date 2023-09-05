@@ -7,15 +7,12 @@ class GroceryListsForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<GroceryListsBloc, GroceryListsState>(
       builder: (context, state) {
-        if (state is GroceryListsInitial) {
-          return const GroceryListsShimmeredRail();
-        }
-        if (state is GroceryListsLoaded) {
-          return GroceryListsRail(
-            lists: state.lists,
-          );
-        }
-        return const SizedBox.shrink();
+        return switch (state) {
+          GroceryListsLoading() => const GroceryListsShimmeredRail(),
+          GroceryListsLoaded() => GroceryListsRail(lists: state.lists),
+          GroceryListsFailed() => ReloadGroceryListsColumn(error: state.error),
+          _ => const SizedBox.shrink(),
+        };
       },
     );
   }

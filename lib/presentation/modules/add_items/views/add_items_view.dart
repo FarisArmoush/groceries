@@ -31,6 +31,7 @@ class AddItemsView extends StatelessWidget {
               name: _list[index],
               category: _list[index],
               notes: _list[index],
+              imageUrl: _list[index],
             ),
           ),
           separatorBuilder: (context, index) {
