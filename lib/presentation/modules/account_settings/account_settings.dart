@@ -18,7 +18,6 @@ part 'widgets/edit_user_image_button.dart';
 part 'widgets/is_user_verified_list_tile.dart';
 part 'widgets/logout_bottom_sheet.dart';
 part 'widgets/logout_button.dart';
-part 'widgets/request_to_delete_account_button.dart';
 part 'widgets/user_creation_meta_data_list_tile.dart';
 part 'widgets/user_display_name_list_tile.dart';
 part 'widgets/user_email_list_tile.dart';

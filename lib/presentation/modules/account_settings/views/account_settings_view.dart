@@ -43,7 +43,23 @@ class AccountSettingsView extends StatelessWidget {
           SizedBox(
             height: context.deviceHeight * 0.05,
           ),
-          const RequestToDeleteAccountButton(),
+          FilledButton(
+            onPressed: () async {
+              unawaited(
+                showDialog<AppLoadingIndicator>(
+                  context: context,
+                  builder: (context) => const AppLoadingIndicator(),
+                ),
+              );
+              await Future.delayed(
+                500.milliseconds,
+                () => context
+                  ..pop()
+                  ..pushNamed(AppNamedRoutes.deleteAccount),
+              );
+            },
+            child: Text(AppTranslations.deleteAccount.deleteAccount),
+          ),
         ],
       ),
     );
