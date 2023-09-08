@@ -13,20 +13,17 @@ class GroceryListsList extends StatelessWidget {
       itemCount: lists.length,
       padding: const EdgeInsets.symmetric(vertical: 4),
       itemBuilder: (context, index) {
-        return LeftFadeInAnimation(
-          duration: (500 + (index * 200)).milliseconds,
-          child: GroceryListCard(
-            listModel: GroceryListModel(
-              uid: lists[index].uid,
-              name: lists[index].name,
-              imageUrl: lists[index].imageUrl,
-              items: lists[index].items,
-              members: lists[index].members,
-            ),
-            onTap: () => context.pushNamed(
-              AppNamedRoutes.groceryListDetails,
-              extra: lists[index],
-            ),
+        return GroceryListCard(
+          listModel: GroceryListModel(
+            uid: lists[index].uid,
+            name: lists[index].name,
+            imageUrl: lists[index].imageUrl,
+            items: lists[index].items,
+            members: lists[index].members,
+          ),
+          onTap: () => context.pushNamed(
+            AppNamedRoutes.groceryListDetails,
+            extra: lists[index],
           ),
         );
       },

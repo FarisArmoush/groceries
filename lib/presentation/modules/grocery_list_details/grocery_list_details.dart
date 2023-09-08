@@ -1,18 +1,28 @@
 library grocery_list_details;
 
+import 'package:collection/collection.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
+import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/presentation/widgets/widgets.dart';
+import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 part 'views/grocery_list_details_view.dart';
+part 'widgets/clear_grocery_list_items_bottom_sheet.dart';
+part 'widgets/clear_grocery_list_items_button.dart';
 part 'widgets/empty_grocery_list.dart';
+part 'widgets/groceries_box_header.dart';
+part 'widgets/groceries_box_list.dart';
+part 'widgets/groceries_list.dart';
+part 'widgets/grocery_item_details_bottom_sheet.dart';
 part 'widgets/grocery_list_details_fab.dart';
 part 'widgets/grocery_list_details_form.dart';
 part 'widgets/grocery_list_options_bottom_sheet.dart';

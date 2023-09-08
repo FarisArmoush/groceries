@@ -5,18 +5,16 @@ class LoginForgotPasswordButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LeftFadeInAnimation(
-      child: Row(
-        children: [
-          const Spacer(),
-          TextButton(
-            child: Text(
-              AppTranslations.forgotPassword.forgotPassword,
-            ),
-            onPressed: () => context.pushNamed(AppNamedRoutes.forgotPassword),
+    return Row(
+      children: [
+        const Spacer(),
+        TextButton(
+          child: Text(
+            AppTranslations.forgotPassword.forgotPassword,
           ),
-        ],
-      ),
+          onPressed: () => context.pushNamed(AppNamedRoutes.forgotPassword),
+        ),
+      ],
     );
   }
 }

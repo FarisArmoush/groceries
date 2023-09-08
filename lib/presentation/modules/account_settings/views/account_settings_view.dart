@@ -7,9 +7,7 @@ class AccountSettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: FadeInAnimation(
-          child: Text(AppTranslations.accountSettings.accountSettings),
-        ),
+        title: Text(AppTranslations.accountSettings.accountSettings),
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(
@@ -20,7 +18,9 @@ class AccountSettingsView extends StatelessWidget {
         children: [
           const UserImage(),
           const EditUserImageButton(),
-          SizedBox(height: context.deviceHeight * 0.02),
+          SizedBox(
+            height: context.deviceHeight * 0.02,
+          ),
           const UserDisplayNameListTile(),
           SizedBox(
             height: context.deviceHeight * 0.01,
@@ -41,7 +41,23 @@ class AccountSettingsView extends StatelessWidget {
           SizedBox(
             height: context.deviceHeight * 0.05,
           ),
-          const RequestToDeleteAccountButton(),
+          FilledButton(
+            onPressed: () async {
+              unawaited(
+                showDialog<AppLoadingIndicator>(
+                  context: context,
+                  builder: (context) => const AppLoadingIndicator(),
+                ),
+              );
+              await Future.delayed(
+                500.milliseconds,
+                () => context
+                  ..pop()
+                  ..pushNamed(AppNamedRoutes.deleteAccount),
+              );
+            },
+            child: Text(AppTranslations.deleteAccount.deleteAccount),
+          ),
         ],
       ),
     );

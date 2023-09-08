@@ -24,32 +24,23 @@ class WelcomeView extends StatelessWidget {
             SizedBox(
               height: context.deviceHeight * 0.09,
             ),
-            _navigateToRegisterButton(context),
+            FilledButton(
+              child: Text(AppTranslations.register.register),
+              onPressed: () {
+                context.pushReplacementNamed(AppNamedRoutes.register);
+              },
+            ),
             SizedBox(
               height: context.deviceHeight * 0.01,
             ),
-            _navigateToLoginButton(context),
+            OutlinedButton(
+              child: Text(AppTranslations.login.login),
+              onPressed: () {
+                context.pushReplacementNamed(AppNamedRoutes.login);
+              },
+            ),
           ],
         ),
-      ),
-    );
-  }
-
-  UpFadeInAnimation _navigateToLoginButton(BuildContext context) {
-    return UpFadeInAnimation(
-      duration: 1000.milliseconds,
-      child: OutlinedButton(
-        child: Text(AppTranslations.login.login),
-        onPressed: () => context.pushReplacementNamed(AppNamedRoutes.login),
-      ),
-    );
-  }
-
-  UpFadeInAnimation _navigateToRegisterButton(BuildContext context) {
-    return UpFadeInAnimation(
-      child: FilledButton(
-        child: Text(AppTranslations.register.register),
-        onPressed: () => context.pushReplacementNamed(AppNamedRoutes.register),
       ),
     );
   }

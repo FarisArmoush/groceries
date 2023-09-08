@@ -6,7 +6,7 @@ class AppBlocObserver extends BlocObserver {
   @override
   void onCreate(BlocBase bloc) {
     super.onCreate(bloc);
-    dev.log(
+    developer.log(
       'onCreate -- ${bloc.runtimeType}',
       name: bloc.runtimeType.toString(),
     );
@@ -15,13 +15,16 @@ class AppBlocObserver extends BlocObserver {
   @override
   void onEvent(Bloc bloc, Object? event) {
     super.onEvent(bloc, event);
-    dev.log('onEvent -- ${bloc.runtimeType}, $event');
+    developer.log(
+      'onEvent -- ${bloc.runtimeType}, $event',
+      name: bloc.runtimeType.toString(),
+    );
   }
 
   @override
   void onChange(BlocBase bloc, Change change) {
     super.onChange(bloc, change);
-    dev.log(
+    developer.log(
       'onChange -- ${bloc.runtimeType}, $change',
       name: bloc.runtimeType.toString(),
     );
@@ -30,7 +33,7 @@ class AppBlocObserver extends BlocObserver {
   @override
   void onTransition(Bloc bloc, Transition transition) {
     super.onTransition(bloc, transition);
-    dev.log(
+    developer.log(
       'onTransition -- ${bloc.runtimeType}, $transition',
       name: bloc.runtimeType.toString(),
     );
@@ -38,9 +41,10 @@ class AppBlocObserver extends BlocObserver {
 
   @override
   void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
-    dev.log(
+    developer.log(
       'onError -- ${bloc.runtimeType}, $error',
       error: error,
+      name: bloc.runtimeType.toString(),
       stackTrace: stackTrace,
     );
     super.onError(bloc, error, stackTrace);
@@ -49,6 +53,9 @@ class AppBlocObserver extends BlocObserver {
   @override
   void onClose(BlocBase bloc) {
     super.onClose(bloc);
-    dev.log('onClose -- ${bloc.runtimeType}');
+    developer.log(
+      'onClose -- ${bloc.runtimeType}',
+      name: bloc.runtimeType.toString(),
+    );
   }
 }

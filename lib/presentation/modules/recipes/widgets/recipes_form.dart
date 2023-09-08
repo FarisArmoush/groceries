@@ -6,16 +6,12 @@ class RecipesForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<RecipesBloc, RecipesState>(
-      builder: (context, state) {
-        if (state is RecipesInitial) {
-          return const ShimmeredRecipesList();
-        }
-        if (state is RecipesLoaded && state.recipes.isEmpty) {
-          return const YouHaveNoRecipes();
-        } else if (state is RecipesLoaded) {
-          return RecipesList(recipes: state.recipes);
-        }
-        return const SizedBox.shrink();
+      builder: (context, state) => switch (state) {
+        RecipesInitial() => const ShimmeredRecipesList(),
+        RecipesLoaded() => state.recipes.isEmpty
+            ? const YouHaveNoRecipes()
+            : RecipesList(recipes: state.recipes),
+        _ => const SizedBox.shrink(),
       },
     );
   }

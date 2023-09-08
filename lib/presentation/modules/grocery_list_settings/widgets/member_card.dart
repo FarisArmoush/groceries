@@ -7,8 +7,6 @@ class MemberCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: CachedImage(
-        imageUrl:
-            'https://letsenhance.io/static/15912da66660b919112b5dfc9f562f6f/f90fb/SC.jpg',
         width: context.deviceWidth * 0.12,
       ),
       title: const Text('Faris Armoush'),
@@ -16,11 +14,14 @@ class MemberCard extends StatelessWidget {
         'fariskarmoush@gmail.com',
       ),
       trailing: IconButton(
-        onPressed: () => showModalBottomSheet<RemoveListMemberBottomSheet>(
+        onPressed: () => showModalBottomSheet<CancelBottomSheet>(
           showDragHandle: true,
           elevation: 0,
           context: context,
-          builder: (context) => const RemoveListMemberBottomSheet(),
+          builder: (context) => CancelBottomSheet(
+            title: AppTranslations.groceryListSettings.removeMemberFromList,
+            onCancel: () => context.pop(),
+          ),
         ),
         icon: Assets.svg.icUserX.svg(
           color: context.theme.hintColor,

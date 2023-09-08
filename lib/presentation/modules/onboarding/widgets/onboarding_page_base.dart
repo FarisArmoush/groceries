@@ -1,27 +1,23 @@
-part of '../onborading.dart';
+part of '../onboarding.dart';
 
-class BaseOnboardingPage extends StatelessWidget {
-  const BaseOnboardingPage({
-    required this.illustrationPath,
-    required this.title,
-    required this.body,
-    required this.backgroundColor,
+class OnboardingPageBase extends StatelessWidget {
+  const OnboardingPageBase({
+    required this.onboardingPageModel,
     super.key,
   });
-
-  final String illustrationPath;
-  final String title;
-  final String body;
-  final Color backgroundColor;
+  final OnboardingPageModel onboardingPageModel;
 
   @override
   Widget build(BuildContext context) {
     return ColoredBox(
-      color: backgroundColor,
+      color: onboardingPageModel.backgroundColor,
       child: Column(
         children: [
           const Spacer(),
-          SvgPicture.asset(illustrationPath).symmetricPadding(horizontal: 16),
+          SvgPicture.asset(onboardingPageModel.illustrationPath)
+              .symmetricPadding(
+            horizontal: 16,
+          ),
           const Spacer(),
           Container(
             width: double.infinity,
@@ -31,7 +27,7 @@ class BaseOnboardingPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  title,
+                  onboardingPageModel.title,
                   style: TextStyle(
                     fontFamily: AppFonts.semiBold(context),
                     color: context.theme.primaryColor,
@@ -42,7 +38,7 @@ class BaseOnboardingPage extends StatelessWidget {
                   height: 16,
                 ),
                 Text(
-                  body,
+                  onboardingPageModel.body,
                   style: TextStyle(
                     fontFamily: AppFonts.regular(context),
                     color: context.theme.hintColor,

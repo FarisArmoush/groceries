@@ -10,38 +10,11 @@ class VerifyUserForm extends StatelessWidget {
         title: Text(AppTranslations.verifyAccount.verifyAccount),
       ),
       body: BlocBuilder<VerifyUserCubit, VerifyUserState>(
-        builder: (context, state) {
-          if (state is VerificationLoading) {
-            return const LoadingSendingVerificationEmail();
-          }
-          if (state is VerifiedSuccessfully) {
-            return const VerificationEmailSentSuccessfully();
-          }
-          if (state is VerificationFailed) {
-            return const FailedToSendVerificationEmail();
-          }
-          return Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Assets.svg.illBirdWatching.svg(
-                  height: context.deviceHeight * 0.3,
-                ),
-                SizedBox(
-                  height: context.deviceHeight * 0.03,
-                ),
-                Text(
-                  AppTranslations.verifyAccount.sendVerificationEmail,
-                  style: context.theme.dialogTheme.titleTextStyle,
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(
-                  height: context.deviceHeight * 0.03,
-                ),
-                const SendVerificationEmailButton(),
-              ],
-            ),
-          );
+        builder: (context, state) => switch (state) {
+          VerifyUserInitial() => const VerifyUserInitialBody(),
+          VerificationLoading() => const LoadingSendingVerificationEmail(),
+          VerifiedSuccessfully() => const VerificationEmailSentSuccessfully(),
+          VerificationFailed() => const FailedToSendVerificationEmail(),
         },
       ),
     );

@@ -8,12 +8,10 @@ class GroceryListsShimmeredRail extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        LeftFadeInAnimation(
-          child: ShimmerSkeleton(
-            height: context.deviceHeight * 0.015,
-            width: context.deviceWidth * 0.4,
-            borderRadius: BorderRadius.circular(16),
-          ),
+        ShimmerSkeleton(
+          height: context.deviceHeight * 0.015,
+          width: context.deviceWidth * 0.4,
+          borderRadius: BorderRadius.circular(16),
         ),
         SizedBox(height: context.deviceHeight * 0.03),
         ListView.separated(
@@ -22,10 +20,7 @@ class GroceryListsShimmeredRail extends StatelessWidget {
           itemCount: 3,
           padding: const EdgeInsets.symmetric(vertical: 4),
           itemBuilder: (context, index) {
-            return LeftFadeInAnimation(
-              duration: (500 + (index * 200)).milliseconds,
-              child: const GroceryListShimmeredCard(),
-            );
+            return const GroceryListShimmeredCard();
           },
           separatorBuilder: (context, index) {
             return SizedBox(

@@ -20,7 +20,7 @@ part of 'widgets.dart';
 class CachedImage extends StatelessWidget {
   /// {@macro cached_image}
   const CachedImage({
-    this.imageUrl = _initialImage,
+    this.imageUrl = mockImage,
     this.height,
     this.width,
     this.boxFit = BoxFit.cover,
@@ -28,8 +28,6 @@ class CachedImage extends StatelessWidget {
     this.borderRadius,
     super.key,
   });
-  static const _initialImage =
-      'https://images.unsplash.com/photo-1575936123452-b67c3203c357?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW1hZ2V8ZW58MHx8MHx8fDA%3D&w=1000&q=80';
 
   /// The URL of the image to display.
   final String imageUrl;
@@ -73,7 +71,11 @@ class CachedImage extends StatelessWidget {
         );
       },
       progressIndicatorBuilder: (context, url, progress) {
-        return const AppLoadingIndicator();
+        return ShimmerSkeleton(
+          height: height,
+          width: width,
+          borderRadius: borderRadius,
+        );
       },
       errorWidget: (context, url, error) {
         return Assets.svg.icCircleX.svg(

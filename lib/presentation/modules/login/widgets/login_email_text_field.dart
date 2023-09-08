@@ -5,25 +5,21 @@ class LoginEmailTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LeftFadeInAnimation(
-      duration: 1000.milliseconds,
-      child: BlocBuilder<LoginCubit, LoginState>(
-        buildWhen: (previous, current) => previous.email != current.email,
-        builder: (context, state) {
-          return AppTextField(
-            prefixIcon: Assets.svg.icMail.svg(
-              color: context.theme.inputDecorationTheme.prefixIconColor,
-              fit: BoxFit.scaleDown,
-            ),
-            onChanged: (email) =>
-                context.read<LoginCubit>().emailChanged(email),
-            keyboardType: TextInputType.emailAddress,
-            labelText: AppTranslations.general.email,
-            errorText: state.email.displayError,
-            validator: (value) => state.email.validator(value),
-          );
-        },
-      ),
+    return BlocBuilder<LoginCubit, LoginState>(
+      buildWhen: (previous, current) => previous.email != current.email,
+      builder: (context, state) {
+        return AppTextField(
+          prefixIcon: Assets.svg.icMail.svg(
+            color: context.theme.inputDecorationTheme.prefixIconColor,
+            fit: BoxFit.scaleDown,
+          ),
+          onChanged: (email) => context.read<LoginCubit>().emailChanged(email),
+          keyboardType: TextInputType.emailAddress,
+          labelText: AppTranslations.general.email,
+          errorText: state.email.displayError,
+          validator: (value) => state.email.validator(value),
+        );
+      },
     );
   }
 }

@@ -1,4 +1,3 @@
-// ignore_for_file: dead_code
 part of '../grocery_list_details.dart';
 
 class GroceryListDetailsView extends StatelessWidget {
@@ -27,12 +26,17 @@ class GroceryListDetailsView extends StatelessWidget {
         ),
         actions: const [
           GroceryListOptionsButton(),
+          ClearGroceryListItemsButton(),
         ],
       ),
-      // TEMPORARY: Until connected with bloc and firestore.
-      body: false ? const EmptyGroceryList() : const GroceryListDetailsForm(),
-      floatingActionButton:
-          false ? const SizedBox.shrink() : const GroceryListDetailsFab(),
+      body: listModel.items.isEmpty
+          ? const EmptyGroceryList()
+          : GroceryListDetailsForm(
+              listModel: listModel,
+            ),
+      floatingActionButton: listModel.items.isEmpty
+          ? const SizedBox.shrink()
+          : const GroceryListDetailsFab(),
     );
   }
 }

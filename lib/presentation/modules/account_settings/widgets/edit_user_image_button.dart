@@ -6,6 +6,12 @@ class EditUserImageButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton.icon(
+      icon: Assets.svg.icEdit.svg(
+        color: context.theme.primaryColorLight,
+      ),
+      label: Text(
+        AppTranslations.accountSettings.editUserImage,
+      ),
       onPressed: () => showModalBottomSheet<UploadImageBottomSheet>(
         context: context,
         showDragHandle: true,
@@ -15,10 +21,6 @@ class EditUserImageButton extends StatelessWidget {
           onUploadPhoto: () {},
         ),
       ),
-      icon: Assets.svg.icEdit.svg(
-        color: context.theme.primaryColorLight,
-      ),
-      label: Text(AppTranslations.accountSettings.editUserImage),
     );
   }
 }

@@ -3,7 +3,7 @@ import 'package:groceries/data/models/recipe_model/recipe_model.dart';
 
 class RecipesDataSource {
   Future<List<RecipeModel>> fetchRecipes() async {
-    final recipes = [
+    final recipes = <RecipeModel>[
       const RecipeModel(
         uid: '123',
         name: 'Vegetables Salad',
@@ -15,30 +15,35 @@ class RecipesDataSource {
             name: 'Carrots',
             category: 'Fruits and Vegetables',
             notes: '2 KG',
+            imageUrl: '',
           ),
           GroceryModel(
             id: 'asFDE[JOMI]',
             name: 'Cucumbers',
             category: 'Fruits and Vegetables',
             notes: '2 KG',
+            imageUrl: '',
           ),
           GroceryModel(
             id: 'asFDE[JOMI]',
             name: 'Tomatoes',
             category: 'Fruits and Vegetables',
             notes: '2 KG',
+            imageUrl: '',
           ),
           GroceryModel(
             id: 'asFDE[JOMI]',
             name: 'Eggplants',
             category: 'Fruits and Vegetables',
             notes: '2 KG',
+            imageUrl: '',
           ),
           GroceryModel(
             id: 'asFDE[JOMI]',
             name: 'Parsley',
             category: 'Fruits and Vegetables',
             notes: '2 KG',
+            imageUrl: '',
           ),
         ],
       ),
@@ -52,6 +57,7 @@ class RecipesDataSource {
             id: 'asFDE[JOMI]',
             name: 'Eggs',
             category: 'Dairy',
+            imageUrl: '',
             notes: '5 eggs',
           ),
         ],
@@ -66,11 +72,12 @@ class RecipesDataSource {
             id: 'asFDE[JOMI]',
             name: 'Beef Patty',
             category: 'Meats',
+            imageUrl: '',
             notes: '1 KG',
           ),
         ],
       ),
-    ];
+    ]..sort((a, b) => a.name.compareTo(b.name));
     return recipes;
   }
 

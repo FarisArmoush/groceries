@@ -6,32 +6,11 @@ class ForgotPasswordForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocListener<ForgotPasswordCubit, ForgotPasswordState>(
-      listener: (context, state) {
-        if (state.status.isSuccess) {
-          context.pushReplacementNamed(
-            AppNamedRoutes.resetPasswordSentSuccessfully,
-          );
-        }
-        if (state.status.isFailure) {
-          context.pop();
-          ScaffoldMessenger.of(context).showSnackBar(
-            AppSnackBars.error(
-              error: state.errorMessage ?? 'Failed to send',
-            ),
-          );
-        }
-        if (state.status.isInProgress) {
-          showDialog<AppLoadingIndicator>(
-            context: context,
-            builder: (context) => const AppLoadingIndicator(),
-            barrierDismissible: false,
-          );
-        }
-      },
+      listener: _listener,
       child: SafeArea(
         top: false,
         child: Scaffold(
-          appBar: _appBar(context),
+          appBar: AppBar(),
           body: ListView(
             padding: const EdgeInsets.symmetric(
               horizontal: 24,
@@ -58,14 +37,26 @@ class ForgotPasswordForm extends StatelessWidget {
     );
   }
 
-  AppBar _appBar(BuildContext context) {
-    return AppBar(
-      leading: BackButton(
-        onPressed: () => showDialog<CancelForgotPasswordDialog>(
-          context: context,
-          builder: (context) => const CancelForgotPasswordDialog(),
+  void _listener(BuildContext context, ForgotPasswordState state) {
+    if (state.status.isSuccess) {
+      context.pushReplacementNamed(
+        AppNamedRoutes.resetPasswordSentSuccessfully,
+      );
+    }
+    if (state.status.isFailure) {
+      context.pop();
+      ScaffoldMessenger.of(context).showSnackBar(
+        AppSnackBars.error(
+          error: state.errorMessage ?? 'Failed to send',
         ),
-      ),
-    );
+      );
+    }
+    if (state.status.isInProgress) {
+      showDialog<AppLoadingIndicator>(
+        context: context,
+        builder: (context) => const AppLoadingIndicator(),
+        barrierDismissible: false,
+      );
+    }
   }
 }

@@ -12,13 +12,11 @@ class LegalListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FadeInAnimation(
-      child: ListTile(
-        onTap: onTap,
-        title: Text(title),
-        tileColor: Colors.transparent,
-        trailing: const NextArrowIcon(),
-      ),
+    return ListTile(
+      onTap: onTap,
+      title: Text(title),
+      tileColor: Colors.transparent,
+      trailing: const NextArrowIcon(),
     );
   }
 }

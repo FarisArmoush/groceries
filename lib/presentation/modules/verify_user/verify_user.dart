@@ -19,3 +19,4 @@ part 'widgets/loading_sending_verification_email.dart';
 part 'widgets/send_verification_email_button.dart';
 part 'widgets/verification_email_sent_successfully.dart';
 part 'widgets/verify_user_form.dart';
+part 'widgets/verify_user_initial_body.dart';

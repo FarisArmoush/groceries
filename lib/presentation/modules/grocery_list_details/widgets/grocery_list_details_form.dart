@@ -1,30 +1,27 @@
 part of '../grocery_list_details.dart';
 
 class GroceryListDetailsForm extends StatelessWidget {
-  const GroceryListDetailsForm({super.key});
+  const GroceryListDetailsForm({
+    required this.listModel,
+    super.key,
+  });
+
+  final GroceryListModel listModel;
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
+    return ListView(
+      primary: true,
       physics: const BouncingScrollPhysics(),
-      slivers: [
-        SliverList.builder(
-          itemCount: 100,
-          itemBuilder: (context, index) {
-            return SizedBox(
-              width: context.deviceWidth,
-              child: Center(
-                child: Text('$index'),
-              ),
-            );
-          },
+      children: [
+        SizedBox(
+          height: context.deviceHeight * 0.02,
         ),
-
-        // This is spacing for the add items [FloatingActionButton]
-        SliverToBoxAdapter(
-          child: SizedBox(
-            height: context.deviceHeight * 0.1,
-          ),
+        GroceriesList(
+          listModel: listModel,
+        ),
+        SizedBox(
+          height: context.deviceHeight * 0.1,
         ),
       ],
     );

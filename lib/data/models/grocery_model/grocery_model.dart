@@ -9,8 +9,10 @@ class GroceryModel with _$GroceryModel {
   const factory GroceryModel({
     required String id,
     required String name,
+    required String imageUrl,
     required String category,
     required String notes,
+    @Default(false) bool isDone,
   }) = _GroceryModel;
 
   factory GroceryModel.fromJson(Map<String, Object?> json) =>

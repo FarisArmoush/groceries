@@ -7,17 +7,13 @@ class RecipesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: FadeInAnimation(
-          child: Text(AppTranslations.recipes.recipes),
-        ),
+        title: Text(AppTranslations.recipes.recipes),
         leading: const SizedBox.shrink(),
         actions: [
-          FadeInAnimation(
-            child: IconButton(
-              onPressed: () => context.pushNamed(AppNamedRoutes.createRecipe),
-              icon: Assets.svg.icPlusCircle.svg(
-                color: context.theme.primaryColorLight,
-              ),
+          IconButton(
+            onPressed: () => context.pushNamed(AppNamedRoutes.createRecipe),
+            icon: Assets.svg.icPlusCircle.svg(
+              color: context.theme.primaryColorLight,
             ),
           ),
         ],

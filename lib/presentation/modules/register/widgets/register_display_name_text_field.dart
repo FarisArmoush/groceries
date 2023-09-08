@@ -5,27 +5,24 @@ class RegisterDisplayNameTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LeftFadeInAnimation(
-      duration: 1000.milliseconds,
-      child: BlocBuilder<RegisterCubit, RegisterState>(
-        buildWhen: (previous, current) {
-          return previous.displayName != current.displayName;
-        },
-        builder: (context, state) {
-          return AppTextField(
-            onChanged: (name) =>
-                context.read<RegisterCubit>().displayNameChanged(name),
-            prefixIcon: Assets.svg.icUser.svg(
-              color: context.theme.inputDecorationTheme.prefixIconColor,
-              fit: BoxFit.scaleDown,
-            ),
-            keyboardType: TextInputType.name,
-            labelText: AppTranslations.general.username,
-            errorText: state.displayName.displayError,
-            validator: (value) => state.displayName.validator(value),
-          );
-        },
-      ),
+    return BlocBuilder<RegisterCubit, RegisterState>(
+      buildWhen: (previous, current) {
+        return previous.displayName != current.displayName;
+      },
+      builder: (context, state) {
+        return AppTextField(
+          onChanged: (name) =>
+              context.read<RegisterCubit>().displayNameChanged(name),
+          prefixIcon: Assets.svg.icUser.svg(
+            color: context.theme.inputDecorationTheme.prefixIconColor,
+            fit: BoxFit.scaleDown,
+          ),
+          keyboardType: TextInputType.name,
+          labelText: AppTranslations.general.username,
+          errorText: state.displayName.displayError,
+          validator: (value) => state.displayName.validator(value),
+        );
+      },
     );
   }
 }
