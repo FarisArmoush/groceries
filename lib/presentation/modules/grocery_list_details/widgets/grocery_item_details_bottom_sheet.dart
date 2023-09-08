@@ -16,7 +16,25 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
         horizontal: 16,
       ),
       children: [
-        _nameAndDoneButtonRow(context),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              groceryModel.name,
+              style: TextStyle(
+                fontFamily: AppFonts.regular(context),
+                color: context.theme.primaryColor,
+                fontSize: 18,
+              ),
+            ),
+            TextButton(
+              child: Text(
+                AppTranslations.general.close,
+              ),
+              onPressed: () => context.pop(),
+            ),
+          ],
+        ),
         SizedBox(
           height: context.deviceHeight * 0.015,
         ),
@@ -29,19 +47,45 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
         SizedBox(
           height: context.deviceHeight * 0.02,
         ),
-        if (groceryModel.imageUrl.isNotEmpty)
-          _image(context)
-        else
-          _addImageButton(context),
-        SizedBox(
-          height: context.deviceHeight * 0.02,
-        ),
-        OutlinedButton.icon(
-          onPressed: () => context.pop(),
-          icon: Assets.svg.icTrash.svg(
-            color: context.theme.primaryColor,
+        if (groceryModel.imageUrl.isNotEmpty) ...[
+          CachedImage(
+            height: context.deviceHeight * 0.3,
+            width: double.infinity,
+            boxShape: BoxShape.rectangle,
+            borderRadius: BorderRadius.circular(16),
+            imageUrl: groceryModel.imageUrl,
           ),
-          label: const Text('Remove Item'),
+          SizedBox(
+            height: context.deviceHeight * 0.02,
+          ),
+          BottomSheetButton(
+            text: 'Remove Image',
+            iconPath: Assets.svg.icImage.path,
+            onTap: () {},
+          ),
+        ] else
+          BottomSheetButton(
+            text: 'Add Image',
+            iconPath: Assets.svg.icImage.path,
+            onTap: () => showModalBottomSheet<UploadImageBottomSheet>(
+              context: context,
+              elevation: 0,
+              showDragHandle: true,
+              builder: (context) => UploadImageBottomSheet(
+                onTakePhoto: () {},
+                onUploadPhoto: () {},
+              ),
+            ),
+          ),
+        BottomSheetButton(
+          text: 'Remove Item',
+          iconPath: Assets.svg.icTrash.path,
+          onTap: () {},
+        ),
+        BottomSheetButton(
+          text: 'Mark as done',
+          iconPath: Assets.svg.icDoubleCheck.path,
+          onTap: () {},
         ),
         SizedBox(
           height: context.deviceHeight * 0.02,
@@ -56,68 +100,6 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
       borderSide: BorderSide(
         color: context.theme.primaryColorLight,
       ),
-    );
-  }
-
-  ElevatedButton _addImageButton(BuildContext context) {
-    return ElevatedButton(
-      onPressed: () => showModalBottomSheet<UploadImageBottomSheet>(
-        context: context,
-        elevation: 0,
-        showDragHandle: true,
-        builder: (context) => UploadImageBottomSheet(
-          onTakePhoto: () {},
-          onUploadPhoto: () {},
-        ),
-      ),
-      child: const Text('Add Image'),
-    );
-  }
-
-  Row _nameAndDoneButtonRow(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          groceryModel.name,
-          style: TextStyle(
-            color: context.theme.primaryColor,
-            fontSize: 24,
-            fontFamily: AppFonts.semiBold(context),
-          ),
-        ),
-        TextButton(
-          onPressed: () => context.pop(),
-          style: TextButton.styleFrom(
-            foregroundColor: context.theme.primaryColor,
-          ),
-          child: Text(AppTranslations.general.done),
-        ),
-      ],
-    );
-  }
-
-  Stack _image(BuildContext context) {
-    return Stack(
-      alignment: AlignmentDirectional.topEnd,
-      children: [
-        CachedImage(
-          height: context.deviceHeight * 0.3,
-          width: double.infinity,
-          boxShape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(16),
-          imageUrl: groceryModel.imageUrl,
-        ),
-        CircleAvatar(
-          backgroundColor: AppColors.black.withOpacity(0.8),
-          child: IconButton(
-            onPressed: () {},
-            icon: Assets.svg.icTrash.svg(
-              color: AppColors.white,
-            ),
-          ),
-        ).allPadding(8),
-      ],
     );
   }
 }

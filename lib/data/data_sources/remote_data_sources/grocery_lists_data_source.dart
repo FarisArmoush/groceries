@@ -107,7 +107,7 @@ class GroceryListsDataSource {
           ),
         ],
       ),
-    ];
+    ]..sort((a, b) => a.name.compareTo(b.name));
     return lists;
   }
 

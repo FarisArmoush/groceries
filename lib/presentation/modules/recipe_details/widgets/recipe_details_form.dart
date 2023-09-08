@@ -12,7 +12,7 @@ class RecipeDetailsForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(recipeModel.name),
+        // title: Text(recipeModel.name),
         actions: [
           IconButton(
             onPressed: () {},
@@ -35,15 +35,23 @@ class RecipeDetailsForm extends StatelessWidget {
           horizontal: 12,
         ),
         children: [
-          Hero(
-            tag: recipeModel.uid,
-            child: CachedImage(
-              imageUrl: recipeModel.imageUrl,
-              height: context.deviceHeight * 0.3,
-              width: context.deviceWidth,
-              boxShape: BoxShape.rectangle,
-              borderRadius: BorderRadius.circular(12),
+          Text(
+            recipeModel.name,
+            style: TextStyle(
+              color: context.theme.primaryColor,
+              fontFamily: AppFonts.semiBold(context),
+              fontSize: 28,
             ),
+          ),
+          SizedBox(
+            height: context.deviceHeight * 0.01,
+          ),
+          CachedImage(
+            imageUrl: recipeModel.imageUrl,
+            height: context.deviceHeight * 0.3,
+            width: context.deviceWidth,
+            boxShape: BoxShape.rectangle,
+            borderRadius: BorderRadius.circular(12),
           ),
           SizedBox(
             height: context.deviceHeight * 0.05,
