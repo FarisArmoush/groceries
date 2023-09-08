@@ -15,7 +15,7 @@ import 'package:groceries/presentation/modules/grocery_list_details/grocery_list
 import 'package:groceries/presentation/modules/grocery_list_settings/grocery_list_settings.dart';
 import 'package:groceries/presentation/modules/home/home.dart';
 import 'package:groceries/presentation/modules/login/login.dart';
-import 'package:groceries/presentation/modules/onboarding/onborading.dart';
+import 'package:groceries/presentation/modules/onboarding/onboarding.dart';
 import 'package:groceries/presentation/modules/page_not_found/page_not_found.dart';
 import 'package:groceries/presentation/modules/recipe_details/recipe_details.dart';
 import 'package:groceries/presentation/modules/recipes/recipes.dart';
@@ -28,6 +28,7 @@ import 'package:groceries/presentation/modules/update_email/update_email.dart';
 import 'package:groceries/presentation/modules/verify_user/verify_user.dart';
 import 'package:groceries/presentation/modules/welcome/welcome.dart';
 import 'package:groceries/presentation/modules/wrapper/wrapper.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 /// A class that defines the routes and builders for the App.
 class AppGoRouter {
@@ -42,6 +43,16 @@ class AppGoRouter {
         name: AppNamedRoutes.wrapper,
         path: '/',
         builder: (context, state) => const WrapperView(),
+        redirect: (context, state) async {
+          final sharedPreferences = await SharedPreferences.getInstance();
+
+          final hasViewedOnboarding =
+              sharedPreferences.getBool('hasViewedOnboarding');
+          if (hasViewedOnboarding == false || hasViewedOnboarding == null) {
+            return '/${AppNamedRoutes.onboarding}';
+          }
+          return null;
+        },
       ),
       GoRoute(
         name: AppNamedRoutes.onboarding,

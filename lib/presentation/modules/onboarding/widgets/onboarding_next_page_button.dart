@@ -1,4 +1,4 @@
-part of '../onborading.dart';
+part of '../onboarding.dart';
 
 class OnboardingNextPageButton extends StatelessWidget {
   const OnboardingNextPageButton({
@@ -10,16 +10,14 @@ class OnboardingNextPageButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FadeInAnimation(
-      child: FloatingActionButton.small(
-        tooltip: AppTranslations.onboarding.nextPage,
-        onPressed: () => controller.nextPage(
-          curve: Curves.easeInOut,
-          duration: 1000.milliseconds,
-        ),
-        child: const NextArrowIcon(
-          color: AppColors.white,
-        ),
+    return FloatingActionButton.small(
+      tooltip: AppTranslations.onboarding.nextPage,
+      onPressed: () => controller.nextPage(
+        curve: Curves.ease,
+        duration: 500.milliseconds,
+      ),
+      child: const NextArrowIcon(
+        color: AppColors.white,
       ),
     );
   }
