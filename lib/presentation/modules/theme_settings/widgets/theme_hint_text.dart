@@ -5,14 +5,12 @@ class ThemeHintText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FadeInAnimation(
-      child: Text(
-        AppTranslations.theme.themeHint,
-        style: TextStyle(
-          fontFamily: AppFonts.light(context),
-          color: context.theme.hintColor,
-          fontSize: 12,
-        ),
+    return Text(
+      AppTranslations.theme.themeHint,
+      style: TextStyle(
+        fontFamily: AppFonts.light(context),
+        color: context.theme.hintColor,
+        fontSize: 12,
       ),
     );
   }

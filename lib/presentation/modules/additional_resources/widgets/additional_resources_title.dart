@@ -7,14 +7,12 @@ class AdditionalResourcesTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FadeInAnimation(
-      child: Text(
-        text,
-        style: TextStyle(
-          fontFamily: AppFonts.medium(context),
-          color: context.theme.primaryColor,
-          fontSize: 18,
-        ),
+    return Text(
+      text,
+      style: TextStyle(
+        fontFamily: AppFonts.medium(context),
+        color: context.theme.primaryColor,
+        fontSize: 18,
       ),
     );
   }

@@ -5,34 +5,26 @@ class LoginButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LeftFadeInAnimation(
-      duration: 700.milliseconds,
-      child: BlocBuilder<LoginCubit, LoginState>(
-        builder: (context, state) {
-          if (state.status.isInProgress) {
-            // An untapable button with a loading indicator.
-            return IgnorePointer(
-              child: FilledButton.icon(
-                onPressed: () {},
-                icon: const ButtonsLoadingIndicator(),
-                label: _text(),
-              ),
-            );
-          }
-          return FilledButton(
-            onPressed:
-                state.isValid ? () => context.read<LoginCubit>().login() : null,
-            child: _text(),
+    return BlocBuilder<LoginCubit, LoginState>(
+      builder: (context, state) {
+        if (state.status.isInProgress) {
+          // An untapable button with a loading indicator.
+          return IgnorePointer(
+            child: FilledButton.icon(
+              onPressed: () {},
+              icon: const ButtonsLoadingIndicator(),
+              label: _text(),
+            ),
           );
-        },
-      ),
+        }
+        return FilledButton(
+          onPressed:
+              state.isValid ? () => context.read<LoginCubit>().login() : null,
+          child: _text(),
+        );
+      },
     );
   }
 
-  Widget _text() {
-    return FadeInAnimation(
-      duration: 200.milliseconds,
-      child: Text(AppTranslations.login.login),
-    );
-  }
+  Widget _text() => Text(AppTranslations.login.login);
 }

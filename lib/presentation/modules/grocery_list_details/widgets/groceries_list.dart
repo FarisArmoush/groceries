@@ -21,22 +21,19 @@ class GroceriesList extends StatelessWidget {
       itemBuilder: (context, index) {
         final category = itemsGroupedByCategory.keys.elementAt(index);
         final categoryItems = itemsGroupedByCategory[category];
-        return FadeInAnimation(
-          duration: 500.milliseconds,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              GroceriesBoxHeader(
-                category: category,
-                assetPath: Assets.svg.icAlertTriangle.path,
-              ),
-              GroceriesBoxList(
-                index: index,
-                list: categoryItems,
-              ),
-            ],
-          ),
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            GroceriesBoxHeader(
+              category: category,
+              assetPath: Assets.svg.icAlertTriangle.path,
+            ),
+            GroceriesBoxList(
+              index: index,
+              list: categoryItems,
+            ),
+          ],
         );
       },
       separatorBuilder: (context, _) {

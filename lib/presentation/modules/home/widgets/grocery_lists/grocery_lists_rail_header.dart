@@ -8,16 +8,12 @@ class GroceryListsRailHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        LeftFadeInAnimation(
-          child: RailTitle(title: AppTranslations.home.myLists),
-        ),
-        RightFadeInAnimation(
-          child: TextButton.icon(
-            label: Text(AppTranslations.createGroceryList.createNewList),
-            onPressed: () => context.pushNamed(AppNamedRoutes.createList),
-            icon: Assets.svg.icPlusCircle.svg(
-              color: context.theme.primaryColorLight,
-            ),
+        RailTitle(title: AppTranslations.home.myLists),
+        TextButton.icon(
+          label: Text(AppTranslations.createGroceryList.createNewList),
+          onPressed: () => context.pushNamed(AppNamedRoutes.createList),
+          icon: Assets.svg.icPlusCircle.svg(
+            color: context.theme.primaryColorLight,
           ),
         ),
       ],

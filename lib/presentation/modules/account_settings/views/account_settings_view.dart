@@ -7,9 +7,7 @@ class AccountSettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: FadeInAnimation(
-          child: Text(AppTranslations.accountSettings.accountSettings),
-        ),
+        title: Text(AppTranslations.accountSettings.accountSettings),
       ),
       body: ListView(
         padding: const EdgeInsets.symmetric(

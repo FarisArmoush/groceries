@@ -13,10 +13,7 @@ class ShimmeredRecipesList extends StatelessWidget {
       ),
       itemCount: 5,
       itemBuilder: (context, index) {
-        return LeftFadeInAnimation(
-          duration: (500 + (index + 100)).milliseconds,
-          child: const ShimmeredRecipeCard(),
-        );
+        return const ShimmeredRecipeCard();
       },
       separatorBuilder: (context, index) {
         return SizedBox(

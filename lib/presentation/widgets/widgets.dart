@@ -15,11 +15,6 @@ import 'package:groceries/utils/extenstions/app_extensions.dart';
 import 'package:shimmer/shimmer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-part 'animations/down_fade_in_animation.dart';
-part 'animations/fade_in_animation.dart';
-part 'animations/left_fade_in_animation.dart';
-part 'animations/right_fade_in_animation.dart';
-part 'animations/up_fade_in_animation.dart';
 part 'app_bottom_navigation_bar.dart';
 part 'app_loading_indicator.dart';
 part 'app_snack_bars.dart';

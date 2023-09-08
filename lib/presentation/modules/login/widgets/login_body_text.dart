@@ -5,15 +5,12 @@ class LoginBodyText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LeftFadeInAnimation(
-      duration: 1100.milliseconds,
-      child: Text(
-        AppTranslations.login.loginBody,
-        style: TextStyle(
-          fontFamily: AppFonts.regular(context),
-          color: context.theme.primaryColor,
-          fontSize: 22,
-        ),
+    return Text(
+      AppTranslations.login.loginBody,
+      style: TextStyle(
+        fontFamily: AppFonts.regular(context),
+        color: context.theme.primaryColor,
+        fontSize: 22,
       ),
     );
   }

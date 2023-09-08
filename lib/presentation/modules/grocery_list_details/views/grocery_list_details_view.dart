@@ -12,25 +12,21 @@ class GroceryListDetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: FadeInAnimation(
-          child: Row(
-            children: [
-              Icon(
-                CupertinoIcons.bag,
-                color: context.theme.primaryColor,
-              ),
-              SizedBox(
-                width: context.deviceWidth * 0.02,
-              ),
-              Text(listModel.name),
-            ],
-          ),
+        title: Row(
+          children: [
+            Icon(
+              CupertinoIcons.bag,
+              color: context.theme.primaryColor,
+            ),
+            SizedBox(
+              width: context.deviceWidth * 0.02,
+            ),
+            Text(listModel.name),
+          ],
         ),
-        actions: [
-          FadeInAnimation(
-            child: const GroceryListOptionsButton(),
-          ),
-          const ClearGroceryListItemsButton(),
+        actions: const [
+          GroceryListOptionsButton(),
+          ClearGroceryListItemsButton(),
         ],
       ),
       body: listModel.items.isEmpty

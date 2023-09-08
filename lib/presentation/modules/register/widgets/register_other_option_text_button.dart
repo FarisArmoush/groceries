@@ -5,13 +5,11 @@ class RegisterOtherOptionTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LeftFadeInAnimation(
-      duration: 600.milliseconds,
-      child: OtherOptionTextButton(
-        upperText: AppTranslations.register.alreadyHaveAnAccount,
-        lowerText: AppTranslations.register.loginNow,
-        onTap: () => context.pushNamed(AppNamedRoutes.login),
-      ),
+    // TODO(Faris): add to form.
+    return OtherOptionTextButton(
+      upperText: AppTranslations.register.alreadyHaveAnAccount,
+      lowerText: AppTranslations.register.loginNow,
+      onTap: () => context.pushNamed(AppNamedRoutes.login),
     );
   }
 }

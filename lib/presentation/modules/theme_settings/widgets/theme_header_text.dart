@@ -5,14 +5,12 @@ class ThemeHeaderText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FadeInAnimation(
-      child: Text(
-        AppTranslations.theme.themeHeader,
-        style: TextStyle(
-          fontFamily: AppFonts.medium(context),
-          color: context.theme.primaryColor,
-          fontSize: 12,
-        ),
+    return Text(
+      AppTranslations.theme.themeHeader,
+      style: TextStyle(
+        fontFamily: AppFonts.medium(context),
+        color: context.theme.primaryColor,
+        fontSize: 12,
       ),
     );
   }

@@ -14,10 +14,8 @@ class MyTasksRail extends StatelessWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       children: [
-        LeftFadeInAnimation(
-          child: RailTitle(
-            title: AppTranslations.home.myTasks,
-          ),
+        RailTitle(
+          title: AppTranslations.home.myTasks,
         ),
         SizedBox(
           height: tasks.isNotEmpty

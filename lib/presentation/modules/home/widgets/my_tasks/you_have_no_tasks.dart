@@ -5,28 +5,26 @@ class YouHaveNoTasks extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return UpFadeInAnimation(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Assets.svg.illBirdWatching.svg(
-            height: context.deviceHeight * 0.2,
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Assets.svg.illBirdWatching.svg(
+          height: context.deviceHeight * 0.2,
+        ),
+        SizedBox(
+          height: context.deviceHeight * 0.015,
+        ),
+        Text(
+          AppTranslations.home.youDontHaveTasks,
+          style: TextStyle(
+            fontFamily: AppFonts.medium(context),
+            fontSize: 16,
+            color: context.theme.primaryColor,
           ),
-          SizedBox(
-            height: context.deviceHeight * 0.015,
-          ),
-          Text(
-            AppTranslations.home.youDontHaveTasks,
-            style: TextStyle(
-              fontFamily: AppFonts.medium(context),
-              fontSize: 16,
-              color: context.theme.primaryColor,
-            ),
-            textAlign: TextAlign.center,
-          ),
-        ],
-      ),
+          textAlign: TextAlign.center,
+        ),
+      ],
     );
   }
 }

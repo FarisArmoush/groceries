@@ -17,24 +17,22 @@ class _SwitchListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FadeInAnimation(
-      child: BlocBuilder<SendCrashReportsCubit, bool>(
-        builder: (context, state) {
-          return SwitchListTile.adaptive(
-            value: state,
-            onChanged: (_) => context.read<SendCrashReportsCubit>().toggle(),
-            inactiveTrackColor: AppColors.black,
-            activeColor: context.theme.primaryColorLight,
-            inactiveThumbColor: AppColors.veryLightGrey,
-            activeTrackColor: AppColors.veryLightGrey,
-            tileColor: Colors.transparent,
-            title: Text(AppTranslations.additionalResources.sendCrashReports),
-            subtitle: Text(
-              AppTranslations.additionalResources.sendCrashReportsDescription,
-            ),
-          );
-        },
-      ),
+    return BlocBuilder<SendCrashReportsCubit, bool>(
+      builder: (context, state) {
+        return SwitchListTile.adaptive(
+          value: state,
+          onChanged: (_) => context.read<SendCrashReportsCubit>().toggle(),
+          inactiveTrackColor: AppColors.black,
+          activeColor: context.theme.primaryColorLight,
+          inactiveThumbColor: AppColors.veryLightGrey,
+          activeTrackColor: AppColors.veryLightGrey,
+          tileColor: Colors.transparent,
+          title: Text(AppTranslations.additionalResources.sendCrashReports),
+          subtitle: Text(
+            AppTranslations.additionalResources.sendCrashReportsDescription,
+          ),
+        );
+      },
     );
   }
 }

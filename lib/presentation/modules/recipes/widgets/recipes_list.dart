@@ -17,19 +17,16 @@ class RecipesList extends StatelessWidget {
       ),
       itemCount: recipes.length,
       itemBuilder: (context, index) {
-        return LeftFadeInAnimation(
-          duration: (500 + (index + 100)).milliseconds,
-          child: RecipeCard(
-            recipeModel: RecipeModel(
-              uid: recipes[index].uid,
-              name: recipes[index].name,
-              imageUrl: recipes[index].imageUrl,
-              items: recipes[index].items,
-            ),
-            onTap: () => context.pushNamed(
-              AppNamedRoutes.recipeDetails,
-              extra: recipes[index],
-            ),
+        return RecipeCard(
+          recipeModel: RecipeModel(
+            uid: recipes[index].uid,
+            name: recipes[index].name,
+            imageUrl: recipes[index].imageUrl,
+            items: recipes[index].items,
+          ),
+          onTap: () => context.pushNamed(
+            AppNamedRoutes.recipeDetails,
+            extra: recipes[index],
           ),
         );
       },

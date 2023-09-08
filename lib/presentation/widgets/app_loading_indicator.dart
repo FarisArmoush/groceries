@@ -5,10 +5,8 @@ class AppLoadingIndicator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FadeInAnimation(
-      child: CircularProgressIndicator(
-        color: context.theme.primaryColorLight,
-      ),
+    return CircularProgressIndicator(
+      color: context.theme.primaryColorLight,
     ).centered();
   }
 }

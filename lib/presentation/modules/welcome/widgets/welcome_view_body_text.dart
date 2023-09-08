@@ -5,16 +5,14 @@ class WelcomeViewBodyText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LeftFadeInAnimation(
-      child: Text(
-        AppTranslations.welcome.welcomeBody,
-        style: TextStyle(
-          fontFamily: AppFonts.regular(context),
-          color: context.theme.primaryColor.withOpacity(0.9),
-          fontSize: 20,
-        ),
-        textAlign: TextAlign.start,
+    return Text(
+      AppTranslations.welcome.welcomeBody,
+      style: TextStyle(
+        fontFamily: AppFonts.regular(context),
+        color: context.theme.primaryColor.withOpacity(0.9),
+        fontSize: 20,
       ),
+      textAlign: TextAlign.start,
     );
   }
 }

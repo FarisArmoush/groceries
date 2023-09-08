@@ -15,15 +15,12 @@ class MyTasksList extends StatelessWidget {
       shrinkWrap: true,
       physics: const BouncingScrollPhysics(),
       itemBuilder: (context, index) {
-        return LeftFadeInAnimation(
-          duration: (500 + (index * 200)).milliseconds,
-          child: MyTasksCard(
-            taskModel: TaskModel(
-              uid: tasks[index].uid,
-              listModel: tasks[index].listModel,
-              dueDate: tasks[index].dueDate,
-              groceries: tasks[index].groceries,
-            ),
+        return MyTasksCard(
+          taskModel: TaskModel(
+            uid: tasks[index].uid,
+            listModel: tasks[index].listModel,
+            dueDate: tasks[index].dueDate,
+            groceries: tasks[index].groceries,
           ),
         );
       },

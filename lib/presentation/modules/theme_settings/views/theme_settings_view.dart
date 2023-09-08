@@ -7,10 +7,7 @@ class ThemeSettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: FadeInAnimation(
-          duration: 550.milliseconds,
-          child: Text(AppTranslations.theme.theme),
-        ),
+        title: Text(AppTranslations.theme.theme),
       ),
       body: ListView(
         physics: const BouncingScrollPhysics(),
