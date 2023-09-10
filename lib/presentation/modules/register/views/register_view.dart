@@ -5,7 +5,7 @@ class RegisterView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<RegisterCubit>(
+    return BlocProvider(
       create: (context) => RegisterCubit(
         context.read<RegisterWithEmailAndPasswordUseCase>(),
       ),

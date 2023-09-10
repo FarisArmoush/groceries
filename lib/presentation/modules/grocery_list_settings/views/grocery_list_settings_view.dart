@@ -5,7 +5,7 @@ class GroceryListSettingsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<GroceryListSettingsBloc>(
+    return BlocProvider(
       create: (context) => GroceryListSettingsBloc(),
       child: const GroceryListForm(),
     );

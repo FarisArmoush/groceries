@@ -1,28 +1,28 @@
-// ignore_for_file: deprecated_member_use
 part of '../root.dart';
 
-class RootForm extends StatefulWidget {
+class RootForm extends StatelessWidget {
   const RootForm({super.key});
 
   @override
-  State<RootForm> createState() => _RootFormState();
-}
-
-class _RootFormState extends State<RootForm> {
-  int currentIndex = 0;
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: _views[currentIndex],
-      bottomNavigationBar: AppBottomNavigationBar(
-        currentIndex: currentIndex,
-        onTap: (index) => setState(() => currentIndex = index),
-        items: _bnb(context),
-      ),
+    return BlocBuilder<RootNavigationCubit, RootNavigationState>(
+      buildWhen: (previous, current) => previous.index != current.index,
+      builder: (context, state) {
+        return Scaffold(
+          body: _views[state.index],
+          bottomNavigationBar: AppBottomNavigationBar(
+            currentIndex: state.index,
+            onTap: (index) {
+              context.read<RootNavigationCubit>().navigateToIndex(index);
+            },
+            items: _bnb(context),
+          ),
+        );
+      },
     );
   }
 
-  static const List<Widget> _views = [
+  static const _views = <Widget>[
     HomeView(),
     RecipesView(),
     SettingsView(),
@@ -32,20 +32,20 @@ class _RootFormState extends State<RootForm> {
       _bnbItem(
         context,
         label: AppTranslations.home.home,
-        icon: Assets.svg.icHouse.path,
-        activeIcon: Assets.svg.icHouseFilled.path,
+        iconPath: Assets.svg.icHouse.path,
+        activeIconPath: Assets.svg.icHouseFilled.path,
       ),
       _bnbItem(
         context,
         label: AppTranslations.recipes.recipes,
-        icon: Assets.svg.icCookingPot.path,
-        activeIcon: Assets.svg.icCookingPotFilled.path,
+        iconPath: Assets.svg.icCookingPot.path,
+        activeIconPath: Assets.svg.icCookingPotFilled.path,
       ),
       _bnbItem(
         context,
         label: AppTranslations.settings.settings,
-        icon: Assets.svg.icGear.path,
-        activeIcon: Assets.svg.icGearFilled.path,
+        iconPath: Assets.svg.icGear.path,
+        activeIconPath: Assets.svg.icGearFilled.path,
       ),
     ];
   }
@@ -53,18 +53,20 @@ class _RootFormState extends State<RootForm> {
   AppBottomNavigationBarItem _bnbItem(
     BuildContext context, {
     required String label,
-    required String icon,
-    required String activeIcon,
+    required String iconPath,
+    required String activeIconPath,
   }) {
     return AppBottomNavigationBarItem(
       icon: SvgPicture.asset(
-        icon,
+        iconPath,
+        // ignore: deprecated_member_use
         color: context.theme.hintColor,
         height: context.deviceHeight * 0.03,
       ),
       title: Text(label),
       activeIcon: SvgPicture.asset(
-        activeIcon,
+        activeIconPath,
+        // ignore: deprecated_member_use
         color: context.theme.primaryColor,
         height: context.deviceHeight * 0.03,
       ),
