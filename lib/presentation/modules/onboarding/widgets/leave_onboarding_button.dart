@@ -12,8 +12,7 @@ class LeaveOnboardingButton extends StatelessWidget {
       backgroundColor: context.theme.primaryColorLight,
       onPressed: () async {
         context.pushReplacementNamed(AppNamedRoutes.welcome);
-        final sharedPreferences = await SharedPreferences.getInstance();
-        await sharedPreferences.setBool('hasViewedOnboarding', true);
+        await context.read<OnboardingCubit>().markOnboardingAsViewed();
       },
     );
   }
