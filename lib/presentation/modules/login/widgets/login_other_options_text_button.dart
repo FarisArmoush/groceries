@@ -5,7 +5,6 @@ class LoginOtherOptionsTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO(Faris): Add to form
     return OtherOptionTextButton(
       upperText: AppTranslations.login.dontHaveAnAccount,
       lowerText: AppTranslations.login.registerNow,

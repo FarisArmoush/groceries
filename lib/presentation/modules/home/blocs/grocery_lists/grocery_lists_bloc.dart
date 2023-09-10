@@ -15,7 +15,7 @@ class GroceryListsBloc extends Bloc<GroceryListsEvent, GroceryListsState> {
     try {
       final lists = await _groceryListsUseCase.fetchMyGroceryLists();
       await Future.delayed(
-        2.seconds,
+        500.milliseconds,
         () {
           emit(
             GroceryListsLoaded(

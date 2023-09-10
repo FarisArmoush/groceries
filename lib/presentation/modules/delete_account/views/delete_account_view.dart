@@ -5,7 +5,7 @@ class DeleteAccountView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<DeleteAccountCubit>(
+    return BlocProvider(
       create: (context) => DeleteAccountCubit(
         context.read<DeleteAccountUseCase>(),
       ),

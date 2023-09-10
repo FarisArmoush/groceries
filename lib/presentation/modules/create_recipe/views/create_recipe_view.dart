@@ -5,7 +5,7 @@ class CreateRecipeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<CreateRecipeBloc>(
+    return BlocProvider(
       create: (context) => CreateRecipeBloc(),
       child: const CreateRecipeForm(),
     );

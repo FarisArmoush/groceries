@@ -12,7 +12,7 @@ class MyTasksBloc extends Bloc<MyTasksEvent, MyTasksState> {
   ) async {
     final myTasks = await _myTasksUseCase.fetchMyTasks();
     await Future.delayed(
-      2.seconds,
+      500.milliseconds,
       () => emit(MyTasksLoaded(myTasks: myTasks)),
     );
   }

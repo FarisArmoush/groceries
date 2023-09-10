@@ -5,7 +5,7 @@ class SendCrashReportsSwitchTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<SendCrashReportsCubit>(
+    return BlocProvider(
       create: (context) => SendCrashReportsCubit(),
       child: const _SwitchListTile(),
     );
