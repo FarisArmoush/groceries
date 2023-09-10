@@ -8,9 +8,33 @@ class OnboardingForm extends StatefulWidget {
 }
 
 class _OnboardingFormState extends State<OnboardingForm> {
-  final pageController = PageController();
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<OnboardingCubit, OnboardingState>(
+      buildWhen: (previous, current) => previous.index != current.index,
+      builder: (context, state) {
+        final isLastPage = state.index == pages.length - 1;
+        return Scaffold(
+          body: PageView(
+            controller: state.pageController,
+            onPageChanged: (value) =>
+                context.read<OnboardingCubit>().setIndex(value),
+            children: List.generate(
+              pages.length,
+              (index) => OnboardingPageBase(
+                onboardingPageModel: pages[index],
+              ),
+            ),
+          ),
+          floatingActionButton: isLastPage
+              ? const LeaveOnboardingButton()
+              : const OnboardingNextPageButton(),
+        );
+      },
+    );
+  }
 
-  final List<OnboardingPageModel> pages = [
+  final pages = <OnboardingPageModel>[
     OnboardingPageModel(
       illustrationPath: Assets.svg.illCelebrating.path,
       title: AppTranslations.onboarding.onboardingFirstTitle,
@@ -30,31 +54,6 @@ class _OnboardingFormState extends State<OnboardingForm> {
       backgroundColor: Colors.blue,
     ),
   ];
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<OnboardingCubit, OnboardingState>(
-      buildWhen: (previous, current) => previous.index != current.index,
-      builder: (context, state) {
-        final isLastPage = state.index == pages.length - 1;
-        return Scaffold(
-          body: PageView(
-            controller: pageController,
-            onPageChanged: (value) =>
-                context.read<OnboardingCubit>().setIndex(value),
-            children: List.generate(
-              pages.length,
-              (index) => OnboardingPageBase(
-                onboardingPageModel: pages[index],
-              ),
-            ),
-          ),
-          floatingActionButton: isLastPage
-              ? const LeaveOnboardingButton()
-              : OnboardingNextPageButton(controller: pageController),
-        );
-      },
-    );
-  }
 }
 
 final class OnboardingPageModel {

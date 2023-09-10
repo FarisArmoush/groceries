@@ -1,18 +1,15 @@
 part of '../onboarding.dart';
 
 class OnboardingNextPageButton extends StatelessWidget {
-  const OnboardingNextPageButton({
-    required this.controller,
-    super.key,
-  });
-
-  final PageController controller;
+  const OnboardingNextPageButton({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final onboardingPageController =
+        context.watch<OnboardingCubit>().state.pageController;
     return FloatingActionButton.small(
       tooltip: AppTranslations.onboarding.nextPage,
-      onPressed: () => controller.nextPage(
+      onPressed: () => onboardingPageController.nextPage(
         curve: Curves.ease,
         duration: 500.milliseconds,
       ),
