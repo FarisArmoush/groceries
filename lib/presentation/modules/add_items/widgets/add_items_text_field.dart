@@ -40,6 +40,6 @@ class AddItemsTextField extends StatelessWidget {
         focusedBorder: InputBorder.none,
         focusedErrorBorder: InputBorder.none,
       ),
-    );
+    ).allPadding(16);
   }
 }

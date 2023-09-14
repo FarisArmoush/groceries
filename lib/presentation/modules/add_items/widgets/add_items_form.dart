@@ -18,8 +18,12 @@ class AddItemsForm extends StatelessWidget {
             height: context.deviceHeight * 0.04,
           ),
           const GroceryItemsList(),
+          SizedBox(
+            height: context.deviceHeight * 0.1,
+          ),
         ],
       ),
+      bottomSheet: const AddItemsTextField(),
     );
   }
 }
