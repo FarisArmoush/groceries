@@ -2,7 +2,7 @@ import 'package:groceries/data/models/task_model/task_model.dart';
 import 'package:groceries/domain/repositories/my_tasks_repository.dart';
 
 class MyTasksUseCase {
-  MyTasksUseCase(this._myTasksRepository);
+  const MyTasksUseCase(this._myTasksRepository);
 
   final MyTasksRepository _myTasksRepository;
 

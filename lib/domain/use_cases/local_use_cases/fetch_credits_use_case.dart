@@ -2,7 +2,7 @@ import 'package:groceries/data/models/credit_model/credit_model.dart';
 import 'package:groceries/domain/repositories/credits_repository.dart';
 
 class FetchCreditsUseCase {
-  FetchCreditsUseCase(this._creditsRepository);
+  const FetchCreditsUseCase(this._creditsRepository);
 
   final CreditsRepository _creditsRepository;
 

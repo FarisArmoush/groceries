@@ -2,7 +2,7 @@ import 'package:groceries/domain/repositories/authentication_repository.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 class FetchUserDataUseCase {
-  FetchUserDataUseCase(this._authenticationRepository);
+  const FetchUserDataUseCase(this._authenticationRepository);
 
   final AuthenticationRepository _authenticationRepository;
 

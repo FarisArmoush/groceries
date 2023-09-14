@@ -25,7 +25,12 @@ class CategoryBox extends StatelessWidget {
             horizontal: context.deviceWidth * 0.1,
           ),
           const CategoryBoxDivider(),
-          const CategoryBoxAddItemsButton(),
+          TextButton(
+            onPressed: () {},
+            child: Text(AppTranslations.addItems.addItems),
+          ).symmetricPadding(
+            horizontal: context.deviceWidth * 0.1,
+          ),
           const CategoryBoxDivider(),
         ],
       ),
