@@ -1,1 +1,0 @@
-class LogoutFailure implements Exception {}

@@ -18,8 +18,9 @@ class _SwitchListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SendCrashReportsCubit, bool>(
+      buildWhen: (previous, current) => previous != current,
       builder: (context, state) {
-        return SwitchListTile.adaptive(
+        return SwitchListTile(
           value: state,
           onChanged: (_) => context.read<SendCrashReportsCubit>().toggle(),
           inactiveTrackColor: AppColors.black,

@@ -1,7 +1,7 @@
 part of 'app_themes.dart';
 
-class __AppElevatedButtonThemeData {
-  __AppElevatedButtonThemeData._();
+class _AppElevatedButtonThemeData {
+  _AppElevatedButtonThemeData._();
 
   static ElevatedButtonThemeData light(BuildContext context) {
     return ElevatedButtonThemeData(

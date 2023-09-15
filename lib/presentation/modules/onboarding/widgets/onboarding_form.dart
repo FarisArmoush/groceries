@@ -18,7 +18,7 @@ class _OnboardingFormState extends State<OnboardingForm> {
           body: PageView(
             controller: state.pageController,
             onPageChanged: (value) =>
-                context.read<OnboardingCubit>().setIndex(value),
+                context.read<OnboardingCubit>().updateIndex(value),
             children: List.generate(
               pages.length,
               (index) => OnboardingPageBase(

@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/utils/forms/display_name_form.dart';
+import 'package:groceries/utils/forms/app_forms.dart';
 
 void main() {
   group('DisplayNameForm', () {

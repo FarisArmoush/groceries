@@ -20,9 +20,7 @@ This action will remove all items from your list, are you sure you want to proce
           height: context.deviceHeight * 0.03,
         ),
         FilledButton(
-          onPressed: () => context
-            ..pop()
-            ..pop(),
+          onPressed: () => context.pop(),
           child: const Text('Yes, Erase all items'),
         ),
         OutlinedButton(

@@ -50,12 +50,12 @@ class AppThemes {
         dialogTheme: _AppDialogThemeData.light(context),
         filledButtonTheme: _AppFilledButtonThemeData.light(context),
         outlinedButtonTheme: _AppOutlinedButtonThemeData.light(context),
-        elevatedButtonTheme: __AppElevatedButtonThemeData.light(context),
+        elevatedButtonTheme: _AppElevatedButtonThemeData.light(context),
         tabBarTheme: _AppTabBarThemeData.light(context),
         floatingActionButtonTheme:
             _AppFloatingActionButtonThemeData.light(context),
         dividerTheme: _AppDividerThemeData.light,
-        iconButtonTheme: __AppIconButtonThemeData.light,
+        iconButtonTheme: _AppIconButtonThemeData.light,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       );
 
@@ -85,11 +85,11 @@ class AppThemes {
         dialogTheme: _AppDialogThemeData.dark(context),
         filledButtonTheme: _AppFilledButtonThemeData.dark(context),
         outlinedButtonTheme: _AppOutlinedButtonThemeData.dark(context),
-        elevatedButtonTheme: __AppElevatedButtonThemeData.dark(context),
+        elevatedButtonTheme: _AppElevatedButtonThemeData.dark(context),
         tabBarTheme: _AppTabBarThemeData.dark(context),
         floatingActionButtonTheme:
             _AppFloatingActionButtonThemeData.dark(context),
         dividerTheme: _AppDividerThemeData.dark,
-        iconButtonTheme: __AppIconButtonThemeData.dark,
+        iconButtonTheme: _AppIconButtonThemeData.dark,
       );
 }

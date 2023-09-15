@@ -1,6 +1,6 @@
 part of 'app_themes.dart';
 
-class __AppIconButtonThemeData {
+class _AppIconButtonThemeData {
   static const light = IconButtonThemeData(
     style: ButtonStyle(
       splashFactory: _splashFactory,

@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:groceries/domain/repositories/authentication_repository.dart';
+import 'package:groceries/domain/repositories/repositories.dart';
 
 part 'authentication_event.dart';
 part 'authentication_state.dart';

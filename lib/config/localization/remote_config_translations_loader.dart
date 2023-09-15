@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 /// A custom [AssetLoader] implementation that loads translations
 /// from Firebase Remote Config.
 /// {@endtemplate}
-class RemoteConfigTranslationsLoader extends AssetLoader {
+final class RemoteConfigTranslationsLoader extends AssetLoader {
   /// {@macro remote_config_translations_loader}
   const RemoteConfigTranslationsLoader();
 

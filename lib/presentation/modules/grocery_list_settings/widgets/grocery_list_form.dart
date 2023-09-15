@@ -21,9 +21,20 @@ class GroceryListForm extends StatelessWidget {
           ),
           const GroceryListNameTextField(),
           SizedBox(
-            height: context.deviceHeight * 0.025,
+            height: context.deviceHeight * 0.035,
           ),
-          const ListMembersBox(),
+          Text(
+            AppTranslations.groceryListSettings.listMembers,
+            style: TextStyle(
+              fontFamily: AppFonts.regular(context),
+              color: context.theme.primaryColor,
+              fontSize: 16,
+            ),
+          ),
+          SizedBox(
+            height: context.deviceHeight * 0.01,
+          ),
+          const GroceryListMembers(),
           SizedBox(
             height: context.deviceHeight * 0.04,
           ),

@@ -7,23 +7,26 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiRepositoryProvider(
       providers: [
-        RepositoryProvider<AuthenticationDataSource>(
+        RepositoryProvider(
           create: (context) => AuthenticationDataSource(),
         ),
-        RepositoryProvider<CreditsDataSource>(
+        RepositoryProvider(
           create: (context) => CreditsDataSource(),
         ),
-        RepositoryProvider<RemoteConfigDataSource>(
+        RepositoryProvider(
           create: (context) => RemoteConfigDataSource(),
         ),
-        RepositoryProvider<GroceryListsDataSource>(
+        RepositoryProvider(
           create: (context) => GroceryListsDataSource(),
         ),
-        RepositoryProvider<MyTasksDataSource>(
+        RepositoryProvider(
           create: (context) => MyTasksDataSource(),
         ),
-        RepositoryProvider<RecipesDataSource>(
+        RepositoryProvider(
           create: (context) => RecipesDataSource(),
+        ),
+        RepositoryProvider(
+          create: (context) => BaseGroceriesDataSource(),
         ),
       ],
 
@@ -62,6 +65,11 @@ class App extends StatelessWidget {
                   context.read<RecipesDataSource>(),
                 ),
               ),
+              RepositoryProvider<BaseGroceriesRepository>(
+                create: (context) => BaseGroceriesRepositoryImpl(
+                  context.read<BaseGroceriesDataSource>(),
+                ),
+              ),
             ],
 
             /// USECASES PROVIDER
@@ -69,69 +77,74 @@ class App extends StatelessWidget {
               builder: (context) {
                 return MultiRepositoryProvider(
                   providers: [
-                    RepositoryProvider<FetchCreditsUseCase>(
+                    RepositoryProvider(
                       create: (context) => FetchCreditsUseCase(
                         context.read<CreditsRepository>(),
                       ),
                     ),
-                    RepositoryProvider<FetchAppVersionUseCase>(
+                    RepositoryProvider(
                       create: (context) => FetchAppVersionUseCase(
                         context.read<RemoteConfigRepository>(),
                       ),
                     ),
-                    RepositoryProvider<FetchUserDataUseCase>(
+                    RepositoryProvider(
                       create: (context) => FetchUserDataUseCase(
                         context.read<AuthenticationRepository>(),
                       ),
                     ),
-                    RepositoryProvider<GroceryListsUseCase>(
+                    RepositoryProvider(
                       create: (context) => GroceryListsUseCase(
                         context.read<GroceryListsRepository>(),
                       ),
                     ),
-                    RepositoryProvider<MyTasksUseCase>(
+                    RepositoryProvider(
                       create: (context) => MyTasksUseCase(
                         context.read<MyTasksRepository>(),
                       ),
                     ),
-                    RepositoryProvider<RecipesUseCase>(
+                    RepositoryProvider(
                       create: (context) => RecipesUseCase(
                         context.read<RecipesRepository>(),
                       ),
                     ),
-                    RepositoryProvider<DeleteAccountUseCase>(
+                    RepositoryProvider(
                       create: (context) => DeleteAccountUseCase(
                         context.read<AuthenticationRepository>(),
                       ),
                     ),
-                    RepositoryProvider<LoginWithEmailAndPasswordUseCase>(
+                    RepositoryProvider(
                       create: (context) => LoginWithEmailAndPasswordUseCase(
                         context.read<AuthenticationRepository>(),
                       ),
                     ),
-                    RepositoryProvider<RegisterWithEmailAndPasswordUseCase>(
+                    RepositoryProvider(
                       create: (context) => RegisterWithEmailAndPasswordUseCase(
                         context.read<AuthenticationRepository>(),
                       ),
                     ),
-                    RepositoryProvider<SendPasswordResetEmailUseCase>(
+                    RepositoryProvider(
                       create: (context) => SendPasswordResetEmailUseCase(
                         context.read<AuthenticationRepository>(),
                       ),
                     ),
-                    RepositoryProvider<UpdateDisplayNameUseCase>(
+                    RepositoryProvider(
                       create: (context) => UpdateDisplayNameUseCase(
                         context.read<AuthenticationRepository>(),
                       ),
                     ),
-                    RepositoryProvider<UpdateEmailUseCase>(
+                    RepositoryProvider(
                       create: (context) => UpdateEmailUseCase(
                         context.read<AuthenticationRepository>(),
                       ),
                     ),
-                    RepositoryProvider<VerifyUserUseCase>(
+                    RepositoryProvider(
                       create: (context) => VerifyUserUseCase(
                         context.read<AuthenticationRepository>(),
+                      ),
+                    ),
+                    RepositoryProvider(
+                      create: (context) => BaseGroceriesUseCase(
+                        context.read<BaseGroceriesRepository>(),
                       ),
                     ),
                   ],
