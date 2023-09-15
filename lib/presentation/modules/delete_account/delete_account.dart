@@ -7,11 +7,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/domain/use_cases/authentication_use_cases/delete_account_use_case.dart';
+import 'package:groceries/domain/use_cases/use_cases.dart';
 import 'package:groceries/presentation/widgets/widgets.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/exceptions/delete_account_exception.dart';
+import 'package:groceries/utils/exceptions/exceptions.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 part 'cubit/delete_account_cubit.dart';

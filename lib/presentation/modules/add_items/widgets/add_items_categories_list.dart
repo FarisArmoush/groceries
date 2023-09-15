@@ -6,7 +6,9 @@ class AddItemsCategoriesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AddItemsBloc, AddItemsState>(
-      buildWhen: (previous, current) => previous != current,
+      buildWhen: (previous, current) =>
+          previous.status != current.status ||
+          previous.selectedCategory != current.selectedCategory,
       builder: (context, state) => switch (state.status) {
         AddItemsStatus.initial => const AppLoadingIndicator(),
         AddItemsStatus.loading => const AppLoadingIndicator(),

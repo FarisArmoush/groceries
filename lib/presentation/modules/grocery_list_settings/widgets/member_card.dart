@@ -1,7 +1,9 @@
 part of '../grocery_list_settings.dart';
 
 class MemberCard extends StatelessWidget {
-  const MemberCard({super.key});
+  const MemberCard({required this.userModel, super.key});
+
+  final UserModel userModel;
 
   @override
   Widget build(BuildContext context) {
@@ -9,10 +11,8 @@ class MemberCard extends StatelessWidget {
       leading: CachedImage(
         width: context.deviceWidth * 0.12,
       ),
-      title: const Text('Faris Armoush'),
-      subtitle: const Text(
-        'fariskarmoush@gmail.com',
-      ),
+      title: Text(userModel.name),
+      subtitle: Text(userModel.email),
       trailing: IconButton(
         onPressed: () => showModalBottomSheet<CancelBottomSheet>(
           showDragHandle: true,

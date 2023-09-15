@@ -1,1 +1,0 @@
-class DeleteAccountException implements Exception {}

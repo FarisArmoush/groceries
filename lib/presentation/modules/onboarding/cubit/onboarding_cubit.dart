@@ -9,10 +9,10 @@ class OnboardingCubit extends Cubit<OnboardingState> {
           ),
         );
 
-  void setIndex(int value) {
+  void updateIndex(int index) {
     emit(
       OnboardingState(
-        index: value,
+        index: index,
         pageController: state.pageController,
       ),
     );

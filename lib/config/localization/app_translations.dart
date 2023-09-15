@@ -24,7 +24,7 @@ part 'strings/__verify_account.dart';
 part 'strings/__welcome.dart';
 
 /// This class provides translations for all app strings.
-abstract class AppTranslations {
+abstract final class AppTranslations {
   static _General general = _General();
 
   static _Onboarding onboarding = _Onboarding();

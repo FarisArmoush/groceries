@@ -6,7 +6,10 @@ class GroceryItemsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AddItemsBloc, AddItemsState>(
-      buildWhen: (previous, current) => previous.status != current.status,
+      buildWhen: (previous, current) {
+        return previous.status != current.status ||
+            previous.baseGroceries != current.baseGroceries;
+      },
       builder: (context, state) {
         return switch (state.status) {
           AddItemsStatus.loading => const AppLoadingIndicator(),

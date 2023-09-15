@@ -11,7 +11,9 @@ class PageNotFoundView extends StatelessWidget {
         children: [
           const Text('Page Not Found'),
           TextButton(
-            onPressed: () => context.pop(),
+            onPressed: () => context.pushReplacementNamed(
+              AppNamedRoutes.wrapper,
+            ),
             child: const Text('Go Back'),
           ),
         ],
