@@ -2,25 +2,24 @@
 
 // ignore_for_file: non_constant_identifier_names
 
-part of 'user_model.dart';
+part of 'category_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UserModel _$$_UserModelFromJson(Map<String, dynamic> json) => _$_UserModel(
-      uid: json['uid'] as String,
-      name: json['name'] as String,
-      email: json['email'] as String,
-      imageUrl: json['imageUrl'] as String,
+_$_CategoryModel _$$_CategoryModelFromJson(Map<String, dynamic> json) =>
+    _$_CategoryModel(
       creationDate: DateTime.parse(json['creationDate'] as String),
+      image: json['image'] as String,
+      name: json['name'] as String,
+      parentCategoryId: json['parentCategoryId'] as String?,
     );
 
-Map<String, dynamic> _$$_UserModelToJson(_$_UserModel instance) =>
+Map<String, dynamic> _$$_CategoryModelToJson(_$_CategoryModel instance) =>
     <String, dynamic>{
-      'uid': instance.uid,
-      'name': instance.name,
-      'email': instance.email,
-      'imageUrl': instance.imageUrl,
       'creationDate': instance.creationDate.toIso8601String(),
+      'image': instance.image,
+      'name': instance.name,
+      'parentCategoryId': instance.parentCategoryId,
     };

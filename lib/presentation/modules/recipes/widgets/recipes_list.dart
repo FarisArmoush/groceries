@@ -23,6 +23,7 @@ class RecipesList extends StatelessWidget {
             name: recipes[index].name,
             imageUrl: recipes[index].imageUrl,
             items: recipes[index].items,
+            creationDate: DateTime.timestamp(),
           ),
           onTap: () => context.pushNamed(
             AppNamedRoutes.recipeDetails,

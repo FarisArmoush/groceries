@@ -21,6 +21,7 @@ class MyTasksList extends StatelessWidget {
             listModel: tasks[index].listModel,
             dueDate: tasks[index].dueDate,
             groceries: tasks[index].groceries,
+            creationDate: tasks[index].creationDate,
           ),
         );
       },

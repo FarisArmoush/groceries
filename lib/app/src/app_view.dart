@@ -24,7 +24,7 @@ class AppView extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => RemoteConfigCubit(
-            context.read<FetchAppVersionUseCase>(),
+            context.read<RemoteConfigUseCase>(),
           ),
         ),
         BlocProvider(

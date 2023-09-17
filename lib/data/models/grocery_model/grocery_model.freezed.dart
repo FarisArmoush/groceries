@@ -25,6 +25,7 @@ mixin _$GroceryModel {
   String get imageUrl => throw _privateConstructorUsedError;
   String get category => throw _privateConstructorUsedError;
   String get notes => throw _privateConstructorUsedError;
+  DateTime get creationDate => throw _privateConstructorUsedError;
   bool get isDone => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -45,6 +46,7 @@ abstract class $GroceryModelCopyWith<$Res> {
       String imageUrl,
       String category,
       String notes,
+      DateTime creationDate,
       bool isDone});
 }
 
@@ -66,6 +68,7 @@ class _$GroceryModelCopyWithImpl<$Res, $Val extends GroceryModel>
     Object? imageUrl = null,
     Object? category = null,
     Object? notes = null,
+    Object? creationDate = null,
     Object? isDone = null,
   }) {
     return _then(_value.copyWith(
@@ -89,6 +92,10 @@ class _$GroceryModelCopyWithImpl<$Res, $Val extends GroceryModel>
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String,
+      creationDate: null == creationDate
+          ? _value.creationDate
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       isDone: null == isDone
           ? _value.isDone
           : isDone // ignore: cast_nullable_to_non_nullable
@@ -111,6 +118,7 @@ abstract class _$$_GroceryModelCopyWith<$Res>
       String imageUrl,
       String category,
       String notes,
+      DateTime creationDate,
       bool isDone});
 }
 
@@ -130,6 +138,7 @@ class __$$_GroceryModelCopyWithImpl<$Res>
     Object? imageUrl = null,
     Object? category = null,
     Object? notes = null,
+    Object? creationDate = null,
     Object? isDone = null,
   }) {
     return _then(_$_GroceryModel(
@@ -153,6 +162,10 @@ class __$$_GroceryModelCopyWithImpl<$Res>
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String,
+      creationDate: null == creationDate
+          ? _value.creationDate
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
       isDone: null == isDone
           ? _value.isDone
           : isDone // ignore: cast_nullable_to_non_nullable
@@ -170,6 +183,7 @@ class _$_GroceryModel with DiagnosticableTreeMixin implements _GroceryModel {
       required this.imageUrl,
       required this.category,
       required this.notes,
+      required this.creationDate,
       this.isDone = false});
 
   factory _$_GroceryModel.fromJson(Map<String, dynamic> json) =>
@@ -186,12 +200,14 @@ class _$_GroceryModel with DiagnosticableTreeMixin implements _GroceryModel {
   @override
   final String notes;
   @override
+  final DateTime creationDate;
+  @override
   @JsonKey()
   final bool isDone;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'GroceryModel(id: $id, name: $name, imageUrl: $imageUrl, category: $category, notes: $notes, isDone: $isDone)';
+    return 'GroceryModel(id: $id, name: $name, imageUrl: $imageUrl, category: $category, notes: $notes, creationDate: $creationDate, isDone: $isDone)';
   }
 
   @override
@@ -204,6 +220,7 @@ class _$_GroceryModel with DiagnosticableTreeMixin implements _GroceryModel {
       ..add(DiagnosticsProperty('imageUrl', imageUrl))
       ..add(DiagnosticsProperty('category', category))
       ..add(DiagnosticsProperty('notes', notes))
+      ..add(DiagnosticsProperty('creationDate', creationDate))
       ..add(DiagnosticsProperty('isDone', isDone));
   }
 
@@ -219,13 +236,15 @@ class _$_GroceryModel with DiagnosticableTreeMixin implements _GroceryModel {
             (identical(other.category, category) ||
                 other.category == category) &&
             (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.creationDate, creationDate) ||
+                other.creationDate == creationDate) &&
             (identical(other.isDone, isDone) || other.isDone == isDone));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, name, imageUrl, category, notes, isDone);
+  int get hashCode => Object.hash(
+      runtimeType, id, name, imageUrl, category, notes, creationDate, isDone);
 
   @JsonKey(ignore: true)
   @override
@@ -248,6 +267,7 @@ abstract class _GroceryModel implements GroceryModel {
       required final String imageUrl,
       required final String category,
       required final String notes,
+      required final DateTime creationDate,
       final bool isDone}) = _$_GroceryModel;
 
   factory _GroceryModel.fromJson(Map<String, dynamic> json) =
@@ -263,6 +283,8 @@ abstract class _GroceryModel implements GroceryModel {
   String get category;
   @override
   String get notes;
+  @override
+  DateTime get creationDate;
   @override
   bool get isDone;
   @override

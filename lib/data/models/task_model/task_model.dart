@@ -12,6 +12,7 @@ class TaskModel with _$TaskModel {
     required GroceryListModel listModel,
     required DateTime dueDate,
     required List<GroceryModel> groceries,
+    required DateTime creationDate,
   }) = _TaskModel;
 
   factory TaskModel.fromJson(Map<String, Object?> json) =>

@@ -19,6 +19,7 @@ _$_GroceryListModel _$$_GroceryListModelFromJson(Map<String, dynamic> json) =>
       members: (json['members'] as List<dynamic>)
           .map((e) => UserModel.fromJson(e as Map<String, dynamic>))
           .toList(),
+      creationDate: DateTime.parse(json['creationDate'] as String),
     );
 
 Map<String, dynamic> _$$_GroceryListModelToJson(_$_GroceryListModel instance) =>
@@ -28,4 +29,5 @@ Map<String, dynamic> _$$_GroceryListModelToJson(_$_GroceryListModel instance) =>
       'imageUrl': instance.imageUrl,
       'items': instance.items,
       'members': instance.members,
+      'creationDate': instance.creationDate.toIso8601String(),
     };

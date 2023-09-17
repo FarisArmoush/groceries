@@ -24,6 +24,7 @@ mixin _$UserModel {
   String get name => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get imageUrl => throw _privateConstructorUsedError;
+  DateTime get creationDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +37,12 @@ abstract class $UserModelCopyWith<$Res> {
   factory $UserModelCopyWith(UserModel value, $Res Function(UserModel) then) =
       _$UserModelCopyWithImpl<$Res, UserModel>;
   @useResult
-  $Res call({String uid, String name, String email, String imageUrl});
+  $Res call(
+      {String uid,
+      String name,
+      String email,
+      String imageUrl,
+      DateTime creationDate});
 }
 
 /// @nodoc
@@ -56,6 +62,7 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
     Object? name = null,
     Object? email = null,
     Object? imageUrl = null,
+    Object? creationDate = null,
   }) {
     return _then(_value.copyWith(
       uid: null == uid
@@ -74,6 +81,10 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      creationDate: null == creationDate
+          ? _value.creationDate
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ) as $Val);
   }
 }
@@ -85,7 +96,12 @@ abstract class _$$_UserModelCopyWith<$Res> implements $UserModelCopyWith<$Res> {
       __$$_UserModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String uid, String name, String email, String imageUrl});
+  $Res call(
+      {String uid,
+      String name,
+      String email,
+      String imageUrl,
+      DateTime creationDate});
 }
 
 /// @nodoc
@@ -103,6 +119,7 @@ class __$$_UserModelCopyWithImpl<$Res>
     Object? name = null,
     Object? email = null,
     Object? imageUrl = null,
+    Object? creationDate = null,
   }) {
     return _then(_$_UserModel(
       uid: null == uid
@@ -121,6 +138,10 @@ class __$$_UserModelCopyWithImpl<$Res>
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
               as String,
+      creationDate: null == creationDate
+          ? _value.creationDate
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -132,7 +153,8 @@ class _$_UserModel with DiagnosticableTreeMixin implements _UserModel {
       {required this.uid,
       required this.name,
       required this.email,
-      required this.imageUrl});
+      required this.imageUrl,
+      required this.creationDate});
 
   factory _$_UserModel.fromJson(Map<String, dynamic> json) =>
       _$$_UserModelFromJson(json);
@@ -145,10 +167,12 @@ class _$_UserModel with DiagnosticableTreeMixin implements _UserModel {
   final String email;
   @override
   final String imageUrl;
+  @override
+  final DateTime creationDate;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'UserModel(uid: $uid, name: $name, email: $email, imageUrl: $imageUrl)';
+    return 'UserModel(uid: $uid, name: $name, email: $email, imageUrl: $imageUrl, creationDate: $creationDate)';
   }
 
   @override
@@ -159,7 +183,8 @@ class _$_UserModel with DiagnosticableTreeMixin implements _UserModel {
       ..add(DiagnosticsProperty('uid', uid))
       ..add(DiagnosticsProperty('name', name))
       ..add(DiagnosticsProperty('email', email))
-      ..add(DiagnosticsProperty('imageUrl', imageUrl));
+      ..add(DiagnosticsProperty('imageUrl', imageUrl))
+      ..add(DiagnosticsProperty('creationDate', creationDate));
   }
 
   @override
@@ -171,12 +196,15 @@ class _$_UserModel with DiagnosticableTreeMixin implements _UserModel {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.imageUrl, imageUrl) ||
-                other.imageUrl == imageUrl));
+                other.imageUrl == imageUrl) &&
+            (identical(other.creationDate, creationDate) ||
+                other.creationDate == creationDate));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, uid, name, email, imageUrl);
+  int get hashCode =>
+      Object.hash(runtimeType, uid, name, email, imageUrl, creationDate);
 
   @JsonKey(ignore: true)
   @override
@@ -197,7 +225,8 @@ abstract class _UserModel implements UserModel {
       {required final String uid,
       required final String name,
       required final String email,
-      required final String imageUrl}) = _$_UserModel;
+      required final String imageUrl,
+      required final DateTime creationDate}) = _$_UserModel;
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$_UserModel.fromJson;
@@ -210,6 +239,8 @@ abstract class _UserModel implements UserModel {
   String get email;
   @override
   String get imageUrl;
+  @override
+  DateTime get creationDate;
   @override
   @JsonKey(ignore: true)
   _$$_UserModelCopyWith<_$_UserModel> get copyWith =>

@@ -17,6 +17,7 @@ class GroceryListMembers extends StatelessWidget {
               name: 'Faris $index',
               email: 'fariskarmoush@gmail.com $index',
               imageUrl: mockImage,
+              creationDate: DateTime.timestamp(),
             ),
           ),
         ),

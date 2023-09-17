@@ -1,11 +1,9 @@
 part of '../data_sources.dart';
 
 class RemoteConfigDataSource {
-  RemoteConfigDataSource({
-    FirebaseRemoteConfig? remoteConfig,
-  }) : _remoteConfig = remoteConfig ?? FirebaseRemoteConfig.instance;
+  RemoteConfigDataSource({required this.remoteConfig});
 
-  final FirebaseRemoteConfig _remoteConfig;
+  final FirebaseRemoteConfig remoteConfig;
 
-  String getAppVersion() => _remoteConfig.getString('app_version');
+  String getAppVersion() => remoteConfig.getString('app_version');
 }

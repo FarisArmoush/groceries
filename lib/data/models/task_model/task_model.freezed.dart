@@ -24,6 +24,7 @@ mixin _$TaskModel {
   GroceryListModel get listModel => throw _privateConstructorUsedError;
   DateTime get dueDate => throw _privateConstructorUsedError;
   List<GroceryModel> get groceries => throw _privateConstructorUsedError;
+  DateTime get creationDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,7 +41,8 @@ abstract class $TaskModelCopyWith<$Res> {
       {String uid,
       GroceryListModel listModel,
       DateTime dueDate,
-      List<GroceryModel> groceries});
+      List<GroceryModel> groceries,
+      DateTime creationDate});
 
   $GroceryListModelCopyWith<$Res> get listModel;
 }
@@ -62,6 +64,7 @@ class _$TaskModelCopyWithImpl<$Res, $Val extends TaskModel>
     Object? listModel = null,
     Object? dueDate = null,
     Object? groceries = null,
+    Object? creationDate = null,
   }) {
     return _then(_value.copyWith(
       uid: null == uid
@@ -80,6 +83,10 @@ class _$TaskModelCopyWithImpl<$Res, $Val extends TaskModel>
           ? _value.groceries
           : groceries // ignore: cast_nullable_to_non_nullable
               as List<GroceryModel>,
+      creationDate: null == creationDate
+          ? _value.creationDate
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ) as $Val);
   }
 
@@ -103,7 +110,8 @@ abstract class _$$_TaskModelCopyWith<$Res> implements $TaskModelCopyWith<$Res> {
       {String uid,
       GroceryListModel listModel,
       DateTime dueDate,
-      List<GroceryModel> groceries});
+      List<GroceryModel> groceries,
+      DateTime creationDate});
 
   @override
   $GroceryListModelCopyWith<$Res> get listModel;
@@ -124,6 +132,7 @@ class __$$_TaskModelCopyWithImpl<$Res>
     Object? listModel = null,
     Object? dueDate = null,
     Object? groceries = null,
+    Object? creationDate = null,
   }) {
     return _then(_$_TaskModel(
       uid: null == uid
@@ -142,6 +151,10 @@ class __$$_TaskModelCopyWithImpl<$Res>
           ? _value._groceries
           : groceries // ignore: cast_nullable_to_non_nullable
               as List<GroceryModel>,
+      creationDate: null == creationDate
+          ? _value.creationDate
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -153,7 +166,8 @@ class _$_TaskModel implements _TaskModel {
       {required this.uid,
       required this.listModel,
       required this.dueDate,
-      required final List<GroceryModel> groceries})
+      required final List<GroceryModel> groceries,
+      required this.creationDate})
       : _groceries = groceries;
 
   factory _$_TaskModel.fromJson(Map<String, dynamic> json) =>
@@ -174,8 +188,11 @@ class _$_TaskModel implements _TaskModel {
   }
 
   @override
+  final DateTime creationDate;
+
+  @override
   String toString() {
-    return 'TaskModel(uid: $uid, listModel: $listModel, dueDate: $dueDate, groceries: $groceries)';
+    return 'TaskModel(uid: $uid, listModel: $listModel, dueDate: $dueDate, groceries: $groceries, creationDate: $creationDate)';
   }
 
   @override
@@ -188,13 +205,15 @@ class _$_TaskModel implements _TaskModel {
                 other.listModel == listModel) &&
             (identical(other.dueDate, dueDate) || other.dueDate == dueDate) &&
             const DeepCollectionEquality()
-                .equals(other._groceries, _groceries));
+                .equals(other._groceries, _groceries) &&
+            (identical(other.creationDate, creationDate) ||
+                other.creationDate == creationDate));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, uid, listModel, dueDate,
-      const DeepCollectionEquality().hash(_groceries));
+      const DeepCollectionEquality().hash(_groceries), creationDate);
 
   @JsonKey(ignore: true)
   @override
@@ -215,7 +234,8 @@ abstract class _TaskModel implements TaskModel {
       {required final String uid,
       required final GroceryListModel listModel,
       required final DateTime dueDate,
-      required final List<GroceryModel> groceries}) = _$_TaskModel;
+      required final List<GroceryModel> groceries,
+      required final DateTime creationDate}) = _$_TaskModel;
 
   factory _TaskModel.fromJson(Map<String, dynamic> json) =
       _$_TaskModel.fromJson;
@@ -228,6 +248,8 @@ abstract class _TaskModel implements TaskModel {
   DateTime get dueDate;
   @override
   List<GroceryModel> get groceries;
+  @override
+  DateTime get creationDate;
   @override
   @JsonKey(ignore: true)
   _$$_TaskModelCopyWith<_$_TaskModel> get copyWith =>

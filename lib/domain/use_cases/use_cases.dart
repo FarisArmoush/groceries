@@ -22,7 +22,7 @@ part 'src/authentication_use_cases/verify_user_use_case.dart';
 part 'src/local_use_cases/fetch_credits_use_case.dart';
 part 'src/remote_use_cases/base_groceries_use_case.dart';
 part 'src/remote_use_cases/create_list_use_case.dart';
-part 'src/remote_use_cases/fetch_app_version_use_case.dart';
+part 'src/remote_use_cases/remote_config_use_case.dart';
 part 'src/remote_use_cases/grocery_lists_use_case.dart';
 part 'src/remote_use_cases/my_tasks_use_case.dart';
 part 'src/remote_use_cases/recipes_use_case.dart';

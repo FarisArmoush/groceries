@@ -16,6 +16,7 @@ import 'package:groceries/utils/params/register_param/register_param.dart';
 
 part 'src/authentication_data_source.dart';
 part 'src/base_groceries_data_source.dart';
+part 'src/categories_data_source.dart';
 part 'src/credits_data_source.dart';
 part 'src/grocery_lists_data_source.dart';
 part 'src/my_tasks_data_source.dart';

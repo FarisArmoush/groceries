@@ -2,23 +2,22 @@ part of '../data_sources.dart';
 
 class AuthenticationDataSource {
   AuthenticationDataSource({
-    FirebaseAuth? firebaseAuth,
-    FirebaseFirestore? firestore,
-  })  : _firebaseAuth = firebaseAuth ?? FirebaseAuth.instance,
-        _firestore = firestore ?? FirebaseFirestore.instance;
+    required this.firebaseAuth,
+    required this.firestore,
+  });
 
-  final FirebaseAuth _firebaseAuth;
-  final FirebaseFirestore _firestore;
+  final FirebaseAuth firebaseAuth;
+  final FirebaseFirestore firestore;
 
-  Stream<User?> get authStateChanges => _firebaseAuth.userChanges().map(
+  Stream<User?> get authStateChanges => firebaseAuth.userChanges().map(
         (fbUser) => fbUser,
       );
 
-  User? get currentUser => _firebaseAuth.currentUser;
+  User? get currentUser => firebaseAuth.currentUser;
 
   Future<void> signInWithEmailAndPassword(LoginParam loginParam) async {
     try {
-      await _firebaseAuth.signInWithEmailAndPassword(
+      await firebaseAuth.signInWithEmailAndPassword(
         email: loginParam.email,
         password: loginParam.password,
       );
@@ -31,14 +30,14 @@ class AuthenticationDataSource {
 
   Future<void> signUpWithEmailAndPassword(RegisterParam registerParam) async {
     try {
-      await _firebaseAuth
+      await firebaseAuth
           .createUserWithEmailAndPassword(
             email: registerParam.email,
             password: registerParam.password,
           )
           .then(
             (currentUser) =>
-                _firestore.collection('users').doc(currentUser.user!.uid).set(
+                firestore.collection('users').doc(currentUser.user!.uid).set(
               {
                 'uid': currentUser.user!.uid,
                 'email': currentUser.user!.email,
@@ -47,7 +46,7 @@ class AuthenticationDataSource {
             ),
           )
           .then(
-            (_) => _firebaseAuth.currentUser!.updateDisplayName(
+            (_) => firebaseAuth.currentUser!.updateDisplayName(
               registerParam.displayName,
             ),
           );
@@ -60,7 +59,7 @@ class AuthenticationDataSource {
 
   Future<void> deleteAccount() async {
     try {
-      await _firestore.collection('users').doc(currentUser?.uid).delete();
+      await firestore.collection('users').doc(currentUser?.uid).delete();
       await currentUser?.delete();
     } catch (e) {
       throw DeleteAccountException();
@@ -70,7 +69,7 @@ class AuthenticationDataSource {
   Future<void> logOut() async {
     try {
       await Future.wait([
-        _firebaseAuth.signOut(),
+        firebaseAuth.signOut(),
       ]);
     } catch (_) {
       throw LogoutFailure();
@@ -79,7 +78,7 @@ class AuthenticationDataSource {
 
   Future<void> sendPasswordResetEmail(String email) async {
     try {
-      await _firebaseAuth.sendPasswordResetEmail(email: email);
+      await firebaseAuth.sendPasswordResetEmail(email: email);
     } on FirebaseAuthException catch (e) {
       throw SendPasswordResetEmailException.fromCode(e.code);
     } catch (_) {
@@ -91,7 +90,7 @@ class AuthenticationDataSource {
     try {
       await currentUser?.updateDisplayName(displayName).then(
             (_) => {
-              _firestore.collection('users').doc(currentUser!.uid).update(
+              firestore.collection('users').doc(currentUser!.uid).update(
                 {
                   'displayName': displayName,
                 },
@@ -108,7 +107,7 @@ class AuthenticationDataSource {
   Future<void> updateEmail(String email) async {
     try {
       await currentUser?.updateEmail(email).then(
-            (_) => _firestore.collection('users').doc(currentUser!.uid).update(
+            (_) => firestore.collection('users').doc(currentUser!.uid).update(
               {
                 'email': email,
               },
