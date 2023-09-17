@@ -1,5 +1,6 @@
 library repositories;
 
+import 'package:groceries/data/models/category_model/category_model.dart';
 import 'package:groceries/data/models/credit_model/credit_model.dart';
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
@@ -15,3 +16,4 @@ part 'src/my_tasks_repository.dart';
 part 'src/grocery_lists_repository.dart';
 part 'src/authentication_repository.dart';
 part 'src/base_groceries_repository.dart';
+part 'src/cateogries_repository.dart';

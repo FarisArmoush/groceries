@@ -14,6 +14,7 @@ class GroceryListModel with _$GroceryListModel {
     required String imageUrl,
     required List<GroceryModel> items,
     required List<UserModel> members,
+    required DateTime creationDate,
   }) = _GroceryListModel;
 
   factory GroceryListModel.fromJson(Map<String, Object?> json) =>

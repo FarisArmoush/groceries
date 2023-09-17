@@ -16,6 +16,7 @@ _$_RecipeModel _$$_RecipeModelFromJson(Map<String, dynamic> json) =>
       items: (json['items'] as List<dynamic>)
           .map((e) => GroceryModel.fromJson(e as Map<String, dynamic>))
           .toList(),
+      creationDate: DateTime.parse(json['creationDate'] as String),
     );
 
 Map<String, dynamic> _$$_RecipeModelToJson(_$_RecipeModel instance) =>
@@ -24,4 +25,5 @@ Map<String, dynamic> _$$_RecipeModelToJson(_$_RecipeModel instance) =>
       'name': instance.name,
       'imageUrl': instance.imageUrl,
       'items': instance.items,
+      'creationDate': instance.creationDate.toIso8601String(),
     };

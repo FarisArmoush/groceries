@@ -5,10 +5,9 @@ import 'package:groceries/domain/use_cases/use_cases.dart';
 part 'remote_config_state.dart';
 
 class RemoteConfigCubit extends Cubit<RemoteConfigState> {
-  RemoteConfigCubit(this._fetchAppVersionUseCase)
+  RemoteConfigCubit(this._remoteConfigUseCase)
       : super(const RemoteConfigState());
 
-  final FetchAppVersionUseCase _fetchAppVersionUseCase;
-  // TODO(FARIS): rename use case to `RemoteConfigUseCase` and access values through the state.
-  String get appVersion => _fetchAppVersionUseCase.call();
+  final RemoteConfigUseCase _remoteConfigUseCase;
+  String get appVersion => _remoteConfigUseCase.fetchAppVersion();
 }

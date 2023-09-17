@@ -20,6 +20,7 @@ class GroceryListsList extends StatelessWidget {
             imageUrl: lists[index].imageUrl,
             items: lists[index].items,
             members: lists[index].members,
+            creationDate: lists[index].creationDate,
           ),
           onTap: () => context.pushNamed(
             AppNamedRoutes.groceryListDetails,

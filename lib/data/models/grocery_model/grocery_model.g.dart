@@ -15,6 +15,7 @@ _$_GroceryModel _$$_GroceryModelFromJson(Map<String, dynamic> json) =>
       imageUrl: json['imageUrl'] as String,
       category: json['category'] as String,
       notes: json['notes'] as String,
+      creationDate: DateTime.parse(json['creationDate'] as String),
       isDone: json['isDone'] as bool? ?? false,
     );
 
@@ -25,5 +26,6 @@ Map<String, dynamic> _$$_GroceryModelToJson(_$_GroceryModel instance) =>
       'imageUrl': instance.imageUrl,
       'category': instance.category,
       'notes': instance.notes,
+      'creationDate': instance.creationDate.toIso8601String(),
       'isDone': instance.isDone,
     };

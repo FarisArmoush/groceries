@@ -1,13 +1,19 @@
 part of '../data_sources.dart';
 
 class GroceryListsDataSource {
+  GroceryListsDataSource(this._firestore);
+
+  // ignore: unused_field
+  final FirebaseFirestore _firestore;
+
   Future<List<GroceryListModel>> fetchMyGroceryLists() async {
     final lists = <GroceryListModel>[
-      const GroceryListModel(
+      GroceryListModel(
         name: 'Home',
         imageUrl: mockImage,
         uid: 123,
         members: <UserModel>[],
+        creationDate: DateTime.timestamp(),
         items: <GroceryModel>[
           GroceryModel(
             id: '1235',
@@ -16,6 +22,7 @@ class GroceryListsDataSource {
             notes: '1 kg',
             imageUrl:
                 'https://www.budgetbytes.com/wp-content/uploads/2021/12/Chicken-Breast-Pan.jpg',
+            creationDate: DateTime.timestamp(),
           ),
           GroceryModel(
             id: '12123134252346412343',
@@ -23,6 +30,7 @@ class GroceryListsDataSource {
             category: 'Fruits & Vegetables',
             notes: '5 big ones',
             imageUrl: '',
+            creationDate: DateTime.timestamp(),
           ),
           GroceryModel(
             id: '12323462346324645',
@@ -30,6 +38,7 @@ class GroceryListsDataSource {
             category: 'Health Care',
             notes: 'Head and Shoulders, The mint one.',
             imageUrl: '',
+            creationDate: DateTime.timestamp(),
           ),
           GroceryModel(
             id: '12343246234623465',
@@ -37,6 +46,7 @@ class GroceryListsDataSource {
             category: 'Eggs & Dairy',
             notes: 'Parmesan Cheese',
             imageUrl: '',
+            creationDate: DateTime.timestamp(),
           ),
           GroceryModel(
             id: '12234623462346345',
@@ -44,6 +54,7 @@ class GroceryListsDataSource {
             category: 'Health Care',
             notes: 'Argan Oil Serum',
             imageUrl: '',
+            creationDate: DateTime.timestamp(),
           ),
           GroceryModel(
             id: '122346234623462346345',
@@ -51,21 +62,24 @@ class GroceryListsDataSource {
             category: 'Fruits & Vegetables',
             notes: '1 massive piece',
             imageUrl: '',
+            creationDate: DateTime.timestamp(),
           ),
         ],
       ),
-      const GroceryListModel(
+      GroceryListModel(
         name: 'Work',
         imageUrl: mockImage,
         uid: 345,
         members: <UserModel>[],
         items: <GroceryModel>[],
+        creationDate: DateTime.timestamp(),
       ),
-      const GroceryListModel(
+      GroceryListModel(
         name: 'Friends',
         imageUrl: mockImage,
         uid: 567,
         members: <UserModel>[],
+        creationDate: DateTime.timestamp(),
         items: <GroceryModel>[
           GroceryModel(
             id: 'asFDE[JOMI]',
@@ -73,6 +87,7 @@ class GroceryListsDataSource {
             category: 'Fruits and Vegetables',
             notes: '2 KG',
             imageUrl: '',
+            creationDate: DateTime.timestamp(),
           ),
           GroceryModel(
             id: 'asFDE[JOMI]',
@@ -80,6 +95,7 @@ class GroceryListsDataSource {
             category: 'Fruits and Vegetables',
             notes: '2 KG',
             imageUrl: '',
+            creationDate: DateTime.timestamp(),
           ),
           GroceryModel(
             id: 'asFDE[JOMI]',
@@ -87,6 +103,7 @@ class GroceryListsDataSource {
             category: 'Fruits and Vegetables',
             notes: '2 KG',
             imageUrl: '',
+            creationDate: DateTime.timestamp(),
           ),
           GroceryModel(
             id: 'asFDE[JOMI]',
@@ -94,6 +111,7 @@ class GroceryListsDataSource {
             category: 'Fruits and Vegetables',
             notes: '2 KG',
             imageUrl: '',
+            creationDate: DateTime.timestamp(),
           ),
           GroceryModel(
             id: 'asFDE[JOMI]',
@@ -101,6 +119,7 @@ class GroceryListsDataSource {
             category: 'Fruits and Vegetables',
             notes: '2 KG',
             imageUrl: '',
+            creationDate: DateTime.timestamp(),
           ),
         ],
       ),
@@ -109,6 +128,14 @@ class GroceryListsDataSource {
   }
 
   Future<void> deleteGroceryList(String uid) {
+    throw UnimplementedError();
+  }
+
+  Future<void> createGroceryList(GroceryListModel groceryListModel) {
+    throw UnimplementedError();
+  }
+
+  Future<void> editGroceryList(GroceryListModel groceryListModel) {
     throw UnimplementedError();
   }
 }

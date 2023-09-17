@@ -13,7 +13,10 @@ class GroceryListsRepositoryImpl extends GroceryListsRepository {
       _groceryListsDataSource.deleteGroceryList(uid);
 
   @override
-  Future<void> createGroceryList(GroceryListModel groceryListModel) {
-    throw UnimplementedError();
-  }
+  Future<void> createGroceryList(GroceryListModel groceryListModel) async =>
+      _groceryListsDataSource.createGroceryList(groceryListModel);
+
+  @override
+  Future<void> editGroceryList(GroceryListModel groceryListModel) =>
+      _groceryListsDataSource.editGroceryList(groceryListModel);
 }

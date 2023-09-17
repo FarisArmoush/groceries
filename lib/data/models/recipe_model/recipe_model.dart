@@ -12,6 +12,7 @@ class RecipeModel with _$RecipeModel {
     required String name,
     required String imageUrl,
     required List<GroceryModel> items,
+    required DateTime creationDate,
   }) = _RecipeModel;
 
   factory RecipeModel.fromJson(Map<String, Object?> json) =>

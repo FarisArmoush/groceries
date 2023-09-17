@@ -12,6 +12,7 @@ class GroceryModel with _$GroceryModel {
     required String imageUrl,
     required String category,
     required String notes,
+    required DateTime creationDate,
     @Default(false) bool isDone,
   }) = _GroceryModel;
 

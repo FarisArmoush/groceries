@@ -25,6 +25,7 @@ mixin _$GroceryListModel {
   String get imageUrl => throw _privateConstructorUsedError;
   List<GroceryModel> get items => throw _privateConstructorUsedError;
   List<UserModel> get members => throw _privateConstructorUsedError;
+  DateTime get creationDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -43,7 +44,8 @@ abstract class $GroceryListModelCopyWith<$Res> {
       String name,
       String imageUrl,
       List<GroceryModel> items,
-      List<UserModel> members});
+      List<UserModel> members,
+      DateTime creationDate});
 }
 
 /// @nodoc
@@ -64,6 +66,7 @@ class _$GroceryListModelCopyWithImpl<$Res, $Val extends GroceryListModel>
     Object? imageUrl = null,
     Object? items = null,
     Object? members = null,
+    Object? creationDate = null,
   }) {
     return _then(_value.copyWith(
       uid: null == uid
@@ -86,6 +89,10 @@ class _$GroceryListModelCopyWithImpl<$Res, $Val extends GroceryListModel>
           ? _value.members
           : members // ignore: cast_nullable_to_non_nullable
               as List<UserModel>,
+      creationDate: null == creationDate
+          ? _value.creationDate
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ) as $Val);
   }
 }
@@ -103,7 +110,8 @@ abstract class _$$_GroceryListModelCopyWith<$Res>
       String name,
       String imageUrl,
       List<GroceryModel> items,
-      List<UserModel> members});
+      List<UserModel> members,
+      DateTime creationDate});
 }
 
 /// @nodoc
@@ -122,6 +130,7 @@ class __$$_GroceryListModelCopyWithImpl<$Res>
     Object? imageUrl = null,
     Object? items = null,
     Object? members = null,
+    Object? creationDate = null,
   }) {
     return _then(_$_GroceryListModel(
       uid: null == uid
@@ -144,6 +153,10 @@ class __$$_GroceryListModelCopyWithImpl<$Res>
           ? _value._members
           : members // ignore: cast_nullable_to_non_nullable
               as List<UserModel>,
+      creationDate: null == creationDate
+          ? _value.creationDate
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -158,7 +171,8 @@ class _$_GroceryListModel
       required this.name,
       required this.imageUrl,
       required final List<GroceryModel> items,
-      required final List<UserModel> members})
+      required final List<UserModel> members,
+      required this.creationDate})
       : _items = items,
         _members = members;
 
@@ -188,8 +202,11 @@ class _$_GroceryListModel
   }
 
   @override
+  final DateTime creationDate;
+
+  @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'GroceryListModel(uid: $uid, name: $name, imageUrl: $imageUrl, items: $items, members: $members)';
+    return 'GroceryListModel(uid: $uid, name: $name, imageUrl: $imageUrl, items: $items, members: $members, creationDate: $creationDate)';
   }
 
   @override
@@ -201,7 +218,8 @@ class _$_GroceryListModel
       ..add(DiagnosticsProperty('name', name))
       ..add(DiagnosticsProperty('imageUrl', imageUrl))
       ..add(DiagnosticsProperty('items', items))
-      ..add(DiagnosticsProperty('members', members));
+      ..add(DiagnosticsProperty('members', members))
+      ..add(DiagnosticsProperty('creationDate', creationDate));
   }
 
   @override
@@ -214,7 +232,9 @@ class _$_GroceryListModel
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl) &&
             const DeepCollectionEquality().equals(other._items, _items) &&
-            const DeepCollectionEquality().equals(other._members, _members));
+            const DeepCollectionEquality().equals(other._members, _members) &&
+            (identical(other.creationDate, creationDate) ||
+                other.creationDate == creationDate));
   }
 
   @JsonKey(ignore: true)
@@ -225,7 +245,8 @@ class _$_GroceryListModel
       name,
       imageUrl,
       const DeepCollectionEquality().hash(_items),
-      const DeepCollectionEquality().hash(_members));
+      const DeepCollectionEquality().hash(_members),
+      creationDate);
 
   @JsonKey(ignore: true)
   @override
@@ -247,7 +268,8 @@ abstract class _GroceryListModel implements GroceryListModel {
       required final String name,
       required final String imageUrl,
       required final List<GroceryModel> items,
-      required final List<UserModel> members}) = _$_GroceryListModel;
+      required final List<UserModel> members,
+      required final DateTime creationDate}) = _$_GroceryListModel;
 
   factory _GroceryListModel.fromJson(Map<String, dynamic> json) =
       _$_GroceryListModel.fromJson;
@@ -262,6 +284,8 @@ abstract class _GroceryListModel implements GroceryListModel {
   List<GroceryModel> get items;
   @override
   List<UserModel> get members;
+  @override
+  DateTime get creationDate;
   @override
   @JsonKey(ignore: true)
   _$$_GroceryListModelCopyWith<_$_GroceryListModel> get copyWith =>

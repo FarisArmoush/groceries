@@ -24,6 +24,7 @@ mixin _$RecipeModel {
   String get name => throw _privateConstructorUsedError;
   String get imageUrl => throw _privateConstructorUsedError;
   List<GroceryModel> get items => throw _privateConstructorUsedError;
+  DateTime get creationDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,7 +39,11 @@ abstract class $RecipeModelCopyWith<$Res> {
       _$RecipeModelCopyWithImpl<$Res, RecipeModel>;
   @useResult
   $Res call(
-      {String uid, String name, String imageUrl, List<GroceryModel> items});
+      {String uid,
+      String name,
+      String imageUrl,
+      List<GroceryModel> items,
+      DateTime creationDate});
 }
 
 /// @nodoc
@@ -58,6 +63,7 @@ class _$RecipeModelCopyWithImpl<$Res, $Val extends RecipeModel>
     Object? name = null,
     Object? imageUrl = null,
     Object? items = null,
+    Object? creationDate = null,
   }) {
     return _then(_value.copyWith(
       uid: null == uid
@@ -76,6 +82,10 @@ class _$RecipeModelCopyWithImpl<$Res, $Val extends RecipeModel>
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
               as List<GroceryModel>,
+      creationDate: null == creationDate
+          ? _value.creationDate
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ) as $Val);
   }
 }
@@ -89,7 +99,11 @@ abstract class _$$_RecipeModelCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String uid, String name, String imageUrl, List<GroceryModel> items});
+      {String uid,
+      String name,
+      String imageUrl,
+      List<GroceryModel> items,
+      DateTime creationDate});
 }
 
 /// @nodoc
@@ -107,6 +121,7 @@ class __$$_RecipeModelCopyWithImpl<$Res>
     Object? name = null,
     Object? imageUrl = null,
     Object? items = null,
+    Object? creationDate = null,
   }) {
     return _then(_$_RecipeModel(
       uid: null == uid
@@ -125,6 +140,10 @@ class __$$_RecipeModelCopyWithImpl<$Res>
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
               as List<GroceryModel>,
+      creationDate: null == creationDate
+          ? _value.creationDate
+          : creationDate // ignore: cast_nullable_to_non_nullable
+              as DateTime,
     ));
   }
 }
@@ -136,7 +155,8 @@ class _$_RecipeModel with DiagnosticableTreeMixin implements _RecipeModel {
       {required this.uid,
       required this.name,
       required this.imageUrl,
-      required final List<GroceryModel> items})
+      required final List<GroceryModel> items,
+      required this.creationDate})
       : _items = items;
 
   factory _$_RecipeModel.fromJson(Map<String, dynamic> json) =>
@@ -157,8 +177,11 @@ class _$_RecipeModel with DiagnosticableTreeMixin implements _RecipeModel {
   }
 
   @override
+  final DateTime creationDate;
+
+  @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RecipeModel(uid: $uid, name: $name, imageUrl: $imageUrl, items: $items)';
+    return 'RecipeModel(uid: $uid, name: $name, imageUrl: $imageUrl, items: $items, creationDate: $creationDate)';
   }
 
   @override
@@ -169,7 +192,8 @@ class _$_RecipeModel with DiagnosticableTreeMixin implements _RecipeModel {
       ..add(DiagnosticsProperty('uid', uid))
       ..add(DiagnosticsProperty('name', name))
       ..add(DiagnosticsProperty('imageUrl', imageUrl))
-      ..add(DiagnosticsProperty('items', items));
+      ..add(DiagnosticsProperty('items', items))
+      ..add(DiagnosticsProperty('creationDate', creationDate));
   }
 
   @override
@@ -181,13 +205,15 @@ class _$_RecipeModel with DiagnosticableTreeMixin implements _RecipeModel {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl) &&
-            const DeepCollectionEquality().equals(other._items, _items));
+            const DeepCollectionEquality().equals(other._items, _items) &&
+            (identical(other.creationDate, creationDate) ||
+                other.creationDate == creationDate));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, uid, name, imageUrl,
-      const DeepCollectionEquality().hash(_items));
+      const DeepCollectionEquality().hash(_items), creationDate);
 
   @JsonKey(ignore: true)
   @override
@@ -208,7 +234,8 @@ abstract class _RecipeModel implements RecipeModel {
       {required final String uid,
       required final String name,
       required final String imageUrl,
-      required final List<GroceryModel> items}) = _$_RecipeModel;
+      required final List<GroceryModel> items,
+      required final DateTime creationDate}) = _$_RecipeModel;
 
   factory _RecipeModel.fromJson(Map<String, dynamic> json) =
       _$_RecipeModel.fromJson;
@@ -221,6 +248,8 @@ abstract class _RecipeModel implements RecipeModel {
   String get imageUrl;
   @override
   List<GroceryModel> get items;
+  @override
+  DateTime get creationDate;
   @override
   @JsonKey(ignore: true)
   _$$_RecipeModelCopyWith<_$_RecipeModel> get copyWith =>

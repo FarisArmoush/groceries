@@ -16,6 +16,7 @@ _$_TaskModel _$$_TaskModelFromJson(Map<String, dynamic> json) => _$_TaskModel(
       groceries: (json['groceries'] as List<dynamic>)
           .map((e) => GroceryModel.fromJson(e as Map<String, dynamic>))
           .toList(),
+      creationDate: DateTime.parse(json['creationDate'] as String),
     );
 
 Map<String, dynamic> _$$_TaskModelToJson(_$_TaskModel instance) =>
@@ -24,4 +25,5 @@ Map<String, dynamic> _$$_TaskModelToJson(_$_TaskModel instance) =>
       'listModel': instance.listModel,
       'dueDate': instance.dueDate.toIso8601String(),
       'groceries': instance.groceries,
+      'creationDate': instance.creationDate.toIso8601String(),
     };
