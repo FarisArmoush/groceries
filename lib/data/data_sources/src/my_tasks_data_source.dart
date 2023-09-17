@@ -1,6 +1,10 @@
 part of '../data_sources.dart';
 
 class MyTasksDataSource {
+  const MyTasksDataSource(this._firestore);
+
+  // ignore: unused_field
+  final FirebaseFirestore _firestore;
   Future<List<TaskModel>> fetchMyTasks() async {
     final myTasks = [
       TaskModel(

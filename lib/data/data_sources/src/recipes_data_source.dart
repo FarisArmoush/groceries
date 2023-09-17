@@ -1,6 +1,10 @@
 part of '../data_sources.dart';
 
 class RecipesDataSource {
+  const RecipesDataSource(this._firestore);
+
+  // ignore: unused_field
+  final FirebaseFirestore _firestore;
   Future<List<RecipeModel>> fetchRecipes() async {
     final recipes = <RecipeModel>[
       RecipeModel(

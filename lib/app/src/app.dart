@@ -35,20 +35,33 @@ class App extends StatelessWidget {
               ),
               RepositoryProvider(
                 create: (context) => RemoteConfigDataSource(
-                  remoteConfig: context.read<FirebaseRemoteConfig>(),
+                  context.read<FirebaseRemoteConfig>(),
                 ),
               ),
               RepositoryProvider(
-                create: (context) => GroceryListsDataSource(),
+                create: (context) => GroceryListsDataSource(
+                  context.read<FirebaseFirestore>(),
+                ),
               ),
               RepositoryProvider(
-                create: (context) => MyTasksDataSource(),
+                create: (context) => MyTasksDataSource(
+                  context.read<FirebaseFirestore>(),
+                ),
               ),
               RepositoryProvider(
-                create: (context) => RecipesDataSource(),
+                create: (context) => RecipesDataSource(
+                  context.read<FirebaseFirestore>(),
+                ),
               ),
               RepositoryProvider(
-                create: (context) => BaseGroceriesDataSource(),
+                create: (context) => BaseGroceriesDataSource(
+                  context.read<FirebaseFirestore>(),
+                ),
+              ),
+              RepositoryProvider(
+                create: (context) => CategoriesDataSource(
+                  context.read<FirebaseFirestore>(),
+                ),
               ),
             ],
 
@@ -91,6 +104,11 @@ class App extends StatelessWidget {
                     RepositoryProvider<BaseGroceriesRepository>(
                       create: (context) => BaseGroceriesRepositoryImpl(
                         context.read<BaseGroceriesDataSource>(),
+                      ),
+                    ),
+                    RepositoryProvider<CategoriesRepository>(
+                      create: (context) => CategoriesRepositoryImpl(
+                        context.read<CategoriesDataSource>(),
                       ),
                     ),
                   ],

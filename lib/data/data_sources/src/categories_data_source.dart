@@ -1,12 +1,12 @@
 part of '../data_sources.dart';
 
 class CategoriesDataSource {
-  CategoriesDataSource({FirebaseFirestore? firestore})
-      : _firestore = firestore ?? FirebaseFirestore.instance;
+  CategoriesDataSource(this.firestore);
 
-  final FirebaseFirestore _firestore;
+  final FirebaseFirestore firestore;
 
   Future<void> fetchCategories() async {
-    _firestore.doc('');
+    firestore.toString();
+    throw UnimplementedError();
   }
 }

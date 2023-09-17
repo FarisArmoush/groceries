@@ -1,6 +1,11 @@
 part of '../data_sources.dart';
 
 class GroceryListsDataSource {
+  GroceryListsDataSource(this._firestore);
+
+  // ignore: unused_field
+  final FirebaseFirestore _firestore;
+
   Future<List<GroceryListModel>> fetchMyGroceryLists() async {
     final lists = <GroceryListModel>[
       GroceryListModel(
