@@ -15,6 +15,7 @@ class CategoriesRepositoryImpl extends CategoriesRepository {
           image: category['image']! as String,
           name: category['name']! as String,
           parentCategoryId: category['parentCategoryId']! as String,
+          categoryId: category['categoryId']! as String,
         ),
       );
     }
