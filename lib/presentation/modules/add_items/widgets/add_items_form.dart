@@ -13,6 +13,20 @@ class AddItemsForm extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 8),
         physics: const BouncingScrollPhysics(),
         children: [
+          SizedBox(
+            height: context.deviceHeight * 0.01,
+          ),
+          Text(
+            'Categories',
+            style: TextStyle(
+              fontFamily: AppFonts.semiBold(context),
+              color: context.theme.primaryColor,
+              fontSize: 24,
+            ),
+          ),
+          SizedBox(
+            height: context.deviceHeight * 0.01,
+          ),
           const AddItemsCategoriesList(),
           SizedBox(
             height: context.deviceHeight * 0.04,

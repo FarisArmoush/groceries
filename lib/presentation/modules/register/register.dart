@@ -26,5 +26,4 @@ part 'widgets/register_display_name_text_field.dart';
 part 'widgets/register_email_text_field.dart';
 part 'widgets/register_form.dart';
 part 'widgets/register_header_text.dart';
-part 'widgets/register_other_option_text_button.dart';
 part 'widgets/register_password_text_field.dart';

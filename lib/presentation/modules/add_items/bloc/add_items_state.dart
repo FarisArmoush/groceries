@@ -17,14 +17,14 @@ final class AddItemsState extends Equatable {
   });
 
   final AddItemsStatus status;
-  final List<String> categories;
+  final List<CategoryModel> categories;
   final List<GroceryModel> baseGroceries;
   final String selectedCategory;
   final String error;
 
   AddItemsState copyWith({
     AddItemsStatus? addItemsStates,
-    List<String>? categories,
+    List<CategoryModel>? categories,
     List<GroceryModel>? baseGroceries,
     String? selectedCategory,
     String? error,

@@ -1,7 +1,8 @@
 part of '../add_items.dart';
 
 class AddItemsBloc extends Bloc<AddItemsEvent, AddItemsState> {
-  AddItemsBloc(this._baseGroceriesUseCase)
+  // AddItemsBloc(this._baseGroceriesUseCase)
+  AddItemsBloc(this._fetchCategoriesUseCase, this._baseGroceriesUseCase)
       : super(
           const AddItemsState(
             status: AddItemsStatus.initial,
@@ -16,6 +17,8 @@ class AddItemsBloc extends Bloc<AddItemsEvent, AddItemsState> {
   }
 
   final BaseGroceriesUseCase _baseGroceriesUseCase;
+
+  final FetchCategoriesUseCase _fetchCategoriesUseCase;
 
   Future<void> _onAddItemToList(
     AddItemToList event,
@@ -32,16 +35,13 @@ class AddItemsBloc extends Bloc<AddItemsEvent, AddItemsState> {
       ),
     );
     try {
+      final myCategories = await _fetchCategoriesUseCase.fetchCategories();
       final baseGroceries = await _baseGroceriesUseCase.fetchAllBaseGroceries();
-      final categories = <String>{};
-      for (final element in baseGroceries) {
-        categories.add(element.category);
-      }
       emit(
         state.copyWith(
           addItemsStates: AddItemsStatus.success,
           baseGroceries: baseGroceries,
-          categories: ['All', ...categories],
+          categories: myCategories,
         ),
       );
     } catch (e) {

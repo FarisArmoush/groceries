@@ -5,8 +5,19 @@ class CategoriesRepositoryImpl extends CategoriesRepository {
 
   final CategoriesDataSource _categoriesDataSource;
   @override
-  Future<List<CategoryModel>> fetchAllCategories() {
-    _categoriesDataSource.toString();
-    throw UnimplementedError();
+  Future<List<CategoryModel>> fetchAllCategories() async {
+    final categories = await _categoriesDataSource.fetchCategories();
+    final listOfCategoryModels = <CategoryModel>[];
+    for (final category in categories) {
+      listOfCategoryModels.add(
+        CategoryModel(
+          creationDate: (category['creationDate']! as Timestamp).toDate(),
+          image: category['image']! as String,
+          name: category['name']! as String,
+          parentCategoryId: category['parentCategoryId']! as String,
+        ),
+      );
+    }
+    return listOfCategoryModels;
   }
 }

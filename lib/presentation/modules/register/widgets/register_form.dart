@@ -7,28 +7,7 @@ class RegisterForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocListener<RegisterCubit, RegisterState>(
-        listener: (context, state) {
-          if (state.status.isFailure) {
-            ScaffoldMessenger.of(context)
-              ..hideCurrentSnackBar()
-              ..showSnackBar(
-                AppSnackBars.error(
-                  error: state.errorMessage ?? 'Authentication Failure',
-                ),
-              );
-          }
-
-          if (state.status.isSuccess) {
-            ScaffoldMessenger.of(context)
-              ..hideCurrentSnackBar()
-              ..showSnackBar(
-                AppSnackBars.success(
-                  message: 'Account Created Successfully',
-                ),
-              );
-            context.pushReplacementNamed(AppNamedRoutes.root);
-          }
-        },
+        listener: _listener,
         child: ListView(
           physics: const BouncingScrollPhysics(),
           padding: const EdgeInsets.symmetric(
@@ -67,10 +46,37 @@ class RegisterForm extends StatelessWidget {
             SizedBox(
               height: context.deviceHeight * 0.03,
             ),
-            const RegisterOtherOptionTextButton(),
+            OtherOptionTextButton(
+              upperText: AppTranslations.register.alreadyHaveAnAccount,
+              lowerText: AppTranslations.register.loginNow,
+              onTap: () => context.pushNamed(AppNamedRoutes.login),
+            ),
           ],
         ),
       ),
     );
+  }
+
+  void _listener(BuildContext context, RegisterState state) {
+    if (state.status.isFailure) {
+      ScaffoldMessenger.of(context)
+        ..hideCurrentSnackBar()
+        ..showSnackBar(
+          AppSnackBars.error(
+            error: state.errorMessage ?? 'Authentication Failure',
+          ),
+        );
+    }
+
+    if (state.status.isSuccess) {
+      ScaffoldMessenger.of(context)
+        ..hideCurrentSnackBar()
+        ..showSnackBar(
+          AppSnackBars.success(
+            message: 'Account Created Successfully',
+          ),
+        );
+      context.pushReplacementNamed(AppNamedRoutes.root);
+    }
   }
 }

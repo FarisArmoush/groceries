@@ -190,6 +190,11 @@ class App extends StatelessWidget {
                               context.read<BaseGroceriesRepository>(),
                             ),
                           ),
+                          RepositoryProvider(
+                            create: (context) => FetchCategoriesUseCase(
+                              context.read<CategoriesRepository>(),
+                            ),
+                          ),
                         ],
                         child: const AppEasyLocalization(),
                       );

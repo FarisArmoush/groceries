@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/data/models/category_model/category_model.dart';
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/domain/use_cases/use_cases.dart';
 import 'package:groceries/presentation/widgets/widgets.dart';
