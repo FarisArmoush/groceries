@@ -14,29 +14,27 @@ class GroceryItemsList extends StatelessWidget {
         return switch (state.status) {
           AddItemsStatus.loading => const AppLoadingIndicator(),
           AddItemsStatus.error => Text(state.error).centered(),
-          AddItemsStatus.success => _widget(state),
+          AddItemsStatus.success => _widget(context, state),
           _ => const SizedBox.shrink(),
         };
       },
     );
   }
 
-  ListView _widget(AddItemsState state) {
-    return ListView.separated(
-      itemCount: state.baseGroceries.length,
-      physics: const BouncingScrollPhysics(),
-      shrinkWrap: true,
-      itemBuilder: (context, index) {
-        return GroceryItemCard(
-          groceryModel: state.baseGroceries[index],
-          onPressed: () {},
-        );
-      },
-      separatorBuilder: (context, index) {
-        return SizedBox(
-          height: context.deviceHeight * 0.01,
-        );
-      },
+  Widget _widget(BuildContext context, AddItemsState state) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: ListTile.divideTiles(
+        context: context,
+        tiles: state.baseGroceries.map(
+          (groceryModel) {
+            return GroceryItemCard(
+              groceryModel: groceryModel,
+              onPressed: () {},
+            );
+          },
+        ),
+      ).toList(),
     );
   }
 }

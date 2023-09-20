@@ -10,7 +10,7 @@ class AddItemsForm extends StatelessWidget {
         title: Text(AppTranslations.addItems.addItems),
       ),
       body: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
         physics: const BouncingScrollPhysics(),
         children: [
           SizedBox(
@@ -25,11 +25,22 @@ class AddItemsForm extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: context.deviceHeight * 0.01,
+            height: context.deviceHeight * 0.015,
           ),
           const AddItemsCategoriesList(),
           SizedBox(
             height: context.deviceHeight * 0.04,
+          ),
+          Text(
+            'Items',
+            style: TextStyle(
+              fontFamily: AppFonts.semiBold(context),
+              color: context.theme.primaryColor,
+              fontSize: 24,
+            ),
+          ),
+          SizedBox(
+            height: context.deviceHeight * 0.015,
           ),
           const GroceryItemsList(),
           SizedBox(
