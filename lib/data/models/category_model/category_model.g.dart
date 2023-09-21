@@ -10,18 +10,18 @@ part of 'category_model.dart';
 
 _$_CategoryModel _$$_CategoryModelFromJson(Map<String, dynamic> json) =>
     _$_CategoryModel(
+      categoryId: json['categoryId'] as String,
       creationDate: DateTime.parse(json['creationDate'] as String),
       image: json['image'] as String,
       name: json['name'] as String,
       parentCategoryId: json['parentCategoryId'] as String?,
-      categoryId: json['categoryId'] as String,
     );
 
 Map<String, dynamic> _$$_CategoryModelToJson(_$_CategoryModel instance) =>
     <String, dynamic>{
+      'categoryId': instance.categoryId,
       'creationDate': instance.creationDate.toIso8601String(),
       'image': instance.image,
       'name': instance.name,
       'parentCategoryId': instance.parentCategoryId,
-      'categoryId': instance.categoryId,
     };

@@ -12,7 +12,7 @@ class GroceriesList extends StatelessWidget {
   Widget build(BuildContext context) {
     final itemsGroupedByCategory = groupBy(
       listModel.items,
-      (GroceryModel groceryModel) => groceryModel.category,
+      (GroceryModel groceryModel) => groceryModel.categoryId,
     );
     return ListView.separated(
       shrinkWrap: true,

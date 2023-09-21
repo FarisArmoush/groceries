@@ -47,13 +47,13 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
         SizedBox(
           height: context.deviceHeight * 0.02,
         ),
-        if (groceryModel.imageUrl.isNotEmpty) ...[
+        if (groceryModel.image.isNotEmpty) ...[
           CachedImage(
             height: context.deviceHeight * 0.3,
             width: double.infinity,
             boxShape: BoxShape.rectangle,
             borderRadius: BorderRadius.circular(16),
-            imageUrl: groceryModel.imageUrl,
+            imageUrl: groceryModel.image,
           ),
           SizedBox(
             height: context.deviceHeight * 0.02,

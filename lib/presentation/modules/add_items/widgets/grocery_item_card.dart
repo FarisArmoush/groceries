@@ -15,7 +15,7 @@ class GroceryItemCard extends StatelessWidget {
     return ListTile(
       leading: _icon(context),
       title: Text(groceryModel.name),
-      subtitle: Text(groceryModel.category),
+      subtitle: Text(groceryModel.categoryId),
       trailing: IconButton(
         onPressed: onPressed,
         icon: isDone
