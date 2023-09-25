@@ -20,11 +20,12 @@ RecipeModel _$RecipeModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RecipeModel {
-  String get uid => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get imageUrl => throw _privateConstructorUsedError;
-  List<GroceryModel> get items => throw _privateConstructorUsedError;
-  DateTime get creationDate => throw _privateConstructorUsedError;
+  String? get uid => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get imageUrl => throw _privateConstructorUsedError;
+  List<GroceryModel?>? get items => throw _privateConstructorUsedError;
+  @TimestampSerializer()
+  DateTime? get creationDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -39,11 +40,11 @@ abstract class $RecipeModelCopyWith<$Res> {
       _$RecipeModelCopyWithImpl<$Res, RecipeModel>;
   @useResult
   $Res call(
-      {String uid,
-      String name,
-      String imageUrl,
-      List<GroceryModel> items,
-      DateTime creationDate});
+      {String? uid,
+      String? name,
+      String? imageUrl,
+      List<GroceryModel?>? items,
+      @TimestampSerializer() DateTime? creationDate});
 }
 
 /// @nodoc
@@ -59,33 +60,33 @@ class _$RecipeModelCopyWithImpl<$Res, $Val extends RecipeModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = null,
-    Object? name = null,
-    Object? imageUrl = null,
-    Object? items = null,
-    Object? creationDate = null,
+    Object? uid = freezed,
+    Object? name = freezed,
+    Object? imageUrl = freezed,
+    Object? items = freezed,
+    Object? creationDate = freezed,
   }) {
     return _then(_value.copyWith(
-      uid: null == uid
+      uid: freezed == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      imageUrl: null == imageUrl
+              as String?,
+      imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      items: null == items
+              as String?,
+      items: freezed == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<GroceryModel>,
-      creationDate: null == creationDate
+              as List<GroceryModel?>?,
+      creationDate: freezed == creationDate
           ? _value.creationDate
           : creationDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
     ) as $Val);
   }
 }
@@ -99,11 +100,11 @@ abstract class _$$_RecipeModelCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String uid,
-      String name,
-      String imageUrl,
-      List<GroceryModel> items,
-      DateTime creationDate});
+      {String? uid,
+      String? name,
+      String? imageUrl,
+      List<GroceryModel?>? items,
+      @TimestampSerializer() DateTime? creationDate});
 }
 
 /// @nodoc
@@ -117,33 +118,33 @@ class __$$_RecipeModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = null,
-    Object? name = null,
-    Object? imageUrl = null,
-    Object? items = null,
-    Object? creationDate = null,
+    Object? uid = freezed,
+    Object? name = freezed,
+    Object? imageUrl = freezed,
+    Object? items = freezed,
+    Object? creationDate = freezed,
   }) {
     return _then(_$_RecipeModel(
-      uid: null == uid
+      uid: freezed == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      imageUrl: null == imageUrl
+              as String?,
+      imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      items: null == items
+              as String?,
+      items: freezed == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<GroceryModel>,
-      creationDate: null == creationDate
+              as List<GroceryModel?>?,
+      creationDate: freezed == creationDate
           ? _value.creationDate
           : creationDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
     ));
   }
 }
@@ -155,29 +156,32 @@ class _$_RecipeModel with DiagnosticableTreeMixin implements _RecipeModel {
       {required this.uid,
       required this.name,
       required this.imageUrl,
-      required final List<GroceryModel> items,
-      required this.creationDate})
+      required final List<GroceryModel?>? items,
+      @TimestampSerializer() required this.creationDate})
       : _items = items;
 
   factory _$_RecipeModel.fromJson(Map<String, dynamic> json) =>
       _$$_RecipeModelFromJson(json);
 
   @override
-  final String uid;
+  final String? uid;
   @override
-  final String name;
+  final String? name;
   @override
-  final String imageUrl;
-  final List<GroceryModel> _items;
+  final String? imageUrl;
+  final List<GroceryModel?>? _items;
   @override
-  List<GroceryModel> get items {
+  List<GroceryModel?>? get items {
+    final value = _items;
+    if (value == null) return null;
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_items);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
-  final DateTime creationDate;
+  @TimestampSerializer()
+  final DateTime? creationDate;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -231,25 +235,27 @@ class _$_RecipeModel with DiagnosticableTreeMixin implements _RecipeModel {
 
 abstract class _RecipeModel implements RecipeModel {
   const factory _RecipeModel(
-      {required final String uid,
-      required final String name,
-      required final String imageUrl,
-      required final List<GroceryModel> items,
-      required final DateTime creationDate}) = _$_RecipeModel;
+          {required final String? uid,
+          required final String? name,
+          required final String? imageUrl,
+          required final List<GroceryModel?>? items,
+          @TimestampSerializer() required final DateTime? creationDate}) =
+      _$_RecipeModel;
 
   factory _RecipeModel.fromJson(Map<String, dynamic> json) =
       _$_RecipeModel.fromJson;
 
   @override
-  String get uid;
+  String? get uid;
   @override
-  String get name;
+  String? get name;
   @override
-  String get imageUrl;
+  String? get imageUrl;
   @override
-  List<GroceryModel> get items;
+  List<GroceryModel?>? get items;
   @override
-  DateTime get creationDate;
+  @TimestampSerializer()
+  DateTime? get creationDate;
   @override
   @JsonKey(ignore: true)
   _$$_RecipeModelCopyWith<_$_RecipeModel> get copyWith =>

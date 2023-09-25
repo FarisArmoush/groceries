@@ -10,8 +10,8 @@ part of 'refinements_model.dart';
 
 _$_RefinementsModel _$$_RefinementsModelFromJson(Map<String, dynamic> json) =>
     _$_RefinementsModel(
-      refinement: json['refinement'] as String,
-      isChecked: json['isChecked'] as bool,
+      refinement: json['refinement'] as String?,
+      isChecked: json['isChecked'] as bool?,
     );
 
 Map<String, dynamic> _$$_RefinementsModelToJson(_$_RefinementsModel instance) =>

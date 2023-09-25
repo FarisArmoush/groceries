@@ -14,11 +14,11 @@ class GroceryItemCard extends StatelessWidget {
     final isDone = groceryModel.isDone;
     return ListTile(
       leading: _icon(context),
-      title: Text(groceryModel.name),
-      subtitle: Text(groceryModel.categoryId),
+      title: Text(groceryModel.name ?? 'null'),
+      subtitle: Text(groceryModel.categoryId ?? 'null'),
       trailing: IconButton(
         onPressed: onPressed,
-        icon: isDone
+        icon: isDone!
             ? Assets.svg.icCheckCircle.svg(
                 color: Colors.green,
               )

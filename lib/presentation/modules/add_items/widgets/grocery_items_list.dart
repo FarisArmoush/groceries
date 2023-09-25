@@ -11,30 +11,10 @@ class GroceryItemsList extends StatelessWidget {
             previous.baseGroceries != current.baseGroceries;
       },
       builder: (context, state) {
-        return switch (state.status) {
-          AddItemsStatus.loading => const AppLoadingIndicator(),
-          AddItemsStatus.error => Text(state.error).centered(),
-          AddItemsStatus.success => _widget(context, state),
-          _ => const SizedBox.shrink(),
-        };
+        return GroceriesList(
+          groceries: state.baseGroceries,
+        );
       },
-    );
-  }
-
-  Widget _widget(BuildContext context, AddItemsState state) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: ListTile.divideTiles(
-        context: context,
-        tiles: state.baseGroceries.map(
-          (groceryModel) {
-            return GroceryItemCard(
-              groceryModel: groceryModel,
-              onPressed: () {},
-            );
-          },
-        ),
-      ).toList(),
     );
   }
 }

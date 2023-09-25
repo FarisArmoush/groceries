@@ -7,7 +7,11 @@ sealed class AddItemsEvent extends Equatable {
   List<Object> get props => [];
 }
 
-final class FetchBaseGroceries extends AddItemsEvent {}
+final class GetParentCategories extends AddItemsEvent {
+  const GetParentCategories();
+  @override
+  List<Object> get props => [];
+}
 
 final class AddItemToList extends AddItemsEvent {
   const AddItemToList({
@@ -28,4 +32,10 @@ final class SetActiveCategory extends AddItemsEvent {
   final String category;
   @override
   List<Object> get props => [category];
+}
+
+final class GetCategoryItems extends AddItemsEvent {
+  const GetCategoryItems();
+  @override
+  List<Object> get props => [];
 }

@@ -20,12 +20,13 @@ GroceryListModel _$GroceryListModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GroceryListModel {
-  int get uid => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get imageUrl => throw _privateConstructorUsedError;
-  List<GroceryModel> get items => throw _privateConstructorUsedError;
-  List<UserModel> get members => throw _privateConstructorUsedError;
-  DateTime get creationDate => throw _privateConstructorUsedError;
+  int? get uid => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get imageUrl => throw _privateConstructorUsedError;
+  List<GroceryModel?>? get items => throw _privateConstructorUsedError;
+  List<UserModel?>? get members => throw _privateConstructorUsedError;
+  @TimestampSerializer()
+  DateTime? get creationDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,12 +41,12 @@ abstract class $GroceryListModelCopyWith<$Res> {
       _$GroceryListModelCopyWithImpl<$Res, GroceryListModel>;
   @useResult
   $Res call(
-      {int uid,
-      String name,
-      String imageUrl,
-      List<GroceryModel> items,
-      List<UserModel> members,
-      DateTime creationDate});
+      {int? uid,
+      String? name,
+      String? imageUrl,
+      List<GroceryModel?>? items,
+      List<UserModel?>? members,
+      @TimestampSerializer() DateTime? creationDate});
 }
 
 /// @nodoc
@@ -61,38 +62,38 @@ class _$GroceryListModelCopyWithImpl<$Res, $Val extends GroceryListModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = null,
-    Object? name = null,
-    Object? imageUrl = null,
-    Object? items = null,
-    Object? members = null,
-    Object? creationDate = null,
+    Object? uid = freezed,
+    Object? name = freezed,
+    Object? imageUrl = freezed,
+    Object? items = freezed,
+    Object? members = freezed,
+    Object? creationDate = freezed,
   }) {
     return _then(_value.copyWith(
-      uid: null == uid
+      uid: freezed == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as int,
-      name: null == name
+              as int?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      imageUrl: null == imageUrl
+              as String?,
+      imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      items: null == items
+              as String?,
+      items: freezed == items
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<GroceryModel>,
-      members: null == members
+              as List<GroceryModel?>?,
+      members: freezed == members
           ? _value.members
           : members // ignore: cast_nullable_to_non_nullable
-              as List<UserModel>,
-      creationDate: null == creationDate
+              as List<UserModel?>?,
+      creationDate: freezed == creationDate
           ? _value.creationDate
           : creationDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
     ) as $Val);
   }
 }
@@ -106,12 +107,12 @@ abstract class _$$_GroceryListModelCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int uid,
-      String name,
-      String imageUrl,
-      List<GroceryModel> items,
-      List<UserModel> members,
-      DateTime creationDate});
+      {int? uid,
+      String? name,
+      String? imageUrl,
+      List<GroceryModel?>? items,
+      List<UserModel?>? members,
+      @TimestampSerializer() DateTime? creationDate});
 }
 
 /// @nodoc
@@ -125,38 +126,38 @@ class __$$_GroceryListModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = null,
-    Object? name = null,
-    Object? imageUrl = null,
-    Object? items = null,
-    Object? members = null,
-    Object? creationDate = null,
+    Object? uid = freezed,
+    Object? name = freezed,
+    Object? imageUrl = freezed,
+    Object? items = freezed,
+    Object? members = freezed,
+    Object? creationDate = freezed,
   }) {
     return _then(_$_GroceryListModel(
-      uid: null == uid
+      uid: freezed == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as int,
-      name: null == name
+              as int?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      imageUrl: null == imageUrl
+              as String?,
+      imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      items: null == items
+              as String?,
+      items: freezed == items
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
-              as List<GroceryModel>,
-      members: null == members
+              as List<GroceryModel?>?,
+      members: freezed == members
           ? _value._members
           : members // ignore: cast_nullable_to_non_nullable
-              as List<UserModel>,
-      creationDate: null == creationDate
+              as List<UserModel?>?,
+      creationDate: freezed == creationDate
           ? _value.creationDate
           : creationDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
     ));
   }
 }
@@ -170,9 +171,9 @@ class _$_GroceryListModel
       {required this.uid,
       required this.name,
       required this.imageUrl,
-      required final List<GroceryModel> items,
-      required final List<UserModel> members,
-      required this.creationDate})
+      required final List<GroceryModel?>? items,
+      required final List<UserModel?>? members,
+      @TimestampSerializer() required this.creationDate})
       : _items = items,
         _members = members;
 
@@ -180,29 +181,34 @@ class _$_GroceryListModel
       _$$_GroceryListModelFromJson(json);
 
   @override
-  final int uid;
+  final int? uid;
   @override
-  final String name;
+  final String? name;
   @override
-  final String imageUrl;
-  final List<GroceryModel> _items;
+  final String? imageUrl;
+  final List<GroceryModel?>? _items;
   @override
-  List<GroceryModel> get items {
+  List<GroceryModel?>? get items {
+    final value = _items;
+    if (value == null) return null;
     if (_items is EqualUnmodifiableListView) return _items;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_items);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<UserModel> _members;
+  final List<UserModel?>? _members;
   @override
-  List<UserModel> get members {
+  List<UserModel?>? get members {
+    final value = _members;
+    if (value == null) return null;
     if (_members is EqualUnmodifiableListView) return _members;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_members);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
-  final DateTime creationDate;
+  @TimestampSerializer()
+  final DateTime? creationDate;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -264,28 +270,30 @@ class _$_GroceryListModel
 
 abstract class _GroceryListModel implements GroceryListModel {
   const factory _GroceryListModel(
-      {required final int uid,
-      required final String name,
-      required final String imageUrl,
-      required final List<GroceryModel> items,
-      required final List<UserModel> members,
-      required final DateTime creationDate}) = _$_GroceryListModel;
+          {required final int? uid,
+          required final String? name,
+          required final String? imageUrl,
+          required final List<GroceryModel?>? items,
+          required final List<UserModel?>? members,
+          @TimestampSerializer() required final DateTime? creationDate}) =
+      _$_GroceryListModel;
 
   factory _GroceryListModel.fromJson(Map<String, dynamic> json) =
       _$_GroceryListModel.fromJson;
 
   @override
-  int get uid;
+  int? get uid;
   @override
-  String get name;
+  String? get name;
   @override
-  String get imageUrl;
+  String? get imageUrl;
   @override
-  List<GroceryModel> get items;
+  List<GroceryModel?>? get items;
   @override
-  List<UserModel> get members;
+  List<UserModel?>? get members;
   @override
-  DateTime get creationDate;
+  @TimestampSerializer()
+  DateTime? get creationDate;
   @override
   @JsonKey(ignore: true)
   _$$_GroceryListModelCopyWith<_$_GroceryListModel> get copyWith =>

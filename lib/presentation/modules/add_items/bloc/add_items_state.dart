@@ -13,7 +13,7 @@ final class AddItemsState extends Equatable {
     required this.categories,
     required this.baseGroceries,
     required this.selectedCategory,
-    this.error = 'Something went wrong...',
+    this.error = 'Failed to get data, Try again later.',
   });
 
   final AddItemsStatus status;

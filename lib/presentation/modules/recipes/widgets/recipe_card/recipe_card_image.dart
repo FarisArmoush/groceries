@@ -17,7 +17,7 @@ class RecipeCardImage extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         child: CachedImage(
-          imageUrl: recipeModel.imageUrl,
+          imageUrl: recipeModel.imageUrl ?? '',
           height: context.deviceHeight * 0.2,
           width: double.infinity,
           boxShape: BoxShape.rectangle,

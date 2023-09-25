@@ -36,7 +36,7 @@ class RecipeDetailsForm extends StatelessWidget {
         ),
         children: [
           Text(
-            recipeModel.name,
+            recipeModel.name ?? 'null',
             style: TextStyle(
               color: context.theme.primaryColor,
               fontFamily: AppFonts.semiBold(context),
@@ -47,7 +47,7 @@ class RecipeDetailsForm extends StatelessWidget {
             height: context.deviceHeight * 0.01,
           ),
           CachedImage(
-            imageUrl: recipeModel.imageUrl,
+            imageUrl: recipeModel.imageUrl ?? '',
             height: context.deviceHeight * 0.3,
             width: context.deviceWidth,
             boxShape: BoxShape.rectangle,

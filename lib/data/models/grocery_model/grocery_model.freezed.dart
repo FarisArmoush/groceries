@@ -20,14 +20,16 @@ GroceryModel _$GroceryModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GroceryModel {
-  String get categoryId => throw _privateConstructorUsedError;
-  DateTime get creationDate => throw _privateConstructorUsedError;
-  String get id => throw _privateConstructorUsedError;
-  String get image => throw _privateConstructorUsedError;
-  bool get isDone => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get notes => throw _privateConstructorUsedError;
-  List<RefinementsModel> get refinements => throw _privateConstructorUsedError;
+  String? get categoryId => throw _privateConstructorUsedError;
+  @TimestampSerializer()
+  DateTime? get creationDate => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  String? get image => throw _privateConstructorUsedError;
+  bool? get isDone => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get notes => throw _privateConstructorUsedError;
+  List<RefinementsModel?>? get refinements =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,14 +44,14 @@ abstract class $GroceryModelCopyWith<$Res> {
       _$GroceryModelCopyWithImpl<$Res, GroceryModel>;
   @useResult
   $Res call(
-      {String categoryId,
-      DateTime creationDate,
-      String id,
-      String image,
-      bool isDone,
-      String name,
-      String notes,
-      List<RefinementsModel> refinements});
+      {String? categoryId,
+      @TimestampSerializer() DateTime? creationDate,
+      String? id,
+      String? image,
+      bool? isDone,
+      String? name,
+      String? notes,
+      List<RefinementsModel?>? refinements});
 }
 
 /// @nodoc
@@ -65,48 +67,48 @@ class _$GroceryModelCopyWithImpl<$Res, $Val extends GroceryModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? categoryId = null,
-    Object? creationDate = null,
-    Object? id = null,
-    Object? image = null,
-    Object? isDone = null,
-    Object? name = null,
-    Object? notes = null,
-    Object? refinements = null,
+    Object? categoryId = freezed,
+    Object? creationDate = freezed,
+    Object? id = freezed,
+    Object? image = freezed,
+    Object? isDone = freezed,
+    Object? name = freezed,
+    Object? notes = freezed,
+    Object? refinements = freezed,
   }) {
     return _then(_value.copyWith(
-      categoryId: null == categoryId
+      categoryId: freezed == categoryId
           ? _value.categoryId
           : categoryId // ignore: cast_nullable_to_non_nullable
-              as String,
-      creationDate: null == creationDate
+              as String?,
+      creationDate: freezed == creationDate
           ? _value.creationDate
           : creationDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      id: null == id
+              as DateTime?,
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      image: null == image
+              as String?,
+      image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as String,
-      isDone: null == isDone
+              as String?,
+      isDone: freezed == isDone
           ? _value.isDone
           : isDone // ignore: cast_nullable_to_non_nullable
-              as bool,
-      name: null == name
+              as bool?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      notes: null == notes
+              as String?,
+      notes: freezed == notes
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
-              as String,
-      refinements: null == refinements
+              as String?,
+      refinements: freezed == refinements
           ? _value.refinements
           : refinements // ignore: cast_nullable_to_non_nullable
-              as List<RefinementsModel>,
+              as List<RefinementsModel?>?,
     ) as $Val);
   }
 }
@@ -120,14 +122,14 @@ abstract class _$$_GroceryModelCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String categoryId,
-      DateTime creationDate,
-      String id,
-      String image,
-      bool isDone,
-      String name,
-      String notes,
-      List<RefinementsModel> refinements});
+      {String? categoryId,
+      @TimestampSerializer() DateTime? creationDate,
+      String? id,
+      String? image,
+      bool? isDone,
+      String? name,
+      String? notes,
+      List<RefinementsModel?>? refinements});
 }
 
 /// @nodoc
@@ -141,48 +143,48 @@ class __$$_GroceryModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? categoryId = null,
-    Object? creationDate = null,
-    Object? id = null,
-    Object? image = null,
-    Object? isDone = null,
-    Object? name = null,
-    Object? notes = null,
-    Object? refinements = null,
+    Object? categoryId = freezed,
+    Object? creationDate = freezed,
+    Object? id = freezed,
+    Object? image = freezed,
+    Object? isDone = freezed,
+    Object? name = freezed,
+    Object? notes = freezed,
+    Object? refinements = freezed,
   }) {
     return _then(_$_GroceryModel(
-      categoryId: null == categoryId
+      categoryId: freezed == categoryId
           ? _value.categoryId
           : categoryId // ignore: cast_nullable_to_non_nullable
-              as String,
-      creationDate: null == creationDate
+              as String?,
+      creationDate: freezed == creationDate
           ? _value.creationDate
           : creationDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      id: null == id
+              as DateTime?,
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      image: null == image
+              as String?,
+      image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as String,
-      isDone: null == isDone
+              as String?,
+      isDone: freezed == isDone
           ? _value.isDone
           : isDone // ignore: cast_nullable_to_non_nullable
-              as bool,
-      name: null == name
+              as bool?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      notes: null == notes
+              as String?,
+      notes: freezed == notes
           ? _value.notes
           : notes // ignore: cast_nullable_to_non_nullable
-              as String,
-      refinements: null == refinements
+              as String?,
+      refinements: freezed == refinements
           ? _value._refinements
           : refinements // ignore: cast_nullable_to_non_nullable
-              as List<RefinementsModel>,
+              as List<RefinementsModel?>?,
     ));
   }
 }
@@ -192,38 +194,41 @@ class __$$_GroceryModelCopyWithImpl<$Res>
 class _$_GroceryModel implements _GroceryModel {
   const _$_GroceryModel(
       {required this.categoryId,
-      required this.creationDate,
+      @TimestampSerializer() required this.creationDate,
       required this.id,
       required this.image,
       required this.isDone,
       required this.name,
       required this.notes,
-      required final List<RefinementsModel> refinements})
+      required final List<RefinementsModel?>? refinements})
       : _refinements = refinements;
 
   factory _$_GroceryModel.fromJson(Map<String, dynamic> json) =>
       _$$_GroceryModelFromJson(json);
 
   @override
-  final String categoryId;
+  final String? categoryId;
   @override
-  final DateTime creationDate;
+  @TimestampSerializer()
+  final DateTime? creationDate;
   @override
-  final String id;
+  final String? id;
   @override
-  final String image;
+  final String? image;
   @override
-  final bool isDone;
+  final bool? isDone;
   @override
-  final String name;
+  final String? name;
   @override
-  final String notes;
-  final List<RefinementsModel> _refinements;
+  final String? notes;
+  final List<RefinementsModel?>? _refinements;
   @override
-  List<RefinementsModel> get refinements {
+  List<RefinementsModel?>? get refinements {
+    final value = _refinements;
+    if (value == null) return null;
     if (_refinements is EqualUnmodifiableListView) return _refinements;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_refinements);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -278,34 +283,35 @@ class _$_GroceryModel implements _GroceryModel {
 
 abstract class _GroceryModel implements GroceryModel {
   const factory _GroceryModel(
-      {required final String categoryId,
-      required final DateTime creationDate,
-      required final String id,
-      required final String image,
-      required final bool isDone,
-      required final String name,
-      required final String notes,
-      required final List<RefinementsModel> refinements}) = _$_GroceryModel;
+      {required final String? categoryId,
+      @TimestampSerializer() required final DateTime? creationDate,
+      required final String? id,
+      required final String? image,
+      required final bool? isDone,
+      required final String? name,
+      required final String? notes,
+      required final List<RefinementsModel?>? refinements}) = _$_GroceryModel;
 
   factory _GroceryModel.fromJson(Map<String, dynamic> json) =
       _$_GroceryModel.fromJson;
 
   @override
-  String get categoryId;
+  String? get categoryId;
   @override
-  DateTime get creationDate;
+  @TimestampSerializer()
+  DateTime? get creationDate;
   @override
-  String get id;
+  String? get id;
   @override
-  String get image;
+  String? get image;
   @override
-  bool get isDone;
+  bool? get isDone;
   @override
-  String get name;
+  String? get name;
   @override
-  String get notes;
+  String? get notes;
   @override
-  List<RefinementsModel> get refinements;
+  List<RefinementsModel?>? get refinements;
   @override
   @JsonKey(ignore: true)
   _$$_GroceryModelCopyWith<_$_GroceryModel> get copyWith =>

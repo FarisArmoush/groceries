@@ -1,8 +1,7 @@
 part of '../add_items.dart';
 
 class AddItemsBloc extends Bloc<AddItemsEvent, AddItemsState> {
-  // AddItemsBloc(this._baseGroceriesUseCase)
-  AddItemsBloc(this._fetchCategoriesUseCase, this._baseGroceriesUseCase)
+  AddItemsBloc(this._baseGroceriesUseCase)
       : super(
           const AddItemsState(
             status: AddItemsStatus.initial,
@@ -11,22 +10,20 @@ class AddItemsBloc extends Bloc<AddItemsEvent, AddItemsState> {
             selectedCategory: 'All',
           ),
         ) {
-    on<FetchBaseGroceries>(_onFetchAllItems);
+    on<GetParentCategories>(_onGetParentCategories);
     on<AddItemToList>(_onAddItemToList);
     on<SetActiveCategory>(_onSetActiveCategory);
   }
 
   final BaseGroceriesUseCase _baseGroceriesUseCase;
 
-  final FetchCategoriesUseCase _fetchCategoriesUseCase;
-
   Future<void> _onAddItemToList(
     AddItemToList event,
     Emitter<AddItemsState> emit,
   ) async {}
 
-  Future<void> _onFetchAllItems(
-    FetchBaseGroceries event,
+  Future<void> _onGetParentCategories(
+    GetParentCategories event,
     Emitter<AddItemsState> emit,
   ) async {
     emit(
@@ -35,7 +32,7 @@ class AddItemsBloc extends Bloc<AddItemsEvent, AddItemsState> {
       ),
     );
     try {
-      final myCategories = await _fetchCategoriesUseCase.fetchCategories();
+      final myCategories = await _baseGroceriesUseCase.fetchAllCategories();
       final baseGroceries = await _baseGroceriesUseCase.fetchAllBaseGroceries();
       emit(
         state.copyWith(
@@ -44,10 +41,18 @@ class AddItemsBloc extends Bloc<AddItemsEvent, AddItemsState> {
           categories: myCategories,
         ),
       );
-    } catch (e) {
+    } on FirebaseException catch (e) {
       emit(
         state.copyWith(
           addItemsStates: AddItemsStatus.error,
+          error: e.message,
+        ),
+      );
+    } catch (_) {
+      emit(
+        state.copyWith(
+          addItemsStates: AddItemsStatus.error,
+          error: _.toString(),
         ),
       );
     }

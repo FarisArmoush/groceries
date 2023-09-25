@@ -9,15 +9,7 @@ class CategoriesRepositoryImpl extends CategoriesRepository {
     final categories = await _categoriesDataSource.fetchCategories();
     final listOfCategoryModels = <CategoryModel>[];
     for (final category in categories) {
-      listOfCategoryModels.add(
-        CategoryModel(
-          creationDate: (category['creationDate']! as Timestamp).toDate(),
-          image: category['image']! as String,
-          name: category['name']! as String,
-          parentCategoryId: category['parentCategoryId']! as String,
-          categoryId: category['categoryId']! as String,
-        ),
-      );
+      listOfCategoryModels.add(CategoryModel.fromJson(category));
     }
     return listOfCategoryModels;
   }

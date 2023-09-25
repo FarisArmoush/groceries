@@ -7,8 +7,10 @@ class CategoriesDataSource {
 
   Future<List<Map<String, Object?>>> fetchCategories() async {
     try {
-      final collectionReference =
-          firestore.collection('category').orderBy('name');
+      final collectionReference = firestore
+          .collection('category')
+          .orderBy('name')
+          .where('parentCategoryId', isEqualTo: '');
       final result = await collectionReference.get(_fetchCategoriesGetOptions);
       final listOfMaps = <Map<String, Object?>>[];
       for (final element in result.docs) {

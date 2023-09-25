@@ -16,7 +16,7 @@ class RecipeCard extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        RecipeCardTitle(name: recipeModel.name),
+        RecipeCardTitle(name: recipeModel.name ?? ''),
         SizedBox(
           height: context.deviceHeight * 0.01,
         ),

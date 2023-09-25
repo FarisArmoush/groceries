@@ -20,8 +20,8 @@ RefinementsModel _$RefinementsModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RefinementsModel {
-  String get refinement => throw _privateConstructorUsedError;
-  bool get isChecked => throw _privateConstructorUsedError;
+  String? get refinement => throw _privateConstructorUsedError;
+  bool? get isChecked => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +35,7 @@ abstract class $RefinementsModelCopyWith<$Res> {
           RefinementsModel value, $Res Function(RefinementsModel) then) =
       _$RefinementsModelCopyWithImpl<$Res, RefinementsModel>;
   @useResult
-  $Res call({String refinement, bool isChecked});
+  $Res call({String? refinement, bool? isChecked});
 }
 
 /// @nodoc
@@ -51,18 +51,18 @@ class _$RefinementsModelCopyWithImpl<$Res, $Val extends RefinementsModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? refinement = null,
-    Object? isChecked = null,
+    Object? refinement = freezed,
+    Object? isChecked = freezed,
   }) {
     return _then(_value.copyWith(
-      refinement: null == refinement
+      refinement: freezed == refinement
           ? _value.refinement
           : refinement // ignore: cast_nullable_to_non_nullable
-              as String,
-      isChecked: null == isChecked
+              as String?,
+      isChecked: freezed == isChecked
           ? _value.isChecked
           : isChecked // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
     ) as $Val);
   }
 }
@@ -75,7 +75,7 @@ abstract class _$$_RefinementsModelCopyWith<$Res>
       __$$_RefinementsModelCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String refinement, bool isChecked});
+  $Res call({String? refinement, bool? isChecked});
 }
 
 /// @nodoc
@@ -89,18 +89,18 @@ class __$$_RefinementsModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? refinement = null,
-    Object? isChecked = null,
+    Object? refinement = freezed,
+    Object? isChecked = freezed,
   }) {
     return _then(_$_RefinementsModel(
-      refinement: null == refinement
+      refinement: freezed == refinement
           ? _value.refinement
           : refinement // ignore: cast_nullable_to_non_nullable
-              as String,
-      isChecked: null == isChecked
+              as String?,
+      isChecked: freezed == isChecked
           ? _value.isChecked
           : isChecked // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
     ));
   }
 }
@@ -115,9 +115,9 @@ class _$_RefinementsModel implements _RefinementsModel {
       _$$_RefinementsModelFromJson(json);
 
   @override
-  final String refinement;
+  final String? refinement;
   @override
-  final bool isChecked;
+  final bool? isChecked;
 
   @override
   String toString() {
@@ -155,16 +155,16 @@ class _$_RefinementsModel implements _RefinementsModel {
 
 abstract class _RefinementsModel implements RefinementsModel {
   const factory _RefinementsModel(
-      {required final String refinement,
-      required final bool isChecked}) = _$_RefinementsModel;
+      {required final String? refinement,
+      required final bool? isChecked}) = _$_RefinementsModel;
 
   factory _RefinementsModel.fromJson(Map<String, dynamic> json) =
       _$_RefinementsModel.fromJson;
 
   @override
-  String get refinement;
+  String? get refinement;
   @override
-  bool get isChecked;
+  bool? get isChecked;
   @override
   @JsonKey(ignore: true)
   _$$_RefinementsModelCopyWith<_$_RefinementsModel> get copyWith =>

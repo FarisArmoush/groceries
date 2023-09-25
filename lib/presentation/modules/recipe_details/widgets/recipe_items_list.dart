@@ -14,11 +14,11 @@ class RecipeItemsList extends StatelessWidget {
       shrinkWrap: true,
       physics: const BouncingScrollPhysics(),
       primary: false,
-      itemCount: recipeModel.items.length,
+      itemCount: recipeModel.items!.length,
       itemBuilder: (context, index) {
         return ListTile(
-          title: Text(recipeModel.items[index].name),
-          subtitle: Text(recipeModel.items[index].notes),
+          title: Text(recipeModel.items?[index]?.name ?? 'null'),
+          subtitle: Text(recipeModel.items?[index]?.notes ?? 'null'),
           leading: Assets.svg.icArchive.svg(
             color: context.theme.primaryColor,
           ),

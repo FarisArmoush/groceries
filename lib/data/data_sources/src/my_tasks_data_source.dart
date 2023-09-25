@@ -82,7 +82,7 @@ class MyTasksDataSource {
           ),
         ],
       ),
-    ]..sort((a, b) => b.dueDate.compareTo(a.dueDate));
+    ]..sort((a, b) => b.dueDate!.compareTo(a.dueDate!));
     return myTasks;
   }
 

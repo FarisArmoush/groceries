@@ -20,11 +20,12 @@ TaskModel _$TaskModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TaskModel {
-  String get uid => throw _privateConstructorUsedError;
-  GroceryListModel get listModel => throw _privateConstructorUsedError;
-  DateTime get dueDate => throw _privateConstructorUsedError;
-  List<GroceryModel> get groceries => throw _privateConstructorUsedError;
-  DateTime get creationDate => throw _privateConstructorUsedError;
+  String? get uid => throw _privateConstructorUsedError;
+  GroceryListModel? get listModel => throw _privateConstructorUsedError;
+  DateTime? get dueDate => throw _privateConstructorUsedError;
+  List<GroceryModel?>? get groceries => throw _privateConstructorUsedError;
+  @TimestampSerializer()
+  DateTime? get creationDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,13 +39,13 @@ abstract class $TaskModelCopyWith<$Res> {
       _$TaskModelCopyWithImpl<$Res, TaskModel>;
   @useResult
   $Res call(
-      {String uid,
-      GroceryListModel listModel,
-      DateTime dueDate,
-      List<GroceryModel> groceries,
-      DateTime creationDate});
+      {String? uid,
+      GroceryListModel? listModel,
+      DateTime? dueDate,
+      List<GroceryModel?>? groceries,
+      @TimestampSerializer() DateTime? creationDate});
 
-  $GroceryListModelCopyWith<$Res> get listModel;
+  $GroceryListModelCopyWith<$Res>? get listModel;
 }
 
 /// @nodoc
@@ -60,40 +61,44 @@ class _$TaskModelCopyWithImpl<$Res, $Val extends TaskModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = null,
-    Object? listModel = null,
-    Object? dueDate = null,
-    Object? groceries = null,
-    Object? creationDate = null,
+    Object? uid = freezed,
+    Object? listModel = freezed,
+    Object? dueDate = freezed,
+    Object? groceries = freezed,
+    Object? creationDate = freezed,
   }) {
     return _then(_value.copyWith(
-      uid: null == uid
+      uid: freezed == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as String,
-      listModel: null == listModel
+              as String?,
+      listModel: freezed == listModel
           ? _value.listModel
           : listModel // ignore: cast_nullable_to_non_nullable
-              as GroceryListModel,
-      dueDate: null == dueDate
+              as GroceryListModel?,
+      dueDate: freezed == dueDate
           ? _value.dueDate
           : dueDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      groceries: null == groceries
+              as DateTime?,
+      groceries: freezed == groceries
           ? _value.groceries
           : groceries // ignore: cast_nullable_to_non_nullable
-              as List<GroceryModel>,
-      creationDate: null == creationDate
+              as List<GroceryModel?>?,
+      creationDate: freezed == creationDate
           ? _value.creationDate
           : creationDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $GroceryListModelCopyWith<$Res> get listModel {
-    return $GroceryListModelCopyWith<$Res>(_value.listModel, (value) {
+  $GroceryListModelCopyWith<$Res>? get listModel {
+    if (_value.listModel == null) {
+      return null;
+    }
+
+    return $GroceryListModelCopyWith<$Res>(_value.listModel!, (value) {
       return _then(_value.copyWith(listModel: value) as $Val);
     });
   }
@@ -107,14 +112,14 @@ abstract class _$$_TaskModelCopyWith<$Res> implements $TaskModelCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String uid,
-      GroceryListModel listModel,
-      DateTime dueDate,
-      List<GroceryModel> groceries,
-      DateTime creationDate});
+      {String? uid,
+      GroceryListModel? listModel,
+      DateTime? dueDate,
+      List<GroceryModel?>? groceries,
+      @TimestampSerializer() DateTime? creationDate});
 
   @override
-  $GroceryListModelCopyWith<$Res> get listModel;
+  $GroceryListModelCopyWith<$Res>? get listModel;
 }
 
 /// @nodoc
@@ -128,33 +133,33 @@ class __$$_TaskModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = null,
-    Object? listModel = null,
-    Object? dueDate = null,
-    Object? groceries = null,
-    Object? creationDate = null,
+    Object? uid = freezed,
+    Object? listModel = freezed,
+    Object? dueDate = freezed,
+    Object? groceries = freezed,
+    Object? creationDate = freezed,
   }) {
     return _then(_$_TaskModel(
-      uid: null == uid
+      uid: freezed == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as String,
-      listModel: null == listModel
+              as String?,
+      listModel: freezed == listModel
           ? _value.listModel
           : listModel // ignore: cast_nullable_to_non_nullable
-              as GroceryListModel,
-      dueDate: null == dueDate
+              as GroceryListModel?,
+      dueDate: freezed == dueDate
           ? _value.dueDate
           : dueDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      groceries: null == groceries
+              as DateTime?,
+      groceries: freezed == groceries
           ? _value._groceries
           : groceries // ignore: cast_nullable_to_non_nullable
-              as List<GroceryModel>,
-      creationDate: null == creationDate
+              as List<GroceryModel?>?,
+      creationDate: freezed == creationDate
           ? _value.creationDate
           : creationDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
     ));
   }
 }
@@ -166,29 +171,32 @@ class _$_TaskModel implements _TaskModel {
       {required this.uid,
       required this.listModel,
       required this.dueDate,
-      required final List<GroceryModel> groceries,
-      required this.creationDate})
+      required final List<GroceryModel?>? groceries,
+      @TimestampSerializer() required this.creationDate})
       : _groceries = groceries;
 
   factory _$_TaskModel.fromJson(Map<String, dynamic> json) =>
       _$$_TaskModelFromJson(json);
 
   @override
-  final String uid;
+  final String? uid;
   @override
-  final GroceryListModel listModel;
+  final GroceryListModel? listModel;
   @override
-  final DateTime dueDate;
-  final List<GroceryModel> _groceries;
+  final DateTime? dueDate;
+  final List<GroceryModel?>? _groceries;
   @override
-  List<GroceryModel> get groceries {
+  List<GroceryModel?>? get groceries {
+    final value = _groceries;
+    if (value == null) return null;
     if (_groceries is EqualUnmodifiableListView) return _groceries;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_groceries);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
-  final DateTime creationDate;
+  @TimestampSerializer()
+  final DateTime? creationDate;
 
   @override
   String toString() {
@@ -231,25 +239,27 @@ class _$_TaskModel implements _TaskModel {
 
 abstract class _TaskModel implements TaskModel {
   const factory _TaskModel(
-      {required final String uid,
-      required final GroceryListModel listModel,
-      required final DateTime dueDate,
-      required final List<GroceryModel> groceries,
-      required final DateTime creationDate}) = _$_TaskModel;
+          {required final String? uid,
+          required final GroceryListModel? listModel,
+          required final DateTime? dueDate,
+          required final List<GroceryModel?>? groceries,
+          @TimestampSerializer() required final DateTime? creationDate}) =
+      _$_TaskModel;
 
   factory _TaskModel.fromJson(Map<String, dynamic> json) =
       _$_TaskModel.fromJson;
 
   @override
-  String get uid;
+  String? get uid;
   @override
-  GroceryListModel get listModel;
+  GroceryListModel? get listModel;
   @override
-  DateTime get dueDate;
+  DateTime? get dueDate;
   @override
-  List<GroceryModel> get groceries;
+  List<GroceryModel?>? get groceries;
   @override
-  DateTime get creationDate;
+  @TimestampSerializer()
+  DateTime? get creationDate;
   @override
   @JsonKey(ignore: true)
   _$$_TaskModelCopyWith<_$_TaskModel> get copyWith =>
