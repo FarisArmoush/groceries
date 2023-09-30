@@ -6,7 +6,7 @@ class RegisterForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocListener<RegisterCubit, RegisterState>(
+      body: BlocListener<RegisterBloc, RegisterState>(
         listener: _listener,
         child: ListView(
           physics: const BouncingScrollPhysics(),

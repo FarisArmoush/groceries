@@ -5,7 +5,7 @@ class RegisterButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<RegisterCubit, RegisterState>(
+    return BlocBuilder<RegisterBloc, RegisterState>(
       builder: (context, state) {
         if (state.status.isInProgress) {
           return IgnorePointer(
@@ -18,7 +18,9 @@ class RegisterButton extends StatelessWidget {
         }
         return FilledButton(
           onPressed: state.isValid
-              ? () => context.read<RegisterCubit>().register()
+              ? () => context.read<RegisterBloc>().add(
+                    const RegisterEvent.register(),
+                  )
               : null,
           child: _text(),
         );
