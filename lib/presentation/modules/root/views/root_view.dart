@@ -8,7 +8,7 @@ class RootView extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => RootNavigationCubit(),
+          create: (context) => RootNavigationBloc(),
         ),
         BlocProvider(
           create: (context) => GroceryListsBloc(
