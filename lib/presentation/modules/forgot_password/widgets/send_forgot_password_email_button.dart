@@ -7,11 +7,13 @@ class SendForgotPasswordEmailButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      child: BlocBuilder<ForgotPasswordCubit, ForgotPasswordState>(
+      child: BlocBuilder<ForgotPasswordBloc, ForgotPasswordState>(
         builder: (context, state) {
           return ElevatedButton(
             onPressed: state.isValid
-                ? () => context.read<ForgotPasswordCubit>().sendEmail()
+                ? () => context.read<ForgotPasswordBloc>().add(
+                      const ForgotPasswordEvent.sendEmail(),
+                    )
                 : null,
             child: Text(AppTranslations.forgotPassword.sendResetPassword),
           );

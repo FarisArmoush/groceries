@@ -5,12 +5,13 @@ class ForgotPasswordEmailTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<ForgotPasswordCubit, ForgotPasswordState>(
+    return BlocBuilder<ForgotPasswordBloc, ForgotPasswordState>(
       buildWhen: (previous, current) => previous.email != current.email,
       builder: (context, state) {
         return AppTextField(
-          onChanged: (value) =>
-              context.read<ForgotPasswordCubit>().emailChanged(value),
+          onChanged: (value) => context.read<ForgotPasswordBloc>().add(
+                ForgotPasswordEvent.emailChanged(value),
+              ),
           labelText: AppTranslations.general.email,
           keyboardType: TextInputType.emailAddress,
           validator: (value) => state.email.validator(value),
