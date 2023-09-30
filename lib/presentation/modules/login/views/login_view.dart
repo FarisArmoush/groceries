@@ -6,7 +6,7 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => LoginCubit(
+      create: (context) => LoginBloc(
         context.read<LoginWithEmailAndPasswordUseCase>(),
       ),
       child: const LoginForm(),

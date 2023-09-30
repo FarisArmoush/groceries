@@ -5,7 +5,7 @@ class LoginEmailTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<LoginCubit, LoginState>(
+    return BlocBuilder<LoginBloc, LoginState>(
       buildWhen: (previous, current) => previous.email != current.email,
       builder: (context, state) {
         return AppTextField(
@@ -13,7 +13,8 @@ class LoginEmailTextField extends StatelessWidget {
             color: context.theme.inputDecorationTheme.prefixIconColor,
             fit: BoxFit.scaleDown,
           ),
-          onChanged: (email) => context.read<LoginCubit>().emailChanged(email),
+          onChanged: (email) =>
+              context.read<LoginBloc>().add(LoginEvent.updateEmail(email)),
           keyboardType: TextInputType.emailAddress,
           labelText: AppTranslations.general.email,
           errorText: state.email.displayError,

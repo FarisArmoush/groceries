@@ -5,7 +5,7 @@ class LoginButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<LoginCubit, LoginState>(
+    return BlocBuilder<LoginBloc, LoginState>(
       builder: (context, state) {
         if (state.status.isInProgress) {
           // An untapable button with a loading indicator.
@@ -18,8 +18,9 @@ class LoginButton extends StatelessWidget {
           );
         }
         return FilledButton(
-          onPressed:
-              state.isValid ? () => context.read<LoginCubit>().login() : null,
+          onPressed: state.isValid
+              ? () => context.read<LoginBloc>().add(const LoginEvent.login())
+              : null,
           child: _text(),
         );
       },
