@@ -6,7 +6,7 @@ class UpdateEmailView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => UpdateEmailCubit(
+      create: (context) => UpdateEmailBloc(
         context.read<UpdateEmailUseCase>(),
       ),
       child: const UpdateEmailForm(),

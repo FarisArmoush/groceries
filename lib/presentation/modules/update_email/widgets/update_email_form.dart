@@ -5,7 +5,7 @@ class UpdateEmailForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<UpdateEmailCubit, UpdateEmailState>(
+    return BlocListener<UpdateEmailBloc, UpdateEmailState>(
       listener: (context, state) {
         if (state.status.isSuccess) {
           ScaffoldMessenger.of(context)
