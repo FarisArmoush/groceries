@@ -18,7 +18,6 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$LoginEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
     required TResult Function(String email) updateEmail,
     required TResult Function(String password) updatePassword,
     required TResult Function() toggleIsObscure,
@@ -27,7 +26,6 @@ mixin _$LoginEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
     TResult? Function(String email)? updateEmail,
     TResult? Function(String password)? updatePassword,
     TResult? Function()? toggleIsObscure,
@@ -36,7 +34,6 @@ mixin _$LoginEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function(String email)? updateEmail,
     TResult Function(String password)? updatePassword,
     TResult Function()? toggleIsObscure,
@@ -46,7 +43,6 @@ mixin _$LoginEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
     required TResult Function(_UpdateEmail value) updateEmail,
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_ToggleIsObscure value) toggleIsObscure,
@@ -55,7 +51,6 @@ mixin _$LoginEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
     TResult? Function(_UpdateEmail value)? updateEmail,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_ToggleIsObscure value)? toggleIsObscure,
@@ -64,7 +59,6 @@ mixin _$LoginEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_UpdateEmail value)? updateEmail,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_ToggleIsObscure value)? toggleIsObscure,
@@ -90,125 +84,6 @@ class _$LoginEventCopyWithImpl<$Res, $Val extends LoginEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-}
-
-/// @nodoc
-abstract class _$$_StartedCopyWith<$Res> {
-  factory _$$_StartedCopyWith(
-          _$_Started value, $Res Function(_$_Started) then) =
-      __$$_StartedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_StartedCopyWithImpl<$Res>
-    extends _$LoginEventCopyWithImpl<$Res, _$_Started>
-    implements _$$_StartedCopyWith<$Res> {
-  __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_Started implements _Started {
-  const _$_Started();
-
-  @override
-  String toString() {
-    return 'LoginEvent.started()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Started);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(String email) updateEmail,
-    required TResult Function(String password) updatePassword,
-    required TResult Function() toggleIsObscure,
-    required TResult Function() login,
-  }) {
-    return started();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(String email)? updateEmail,
-    TResult? Function(String password)? updatePassword,
-    TResult? Function()? toggleIsObscure,
-    TResult? Function()? login,
-  }) {
-    return started?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(String email)? updateEmail,
-    TResult Function(String password)? updatePassword,
-    TResult Function()? toggleIsObscure,
-    TResult Function()? login,
-    required TResult orElse(),
-  }) {
-    if (started != null) {
-      return started();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(_UpdateEmail value) updateEmail,
-    required TResult Function(_UpdatePassword value) updatePassword,
-    required TResult Function(_ToggleIsObscure value) toggleIsObscure,
-    required TResult Function(_Login value) login,
-  }) {
-    return started(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(_UpdateEmail value)? updateEmail,
-    TResult? Function(_UpdatePassword value)? updatePassword,
-    TResult? Function(_ToggleIsObscure value)? toggleIsObscure,
-    TResult? Function(_Login value)? login,
-  }) {
-    return started?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(_UpdateEmail value)? updateEmail,
-    TResult Function(_UpdatePassword value)? updatePassword,
-    TResult Function(_ToggleIsObscure value)? toggleIsObscure,
-    TResult Function(_Login value)? login,
-    required TResult orElse(),
-  }) {
-    if (started != null) {
-      return started(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Started implements LoginEvent {
-  const factory _Started() = _$_Started;
 }
 
 /// @nodoc
@@ -275,7 +150,6 @@ class _$_UpdateEmail implements _UpdateEmail {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
     required TResult Function(String email) updateEmail,
     required TResult Function(String password) updatePassword,
     required TResult Function() toggleIsObscure,
@@ -287,7 +161,6 @@ class _$_UpdateEmail implements _UpdateEmail {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
     TResult? Function(String email)? updateEmail,
     TResult? Function(String password)? updatePassword,
     TResult? Function()? toggleIsObscure,
@@ -299,7 +172,6 @@ class _$_UpdateEmail implements _UpdateEmail {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function(String email)? updateEmail,
     TResult Function(String password)? updatePassword,
     TResult Function()? toggleIsObscure,
@@ -315,7 +187,6 @@ class _$_UpdateEmail implements _UpdateEmail {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
     required TResult Function(_UpdateEmail value) updateEmail,
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_ToggleIsObscure value) toggleIsObscure,
@@ -327,7 +198,6 @@ class _$_UpdateEmail implements _UpdateEmail {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
     TResult? Function(_UpdateEmail value)? updateEmail,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_ToggleIsObscure value)? toggleIsObscure,
@@ -339,7 +209,6 @@ class _$_UpdateEmail implements _UpdateEmail {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_UpdateEmail value)? updateEmail,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_ToggleIsObscure value)? toggleIsObscure,
@@ -427,7 +296,6 @@ class _$_UpdatePassword implements _UpdatePassword {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
     required TResult Function(String email) updateEmail,
     required TResult Function(String password) updatePassword,
     required TResult Function() toggleIsObscure,
@@ -439,7 +307,6 @@ class _$_UpdatePassword implements _UpdatePassword {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
     TResult? Function(String email)? updateEmail,
     TResult? Function(String password)? updatePassword,
     TResult? Function()? toggleIsObscure,
@@ -451,7 +318,6 @@ class _$_UpdatePassword implements _UpdatePassword {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function(String email)? updateEmail,
     TResult Function(String password)? updatePassword,
     TResult Function()? toggleIsObscure,
@@ -467,7 +333,6 @@ class _$_UpdatePassword implements _UpdatePassword {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
     required TResult Function(_UpdateEmail value) updateEmail,
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_ToggleIsObscure value) toggleIsObscure,
@@ -479,7 +344,6 @@ class _$_UpdatePassword implements _UpdatePassword {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
     TResult? Function(_UpdateEmail value)? updateEmail,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_ToggleIsObscure value)? toggleIsObscure,
@@ -491,7 +355,6 @@ class _$_UpdatePassword implements _UpdatePassword {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_UpdateEmail value)? updateEmail,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_ToggleIsObscure value)? toggleIsObscure,
@@ -552,7 +415,6 @@ class _$_ToggleIsObscure implements _ToggleIsObscure {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
     required TResult Function(String email) updateEmail,
     required TResult Function(String password) updatePassword,
     required TResult Function() toggleIsObscure,
@@ -564,7 +426,6 @@ class _$_ToggleIsObscure implements _ToggleIsObscure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
     TResult? Function(String email)? updateEmail,
     TResult? Function(String password)? updatePassword,
     TResult? Function()? toggleIsObscure,
@@ -576,7 +437,6 @@ class _$_ToggleIsObscure implements _ToggleIsObscure {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function(String email)? updateEmail,
     TResult Function(String password)? updatePassword,
     TResult Function()? toggleIsObscure,
@@ -592,7 +452,6 @@ class _$_ToggleIsObscure implements _ToggleIsObscure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
     required TResult Function(_UpdateEmail value) updateEmail,
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_ToggleIsObscure value) toggleIsObscure,
@@ -604,7 +463,6 @@ class _$_ToggleIsObscure implements _ToggleIsObscure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
     TResult? Function(_UpdateEmail value)? updateEmail,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_ToggleIsObscure value)? toggleIsObscure,
@@ -616,7 +474,6 @@ class _$_ToggleIsObscure implements _ToggleIsObscure {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_UpdateEmail value)? updateEmail,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_ToggleIsObscure value)? toggleIsObscure,
@@ -670,7 +527,6 @@ class _$_Login implements _Login {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() started,
     required TResult Function(String email) updateEmail,
     required TResult Function(String password) updatePassword,
     required TResult Function() toggleIsObscure,
@@ -682,7 +538,6 @@ class _$_Login implements _Login {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
     TResult? Function(String email)? updateEmail,
     TResult? Function(String password)? updatePassword,
     TResult? Function()? toggleIsObscure,
@@ -694,7 +549,6 @@ class _$_Login implements _Login {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
     TResult Function(String email)? updateEmail,
     TResult Function(String password)? updatePassword,
     TResult Function()? toggleIsObscure,
@@ -710,7 +564,6 @@ class _$_Login implements _Login {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
     required TResult Function(_UpdateEmail value) updateEmail,
     required TResult Function(_UpdatePassword value) updatePassword,
     required TResult Function(_ToggleIsObscure value) toggleIsObscure,
@@ -722,7 +575,6 @@ class _$_Login implements _Login {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
     TResult? Function(_UpdateEmail value)? updateEmail,
     TResult? Function(_UpdatePassword value)? updatePassword,
     TResult? Function(_ToggleIsObscure value)? toggleIsObscure,
@@ -734,7 +586,6 @@ class _$_Login implements _Login {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
     TResult Function(_UpdateEmail value)? updateEmail,
     TResult Function(_UpdatePassword value)? updatePassword,
     TResult Function(_ToggleIsObscure value)? toggleIsObscure,
