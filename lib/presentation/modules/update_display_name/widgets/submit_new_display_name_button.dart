@@ -7,13 +7,14 @@ class SubmitNewDisplayNameButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: context.deviceHeight,
-      child: BlocBuilder<UpdateDisplayNameCubit, UpdateDisplayNameState>(
+      child: BlocBuilder<UpdateDisplayNameBloc, UpdateDisplayNameState>(
         builder: (context, state) {
           return ElevatedButton(
             onPressed: !state.isValid
                 ? null
-                : () =>
-                    context.read<UpdateDisplayNameCubit>().updateDisplayName(),
+                : () => context.read<UpdateDisplayNameBloc>().add(
+                      const UpdateDisplayNameEvent.updateDisplayName(),
+                    ),
             child: const Text('Submit'),
           );
         },

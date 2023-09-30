@@ -5,15 +5,17 @@ class UpdateDisplayNameTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<UpdateDisplayNameCubit, UpdateDisplayNameState>(
-      buildWhen: (previous, current) => previous.name != current.name,
+    return BlocBuilder<UpdateDisplayNameBloc, UpdateDisplayNameState>(
+      buildWhen: (previous, current) =>
+          previous.displayName != current.displayName,
       builder: (context, state) {
         return AppTextField(
           labelText: 'New username',
-          onChanged: (name) =>
-              context.read<UpdateDisplayNameCubit>().nameChanged(name),
-          errorText: state.name.displayError,
-          validator: (value) => state.name.validator(value),
+          onChanged: (value) => context.read<UpdateDisplayNameBloc>().add(
+                UpdateDisplayNameEvent.displayNameChanged(value),
+              ),
+          errorText: state.displayName.displayError,
+          validator: (value) => state.displayName.validator(value),
         );
       },
     );

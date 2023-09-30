@@ -6,7 +6,7 @@ class UpdateDisplayNameView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => UpdateDisplayNameCubit(
+      create: (context) => UpdateDisplayNameBloc(
         context.read<UpdateDisplayNameUseCase>(),
       ),
       child: const UpdateDisplayNameForm(),
