@@ -2,17 +2,17 @@ part of '../grocery_list_details.dart';
 
 class GroceriesList extends StatelessWidget {
   const GroceriesList({
-    required this.listModel,
+    required this.groceries,
     super.key,
   });
 
-  final GroceryListModel listModel;
+  final List<GroceryModel?>? groceries;
 
   @override
   Widget build(BuildContext context) {
     final itemsGroupedByCategory = groupBy(
-      listModel.items,
-      (GroceryModel groceryModel) => groceryModel.category,
+      groceries!,
+      (GroceryModel? groceryModel) => groceryModel!.categoryId,
     );
     return ListView.separated(
       shrinkWrap: true,
@@ -26,7 +26,7 @@ class GroceriesList extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             GroceriesBoxHeader(
-              category: category,
+              category: category ?? 'null',
               assetPath: Assets.svg.icAlertTriangle.path,
             ),
             GroceriesBoxList(

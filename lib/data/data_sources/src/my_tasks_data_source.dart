@@ -21,19 +21,13 @@ class MyTasksDataSource {
         ),
         groceries: [
           GroceryModel(
-            id: 'asFDE[JOMI]',
-            name: 'Eggplants',
-            category: 'Fruits and Vegetables',
-            notes: '2 KG',
-            imageUrl: '',
-            creationDate: DateTime.timestamp(),
-          ),
-          GroceryModel(
-            id: 'asFDE[JOMI]',
-            name: 'Parsley',
-            category: 'Fruits and Vegetables',
-            notes: '2 KG',
-            imageUrl: '',
+            categoryId: '1235',
+            name: 'Chicken',
+            id: '',
+            isDone: false,
+            refinements: <RefinementsModel>[],
+            notes: '',
+            image: '',
             creationDate: DateTime.timestamp(),
           ),
         ],
@@ -52,12 +46,13 @@ class MyTasksDataSource {
         ),
         groceries: [
           GroceryModel(
-            id: '1235',
+            categoryId: '1235',
             name: 'Chicken',
-            category: 'Eggs & Dairy',
-            notes: '1 kg',
-            imageUrl:
-                'https://www.budgetbytes.com/wp-content/uploads/2021/12/Chicken-Breast-Pan.jpg',
+            id: '',
+            isDone: false,
+            refinements: <RefinementsModel>[],
+            notes: '',
+            image: '',
             creationDate: DateTime.timestamp(),
           ),
         ],
@@ -76,32 +71,18 @@ class MyTasksDataSource {
         ),
         groceries: [
           GroceryModel(
-            id: '12323462346324645',
-            name: 'Leave in conditioner',
-            category: 'Health Care',
-            notes: 'Head and Shoulders, The mint one.',
-            imageUrl: '',
-            creationDate: DateTime.timestamp(),
-          ),
-          GroceryModel(
-            id: '12343246234623465',
-            name: 'Cheese',
-            category: 'Eggs & Dairy',
-            notes: 'Parmesan Cheese',
-            imageUrl: '',
-            creationDate: DateTime.timestamp(),
-          ),
-          GroceryModel(
-            id: '122346234623462346345',
-            name: 'Eggplants',
-            category: 'Fruits & Vegetables',
-            notes: '1 massive piece',
-            imageUrl: '',
+            categoryId: '1235',
+            name: 'Chicken',
+            id: '',
+            isDone: false,
+            refinements: <RefinementsModel>[],
+            notes: '',
+            image: '',
             creationDate: DateTime.timestamp(),
           ),
         ],
       ),
-    ]..sort((a, b) => b.dueDate.compareTo(a.dueDate));
+    ]..sort((a, b) => b.dueDate!.compareTo(a.dueDate!));
     return myTasks;
   }
 

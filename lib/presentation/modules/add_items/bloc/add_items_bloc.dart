@@ -10,7 +10,7 @@ class AddItemsBloc extends Bloc<AddItemsEvent, AddItemsState> {
             selectedCategory: 'All',
           ),
         ) {
-    on<FetchBaseGroceries>(_onFetchAllItems);
+    on<GetParentCategories>(_onGetParentCategories);
     on<AddItemToList>(_onAddItemToList);
     on<SetActiveCategory>(_onSetActiveCategory);
   }
@@ -22,8 +22,8 @@ class AddItemsBloc extends Bloc<AddItemsEvent, AddItemsState> {
     Emitter<AddItemsState> emit,
   ) async {}
 
-  Future<void> _onFetchAllItems(
-    FetchBaseGroceries event,
+  Future<void> _onGetParentCategories(
+    GetParentCategories event,
     Emitter<AddItemsState> emit,
   ) async {
     emit(
@@ -32,22 +32,27 @@ class AddItemsBloc extends Bloc<AddItemsEvent, AddItemsState> {
       ),
     );
     try {
+      final myCategories = await _baseGroceriesUseCase.fetchAllCategories();
       final baseGroceries = await _baseGroceriesUseCase.fetchAllBaseGroceries();
-      final categories = <String>{};
-      for (final element in baseGroceries) {
-        categories.add(element.category);
-      }
       emit(
         state.copyWith(
           addItemsStates: AddItemsStatus.success,
           baseGroceries: baseGroceries,
-          categories: ['All', ...categories],
+          categories: myCategories,
         ),
       );
-    } catch (e) {
+    } on FirebaseException catch (e) {
       emit(
         state.copyWith(
           addItemsStates: AddItemsStatus.error,
+          error: e.message,
+        ),
+      );
+    } catch (_) {
+      emit(
+        state.copyWith(
+          addItemsStates: AddItemsStatus.error,
+          error: _.toString(),
         ),
       );
     }

@@ -10,16 +10,36 @@ part of 'category_model.dart';
 
 _$_CategoryModel _$$_CategoryModelFromJson(Map<String, dynamic> json) =>
     _$_CategoryModel(
-      creationDate: DateTime.parse(json['creationDate'] as String),
-      image: json['image'] as String,
-      name: json['name'] as String,
+      categoryId: json['categoryId'] as String?,
+      creationDate: _$JsonConverterFromJson<Timestamp, DateTime>(
+        json['creationDate'],
+        const TimestampSerializer().fromJson,
+      ),
+      image: json['image'] as String?,
+      name: json['name'] as String?,
       parentCategoryId: json['parentCategoryId'] as String?,
     );
 
 Map<String, dynamic> _$$_CategoryModelToJson(_$_CategoryModel instance) =>
     <String, dynamic>{
-      'creationDate': instance.creationDate.toIso8601String(),
+      'categoryId': instance.categoryId,
+      'creationDate': _$JsonConverterToJson<Timestamp, DateTime>(
+        instance.creationDate,
+        const TimestampSerializer().toJson,
+      ),
       'image': instance.image,
       'name': instance.name,
       'parentCategoryId': instance.parentCategoryId,
     };
+
+Value? _$JsonConverterFromJson<Json, Value>(
+  Object? json,
+  Value? Function(Json json) fromJson,
+) =>
+    json == null ? null : fromJson(json as Json);
+
+Json? _$JsonConverterToJson<Json, Value>(
+  Value? value,
+  Json? Function(Value value) toJson,
+) =>
+    value == null ? null : toJson(value);

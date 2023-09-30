@@ -20,13 +20,16 @@ GroceryModel _$GroceryModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GroceryModel {
-  String get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get imageUrl => throw _privateConstructorUsedError;
-  String get category => throw _privateConstructorUsedError;
-  String get notes => throw _privateConstructorUsedError;
-  DateTime get creationDate => throw _privateConstructorUsedError;
-  bool get isDone => throw _privateConstructorUsedError;
+  String? get categoryId => throw _privateConstructorUsedError;
+  @TimestampSerializer()
+  DateTime? get creationDate => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
+  String? get image => throw _privateConstructorUsedError;
+  bool? get isDone => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get notes => throw _privateConstructorUsedError;
+  List<RefinementsModel?>? get refinements =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -41,13 +44,14 @@ abstract class $GroceryModelCopyWith<$Res> {
       _$GroceryModelCopyWithImpl<$Res, GroceryModel>;
   @useResult
   $Res call(
-      {String id,
-      String name,
-      String imageUrl,
-      String category,
-      String notes,
-      DateTime creationDate,
-      bool isDone});
+      {String? categoryId,
+      @TimestampSerializer() DateTime? creationDate,
+      String? id,
+      String? image,
+      bool? isDone,
+      String? name,
+      String? notes,
+      List<RefinementsModel?>? refinements});
 }
 
 /// @nodoc
@@ -63,43 +67,48 @@ class _$GroceryModelCopyWithImpl<$Res, $Val extends GroceryModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? imageUrl = null,
-    Object? category = null,
-    Object? notes = null,
-    Object? creationDate = null,
-    Object? isDone = null,
+    Object? categoryId = freezed,
+    Object? creationDate = freezed,
+    Object? id = freezed,
+    Object? image = freezed,
+    Object? isDone = freezed,
+    Object? name = freezed,
+    Object? notes = freezed,
+    Object? refinements = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      imageUrl: null == imageUrl
-          ? _value.imageUrl
-          : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as String,
-      notes: null == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String,
-      creationDate: null == creationDate
+      categoryId: freezed == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      creationDate: freezed == creationDate
           ? _value.creationDate
           : creationDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      isDone: null == isDone
+              as DateTime?,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isDone: freezed == isDone
           ? _value.isDone
           : isDone // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _value.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      refinements: freezed == refinements
+          ? _value.refinements
+          : refinements // ignore: cast_nullable_to_non_nullable
+              as List<RefinementsModel?>?,
     ) as $Val);
   }
 }
@@ -113,13 +122,14 @@ abstract class _$$_GroceryModelCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
-      String name,
-      String imageUrl,
-      String category,
-      String notes,
-      DateTime creationDate,
-      bool isDone});
+      {String? categoryId,
+      @TimestampSerializer() DateTime? creationDate,
+      String? id,
+      String? image,
+      bool? isDone,
+      String? name,
+      String? notes,
+      List<RefinementsModel?>? refinements});
 }
 
 /// @nodoc
@@ -133,95 +143,97 @@ class __$$_GroceryModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
-    Object? name = null,
-    Object? imageUrl = null,
-    Object? category = null,
-    Object? notes = null,
-    Object? creationDate = null,
-    Object? isDone = null,
+    Object? categoryId = freezed,
+    Object? creationDate = freezed,
+    Object? id = freezed,
+    Object? image = freezed,
+    Object? isDone = freezed,
+    Object? name = freezed,
+    Object? notes = freezed,
+    Object? refinements = freezed,
   }) {
     return _then(_$_GroceryModel(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      imageUrl: null == imageUrl
-          ? _value.imageUrl
-          : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as String,
-      notes: null == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String,
-      creationDate: null == creationDate
+      categoryId: freezed == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      creationDate: freezed == creationDate
           ? _value.creationDate
           : creationDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      isDone: null == isDone
+              as DateTime?,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      image: freezed == image
+          ? _value.image
+          : image // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isDone: freezed == isDone
           ? _value.isDone
           : isDone // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
+      name: freezed == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String?,
+      notes: freezed == notes
+          ? _value.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
+      refinements: freezed == refinements
+          ? _value._refinements
+          : refinements // ignore: cast_nullable_to_non_nullable
+              as List<RefinementsModel?>?,
     ));
   }
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$_GroceryModel with DiagnosticableTreeMixin implements _GroceryModel {
+class _$_GroceryModel implements _GroceryModel {
   const _$_GroceryModel(
-      {required this.id,
+      {required this.categoryId,
+      @TimestampSerializer() required this.creationDate,
+      required this.id,
+      required this.image,
+      required this.isDone,
       required this.name,
-      required this.imageUrl,
-      required this.category,
       required this.notes,
-      required this.creationDate,
-      this.isDone = false});
+      required final List<RefinementsModel?>? refinements})
+      : _refinements = refinements;
 
   factory _$_GroceryModel.fromJson(Map<String, dynamic> json) =>
       _$$_GroceryModelFromJson(json);
 
   @override
-  final String id;
+  final String? categoryId;
   @override
-  final String name;
+  @TimestampSerializer()
+  final DateTime? creationDate;
   @override
-  final String imageUrl;
+  final String? id;
   @override
-  final String category;
+  final String? image;
   @override
-  final String notes;
+  final bool? isDone;
   @override
-  final DateTime creationDate;
+  final String? name;
   @override
-  @JsonKey()
-  final bool isDone;
-
+  final String? notes;
+  final List<RefinementsModel?>? _refinements;
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'GroceryModel(id: $id, name: $name, imageUrl: $imageUrl, category: $category, notes: $notes, creationDate: $creationDate, isDone: $isDone)';
+  List<RefinementsModel?>? get refinements {
+    final value = _refinements;
+    if (value == null) return null;
+    if (_refinements is EqualUnmodifiableListView) return _refinements;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
   }
 
   @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'GroceryModel'))
-      ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('imageUrl', imageUrl))
-      ..add(DiagnosticsProperty('category', category))
-      ..add(DiagnosticsProperty('notes', notes))
-      ..add(DiagnosticsProperty('creationDate', creationDate))
-      ..add(DiagnosticsProperty('isDone', isDone));
+  String toString() {
+    return 'GroceryModel(categoryId: $categoryId, creationDate: $creationDate, id: $id, image: $image, isDone: $isDone, name: $name, notes: $notes, refinements: $refinements)';
   }
 
   @override
@@ -229,22 +241,31 @@ class _$_GroceryModel with DiagnosticableTreeMixin implements _GroceryModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_GroceryModel &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.imageUrl, imageUrl) ||
-                other.imageUrl == imageUrl) &&
-            (identical(other.category, category) ||
-                other.category == category) &&
-            (identical(other.notes, notes) || other.notes == notes) &&
+            (identical(other.categoryId, categoryId) ||
+                other.categoryId == categoryId) &&
             (identical(other.creationDate, creationDate) ||
                 other.creationDate == creationDate) &&
-            (identical(other.isDone, isDone) || other.isDone == isDone));
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.image, image) || other.image == image) &&
+            (identical(other.isDone, isDone) || other.isDone == isDone) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.notes, notes) || other.notes == notes) &&
+            const DeepCollectionEquality()
+                .equals(other._refinements, _refinements));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, id, name, imageUrl, category, notes, creationDate, isDone);
+      runtimeType,
+      categoryId,
+      creationDate,
+      id,
+      image,
+      isDone,
+      name,
+      notes,
+      const DeepCollectionEquality().hash(_refinements));
 
   @JsonKey(ignore: true)
   @override
@@ -262,31 +283,35 @@ class _$_GroceryModel with DiagnosticableTreeMixin implements _GroceryModel {
 
 abstract class _GroceryModel implements GroceryModel {
   const factory _GroceryModel(
-      {required final String id,
-      required final String name,
-      required final String imageUrl,
-      required final String category,
-      required final String notes,
-      required final DateTime creationDate,
-      final bool isDone}) = _$_GroceryModel;
+      {required final String? categoryId,
+      @TimestampSerializer() required final DateTime? creationDate,
+      required final String? id,
+      required final String? image,
+      required final bool? isDone,
+      required final String? name,
+      required final String? notes,
+      required final List<RefinementsModel?>? refinements}) = _$_GroceryModel;
 
   factory _GroceryModel.fromJson(Map<String, dynamic> json) =
       _$_GroceryModel.fromJson;
 
   @override
-  String get id;
+  String? get categoryId;
   @override
-  String get name;
+  @TimestampSerializer()
+  DateTime? get creationDate;
   @override
-  String get imageUrl;
+  String? get id;
   @override
-  String get category;
+  String? get image;
   @override
-  String get notes;
+  bool? get isDone;
   @override
-  DateTime get creationDate;
+  String? get name;
   @override
-  bool get isDone;
+  String? get notes;
+  @override
+  List<RefinementsModel?>? get refinements;
   @override
   @JsonKey(ignore: true)
   _$$_GroceryModelCopyWith<_$_GroceryModel> get copyWith =>

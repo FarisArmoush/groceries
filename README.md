@@ -10,3 +10,5 @@ to coordinate their shopping activities.
 Overall, Groceries is designed to simplify the process of creating and managing 
 shopping lists, making it easier to remember what you need to buy and ensuring
 you dont forget any essential items while grocery shopping.
+
+amoudi.hamza@gmail.com

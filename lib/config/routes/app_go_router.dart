@@ -32,7 +32,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 /// A class that defines the routes and builders for the App.
 final GoRouter appGoRouter = GoRouter(
-  debugLogDiagnostics: true,
+  // debugLogDiagnostics: true,
   initialLocation: '/',
   routes: [
     GoRoute(

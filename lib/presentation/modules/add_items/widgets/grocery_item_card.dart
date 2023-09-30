@@ -9,29 +9,38 @@ class GroceryItemCard extends StatelessWidget {
   final GroceryModel groceryModel;
   final void Function()? onPressed;
 
-  static const _activeColor = Colors.green;
-
   @override
   Widget build(BuildContext context) {
     final isDone = groceryModel.isDone;
     return ListTile(
-      title: Text(groceryModel.name),
-      subtitle: Text(groceryModel.category),
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-        side: BorderSide(
-          color: isDone ? _activeColor : Colors.transparent,
-        ),
-      ),
+      leading: _icon(context),
+      title: Text(groceryModel.name ?? 'null'),
+      subtitle: Text(groceryModel.categoryId ?? 'null'),
       trailing: IconButton(
         onPressed: onPressed,
-        icon: isDone
+        icon: isDone!
             ? Assets.svg.icCheckCircle.svg(
-                color: _activeColor,
+                color: Colors.green,
               )
             : Assets.svg.icPlus.svg(
                 color: context.theme.primaryColor,
               ),
+      ),
+    );
+  }
+
+  Widget _icon(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: context.theme.primaryColor,
+        borderRadius: BorderRadius.circular(5),
+      ),
+      child: SvgPicture.asset(
+        Assets.svg.icBeef.path,
+        // ignore: deprecated_member_use
+        color: context.theme.colorScheme.secondary,
+        height: context.deviceHeight * 0.03,
       ),
     );
   }

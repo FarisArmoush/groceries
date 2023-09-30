@@ -47,7 +47,7 @@ class GroceryListCard extends StatelessWidget {
                   SizedBox(
                     height: context.deviceHeight * 0.01,
                   ),
-                  if (listModel.items.isNotEmpty)
+                  if (listModel.items!.isNotEmpty)
                     _newTasksBox(context)
                   else
                     const SizedBox(),
@@ -75,7 +75,7 @@ class GroceryListCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       child: Text(
-        '${listModel.items.length} ${AppTranslations.home.newTasks}',
+        '${listModel.items!.length} ${AppTranslations.home.newTasks}',
         style: TextStyle(
           fontFamily: AppFonts.light(context),
           color: context.theme.colorScheme.secondary,
@@ -87,7 +87,7 @@ class GroceryListCard extends StatelessWidget {
 
   Text _listName(BuildContext context) {
     return Text(
-      listModel.name,
+      listModel.name ?? 'null',
       style: TextStyle(
         fontFamily: AppFonts.medium(context),
         color: context.theme.primaryColor,

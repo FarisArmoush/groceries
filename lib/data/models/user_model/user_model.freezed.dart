@@ -20,11 +20,12 @@ UserModel _$UserModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$UserModel {
-  String get uid => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get email => throw _privateConstructorUsedError;
-  String get imageUrl => throw _privateConstructorUsedError;
-  DateTime get creationDate => throw _privateConstructorUsedError;
+  String? get uid => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get email => throw _privateConstructorUsedError;
+  String? get imageUrl => throw _privateConstructorUsedError;
+  @TimestampSerializer()
+  DateTime? get creationDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,11 +39,11 @@ abstract class $UserModelCopyWith<$Res> {
       _$UserModelCopyWithImpl<$Res, UserModel>;
   @useResult
   $Res call(
-      {String uid,
-      String name,
-      String email,
-      String imageUrl,
-      DateTime creationDate});
+      {String? uid,
+      String? name,
+      String? email,
+      String? imageUrl,
+      @TimestampSerializer() DateTime? creationDate});
 }
 
 /// @nodoc
@@ -58,33 +59,33 @@ class _$UserModelCopyWithImpl<$Res, $Val extends UserModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = null,
-    Object? name = null,
-    Object? email = null,
-    Object? imageUrl = null,
-    Object? creationDate = null,
+    Object? uid = freezed,
+    Object? name = freezed,
+    Object? email = freezed,
+    Object? imageUrl = freezed,
+    Object? creationDate = freezed,
   }) {
     return _then(_value.copyWith(
-      uid: null == uid
+      uid: freezed == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
+              as String?,
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      imageUrl: null == imageUrl
+              as String?,
+      imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      creationDate: null == creationDate
+              as String?,
+      creationDate: freezed == creationDate
           ? _value.creationDate
           : creationDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
     ) as $Val);
   }
 }
@@ -97,11 +98,11 @@ abstract class _$$_UserModelCopyWith<$Res> implements $UserModelCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String uid,
-      String name,
-      String email,
-      String imageUrl,
-      DateTime creationDate});
+      {String? uid,
+      String? name,
+      String? email,
+      String? imageUrl,
+      @TimestampSerializer() DateTime? creationDate});
 }
 
 /// @nodoc
@@ -115,33 +116,33 @@ class __$$_UserModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = null,
-    Object? name = null,
-    Object? email = null,
-    Object? imageUrl = null,
-    Object? creationDate = null,
+    Object? uid = freezed,
+    Object? name = freezed,
+    Object? email = freezed,
+    Object? imageUrl = freezed,
+    Object? creationDate = freezed,
   }) {
     return _then(_$_UserModel(
-      uid: null == uid
+      uid: freezed == uid
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      email: null == email
+              as String?,
+      email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String,
-      imageUrl: null == imageUrl
+              as String?,
+      imageUrl: freezed == imageUrl
           ? _value.imageUrl
           : imageUrl // ignore: cast_nullable_to_non_nullable
-              as String,
-      creationDate: null == creationDate
+              as String?,
+      creationDate: freezed == creationDate
           ? _value.creationDate
           : creationDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as DateTime?,
     ));
   }
 }
@@ -154,21 +155,22 @@ class _$_UserModel with DiagnosticableTreeMixin implements _UserModel {
       required this.name,
       required this.email,
       required this.imageUrl,
-      required this.creationDate});
+      @TimestampSerializer() required this.creationDate});
 
   factory _$_UserModel.fromJson(Map<String, dynamic> json) =>
       _$$_UserModelFromJson(json);
 
   @override
-  final String uid;
+  final String? uid;
   @override
-  final String name;
+  final String? name;
   @override
-  final String email;
+  final String? email;
   @override
-  final String imageUrl;
+  final String? imageUrl;
   @override
-  final DateTime creationDate;
+  @TimestampSerializer()
+  final DateTime? creationDate;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -222,25 +224,27 @@ class _$_UserModel with DiagnosticableTreeMixin implements _UserModel {
 
 abstract class _UserModel implements UserModel {
   const factory _UserModel(
-      {required final String uid,
-      required final String name,
-      required final String email,
-      required final String imageUrl,
-      required final DateTime creationDate}) = _$_UserModel;
+          {required final String? uid,
+          required final String? name,
+          required final String? email,
+          required final String? imageUrl,
+          @TimestampSerializer() required final DateTime? creationDate}) =
+      _$_UserModel;
 
   factory _UserModel.fromJson(Map<String, dynamic> json) =
       _$_UserModel.fromJson;
 
   @override
-  String get uid;
+  String? get uid;
   @override
-  String get name;
+  String? get name;
   @override
-  String get email;
+  String? get email;
   @override
-  String get imageUrl;
+  String? get imageUrl;
   @override
-  DateTime get creationDate;
+  @TimestampSerializer()
+  DateTime? get creationDate;
   @override
   @JsonKey(ignore: true)
   _$$_UserModelCopyWith<_$_UserModel> get copyWith =>

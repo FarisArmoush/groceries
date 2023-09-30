@@ -21,7 +21,7 @@ class GroceryListDetailsView extends StatelessWidget {
             SizedBox(
               width: context.deviceWidth * 0.02,
             ),
-            Text(listModel.name),
+            Text(listModel.name ?? 'null'),
           ],
         ),
         actions: const [
@@ -29,12 +29,12 @@ class GroceryListDetailsView extends StatelessWidget {
           ClearGroceryListItemsButton(),
         ],
       ),
-      body: listModel.items.isEmpty
+      body: listModel.items!.isEmpty
           ? const EmptyGroceryList()
           : GroceryListDetailsForm(
               listModel: listModel,
             ),
-      floatingActionButton: listModel.items.isEmpty
+      floatingActionButton: listModel.items!.isEmpty
           ? const SizedBox.shrink()
           : const GroceryListDetailsFab(),
     );

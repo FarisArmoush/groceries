@@ -18,7 +18,7 @@ class GroceryListDetailsForm extends StatelessWidget {
           height: context.deviceHeight * 0.02,
         ),
         GroceriesList(
-          listModel: listModel,
+          groceries: listModel.items,
         ),
         SizedBox(
           height: context.deviceHeight * 0.1,

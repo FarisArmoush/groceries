@@ -20,9 +20,11 @@ CategoryModel _$CategoryModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CategoryModel {
-  DateTime get creationDate => throw _privateConstructorUsedError;
-  String get image => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  String? get categoryId => throw _privateConstructorUsedError;
+  @TimestampSerializer()
+  DateTime? get creationDate => throw _privateConstructorUsedError;
+  String? get image => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
   String? get parentCategoryId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -38,9 +40,10 @@ abstract class $CategoryModelCopyWith<$Res> {
       _$CategoryModelCopyWithImpl<$Res, CategoryModel>;
   @useResult
   $Res call(
-      {DateTime creationDate,
-      String image,
-      String name,
+      {String? categoryId,
+      @TimestampSerializer() DateTime? creationDate,
+      String? image,
+      String? name,
       String? parentCategoryId});
 }
 
@@ -57,24 +60,29 @@ class _$CategoryModelCopyWithImpl<$Res, $Val extends CategoryModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? creationDate = null,
-    Object? image = null,
-    Object? name = null,
+    Object? categoryId = freezed,
+    Object? creationDate = freezed,
+    Object? image = freezed,
+    Object? name = freezed,
     Object? parentCategoryId = freezed,
   }) {
     return _then(_value.copyWith(
-      creationDate: null == creationDate
+      categoryId: freezed == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      creationDate: freezed == creationDate
           ? _value.creationDate
           : creationDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      image: null == image
+              as DateTime?,
+      image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       parentCategoryId: freezed == parentCategoryId
           ? _value.parentCategoryId
           : parentCategoryId // ignore: cast_nullable_to_non_nullable
@@ -92,9 +100,10 @@ abstract class _$$_CategoryModelCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {DateTime creationDate,
-      String image,
-      String name,
+      {String? categoryId,
+      @TimestampSerializer() DateTime? creationDate,
+      String? image,
+      String? name,
       String? parentCategoryId});
 }
 
@@ -109,24 +118,29 @@ class __$$_CategoryModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? creationDate = null,
-    Object? image = null,
-    Object? name = null,
+    Object? categoryId = freezed,
+    Object? creationDate = freezed,
+    Object? image = freezed,
+    Object? name = freezed,
     Object? parentCategoryId = freezed,
   }) {
     return _then(_$_CategoryModel(
-      creationDate: null == creationDate
+      categoryId: freezed == categoryId
+          ? _value.categoryId
+          : categoryId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      creationDate: freezed == creationDate
           ? _value.creationDate
           : creationDate // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      image: null == image
+              as DateTime?,
+      image: freezed == image
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       parentCategoryId: freezed == parentCategoryId
           ? _value.parentCategoryId
           : parentCategoryId // ignore: cast_nullable_to_non_nullable
@@ -139,7 +153,8 @@ class __$$_CategoryModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_CategoryModel with DiagnosticableTreeMixin implements _CategoryModel {
   const _$_CategoryModel(
-      {required this.creationDate,
+      {required this.categoryId,
+      @TimestampSerializer() required this.creationDate,
       required this.image,
       required this.name,
       required this.parentCategoryId});
@@ -148,17 +163,20 @@ class _$_CategoryModel with DiagnosticableTreeMixin implements _CategoryModel {
       _$$_CategoryModelFromJson(json);
 
   @override
-  final DateTime creationDate;
+  final String? categoryId;
   @override
-  final String image;
+  @TimestampSerializer()
+  final DateTime? creationDate;
   @override
-  final String name;
+  final String? image;
+  @override
+  final String? name;
   @override
   final String? parentCategoryId;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CategoryModel(creationDate: $creationDate, image: $image, name: $name, parentCategoryId: $parentCategoryId)';
+    return 'CategoryModel(categoryId: $categoryId, creationDate: $creationDate, image: $image, name: $name, parentCategoryId: $parentCategoryId)';
   }
 
   @override
@@ -166,6 +184,7 @@ class _$_CategoryModel with DiagnosticableTreeMixin implements _CategoryModel {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'CategoryModel'))
+      ..add(DiagnosticsProperty('categoryId', categoryId))
       ..add(DiagnosticsProperty('creationDate', creationDate))
       ..add(DiagnosticsProperty('image', image))
       ..add(DiagnosticsProperty('name', name))
@@ -177,6 +196,8 @@ class _$_CategoryModel with DiagnosticableTreeMixin implements _CategoryModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_CategoryModel &&
+            (identical(other.categoryId, categoryId) ||
+                other.categoryId == categoryId) &&
             (identical(other.creationDate, creationDate) ||
                 other.creationDate == creationDate) &&
             (identical(other.image, image) || other.image == image) &&
@@ -187,8 +208,8 @@ class _$_CategoryModel with DiagnosticableTreeMixin implements _CategoryModel {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, creationDate, image, name, parentCategoryId);
+  int get hashCode => Object.hash(
+      runtimeType, categoryId, creationDate, image, name, parentCategoryId);
 
   @JsonKey(ignore: true)
   @override
@@ -206,20 +227,24 @@ class _$_CategoryModel with DiagnosticableTreeMixin implements _CategoryModel {
 
 abstract class _CategoryModel implements CategoryModel {
   const factory _CategoryModel(
-      {required final DateTime creationDate,
-      required final String image,
-      required final String name,
+      {required final String? categoryId,
+      @TimestampSerializer() required final DateTime? creationDate,
+      required final String? image,
+      required final String? name,
       required final String? parentCategoryId}) = _$_CategoryModel;
 
   factory _CategoryModel.fromJson(Map<String, dynamic> json) =
       _$_CategoryModel.fromJson;
 
   @override
-  DateTime get creationDate;
+  String? get categoryId;
   @override
-  String get image;
+  @TimestampSerializer()
+  DateTime? get creationDate;
   @override
-  String get name;
+  String? get image;
+  @override
+  String? get name;
   @override
   String? get parentCategoryId;
   @override

@@ -7,7 +7,7 @@ class GroceriesBoxList extends StatelessWidget {
     super.key,
   });
   final int index;
-  final List<GroceryModel>? list;
+  final List<GroceryModel?>? list;
 
   @override
   Widget build(BuildContext context) {
@@ -21,11 +21,13 @@ class GroceriesBoxList extends StatelessWidget {
           tiles: list!.map(
             (item) => ListTile(
               tileColor: Colors.transparent,
-              title: Text(item.name),
-              subtitle: Text(item.notes),
+              title: Text(item!.name ?? ''),
+              subtitle: item.notes == null || item.notes!.isEmpty
+                  ? null
+                  : Text(item.notes!),
               trailing: IconButton(
                 onPressed: () {},
-                icon: item.isDone
+                icon: item.isDone!
                     ? Assets.svg.icDoubleCheck.svg(
                         color: Colors.green,
                       )

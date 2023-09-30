@@ -188,6 +188,7 @@ class App extends StatelessWidget {
                           RepositoryProvider(
                             create: (context) => BaseGroceriesUseCase(
                               context.read<BaseGroceriesRepository>(),
+                              context.read<CategoriesRepository>(),
                             ),
                           ),
                         ],

@@ -16,10 +16,8 @@ class RegisterConfirmPasswordTextField extends StatelessWidget {
             color: context.theme.inputDecorationTheme.prefixIconColor,
             fit: BoxFit.scaleDown,
           ),
-          onChanged: (confirmPassword) {
-            context
-                .read<RegisterCubit>()
-                .confirmedPasswordChanged(confirmPassword);
+          onChanged: (value) {
+            context.read<RegisterCubit>().confirmedPasswordChanged(value);
           },
           labelText: AppTranslations.register.repeatPassword,
           validator: (value) => state.confirmedPassword.validator(value),
