@@ -1,6 +1,6 @@
 part of '../app_translations.dart';
 
-class __ForgotPassword {
+class _ForgotPassword {
   final forgotPassword = 'forgot_password'.tr();
 
   /// forgot_password_body
