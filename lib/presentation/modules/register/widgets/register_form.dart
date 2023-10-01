@@ -46,7 +46,7 @@ class RegisterForm extends StatelessWidget {
             SizedBox(
               height: context.deviceHeight * 0.03,
             ),
-            OtherOptionTextButton(
+            SwitchAuthenticationOptionTextButton(
               upperText: AppTranslations.register.alreadyHaveAnAccount,
               lowerText: AppTranslations.register.loginNow,
               onTap: () => context.pushNamed(AppNamedRoutes.login),

@@ -14,16 +14,11 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-LoginParam _$LoginParamFromJson(Map<String, dynamic> json) {
-  return _LoginParam.fromJson(json);
-}
-
 /// @nodoc
 mixin _$LoginParam {
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $LoginParamCopyWith<LoginParam> get copyWith =>
       throw _privateConstructorUsedError;
@@ -106,12 +101,9 @@ class __$$_LoginParamCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
 class _$_LoginParam implements _LoginParam {
   const _$_LoginParam({required this.email, required this.password});
-
-  factory _$_LoginParam.fromJson(Map<String, dynamic> json) =>
-      _$$_LoginParamFromJson(json);
 
   @override
   final String email;
@@ -133,7 +125,6 @@ class _$_LoginParam implements _LoginParam {
                 other.password == password));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, email, password);
 
@@ -142,22 +133,12 @@ class _$_LoginParam implements _LoginParam {
   @pragma('vm:prefer-inline')
   _$$_LoginParamCopyWith<_$_LoginParam> get copyWith =>
       __$$_LoginParamCopyWithImpl<_$_LoginParam>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_LoginParamToJson(
-      this,
-    );
-  }
 }
 
 abstract class _LoginParam implements LoginParam {
   const factory _LoginParam(
       {required final String email,
       required final String password}) = _$_LoginParam;
-
-  factory _LoginParam.fromJson(Map<String, dynamic> json) =
-      _$_LoginParam.fromJson;
 
   @override
   String get email;

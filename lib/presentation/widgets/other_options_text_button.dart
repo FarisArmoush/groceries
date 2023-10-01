@@ -1,7 +1,7 @@
 part of 'widgets.dart';
 
-class OtherOptionTextButton extends StatelessWidget {
-  const OtherOptionTextButton({
+class SwitchAuthenticationOptionTextButton extends StatelessWidget {
+  const SwitchAuthenticationOptionTextButton({
     required this.onTap,
     required this.upperText,
     required this.lowerText,

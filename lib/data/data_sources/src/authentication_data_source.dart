@@ -72,7 +72,7 @@ class AuthenticationDataSource {
         firebaseAuth.signOut(),
       ]);
     } catch (_) {
-      throw LogoutFailure();
+      throw LogoutException();
     }
   }
 

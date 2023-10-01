@@ -19,7 +19,7 @@ class LogoutButton extends StatelessWidget {
           context.pushReplacementNamed(AppNamedRoutes.welcome);
         }
       },
-      child: TileButton(
+      child: AppListTileButton(
         title: AppTranslations.accountSettings.logout,
         icon: Assets.svg.icLogout.path,
         color: context.theme.primaryColorLight,

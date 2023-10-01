@@ -1,7 +1,7 @@
 part of 'widgets.dart';
 
-class TileButton extends StatelessWidget {
-  const TileButton({
+class AppListTileButton extends StatelessWidget {
+  const AppListTileButton({
     required this.onTap,
     required this.title,
     required this.icon,

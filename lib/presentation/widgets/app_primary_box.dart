@@ -1,7 +1,7 @@
 part of 'widgets.dart';
 
-class PrimaryBox extends StatelessWidget {
-  const PrimaryBox({
+class AppPrimaryBox extends StatelessWidget {
+  const AppPrimaryBox({
     required this.child,
     this.header,
     this.backgroundColor,

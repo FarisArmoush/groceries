@@ -6,7 +6,7 @@ class ThemeRadiosList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final groupValue = context.watch<ThemeCubit>().state;
-    return PrimaryBox(
+    return AppPrimaryBox(
       child: ListView(
         primary: false,
         shrinkWrap: true,
