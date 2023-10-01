@@ -1,41 +1,16 @@
-part of '../add_items.dart';
+part of 'add_items_bloc.dart';
 
-sealed class AddItemsEvent extends Equatable {
-  const AddItemsEvent();
+@freezed
+class AddItemsEvent with _$AddItemsEvent {
+  const factory AddItemsEvent.getParentCategories() = _GetParentCategories;
+  
+  const factory AddItemsEvent.addItemToList({
+    required GroceryModel groceryModel,
+    required String collectionPath,
+  }) = _AddItemToList;
 
-  @override
-  List<Object> get props => [];
-}
+  const factory AddItemsEvent.setActiveCategory(String category) =
+      _SetActiveCategory;
 
-final class GetParentCategories extends AddItemsEvent {
-  const GetParentCategories();
-  @override
-  List<Object> get props => [];
-}
-
-final class AddItemToList extends AddItemsEvent {
-  const AddItemToList({
-    required this.groceryModel,
-    required this.collectionPath,
-  });
-
-  final GroceryModel groceryModel;
-  final String collectionPath;
-
-  @override
-  List<Object> get props => [groceryModel, collectionPath];
-}
-
-final class SetActiveCategory extends AddItemsEvent {
-  const SetActiveCategory(this.category);
-
-  final String category;
-  @override
-  List<Object> get props => [category];
-}
-
-final class GetCategoryItems extends AddItemsEvent {
-  const GetCategoryItems();
-  @override
-  List<Object> get props => [];
+  const factory AddItemsEvent.getCategoryItems() = _GetCategoryItems;
 }

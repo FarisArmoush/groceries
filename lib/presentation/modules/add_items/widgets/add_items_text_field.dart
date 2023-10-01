@@ -7,43 +7,46 @@ class AddItemsTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AddItemsBloc, AddItemsState>(
       builder: (context, state) {
-        if (state.status == AddItemsStatus.error) {
-          return const SizedBox.shrink();
-        }
-        return Material(
-          color: CupertinoColors.systemGrey5,
-          borderRadius: BorderRadius.circular(9),
-          child: AppTextField(
-            style: TextStyle(
-              fontFamily: AppFonts.semiBold(context),
-              color: AppColors.black,
-              fontSize: 14,
+        return state.status.maybeWhen(
+          initial: SizedBox.shrink,
+          loading: AppLoadingIndicator.new,
+          failure: (_) => const SizedBox.shrink(),
+          orElse: SizedBox.shrink,
+          success: () => Material(
+            color: CupertinoColors.systemGrey5,
+            borderRadius: BorderRadius.circular(9),
+            child: AppTextField(
+              style: TextStyle(
+                fontFamily: AppFonts.semiBold(context),
+                color: AppColors.black,
+                fontSize: 14,
+              ),
+              contentPadding: const EdgeInsets.symmetric(
+                horizontal: 16,
+                vertical: 8,
+              ),
+              labelStyle: TextStyle(
+                fontFamily: AppFonts.medium(context),
+                color: AppColors.black,
+                fontSize: 14,
+              ),
+              floatingLabelStyle: TextStyle(
+                fontFamily: AppFonts.medium(context),
+                color: AppColors.black,
+                fontSize: 16,
+              ),
+              prefixIcon: const Icon(
+                CupertinoIcons.search,
+                color: AppColors.black,
+              ),
+              labelText: "What're you looking for?",
+              disabledBorder: InputBorder.none,
+              border: InputBorder.none,
+              errorBorder: InputBorder.none,
+              enabledBorder: InputBorder.none,
+              focusedBorder: InputBorder.none,
+              focusedErrorBorder: InputBorder.none,
             ),
-            contentPadding: const EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 8,
-            ),
-            labelStyle: TextStyle(
-              fontFamily: AppFonts.medium(context),
-              color: AppColors.black,
-              fontSize: 14,
-            ),
-            floatingLabelStyle: TextStyle(
-              fontFamily: AppFonts.medium(context),
-              color: AppColors.black,
-              fontSize: 16,
-            ),
-            prefixIcon: const Icon(
-              CupertinoIcons.search,
-              color: AppColors.black,
-            ),
-            labelText: "What're you looking for?",
-            disabledBorder: InputBorder.none,
-            border: InputBorder.none,
-            errorBorder: InputBorder.none,
-            enabledBorder: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            focusedErrorBorder: InputBorder.none,
           ),
         );
       },
