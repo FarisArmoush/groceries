@@ -5,7 +5,7 @@ class UserDataBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = context.watch<UserDataCubit>();
+    final user = context.watch<UserDataCubit>().state;
     return ListView(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),

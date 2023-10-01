@@ -7,16 +7,14 @@ part 'credits_state.dart';
 part 'credits_cubit.freezed.dart';
 
 class CreditsCubit extends Cubit<CreditsState> {
-  CreditsCubit(this._creditsUseCase)
+  CreditsCubit(FetchCreditsUseCase creditsUseCase)
       : super(
           CreditsState(
-            backendPackages: _creditsUseCase.backendPackages,
-            devPackages: _creditsUseCase.devPackages,
-            miscPackages: _creditsUseCase.miscPackages,
-            stateManagementPackages: _creditsUseCase.stateManagementPackages,
-            uiPackages: _creditsUseCase.uiPackages,
+            backendPackages: creditsUseCase.backendPackages,
+            devPackages: creditsUseCase.devPackages,
+            miscPackages: creditsUseCase.miscPackages,
+            stateManagementPackages: creditsUseCase.stateManagementPackages,
+            uiPackages: creditsUseCase.uiPackages,
           ),
         );
-  // ignore: unused_field
-  final FetchCreditsUseCase _creditsUseCase;
 }

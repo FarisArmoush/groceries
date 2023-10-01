@@ -1,11 +1,11 @@
 part of 'user_data_cubit.dart';
 
-class UserDataState extends Equatable {
-  const UserDataState();
-  @override
-  List<Object?> get props => [];
-}
-
-class UserDataStateInitial extends UserDataState {
-  const UserDataStateInitial();
+@freezed
+class UserDataState with _$UserDataState {
+  const factory UserDataState({
+    String? email,
+    bool? emailVerified,
+    String? displayName,
+    String? creationDate,
+  }) = _UserDataState;
 }
