@@ -8,7 +8,7 @@ class LogoutButton extends StatelessWidget {
     return BlocListener<AuthenticationBloc, AuthenticationState>(
       listenWhen: (previous, current) => previous != current,
       listener: (context, state) {
-        if (state is Unauthenticated) {
+        if (state == const AuthenticationState.unAuthenticated()) {
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(
