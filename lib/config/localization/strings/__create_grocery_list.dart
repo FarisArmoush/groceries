@@ -1,6 +1,7 @@
 part of '../app_translations.dart';
 
-class _CreateGroceryList {
+final class _CreateGroceryList {
+  /// create_list
   final createList = 'create_list'.tr();
 
   /// create_new_list

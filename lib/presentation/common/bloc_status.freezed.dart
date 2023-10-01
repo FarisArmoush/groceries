@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'base_status.dart';
+part of 'bloc_status.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$BaseStatus {
+mixin _$BlocStatus {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -69,16 +69,16 @@ mixin _$BaseStatus {
 }
 
 /// @nodoc
-abstract class $BaseStatusCopyWith<$Res> {
-  factory $BaseStatusCopyWith(
-          BaseStatus value, $Res Function(BaseStatus) then) =
-      _$BaseStatusCopyWithImpl<$Res, BaseStatus>;
+abstract class $BlocStatusCopyWith<$Res> {
+  factory $BlocStatusCopyWith(
+          BlocStatus value, $Res Function(BlocStatus) then) =
+      _$BlocStatusCopyWithImpl<$Res, BlocStatus>;
 }
 
 /// @nodoc
-class _$BaseStatusCopyWithImpl<$Res, $Val extends BaseStatus>
-    implements $BaseStatusCopyWith<$Res> {
-  _$BaseStatusCopyWithImpl(this._value, this._then);
+class _$BlocStatusCopyWithImpl<$Res, $Val extends BlocStatus>
+    implements $BlocStatusCopyWith<$Res> {
+  _$BlocStatusCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -94,7 +94,7 @@ abstract class _$$InitialCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialCopyWithImpl<$Res>
-    extends _$BaseStatusCopyWithImpl<$Res, _$Initial>
+    extends _$BlocStatusCopyWithImpl<$Res, _$Initial>
     implements _$$InitialCopyWith<$Res> {
   __$$InitialCopyWithImpl(_$Initial _value, $Res Function(_$Initial) _then)
       : super(_value, _then);
@@ -107,7 +107,7 @@ class _$Initial implements Initial {
 
   @override
   String toString() {
-    return 'BaseStatus.initial()';
+    return 'BlocStatus.initial()';
   }
 
   @override
@@ -194,7 +194,7 @@ class _$Initial implements Initial {
   }
 }
 
-abstract class Initial implements BaseStatus {
+abstract class Initial implements BlocStatus {
   const factory Initial() = _$Initial;
 }
 
@@ -206,7 +206,7 @@ abstract class _$$LoadingCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingCopyWithImpl<$Res>
-    extends _$BaseStatusCopyWithImpl<$Res, _$Loading>
+    extends _$BlocStatusCopyWithImpl<$Res, _$Loading>
     implements _$$LoadingCopyWith<$Res> {
   __$$LoadingCopyWithImpl(_$Loading _value, $Res Function(_$Loading) _then)
       : super(_value, _then);
@@ -219,7 +219,7 @@ class _$Loading implements Loading {
 
   @override
   String toString() {
-    return 'BaseStatus.loading()';
+    return 'BlocStatus.loading()';
   }
 
   @override
@@ -306,7 +306,7 @@ class _$Loading implements Loading {
   }
 }
 
-abstract class Loading implements BaseStatus {
+abstract class Loading implements BlocStatus {
   const factory Loading() = _$Loading;
 }
 
@@ -318,7 +318,7 @@ abstract class _$$SuccessCopyWith<$Res> {
 
 /// @nodoc
 class __$$SuccessCopyWithImpl<$Res>
-    extends _$BaseStatusCopyWithImpl<$Res, _$Success>
+    extends _$BlocStatusCopyWithImpl<$Res, _$Success>
     implements _$$SuccessCopyWith<$Res> {
   __$$SuccessCopyWithImpl(_$Success _value, $Res Function(_$Success) _then)
       : super(_value, _then);
@@ -331,7 +331,7 @@ class _$Success implements Success {
 
   @override
   String toString() {
-    return 'BaseStatus.success()';
+    return 'BlocStatus.success()';
   }
 
   @override
@@ -418,7 +418,7 @@ class _$Success implements Success {
   }
 }
 
-abstract class Success implements BaseStatus {
+abstract class Success implements BlocStatus {
   const factory Success() = _$Success;
 }
 
@@ -432,7 +432,7 @@ abstract class _$$FailureCopyWith<$Res> {
 
 /// @nodoc
 class __$$FailureCopyWithImpl<$Res>
-    extends _$BaseStatusCopyWithImpl<$Res, _$Failure>
+    extends _$BlocStatusCopyWithImpl<$Res, _$Failure>
     implements _$$FailureCopyWith<$Res> {
   __$$FailureCopyWithImpl(_$Failure _value, $Res Function(_$Failure) _then)
       : super(_value, _then);
@@ -461,7 +461,7 @@ class _$Failure implements Failure {
 
   @override
   String toString() {
-    return 'BaseStatus.failure(error: $error)';
+    return 'BlocStatus.failure(error: $error)';
   }
 
   @override
@@ -556,7 +556,7 @@ class _$Failure implements Failure {
   }
 }
 
-abstract class Failure implements BaseStatus {
+abstract class Failure implements BlocStatus {
   const factory Failure(final String error) = _$Failure;
 
   String get error;

@@ -652,7 +652,7 @@ mixin _$AddItemsState {
   List<GroceryModel> get baseGroceries => throw _privateConstructorUsedError;
   String get selectedCategory => throw _privateConstructorUsedError;
   String get error => throw _privateConstructorUsedError;
-  BaseStatus get status => throw _privateConstructorUsedError;
+  BlocStatus get status => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AddItemsStateCopyWith<AddItemsState> get copyWith =>
@@ -670,9 +670,9 @@ abstract class $AddItemsStateCopyWith<$Res> {
       List<GroceryModel> baseGroceries,
       String selectedCategory,
       String error,
-      BaseStatus status});
+      BlocStatus status});
 
-  $BaseStatusCopyWith<$Res> get status;
+  $BlocStatusCopyWith<$Res> get status;
 }
 
 /// @nodoc
@@ -714,14 +714,14 @@ class _$AddItemsStateCopyWithImpl<$Res, $Val extends AddItemsState>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as BaseStatus,
+              as BlocStatus,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $BaseStatusCopyWith<$Res> get status {
-    return $BaseStatusCopyWith<$Res>(_value.status, (value) {
+  $BlocStatusCopyWith<$Res> get status {
+    return $BlocStatusCopyWith<$Res>(_value.status, (value) {
       return _then(_value.copyWith(status: value) as $Val);
     });
   }
@@ -740,10 +740,10 @@ abstract class _$$_AddItemsStateCopyWith<$Res>
       List<GroceryModel> baseGroceries,
       String selectedCategory,
       String error,
-      BaseStatus status});
+      BlocStatus status});
 
   @override
-  $BaseStatusCopyWith<$Res> get status;
+  $BlocStatusCopyWith<$Res> get status;
 }
 
 /// @nodoc
@@ -783,7 +783,7 @@ class __$$_AddItemsStateCopyWithImpl<$Res>
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as BaseStatus,
+              as BlocStatus,
     ));
   }
 }
@@ -796,7 +796,7 @@ class _$_AddItemsState extends _AddItemsState {
       final List<GroceryModel> baseGroceries = const <GroceryModel>[],
       this.selectedCategory = 'All',
       this.error = 'Failed to get data. Try again later.',
-      this.status = const BaseStatus.initial()})
+      this.status = const BlocStatus.initial()})
       : _categories = categories,
         _baseGroceries = baseGroceries,
         super._();
@@ -827,7 +827,7 @@ class _$_AddItemsState extends _AddItemsState {
   final String error;
   @override
   @JsonKey()
-  final BaseStatus status;
+  final BlocStatus status;
 
   @override
   String toString() {
@@ -871,7 +871,7 @@ abstract class _AddItemsState extends AddItemsState {
       final List<GroceryModel> baseGroceries,
       final String selectedCategory,
       final String error,
-      final BaseStatus status}) = _$_AddItemsState;
+      final BlocStatus status}) = _$_AddItemsState;
   const _AddItemsState._() : super._();
 
   @override
@@ -883,7 +883,7 @@ abstract class _AddItemsState extends AddItemsState {
   @override
   String get error;
   @override
-  BaseStatus get status;
+  BlocStatus get status;
   @override
   @JsonKey(ignore: true)
   _$$_AddItemsStateCopyWith<_$_AddItemsState> get copyWith =>

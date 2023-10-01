@@ -7,7 +7,7 @@ class AddItemsState with _$AddItemsState {
     @Default(<GroceryModel>[]) List<GroceryModel> baseGroceries,
     @Default('All') String selectedCategory,
     @Default('Failed to get data. Try again later.') String error,
-    @Default(BaseStatus.initial()) BaseStatus status,
+    @Default(BlocStatus.initial()) BlocStatus status,
   }) = _AddItemsState;
 
   const AddItemsState._();

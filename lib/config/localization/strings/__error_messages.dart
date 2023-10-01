@@ -1,8 +1,8 @@
 part of '../app_translations.dart';
 
-class _ErrorMessages {
+final class _ErrorMessages {
   /// default_error_message
-  final defaultRrrorMessage = 'default_error_message'.tr();
+  final defaultErrorMessage = 'default_error_message'.tr();
 
   /// invalid_email
   final invalidEmail = 'invalid_email'.tr();

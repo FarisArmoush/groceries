@@ -1,6 +1,6 @@
 part of '../app_translations.dart';
 
-class _GroceryListSettings {
+final class _GroceryListSettings {
   final deleteList = 'delete_list'.tr();
 
   /// yes_delete_list
