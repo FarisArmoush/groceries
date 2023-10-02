@@ -7,10 +7,12 @@ part 'onboarding_state.dart';
 part 'onboarding_bloc.freezed.dart';
 
 class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
-  OnboardingBloc() : super(const OnboardingState()) {
+  OnboardingBloc(this._sharedPreferences) : super(const OnboardingState()) {
     on<_UpdateIndex>(_onUpdateIndex);
     on<_MarkOnboardingAsViewed>(_onMarkOnboardingAsViewed);
   }
+
+  final SharedPreferences _sharedPreferences;
 
   void _onUpdateIndex(
     _UpdateIndex event,
@@ -23,7 +25,6 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
     _MarkOnboardingAsViewed event,
     Emitter<OnboardingState> emit,
   ) async {
-    final sharedPreferences = await SharedPreferences.getInstance();
-    await sharedPreferences.setBool('hasViewedOnboarding', true);
+    await _sharedPreferences.setBool('hasViewedOnboarding', true);
   }
 }

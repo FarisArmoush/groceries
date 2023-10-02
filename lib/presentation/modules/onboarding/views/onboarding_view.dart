@@ -6,7 +6,9 @@ class OnboardingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => OnboardingBloc(),
+      create: (context) => OnboardingBloc(
+        context.read<SharedPreferences>(),
+      ),
       child: const OnboardingForm(),
     );
   }
