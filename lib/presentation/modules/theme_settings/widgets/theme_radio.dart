@@ -11,7 +11,7 @@ class ThemeRadio extends StatelessWidget {
   final String title;
   final ThemeMode groupValue;
   final ThemeMode value;
-  final ValueChanged<ThemeMode?>? onChanged;
+  final ValueChanged<ThemeMode?> onChanged;
 
   @override
   Widget build(BuildContext context) {
