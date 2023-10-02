@@ -1,7 +1,9 @@
 part of '../app.dart';
 
 class App extends StatelessWidget {
-  const App({super.key});
+  const App({required this.sharedPreferences, super.key});
+
+  final SharedPreferences sharedPreferences;
 
   @override
   Widget build(BuildContext context) {
@@ -16,6 +18,9 @@ class App extends StatelessWidget {
         ),
         RepositoryProvider<FirebaseRemoteConfig>(
           create: (context) => FirebaseRemoteConfig.instance,
+        ),
+        RepositoryProvider<SharedPreferences>.value(
+          value: sharedPreferences,
         ),
       ],
       // DATA SOURCES PROVIDER

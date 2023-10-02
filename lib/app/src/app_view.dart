@@ -18,7 +18,9 @@ class AppView extends StatelessWidget {
           ),
         ),
         BlocProvider(
-          create: (context) => ThemeCubit()..loadTheme(),
+          create: (context) => ThemeCubit(
+            context.read<SharedPreferences>(),
+          )..loadTheme(),
         ),
         BlocProvider(
           create: (context) => RemoteConfigCubit(
