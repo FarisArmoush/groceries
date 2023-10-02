@@ -1,13 +1,11 @@
 part of '../app.dart';
 
-/// {@template app_view}
 /// The main application view that sets up the app's theme,
-/// localization, and routing. also provides
-/// [ThemeCubit], and [RemoteConfigCubit], and they are commonly
-/// used all around the app.
-/// {@endtemplate}
+/// localization, and routing.
+/// also provides [ThemeCubit], and [RemoteConfigCubit], and they
+/// are commonly used all around the app.
 class AppView extends StatelessWidget {
-  /// {@macro app_view}
+  /// Creates an instance of [AppView]
   const AppView({super.key});
 
   @override
