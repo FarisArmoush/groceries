@@ -13,12 +13,6 @@ class GroceryListsForm extends StatelessWidget {
           success: () => GroceryListsRail(lists: state.groceryLists),
           failure: (error) => ReloadGroceryListsColumn(error: error),
         );
-        // return switch (state) {
-        //   GroceryListsLoading() => const GroceryListsShimmeredRail(),
-        //   GroceryListsLoaded() => GroceryListsRail(lists: state.lists),
-        //   GroceryListsFailed() => ReloadGroceryListsColumn(error: state.error),
-        //   _ => const SizedBox.shrink(),
-        // };
       },
     );
   }

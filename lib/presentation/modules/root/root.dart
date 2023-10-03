@@ -8,6 +8,7 @@ import 'package:groceries/domain/use_cases/use_cases.dart';
 import 'package:groceries/presentation/modules/home/blocs/grocery_lists/grocery_lists_bloc.dart';
 import 'package:groceries/presentation/modules/home/blocs/my_tasks/my_tasks_bloc.dart';
 import 'package:groceries/presentation/modules/home/home.dart';
+import 'package:groceries/presentation/modules/recipes/bloc/recipes_bloc.dart';
 import 'package:groceries/presentation/modules/recipes/recipes.dart';
 import 'package:groceries/presentation/modules/root/bloc/root_navigation_bloc.dart';
 import 'package:groceries/presentation/modules/settings/settings.dart';

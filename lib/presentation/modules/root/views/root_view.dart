@@ -23,7 +23,7 @@ class RootView extends StatelessWidget {
         BlocProvider(
           create: (context) => RecipesBloc(
             context.read<RecipesUseCase>(),
-          )..add(LoadRecipes()),
+          )..add(const RecipesEvent.loadMyRecipes()),
         ),
       ],
       child: const RootForm(),

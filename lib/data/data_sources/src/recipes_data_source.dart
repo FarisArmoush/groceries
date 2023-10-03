@@ -5,6 +5,7 @@ class RecipesDataSource {
 
   // ignore: unused_field
   final FirebaseFirestore _firestore;
+
   Future<List<RecipeModel>> fetchRecipes() async {
     final recipes = <RecipeModel>[
       RecipeModel(

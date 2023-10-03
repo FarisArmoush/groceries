@@ -12,7 +12,6 @@ class RecipeDetailsForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // title: Text(recipeModel.name),
         actions: [
           IconButton(
             onPressed: () {},
