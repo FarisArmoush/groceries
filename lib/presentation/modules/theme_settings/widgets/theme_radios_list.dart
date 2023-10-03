@@ -44,13 +44,3 @@ class ThemeRadiosList extends StatelessWidget {
     ];
   }
 }
-
-class AppThemeModel {
-  const AppThemeModel({
-    required this.title,
-    required this.themeMode,
-  });
-
-  final String title;
-  final ThemeMode themeMode;
-}

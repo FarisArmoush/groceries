@@ -125,19 +125,3 @@ class AppBottomNavigationBar extends StatelessWidget {
     );
   }
 }
-
-class AppBottomNavigationBarItem {
-  const AppBottomNavigationBarItem({
-    required this.title,
-    required this.icon,
-    this.selectedColor,
-    this.unselectedColor,
-    this.activeIcon,
-  });
-
-  final Widget title;
-  final Widget icon;
-  final Color? selectedColor;
-  final Color? unselectedColor;
-  final Widget? activeIcon;
-}

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: require_trailing_commas, non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names
 
 part of 'grocery_list_model.dart';
 
@@ -14,16 +14,23 @@ _$_GroceryListModel _$$_GroceryListModelFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String?,
       imageUrl: json['imageUrl'] as String?,
       items: (json['items'] as List<dynamic>?)
-          ?.map((e) => e == null
-              ? null
-              : GroceryModel.fromJson(e as Map<String, dynamic>))
+          ?.map(
+            (e) => e == null
+                ? null
+                : GroceryModel.fromJson(e as Map<String, dynamic>),
+          )
           .toList(),
       members: (json['members'] as List<dynamic>?)
-          ?.map((e) =>
-              e == null ? null : UserModel.fromJson(e as Map<String, dynamic>))
+          ?.map(
+            (e) => e == null
+                ? null
+                : UserModel.fromJson(e as Map<String, dynamic>),
+          )
           .toList(),
       creationDate: _$JsonConverterFromJson<Timestamp, DateTime>(
-          json['creationDate'], const TimestampSerializer().fromJson),
+        json['creationDate'],
+        const TimestampSerializer().fromJson,
+      ),
     );
 
 Map<String, dynamic> _$$_GroceryListModelToJson(_$_GroceryListModel instance) =>
@@ -34,7 +41,9 @@ Map<String, dynamic> _$$_GroceryListModelToJson(_$_GroceryListModel instance) =>
       'items': instance.items,
       'members': instance.members,
       'creationDate': _$JsonConverterToJson<Timestamp, DateTime>(
-          instance.creationDate, const TimestampSerializer().toJson),
+        instance.creationDate,
+        const TimestampSerializer().toJson,
+      ),
     };
 
 Value? _$JsonConverterFromJson<Json, Value>(
