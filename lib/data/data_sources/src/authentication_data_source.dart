@@ -32,24 +32,23 @@ class AuthenticationDataSource {
     try {
       await firebaseAuth
           .createUserWithEmailAndPassword(
-            email: registerParam.email,
-            password: registerParam.password,
-          )
-          .then(
-            (currentUser) =>
-                firestore.collection('users').doc(currentUser.user!.uid).set(
-              {
-                'uid': currentUser.user!.uid,
-                'email': currentUser.user!.email,
-                'displayName': registerParam.displayName,
-              },
-            ),
-          )
-          .then(
-            (_) => firebaseAuth.currentUser!.updateDisplayName(
-              registerParam.displayName,
-            ),
-          );
+        email: registerParam.email,
+        password: registerParam.password,
+      )
+          .then((user) {
+        firestore.collection('users').doc(user.user!.uid).set(
+          {
+            'creationDate': DateTime.timestamp(),
+            'email': registerParam.email,
+            'id': user.user!.uid,
+            'image': '',
+            'displayName': registerParam.displayName,
+          },
+        );
+        firebaseAuth.currentUser!.updateDisplayName(
+          registerParam.displayName,
+        );
+      });
     } on FirebaseAuthException catch (e) {
       throw RegisterWithEmailAndPasswordException.fromCode(e.code);
     } catch (_) {
