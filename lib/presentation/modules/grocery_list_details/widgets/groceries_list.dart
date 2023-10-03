@@ -26,7 +26,7 @@ class GroceriesList extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             GroceriesBoxHeader(
-              category: category ?? 'null',
+              category: category?.tr() ?? 'Null',
               assetPath: Assets.svg.icAlertTriangle.path,
             ),
             GroceriesBoxList(

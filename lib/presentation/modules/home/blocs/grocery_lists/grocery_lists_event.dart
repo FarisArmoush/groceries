@@ -1,10 +1,6 @@
-part of '../../home.dart';
+part of 'grocery_lists_bloc.dart';
 
-sealed class GroceryListsEvent extends Equatable {
-  const GroceryListsEvent();
-
-  @override
-  List<Object> get props => [];
+@freezed
+class GroceryListsEvent with _$GroceryListsEvent {
+  const factory GroceryListsEvent.loadGroceryLists() = _LoadGroceryLists;
 }
-
-final class LoadGroceryLists extends GroceryListsEvent {}

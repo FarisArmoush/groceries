@@ -1,18 +1,11 @@
-part of '../../home.dart';
+part of 'my_tasks_bloc.dart';
 
-abstract class MyTasksState extends Equatable {
-  const MyTasksState();
+@freezed
+class MyTasksState with _$MyTasksState {
+  const factory MyTasksState({
+    @Default(BlocStatus.initial()) BlocStatus status,
+    @Default(<TaskModel>[]) List<TaskModel> myTasks,
+  }) = _MyTasksState;
 
-  @override
-  List<Object> get props => [];
-}
-
-class MyTasksInitial extends MyTasksState {}
-
-class MyTasksLoaded extends MyTasksState {
-  const MyTasksLoaded({required this.myTasks});
-  final List<TaskModel> myTasks;
-
-  @override
-  List<Object> get props => [myTasks];
+  const MyTasksState._();
 }

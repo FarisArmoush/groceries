@@ -1,6 +1,5 @@
 library home;
 
-import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -9,20 +8,15 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
 import 'package:groceries/data/models/task_model/task_model.dart';
-import 'package:groceries/domain/use_cases/use_cases.dart';
 import 'package:groceries/presentation/blocs/user_data/user_data_cubit.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/grocery_list_details.dart';
+import 'package:groceries/presentation/modules/home/blocs/grocery_lists/grocery_lists_bloc.dart';
+import 'package:groceries/presentation/modules/home/blocs/my_tasks/my_tasks_bloc.dart';
 import 'package:groceries/presentation/widgets/widgets.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 
-part 'blocs/grocery_lists/grocery_lists_bloc.dart';
-part 'blocs/grocery_lists/grocery_lists_event.dart';
-part 'blocs/grocery_lists/grocery_lists_state.dart';
-part 'blocs/my_tasks/my_tasks_bloc.dart';
-part 'blocs/my_tasks/my_tasks_event.dart';
-part 'blocs/my_tasks/my_tasks_state.dart';
 part 'views/home_view.dart';
 part 'widgets/app_tip_text.dart';
 part 'widgets/greeting_text.dart';

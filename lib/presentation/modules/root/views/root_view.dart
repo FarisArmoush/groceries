@@ -13,12 +13,12 @@ class RootView extends StatelessWidget {
         BlocProvider(
           create: (context) => GroceryListsBloc(
             context.read<GroceryListsUseCase>(),
-          )..add(LoadGroceryLists()),
+          )..add(const GroceryListsEvent.loadGroceryLists()),
         ),
         BlocProvider(
           create: (context) => MyTasksBloc(
             context.read<MyTasksUseCase>(),
-          )..add(LoadMyTasks()),
+          )..add(const MyTasksEvent.loadMyTasks()),
         ),
         BlocProvider(
           create: (context) => RecipesBloc(

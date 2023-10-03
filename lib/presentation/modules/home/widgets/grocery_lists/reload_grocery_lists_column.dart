@@ -27,7 +27,7 @@ class ReloadGroceryListsColumn extends StatelessWidget {
         ElevatedButton(
           onPressed: () => context.read<GroceryListsBloc>()
             ..add(
-              LoadGroceryLists(),
+              const GroceryListsEvent.loadGroceryLists(),
             ),
           child: const Text('Try again'),
         ),
