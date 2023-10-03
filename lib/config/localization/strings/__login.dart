@@ -1,6 +1,7 @@
 part of '../app_translations.dart';
 
-class _Login {
+final class _Login {
+  /// login
   final login = 'login'.tr();
 
   /// loginHeader

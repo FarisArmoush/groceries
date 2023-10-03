@@ -1,7 +1,7 @@
 part of '../app_translations.dart';
 
-class _General {
-  _General();
+final class _General {
+  /// close
   final close = 'close'.tr();
 
   /// done

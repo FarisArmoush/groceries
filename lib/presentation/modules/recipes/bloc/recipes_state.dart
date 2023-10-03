@@ -1,19 +1,11 @@
-part of '../recipes.dart';
+part of 'recipes_bloc.dart';
 
-abstract class RecipesState extends Equatable {
-  const RecipesState();
+@freezed
+class RecipesState with _$RecipesState {
+  const factory RecipesState({
+    @Default(<RecipeModel>[]) List<RecipeModel> recipes,
+    @Default(BlocStatus.initial()) BlocStatus status,
+  }) = _RecipesState;
 
-  @override
-  List<Object> get props => [];
-}
-
-class RecipesInitial extends RecipesState {}
-
-class RecipesLoaded extends RecipesState {
-  const RecipesLoaded({required this.recipes});
-
-  final List<RecipeModel> recipes;
-
-  @override
-  List<Object> get props => [recipes];
+  const RecipesState._();
 }

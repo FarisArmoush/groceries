@@ -5,28 +5,28 @@ class DeleteAccountButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<DeleteAccountCubit, DeleteAccountState>(
+    return BlocListener<DeleteAccountBloc, DeleteAccountState>(
       listener: (context, state) {
-        if (state is DeleteAccountLoading) {
-          showDialog<AppLoadingIndicator>(
-            context: context,
-            builder: (context) => const AppLoadingIndicator(),
-          );
-          developer.log('DeleteAccountLoading');
-        }
-        if (state is AccountDeleteSuccess) {
-          context.pop();
-          developer.log('AccountDeleteSuccess');
-        }
-        if (state is AccountDeleteFailed) {
-          context.pop();
-          developer.log('AccountDeleteFailed');
-        }
+        state.status.when(
+          initial: () {},
+          success: () => context.pop(),
+          failure: (error) => context.pop(),
+          loading: () {
+            showDialog<AppLoadingIndicator>(
+              context: context,
+              builder: (context) => const AppLoadingIndicator(),
+            );
+            developer.log('DeleteAccountLoading');
+          },
+        );
       },
       child: SizedBox(
         width: context.deviceWidth,
         child: FilledButton(
-          onPressed: () => context.read<DeleteAccountCubit>().deleteAccount(),
+          onPressed: () => context.read<DeleteAccountBloc>()
+            ..add(
+              const DeleteAccountEvent.deleteAccount(),
+            ),
           child: Text(AppTranslations.deleteAccount.yesDeleteAccount),
         ),
       ).symmetricPadding(

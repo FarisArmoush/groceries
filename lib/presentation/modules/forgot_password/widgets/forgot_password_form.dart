@@ -5,7 +5,7 @@ class ForgotPasswordForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<ForgotPasswordCubit, ForgotPasswordState>(
+    return BlocListener<ForgotPasswordBloc, ForgotPasswordState>(
       listener: _listener,
       child: SafeArea(
         top: false,

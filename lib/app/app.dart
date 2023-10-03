@@ -16,9 +16,10 @@ import 'package:groceries/data/repositories/repositories.dart';
 import 'package:groceries/domain/repositories/repositories.dart';
 import 'package:groceries/domain/use_cases/use_cases.dart';
 import 'package:groceries/presentation/blocs/authentication/authentication_bloc.dart';
-import 'package:groceries/presentation/blocs/remote_config/remote_config_cubit.dart';
+import 'package:groceries/presentation/blocs/bloc/remote_config_bloc.dart';
 import 'package:groceries/presentation/blocs/theme/theme_cubit.dart';
 import 'package:groceries/presentation/blocs/user_data/user_data_cubit.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 part 'src/app.dart';
 part 'src/app_bloc_observer.dart';

@@ -19,7 +19,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   easy_localization: ^3.0.1
   email_validator: ^2.1.17
-  equatable: ^2.0.5
   firebase_auth: ^4.2.4
   firebase_analytics: ^10.4.2
   firebase_core: ^2.4.1

@@ -14,12 +14,13 @@ class ShimmerSkeleton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDarkMode = context.watch<ThemeCubit>().state == ThemeMode.dark;
     return Shimmer.fromColors(
-      baseColor:
-          isDarkMode ? Colors.white.withOpacity(0.6) : Colors.grey.shade300,
-      highlightColor:
-          isDarkMode ? Colors.white.withOpacity(0.4) : Colors.grey.shade100,
+      baseColor: context.isDarkMode
+          ? Colors.white.withOpacity(0.6)
+          : Colors.grey.shade300,
+      highlightColor: context.isDarkMode
+          ? Colors.white.withOpacity(0.4)
+          : Colors.grey.shade100,
       child: Container(
         width: width,
         height: height,
@@ -46,12 +47,13 @@ class BackgroundShimmerSkeleton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDarkMode = context.watch<ThemeCubit>().state == ThemeMode.dark;
     return Shimmer.fromColors(
-      baseColor:
-          isDarkMode ? Colors.white.withOpacity(0.6) : Colors.grey.shade300,
-      highlightColor:
-          isDarkMode ? Colors.white.withOpacity(0.4) : Colors.grey.shade100,
+      baseColor: context.isDarkMode
+          ? Colors.white.withOpacity(0.6)
+          : Colors.grey.shade300,
+      highlightColor: context.isDarkMode
+          ? Colors.white.withOpacity(0.4)
+          : Colors.grey.shade100,
       child: Container(
         width: width,
         height: height,

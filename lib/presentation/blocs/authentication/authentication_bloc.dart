@@ -1,47 +1,48 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/domain/repositories/repositories.dart';
 
 part 'authentication_event.dart';
 part 'authentication_state.dart';
+part 'authentication_bloc.freezed.dart';
 
 class AuthenticationBloc
     extends Bloc<AuthenticationEvent, AuthenticationState> {
   AuthenticationBloc(this._authenticationRepository)
       : super(
           _authenticationRepository.currentUser != null
-              ? Authenticated(_authenticationRepository.currentUser)
-              : const Unauthenticated(),
+              ? _Authenticated(user: _authenticationRepository.currentUser)
+              : const _UnAuthenticated(),
         ) {
-    on<_AppUserChanged>(_onUserChanged);
-    on<AppLogoutRequested>(_onLogoutRequested);
+    on<_UserChanged>(_onUserChanged);
+    on<_Logout>(_onLogoutRequested);
 
     _userSubscription = _authenticationRepository.authStateChanges.listen(
       (user) => add(
-        _AppUserChanged(user),
+        _UserChanged(user: user),
       ),
     ) as StreamSubscription<User?>;
   }
-  late final StreamSubscription<Object?> _userSubscription;
-
   final AuthenticationRepository _authenticationRepository;
 
+  late final StreamSubscription<Object?> _userSubscription;
+
   void _onUserChanged(
-    _AppUserChanged event,
+    _UserChanged event,
     Emitter<AuthenticationState> emit,
   ) {
     emit(
       event.user != null
-          ? Authenticated(_authenticationRepository.currentUser)
-          : const Unauthenticated(),
+          ? _Authenticated(user: _authenticationRepository.currentUser)
+          : const _UnAuthenticated(),
     );
   }
 
   Future<void> _onLogoutRequested(
-    AppLogoutRequested event,
+    _Logout event,
     Emitter<AuthenticationState> emit,
   ) async {
     await _authenticationRepository.logOut();

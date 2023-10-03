@@ -1,28 +1,11 @@
-part of '../../home.dart';
+part of 'grocery_lists_bloc.dart';
 
-abstract class GroceryListsState extends Equatable {
-  const GroceryListsState();
+@freezed
+class GroceryListsState with _$GroceryListsState {
+  const factory GroceryListsState({
+    @Default(BlocStatus.initial()) BlocStatus status,
+    @Default(<GroceryListModel>[]) List<GroceryListModel> groceryLists,
+  }) = _GroceryListsState;
 
-  @override
-  List<Object> get props => [];
+  const GroceryListsState._();
 }
-
-class GroceryListsInitial extends GroceryListsState {}
-
-class GroceryListsLoaded extends GroceryListsState {
-  const GroceryListsLoaded({required this.lists});
-  final List<GroceryListModel> lists;
-
-  @override
-  List<Object> get props => [lists];
-}
-
-class GroceryListsFailed extends GroceryListsState {
-  const GroceryListsFailed({required this.error});
-  final String error;
-
-  @override
-  List<Object> get props => [error];
-}
-
-class GroceryListsLoading extends GroceryListsState {}

@@ -1,49 +1,14 @@
-part of '../add_items.dart';
+part of 'add_items_bloc.dart';
 
-enum AddItemsStatus {
-  loading,
-  success,
-  error,
-  initial,
-}
+@freezed
+class AddItemsState with _$AddItemsState {
+  const factory AddItemsState({
+    @Default(<CategoryModel>[]) List<CategoryModel> categories,
+    @Default(<GroceryModel>[]) List<GroceryModel> baseGroceries,
+    @Default('All') String selectedCategory,
+    @Default('Failed to get data. Try again later.') String error,
+    @Default(BlocStatus.initial()) BlocStatus status,
+  }) = _AddItemsState;
 
-final class AddItemsState extends Equatable {
-  const AddItemsState({
-    required this.status,
-    required this.categories,
-    required this.baseGroceries,
-    required this.selectedCategory,
-    this.error = 'Failed to get data, Try again later.',
-  });
-
-  final AddItemsStatus status;
-  final List<CategoryModel> categories;
-  final List<GroceryModel> baseGroceries;
-  final String selectedCategory;
-  final String error;
-
-  AddItemsState copyWith({
-    AddItemsStatus? addItemsStates,
-    List<CategoryModel>? categories,
-    List<GroceryModel>? baseGroceries,
-    String? selectedCategory,
-    String? error,
-  }) {
-    return AddItemsState(
-      categories: categories ?? this.categories,
-      status: addItemsStates ?? status,
-      baseGroceries: baseGroceries ?? this.baseGroceries,
-      selectedCategory: selectedCategory ?? this.selectedCategory,
-      error: error ?? this.error,
-    );
-  }
-
-  @override
-  List<Object> get props => [
-        status,
-        categories,
-        error,
-        baseGroceries,
-        selectedCategory,
-      ];
+  const AddItemsState._();
 }

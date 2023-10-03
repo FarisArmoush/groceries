@@ -8,7 +8,7 @@ class LogoutButton extends StatelessWidget {
     return BlocListener<AuthenticationBloc, AuthenticationState>(
       listenWhen: (previous, current) => previous != current,
       listener: (context, state) {
-        if (state is Unauthenticated) {
+        if (state == const AuthenticationState.unAuthenticated()) {
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(
@@ -19,7 +19,7 @@ class LogoutButton extends StatelessWidget {
           context.pushReplacementNamed(AppNamedRoutes.welcome);
         }
       },
-      child: TileButton(
+      child: AppListTileButton(
         title: AppTranslations.accountSettings.logout,
         icon: Assets.svg.icLogout.path,
         color: context.theme.primaryColorLight,

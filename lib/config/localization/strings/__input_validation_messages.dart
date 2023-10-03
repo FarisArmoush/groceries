@@ -1,6 +1,7 @@
 part of '../app_translations.dart';
 
-class _InputValidationMessages {
+final class _InputValidationMessages {
+  /// field_cannot_be_empty
   final fieldCannotBeEmpty = 'field_cannot_be_empty'.tr();
 
   /// passwords_do_not_match

@@ -5,23 +5,23 @@ class RegisterEmailTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<RegisterCubit, RegisterState>(
+    return BlocBuilder<RegisterBloc, RegisterState>(
       buildWhen: (previous, current) {
         return previous.email != current.email;
       },
       builder: (context, state) {
         return AppTextField(
-          onChanged: (email) {
-            context.read<RegisterCubit>().emailChanged(email);
-          },
-          prefixIcon: Assets.svg.icMail.svg(
-            color: context.theme.inputDecorationTheme.prefixIconColor,
-            fit: BoxFit.scaleDown,
-          ),
           keyboardType: TextInputType.emailAddress,
           labelText: AppTranslations.general.email,
           validator: (value) => state.email.validator(value),
           errorText: state.email.displayError,
+          prefixIcon: Assets.svg.icMail.svg(
+            color: context.theme.inputDecorationTheme.prefixIconColor,
+            fit: BoxFit.scaleDown,
+          ),
+          onChanged: (value) => context.read<RegisterBloc>().add(
+                RegisterEvent.updateEmail(value),
+              ),
         );
       },
     );

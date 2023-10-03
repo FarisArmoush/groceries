@@ -1,25 +1,4 @@
-import 'dart:developer';
-
-import 'package:easy_localization/easy_localization.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_remote_config/firebase_remote_config.dart';
-import 'package:flutter/material.dart';
-import 'package:groceries/app/app.dart';
 import 'package:groceries/bootstrap.dart';
-import 'package:groceries/config/services/remote_config_service.dart';
-import 'package:groceries/firebase_options.dart';
+import 'package:groceries/main_common.dart';
 
-void main() {
-  bootstrap(() async {
-    WidgetsFlutterBinding.ensureInitialized();
-    log('Main_Development_Falvor');
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
-    final remoteConfig = FirebaseRemoteConfig.instance;
-    final remoteConfigService = RemoteConfigService(remoteConfig);
-    await remoteConfigService.init();
-    await EasyLocalization.ensureInitialized();
-    return const App();
-  });
-}
+void main() => bootstrap(mainCommon);

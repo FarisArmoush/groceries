@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
@@ -32,7 +33,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 /// A class that defines the routes and builders for the App.
 final GoRouter appGoRouter = GoRouter(
-  // debugLogDiagnostics: true,
+  debugLogDiagnostics: true,
   initialLocation: '/',
   routes: [
     GoRoute(
@@ -40,7 +41,7 @@ final GoRouter appGoRouter = GoRouter(
       path: '/',
       builder: (context, state) => const WrapperView(),
       redirect: (context, state) async {
-        final sharedPreferences = await SharedPreferences.getInstance();
+        final sharedPreferences = context.read<SharedPreferences>();
 
         final hasViewedOnboarding =
             sharedPreferences.getBool('hasViewedOnboarding');

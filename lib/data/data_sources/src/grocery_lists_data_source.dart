@@ -11,7 +11,7 @@ class GroceryListsDataSource {
       GroceryListModel(
         name: 'Home',
         imageUrl: mockImage,
-        uid: 123,
+        id: '123',
         members: <UserModel>[],
         creationDate: DateTime.timestamp(),
         items: <GroceryModel>[
@@ -30,7 +30,7 @@ class GroceryListsDataSource {
       GroceryListModel(
         name: 'Work',
         imageUrl: mockImage,
-        uid: 345,
+        id: '123',
         members: <UserModel>[],
         items: <GroceryModel>[],
         creationDate: DateTime.timestamp(),
@@ -38,7 +38,7 @@ class GroceryListsDataSource {
       GroceryListModel(
         name: 'Friends',
         imageUrl: mockImage,
-        uid: 567,
+        id: '123',
         members: <UserModel>[],
         creationDate: DateTime.timestamp(),
         items: <GroceryModel>[

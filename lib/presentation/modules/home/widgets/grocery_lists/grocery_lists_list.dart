@@ -15,7 +15,7 @@ class GroceryListsList extends StatelessWidget {
       itemBuilder: (context, index) {
         return GroceryListCard(
           listModel: GroceryListModel(
-            uid: lists[index].uid,
+            id: lists[index].id,
             name: lists[index].name,
             imageUrl: lists[index].imageUrl,
             items: lists[index].items,

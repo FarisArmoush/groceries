@@ -6,7 +6,7 @@ class VerifyUserView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => VerifyUserCubit(
+      create: (context) => VerifyUserBloc(
         context.read<VerifyUserUseCase>(),
       ),
       child: const VerifyUserForm(),

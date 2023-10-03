@@ -1,8 +1,6 @@
-part of '../create_recipe.dart';
+part of 'create_recipe_bloc.dart';
 
-sealed class CreateRecipeEvent extends Equatable {
-  const CreateRecipeEvent();
-
-  @override
-  List<Object> get props => [];
+@freezed
+class CreateRecipeEvent with _$CreateRecipeEvent {
+  const factory CreateRecipeEvent.createRecipe() = _CreateRecipe;
 }

@@ -3,20 +3,22 @@ import 'package:flutter/foundation.dart';
 
 class CrashlyticsService {
   CrashlyticsService({
-    required this.crashlytics,
-    required this.platformDispatcher,
-  });
-  final FirebaseCrashlytics crashlytics;
-  final PlatformDispatcher platformDispatcher;
+    FirebaseCrashlytics? crashlytics,
+    PlatformDispatcher? platformDispatcher,
+  })  : _platformDispatcher = platformDispatcher ?? PlatformDispatcher.instance,
+        _crashlytics = crashlytics ?? FirebaseCrashlytics.instance;
+
+  final FirebaseCrashlytics _crashlytics;
+  final PlatformDispatcher _platformDispatcher;
 
   /// Initializes Crashlytics for Flutter.
   void initCrashlytics() =>
-      FlutterError.onError = crashlytics.recordFlutterFatalError;
+      FlutterError.onError = _crashlytics.recordFlutterFatalError;
 
   /// Initializes platform errors handler.
   void initPlatformErrorsHandler() {
-    platformDispatcher.onError = (error, stack) {
-      crashlytics.recordError(error, stack, fatal: true);
+    _platformDispatcher.onError = (error, stack) {
+      _crashlytics.recordError(error, stack, fatal: true);
       return true;
     };
   }

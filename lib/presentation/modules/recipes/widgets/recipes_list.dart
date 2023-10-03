@@ -19,7 +19,7 @@ class RecipesList extends StatelessWidget {
       itemBuilder: (context, index) {
         return RecipeCard(
           recipeModel: RecipeModel(
-            uid: recipes[index].uid,
+            id: recipes[index].id,
             name: recipes[index].name,
             imageUrl: recipes[index].imageUrl,
             items: recipes[index].items,

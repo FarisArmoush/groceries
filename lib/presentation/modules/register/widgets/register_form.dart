@@ -6,7 +6,7 @@ class RegisterForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocListener<RegisterCubit, RegisterState>(
+      body: BlocListener<RegisterBloc, RegisterState>(
         listener: _listener,
         child: ListView(
           physics: const BouncingScrollPhysics(),
@@ -46,7 +46,7 @@ class RegisterForm extends StatelessWidget {
             SizedBox(
               height: context.deviceHeight * 0.03,
             ),
-            OtherOptionTextButton(
+            SwitchAuthenticationOptionTextButton(
               upperText: AppTranslations.register.alreadyHaveAnAccount,
               lowerText: AppTranslations.register.loginNow,
               onTap: () => context.pushNamed(AppNamedRoutes.login),

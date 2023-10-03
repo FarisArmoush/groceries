@@ -33,9 +33,9 @@ abstract final class AppTranslations {
 
   static _Login login = _Login();
 
-  static __Register register = __Register();
+  static _Register register = _Register();
 
-  static __ForgotPassword forgotPassword = __ForgotPassword();
+  static _ForgotPassword forgotPassword = _ForgotPassword();
 
   static _Home home = _Home();
 

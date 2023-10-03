@@ -5,10 +5,10 @@ class RegisterConfirmPasswordTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<RegisterCubit, RegisterState>(
+    return BlocBuilder<RegisterBloc, RegisterState>(
       buildWhen: (previous, current) =>
           previous.password != current.password ||
-          previous.confirmedPassword != current.confirmedPassword ||
+          previous.confirmPassword != current.confirmPassword ||
           previous.isObscure != current.isObscure,
       builder: (context, state) {
         return AppTextField(
@@ -17,15 +17,19 @@ class RegisterConfirmPasswordTextField extends StatelessWidget {
             fit: BoxFit.scaleDown,
           ),
           onChanged: (value) {
-            context.read<RegisterCubit>().confirmedPasswordChanged(value);
+            context.read<RegisterBloc>().add(
+                  RegisterEvent.updateConfirmPassword(value),
+                );
           },
           labelText: AppTranslations.register.repeatPassword,
-          validator: (value) => state.confirmedPassword.validator(value),
-          errorText: state.confirmedPassword.displayError,
+          validator: (value) => state.confirmPassword.validator(value),
+          errorText: state.confirmPassword.displayError,
           obscureText: state.isObscure,
           suffixIcon: PasswordInputObscurityButton(
             isObscure: state.isObscure,
-            onPressed: context.read<RegisterCubit>().toggleIsObscure,
+            onPressed: () => context.read<RegisterBloc>().add(
+                  const RegisterEvent.toggleIsObscure(),
+                ),
           ),
         );
       },

@@ -5,14 +5,15 @@ class RegisterDisplayNameTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<RegisterCubit, RegisterState>(
+    return BlocBuilder<RegisterBloc, RegisterState>(
       buildWhen: (previous, current) {
         return previous.displayName != current.displayName;
       },
       builder: (context, state) {
         return AppTextField(
-          onChanged: (name) =>
-              context.read<RegisterCubit>().displayNameChanged(name),
+          onChanged: (value) => context.read<RegisterBloc>().add(
+                RegisterEvent.updateDisplayName(value),
+              ),
           prefixIcon: Assets.svg.icUser.svg(
             color: context.theme.inputDecorationTheme.prefixIconColor,
             fit: BoxFit.scaleDown,

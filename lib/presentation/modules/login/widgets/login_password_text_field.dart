@@ -5,7 +5,7 @@ class LoginPasswordTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<LoginCubit, LoginState>(
+    return BlocBuilder<LoginBloc, LoginState>(
       buildWhen: (previous, current) =>
           previous.password != current.password ||
           previous.isObscure != current.isObscure,
@@ -20,7 +20,7 @@ class LoginPasswordTextField extends StatelessWidget {
           ],
           keyboardType: TextInputType.visiblePassword,
           onChanged: (password) {
-            context.read<LoginCubit>().passwordChanged(password);
+            context.read<LoginBloc>().add(LoginEvent.updatePassword(password));
           },
           labelText: AppTranslations.general.password,
           errorText: state.password.displayError,
@@ -28,7 +28,9 @@ class LoginPasswordTextField extends StatelessWidget {
           obscureText: state.isObscure,
           suffixIcon: PasswordInputObscurityButton(
             isObscure: state.isObscure,
-            onPressed: context.read<LoginCubit>().toggleIsObscure,
+            onPressed: () => context.read<LoginBloc>().add(
+                  const LoginEvent.toggleIsObscure(),
+                ),
           ),
         );
       },

@@ -6,7 +6,10 @@ class SendVerificationEmailButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
-      onPressed: () => context.read<VerifyUserCubit>().sendVerificationEmail(),
+      onPressed: () => context.read<VerifyUserBloc>()
+        ..add(
+          const VerifyUserEvent.verifyUser(),
+        ),
       icon: Assets.svg.icSend.svg(
         color: context.theme.colorScheme.secondary,
       ),

@@ -5,7 +5,7 @@ class UpdateDisplayNameForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<UpdateDisplayNameCubit, UpdateDisplayNameState>(
+    return BlocListener<UpdateDisplayNameBloc, UpdateDisplayNameState>(
       listener: (context, state) {
         if (state.status.isSuccess) {
           context.pop();

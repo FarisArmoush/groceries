@@ -10,7 +10,7 @@ part 'task_model.g.dart';
 @freezed
 class TaskModel with _$TaskModel {
   const factory TaskModel({
-    required String? uid,
+    required String? id,
     required GroceryListModel? listModel,
     required DateTime? dueDate,
     required List<GroceryModel?>? groceries,

@@ -6,7 +6,7 @@ class LoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocListener<LoginCubit, LoginState>(
+      body: BlocListener<LoginBloc, LoginState>(
         listener: listener,
         child: ListView(
           physics: const BouncingScrollPhysics(),

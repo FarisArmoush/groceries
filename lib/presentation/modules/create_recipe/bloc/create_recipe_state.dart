@@ -1,10 +1,10 @@
-part of '../create_recipe.dart';
+part of 'create_recipe_bloc.dart';
 
-sealed class CreateRecipeState extends Equatable {
-  const CreateRecipeState();
+@freezed
+class CreateRecipeState with _$CreateRecipeState {
+  const factory CreateRecipeState({
+    @Default(BlocStatus.initial()) BlocStatus status,
+  }) = _CreateRecipeState;
 
-  @override
-  List<Object> get props => [];
+  const CreateRecipeState._();
 }
-
-final class CreateRecipeInitial extends CreateRecipeState {}

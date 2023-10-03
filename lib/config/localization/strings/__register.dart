@@ -1,6 +1,7 @@
 part of '../app_translations.dart';
 
-class __Register {
+class _Register {
+  /// register
   final register = 'register'.tr();
 
   /// register_header

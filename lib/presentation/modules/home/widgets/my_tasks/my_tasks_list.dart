@@ -17,7 +17,7 @@ class MyTasksList extends StatelessWidget {
       itemBuilder: (context, index) {
         return MyTasksCard(
           taskModel: TaskModel(
-            uid: tasks[index].uid,
+            id: tasks[index].id,
             listModel: tasks[index].listModel,
             dueDate: tasks[index].dueDate,
             groceries: tasks[index].groceries,

@@ -8,17 +8,19 @@ class OnboardingForm extends StatefulWidget {
 }
 
 class _OnboardingFormState extends State<OnboardingForm> {
+  final pageController = PageController();
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<OnboardingCubit, OnboardingState>(
+    return BlocBuilder<OnboardingBloc, OnboardingState>(
       buildWhen: (previous, current) => previous.index != current.index,
       builder: (context, state) {
         final isLastPage = state.index == pages.length - 1;
         return Scaffold(
           body: PageView(
-            controller: state.pageController,
-            onPageChanged: (value) =>
-                context.read<OnboardingCubit>().updateIndex(value),
+            controller: pageController,
+            onPageChanged: (value) => context.read<OnboardingBloc>().add(
+                  OnboardingEvent.updateIndex(value),
+                ),
             children: List.generate(
               pages.length,
               (index) => OnboardingPageBase(
@@ -28,7 +30,9 @@ class _OnboardingFormState extends State<OnboardingForm> {
           ),
           floatingActionButton: isLastPage
               ? const LeaveOnboardingButton()
-              : const OnboardingNextPageButton(),
+              : OnboardingNextPageButton(
+                  pageController: pageController,
+                ),
         );
       },
     );

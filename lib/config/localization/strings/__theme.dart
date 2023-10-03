@@ -1,6 +1,7 @@
 part of '../app_translations.dart';
 
 class _Theme {
+  /// theme
   final theme = 'theme'.tr();
 
   /// theme_header

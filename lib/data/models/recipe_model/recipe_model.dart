@@ -10,7 +10,7 @@ part 'recipe_model.g.dart';
 @freezed
 class RecipeModel with _$RecipeModel {
   const factory RecipeModel({
-    required String? uid,
+    required String? id,
     required String? name,
     required String? imageUrl,
     required List<GroceryModel?>? items,

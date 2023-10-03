@@ -1,5 +1,6 @@
 part of '../app_translations.dart';
 
-class _AddItems {
+final class _AddItems {
+  /// add_items
   final addItems = 'add_items'.tr();
 }

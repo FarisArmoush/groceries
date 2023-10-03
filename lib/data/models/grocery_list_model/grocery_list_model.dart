@@ -11,7 +11,7 @@ part 'grocery_list_model.g.dart';
 @freezed
 class GroceryListModel with _$GroceryListModel {
   const factory GroceryListModel({
-    required int? uid,
+    required String? id,
     required String? name,
     required String? imageUrl,
     required List<GroceryModel?>? items,

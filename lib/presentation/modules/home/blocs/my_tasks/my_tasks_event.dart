@@ -1,12 +1,6 @@
-part of '../../home.dart';
+part of 'my_tasks_bloc.dart';
 
-sealed class MyTasksEvent extends Equatable {
-  const MyTasksEvent();
-
-  @override
-  List<Object> get props => [];
+@freezed
+class MyTasksEvent with _$MyTasksEvent {
+  const factory MyTasksEvent.loadMyTasks() = _LoadMyTasks;
 }
-
-final class LoadMyTasks extends MyTasksEvent {}
-
-final class FailedToLoadMyTasks extends MyTasksEvent {}

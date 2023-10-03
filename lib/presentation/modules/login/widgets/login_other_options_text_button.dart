@@ -5,7 +5,7 @@ class LoginOtherOptionsTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OtherOptionTextButton(
+    return SwitchAuthenticationOptionTextButton(
       upperText: AppTranslations.login.dontHaveAnAccount,
       lowerText: AppTranslations.login.registerNow,
       onTap: () => context.pushReplacementNamed(AppNamedRoutes.register),

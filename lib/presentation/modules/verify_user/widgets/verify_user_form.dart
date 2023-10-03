@@ -9,13 +9,13 @@ class VerifyUserForm extends StatelessWidget {
       appBar: AppBar(
         title: Text(AppTranslations.verifyAccount.verifyAccount),
       ),
-      body: BlocBuilder<VerifyUserCubit, VerifyUserState>(
-        builder: (context, state) => switch (state) {
-          VerifyUserInitial() => const VerifyUserInitialBody(),
-          VerificationLoading() => const LoadingSendingVerificationEmail(),
-          VerifiedSuccessfully() => const VerificationEmailSentSuccessfully(),
-          VerificationFailed() => const FailedToSendVerificationEmail(),
-        },
+      body: BlocBuilder<VerifyUserBloc, VerifyUserState>(
+        builder: (context, state) => state.status.when(
+          initial: () => const VerifyUserInitialBody(),
+          loading: () => const LoadingSendingVerificationEmail(),
+          success: () => const VerificationEmailSentSuccessfully(),
+          failure: (_) => const FailedToSendVerificationEmail(),
+        ),
       ),
     );
   }

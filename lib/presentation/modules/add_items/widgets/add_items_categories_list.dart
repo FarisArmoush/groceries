@@ -18,7 +18,7 @@ class AddItemsCategoriesList extends StatelessWidget {
             (category) {
               return GestureDetector(
                 onTap: () => context.read<AddItemsBloc>().add(
-                      SetActiveCategory(category.name ?? 'null'),
+                      AddItemsEvent.setActiveCategory(category.name ?? 'null'),
                     ),
                 child: AnimatedContainer(
                   duration: 50.milliseconds,

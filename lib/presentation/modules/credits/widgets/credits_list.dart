@@ -3,17 +3,18 @@ part of '../credits.dart';
 class CreditsList extends StatelessWidget {
   const CreditsList({
     required this.title,
-    required this.list,
+    required this.credits,
     super.key,
   });
 
   final String title;
-  final List<CreditModel> list;
+  final List<CreditModel> credits;
 
   @override
   Widget build(BuildContext context) {
-    if (list.isNotEmpty) {
-      return Column(
+    return Visibility(
+      visible: credits.isNotEmpty,
+      child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -28,23 +29,22 @@ class CreditsList extends StatelessWidget {
           SizedBox(
             height: context.deviceHeight * 0.01,
           ),
-          ListView.builder(
-            shrinkWrap: true,
-            itemCount: list.length,
-            physics: const NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) => CreditsListTile(
-              title: list[index].name,
-              index: index,
-              list: list,
-            ),
+          Column(
+            children: ListTile.divideTiles(
+              color: context.theme.hintColor.withOpacity(0.5),
+              context: context,
+              tiles: credits.map(
+                (credit) => ListTile(
+                  title: Text(credit.name),
+                ),
+              ),
+            ).toList(),
           ),
           SizedBox(
             height: context.deviceHeight * 0.04,
           ),
         ],
-      );
-    } else {
-      return const SizedBox.shrink();
-    }
+      ),
+    );
   }
 }

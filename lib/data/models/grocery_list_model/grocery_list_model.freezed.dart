@@ -20,7 +20,7 @@ GroceryListModel _$GroceryListModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$GroceryListModel {
-  int? get uid => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get imageUrl => throw _privateConstructorUsedError;
   List<GroceryModel?>? get items => throw _privateConstructorUsedError;
@@ -41,7 +41,7 @@ abstract class $GroceryListModelCopyWith<$Res> {
       _$GroceryListModelCopyWithImpl<$Res, GroceryListModel>;
   @useResult
   $Res call(
-      {int? uid,
+      {String? id,
       String? name,
       String? imageUrl,
       List<GroceryModel?>? items,
@@ -62,7 +62,7 @@ class _$GroceryListModelCopyWithImpl<$Res, $Val extends GroceryListModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = freezed,
+    Object? id = freezed,
     Object? name = freezed,
     Object? imageUrl = freezed,
     Object? items = freezed,
@@ -70,10 +70,10 @@ class _$GroceryListModelCopyWithImpl<$Res, $Val extends GroceryListModel>
     Object? creationDate = freezed,
   }) {
     return _then(_value.copyWith(
-      uid: freezed == uid
-          ? _value.uid
-          : uid // ignore: cast_nullable_to_non_nullable
-              as int?,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -107,7 +107,7 @@ abstract class _$$_GroceryListModelCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {int? uid,
+      {String? id,
       String? name,
       String? imageUrl,
       List<GroceryModel?>? items,
@@ -126,7 +126,7 @@ class __$$_GroceryListModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = freezed,
+    Object? id = freezed,
     Object? name = freezed,
     Object? imageUrl = freezed,
     Object? items = freezed,
@@ -134,10 +134,10 @@ class __$$_GroceryListModelCopyWithImpl<$Res>
     Object? creationDate = freezed,
   }) {
     return _then(_$_GroceryListModel(
-      uid: freezed == uid
-          ? _value.uid
-          : uid // ignore: cast_nullable_to_non_nullable
-              as int?,
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -168,7 +168,7 @@ class _$_GroceryListModel
     with DiagnosticableTreeMixin
     implements _GroceryListModel {
   const _$_GroceryListModel(
-      {required this.uid,
+      {required this.id,
       required this.name,
       required this.imageUrl,
       required final List<GroceryModel?>? items,
@@ -181,7 +181,7 @@ class _$_GroceryListModel
       _$$_GroceryListModelFromJson(json);
 
   @override
-  final int? uid;
+  final String? id;
   @override
   final String? name;
   @override
@@ -212,7 +212,7 @@ class _$_GroceryListModel
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'GroceryListModel(uid: $uid, name: $name, imageUrl: $imageUrl, items: $items, members: $members, creationDate: $creationDate)';
+    return 'GroceryListModel(id: $id, name: $name, imageUrl: $imageUrl, items: $items, members: $members, creationDate: $creationDate)';
   }
 
   @override
@@ -220,7 +220,7 @@ class _$_GroceryListModel
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'GroceryListModel'))
-      ..add(DiagnosticsProperty('uid', uid))
+      ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('name', name))
       ..add(DiagnosticsProperty('imageUrl', imageUrl))
       ..add(DiagnosticsProperty('items', items))
@@ -233,7 +233,7 @@ class _$_GroceryListModel
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_GroceryListModel &&
-            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl) &&
@@ -247,7 +247,7 @@ class _$_GroceryListModel
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      uid,
+      id,
       name,
       imageUrl,
       const DeepCollectionEquality().hash(_items),
@@ -270,7 +270,7 @@ class _$_GroceryListModel
 
 abstract class _GroceryListModel implements GroceryListModel {
   const factory _GroceryListModel(
-          {required final int? uid,
+          {required final String? id,
           required final String? name,
           required final String? imageUrl,
           required final List<GroceryModel?>? items,
@@ -282,7 +282,7 @@ abstract class _GroceryListModel implements GroceryListModel {
       _$_GroceryListModel.fromJson;
 
   @override
-  int? get uid;
+  String? get id;
   @override
   String? get name;
   @override

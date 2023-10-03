@@ -1,19 +1,16 @@
 library update_display_name;
 
-import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/domain/use_cases/use_cases.dart';
+import 'package:groceries/presentation/modules/update_display_name/bloc/update_display_name_bloc.dart';
 import 'package:groceries/presentation/widgets/widgets.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
-import 'package:groceries/utils/forms/app_forms.dart';
 
-part 'cubit/update_display_name_cubit.dart';
-part 'cubit/update_display_name_state.dart';
 part 'views/update_display_name_view.dart';
 part 'widgets/submit_new_display_name_button.dart';
 part 'widgets/update_display_name_body_text.dart';

@@ -1,8 +1,13 @@
-part of '../credits.dart';
+part of 'credits_cubit.dart';
 
-sealed class CreditsState extends Equatable {
-  @override
-  List<Object?> get props => [];
+@freezed
+class CreditsState with _$CreditsState {
+  const factory CreditsState({
+    required List<CreditModel> uiPackages,
+    required List<CreditModel> backendPackages,
+    required List<CreditModel> devPackages,
+    required List<CreditModel> miscPackages,
+    required List<CreditModel> stateManagementPackages,
+  }) = _CreditsState;
+  const CreditsState._();
 }
-
-final class CreditsInitial extends CreditsState {}

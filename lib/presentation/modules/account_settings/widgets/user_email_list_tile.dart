@@ -5,7 +5,7 @@ class UserEmailListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = context.read<UserDataCubit>();
+    final user = context.read<UserDataCubit>().state;
 
     final email = user.email;
     final isUserVerified = user.emailVerified;
@@ -14,7 +14,6 @@ class UserEmailListTile extends StatelessWidget {
       title: Text(AppTranslations.general.email),
       subtitle: Text(email ?? ''),
       trailing: Assets.svg.icEdit.svg(color: context.theme.hintColor),
-      // onTap: () => context.pushNamed(AppNamedRoutes.updateEmail),
       onTap: isUserVerified == true
           ? () => context.pushNamed(AppNamedRoutes.updateEmail)
           : () => showModalBottomSheet<VerifyToUpdateEmailBottomSheet>(

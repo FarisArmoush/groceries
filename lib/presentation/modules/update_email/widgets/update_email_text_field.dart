@@ -5,13 +5,14 @@ class UpdateEmailTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<UpdateEmailCubit, UpdateEmailState>(
+    return BlocBuilder<UpdateEmailBloc, UpdateEmailState>(
       buildWhen: (previous, current) => previous.email != current.email,
       builder: (context, state) {
         return AppTextField(
           labelText: 'New Email',
-          onChanged: (email) =>
-              context.read<UpdateEmailCubit>().emailChanged(email),
+          onChanged: (value) => context.read<UpdateEmailBloc>().add(
+                UpdateEmailEvent.emailChanged(value),
+              ),
           errorText: state.email.displayError,
           validator: (value) => state.email.validator(value),
         );

@@ -14,17 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-RegisterParam _$RegisterParamFromJson(Map<String, dynamic> json) {
-  return _RegisterParam.fromJson(json);
-}
-
 /// @nodoc
 mixin _$RegisterParam {
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
   String get displayName => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $RegisterParamCopyWith<RegisterParam> get copyWith =>
       throw _privateConstructorUsedError;
@@ -117,13 +112,10 @@ class __$$_RegisterParamCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
 class _$_RegisterParam implements _RegisterParam {
   const _$_RegisterParam(
       {required this.email, required this.password, required this.displayName});
-
-  factory _$_RegisterParam.fromJson(Map<String, dynamic> json) =>
-      _$$_RegisterParamFromJson(json);
 
   @override
   final String email;
@@ -149,7 +141,6 @@ class _$_RegisterParam implements _RegisterParam {
                 other.displayName == displayName));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, email, password, displayName);
 
@@ -158,13 +149,6 @@ class _$_RegisterParam implements _RegisterParam {
   @pragma('vm:prefer-inline')
   _$$_RegisterParamCopyWith<_$_RegisterParam> get copyWith =>
       __$$_RegisterParamCopyWithImpl<_$_RegisterParam>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_RegisterParamToJson(
-      this,
-    );
-  }
 }
 
 abstract class _RegisterParam implements RegisterParam {
@@ -172,9 +156,6 @@ abstract class _RegisterParam implements RegisterParam {
       {required final String email,
       required final String password,
       required final String displayName}) = _$_RegisterParam;
-
-  factory _RegisterParam.fromJson(Map<String, dynamic> json) =
-      _$_RegisterParam.fromJson;
 
   @override
   String get email;

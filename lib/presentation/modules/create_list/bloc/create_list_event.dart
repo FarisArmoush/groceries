@@ -1,10 +1,8 @@
-part of '../create_list.dart';
+part of 'create_list_bloc.dart';
 
-sealed class CreateListEvent extends Equatable {
-  const CreateListEvent();
-
-  @override
-  List<Object> get props => [];
+@freezed
+class CreateListEvent with _$CreateListEvent {
+  const factory CreateListEvent.createList({
+    required GroceryListModel groceryListModel,
+  }) = _CreateList;
 }
-
-class CreateListRequested extends CreateListEvent {}

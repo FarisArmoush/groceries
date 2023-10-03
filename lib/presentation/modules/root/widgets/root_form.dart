@@ -5,16 +5,16 @@ class RootForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<RootNavigationCubit, RootNavigationState>(
+    return BlocBuilder<RootNavigationBloc, RootNavigationState>(
       buildWhen: (previous, current) => previous.index != current.index,
       builder: (context, state) {
         return Scaffold(
           body: _views[state.index],
           bottomNavigationBar: AppBottomNavigationBar(
             currentIndex: state.index,
-            onTap: (index) {
-              context.read<RootNavigationCubit>().navigateToIndex(index);
-            },
+            onTap: (index) => context.read<RootNavigationBloc>().add(
+                  RootNavigationEvent.navigateToIndex(index),
+                ),
             items: _bnb(context),
           ),
         );

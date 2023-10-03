@@ -1,8 +1,6 @@
-part of '../recipe_details.dart';
+part of 'recipe_details_bloc.dart';
 
-sealed class RecipeDetailsEvent extends Equatable {
-  @override
-  List<Object?> get props => [];
+@freezed
+class RecipeDetailsEvent with _$RecipeDetailsEvent {
+  const factory RecipeDetailsEvent.deleteRecipe() = _DeleteRecipe;
 }
-
-final class DeleteRecipe extends RecipeDetailsEvent {}

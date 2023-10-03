@@ -9,7 +9,7 @@ part of 'task_model.dart';
 // **************************************************************************
 
 _$_TaskModel _$$_TaskModelFromJson(Map<String, dynamic> json) => _$_TaskModel(
-      uid: json['uid'] as String?,
+      id: json['id'] as String?,
       listModel: json['listModel'] == null
           ? null
           : GroceryListModel.fromJson(
@@ -33,7 +33,7 @@ _$_TaskModel _$$_TaskModelFromJson(Map<String, dynamic> json) => _$_TaskModel(
 
 Map<String, dynamic> _$$_TaskModelToJson(_$_TaskModel instance) =>
     <String, dynamic>{
-      'uid': instance.uid,
+      'id': instance.id,
       'listModel': instance.listModel,
       'dueDate': instance.dueDate?.toIso8601String(),
       'groceries': instance.groceries,

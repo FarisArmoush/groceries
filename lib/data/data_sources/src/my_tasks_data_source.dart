@@ -8,11 +8,11 @@ class MyTasksDataSource {
   Future<List<TaskModel>> fetchMyTasks() async {
     final myTasks = [
       TaskModel(
-        uid: '123123',
+        id: '123',
         dueDate: DateTime(2022, 3, 19),
         creationDate: DateTime.timestamp(),
         listModel: GroceryListModel(
-          uid: 1,
+          id: '123',
           name: 'Friends',
           imageUrl: mockImage,
           members: <UserModel>[],
@@ -33,12 +33,12 @@ class MyTasksDataSource {
         ],
       ),
       TaskModel(
-        uid: '123123',
+        id: '123',
         dueDate: DateTime(2022, 3, 20),
         creationDate: DateTime.timestamp(),
         listModel: GroceryListModel(
           creationDate: DateTime.timestamp(),
-          uid: 1,
+          id: '123',
           name: 'Work',
           imageUrl: mockImage,
           members: <UserModel>[],
@@ -58,11 +58,11 @@ class MyTasksDataSource {
         ],
       ),
       TaskModel(
-        uid: '123123',
+        id: '123',
         dueDate: DateTime(2022, 3, 21),
         creationDate: DateTime.timestamp(),
         listModel: GroceryListModel(
-          uid: 1,
+          id: '123',
           name: 'Home',
           imageUrl: mockImage,
           members: <UserModel>[],

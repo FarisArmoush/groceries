@@ -5,7 +5,7 @@ class CreditsForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final creditsCubit = context.watch<CreditsCubit>();
+    final creditsCubit = context.watch<CreditsCubit>().state;
 
     return Scaffold(
       appBar: AppBar(
@@ -17,23 +17,23 @@ class CreditsForm extends StatelessWidget {
         children: [
           CreditsList(
             title: 'Packages provided by the Flutter Community.',
-            list: creditsCubit.uiPackages,
+            credits: creditsCubit.uiPackages,
           ),
           CreditsList(
             title: 'State management packages.',
-            list: creditsCubit.stateManagementPackages,
+            credits: creditsCubit.stateManagementPackages,
           ),
           CreditsList(
             title: 'Development specific packages.',
-            list: creditsCubit.devPackages,
+            credits: creditsCubit.devPackages,
           ),
           CreditsList(
             title: 'Firebase Packages.',
-            list: creditsCubit.backendPackages,
+            credits: creditsCubit.backendPackages,
           ),
           CreditsList(
             title: 'Misc.',
-            list: creditsCubit.miscPackages,
+            credits: creditsCubit.miscPackages,
           ),
         ],
       ),
