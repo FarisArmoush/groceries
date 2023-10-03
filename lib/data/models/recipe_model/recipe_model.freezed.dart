@@ -20,7 +20,7 @@ RecipeModel _$RecipeModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$RecipeModel {
-  String? get uid => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
   String? get imageUrl => throw _privateConstructorUsedError;
   List<GroceryModel?>? get items => throw _privateConstructorUsedError;
@@ -40,7 +40,7 @@ abstract class $RecipeModelCopyWith<$Res> {
       _$RecipeModelCopyWithImpl<$Res, RecipeModel>;
   @useResult
   $Res call(
-      {String? uid,
+      {String? id,
       String? name,
       String? imageUrl,
       List<GroceryModel?>? items,
@@ -60,16 +60,16 @@ class _$RecipeModelCopyWithImpl<$Res, $Val extends RecipeModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = freezed,
+    Object? id = freezed,
     Object? name = freezed,
     Object? imageUrl = freezed,
     Object? items = freezed,
     Object? creationDate = freezed,
   }) {
     return _then(_value.copyWith(
-      uid: freezed == uid
-          ? _value.uid
-          : uid // ignore: cast_nullable_to_non_nullable
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String?,
       name: freezed == name
           ? _value.name
@@ -100,7 +100,7 @@ abstract class _$$_RecipeModelCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? uid,
+      {String? id,
       String? name,
       String? imageUrl,
       List<GroceryModel?>? items,
@@ -118,16 +118,16 @@ class __$$_RecipeModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = freezed,
+    Object? id = freezed,
     Object? name = freezed,
     Object? imageUrl = freezed,
     Object? items = freezed,
     Object? creationDate = freezed,
   }) {
     return _then(_$_RecipeModel(
-      uid: freezed == uid
-          ? _value.uid
-          : uid // ignore: cast_nullable_to_non_nullable
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String?,
       name: freezed == name
           ? _value.name
@@ -153,7 +153,7 @@ class __$$_RecipeModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_RecipeModel with DiagnosticableTreeMixin implements _RecipeModel {
   const _$_RecipeModel(
-      {required this.uid,
+      {required this.id,
       required this.name,
       required this.imageUrl,
       required final List<GroceryModel?>? items,
@@ -164,7 +164,7 @@ class _$_RecipeModel with DiagnosticableTreeMixin implements _RecipeModel {
       _$$_RecipeModelFromJson(json);
 
   @override
-  final String? uid;
+  final String? id;
   @override
   final String? name;
   @override
@@ -185,7 +185,7 @@ class _$_RecipeModel with DiagnosticableTreeMixin implements _RecipeModel {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'RecipeModel(uid: $uid, name: $name, imageUrl: $imageUrl, items: $items, creationDate: $creationDate)';
+    return 'RecipeModel(id: $id, name: $name, imageUrl: $imageUrl, items: $items, creationDate: $creationDate)';
   }
 
   @override
@@ -193,7 +193,7 @@ class _$_RecipeModel with DiagnosticableTreeMixin implements _RecipeModel {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'RecipeModel'))
-      ..add(DiagnosticsProperty('uid', uid))
+      ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('name', name))
       ..add(DiagnosticsProperty('imageUrl', imageUrl))
       ..add(DiagnosticsProperty('items', items))
@@ -205,7 +205,7 @@ class _$_RecipeModel with DiagnosticableTreeMixin implements _RecipeModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_RecipeModel &&
-            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.imageUrl, imageUrl) ||
                 other.imageUrl == imageUrl) &&
@@ -216,7 +216,7 @@ class _$_RecipeModel with DiagnosticableTreeMixin implements _RecipeModel {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, uid, name, imageUrl,
+  int get hashCode => Object.hash(runtimeType, id, name, imageUrl,
       const DeepCollectionEquality().hash(_items), creationDate);
 
   @JsonKey(ignore: true)
@@ -235,7 +235,7 @@ class _$_RecipeModel with DiagnosticableTreeMixin implements _RecipeModel {
 
 abstract class _RecipeModel implements RecipeModel {
   const factory _RecipeModel(
-          {required final String? uid,
+          {required final String? id,
           required final String? name,
           required final String? imageUrl,
           required final List<GroceryModel?>? items,
@@ -246,7 +246,7 @@ abstract class _RecipeModel implements RecipeModel {
       _$_RecipeModel.fromJson;
 
   @override
-  String? get uid;
+  String? get id;
   @override
   String? get name;
   @override

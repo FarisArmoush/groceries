@@ -57,7 +57,16 @@ class CreateListForm extends StatelessWidget {
                 color: context.theme.colorScheme.secondary,
               ),
               onPressed: () => context.read<CreateListBloc>().add(
-                    CreateListRequested(),
+                    CreateListEvent.createList(
+                      groceryListModel: GroceryListModel(
+                        id: '1',
+                        name: '',
+                        imageUrl: '',
+                        items: [],
+                        members: [],
+                        creationDate: DateTime.now(),
+                      ),
+                    ),
                   ),
             ),
           ],
@@ -67,18 +76,21 @@ class CreateListForm extends StatelessWidget {
   }
 
   void _listener(BuildContext context, CreateListState state) {
-    if (state is CreateListLoading) {
-      showDialog<AppLoadingIndicator>(
-        context: context,
-        barrierDismissible: false,
-        builder: (context) => const AppLoadingIndicator(),
-      );
-    }
-    if (state is CreateListSucceded) {
-      context.pushReplacementNamed(AppNamedRoutes.listCreatedSuccessfully);
-    }
-    if (state is CreateListFailed) {
-      context.pushReplacementNamed(AppNamedRoutes.listCreatedUnsuccessfully);
-    }
+    state.status.when(
+      initial: () {},
+      loading: () {
+        showDialog<AppLoadingIndicator>(
+          context: context,
+          barrierDismissible: false,
+          builder: (context) => const AppLoadingIndicator(),
+        );
+      },
+      success: () {
+        context.pushReplacementNamed(AppNamedRoutes.listCreatedSuccessfully);
+      },
+      failure: (error) {
+        context.pushReplacementNamed(AppNamedRoutes.listCreatedUnsuccessfully);
+      },
+    );
   }
 }

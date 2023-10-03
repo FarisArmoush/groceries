@@ -1,16 +1,8 @@
-part of '../create_list.dart';
+part of 'create_list_bloc.dart';
 
-sealed class CreateListState extends Equatable {
-  const CreateListState();
-
-  @override
-  List<Object> get props => [];
+@freezed
+class CreateListState with _$CreateListState {
+  const factory CreateListState({
+    @Default(BlocStatus.initial()) BlocStatus status,
+  }) = _CreateListState;
 }
-
-class CreateListInitial extends CreateListState {}
-
-class CreateListSucceded extends CreateListState {}
-
-class CreateListLoading extends CreateListState {}
-
-class CreateListFailed extends CreateListState {}

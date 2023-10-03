@@ -20,7 +20,7 @@ TaskModel _$TaskModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$TaskModel {
-  String? get uid => throw _privateConstructorUsedError;
+  String? get id => throw _privateConstructorUsedError;
   GroceryListModel? get listModel => throw _privateConstructorUsedError;
   DateTime? get dueDate => throw _privateConstructorUsedError;
   List<GroceryModel?>? get groceries => throw _privateConstructorUsedError;
@@ -39,7 +39,7 @@ abstract class $TaskModelCopyWith<$Res> {
       _$TaskModelCopyWithImpl<$Res, TaskModel>;
   @useResult
   $Res call(
-      {String? uid,
+      {String? id,
       GroceryListModel? listModel,
       DateTime? dueDate,
       List<GroceryModel?>? groceries,
@@ -61,16 +61,16 @@ class _$TaskModelCopyWithImpl<$Res, $Val extends TaskModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = freezed,
+    Object? id = freezed,
     Object? listModel = freezed,
     Object? dueDate = freezed,
     Object? groceries = freezed,
     Object? creationDate = freezed,
   }) {
     return _then(_value.copyWith(
-      uid: freezed == uid
-          ? _value.uid
-          : uid // ignore: cast_nullable_to_non_nullable
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String?,
       listModel: freezed == listModel
           ? _value.listModel
@@ -112,7 +112,7 @@ abstract class _$$_TaskModelCopyWith<$Res> implements $TaskModelCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String? uid,
+      {String? id,
       GroceryListModel? listModel,
       DateTime? dueDate,
       List<GroceryModel?>? groceries,
@@ -133,16 +133,16 @@ class __$$_TaskModelCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? uid = freezed,
+    Object? id = freezed,
     Object? listModel = freezed,
     Object? dueDate = freezed,
     Object? groceries = freezed,
     Object? creationDate = freezed,
   }) {
     return _then(_$_TaskModel(
-      uid: freezed == uid
-          ? _value.uid
-          : uid // ignore: cast_nullable_to_non_nullable
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String?,
       listModel: freezed == listModel
           ? _value.listModel
@@ -168,7 +168,7 @@ class __$$_TaskModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_TaskModel implements _TaskModel {
   const _$_TaskModel(
-      {required this.uid,
+      {required this.id,
       required this.listModel,
       required this.dueDate,
       required final List<GroceryModel?>? groceries,
@@ -179,7 +179,7 @@ class _$_TaskModel implements _TaskModel {
       _$$_TaskModelFromJson(json);
 
   @override
-  final String? uid;
+  final String? id;
   @override
   final GroceryListModel? listModel;
   @override
@@ -200,7 +200,7 @@ class _$_TaskModel implements _TaskModel {
 
   @override
   String toString() {
-    return 'TaskModel(uid: $uid, listModel: $listModel, dueDate: $dueDate, groceries: $groceries, creationDate: $creationDate)';
+    return 'TaskModel(id: $id, listModel: $listModel, dueDate: $dueDate, groceries: $groceries, creationDate: $creationDate)';
   }
 
   @override
@@ -208,7 +208,7 @@ class _$_TaskModel implements _TaskModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TaskModel &&
-            (identical(other.uid, uid) || other.uid == uid) &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.listModel, listModel) ||
                 other.listModel == listModel) &&
             (identical(other.dueDate, dueDate) || other.dueDate == dueDate) &&
@@ -220,7 +220,7 @@ class _$_TaskModel implements _TaskModel {
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, uid, listModel, dueDate,
+  int get hashCode => Object.hash(runtimeType, id, listModel, dueDate,
       const DeepCollectionEquality().hash(_groceries), creationDate);
 
   @JsonKey(ignore: true)
@@ -239,7 +239,7 @@ class _$_TaskModel implements _TaskModel {
 
 abstract class _TaskModel implements TaskModel {
   const factory _TaskModel(
-          {required final String? uid,
+          {required final String? id,
           required final GroceryListModel? listModel,
           required final DateTime? dueDate,
           required final List<GroceryModel?>? groceries,
@@ -250,7 +250,7 @@ abstract class _TaskModel implements TaskModel {
       _$_TaskModel.fromJson;
 
   @override
-  String? get uid;
+  String? get id;
   @override
   GroceryListModel? get listModel;
   @override
