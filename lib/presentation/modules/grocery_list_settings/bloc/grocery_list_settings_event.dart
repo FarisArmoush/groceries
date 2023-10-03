@@ -1,8 +1,6 @@
-part of '../grocery_list_settings.dart';
+part of 'grocery_list_settings_bloc.dart';
 
-sealed class GroceryListSettingsEvent extends Equatable {
-  const GroceryListSettingsEvent();
-
-  @override
-  List<Object> get props => [];
+@freezed
+class GroceryListSettingsEvent with _$GroceryListSettingsEvent {
+  const factory GroceryListSettingsEvent.deleteList() = _DeleteList;
 }

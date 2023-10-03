@@ -2,7 +2,7 @@ part of '../app.dart';
 
 /// The main application view that sets up the app's theme,
 /// localization, and routing.
-/// also provides [ThemeCubit], and [RemoteConfigCubit], and they
+/// also provides [ThemeCubit], and [RemoteConfigBloc], and they
 /// are commonly used all around the app.
 class AppView extends StatelessWidget {
   /// Creates an instance of [AppView]
@@ -23,7 +23,7 @@ class AppView extends StatelessWidget {
           )..loadTheme(),
         ),
         BlocProvider(
-          create: (context) => RemoteConfigCubit(
+          create: (context) => RemoteConfigBloc(
             context.read<RemoteConfigUseCase>(),
           ),
         ),

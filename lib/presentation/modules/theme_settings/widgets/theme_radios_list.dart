@@ -45,7 +45,7 @@ class ThemeRadiosList extends StatelessWidget {
   }
 }
 
-class AppThemeModel extends Equatable {
+class AppThemeModel {
   const AppThemeModel({
     required this.title,
     required this.themeMode,
@@ -53,7 +53,4 @@ class AppThemeModel extends Equatable {
 
   final String title;
   final ThemeMode themeMode;
-
-  @override
-  List<Object?> get props => [title, themeMode];
 }

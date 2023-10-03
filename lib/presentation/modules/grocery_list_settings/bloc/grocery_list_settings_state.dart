@@ -1,10 +1,7 @@
-part of '../grocery_list_settings.dart';
+part of 'grocery_list_settings_bloc.dart';
 
-sealed class GroceryListSettingsState extends Equatable {
-  const GroceryListSettingsState();
-
-  @override
-  List<Object> get props => [];
+@freezed
+class GroceryListSettingsState with _$GroceryListSettingsState {
+  const factory GroceryListSettingsState() = _GroceryListSettingsState;
+  const GroceryListSettingsState._();
 }
-
-final class GroceryListSettingsInitial extends GroceryListSettingsState {}
