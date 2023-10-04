@@ -10,7 +10,7 @@ class CategoriesDataSource {
       final collectionReference = firestore
           .collection('category')
           .orderBy('name')
-          .where('parentCategoryId', isEqualTo: '');
+          .where('parentCategoryId', isNull: true);
       final result = await collectionReference.get(_fetchCategoriesGetOptions);
       final listOfMaps = <Map<String, Object?>>[];
       for (final element in result.docs) {
