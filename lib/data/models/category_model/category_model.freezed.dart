@@ -92,11 +92,11 @@ class _$CategoryModelCopyWithImpl<$Res, $Val extends CategoryModel>
 }
 
 /// @nodoc
-abstract class _$$_CategoryModelCopyWith<$Res>
+abstract class _$$CategoryModelImplCopyWith<$Res>
     implements $CategoryModelCopyWith<$Res> {
-  factory _$$_CategoryModelCopyWith(
-          _$_CategoryModel value, $Res Function(_$_CategoryModel) then) =
-      __$$_CategoryModelCopyWithImpl<$Res>;
+  factory _$$CategoryModelImplCopyWith(
+          _$CategoryModelImpl value, $Res Function(_$CategoryModelImpl) then) =
+      __$$CategoryModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -108,11 +108,11 @@ abstract class _$$_CategoryModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CategoryModelCopyWithImpl<$Res>
-    extends _$CategoryModelCopyWithImpl<$Res, _$_CategoryModel>
-    implements _$$_CategoryModelCopyWith<$Res> {
-  __$$_CategoryModelCopyWithImpl(
-      _$_CategoryModel _value, $Res Function(_$_CategoryModel) _then)
+class __$$CategoryModelImplCopyWithImpl<$Res>
+    extends _$CategoryModelCopyWithImpl<$Res, _$CategoryModelImpl>
+    implements _$$CategoryModelImplCopyWith<$Res> {
+  __$$CategoryModelImplCopyWithImpl(
+      _$CategoryModelImpl _value, $Res Function(_$CategoryModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -124,7 +124,7 @@ class __$$_CategoryModelCopyWithImpl<$Res>
     Object? name = freezed,
     Object? parentCategoryId = freezed,
   }) {
-    return _then(_$_CategoryModel(
+    return _then(_$CategoryModelImpl(
       categoryId: freezed == categoryId
           ? _value.categoryId
           : categoryId // ignore: cast_nullable_to_non_nullable
@@ -151,16 +151,18 @@ class __$$_CategoryModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CategoryModel with DiagnosticableTreeMixin implements _CategoryModel {
-  const _$_CategoryModel(
+class _$CategoryModelImpl
+    with DiagnosticableTreeMixin
+    implements _CategoryModel {
+  const _$CategoryModelImpl(
       {required this.categoryId,
       @TimestampSerializer() required this.creationDate,
       required this.image,
       required this.name,
       required this.parentCategoryId});
 
-  factory _$_CategoryModel.fromJson(Map<String, dynamic> json) =>
-      _$$_CategoryModelFromJson(json);
+  factory _$CategoryModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CategoryModelImplFromJson(json);
 
   @override
   final String? categoryId;
@@ -195,7 +197,7 @@ class _$_CategoryModel with DiagnosticableTreeMixin implements _CategoryModel {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CategoryModel &&
+            other is _$CategoryModelImpl &&
             (identical(other.categoryId, categoryId) ||
                 other.categoryId == categoryId) &&
             (identical(other.creationDate, creationDate) ||
@@ -214,12 +216,12 @@ class _$_CategoryModel with DiagnosticableTreeMixin implements _CategoryModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CategoryModelCopyWith<_$_CategoryModel> get copyWith =>
-      __$$_CategoryModelCopyWithImpl<_$_CategoryModel>(this, _$identity);
+  _$$CategoryModelImplCopyWith<_$CategoryModelImpl> get copyWith =>
+      __$$CategoryModelImplCopyWithImpl<_$CategoryModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CategoryModelToJson(
+    return _$$CategoryModelImplToJson(
       this,
     );
   }
@@ -231,10 +233,10 @@ abstract class _CategoryModel implements CategoryModel {
       @TimestampSerializer() required final DateTime? creationDate,
       required final String? image,
       required final String? name,
-      required final String? parentCategoryId}) = _$_CategoryModel;
+      required final String? parentCategoryId}) = _$CategoryModelImpl;
 
   factory _CategoryModel.fromJson(Map<String, dynamic> json) =
-      _$_CategoryModel.fromJson;
+      _$CategoryModelImpl.fromJson;
 
   @override
   String? get categoryId;
@@ -249,6 +251,6 @@ abstract class _CategoryModel implements CategoryModel {
   String? get parentCategoryId;
   @override
   @JsonKey(ignore: true)
-  _$$_CategoryModelCopyWith<_$_CategoryModel> get copyWith =>
+  _$$CategoryModelImplCopyWith<_$CategoryModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

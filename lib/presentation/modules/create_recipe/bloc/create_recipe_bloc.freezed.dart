@@ -69,25 +69,25 @@ class _$CreateRecipeEventCopyWithImpl<$Res, $Val extends CreateRecipeEvent>
 }
 
 /// @nodoc
-abstract class _$$_CreateRecipeCopyWith<$Res> {
-  factory _$$_CreateRecipeCopyWith(
-          _$_CreateRecipe value, $Res Function(_$_CreateRecipe) then) =
-      __$$_CreateRecipeCopyWithImpl<$Res>;
+abstract class _$$CreateRecipeImplCopyWith<$Res> {
+  factory _$$CreateRecipeImplCopyWith(
+          _$CreateRecipeImpl value, $Res Function(_$CreateRecipeImpl) then) =
+      __$$CreateRecipeImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_CreateRecipeCopyWithImpl<$Res>
-    extends _$CreateRecipeEventCopyWithImpl<$Res, _$_CreateRecipe>
-    implements _$$_CreateRecipeCopyWith<$Res> {
-  __$$_CreateRecipeCopyWithImpl(
-      _$_CreateRecipe _value, $Res Function(_$_CreateRecipe) _then)
+class __$$CreateRecipeImplCopyWithImpl<$Res>
+    extends _$CreateRecipeEventCopyWithImpl<$Res, _$CreateRecipeImpl>
+    implements _$$CreateRecipeImplCopyWith<$Res> {
+  __$$CreateRecipeImplCopyWithImpl(
+      _$CreateRecipeImpl _value, $Res Function(_$CreateRecipeImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_CreateRecipe implements _CreateRecipe {
-  const _$_CreateRecipe();
+class _$CreateRecipeImpl implements _CreateRecipe {
+  const _$CreateRecipeImpl();
 
   @override
   String toString() {
@@ -97,7 +97,7 @@ class _$_CreateRecipe implements _CreateRecipe {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_CreateRecipe);
+        (other.runtimeType == runtimeType && other is _$CreateRecipeImpl);
   }
 
   @override
@@ -161,7 +161,7 @@ class _$_CreateRecipe implements _CreateRecipe {
 }
 
 abstract class _CreateRecipe implements CreateRecipeEvent {
-  const factory _CreateRecipe() = _$_CreateRecipe;
+  const factory _CreateRecipe() = _$CreateRecipeImpl;
 }
 
 /// @nodoc
@@ -217,11 +217,11 @@ class _$CreateRecipeStateCopyWithImpl<$Res, $Val extends CreateRecipeState>
 }
 
 /// @nodoc
-abstract class _$$_CreateRecipeStateCopyWith<$Res>
+abstract class _$$CreateRecipeStateImplCopyWith<$Res>
     implements $CreateRecipeStateCopyWith<$Res> {
-  factory _$$_CreateRecipeStateCopyWith(_$_CreateRecipeState value,
-          $Res Function(_$_CreateRecipeState) then) =
-      __$$_CreateRecipeStateCopyWithImpl<$Res>;
+  factory _$$CreateRecipeStateImplCopyWith(_$CreateRecipeStateImpl value,
+          $Res Function(_$CreateRecipeStateImpl) then) =
+      __$$CreateRecipeStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({BlocStatus status});
@@ -231,11 +231,11 @@ abstract class _$$_CreateRecipeStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CreateRecipeStateCopyWithImpl<$Res>
-    extends _$CreateRecipeStateCopyWithImpl<$Res, _$_CreateRecipeState>
-    implements _$$_CreateRecipeStateCopyWith<$Res> {
-  __$$_CreateRecipeStateCopyWithImpl(
-      _$_CreateRecipeState _value, $Res Function(_$_CreateRecipeState) _then)
+class __$$CreateRecipeStateImplCopyWithImpl<$Res>
+    extends _$CreateRecipeStateCopyWithImpl<$Res, _$CreateRecipeStateImpl>
+    implements _$$CreateRecipeStateImplCopyWith<$Res> {
+  __$$CreateRecipeStateImplCopyWithImpl(_$CreateRecipeStateImpl _value,
+      $Res Function(_$CreateRecipeStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -243,7 +243,7 @@ class __$$_CreateRecipeStateCopyWithImpl<$Res>
   $Res call({
     Object? status = null,
   }) {
-    return _then(_$_CreateRecipeState(
+    return _then(_$CreateRecipeStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -254,8 +254,8 @@ class __$$_CreateRecipeStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CreateRecipeState extends _CreateRecipeState {
-  const _$_CreateRecipeState({this.status = const BlocStatus.initial()})
+class _$CreateRecipeStateImpl extends _CreateRecipeState {
+  const _$CreateRecipeStateImpl({this.status = const BlocStatus.initial()})
       : super._();
 
   @override
@@ -271,7 +271,7 @@ class _$_CreateRecipeState extends _CreateRecipeState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CreateRecipeState &&
+            other is _$CreateRecipeStateImpl &&
             (identical(other.status, status) || other.status == status));
   }
 
@@ -281,20 +281,20 @@ class _$_CreateRecipeState extends _CreateRecipeState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CreateRecipeStateCopyWith<_$_CreateRecipeState> get copyWith =>
-      __$$_CreateRecipeStateCopyWithImpl<_$_CreateRecipeState>(
+  _$$CreateRecipeStateImplCopyWith<_$CreateRecipeStateImpl> get copyWith =>
+      __$$CreateRecipeStateImplCopyWithImpl<_$CreateRecipeStateImpl>(
           this, _$identity);
 }
 
 abstract class _CreateRecipeState extends CreateRecipeState {
   const factory _CreateRecipeState({final BlocStatus status}) =
-      _$_CreateRecipeState;
+      _$CreateRecipeStateImpl;
   const _CreateRecipeState._() : super._();
 
   @override
   BlocStatus get status;
   @override
   @JsonKey(ignore: true)
-  _$$_CreateRecipeStateCopyWith<_$_CreateRecipeState> get copyWith =>
+  _$$CreateRecipeStateImplCopyWith<_$CreateRecipeStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

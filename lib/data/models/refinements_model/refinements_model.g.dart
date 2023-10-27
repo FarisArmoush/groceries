@@ -1,20 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: non_constant_identifier_names
-
 part of 'refinements_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_RefinementsModel _$$_RefinementsModelFromJson(Map<String, dynamic> json) =>
-    _$_RefinementsModel(
+_$RefinementsModelImpl _$$RefinementsModelImplFromJson(
+  Map<String, dynamic> json,
+) =>
+    _$RefinementsModelImpl(
       refinement: json['refinement'] as String?,
       isChecked: json['isChecked'] as bool?,
     );
 
-Map<String, dynamic> _$$_RefinementsModelToJson(_$_RefinementsModel instance) =>
+Map<String, dynamic> _$$RefinementsModelImplToJson(
+  _$RefinementsModelImpl instance,
+) =>
     <String, dynamic>{
       'refinement': instance.refinement,
       'isChecked': instance.isChecked,

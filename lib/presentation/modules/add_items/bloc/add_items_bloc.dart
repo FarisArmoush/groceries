@@ -2,7 +2,6 @@ import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/data/models/category_model/category_model.dart';
-import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/domain/use_cases/use_cases.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 
@@ -11,14 +10,12 @@ part 'add_items_event.dart';
 part 'add_items_state.dart';
 
 class AddItemsBloc extends Bloc<AddItemsEvent, AddItemsState> {
-  AddItemsBloc(this._baseGroceriesUseCase) : super(const AddItemsState()) {
+  AddItemsBloc(this._fetchParentCategoriesUseCase)
+      : super(const AddItemsState()) {
     on<_GetParentCategories>(_onGetParentCategories);
-    on<_AddItemToList>(_onAddItemToList);
-    on<_SetActiveCategory>(_onSetActiveCategory);
-    on<_GetCategoryItems>(_onGetCategoryItems);
   }
 
-  final BaseGroceriesUseCase _baseGroceriesUseCase;
+  final FetchParentCategoriesUseCase _fetchParentCategoriesUseCase;
 
   Future<void> _onGetParentCategories(
     _GetParentCategories event,
@@ -30,13 +27,11 @@ class AddItemsBloc extends Bloc<AddItemsEvent, AddItemsState> {
       ),
     );
     try {
-      final myCategories = await _baseGroceriesUseCase.fetchAllCategories();
-      final baseGroceries = await _baseGroceriesUseCase.fetchAllBaseGroceries();
+      final parentCategories = await _fetchParentCategoriesUseCase.call();
       emit(
         state.copyWith(
           status: const BlocStatus.success(),
-          baseGroceries: baseGroceries,
-          categories: myCategories,
+          parentCategories: parentCategories,
         ),
       );
     } on FirebaseException catch (e) {
@@ -55,25 +50,4 @@ class AddItemsBloc extends Bloc<AddItemsEvent, AddItemsState> {
       );
     }
   }
-
-  Future<void> _onSetActiveCategory(
-    _SetActiveCategory event,
-    Emitter<AddItemsState> emit,
-  ) async {
-    emit(
-      state.copyWith(
-        selectedCategory: event.category,
-      ),
-    );
-  }
-
-  Future<void> _onGetCategoryItems(
-    _GetCategoryItems event,
-    Emitter<AddItemsState> emit,
-  ) async {}
-
-  Future<void> _onAddItemToList(
-    _AddItemToList event,
-    Emitter<AddItemsState> emit,
-  ) async {}
 }

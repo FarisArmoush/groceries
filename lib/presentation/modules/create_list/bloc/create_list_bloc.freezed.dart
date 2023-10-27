@@ -99,11 +99,11 @@ class _$CreateListEventCopyWithImpl<$Res, $Val extends CreateListEvent>
 }
 
 /// @nodoc
-abstract class _$$_CreateListCopyWith<$Res>
+abstract class _$$CreateListImplCopyWith<$Res>
     implements $CreateListEventCopyWith<$Res> {
-  factory _$$_CreateListCopyWith(
-          _$_CreateList value, $Res Function(_$_CreateList) then) =
-      __$$_CreateListCopyWithImpl<$Res>;
+  factory _$$CreateListImplCopyWith(
+          _$CreateListImpl value, $Res Function(_$CreateListImpl) then) =
+      __$$CreateListImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({GroceryListModel groceryListModel});
@@ -113,11 +113,11 @@ abstract class _$$_CreateListCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CreateListCopyWithImpl<$Res>
-    extends _$CreateListEventCopyWithImpl<$Res, _$_CreateList>
-    implements _$$_CreateListCopyWith<$Res> {
-  __$$_CreateListCopyWithImpl(
-      _$_CreateList _value, $Res Function(_$_CreateList) _then)
+class __$$CreateListImplCopyWithImpl<$Res>
+    extends _$CreateListEventCopyWithImpl<$Res, _$CreateListImpl>
+    implements _$$CreateListImplCopyWith<$Res> {
+  __$$CreateListImplCopyWithImpl(
+      _$CreateListImpl _value, $Res Function(_$CreateListImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -125,7 +125,7 @@ class __$$_CreateListCopyWithImpl<$Res>
   $Res call({
     Object? groceryListModel = null,
   }) {
-    return _then(_$_CreateList(
+    return _then(_$CreateListImpl(
       groceryListModel: null == groceryListModel
           ? _value.groceryListModel
           : groceryListModel // ignore: cast_nullable_to_non_nullable
@@ -136,8 +136,8 @@ class __$$_CreateListCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CreateList implements _CreateList {
-  const _$_CreateList({required this.groceryListModel});
+class _$CreateListImpl implements _CreateList {
+  const _$CreateListImpl({required this.groceryListModel});
 
   @override
   final GroceryListModel groceryListModel;
@@ -151,7 +151,7 @@ class _$_CreateList implements _CreateList {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CreateList &&
+            other is _$CreateListImpl &&
             (identical(other.groceryListModel, groceryListModel) ||
                 other.groceryListModel == groceryListModel));
   }
@@ -162,8 +162,8 @@ class _$_CreateList implements _CreateList {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CreateListCopyWith<_$_CreateList> get copyWith =>
-      __$$_CreateListCopyWithImpl<_$_CreateList>(this, _$identity);
+  _$$CreateListImplCopyWith<_$CreateListImpl> get copyWith =>
+      __$$CreateListImplCopyWithImpl<_$CreateListImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -224,13 +224,13 @@ class _$_CreateList implements _CreateList {
 
 abstract class _CreateList implements CreateListEvent {
   const factory _CreateList(
-      {required final GroceryListModel groceryListModel}) = _$_CreateList;
+      {required final GroceryListModel groceryListModel}) = _$CreateListImpl;
 
   @override
   GroceryListModel get groceryListModel;
   @override
   @JsonKey(ignore: true)
-  _$$_CreateListCopyWith<_$_CreateList> get copyWith =>
+  _$$CreateListImplCopyWith<_$CreateListImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -287,11 +287,11 @@ class _$CreateListStateCopyWithImpl<$Res, $Val extends CreateListState>
 }
 
 /// @nodoc
-abstract class _$$_CreateListStateCopyWith<$Res>
+abstract class _$$CreateListStateImplCopyWith<$Res>
     implements $CreateListStateCopyWith<$Res> {
-  factory _$$_CreateListStateCopyWith(
-          _$_CreateListState value, $Res Function(_$_CreateListState) then) =
-      __$$_CreateListStateCopyWithImpl<$Res>;
+  factory _$$CreateListStateImplCopyWith(_$CreateListStateImpl value,
+          $Res Function(_$CreateListStateImpl) then) =
+      __$$CreateListStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({BlocStatus status});
@@ -301,11 +301,11 @@ abstract class _$$_CreateListStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CreateListStateCopyWithImpl<$Res>
-    extends _$CreateListStateCopyWithImpl<$Res, _$_CreateListState>
-    implements _$$_CreateListStateCopyWith<$Res> {
-  __$$_CreateListStateCopyWithImpl(
-      _$_CreateListState _value, $Res Function(_$_CreateListState) _then)
+class __$$CreateListStateImplCopyWithImpl<$Res>
+    extends _$CreateListStateCopyWithImpl<$Res, _$CreateListStateImpl>
+    implements _$$CreateListStateImplCopyWith<$Res> {
+  __$$CreateListStateImplCopyWithImpl(
+      _$CreateListStateImpl _value, $Res Function(_$CreateListStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -313,7 +313,7 @@ class __$$_CreateListStateCopyWithImpl<$Res>
   $Res call({
     Object? status = null,
   }) {
-    return _then(_$_CreateListState(
+    return _then(_$CreateListStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -324,8 +324,8 @@ class __$$_CreateListStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CreateListState implements _CreateListState {
-  const _$_CreateListState({this.status = const BlocStatus.initial()});
+class _$CreateListStateImpl implements _CreateListState {
+  const _$CreateListStateImpl({this.status = const BlocStatus.initial()});
 
   @override
   @JsonKey()
@@ -340,7 +340,7 @@ class _$_CreateListState implements _CreateListState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CreateListState &&
+            other is _$CreateListStateImpl &&
             (identical(other.status, status) || other.status == status));
   }
 
@@ -350,18 +350,19 @@ class _$_CreateListState implements _CreateListState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CreateListStateCopyWith<_$_CreateListState> get copyWith =>
-      __$$_CreateListStateCopyWithImpl<_$_CreateListState>(this, _$identity);
+  _$$CreateListStateImplCopyWith<_$CreateListStateImpl> get copyWith =>
+      __$$CreateListStateImplCopyWithImpl<_$CreateListStateImpl>(
+          this, _$identity);
 }
 
 abstract class _CreateListState implements CreateListState {
   const factory _CreateListState({final BlocStatus status}) =
-      _$_CreateListState;
+      _$CreateListStateImpl;
 
   @override
   BlocStatus get status;
   @override
   @JsonKey(ignore: true)
-  _$$_CreateListStateCopyWith<_$_CreateListState> get copyWith =>
+  _$$CreateListStateImplCopyWith<_$CreateListStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

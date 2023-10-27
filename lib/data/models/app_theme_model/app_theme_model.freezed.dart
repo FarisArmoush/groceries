@@ -63,22 +63,22 @@ class _$AppThemeModelCopyWithImpl<$Res, $Val extends AppThemeModel>
 }
 
 /// @nodoc
-abstract class _$$_AppThemeModelCopyWith<$Res>
+abstract class _$$AppThemeModelImplCopyWith<$Res>
     implements $AppThemeModelCopyWith<$Res> {
-  factory _$$_AppThemeModelCopyWith(
-          _$_AppThemeModel value, $Res Function(_$_AppThemeModel) then) =
-      __$$_AppThemeModelCopyWithImpl<$Res>;
+  factory _$$AppThemeModelImplCopyWith(
+          _$AppThemeModelImpl value, $Res Function(_$AppThemeModelImpl) then) =
+      __$$AppThemeModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String title, ThemeMode themeMode});
 }
 
 /// @nodoc
-class __$$_AppThemeModelCopyWithImpl<$Res>
-    extends _$AppThemeModelCopyWithImpl<$Res, _$_AppThemeModel>
-    implements _$$_AppThemeModelCopyWith<$Res> {
-  __$$_AppThemeModelCopyWithImpl(
-      _$_AppThemeModel _value, $Res Function(_$_AppThemeModel) _then)
+class __$$AppThemeModelImplCopyWithImpl<$Res>
+    extends _$AppThemeModelCopyWithImpl<$Res, _$AppThemeModelImpl>
+    implements _$$AppThemeModelImplCopyWith<$Res> {
+  __$$AppThemeModelImplCopyWithImpl(
+      _$AppThemeModelImpl _value, $Res Function(_$AppThemeModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +87,7 @@ class __$$_AppThemeModelCopyWithImpl<$Res>
     Object? title = null,
     Object? themeMode = null,
   }) {
-    return _then(_$_AppThemeModel(
+    return _then(_$AppThemeModelImpl(
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -102,8 +102,8 @@ class __$$_AppThemeModelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AppThemeModel implements _AppThemeModel {
-  _$_AppThemeModel({required this.title, required this.themeMode});
+class _$AppThemeModelImpl implements _AppThemeModel {
+  _$AppThemeModelImpl({required this.title, required this.themeMode});
 
   @override
   final String title;
@@ -119,7 +119,7 @@ class _$_AppThemeModel implements _AppThemeModel {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AppThemeModel &&
+            other is _$AppThemeModelImpl &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.themeMode, themeMode) ||
                 other.themeMode == themeMode));
@@ -131,14 +131,14 @@ class _$_AppThemeModel implements _AppThemeModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AppThemeModelCopyWith<_$_AppThemeModel> get copyWith =>
-      __$$_AppThemeModelCopyWithImpl<_$_AppThemeModel>(this, _$identity);
+  _$$AppThemeModelImplCopyWith<_$AppThemeModelImpl> get copyWith =>
+      __$$AppThemeModelImplCopyWithImpl<_$AppThemeModelImpl>(this, _$identity);
 }
 
 abstract class _AppThemeModel implements AppThemeModel {
   factory _AppThemeModel(
       {required final String title,
-      required final ThemeMode themeMode}) = _$_AppThemeModel;
+      required final ThemeMode themeMode}) = _$AppThemeModelImpl;
 
   @override
   String get title;
@@ -146,6 +146,6 @@ abstract class _AppThemeModel implements AppThemeModel {
   ThemeMode get themeMode;
   @override
   @JsonKey(ignore: true)
-  _$$_AppThemeModelCopyWith<_$_AppThemeModel> get copyWith =>
+  _$$AppThemeModelImplCopyWith<_$AppThemeModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

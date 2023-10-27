@@ -69,25 +69,25 @@ class _$RemoteConfigEventCopyWithImpl<$Res, $Val extends RemoteConfigEvent>
 }
 
 /// @nodoc
-abstract class _$$_GetAppVersionCopyWith<$Res> {
-  factory _$$_GetAppVersionCopyWith(
-          _$_GetAppVersion value, $Res Function(_$_GetAppVersion) then) =
-      __$$_GetAppVersionCopyWithImpl<$Res>;
+abstract class _$$GetAppVersionImplCopyWith<$Res> {
+  factory _$$GetAppVersionImplCopyWith(
+          _$GetAppVersionImpl value, $Res Function(_$GetAppVersionImpl) then) =
+      __$$GetAppVersionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_GetAppVersionCopyWithImpl<$Res>
-    extends _$RemoteConfigEventCopyWithImpl<$Res, _$_GetAppVersion>
-    implements _$$_GetAppVersionCopyWith<$Res> {
-  __$$_GetAppVersionCopyWithImpl(
-      _$_GetAppVersion _value, $Res Function(_$_GetAppVersion) _then)
+class __$$GetAppVersionImplCopyWithImpl<$Res>
+    extends _$RemoteConfigEventCopyWithImpl<$Res, _$GetAppVersionImpl>
+    implements _$$GetAppVersionImplCopyWith<$Res> {
+  __$$GetAppVersionImplCopyWithImpl(
+      _$GetAppVersionImpl _value, $Res Function(_$GetAppVersionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_GetAppVersion implements _GetAppVersion {
-  const _$_GetAppVersion();
+class _$GetAppVersionImpl implements _GetAppVersion {
+  const _$GetAppVersionImpl();
 
   @override
   String toString() {
@@ -97,7 +97,7 @@ class _$_GetAppVersion implements _GetAppVersion {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_GetAppVersion);
+        (other.runtimeType == runtimeType && other is _$GetAppVersionImpl);
   }
 
   @override
@@ -161,7 +161,7 @@ class _$_GetAppVersion implements _GetAppVersion {
 }
 
 abstract class _GetAppVersion implements RemoteConfigEvent {
-  const factory _GetAppVersion() = _$_GetAppVersion;
+  const factory _GetAppVersion() = _$GetAppVersionImpl;
 }
 
 /// @nodoc
@@ -207,22 +207,22 @@ class _$RemoteConfigStateCopyWithImpl<$Res, $Val extends RemoteConfigState>
 }
 
 /// @nodoc
-abstract class _$$_RemoteConfigStateCopyWith<$Res>
+abstract class _$$RemoteConfigStateImplCopyWith<$Res>
     implements $RemoteConfigStateCopyWith<$Res> {
-  factory _$$_RemoteConfigStateCopyWith(_$_RemoteConfigState value,
-          $Res Function(_$_RemoteConfigState) then) =
-      __$$_RemoteConfigStateCopyWithImpl<$Res>;
+  factory _$$RemoteConfigStateImplCopyWith(_$RemoteConfigStateImpl value,
+          $Res Function(_$RemoteConfigStateImpl) then) =
+      __$$RemoteConfigStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String appVersion});
 }
 
 /// @nodoc
-class __$$_RemoteConfigStateCopyWithImpl<$Res>
-    extends _$RemoteConfigStateCopyWithImpl<$Res, _$_RemoteConfigState>
-    implements _$$_RemoteConfigStateCopyWith<$Res> {
-  __$$_RemoteConfigStateCopyWithImpl(
-      _$_RemoteConfigState _value, $Res Function(_$_RemoteConfigState) _then)
+class __$$RemoteConfigStateImplCopyWithImpl<$Res>
+    extends _$RemoteConfigStateCopyWithImpl<$Res, _$RemoteConfigStateImpl>
+    implements _$$RemoteConfigStateImplCopyWith<$Res> {
+  __$$RemoteConfigStateImplCopyWithImpl(_$RemoteConfigStateImpl _value,
+      $Res Function(_$RemoteConfigStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -230,7 +230,7 @@ class __$$_RemoteConfigStateCopyWithImpl<$Res>
   $Res call({
     Object? appVersion = null,
   }) {
-    return _then(_$_RemoteConfigState(
+    return _then(_$RemoteConfigStateImpl(
       appVersion: null == appVersion
           ? _value.appVersion
           : appVersion // ignore: cast_nullable_to_non_nullable
@@ -241,8 +241,8 @@ class __$$_RemoteConfigStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RemoteConfigState extends _RemoteConfigState {
-  const _$_RemoteConfigState({this.appVersion = 'Default App Version Value'})
+class _$RemoteConfigStateImpl extends _RemoteConfigState {
+  const _$RemoteConfigStateImpl({this.appVersion = 'Default App Version Value'})
       : super._();
 
   @override
@@ -258,7 +258,7 @@ class _$_RemoteConfigState extends _RemoteConfigState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RemoteConfigState &&
+            other is _$RemoteConfigStateImpl &&
             (identical(other.appVersion, appVersion) ||
                 other.appVersion == appVersion));
   }
@@ -269,20 +269,20 @@ class _$_RemoteConfigState extends _RemoteConfigState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RemoteConfigStateCopyWith<_$_RemoteConfigState> get copyWith =>
-      __$$_RemoteConfigStateCopyWithImpl<_$_RemoteConfigState>(
+  _$$RemoteConfigStateImplCopyWith<_$RemoteConfigStateImpl> get copyWith =>
+      __$$RemoteConfigStateImplCopyWithImpl<_$RemoteConfigStateImpl>(
           this, _$identity);
 }
 
 abstract class _RemoteConfigState extends RemoteConfigState {
   const factory _RemoteConfigState({final String appVersion}) =
-      _$_RemoteConfigState;
+      _$RemoteConfigStateImpl;
   const _RemoteConfigState._() : super._();
 
   @override
   String get appVersion;
   @override
   @JsonKey(ignore: true)
-  _$$_RemoteConfigStateCopyWith<_$_RemoteConfigState> get copyWith =>
+  _$$RemoteConfigStateImplCopyWith<_$RemoteConfigStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

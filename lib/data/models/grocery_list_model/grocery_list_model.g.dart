@@ -1,15 +1,15 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: non_constant_identifier_names
-
 part of 'grocery_list_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_GroceryListModel _$$_GroceryListModelFromJson(Map<String, dynamic> json) =>
-    _$_GroceryListModel(
+_$GroceryListModelImpl _$$GroceryListModelImplFromJson(
+  Map<String, dynamic> json,
+) =>
+    _$GroceryListModelImpl(
       id: json['id'] as String?,
       name: json['name'] as String?,
       imageUrl: json['imageUrl'] as String?,
@@ -33,7 +33,9 @@ _$_GroceryListModel _$$_GroceryListModelFromJson(Map<String, dynamic> json) =>
       ),
     );
 
-Map<String, dynamic> _$$_GroceryListModelToJson(_$_GroceryListModel instance) =>
+Map<String, dynamic> _$$GroceryListModelImplToJson(
+  _$GroceryListModelImpl instance,
+) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

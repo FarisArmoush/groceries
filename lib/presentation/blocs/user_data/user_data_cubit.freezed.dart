@@ -79,11 +79,11 @@ class _$UserDataStateCopyWithImpl<$Res, $Val extends UserDataState>
 }
 
 /// @nodoc
-abstract class _$$_UserDataStateCopyWith<$Res>
+abstract class _$$UserDataStateImplCopyWith<$Res>
     implements $UserDataStateCopyWith<$Res> {
-  factory _$$_UserDataStateCopyWith(
-          _$_UserDataState value, $Res Function(_$_UserDataState) then) =
-      __$$_UserDataStateCopyWithImpl<$Res>;
+  factory _$$UserDataStateImplCopyWith(
+          _$UserDataStateImpl value, $Res Function(_$UserDataStateImpl) then) =
+      __$$UserDataStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -94,11 +94,11 @@ abstract class _$$_UserDataStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UserDataStateCopyWithImpl<$Res>
-    extends _$UserDataStateCopyWithImpl<$Res, _$_UserDataState>
-    implements _$$_UserDataStateCopyWith<$Res> {
-  __$$_UserDataStateCopyWithImpl(
-      _$_UserDataState _value, $Res Function(_$_UserDataState) _then)
+class __$$UserDataStateImplCopyWithImpl<$Res>
+    extends _$UserDataStateCopyWithImpl<$Res, _$UserDataStateImpl>
+    implements _$$UserDataStateImplCopyWith<$Res> {
+  __$$UserDataStateImplCopyWithImpl(
+      _$UserDataStateImpl _value, $Res Function(_$UserDataStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -109,7 +109,7 @@ class __$$_UserDataStateCopyWithImpl<$Res>
     Object? displayName = freezed,
     Object? creationDate = freezed,
   }) {
-    return _then(_$_UserDataState(
+    return _then(_$UserDataStateImpl(
       email: freezed == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -132,8 +132,10 @@ class __$$_UserDataStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UserDataState with DiagnosticableTreeMixin implements _UserDataState {
-  const _$_UserDataState(
+class _$UserDataStateImpl
+    with DiagnosticableTreeMixin
+    implements _UserDataState {
+  const _$UserDataStateImpl(
       {this.email, this.emailVerified, this.displayName, this.creationDate});
 
   @override
@@ -165,7 +167,7 @@ class _$_UserDataState with DiagnosticableTreeMixin implements _UserDataState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UserDataState &&
+            other is _$UserDataStateImpl &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.emailVerified, emailVerified) ||
                 other.emailVerified == emailVerified) &&
@@ -182,8 +184,8 @@ class _$_UserDataState with DiagnosticableTreeMixin implements _UserDataState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UserDataStateCopyWith<_$_UserDataState> get copyWith =>
-      __$$_UserDataStateCopyWithImpl<_$_UserDataState>(this, _$identity);
+  _$$UserDataStateImplCopyWith<_$UserDataStateImpl> get copyWith =>
+      __$$UserDataStateImplCopyWithImpl<_$UserDataStateImpl>(this, _$identity);
 }
 
 abstract class _UserDataState implements UserDataState {
@@ -191,7 +193,7 @@ abstract class _UserDataState implements UserDataState {
       {final String? email,
       final bool? emailVerified,
       final String? displayName,
-      final String? creationDate}) = _$_UserDataState;
+      final String? creationDate}) = _$UserDataStateImpl;
 
   @override
   String? get email;
@@ -203,6 +205,6 @@ abstract class _UserDataState implements UserDataState {
   String? get creationDate;
   @override
   @JsonKey(ignore: true)
-  _$$_UserDataStateCopyWith<_$_UserDataState> get copyWith =>
+  _$$UserDataStateImplCopyWith<_$UserDataStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

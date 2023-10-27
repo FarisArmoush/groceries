@@ -76,20 +76,20 @@ class _$OnboardingEventCopyWithImpl<$Res, $Val extends OnboardingEvent>
 }
 
 /// @nodoc
-abstract class _$$_UpdateIndexCopyWith<$Res> {
-  factory _$$_UpdateIndexCopyWith(
-          _$_UpdateIndex value, $Res Function(_$_UpdateIndex) then) =
-      __$$_UpdateIndexCopyWithImpl<$Res>;
+abstract class _$$UpdateIndexImplCopyWith<$Res> {
+  factory _$$UpdateIndexImplCopyWith(
+          _$UpdateIndexImpl value, $Res Function(_$UpdateIndexImpl) then) =
+      __$$UpdateIndexImplCopyWithImpl<$Res>;
   @useResult
   $Res call({int index});
 }
 
 /// @nodoc
-class __$$_UpdateIndexCopyWithImpl<$Res>
-    extends _$OnboardingEventCopyWithImpl<$Res, _$_UpdateIndex>
-    implements _$$_UpdateIndexCopyWith<$Res> {
-  __$$_UpdateIndexCopyWithImpl(
-      _$_UpdateIndex _value, $Res Function(_$_UpdateIndex) _then)
+class __$$UpdateIndexImplCopyWithImpl<$Res>
+    extends _$OnboardingEventCopyWithImpl<$Res, _$UpdateIndexImpl>
+    implements _$$UpdateIndexImplCopyWith<$Res> {
+  __$$UpdateIndexImplCopyWithImpl(
+      _$UpdateIndexImpl _value, $Res Function(_$UpdateIndexImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -97,7 +97,7 @@ class __$$_UpdateIndexCopyWithImpl<$Res>
   $Res call({
     Object? index = null,
   }) {
-    return _then(_$_UpdateIndex(
+    return _then(_$UpdateIndexImpl(
       null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
@@ -108,8 +108,8 @@ class __$$_UpdateIndexCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UpdateIndex implements _UpdateIndex {
-  const _$_UpdateIndex(this.index);
+class _$UpdateIndexImpl implements _UpdateIndex {
+  const _$UpdateIndexImpl(this.index);
 
   @override
   final int index;
@@ -123,7 +123,7 @@ class _$_UpdateIndex implements _UpdateIndex {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UpdateIndex &&
+            other is _$UpdateIndexImpl &&
             (identical(other.index, index) || other.index == index));
   }
 
@@ -133,8 +133,8 @@ class _$_UpdateIndex implements _UpdateIndex {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UpdateIndexCopyWith<_$_UpdateIndex> get copyWith =>
-      __$$_UpdateIndexCopyWithImpl<_$_UpdateIndex>(this, _$identity);
+  _$$UpdateIndexImplCopyWith<_$UpdateIndexImpl> get copyWith =>
+      __$$UpdateIndexImplCopyWithImpl<_$UpdateIndexImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -201,34 +201,36 @@ class _$_UpdateIndex implements _UpdateIndex {
 }
 
 abstract class _UpdateIndex implements OnboardingEvent {
-  const factory _UpdateIndex(final int index) = _$_UpdateIndex;
+  const factory _UpdateIndex(final int index) = _$UpdateIndexImpl;
 
   int get index;
   @JsonKey(ignore: true)
-  _$$_UpdateIndexCopyWith<_$_UpdateIndex> get copyWith =>
+  _$$UpdateIndexImplCopyWith<_$UpdateIndexImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_MarkOnboardingAsViewedCopyWith<$Res> {
-  factory _$$_MarkOnboardingAsViewedCopyWith(_$_MarkOnboardingAsViewed value,
-          $Res Function(_$_MarkOnboardingAsViewed) then) =
-      __$$_MarkOnboardingAsViewedCopyWithImpl<$Res>;
+abstract class _$$MarkOnboardingAsViewedImplCopyWith<$Res> {
+  factory _$$MarkOnboardingAsViewedImplCopyWith(
+          _$MarkOnboardingAsViewedImpl value,
+          $Res Function(_$MarkOnboardingAsViewedImpl) then) =
+      __$$MarkOnboardingAsViewedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_MarkOnboardingAsViewedCopyWithImpl<$Res>
-    extends _$OnboardingEventCopyWithImpl<$Res, _$_MarkOnboardingAsViewed>
-    implements _$$_MarkOnboardingAsViewedCopyWith<$Res> {
-  __$$_MarkOnboardingAsViewedCopyWithImpl(_$_MarkOnboardingAsViewed _value,
-      $Res Function(_$_MarkOnboardingAsViewed) _then)
+class __$$MarkOnboardingAsViewedImplCopyWithImpl<$Res>
+    extends _$OnboardingEventCopyWithImpl<$Res, _$MarkOnboardingAsViewedImpl>
+    implements _$$MarkOnboardingAsViewedImplCopyWith<$Res> {
+  __$$MarkOnboardingAsViewedImplCopyWithImpl(
+      _$MarkOnboardingAsViewedImpl _value,
+      $Res Function(_$MarkOnboardingAsViewedImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_MarkOnboardingAsViewed implements _MarkOnboardingAsViewed {
-  const _$_MarkOnboardingAsViewed();
+class _$MarkOnboardingAsViewedImpl implements _MarkOnboardingAsViewed {
+  const _$MarkOnboardingAsViewedImpl();
 
   @override
   String toString() {
@@ -239,7 +241,7 @@ class _$_MarkOnboardingAsViewed implements _MarkOnboardingAsViewed {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MarkOnboardingAsViewed);
+            other is _$MarkOnboardingAsViewedImpl);
   }
 
   @override
@@ -310,7 +312,7 @@ class _$_MarkOnboardingAsViewed implements _MarkOnboardingAsViewed {
 }
 
 abstract class _MarkOnboardingAsViewed implements OnboardingEvent {
-  const factory _MarkOnboardingAsViewed() = _$_MarkOnboardingAsViewed;
+  const factory _MarkOnboardingAsViewed() = _$MarkOnboardingAsViewedImpl;
 }
 
 /// @nodoc
@@ -356,22 +358,22 @@ class _$OnboardingStateCopyWithImpl<$Res, $Val extends OnboardingState>
 }
 
 /// @nodoc
-abstract class _$$_OnboardingStateCopyWith<$Res>
+abstract class _$$OnboardingStateImplCopyWith<$Res>
     implements $OnboardingStateCopyWith<$Res> {
-  factory _$$_OnboardingStateCopyWith(
-          _$_OnboardingState value, $Res Function(_$_OnboardingState) then) =
-      __$$_OnboardingStateCopyWithImpl<$Res>;
+  factory _$$OnboardingStateImplCopyWith(_$OnboardingStateImpl value,
+          $Res Function(_$OnboardingStateImpl) then) =
+      __$$OnboardingStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int index});
 }
 
 /// @nodoc
-class __$$_OnboardingStateCopyWithImpl<$Res>
-    extends _$OnboardingStateCopyWithImpl<$Res, _$_OnboardingState>
-    implements _$$_OnboardingStateCopyWith<$Res> {
-  __$$_OnboardingStateCopyWithImpl(
-      _$_OnboardingState _value, $Res Function(_$_OnboardingState) _then)
+class __$$OnboardingStateImplCopyWithImpl<$Res>
+    extends _$OnboardingStateCopyWithImpl<$Res, _$OnboardingStateImpl>
+    implements _$$OnboardingStateImplCopyWith<$Res> {
+  __$$OnboardingStateImplCopyWithImpl(
+      _$OnboardingStateImpl _value, $Res Function(_$OnboardingStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -379,7 +381,7 @@ class __$$_OnboardingStateCopyWithImpl<$Res>
   $Res call({
     Object? index = null,
   }) {
-    return _then(_$_OnboardingState(
+    return _then(_$OnboardingStateImpl(
       index: null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
@@ -390,8 +392,8 @@ class __$$_OnboardingStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_OnboardingState implements _OnboardingState {
-  const _$_OnboardingState({this.index = 0});
+class _$OnboardingStateImpl implements _OnboardingState {
+  const _$OnboardingStateImpl({this.index = 0});
 
   @override
   @JsonKey()
@@ -406,7 +408,7 @@ class _$_OnboardingState implements _OnboardingState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_OnboardingState &&
+            other is _$OnboardingStateImpl &&
             (identical(other.index, index) || other.index == index));
   }
 
@@ -416,17 +418,18 @@ class _$_OnboardingState implements _OnboardingState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_OnboardingStateCopyWith<_$_OnboardingState> get copyWith =>
-      __$$_OnboardingStateCopyWithImpl<_$_OnboardingState>(this, _$identity);
+  _$$OnboardingStateImplCopyWith<_$OnboardingStateImpl> get copyWith =>
+      __$$OnboardingStateImplCopyWithImpl<_$OnboardingStateImpl>(
+          this, _$identity);
 }
 
 abstract class _OnboardingState implements OnboardingState {
-  const factory _OnboardingState({final int index}) = _$_OnboardingState;
+  const factory _OnboardingState({final int index}) = _$OnboardingStateImpl;
 
   @override
   int get index;
   @override
   @JsonKey(ignore: true)
-  _$$_OnboardingStateCopyWith<_$_OnboardingState> get copyWith =>
+  _$$OnboardingStateImplCopyWith<_$OnboardingStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

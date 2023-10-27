@@ -69,25 +69,25 @@ class _$GroceryListsEventCopyWithImpl<$Res, $Val extends GroceryListsEvent>
 }
 
 /// @nodoc
-abstract class _$$_LoadGroceryListsCopyWith<$Res> {
-  factory _$$_LoadGroceryListsCopyWith(
-          _$_LoadGroceryLists value, $Res Function(_$_LoadGroceryLists) then) =
-      __$$_LoadGroceryListsCopyWithImpl<$Res>;
+abstract class _$$LoadGroceryListsImplCopyWith<$Res> {
+  factory _$$LoadGroceryListsImplCopyWith(_$LoadGroceryListsImpl value,
+          $Res Function(_$LoadGroceryListsImpl) then) =
+      __$$LoadGroceryListsImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LoadGroceryListsCopyWithImpl<$Res>
-    extends _$GroceryListsEventCopyWithImpl<$Res, _$_LoadGroceryLists>
-    implements _$$_LoadGroceryListsCopyWith<$Res> {
-  __$$_LoadGroceryListsCopyWithImpl(
-      _$_LoadGroceryLists _value, $Res Function(_$_LoadGroceryLists) _then)
+class __$$LoadGroceryListsImplCopyWithImpl<$Res>
+    extends _$GroceryListsEventCopyWithImpl<$Res, _$LoadGroceryListsImpl>
+    implements _$$LoadGroceryListsImplCopyWith<$Res> {
+  __$$LoadGroceryListsImplCopyWithImpl(_$LoadGroceryListsImpl _value,
+      $Res Function(_$LoadGroceryListsImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_LoadGroceryLists implements _LoadGroceryLists {
-  const _$_LoadGroceryLists();
+class _$LoadGroceryListsImpl implements _LoadGroceryLists {
+  const _$LoadGroceryListsImpl();
 
   @override
   String toString() {
@@ -97,7 +97,7 @@ class _$_LoadGroceryLists implements _LoadGroceryLists {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_LoadGroceryLists);
+        (other.runtimeType == runtimeType && other is _$LoadGroceryListsImpl);
   }
 
   @override
@@ -161,7 +161,7 @@ class _$_LoadGroceryLists implements _LoadGroceryLists {
 }
 
 abstract class _LoadGroceryLists implements GroceryListsEvent {
-  const factory _LoadGroceryLists() = _$_LoadGroceryLists;
+  const factory _LoadGroceryLists() = _$LoadGroceryListsImpl;
 }
 
 /// @nodoc
@@ -223,11 +223,11 @@ class _$GroceryListsStateCopyWithImpl<$Res, $Val extends GroceryListsState>
 }
 
 /// @nodoc
-abstract class _$$_GroceryListsStateCopyWith<$Res>
+abstract class _$$GroceryListsStateImplCopyWith<$Res>
     implements $GroceryListsStateCopyWith<$Res> {
-  factory _$$_GroceryListsStateCopyWith(_$_GroceryListsState value,
-          $Res Function(_$_GroceryListsState) then) =
-      __$$_GroceryListsStateCopyWithImpl<$Res>;
+  factory _$$GroceryListsStateImplCopyWith(_$GroceryListsStateImpl value,
+          $Res Function(_$GroceryListsStateImpl) then) =
+      __$$GroceryListsStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({BlocStatus status, List<GroceryListModel> groceryLists});
@@ -237,11 +237,11 @@ abstract class _$$_GroceryListsStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_GroceryListsStateCopyWithImpl<$Res>
-    extends _$GroceryListsStateCopyWithImpl<$Res, _$_GroceryListsState>
-    implements _$$_GroceryListsStateCopyWith<$Res> {
-  __$$_GroceryListsStateCopyWithImpl(
-      _$_GroceryListsState _value, $Res Function(_$_GroceryListsState) _then)
+class __$$GroceryListsStateImplCopyWithImpl<$Res>
+    extends _$GroceryListsStateCopyWithImpl<$Res, _$GroceryListsStateImpl>
+    implements _$$GroceryListsStateImplCopyWith<$Res> {
+  __$$GroceryListsStateImplCopyWithImpl(_$GroceryListsStateImpl _value,
+      $Res Function(_$GroceryListsStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -250,7 +250,7 @@ class __$$_GroceryListsStateCopyWithImpl<$Res>
     Object? status = null,
     Object? groceryLists = null,
   }) {
-    return _then(_$_GroceryListsState(
+    return _then(_$GroceryListsStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -265,8 +265,8 @@ class __$$_GroceryListsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_GroceryListsState extends _GroceryListsState {
-  const _$_GroceryListsState(
+class _$GroceryListsStateImpl extends _GroceryListsState {
+  const _$GroceryListsStateImpl(
       {this.status = const BlocStatus.initial(),
       final List<GroceryListModel> groceryLists = const <GroceryListModel>[]})
       : _groceryLists = groceryLists,
@@ -293,7 +293,7 @@ class _$_GroceryListsState extends _GroceryListsState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GroceryListsState &&
+            other is _$GroceryListsStateImpl &&
             (identical(other.status, status) || other.status == status) &&
             const DeepCollectionEquality()
                 .equals(other._groceryLists, _groceryLists));
@@ -306,15 +306,15 @@ class _$_GroceryListsState extends _GroceryListsState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GroceryListsStateCopyWith<_$_GroceryListsState> get copyWith =>
-      __$$_GroceryListsStateCopyWithImpl<_$_GroceryListsState>(
+  _$$GroceryListsStateImplCopyWith<_$GroceryListsStateImpl> get copyWith =>
+      __$$GroceryListsStateImplCopyWithImpl<_$GroceryListsStateImpl>(
           this, _$identity);
 }
 
 abstract class _GroceryListsState extends GroceryListsState {
   const factory _GroceryListsState(
       {final BlocStatus status,
-      final List<GroceryListModel> groceryLists}) = _$_GroceryListsState;
+      final List<GroceryListModel> groceryLists}) = _$GroceryListsStateImpl;
   const _GroceryListsState._() : super._();
 
   @override
@@ -323,6 +323,6 @@ abstract class _GroceryListsState extends GroceryListsState {
   List<GroceryListModel> get groceryLists;
   @override
   @JsonKey(ignore: true)
-  _$$_GroceryListsStateCopyWith<_$_GroceryListsState> get copyWith =>
+  _$$GroceryListsStateImplCopyWith<_$GroceryListsStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

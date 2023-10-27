@@ -35,7 +35,7 @@ class HomeView extends StatelessWidget {
 }
 
 class _MockAddItemsToCloudFirestoreAutomatically extends StatefulWidget {
-  const _MockAddItemsToCloudFirestoreAutomatically({super.key});
+  const _MockAddItemsToCloudFirestoreAutomatically();
 
   @override
   State<_MockAddItemsToCloudFirestoreAutomatically> createState() =>

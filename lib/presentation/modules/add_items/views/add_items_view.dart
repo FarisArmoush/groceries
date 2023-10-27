@@ -7,7 +7,7 @@ class AddItemsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => AddItemsBloc(
-        context.read<BaseGroceriesUseCase>(),
+        context.read<FetchParentCategoriesUseCase>(),
       )..add(const AddItemsEvent.getParentCategories()),
       child: const AddItemsForm(),
     );

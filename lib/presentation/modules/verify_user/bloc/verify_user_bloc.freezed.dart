@@ -69,25 +69,25 @@ class _$VerifyUserEventCopyWithImpl<$Res, $Val extends VerifyUserEvent>
 }
 
 /// @nodoc
-abstract class _$$_VerifyUserCopyWith<$Res> {
-  factory _$$_VerifyUserCopyWith(
-          _$_VerifyUser value, $Res Function(_$_VerifyUser) then) =
-      __$$_VerifyUserCopyWithImpl<$Res>;
+abstract class _$$VerifyUserImplCopyWith<$Res> {
+  factory _$$VerifyUserImplCopyWith(
+          _$VerifyUserImpl value, $Res Function(_$VerifyUserImpl) then) =
+      __$$VerifyUserImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_VerifyUserCopyWithImpl<$Res>
-    extends _$VerifyUserEventCopyWithImpl<$Res, _$_VerifyUser>
-    implements _$$_VerifyUserCopyWith<$Res> {
-  __$$_VerifyUserCopyWithImpl(
-      _$_VerifyUser _value, $Res Function(_$_VerifyUser) _then)
+class __$$VerifyUserImplCopyWithImpl<$Res>
+    extends _$VerifyUserEventCopyWithImpl<$Res, _$VerifyUserImpl>
+    implements _$$VerifyUserImplCopyWith<$Res> {
+  __$$VerifyUserImplCopyWithImpl(
+      _$VerifyUserImpl _value, $Res Function(_$VerifyUserImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_VerifyUser implements _VerifyUser {
-  const _$_VerifyUser();
+class _$VerifyUserImpl implements _VerifyUser {
+  const _$VerifyUserImpl();
 
   @override
   String toString() {
@@ -97,7 +97,7 @@ class _$_VerifyUser implements _VerifyUser {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_VerifyUser);
+        (other.runtimeType == runtimeType && other is _$VerifyUserImpl);
   }
 
   @override
@@ -161,7 +161,7 @@ class _$_VerifyUser implements _VerifyUser {
 }
 
 abstract class _VerifyUser implements VerifyUserEvent {
-  const factory _VerifyUser() = _$_VerifyUser;
+  const factory _VerifyUser() = _$VerifyUserImpl;
 }
 
 /// @nodoc
@@ -217,11 +217,11 @@ class _$VerifyUserStateCopyWithImpl<$Res, $Val extends VerifyUserState>
 }
 
 /// @nodoc
-abstract class _$$_VerifyUserStateCopyWith<$Res>
+abstract class _$$VerifyUserStateImplCopyWith<$Res>
     implements $VerifyUserStateCopyWith<$Res> {
-  factory _$$_VerifyUserStateCopyWith(
-          _$_VerifyUserState value, $Res Function(_$_VerifyUserState) then) =
-      __$$_VerifyUserStateCopyWithImpl<$Res>;
+  factory _$$VerifyUserStateImplCopyWith(_$VerifyUserStateImpl value,
+          $Res Function(_$VerifyUserStateImpl) then) =
+      __$$VerifyUserStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({BlocStatus status});
@@ -231,11 +231,11 @@ abstract class _$$_VerifyUserStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_VerifyUserStateCopyWithImpl<$Res>
-    extends _$VerifyUserStateCopyWithImpl<$Res, _$_VerifyUserState>
-    implements _$$_VerifyUserStateCopyWith<$Res> {
-  __$$_VerifyUserStateCopyWithImpl(
-      _$_VerifyUserState _value, $Res Function(_$_VerifyUserState) _then)
+class __$$VerifyUserStateImplCopyWithImpl<$Res>
+    extends _$VerifyUserStateCopyWithImpl<$Res, _$VerifyUserStateImpl>
+    implements _$$VerifyUserStateImplCopyWith<$Res> {
+  __$$VerifyUserStateImplCopyWithImpl(
+      _$VerifyUserStateImpl _value, $Res Function(_$VerifyUserStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -243,7 +243,7 @@ class __$$_VerifyUserStateCopyWithImpl<$Res>
   $Res call({
     Object? status = null,
   }) {
-    return _then(_$_VerifyUserState(
+    return _then(_$VerifyUserStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -254,8 +254,8 @@ class __$$_VerifyUserStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_VerifyUserState extends _VerifyUserState {
-  const _$_VerifyUserState({this.status = const BlocStatus.initial()})
+class _$VerifyUserStateImpl extends _VerifyUserState {
+  const _$VerifyUserStateImpl({this.status = const BlocStatus.initial()})
       : super._();
 
   @override
@@ -271,7 +271,7 @@ class _$_VerifyUserState extends _VerifyUserState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_VerifyUserState &&
+            other is _$VerifyUserStateImpl &&
             (identical(other.status, status) || other.status == status));
   }
 
@@ -281,19 +281,20 @@ class _$_VerifyUserState extends _VerifyUserState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_VerifyUserStateCopyWith<_$_VerifyUserState> get copyWith =>
-      __$$_VerifyUserStateCopyWithImpl<_$_VerifyUserState>(this, _$identity);
+  _$$VerifyUserStateImplCopyWith<_$VerifyUserStateImpl> get copyWith =>
+      __$$VerifyUserStateImplCopyWithImpl<_$VerifyUserStateImpl>(
+          this, _$identity);
 }
 
 abstract class _VerifyUserState extends VerifyUserState {
   const factory _VerifyUserState({final BlocStatus status}) =
-      _$_VerifyUserState;
+      _$VerifyUserStateImpl;
   const _VerifyUserState._() : super._();
 
   @override
   BlocStatus get status;
   @override
   @JsonKey(ignore: true)
-  _$$_VerifyUserStateCopyWith<_$_VerifyUserState> get copyWith =>
+  _$$VerifyUserStateImplCopyWith<_$VerifyUserStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

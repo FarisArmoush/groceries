@@ -76,20 +76,20 @@ class _$UpdateDisplayNameEventCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_DisplayNameChangedCopyWith<$Res> {
-  factory _$$_DisplayNameChangedCopyWith(_$_DisplayNameChanged value,
-          $Res Function(_$_DisplayNameChanged) then) =
-      __$$_DisplayNameChangedCopyWithImpl<$Res>;
+abstract class _$$DisplayNameChangedImplCopyWith<$Res> {
+  factory _$$DisplayNameChangedImplCopyWith(_$DisplayNameChangedImpl value,
+          $Res Function(_$DisplayNameChangedImpl) then) =
+      __$$DisplayNameChangedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String displayName});
 }
 
 /// @nodoc
-class __$$_DisplayNameChangedCopyWithImpl<$Res>
-    extends _$UpdateDisplayNameEventCopyWithImpl<$Res, _$_DisplayNameChanged>
-    implements _$$_DisplayNameChangedCopyWith<$Res> {
-  __$$_DisplayNameChangedCopyWithImpl(
-      _$_DisplayNameChanged _value, $Res Function(_$_DisplayNameChanged) _then)
+class __$$DisplayNameChangedImplCopyWithImpl<$Res>
+    extends _$UpdateDisplayNameEventCopyWithImpl<$Res, _$DisplayNameChangedImpl>
+    implements _$$DisplayNameChangedImplCopyWith<$Res> {
+  __$$DisplayNameChangedImplCopyWithImpl(_$DisplayNameChangedImpl _value,
+      $Res Function(_$DisplayNameChangedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -97,7 +97,7 @@ class __$$_DisplayNameChangedCopyWithImpl<$Res>
   $Res call({
     Object? displayName = null,
   }) {
-    return _then(_$_DisplayNameChanged(
+    return _then(_$DisplayNameChangedImpl(
       null == displayName
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
@@ -108,8 +108,8 @@ class __$$_DisplayNameChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DisplayNameChanged implements _DisplayNameChanged {
-  const _$_DisplayNameChanged(this.displayName);
+class _$DisplayNameChangedImpl implements _DisplayNameChanged {
+  const _$DisplayNameChangedImpl(this.displayName);
 
   @override
   final String displayName;
@@ -123,7 +123,7 @@ class _$_DisplayNameChanged implements _DisplayNameChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DisplayNameChanged &&
+            other is _$DisplayNameChangedImpl &&
             (identical(other.displayName, displayName) ||
                 other.displayName == displayName));
   }
@@ -134,8 +134,8 @@ class _$_DisplayNameChanged implements _DisplayNameChanged {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DisplayNameChangedCopyWith<_$_DisplayNameChanged> get copyWith =>
-      __$$_DisplayNameChangedCopyWithImpl<_$_DisplayNameChanged>(
+  _$$DisplayNameChangedImplCopyWith<_$DisplayNameChangedImpl> get copyWith =>
+      __$$DisplayNameChangedImplCopyWithImpl<_$DisplayNameChangedImpl>(
           this, _$identity);
 
   @override
@@ -203,34 +203,34 @@ class _$_DisplayNameChanged implements _DisplayNameChanged {
 
 abstract class _DisplayNameChanged implements UpdateDisplayNameEvent {
   const factory _DisplayNameChanged(final String displayName) =
-      _$_DisplayNameChanged;
+      _$DisplayNameChangedImpl;
 
   String get displayName;
   @JsonKey(ignore: true)
-  _$$_DisplayNameChangedCopyWith<_$_DisplayNameChanged> get copyWith =>
+  _$$DisplayNameChangedImplCopyWith<_$DisplayNameChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_UpdateDisplayNameCopyWith<$Res> {
-  factory _$$_UpdateDisplayNameCopyWith(_$_UpdateDisplayName value,
-          $Res Function(_$_UpdateDisplayName) then) =
-      __$$_UpdateDisplayNameCopyWithImpl<$Res>;
+abstract class _$$UpdateDisplayNameImplCopyWith<$Res> {
+  factory _$$UpdateDisplayNameImplCopyWith(_$UpdateDisplayNameImpl value,
+          $Res Function(_$UpdateDisplayNameImpl) then) =
+      __$$UpdateDisplayNameImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_UpdateDisplayNameCopyWithImpl<$Res>
-    extends _$UpdateDisplayNameEventCopyWithImpl<$Res, _$_UpdateDisplayName>
-    implements _$$_UpdateDisplayNameCopyWith<$Res> {
-  __$$_UpdateDisplayNameCopyWithImpl(
-      _$_UpdateDisplayName _value, $Res Function(_$_UpdateDisplayName) _then)
+class __$$UpdateDisplayNameImplCopyWithImpl<$Res>
+    extends _$UpdateDisplayNameEventCopyWithImpl<$Res, _$UpdateDisplayNameImpl>
+    implements _$$UpdateDisplayNameImplCopyWith<$Res> {
+  __$$UpdateDisplayNameImplCopyWithImpl(_$UpdateDisplayNameImpl _value,
+      $Res Function(_$UpdateDisplayNameImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_UpdateDisplayName implements _UpdateDisplayName {
-  const _$_UpdateDisplayName();
+class _$UpdateDisplayNameImpl implements _UpdateDisplayName {
+  const _$UpdateDisplayNameImpl();
 
   @override
   String toString() {
@@ -240,7 +240,7 @@ class _$_UpdateDisplayName implements _UpdateDisplayName {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_UpdateDisplayName);
+        (other.runtimeType == runtimeType && other is _$UpdateDisplayNameImpl);
   }
 
   @override
@@ -310,7 +310,7 @@ class _$_UpdateDisplayName implements _UpdateDisplayName {
 }
 
 abstract class _UpdateDisplayName implements UpdateDisplayNameEvent {
-  const factory _UpdateDisplayName() = _$_UpdateDisplayName;
+  const factory _UpdateDisplayName() = _$UpdateDisplayNameImpl;
 }
 
 /// @nodoc
@@ -379,11 +379,12 @@ class _$UpdateDisplayNameStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_UpdateDisplayNameStateCopyWith<$Res>
+abstract class _$$UpdateDisplayNameStateImplCopyWith<$Res>
     implements $UpdateDisplayNameStateCopyWith<$Res> {
-  factory _$$_UpdateDisplayNameStateCopyWith(_$_UpdateDisplayNameState value,
-          $Res Function(_$_UpdateDisplayNameState) then) =
-      __$$_UpdateDisplayNameStateCopyWithImpl<$Res>;
+  factory _$$UpdateDisplayNameStateImplCopyWith(
+          _$UpdateDisplayNameStateImpl value,
+          $Res Function(_$UpdateDisplayNameStateImpl) then) =
+      __$$UpdateDisplayNameStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -394,12 +395,13 @@ abstract class _$$_UpdateDisplayNameStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UpdateDisplayNameStateCopyWithImpl<$Res>
+class __$$UpdateDisplayNameStateImplCopyWithImpl<$Res>
     extends _$UpdateDisplayNameStateCopyWithImpl<$Res,
-        _$_UpdateDisplayNameState>
-    implements _$$_UpdateDisplayNameStateCopyWith<$Res> {
-  __$$_UpdateDisplayNameStateCopyWithImpl(_$_UpdateDisplayNameState _value,
-      $Res Function(_$_UpdateDisplayNameState) _then)
+        _$UpdateDisplayNameStateImpl>
+    implements _$$UpdateDisplayNameStateImplCopyWith<$Res> {
+  __$$UpdateDisplayNameStateImplCopyWithImpl(
+      _$UpdateDisplayNameStateImpl _value,
+      $Res Function(_$UpdateDisplayNameStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -410,7 +412,7 @@ class __$$_UpdateDisplayNameStateCopyWithImpl<$Res>
     Object? isValid = null,
     Object? errorMessage = freezed,
   }) {
-    return _then(_$_UpdateDisplayNameState(
+    return _then(_$UpdateDisplayNameStateImpl(
       displayName: null == displayName
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
@@ -433,8 +435,8 @@ class __$$_UpdateDisplayNameStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UpdateDisplayNameState extends _UpdateDisplayNameState {
-  const _$_UpdateDisplayNameState(
+class _$UpdateDisplayNameStateImpl extends _UpdateDisplayNameState {
+  const _$UpdateDisplayNameStateImpl(
       {this.displayName = const DisplayNameForm.pure(),
       this.status = FormzSubmissionStatus.initial,
       this.isValid = false,
@@ -462,7 +464,7 @@ class _$_UpdateDisplayNameState extends _UpdateDisplayNameState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UpdateDisplayNameState &&
+            other is _$UpdateDisplayNameStateImpl &&
             (identical(other.displayName, displayName) ||
                 other.displayName == displayName) &&
             (identical(other.status, status) || other.status == status) &&
@@ -478,9 +480,9 @@ class _$_UpdateDisplayNameState extends _UpdateDisplayNameState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UpdateDisplayNameStateCopyWith<_$_UpdateDisplayNameState> get copyWith =>
-      __$$_UpdateDisplayNameStateCopyWithImpl<_$_UpdateDisplayNameState>(
-          this, _$identity);
+  _$$UpdateDisplayNameStateImplCopyWith<_$UpdateDisplayNameStateImpl>
+      get copyWith => __$$UpdateDisplayNameStateImplCopyWithImpl<
+          _$UpdateDisplayNameStateImpl>(this, _$identity);
 }
 
 abstract class _UpdateDisplayNameState extends UpdateDisplayNameState {
@@ -488,7 +490,7 @@ abstract class _UpdateDisplayNameState extends UpdateDisplayNameState {
       {final DisplayNameForm displayName,
       final FormzSubmissionStatus status,
       final bool isValid,
-      final String? errorMessage}) = _$_UpdateDisplayNameState;
+      final String? errorMessage}) = _$UpdateDisplayNameStateImpl;
   const _UpdateDisplayNameState._() : super._();
 
   @override
@@ -501,6 +503,6 @@ abstract class _UpdateDisplayNameState extends UpdateDisplayNameState {
   String? get errorMessage;
   @override
   @JsonKey(ignore: true)
-  _$$_UpdateDisplayNameStateCopyWith<_$_UpdateDisplayNameState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$UpdateDisplayNameStateImplCopyWith<_$UpdateDisplayNameStateImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }

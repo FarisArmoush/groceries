@@ -29,3 +29,4 @@ part 'other_options_text_button.dart';
 part 'password_input_obscurity_button.dart';
 part 'shimmer_skeleton.dart';
 part 'upload_image_bottom_sheet.dart';
+part 'sliver_sized_box.dart';

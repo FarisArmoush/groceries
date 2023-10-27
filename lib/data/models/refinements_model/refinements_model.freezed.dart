@@ -68,22 +68,22 @@ class _$RefinementsModelCopyWithImpl<$Res, $Val extends RefinementsModel>
 }
 
 /// @nodoc
-abstract class _$$_RefinementsModelCopyWith<$Res>
+abstract class _$$RefinementsModelImplCopyWith<$Res>
     implements $RefinementsModelCopyWith<$Res> {
-  factory _$$_RefinementsModelCopyWith(
-          _$_RefinementsModel value, $Res Function(_$_RefinementsModel) then) =
-      __$$_RefinementsModelCopyWithImpl<$Res>;
+  factory _$$RefinementsModelImplCopyWith(_$RefinementsModelImpl value,
+          $Res Function(_$RefinementsModelImpl) then) =
+      __$$RefinementsModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? refinement, bool? isChecked});
 }
 
 /// @nodoc
-class __$$_RefinementsModelCopyWithImpl<$Res>
-    extends _$RefinementsModelCopyWithImpl<$Res, _$_RefinementsModel>
-    implements _$$_RefinementsModelCopyWith<$Res> {
-  __$$_RefinementsModelCopyWithImpl(
-      _$_RefinementsModel _value, $Res Function(_$_RefinementsModel) _then)
+class __$$RefinementsModelImplCopyWithImpl<$Res>
+    extends _$RefinementsModelCopyWithImpl<$Res, _$RefinementsModelImpl>
+    implements _$$RefinementsModelImplCopyWith<$Res> {
+  __$$RefinementsModelImplCopyWithImpl(_$RefinementsModelImpl _value,
+      $Res Function(_$RefinementsModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -92,7 +92,7 @@ class __$$_RefinementsModelCopyWithImpl<$Res>
     Object? refinement = freezed,
     Object? isChecked = freezed,
   }) {
-    return _then(_$_RefinementsModel(
+    return _then(_$RefinementsModelImpl(
       refinement: freezed == refinement
           ? _value.refinement
           : refinement // ignore: cast_nullable_to_non_nullable
@@ -107,12 +107,12 @@ class __$$_RefinementsModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_RefinementsModel implements _RefinementsModel {
-  const _$_RefinementsModel(
+class _$RefinementsModelImpl implements _RefinementsModel {
+  const _$RefinementsModelImpl(
       {required this.refinement, required this.isChecked});
 
-  factory _$_RefinementsModel.fromJson(Map<String, dynamic> json) =>
-      _$$_RefinementsModelFromJson(json);
+  factory _$RefinementsModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RefinementsModelImplFromJson(json);
 
   @override
   final String? refinement;
@@ -128,7 +128,7 @@ class _$_RefinementsModel implements _RefinementsModel {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RefinementsModel &&
+            other is _$RefinementsModelImpl &&
             (identical(other.refinement, refinement) ||
                 other.refinement == refinement) &&
             (identical(other.isChecked, isChecked) ||
@@ -142,12 +142,13 @@ class _$_RefinementsModel implements _RefinementsModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RefinementsModelCopyWith<_$_RefinementsModel> get copyWith =>
-      __$$_RefinementsModelCopyWithImpl<_$_RefinementsModel>(this, _$identity);
+  _$$RefinementsModelImplCopyWith<_$RefinementsModelImpl> get copyWith =>
+      __$$RefinementsModelImplCopyWithImpl<_$RefinementsModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RefinementsModelToJson(
+    return _$$RefinementsModelImplToJson(
       this,
     );
   }
@@ -156,10 +157,10 @@ class _$_RefinementsModel implements _RefinementsModel {
 abstract class _RefinementsModel implements RefinementsModel {
   const factory _RefinementsModel(
       {required final String? refinement,
-      required final bool? isChecked}) = _$_RefinementsModel;
+      required final bool? isChecked}) = _$RefinementsModelImpl;
 
   factory _RefinementsModel.fromJson(Map<String, dynamic> json) =
-      _$_RefinementsModel.fromJson;
+      _$RefinementsModelImpl.fromJson;
 
   @override
   String? get refinement;
@@ -167,6 +168,6 @@ abstract class _RefinementsModel implements RefinementsModel {
   bool? get isChecked;
   @override
   @JsonKey(ignore: true)
-  _$$_RefinementsModelCopyWith<_$_RefinementsModel> get copyWith =>
+  _$$RefinementsModelImplCopyWith<_$RefinementsModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

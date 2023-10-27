@@ -87,20 +87,20 @@ class _$LoginEventCopyWithImpl<$Res, $Val extends LoginEvent>
 }
 
 /// @nodoc
-abstract class _$$_UpdateEmailCopyWith<$Res> {
-  factory _$$_UpdateEmailCopyWith(
-          _$_UpdateEmail value, $Res Function(_$_UpdateEmail) then) =
-      __$$_UpdateEmailCopyWithImpl<$Res>;
+abstract class _$$UpdateEmailImplCopyWith<$Res> {
+  factory _$$UpdateEmailImplCopyWith(
+          _$UpdateEmailImpl value, $Res Function(_$UpdateEmailImpl) then) =
+      __$$UpdateEmailImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String email});
 }
 
 /// @nodoc
-class __$$_UpdateEmailCopyWithImpl<$Res>
-    extends _$LoginEventCopyWithImpl<$Res, _$_UpdateEmail>
-    implements _$$_UpdateEmailCopyWith<$Res> {
-  __$$_UpdateEmailCopyWithImpl(
-      _$_UpdateEmail _value, $Res Function(_$_UpdateEmail) _then)
+class __$$UpdateEmailImplCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res, _$UpdateEmailImpl>
+    implements _$$UpdateEmailImplCopyWith<$Res> {
+  __$$UpdateEmailImplCopyWithImpl(
+      _$UpdateEmailImpl _value, $Res Function(_$UpdateEmailImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -108,7 +108,7 @@ class __$$_UpdateEmailCopyWithImpl<$Res>
   $Res call({
     Object? email = null,
   }) {
-    return _then(_$_UpdateEmail(
+    return _then(_$UpdateEmailImpl(
       null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -119,8 +119,8 @@ class __$$_UpdateEmailCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UpdateEmail implements _UpdateEmail {
-  const _$_UpdateEmail(this.email);
+class _$UpdateEmailImpl implements _UpdateEmail {
+  const _$UpdateEmailImpl(this.email);
 
   @override
   final String email;
@@ -134,7 +134,7 @@ class _$_UpdateEmail implements _UpdateEmail {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UpdateEmail &&
+            other is _$UpdateEmailImpl &&
             (identical(other.email, email) || other.email == email));
   }
 
@@ -144,8 +144,8 @@ class _$_UpdateEmail implements _UpdateEmail {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UpdateEmailCopyWith<_$_UpdateEmail> get copyWith =>
-      __$$_UpdateEmailCopyWithImpl<_$_UpdateEmail>(this, _$identity);
+  _$$UpdateEmailImplCopyWith<_$UpdateEmailImpl> get copyWith =>
+      __$$UpdateEmailImplCopyWithImpl<_$UpdateEmailImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -223,29 +223,29 @@ class _$_UpdateEmail implements _UpdateEmail {
 }
 
 abstract class _UpdateEmail implements LoginEvent {
-  const factory _UpdateEmail(final String email) = _$_UpdateEmail;
+  const factory _UpdateEmail(final String email) = _$UpdateEmailImpl;
 
   String get email;
   @JsonKey(ignore: true)
-  _$$_UpdateEmailCopyWith<_$_UpdateEmail> get copyWith =>
+  _$$UpdateEmailImplCopyWith<_$UpdateEmailImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_UpdatePasswordCopyWith<$Res> {
-  factory _$$_UpdatePasswordCopyWith(
-          _$_UpdatePassword value, $Res Function(_$_UpdatePassword) then) =
-      __$$_UpdatePasswordCopyWithImpl<$Res>;
+abstract class _$$UpdatePasswordImplCopyWith<$Res> {
+  factory _$$UpdatePasswordImplCopyWith(_$UpdatePasswordImpl value,
+          $Res Function(_$UpdatePasswordImpl) then) =
+      __$$UpdatePasswordImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String password});
 }
 
 /// @nodoc
-class __$$_UpdatePasswordCopyWithImpl<$Res>
-    extends _$LoginEventCopyWithImpl<$Res, _$_UpdatePassword>
-    implements _$$_UpdatePasswordCopyWith<$Res> {
-  __$$_UpdatePasswordCopyWithImpl(
-      _$_UpdatePassword _value, $Res Function(_$_UpdatePassword) _then)
+class __$$UpdatePasswordImplCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res, _$UpdatePasswordImpl>
+    implements _$$UpdatePasswordImplCopyWith<$Res> {
+  __$$UpdatePasswordImplCopyWithImpl(
+      _$UpdatePasswordImpl _value, $Res Function(_$UpdatePasswordImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -253,7 +253,7 @@ class __$$_UpdatePasswordCopyWithImpl<$Res>
   $Res call({
     Object? password = null,
   }) {
-    return _then(_$_UpdatePassword(
+    return _then(_$UpdatePasswordImpl(
       null == password
           ? _value.password
           : password // ignore: cast_nullable_to_non_nullable
@@ -264,8 +264,8 @@ class __$$_UpdatePasswordCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UpdatePassword implements _UpdatePassword {
-  const _$_UpdatePassword(this.password);
+class _$UpdatePasswordImpl implements _UpdatePassword {
+  const _$UpdatePasswordImpl(this.password);
 
   @override
   final String password;
@@ -279,7 +279,7 @@ class _$_UpdatePassword implements _UpdatePassword {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UpdatePassword &&
+            other is _$UpdatePasswordImpl &&
             (identical(other.password, password) ||
                 other.password == password));
   }
@@ -290,8 +290,9 @@ class _$_UpdatePassword implements _UpdatePassword {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UpdatePasswordCopyWith<_$_UpdatePassword> get copyWith =>
-      __$$_UpdatePasswordCopyWithImpl<_$_UpdatePassword>(this, _$identity);
+  _$$UpdatePasswordImplCopyWith<_$UpdatePasswordImpl> get copyWith =>
+      __$$UpdatePasswordImplCopyWithImpl<_$UpdatePasswordImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -369,34 +370,34 @@ class _$_UpdatePassword implements _UpdatePassword {
 }
 
 abstract class _UpdatePassword implements LoginEvent {
-  const factory _UpdatePassword(final String password) = _$_UpdatePassword;
+  const factory _UpdatePassword(final String password) = _$UpdatePasswordImpl;
 
   String get password;
   @JsonKey(ignore: true)
-  _$$_UpdatePasswordCopyWith<_$_UpdatePassword> get copyWith =>
+  _$$UpdatePasswordImplCopyWith<_$UpdatePasswordImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ToggleIsObscureCopyWith<$Res> {
-  factory _$$_ToggleIsObscureCopyWith(
-          _$_ToggleIsObscure value, $Res Function(_$_ToggleIsObscure) then) =
-      __$$_ToggleIsObscureCopyWithImpl<$Res>;
+abstract class _$$ToggleIsObscureImplCopyWith<$Res> {
+  factory _$$ToggleIsObscureImplCopyWith(_$ToggleIsObscureImpl value,
+          $Res Function(_$ToggleIsObscureImpl) then) =
+      __$$ToggleIsObscureImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ToggleIsObscureCopyWithImpl<$Res>
-    extends _$LoginEventCopyWithImpl<$Res, _$_ToggleIsObscure>
-    implements _$$_ToggleIsObscureCopyWith<$Res> {
-  __$$_ToggleIsObscureCopyWithImpl(
-      _$_ToggleIsObscure _value, $Res Function(_$_ToggleIsObscure) _then)
+class __$$ToggleIsObscureImplCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res, _$ToggleIsObscureImpl>
+    implements _$$ToggleIsObscureImplCopyWith<$Res> {
+  __$$ToggleIsObscureImplCopyWithImpl(
+      _$ToggleIsObscureImpl _value, $Res Function(_$ToggleIsObscureImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ToggleIsObscure implements _ToggleIsObscure {
-  const _$_ToggleIsObscure();
+class _$ToggleIsObscureImpl implements _ToggleIsObscure {
+  const _$ToggleIsObscureImpl();
 
   @override
   String toString() {
@@ -406,7 +407,7 @@ class _$_ToggleIsObscure implements _ToggleIsObscure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ToggleIsObscure);
+        (other.runtimeType == runtimeType && other is _$ToggleIsObscureImpl);
   }
 
   @override
@@ -488,27 +489,29 @@ class _$_ToggleIsObscure implements _ToggleIsObscure {
 }
 
 abstract class _ToggleIsObscure implements LoginEvent {
-  const factory _ToggleIsObscure() = _$_ToggleIsObscure;
+  const factory _ToggleIsObscure() = _$ToggleIsObscureImpl;
 }
 
 /// @nodoc
-abstract class _$$_LoginCopyWith<$Res> {
-  factory _$$_LoginCopyWith(_$_Login value, $Res Function(_$_Login) then) =
-      __$$_LoginCopyWithImpl<$Res>;
+abstract class _$$LoginImplCopyWith<$Res> {
+  factory _$$LoginImplCopyWith(
+          _$LoginImpl value, $Res Function(_$LoginImpl) then) =
+      __$$LoginImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LoginCopyWithImpl<$Res>
-    extends _$LoginEventCopyWithImpl<$Res, _$_Login>
-    implements _$$_LoginCopyWith<$Res> {
-  __$$_LoginCopyWithImpl(_$_Login _value, $Res Function(_$_Login) _then)
+class __$$LoginImplCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res, _$LoginImpl>
+    implements _$$LoginImplCopyWith<$Res> {
+  __$$LoginImplCopyWithImpl(
+      _$LoginImpl _value, $Res Function(_$LoginImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Login implements _Login {
-  const _$_Login();
+class _$LoginImpl implements _Login {
+  const _$LoginImpl();
 
   @override
   String toString() {
@@ -518,7 +521,7 @@ class _$_Login implements _Login {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Login);
+        (other.runtimeType == runtimeType && other is _$LoginImpl);
   }
 
   @override
@@ -600,7 +603,7 @@ class _$_Login implements _Login {
 }
 
 abstract class _Login implements LoginEvent {
-  const factory _Login() = _$_Login;
+  const factory _Login() = _$LoginImpl;
 }
 
 /// @nodoc
@@ -682,11 +685,11 @@ class _$LoginStateCopyWithImpl<$Res, $Val extends LoginState>
 }
 
 /// @nodoc
-abstract class _$$_LoginStateCopyWith<$Res>
+abstract class _$$LoginStateImplCopyWith<$Res>
     implements $LoginStateCopyWith<$Res> {
-  factory _$$_LoginStateCopyWith(
-          _$_LoginState value, $Res Function(_$_LoginState) then) =
-      __$$_LoginStateCopyWithImpl<$Res>;
+  factory _$$LoginStateImplCopyWith(
+          _$LoginStateImpl value, $Res Function(_$LoginStateImpl) then) =
+      __$$LoginStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -699,11 +702,11 @@ abstract class _$$_LoginStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_LoginStateCopyWithImpl<$Res>
-    extends _$LoginStateCopyWithImpl<$Res, _$_LoginState>
-    implements _$$_LoginStateCopyWith<$Res> {
-  __$$_LoginStateCopyWithImpl(
-      _$_LoginState _value, $Res Function(_$_LoginState) _then)
+class __$$LoginStateImplCopyWithImpl<$Res>
+    extends _$LoginStateCopyWithImpl<$Res, _$LoginStateImpl>
+    implements _$$LoginStateImplCopyWith<$Res> {
+  __$$LoginStateImplCopyWithImpl(
+      _$LoginStateImpl _value, $Res Function(_$LoginStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -716,7 +719,7 @@ class __$$_LoginStateCopyWithImpl<$Res>
     Object? isObscure = null,
     Object? errorMessage = freezed,
   }) {
-    return _then(_$_LoginState(
+    return _then(_$LoginStateImpl(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -747,8 +750,8 @@ class __$$_LoginStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LoginState extends _LoginState {
-  _$_LoginState(
+class _$LoginStateImpl extends _LoginState {
+  _$LoginStateImpl(
       {this.email = const EmailForm.pure(),
       this.password = const LoginPasswordForm.pure(),
       this.status = FormzSubmissionStatus.initial,
@@ -784,7 +787,7 @@ class _$_LoginState extends _LoginState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LoginState &&
+            other is _$LoginStateImpl &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password) &&
@@ -803,8 +806,8 @@ class _$_LoginState extends _LoginState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LoginStateCopyWith<_$_LoginState> get copyWith =>
-      __$$_LoginStateCopyWithImpl<_$_LoginState>(this, _$identity);
+  _$$LoginStateImplCopyWith<_$LoginStateImpl> get copyWith =>
+      __$$LoginStateImplCopyWithImpl<_$LoginStateImpl>(this, _$identity);
 }
 
 abstract class _LoginState extends LoginState {
@@ -814,7 +817,7 @@ abstract class _LoginState extends LoginState {
       final FormzSubmissionStatus status,
       final bool isValid,
       final bool isObscure,
-      final String? errorMessage}) = _$_LoginState;
+      final String? errorMessage}) = _$LoginStateImpl;
   _LoginState._() : super._();
 
   @override
@@ -831,6 +834,6 @@ abstract class _LoginState extends LoginState {
   String? get errorMessage;
   @override
   @JsonKey(ignore: true)
-  _$$_LoginStateCopyWith<_$_LoginState> get copyWith =>
+  _$$LoginStateImplCopyWith<_$LoginStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

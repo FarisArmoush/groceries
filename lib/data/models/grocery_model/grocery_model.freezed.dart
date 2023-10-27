@@ -114,11 +114,11 @@ class _$GroceryModelCopyWithImpl<$Res, $Val extends GroceryModel>
 }
 
 /// @nodoc
-abstract class _$$_GroceryModelCopyWith<$Res>
+abstract class _$$GroceryModelImplCopyWith<$Res>
     implements $GroceryModelCopyWith<$Res> {
-  factory _$$_GroceryModelCopyWith(
-          _$_GroceryModel value, $Res Function(_$_GroceryModel) then) =
-      __$$_GroceryModelCopyWithImpl<$Res>;
+  factory _$$GroceryModelImplCopyWith(
+          _$GroceryModelImpl value, $Res Function(_$GroceryModelImpl) then) =
+      __$$GroceryModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -133,11 +133,11 @@ abstract class _$$_GroceryModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_GroceryModelCopyWithImpl<$Res>
-    extends _$GroceryModelCopyWithImpl<$Res, _$_GroceryModel>
-    implements _$$_GroceryModelCopyWith<$Res> {
-  __$$_GroceryModelCopyWithImpl(
-      _$_GroceryModel _value, $Res Function(_$_GroceryModel) _then)
+class __$$GroceryModelImplCopyWithImpl<$Res>
+    extends _$GroceryModelCopyWithImpl<$Res, _$GroceryModelImpl>
+    implements _$$GroceryModelImplCopyWith<$Res> {
+  __$$GroceryModelImplCopyWithImpl(
+      _$GroceryModelImpl _value, $Res Function(_$GroceryModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -152,7 +152,7 @@ class __$$_GroceryModelCopyWithImpl<$Res>
     Object? notes = freezed,
     Object? refinements = freezed,
   }) {
-    return _then(_$_GroceryModel(
+    return _then(_$GroceryModelImpl(
       categoryId: freezed == categoryId
           ? _value.categoryId
           : categoryId // ignore: cast_nullable_to_non_nullable
@@ -191,8 +191,8 @@ class __$$_GroceryModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_GroceryModel implements _GroceryModel {
-  const _$_GroceryModel(
+class _$GroceryModelImpl implements _GroceryModel {
+  const _$GroceryModelImpl(
       {required this.categoryId,
       @TimestampSerializer() required this.creationDate,
       required this.id,
@@ -203,8 +203,8 @@ class _$_GroceryModel implements _GroceryModel {
       required final List<RefinementsModel?>? refinements})
       : _refinements = refinements;
 
-  factory _$_GroceryModel.fromJson(Map<String, dynamic> json) =>
-      _$$_GroceryModelFromJson(json);
+  factory _$GroceryModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GroceryModelImplFromJson(json);
 
   @override
   final String? categoryId;
@@ -240,7 +240,7 @@ class _$_GroceryModel implements _GroceryModel {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GroceryModel &&
+            other is _$GroceryModelImpl &&
             (identical(other.categoryId, categoryId) ||
                 other.categoryId == categoryId) &&
             (identical(other.creationDate, creationDate) ||
@@ -270,12 +270,12 @@ class _$_GroceryModel implements _GroceryModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GroceryModelCopyWith<_$_GroceryModel> get copyWith =>
-      __$$_GroceryModelCopyWithImpl<_$_GroceryModel>(this, _$identity);
+  _$$GroceryModelImplCopyWith<_$GroceryModelImpl> get copyWith =>
+      __$$GroceryModelImplCopyWithImpl<_$GroceryModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GroceryModelToJson(
+    return _$$GroceryModelImplToJson(
       this,
     );
   }
@@ -283,17 +283,18 @@ class _$_GroceryModel implements _GroceryModel {
 
 abstract class _GroceryModel implements GroceryModel {
   const factory _GroceryModel(
-      {required final String? categoryId,
-      @TimestampSerializer() required final DateTime? creationDate,
-      required final String? id,
-      required final String? image,
-      required final bool? isDone,
-      required final String? name,
-      required final String? notes,
-      required final List<RefinementsModel?>? refinements}) = _$_GroceryModel;
+          {required final String? categoryId,
+          @TimestampSerializer() required final DateTime? creationDate,
+          required final String? id,
+          required final String? image,
+          required final bool? isDone,
+          required final String? name,
+          required final String? notes,
+          required final List<RefinementsModel?>? refinements}) =
+      _$GroceryModelImpl;
 
   factory _GroceryModel.fromJson(Map<String, dynamic> json) =
-      _$_GroceryModel.fromJson;
+      _$GroceryModelImpl.fromJson;
 
   @override
   String? get categoryId;
@@ -314,6 +315,6 @@ abstract class _GroceryModel implements GroceryModel {
   List<RefinementsModel?>? get refinements;
   @override
   @JsonKey(ignore: true)
-  _$$_GroceryModelCopyWith<_$_GroceryModel> get copyWith =>
+  _$$GroceryModelImplCopyWith<_$GroceryModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -92,11 +92,11 @@ class _$RecipeModelCopyWithImpl<$Res, $Val extends RecipeModel>
 }
 
 /// @nodoc
-abstract class _$$_RecipeModelCopyWith<$Res>
+abstract class _$$RecipeModelImplCopyWith<$Res>
     implements $RecipeModelCopyWith<$Res> {
-  factory _$$_RecipeModelCopyWith(
-          _$_RecipeModel value, $Res Function(_$_RecipeModel) then) =
-      __$$_RecipeModelCopyWithImpl<$Res>;
+  factory _$$RecipeModelImplCopyWith(
+          _$RecipeModelImpl value, $Res Function(_$RecipeModelImpl) then) =
+      __$$RecipeModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -108,11 +108,11 @@ abstract class _$$_RecipeModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_RecipeModelCopyWithImpl<$Res>
-    extends _$RecipeModelCopyWithImpl<$Res, _$_RecipeModel>
-    implements _$$_RecipeModelCopyWith<$Res> {
-  __$$_RecipeModelCopyWithImpl(
-      _$_RecipeModel _value, $Res Function(_$_RecipeModel) _then)
+class __$$RecipeModelImplCopyWithImpl<$Res>
+    extends _$RecipeModelCopyWithImpl<$Res, _$RecipeModelImpl>
+    implements _$$RecipeModelImplCopyWith<$Res> {
+  __$$RecipeModelImplCopyWithImpl(
+      _$RecipeModelImpl _value, $Res Function(_$RecipeModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -124,7 +124,7 @@ class __$$_RecipeModelCopyWithImpl<$Res>
     Object? items = freezed,
     Object? creationDate = freezed,
   }) {
-    return _then(_$_RecipeModel(
+    return _then(_$RecipeModelImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -151,8 +151,8 @@ class __$$_RecipeModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_RecipeModel with DiagnosticableTreeMixin implements _RecipeModel {
-  const _$_RecipeModel(
+class _$RecipeModelImpl with DiagnosticableTreeMixin implements _RecipeModel {
+  const _$RecipeModelImpl(
       {required this.id,
       required this.name,
       required this.imageUrl,
@@ -160,8 +160,8 @@ class _$_RecipeModel with DiagnosticableTreeMixin implements _RecipeModel {
       @TimestampSerializer() required this.creationDate})
       : _items = items;
 
-  factory _$_RecipeModel.fromJson(Map<String, dynamic> json) =>
-      _$$_RecipeModelFromJson(json);
+  factory _$RecipeModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$RecipeModelImplFromJson(json);
 
   @override
   final String? id;
@@ -204,7 +204,7 @@ class _$_RecipeModel with DiagnosticableTreeMixin implements _RecipeModel {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RecipeModel &&
+            other is _$RecipeModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.imageUrl, imageUrl) ||
@@ -222,12 +222,12 @@ class _$_RecipeModel with DiagnosticableTreeMixin implements _RecipeModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RecipeModelCopyWith<_$_RecipeModel> get copyWith =>
-      __$$_RecipeModelCopyWithImpl<_$_RecipeModel>(this, _$identity);
+  _$$RecipeModelImplCopyWith<_$RecipeModelImpl> get copyWith =>
+      __$$RecipeModelImplCopyWithImpl<_$RecipeModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_RecipeModelToJson(
+    return _$$RecipeModelImplToJson(
       this,
     );
   }
@@ -240,10 +240,10 @@ abstract class _RecipeModel implements RecipeModel {
           required final String? imageUrl,
           required final List<GroceryModel?>? items,
           @TimestampSerializer() required final DateTime? creationDate}) =
-      _$_RecipeModel;
+      _$RecipeModelImpl;
 
   factory _RecipeModel.fromJson(Map<String, dynamic> json) =
-      _$_RecipeModel.fromJson;
+      _$RecipeModelImpl.fromJson;
 
   @override
   String? get id;
@@ -258,6 +258,6 @@ abstract class _RecipeModel implements RecipeModel {
   DateTime? get creationDate;
   @override
   @JsonKey(ignore: true)
-  _$$_RecipeModelCopyWith<_$_RecipeModel> get copyWith =>
+  _$$RecipeModelImplCopyWith<_$RecipeModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

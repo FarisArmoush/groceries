@@ -88,12 +88,12 @@ class _$AppBottomNavigationBarItemCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_AppBottomNavigationBarItemCopyWith<$Res>
+abstract class _$$AppBottomNavigationBarItemImplCopyWith<$Res>
     implements $AppBottomNavigationBarItemCopyWith<$Res> {
-  factory _$$_AppBottomNavigationBarItemCopyWith(
-          _$_AppBottomNavigationBarItem value,
-          $Res Function(_$_AppBottomNavigationBarItem) then) =
-      __$$_AppBottomNavigationBarItemCopyWithImpl<$Res>;
+  factory _$$AppBottomNavigationBarItemImplCopyWith(
+          _$AppBottomNavigationBarItemImpl value,
+          $Res Function(_$AppBottomNavigationBarItemImpl) then) =
+      __$$AppBottomNavigationBarItemImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -105,13 +105,13 @@ abstract class _$$_AppBottomNavigationBarItemCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_AppBottomNavigationBarItemCopyWithImpl<$Res>
+class __$$AppBottomNavigationBarItemImplCopyWithImpl<$Res>
     extends _$AppBottomNavigationBarItemCopyWithImpl<$Res,
-        _$_AppBottomNavigationBarItem>
-    implements _$$_AppBottomNavigationBarItemCopyWith<$Res> {
-  __$$_AppBottomNavigationBarItemCopyWithImpl(
-      _$_AppBottomNavigationBarItem _value,
-      $Res Function(_$_AppBottomNavigationBarItem) _then)
+        _$AppBottomNavigationBarItemImpl>
+    implements _$$AppBottomNavigationBarItemImplCopyWith<$Res> {
+  __$$AppBottomNavigationBarItemImplCopyWithImpl(
+      _$AppBottomNavigationBarItemImpl _value,
+      $Res Function(_$AppBottomNavigationBarItemImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -123,7 +123,7 @@ class __$$_AppBottomNavigationBarItemCopyWithImpl<$Res>
     Object? unselectedColor = freezed,
     Object? activeIcon = freezed,
   }) {
-    return _then(_$_AppBottomNavigationBarItem(
+    return _then(_$AppBottomNavigationBarItemImpl(
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -150,8 +150,8 @@ class __$$_AppBottomNavigationBarItemCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AppBottomNavigationBarItem implements _AppBottomNavigationBarItem {
-  _$_AppBottomNavigationBarItem(
+class _$AppBottomNavigationBarItemImpl implements _AppBottomNavigationBarItem {
+  _$AppBottomNavigationBarItemImpl(
       {required this.title,
       required this.icon,
       this.selectedColor,
@@ -178,7 +178,7 @@ class _$_AppBottomNavigationBarItem implements _AppBottomNavigationBarItem {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AppBottomNavigationBarItem &&
+            other is _$AppBottomNavigationBarItemImpl &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.icon, icon) || other.icon == icon) &&
             (identical(other.selectedColor, selectedColor) ||
@@ -196,9 +196,9 @@ class _$_AppBottomNavigationBarItem implements _AppBottomNavigationBarItem {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AppBottomNavigationBarItemCopyWith<_$_AppBottomNavigationBarItem>
-      get copyWith => __$$_AppBottomNavigationBarItemCopyWithImpl<
-          _$_AppBottomNavigationBarItem>(this, _$identity);
+  _$$AppBottomNavigationBarItemImplCopyWith<_$AppBottomNavigationBarItemImpl>
+      get copyWith => __$$AppBottomNavigationBarItemImplCopyWithImpl<
+          _$AppBottomNavigationBarItemImpl>(this, _$identity);
 }
 
 abstract class _AppBottomNavigationBarItem
@@ -208,7 +208,7 @@ abstract class _AppBottomNavigationBarItem
       required final Widget icon,
       final Color? selectedColor,
       final Color? unselectedColor,
-      final Widget? activeIcon}) = _$_AppBottomNavigationBarItem;
+      final Widget? activeIcon}) = _$AppBottomNavigationBarItemImpl;
 
   @override
   Widget get title;
@@ -222,6 +222,6 @@ abstract class _AppBottomNavigationBarItem
   Widget? get activeIcon;
   @override
   @JsonKey(ignore: true)
-  _$$_AppBottomNavigationBarItemCopyWith<_$_AppBottomNavigationBarItem>
+  _$$AppBottomNavigationBarItemImplCopyWith<_$AppBottomNavigationBarItemImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

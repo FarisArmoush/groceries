@@ -63,22 +63,22 @@ class _$LoginParamCopyWithImpl<$Res, $Val extends LoginParam>
 }
 
 /// @nodoc
-abstract class _$$_LoginParamCopyWith<$Res>
+abstract class _$$LoginParamImplCopyWith<$Res>
     implements $LoginParamCopyWith<$Res> {
-  factory _$$_LoginParamCopyWith(
-          _$_LoginParam value, $Res Function(_$_LoginParam) then) =
-      __$$_LoginParamCopyWithImpl<$Res>;
+  factory _$$LoginParamImplCopyWith(
+          _$LoginParamImpl value, $Res Function(_$LoginParamImpl) then) =
+      __$$LoginParamImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String email, String password});
 }
 
 /// @nodoc
-class __$$_LoginParamCopyWithImpl<$Res>
-    extends _$LoginParamCopyWithImpl<$Res, _$_LoginParam>
-    implements _$$_LoginParamCopyWith<$Res> {
-  __$$_LoginParamCopyWithImpl(
-      _$_LoginParam _value, $Res Function(_$_LoginParam) _then)
+class __$$LoginParamImplCopyWithImpl<$Res>
+    extends _$LoginParamCopyWithImpl<$Res, _$LoginParamImpl>
+    implements _$$LoginParamImplCopyWith<$Res> {
+  __$$LoginParamImplCopyWithImpl(
+      _$LoginParamImpl _value, $Res Function(_$LoginParamImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +87,7 @@ class __$$_LoginParamCopyWithImpl<$Res>
     Object? email = null,
     Object? password = null,
   }) {
-    return _then(_$_LoginParam(
+    return _then(_$LoginParamImpl(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -102,8 +102,8 @@ class __$$_LoginParamCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_LoginParam implements _LoginParam {
-  const _$_LoginParam({required this.email, required this.password});
+class _$LoginParamImpl implements _LoginParam {
+  const _$LoginParamImpl({required this.email, required this.password});
 
   @override
   final String email;
@@ -119,7 +119,7 @@ class _$_LoginParam implements _LoginParam {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_LoginParam &&
+            other is _$LoginParamImpl &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password));
@@ -131,14 +131,14 @@ class _$_LoginParam implements _LoginParam {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LoginParamCopyWith<_$_LoginParam> get copyWith =>
-      __$$_LoginParamCopyWithImpl<_$_LoginParam>(this, _$identity);
+  _$$LoginParamImplCopyWith<_$LoginParamImpl> get copyWith =>
+      __$$LoginParamImplCopyWithImpl<_$LoginParamImpl>(this, _$identity);
 }
 
 abstract class _LoginParam implements LoginParam {
   const factory _LoginParam(
       {required final String email,
-      required final String password}) = _$_LoginParam;
+      required final String password}) = _$LoginParamImpl;
 
   @override
   String get email;
@@ -146,6 +146,6 @@ abstract class _LoginParam implements LoginParam {
   String get password;
   @override
   @JsonKey(ignore: true)
-  _$$_LoginParamCopyWith<_$_LoginParam> get copyWith =>
+  _$$LoginParamImplCopyWith<_$LoginParamImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
