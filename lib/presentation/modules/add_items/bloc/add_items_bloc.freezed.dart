@@ -170,7 +170,6 @@ mixin _$AddItemsState {
   List<CategoryModel> get parentCategories =>
       throw _privateConstructorUsedError;
   BlocStatus get status => throw _privateConstructorUsedError;
-  String? get error => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AddItemsStateCopyWith<AddItemsState> get copyWith =>
@@ -183,8 +182,7 @@ abstract class $AddItemsStateCopyWith<$Res> {
           AddItemsState value, $Res Function(AddItemsState) then) =
       _$AddItemsStateCopyWithImpl<$Res, AddItemsState>;
   @useResult
-  $Res call(
-      {List<CategoryModel> parentCategories, BlocStatus status, String? error});
+  $Res call({List<CategoryModel> parentCategories, BlocStatus status});
 
   $BlocStatusCopyWith<$Res> get status;
 }
@@ -204,7 +202,6 @@ class _$AddItemsStateCopyWithImpl<$Res, $Val extends AddItemsState>
   $Res call({
     Object? parentCategories = null,
     Object? status = null,
-    Object? error = freezed,
   }) {
     return _then(_value.copyWith(
       parentCategories: null == parentCategories
@@ -215,10 +212,6 @@ class _$AddItemsStateCopyWithImpl<$Res, $Val extends AddItemsState>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as BlocStatus,
-      error: freezed == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String?,
     ) as $Val);
   }
 
@@ -239,8 +232,7 @@ abstract class _$$AddItemsStateImplCopyWith<$Res>
       __$$AddItemsStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {List<CategoryModel> parentCategories, BlocStatus status, String? error});
+  $Res call({List<CategoryModel> parentCategories, BlocStatus status});
 
   @override
   $BlocStatusCopyWith<$Res> get status;
@@ -259,7 +251,6 @@ class __$$AddItemsStateImplCopyWithImpl<$Res>
   $Res call({
     Object? parentCategories = null,
     Object? status = null,
-    Object? error = freezed,
   }) {
     return _then(_$AddItemsStateImpl(
       parentCategories: null == parentCategories
@@ -270,10 +261,6 @@ class __$$AddItemsStateImplCopyWithImpl<$Res>
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as BlocStatus,
-      error: freezed == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }
@@ -283,8 +270,7 @@ class __$$AddItemsStateImplCopyWithImpl<$Res>
 class _$AddItemsStateImpl extends _AddItemsState {
   const _$AddItemsStateImpl(
       {final List<CategoryModel> parentCategories = const <CategoryModel>[],
-      this.status = const BlocStatus.initial(),
-      this.error})
+      this.status = const BlocStatus.initial()})
       : _parentCategories = parentCategories,
         super._();
 
@@ -301,12 +287,10 @@ class _$AddItemsStateImpl extends _AddItemsState {
   @override
   @JsonKey()
   final BlocStatus status;
-  @override
-  final String? error;
 
   @override
   String toString() {
-    return 'AddItemsState(parentCategories: $parentCategories, status: $status, error: $error)';
+    return 'AddItemsState(parentCategories: $parentCategories, status: $status)';
   }
 
   @override
@@ -316,13 +300,12 @@ class _$AddItemsStateImpl extends _AddItemsState {
             other is _$AddItemsStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._parentCategories, _parentCategories) &&
-            (identical(other.status, status) || other.status == status) &&
-            (identical(other.error, error) || other.error == error));
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_parentCategories), status, error);
+      const DeepCollectionEquality().hash(_parentCategories), status);
 
   @JsonKey(ignore: true)
   @override
@@ -334,16 +317,13 @@ class _$AddItemsStateImpl extends _AddItemsState {
 abstract class _AddItemsState extends AddItemsState {
   const factory _AddItemsState(
       {final List<CategoryModel> parentCategories,
-      final BlocStatus status,
-      final String? error}) = _$AddItemsStateImpl;
+      final BlocStatus status}) = _$AddItemsStateImpl;
   const _AddItemsState._() : super._();
 
   @override
   List<CategoryModel> get parentCategories;
   @override
   BlocStatus get status;
-  @override
-  String? get error;
   @override
   @JsonKey(ignore: true)
   _$$AddItemsStateImplCopyWith<_$AddItemsStateImpl> get copyWith =>

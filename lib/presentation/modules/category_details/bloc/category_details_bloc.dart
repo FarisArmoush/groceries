@@ -46,14 +46,12 @@ class CategoryDetailsBloc
       emit(
         state.copyWith(
           status: BlocStatus.failure(e.message ?? ''),
-          error: e.message ?? '',
         ),
       );
     } catch (e) {
       emit(
         state.copyWith(
           status: BlocStatus.failure(e.toString()),
-          error: e.toString(),
         ),
       );
     }
@@ -82,14 +80,12 @@ class CategoryDetailsBloc
       emit(
         state.copyWith(
           status: BlocStatus.failure(e.message ?? ''),
-          error: e.message ?? '',
         ),
       );
     } catch (e) {
       emit(
         state.copyWith(
           status: BlocStatus.failure(e.toString()),
-          error: e.toString(),
         ),
       );
     }

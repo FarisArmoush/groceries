@@ -350,7 +350,6 @@ mixin _$CategoryDetailsState {
   BlocStatus get status => throw _privateConstructorUsedError;
   List<CategoryModel> get categories => throw _privateConstructorUsedError;
   List<GroceryModel> get groceries => throw _privateConstructorUsedError;
-  String? get error => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CategoryDetailsStateCopyWith<CategoryDetailsState> get copyWith =>
@@ -366,8 +365,7 @@ abstract class $CategoryDetailsStateCopyWith<$Res> {
   $Res call(
       {BlocStatus status,
       List<CategoryModel> categories,
-      List<GroceryModel> groceries,
-      String? error});
+      List<GroceryModel> groceries});
 
   $BlocStatusCopyWith<$Res> get status;
 }
@@ -389,7 +387,6 @@ class _$CategoryDetailsStateCopyWithImpl<$Res,
     Object? status = null,
     Object? categories = null,
     Object? groceries = null,
-    Object? error = freezed,
   }) {
     return _then(_value.copyWith(
       status: null == status
@@ -404,10 +401,6 @@ class _$CategoryDetailsStateCopyWithImpl<$Res,
           ? _value.groceries
           : groceries // ignore: cast_nullable_to_non_nullable
               as List<GroceryModel>,
-      error: freezed == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String?,
     ) as $Val);
   }
 
@@ -431,8 +424,7 @@ abstract class _$$CategoryDetailsStateImplCopyWith<$Res>
   $Res call(
       {BlocStatus status,
       List<CategoryModel> categories,
-      List<GroceryModel> groceries,
-      String? error});
+      List<GroceryModel> groceries});
 
   @override
   $BlocStatusCopyWith<$Res> get status;
@@ -452,7 +444,6 @@ class __$$CategoryDetailsStateImplCopyWithImpl<$Res>
     Object? status = null,
     Object? categories = null,
     Object? groceries = null,
-    Object? error = freezed,
   }) {
     return _then(_$CategoryDetailsStateImpl(
       status: null == status
@@ -467,10 +458,6 @@ class __$$CategoryDetailsStateImplCopyWithImpl<$Res>
           ? _value._groceries
           : groceries // ignore: cast_nullable_to_non_nullable
               as List<GroceryModel>,
-      error: freezed == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String?,
     ));
   }
 }
@@ -481,8 +468,7 @@ class _$CategoryDetailsStateImpl extends _CategoryDetailsState {
   const _$CategoryDetailsStateImpl(
       {this.status = const BlocStatus.initial(),
       final List<CategoryModel> categories = const <CategoryModel>[],
-      final List<GroceryModel> groceries = const <GroceryModel>[],
-      this.error})
+      final List<GroceryModel> groceries = const <GroceryModel>[]})
       : _categories = categories,
         _groceries = groceries,
         super._();
@@ -509,11 +495,8 @@ class _$CategoryDetailsStateImpl extends _CategoryDetailsState {
   }
 
   @override
-  final String? error;
-
-  @override
   String toString() {
-    return 'CategoryDetailsState(status: $status, categories: $categories, groceries: $groceries, error: $error)';
+    return 'CategoryDetailsState(status: $status, categories: $categories, groceries: $groceries)';
   }
 
   @override
@@ -525,8 +508,7 @@ class _$CategoryDetailsStateImpl extends _CategoryDetailsState {
             const DeepCollectionEquality()
                 .equals(other._categories, _categories) &&
             const DeepCollectionEquality()
-                .equals(other._groceries, _groceries) &&
-            (identical(other.error, error) || other.error == error));
+                .equals(other._groceries, _groceries));
   }
 
   @override
@@ -534,8 +516,7 @@ class _$CategoryDetailsStateImpl extends _CategoryDetailsState {
       runtimeType,
       status,
       const DeepCollectionEquality().hash(_categories),
-      const DeepCollectionEquality().hash(_groceries),
-      error);
+      const DeepCollectionEquality().hash(_groceries));
 
   @JsonKey(ignore: true)
   @override
@@ -550,8 +531,7 @@ abstract class _CategoryDetailsState extends CategoryDetailsState {
   const factory _CategoryDetailsState(
       {final BlocStatus status,
       final List<CategoryModel> categories,
-      final List<GroceryModel> groceries,
-      final String? error}) = _$CategoryDetailsStateImpl;
+      final List<GroceryModel> groceries}) = _$CategoryDetailsStateImpl;
   const _CategoryDetailsState._() : super._();
 
   @override
@@ -560,8 +540,6 @@ abstract class _CategoryDetailsState extends CategoryDetailsState {
   List<CategoryModel> get categories;
   @override
   List<GroceryModel> get groceries;
-  @override
-  String? get error;
   @override
   @JsonKey(ignore: true)
   _$$CategoryDetailsStateImplCopyWith<_$CategoryDetailsStateImpl>

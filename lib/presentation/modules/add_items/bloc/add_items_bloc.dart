@@ -38,14 +38,12 @@ class AddItemsBloc extends Bloc<AddItemsEvent, AddItemsState> {
       emit(
         state.copyWith(
           status: BlocStatus.failure(e.message ?? 'Omak'),
-          error: e.message ?? '',
         ),
       );
     } catch (e) {
       emit(
         state.copyWith(
           status: BlocStatus.failure(e.toString()),
-          error: e.toString(),
         ),
       );
     }
