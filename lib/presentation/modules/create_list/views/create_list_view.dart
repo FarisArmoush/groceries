@@ -6,7 +6,9 @@ class CreateListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => CreateListBloc(),
+      create: (context) => CreateListBloc(
+        context.read<CreateListUseCase>(),
+      ),
       child: const CreateListForm(),
     );
   }

@@ -58,15 +58,15 @@ class GroceryListsDataSource {
     return lists;
   }
 
-  Future<void> deleteGroceryList(String uid) {
+  Future<void> deleteGroceryList(String uid) async {
     throw UnimplementedError();
   }
 
-  Future<void> createGroceryList(GroceryListModel groceryListModel) {
+  Future<void> createGroceryList(GroceryListModel groceryListModel) async {
     throw UnimplementedError();
   }
 
-  Future<void> editGroceryList(GroceryListModel groceryListModel) {
+  Future<void> editGroceryList(GroceryListModel groceryListModel) async {
     throw UnimplementedError();
   }
 }

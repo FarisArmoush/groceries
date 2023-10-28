@@ -205,6 +205,11 @@ class App extends StatelessWidget {
                               context.read<BaseGroceriesRepository>(),
                             ),
                           ),
+                          RepositoryProvider(
+                            create: (context) => CreateListUseCase(
+                              context.read<GroceryListsRepository>(),
+                            ),
+                          ),
                         ],
                         child: const AppEasyLocalization(),
                       );
