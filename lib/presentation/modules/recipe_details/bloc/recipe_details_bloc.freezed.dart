@@ -69,25 +69,25 @@ class _$RecipeDetailsEventCopyWithImpl<$Res, $Val extends RecipeDetailsEvent>
 }
 
 /// @nodoc
-abstract class _$$_DeleteRecipeCopyWith<$Res> {
-  factory _$$_DeleteRecipeCopyWith(
-          _$_DeleteRecipe value, $Res Function(_$_DeleteRecipe) then) =
-      __$$_DeleteRecipeCopyWithImpl<$Res>;
+abstract class _$$DeleteRecipeImplCopyWith<$Res> {
+  factory _$$DeleteRecipeImplCopyWith(
+          _$DeleteRecipeImpl value, $Res Function(_$DeleteRecipeImpl) then) =
+      __$$DeleteRecipeImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_DeleteRecipeCopyWithImpl<$Res>
-    extends _$RecipeDetailsEventCopyWithImpl<$Res, _$_DeleteRecipe>
-    implements _$$_DeleteRecipeCopyWith<$Res> {
-  __$$_DeleteRecipeCopyWithImpl(
-      _$_DeleteRecipe _value, $Res Function(_$_DeleteRecipe) _then)
+class __$$DeleteRecipeImplCopyWithImpl<$Res>
+    extends _$RecipeDetailsEventCopyWithImpl<$Res, _$DeleteRecipeImpl>
+    implements _$$DeleteRecipeImplCopyWith<$Res> {
+  __$$DeleteRecipeImplCopyWithImpl(
+      _$DeleteRecipeImpl _value, $Res Function(_$DeleteRecipeImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_DeleteRecipe implements _DeleteRecipe {
-  const _$_DeleteRecipe();
+class _$DeleteRecipeImpl implements _DeleteRecipe {
+  const _$DeleteRecipeImpl();
 
   @override
   String toString() {
@@ -97,7 +97,7 @@ class _$_DeleteRecipe implements _DeleteRecipe {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_DeleteRecipe);
+        (other.runtimeType == runtimeType && other is _$DeleteRecipeImpl);
   }
 
   @override
@@ -161,7 +161,7 @@ class _$_DeleteRecipe implements _DeleteRecipe {
 }
 
 abstract class _DeleteRecipe implements RecipeDetailsEvent {
-  const factory _DeleteRecipe() = _$_DeleteRecipe;
+  const factory _DeleteRecipe() = _$DeleteRecipeImpl;
 }
 
 /// @nodoc
@@ -186,25 +186,25 @@ class _$RecipeDetailsStateCopyWithImpl<$Res, $Val extends RecipeDetailsState>
 }
 
 /// @nodoc
-abstract class _$$_RecipeDetailsStateCopyWith<$Res> {
-  factory _$$_RecipeDetailsStateCopyWith(_$_RecipeDetailsState value,
-          $Res Function(_$_RecipeDetailsState) then) =
-      __$$_RecipeDetailsStateCopyWithImpl<$Res>;
+abstract class _$$RecipeDetailsStateImplCopyWith<$Res> {
+  factory _$$RecipeDetailsStateImplCopyWith(_$RecipeDetailsStateImpl value,
+          $Res Function(_$RecipeDetailsStateImpl) then) =
+      __$$RecipeDetailsStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_RecipeDetailsStateCopyWithImpl<$Res>
-    extends _$RecipeDetailsStateCopyWithImpl<$Res, _$_RecipeDetailsState>
-    implements _$$_RecipeDetailsStateCopyWith<$Res> {
-  __$$_RecipeDetailsStateCopyWithImpl(
-      _$_RecipeDetailsState _value, $Res Function(_$_RecipeDetailsState) _then)
+class __$$RecipeDetailsStateImplCopyWithImpl<$Res>
+    extends _$RecipeDetailsStateCopyWithImpl<$Res, _$RecipeDetailsStateImpl>
+    implements _$$RecipeDetailsStateImplCopyWith<$Res> {
+  __$$RecipeDetailsStateImplCopyWithImpl(_$RecipeDetailsStateImpl _value,
+      $Res Function(_$RecipeDetailsStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_RecipeDetailsState implements _RecipeDetailsState {
-  const _$_RecipeDetailsState();
+class _$RecipeDetailsStateImpl implements _RecipeDetailsState {
+  const _$RecipeDetailsStateImpl();
 
   @override
   String toString() {
@@ -214,7 +214,7 @@ class _$_RecipeDetailsState implements _RecipeDetailsState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_RecipeDetailsState);
+        (other.runtimeType == runtimeType && other is _$RecipeDetailsStateImpl);
   }
 
   @override
@@ -222,5 +222,5 @@ class _$_RecipeDetailsState implements _RecipeDetailsState {
 }
 
 abstract class _RecipeDetailsState implements RecipeDetailsState {
-  const factory _RecipeDetailsState() = _$_RecipeDetailsState;
+  const factory _RecipeDetailsState() = _$RecipeDetailsStateImpl;
 }

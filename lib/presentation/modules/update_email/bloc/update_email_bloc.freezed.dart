@@ -75,20 +75,20 @@ class _$UpdateEmailEventCopyWithImpl<$Res, $Val extends UpdateEmailEvent>
 }
 
 /// @nodoc
-abstract class _$$_EmailChangedCopyWith<$Res> {
-  factory _$$_EmailChangedCopyWith(
-          _$_EmailChanged value, $Res Function(_$_EmailChanged) then) =
-      __$$_EmailChangedCopyWithImpl<$Res>;
+abstract class _$$EmailChangedImplCopyWith<$Res> {
+  factory _$$EmailChangedImplCopyWith(
+          _$EmailChangedImpl value, $Res Function(_$EmailChangedImpl) then) =
+      __$$EmailChangedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String email});
 }
 
 /// @nodoc
-class __$$_EmailChangedCopyWithImpl<$Res>
-    extends _$UpdateEmailEventCopyWithImpl<$Res, _$_EmailChanged>
-    implements _$$_EmailChangedCopyWith<$Res> {
-  __$$_EmailChangedCopyWithImpl(
-      _$_EmailChanged _value, $Res Function(_$_EmailChanged) _then)
+class __$$EmailChangedImplCopyWithImpl<$Res>
+    extends _$UpdateEmailEventCopyWithImpl<$Res, _$EmailChangedImpl>
+    implements _$$EmailChangedImplCopyWith<$Res> {
+  __$$EmailChangedImplCopyWithImpl(
+      _$EmailChangedImpl _value, $Res Function(_$EmailChangedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -96,7 +96,7 @@ class __$$_EmailChangedCopyWithImpl<$Res>
   $Res call({
     Object? email = null,
   }) {
-    return _then(_$_EmailChanged(
+    return _then(_$EmailChangedImpl(
       null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -107,8 +107,8 @@ class __$$_EmailChangedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_EmailChanged implements _EmailChanged {
-  const _$_EmailChanged(this.email);
+class _$EmailChangedImpl implements _EmailChanged {
+  const _$EmailChangedImpl(this.email);
 
   @override
   final String email;
@@ -122,7 +122,7 @@ class _$_EmailChanged implements _EmailChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EmailChanged &&
+            other is _$EmailChangedImpl &&
             (identical(other.email, email) || other.email == email));
   }
 
@@ -132,8 +132,8 @@ class _$_EmailChanged implements _EmailChanged {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_EmailChangedCopyWith<_$_EmailChanged> get copyWith =>
-      __$$_EmailChangedCopyWithImpl<_$_EmailChanged>(this, _$identity);
+  _$$EmailChangedImplCopyWith<_$EmailChangedImpl> get copyWith =>
+      __$$EmailChangedImplCopyWithImpl<_$EmailChangedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -199,34 +199,34 @@ class _$_EmailChanged implements _EmailChanged {
 }
 
 abstract class _EmailChanged implements UpdateEmailEvent {
-  const factory _EmailChanged(final String email) = _$_EmailChanged;
+  const factory _EmailChanged(final String email) = _$EmailChangedImpl;
 
   String get email;
   @JsonKey(ignore: true)
-  _$$_EmailChangedCopyWith<_$_EmailChanged> get copyWith =>
+  _$$EmailChangedImplCopyWith<_$EmailChangedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_UpdateEmailCopyWith<$Res> {
-  factory _$$_UpdateEmailCopyWith(
-          _$_UpdateEmail value, $Res Function(_$_UpdateEmail) then) =
-      __$$_UpdateEmailCopyWithImpl<$Res>;
+abstract class _$$UpdateEmailImplCopyWith<$Res> {
+  factory _$$UpdateEmailImplCopyWith(
+          _$UpdateEmailImpl value, $Res Function(_$UpdateEmailImpl) then) =
+      __$$UpdateEmailImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_UpdateEmailCopyWithImpl<$Res>
-    extends _$UpdateEmailEventCopyWithImpl<$Res, _$_UpdateEmail>
-    implements _$$_UpdateEmailCopyWith<$Res> {
-  __$$_UpdateEmailCopyWithImpl(
-      _$_UpdateEmail _value, $Res Function(_$_UpdateEmail) _then)
+class __$$UpdateEmailImplCopyWithImpl<$Res>
+    extends _$UpdateEmailEventCopyWithImpl<$Res, _$UpdateEmailImpl>
+    implements _$$UpdateEmailImplCopyWith<$Res> {
+  __$$UpdateEmailImplCopyWithImpl(
+      _$UpdateEmailImpl _value, $Res Function(_$UpdateEmailImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_UpdateEmail implements _UpdateEmail {
-  const _$_UpdateEmail();
+class _$UpdateEmailImpl implements _UpdateEmail {
+  const _$UpdateEmailImpl();
 
   @override
   String toString() {
@@ -236,7 +236,7 @@ class _$_UpdateEmail implements _UpdateEmail {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_UpdateEmail);
+        (other.runtimeType == runtimeType && other is _$UpdateEmailImpl);
   }
 
   @override
@@ -306,7 +306,7 @@ class _$_UpdateEmail implements _UpdateEmail {
 }
 
 abstract class _UpdateEmail implements UpdateEmailEvent {
-  const factory _UpdateEmail() = _$_UpdateEmail;
+  const factory _UpdateEmail() = _$UpdateEmailImpl;
 }
 
 /// @nodoc
@@ -374,11 +374,11 @@ class _$UpdateEmailStateCopyWithImpl<$Res, $Val extends UpdateEmailState>
 }
 
 /// @nodoc
-abstract class _$$_UpdateEmailStateCopyWith<$Res>
+abstract class _$$UpdateEmailStateImplCopyWith<$Res>
     implements $UpdateEmailStateCopyWith<$Res> {
-  factory _$$_UpdateEmailStateCopyWith(
-          _$_UpdateEmailState value, $Res Function(_$_UpdateEmailState) then) =
-      __$$_UpdateEmailStateCopyWithImpl<$Res>;
+  factory _$$UpdateEmailStateImplCopyWith(_$UpdateEmailStateImpl value,
+          $Res Function(_$UpdateEmailStateImpl) then) =
+      __$$UpdateEmailStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -389,11 +389,11 @@ abstract class _$$_UpdateEmailStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_UpdateEmailStateCopyWithImpl<$Res>
-    extends _$UpdateEmailStateCopyWithImpl<$Res, _$_UpdateEmailState>
-    implements _$$_UpdateEmailStateCopyWith<$Res> {
-  __$$_UpdateEmailStateCopyWithImpl(
-      _$_UpdateEmailState _value, $Res Function(_$_UpdateEmailState) _then)
+class __$$UpdateEmailStateImplCopyWithImpl<$Res>
+    extends _$UpdateEmailStateCopyWithImpl<$Res, _$UpdateEmailStateImpl>
+    implements _$$UpdateEmailStateImplCopyWith<$Res> {
+  __$$UpdateEmailStateImplCopyWithImpl(_$UpdateEmailStateImpl _value,
+      $Res Function(_$UpdateEmailStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -404,7 +404,7 @@ class __$$_UpdateEmailStateCopyWithImpl<$Res>
     Object? isValid = null,
     Object? errorMessage = freezed,
   }) {
-    return _then(_$_UpdateEmailState(
+    return _then(_$UpdateEmailStateImpl(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -427,8 +427,8 @@ class __$$_UpdateEmailStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_UpdateEmailState extends _UpdateEmailState {
-  const _$_UpdateEmailState(
+class _$UpdateEmailStateImpl extends _UpdateEmailState {
+  const _$UpdateEmailStateImpl(
       {this.email = const EmailForm.pure(),
       this.status = FormzSubmissionStatus.initial,
       this.isValid = false,
@@ -456,7 +456,7 @@ class _$_UpdateEmailState extends _UpdateEmailState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_UpdateEmailState &&
+            other is _$UpdateEmailStateImpl &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.status, status) || other.status == status) &&
             (identical(other.isValid, isValid) || other.isValid == isValid) &&
@@ -471,8 +471,9 @@ class _$_UpdateEmailState extends _UpdateEmailState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_UpdateEmailStateCopyWith<_$_UpdateEmailState> get copyWith =>
-      __$$_UpdateEmailStateCopyWithImpl<_$_UpdateEmailState>(this, _$identity);
+  _$$UpdateEmailStateImplCopyWith<_$UpdateEmailStateImpl> get copyWith =>
+      __$$UpdateEmailStateImplCopyWithImpl<_$UpdateEmailStateImpl>(
+          this, _$identity);
 }
 
 abstract class _UpdateEmailState extends UpdateEmailState {
@@ -480,7 +481,7 @@ abstract class _UpdateEmailState extends UpdateEmailState {
       {final EmailForm email,
       final FormzSubmissionStatus status,
       final bool isValid,
-      final String? errorMessage}) = _$_UpdateEmailState;
+      final String? errorMessage}) = _$UpdateEmailStateImpl;
   const _UpdateEmailState._() : super._();
 
   @override
@@ -493,6 +494,6 @@ abstract class _UpdateEmailState extends UpdateEmailState {
   String? get errorMessage;
   @override
   @JsonKey(ignore: true)
-  _$$_UpdateEmailStateCopyWith<_$_UpdateEmailState> get copyWith =>
+  _$$UpdateEmailStateImplCopyWith<_$UpdateEmailStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

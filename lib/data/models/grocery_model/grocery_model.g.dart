@@ -1,15 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: non_constant_identifier_names
-
 part of 'grocery_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_GroceryModel _$$_GroceryModelFromJson(Map<String, dynamic> json) =>
-    _$_GroceryModel(
+_$GroceryModelImpl _$$GroceryModelImplFromJson(Map<String, dynamic> json) =>
+    _$GroceryModelImpl(
       categoryId: json['categoryId'] as String?,
       creationDate: _$JsonConverterFromJson<Timestamp, DateTime>(
         json['creationDate'],
@@ -29,7 +27,7 @@ _$_GroceryModel _$$_GroceryModelFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$$_GroceryModelToJson(_$_GroceryModel instance) =>
+Map<String, dynamic> _$$GroceryModelImplToJson(_$GroceryModelImpl instance) =>
     <String, dynamic>{
       'categoryId': instance.categoryId,
       'creationDate': _$JsonConverterToJson<Timestamp, DateTime>(

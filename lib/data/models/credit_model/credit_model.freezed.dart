@@ -57,22 +57,22 @@ class _$CreditModelCopyWithImpl<$Res, $Val extends CreditModel>
 }
 
 /// @nodoc
-abstract class _$$_CreditModelCopyWith<$Res>
+abstract class _$$CreditModelImplCopyWith<$Res>
     implements $CreditModelCopyWith<$Res> {
-  factory _$$_CreditModelCopyWith(
-          _$_CreditModel value, $Res Function(_$_CreditModel) then) =
-      __$$_CreditModelCopyWithImpl<$Res>;
+  factory _$$CreditModelImplCopyWith(
+          _$CreditModelImpl value, $Res Function(_$CreditModelImpl) then) =
+      __$$CreditModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name});
 }
 
 /// @nodoc
-class __$$_CreditModelCopyWithImpl<$Res>
-    extends _$CreditModelCopyWithImpl<$Res, _$_CreditModel>
-    implements _$$_CreditModelCopyWith<$Res> {
-  __$$_CreditModelCopyWithImpl(
-      _$_CreditModel _value, $Res Function(_$_CreditModel) _then)
+class __$$CreditModelImplCopyWithImpl<$Res>
+    extends _$CreditModelCopyWithImpl<$Res, _$CreditModelImpl>
+    implements _$$CreditModelImplCopyWith<$Res> {
+  __$$CreditModelImplCopyWithImpl(
+      _$CreditModelImpl _value, $Res Function(_$CreditModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -80,7 +80,7 @@ class __$$_CreditModelCopyWithImpl<$Res>
   $Res call({
     Object? name = null,
   }) {
-    return _then(_$_CreditModel(
+    return _then(_$CreditModelImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -91,8 +91,8 @@ class __$$_CreditModelCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CreditModel implements _CreditModel {
-  const _$_CreditModel({required this.name});
+class _$CreditModelImpl implements _CreditModel {
+  const _$CreditModelImpl({required this.name});
 
   @override
   final String name;
@@ -106,7 +106,7 @@ class _$_CreditModel implements _CreditModel {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CreditModel &&
+            other is _$CreditModelImpl &&
             (identical(other.name, name) || other.name == name));
   }
 
@@ -116,17 +116,17 @@ class _$_CreditModel implements _CreditModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CreditModelCopyWith<_$_CreditModel> get copyWith =>
-      __$$_CreditModelCopyWithImpl<_$_CreditModel>(this, _$identity);
+  _$$CreditModelImplCopyWith<_$CreditModelImpl> get copyWith =>
+      __$$CreditModelImplCopyWithImpl<_$CreditModelImpl>(this, _$identity);
 }
 
 abstract class _CreditModel implements CreditModel {
-  const factory _CreditModel({required final String name}) = _$_CreditModel;
+  const factory _CreditModel({required final String name}) = _$CreditModelImpl;
 
   @override
   String get name;
   @override
   @JsonKey(ignore: true)
-  _$$_CreditModelCopyWith<_$_CreditModel> get copyWith =>
+  _$$CreditModelImplCopyWith<_$CreditModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

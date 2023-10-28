@@ -69,22 +69,22 @@ class _$RegisterParamCopyWithImpl<$Res, $Val extends RegisterParam>
 }
 
 /// @nodoc
-abstract class _$$_RegisterParamCopyWith<$Res>
+abstract class _$$RegisterParamImplCopyWith<$Res>
     implements $RegisterParamCopyWith<$Res> {
-  factory _$$_RegisterParamCopyWith(
-          _$_RegisterParam value, $Res Function(_$_RegisterParam) then) =
-      __$$_RegisterParamCopyWithImpl<$Res>;
+  factory _$$RegisterParamImplCopyWith(
+          _$RegisterParamImpl value, $Res Function(_$RegisterParamImpl) then) =
+      __$$RegisterParamImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String email, String password, String displayName});
 }
 
 /// @nodoc
-class __$$_RegisterParamCopyWithImpl<$Res>
-    extends _$RegisterParamCopyWithImpl<$Res, _$_RegisterParam>
-    implements _$$_RegisterParamCopyWith<$Res> {
-  __$$_RegisterParamCopyWithImpl(
-      _$_RegisterParam _value, $Res Function(_$_RegisterParam) _then)
+class __$$RegisterParamImplCopyWithImpl<$Res>
+    extends _$RegisterParamCopyWithImpl<$Res, _$RegisterParamImpl>
+    implements _$$RegisterParamImplCopyWith<$Res> {
+  __$$RegisterParamImplCopyWithImpl(
+      _$RegisterParamImpl _value, $Res Function(_$RegisterParamImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -94,7 +94,7 @@ class __$$_RegisterParamCopyWithImpl<$Res>
     Object? password = null,
     Object? displayName = null,
   }) {
-    return _then(_$_RegisterParam(
+    return _then(_$RegisterParamImpl(
       email: null == email
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
@@ -113,8 +113,8 @@ class __$$_RegisterParamCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RegisterParam implements _RegisterParam {
-  const _$_RegisterParam(
+class _$RegisterParamImpl implements _RegisterParam {
+  const _$RegisterParamImpl(
       {required this.email, required this.password, required this.displayName});
 
   @override
@@ -133,7 +133,7 @@ class _$_RegisterParam implements _RegisterParam {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RegisterParam &&
+            other is _$RegisterParamImpl &&
             (identical(other.email, email) || other.email == email) &&
             (identical(other.password, password) ||
                 other.password == password) &&
@@ -147,15 +147,15 @@ class _$_RegisterParam implements _RegisterParam {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RegisterParamCopyWith<_$_RegisterParam> get copyWith =>
-      __$$_RegisterParamCopyWithImpl<_$_RegisterParam>(this, _$identity);
+  _$$RegisterParamImplCopyWith<_$RegisterParamImpl> get copyWith =>
+      __$$RegisterParamImplCopyWithImpl<_$RegisterParamImpl>(this, _$identity);
 }
 
 abstract class _RegisterParam implements RegisterParam {
   const factory _RegisterParam(
       {required final String email,
       required final String password,
-      required final String displayName}) = _$_RegisterParam;
+      required final String displayName}) = _$RegisterParamImpl;
 
   @override
   String get email;
@@ -165,6 +165,6 @@ abstract class _RegisterParam implements RegisterParam {
   String get displayName;
   @override
   @JsonKey(ignore: true)
-  _$$_RegisterParamCopyWith<_$_RegisterParam> get copyWith =>
+  _$$RegisterParamImplCopyWith<_$RegisterParamImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

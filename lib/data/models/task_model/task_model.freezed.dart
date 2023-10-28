@@ -105,10 +105,11 @@ class _$TaskModelCopyWithImpl<$Res, $Val extends TaskModel>
 }
 
 /// @nodoc
-abstract class _$$_TaskModelCopyWith<$Res> implements $TaskModelCopyWith<$Res> {
-  factory _$$_TaskModelCopyWith(
-          _$_TaskModel value, $Res Function(_$_TaskModel) then) =
-      __$$_TaskModelCopyWithImpl<$Res>;
+abstract class _$$TaskModelImplCopyWith<$Res>
+    implements $TaskModelCopyWith<$Res> {
+  factory _$$TaskModelImplCopyWith(
+          _$TaskModelImpl value, $Res Function(_$TaskModelImpl) then) =
+      __$$TaskModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -123,11 +124,11 @@ abstract class _$$_TaskModelCopyWith<$Res> implements $TaskModelCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_TaskModelCopyWithImpl<$Res>
-    extends _$TaskModelCopyWithImpl<$Res, _$_TaskModel>
-    implements _$$_TaskModelCopyWith<$Res> {
-  __$$_TaskModelCopyWithImpl(
-      _$_TaskModel _value, $Res Function(_$_TaskModel) _then)
+class __$$TaskModelImplCopyWithImpl<$Res>
+    extends _$TaskModelCopyWithImpl<$Res, _$TaskModelImpl>
+    implements _$$TaskModelImplCopyWith<$Res> {
+  __$$TaskModelImplCopyWithImpl(
+      _$TaskModelImpl _value, $Res Function(_$TaskModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -139,7 +140,7 @@ class __$$_TaskModelCopyWithImpl<$Res>
     Object? groceries = freezed,
     Object? creationDate = freezed,
   }) {
-    return _then(_$_TaskModel(
+    return _then(_$TaskModelImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -166,8 +167,8 @@ class __$$_TaskModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_TaskModel implements _TaskModel {
-  const _$_TaskModel(
+class _$TaskModelImpl implements _TaskModel {
+  const _$TaskModelImpl(
       {required this.id,
       required this.listModel,
       required this.dueDate,
@@ -175,8 +176,8 @@ class _$_TaskModel implements _TaskModel {
       @TimestampSerializer() required this.creationDate})
       : _groceries = groceries;
 
-  factory _$_TaskModel.fromJson(Map<String, dynamic> json) =>
-      _$$_TaskModelFromJson(json);
+  factory _$TaskModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$TaskModelImplFromJson(json);
 
   @override
   final String? id;
@@ -207,7 +208,7 @@ class _$_TaskModel implements _TaskModel {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_TaskModel &&
+            other is _$TaskModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.listModel, listModel) ||
                 other.listModel == listModel) &&
@@ -226,12 +227,12 @@ class _$_TaskModel implements _TaskModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TaskModelCopyWith<_$_TaskModel> get copyWith =>
-      __$$_TaskModelCopyWithImpl<_$_TaskModel>(this, _$identity);
+  _$$TaskModelImplCopyWith<_$TaskModelImpl> get copyWith =>
+      __$$TaskModelImplCopyWithImpl<_$TaskModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_TaskModelToJson(
+    return _$$TaskModelImplToJson(
       this,
     );
   }
@@ -244,10 +245,10 @@ abstract class _TaskModel implements TaskModel {
           required final DateTime? dueDate,
           required final List<GroceryModel?>? groceries,
           @TimestampSerializer() required final DateTime? creationDate}) =
-      _$_TaskModel;
+      _$TaskModelImpl;
 
   factory _TaskModel.fromJson(Map<String, dynamic> json) =
-      _$_TaskModel.fromJson;
+      _$TaskModelImpl.fromJson;
 
   @override
   String? get id;
@@ -262,6 +263,6 @@ abstract class _TaskModel implements TaskModel {
   DateTime? get creationDate;
   @override
   @JsonKey(ignore: true)
-  _$$_TaskModelCopyWith<_$_TaskModel> get copyWith =>
+  _$$TaskModelImplCopyWith<_$TaskModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

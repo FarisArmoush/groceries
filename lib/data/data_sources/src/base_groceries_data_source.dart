@@ -5,19 +5,41 @@ class BaseGroceriesDataSource {
 
   final FirebaseFirestore _firestore;
 
-  Future<List<Map<String, Object?>>> fetchAllGroceries() async {
+  Future<List<GroceryModel>> fetchAllGroceries() async {
     try {
       final collectionReference =
           _firestore.collection('items').orderBy('name');
       final result = await collectionReference.get();
-      final listOfMaps = <Map<String, Object?>>[];
+      final items = <GroceryModel>[];
       for (final element in result.docs) {
-        listOfMaps.add(element.data());
+        items.add(GroceryModel.fromJson(element.data()));
       }
-      return listOfMaps;
+      return items;
     } on FirebaseException catch (e) {
       log('fetchCategories Error Message => ${e.message}');
       return [];
     }
   }
+
+  Future<List<GroceryModel>> fetchCategoryItems(
+    String categoryId,
+  ) async {
+    try {
+      final collectionReference = _firestore
+          .collection('items')
+          .orderBy('name')
+          .where('categoryId', isEqualTo: categoryId);
+      final result = await collectionReference.get();
+      final items = <GroceryModel>[];
+      for (final element in result.docs) {
+        items.add(GroceryModel.fromJson(element.data()));
+      }
+      return items;
+    } on FirebaseException catch (e) {
+      log('fetchCategories Error Message => ${e.message}');
+      return [];
+    }
+  }
+
+  Future<void> addGroceryToList(GroceryModel groceryModel) async {}
 }

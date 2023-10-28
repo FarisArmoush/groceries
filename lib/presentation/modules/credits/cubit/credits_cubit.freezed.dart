@@ -87,11 +87,11 @@ class _$CreditsStateCopyWithImpl<$Res, $Val extends CreditsState>
 }
 
 /// @nodoc
-abstract class _$$_CreditsStateCopyWith<$Res>
+abstract class _$$CreditsStateImplCopyWith<$Res>
     implements $CreditsStateCopyWith<$Res> {
-  factory _$$_CreditsStateCopyWith(
-          _$_CreditsState value, $Res Function(_$_CreditsState) then) =
-      __$$_CreditsStateCopyWithImpl<$Res>;
+  factory _$$CreditsStateImplCopyWith(
+          _$CreditsStateImpl value, $Res Function(_$CreditsStateImpl) then) =
+      __$$CreditsStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -103,11 +103,11 @@ abstract class _$$_CreditsStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_CreditsStateCopyWithImpl<$Res>
-    extends _$CreditsStateCopyWithImpl<$Res, _$_CreditsState>
-    implements _$$_CreditsStateCopyWith<$Res> {
-  __$$_CreditsStateCopyWithImpl(
-      _$_CreditsState _value, $Res Function(_$_CreditsState) _then)
+class __$$CreditsStateImplCopyWithImpl<$Res>
+    extends _$CreditsStateCopyWithImpl<$Res, _$CreditsStateImpl>
+    implements _$$CreditsStateImplCopyWith<$Res> {
+  __$$CreditsStateImplCopyWithImpl(
+      _$CreditsStateImpl _value, $Res Function(_$CreditsStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -119,7 +119,7 @@ class __$$_CreditsStateCopyWithImpl<$Res>
     Object? miscPackages = null,
     Object? stateManagementPackages = null,
   }) {
-    return _then(_$_CreditsState(
+    return _then(_$CreditsStateImpl(
       uiPackages: null == uiPackages
           ? _value._uiPackages
           : uiPackages // ignore: cast_nullable_to_non_nullable
@@ -146,8 +146,8 @@ class __$$_CreditsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CreditsState extends _CreditsState {
-  const _$_CreditsState(
+class _$CreditsStateImpl extends _CreditsState {
+  const _$CreditsStateImpl(
       {required final List<CreditModel> uiPackages,
       required final List<CreditModel> backendPackages,
       required final List<CreditModel> devPackages,
@@ -210,7 +210,7 @@ class _$_CreditsState extends _CreditsState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CreditsState &&
+            other is _$CreditsStateImpl &&
             const DeepCollectionEquality()
                 .equals(other._uiPackages, _uiPackages) &&
             const DeepCollectionEquality()
@@ -235,8 +235,8 @@ class _$_CreditsState extends _CreditsState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CreditsStateCopyWith<_$_CreditsState> get copyWith =>
-      __$$_CreditsStateCopyWithImpl<_$_CreditsState>(this, _$identity);
+  _$$CreditsStateImplCopyWith<_$CreditsStateImpl> get copyWith =>
+      __$$CreditsStateImplCopyWithImpl<_$CreditsStateImpl>(this, _$identity);
 }
 
 abstract class _CreditsState extends CreditsState {
@@ -246,7 +246,7 @@ abstract class _CreditsState extends CreditsState {
           required final List<CreditModel> devPackages,
           required final List<CreditModel> miscPackages,
           required final List<CreditModel> stateManagementPackages}) =
-      _$_CreditsState;
+      _$CreditsStateImpl;
   const _CreditsState._() : super._();
 
   @override
@@ -261,6 +261,6 @@ abstract class _CreditsState extends CreditsState {
   List<CreditModel> get stateManagementPackages;
   @override
   @JsonKey(ignore: true)
-  _$$_CreditsStateCopyWith<_$_CreditsState> get copyWith =>
+  _$$CreditsStateImplCopyWith<_$CreditsStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

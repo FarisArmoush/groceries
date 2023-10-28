@@ -99,11 +99,11 @@ class _$GroceryListModelCopyWithImpl<$Res, $Val extends GroceryListModel>
 }
 
 /// @nodoc
-abstract class _$$_GroceryListModelCopyWith<$Res>
+abstract class _$$GroceryListModelImplCopyWith<$Res>
     implements $GroceryListModelCopyWith<$Res> {
-  factory _$$_GroceryListModelCopyWith(
-          _$_GroceryListModel value, $Res Function(_$_GroceryListModel) then) =
-      __$$_GroceryListModelCopyWithImpl<$Res>;
+  factory _$$GroceryListModelImplCopyWith(_$GroceryListModelImpl value,
+          $Res Function(_$GroceryListModelImpl) then) =
+      __$$GroceryListModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -116,11 +116,11 @@ abstract class _$$_GroceryListModelCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_GroceryListModelCopyWithImpl<$Res>
-    extends _$GroceryListModelCopyWithImpl<$Res, _$_GroceryListModel>
-    implements _$$_GroceryListModelCopyWith<$Res> {
-  __$$_GroceryListModelCopyWithImpl(
-      _$_GroceryListModel _value, $Res Function(_$_GroceryListModel) _then)
+class __$$GroceryListModelImplCopyWithImpl<$Res>
+    extends _$GroceryListModelCopyWithImpl<$Res, _$GroceryListModelImpl>
+    implements _$$GroceryListModelImplCopyWith<$Res> {
+  __$$GroceryListModelImplCopyWithImpl(_$GroceryListModelImpl _value,
+      $Res Function(_$GroceryListModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -133,7 +133,7 @@ class __$$_GroceryListModelCopyWithImpl<$Res>
     Object? members = freezed,
     Object? creationDate = freezed,
   }) {
-    return _then(_$_GroceryListModel(
+    return _then(_$GroceryListModelImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -164,10 +164,10 @@ class __$$_GroceryListModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_GroceryListModel
+class _$GroceryListModelImpl
     with DiagnosticableTreeMixin
     implements _GroceryListModel {
-  const _$_GroceryListModel(
+  const _$GroceryListModelImpl(
       {required this.id,
       required this.name,
       required this.imageUrl,
@@ -177,8 +177,8 @@ class _$_GroceryListModel
       : _items = items,
         _members = members;
 
-  factory _$_GroceryListModel.fromJson(Map<String, dynamic> json) =>
-      _$$_GroceryListModelFromJson(json);
+  factory _$GroceryListModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GroceryListModelImplFromJson(json);
 
   @override
   final String? id;
@@ -232,7 +232,7 @@ class _$_GroceryListModel
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GroceryListModel &&
+            other is _$GroceryListModelImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.imageUrl, imageUrl) ||
@@ -257,12 +257,13 @@ class _$_GroceryListModel
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GroceryListModelCopyWith<_$_GroceryListModel> get copyWith =>
-      __$$_GroceryListModelCopyWithImpl<_$_GroceryListModel>(this, _$identity);
+  _$$GroceryListModelImplCopyWith<_$GroceryListModelImpl> get copyWith =>
+      __$$GroceryListModelImplCopyWithImpl<_$GroceryListModelImpl>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GroceryListModelToJson(
+    return _$$GroceryListModelImplToJson(
       this,
     );
   }
@@ -276,10 +277,10 @@ abstract class _GroceryListModel implements GroceryListModel {
           required final List<GroceryModel?>? items,
           required final List<UserModel?>? members,
           @TimestampSerializer() required final DateTime? creationDate}) =
-      _$_GroceryListModel;
+      _$GroceryListModelImpl;
 
   factory _GroceryListModel.fromJson(Map<String, dynamic> json) =
-      _$_GroceryListModel.fromJson;
+      _$GroceryListModelImpl.fromJson;
 
   @override
   String? get id;
@@ -296,6 +297,6 @@ abstract class _GroceryListModel implements GroceryListModel {
   DateTime? get creationDate;
   @override
   @JsonKey(ignore: true)
-  _$$_GroceryListModelCopyWith<_$_GroceryListModel> get copyWith =>
+  _$$GroceryListModelImplCopyWith<_$GroceryListModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

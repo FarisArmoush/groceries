@@ -1,15 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-// ignore_for_file: non_constant_identifier_names
-
 part of 'recipe_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_RecipeModel _$$_RecipeModelFromJson(Map<String, dynamic> json) =>
-    _$_RecipeModel(
+_$RecipeModelImpl _$$RecipeModelImplFromJson(Map<String, dynamic> json) =>
+    _$RecipeModelImpl(
       id: json['id'] as String?,
       name: json['name'] as String?,
       imageUrl: json['imageUrl'] as String?,
@@ -26,7 +24,7 @@ _$_RecipeModel _$$_RecipeModelFromJson(Map<String, dynamic> json) =>
       ),
     );
 
-Map<String, dynamic> _$$_RecipeModelToJson(_$_RecipeModel instance) =>
+Map<String, dynamic> _$$RecipeModelImplToJson(_$RecipeModelImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,

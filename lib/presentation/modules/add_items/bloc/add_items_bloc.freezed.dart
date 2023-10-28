@@ -19,53 +19,32 @@ mixin _$AddItemsEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getParentCategories,
-    required TResult Function(GroceryModel groceryModel, String collectionPath)
-        addItemToList,
-    required TResult Function(String category) setActiveCategory,
-    required TResult Function() getCategoryItems,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getParentCategories,
-    TResult? Function(GroceryModel groceryModel, String collectionPath)?
-        addItemToList,
-    TResult? Function(String category)? setActiveCategory,
-    TResult? Function()? getCategoryItems,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getParentCategories,
-    TResult Function(GroceryModel groceryModel, String collectionPath)?
-        addItemToList,
-    TResult Function(String category)? setActiveCategory,
-    TResult Function()? getCategoryItems,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetParentCategories value) getParentCategories,
-    required TResult Function(_AddItemToList value) addItemToList,
-    required TResult Function(_SetActiveCategory value) setActiveCategory,
-    required TResult Function(_GetCategoryItems value) getCategoryItems,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetParentCategories value)? getParentCategories,
-    TResult? Function(_AddItemToList value)? addItemToList,
-    TResult? Function(_SetActiveCategory value)? setActiveCategory,
-    TResult? Function(_GetCategoryItems value)? getCategoryItems,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetParentCategories value)? getParentCategories,
-    TResult Function(_AddItemToList value)? addItemToList,
-    TResult Function(_SetActiveCategory value)? setActiveCategory,
-    TResult Function(_GetCategoryItems value)? getCategoryItems,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -90,25 +69,25 @@ class _$AddItemsEventCopyWithImpl<$Res, $Val extends AddItemsEvent>
 }
 
 /// @nodoc
-abstract class _$$_GetParentCategoriesCopyWith<$Res> {
-  factory _$$_GetParentCategoriesCopyWith(_$_GetParentCategories value,
-          $Res Function(_$_GetParentCategories) then) =
-      __$$_GetParentCategoriesCopyWithImpl<$Res>;
+abstract class _$$GetParentCategoriesImplCopyWith<$Res> {
+  factory _$$GetParentCategoriesImplCopyWith(_$GetParentCategoriesImpl value,
+          $Res Function(_$GetParentCategoriesImpl) then) =
+      __$$GetParentCategoriesImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_GetParentCategoriesCopyWithImpl<$Res>
-    extends _$AddItemsEventCopyWithImpl<$Res, _$_GetParentCategories>
-    implements _$$_GetParentCategoriesCopyWith<$Res> {
-  __$$_GetParentCategoriesCopyWithImpl(_$_GetParentCategories _value,
-      $Res Function(_$_GetParentCategories) _then)
+class __$$GetParentCategoriesImplCopyWithImpl<$Res>
+    extends _$AddItemsEventCopyWithImpl<$Res, _$GetParentCategoriesImpl>
+    implements _$$GetParentCategoriesImplCopyWith<$Res> {
+  __$$GetParentCategoriesImplCopyWithImpl(_$GetParentCategoriesImpl _value,
+      $Res Function(_$GetParentCategoriesImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_GetParentCategories implements _GetParentCategories {
-  const _$_GetParentCategories();
+class _$GetParentCategoriesImpl implements _GetParentCategories {
+  const _$GetParentCategoriesImpl();
 
   @override
   String toString() {
@@ -118,7 +97,8 @@ class _$_GetParentCategories implements _GetParentCategories {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_GetParentCategories);
+        (other.runtimeType == runtimeType &&
+            other is _$GetParentCategoriesImpl);
   }
 
   @override
@@ -128,10 +108,6 @@ class _$_GetParentCategories implements _GetParentCategories {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() getParentCategories,
-    required TResult Function(GroceryModel groceryModel, String collectionPath)
-        addItemToList,
-    required TResult Function(String category) setActiveCategory,
-    required TResult Function() getCategoryItems,
   }) {
     return getParentCategories();
   }
@@ -140,10 +116,6 @@ class _$_GetParentCategories implements _GetParentCategories {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? getParentCategories,
-    TResult? Function(GroceryModel groceryModel, String collectionPath)?
-        addItemToList,
-    TResult? Function(String category)? setActiveCategory,
-    TResult? Function()? getCategoryItems,
   }) {
     return getParentCategories?.call();
   }
@@ -152,10 +124,6 @@ class _$_GetParentCategories implements _GetParentCategories {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? getParentCategories,
-    TResult Function(GroceryModel groceryModel, String collectionPath)?
-        addItemToList,
-    TResult Function(String category)? setActiveCategory,
-    TResult Function()? getCategoryItems,
     required TResult orElse(),
   }) {
     if (getParentCategories != null) {
@@ -168,9 +136,6 @@ class _$_GetParentCategories implements _GetParentCategories {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_GetParentCategories value) getParentCategories,
-    required TResult Function(_AddItemToList value) addItemToList,
-    required TResult Function(_SetActiveCategory value) setActiveCategory,
-    required TResult Function(_GetCategoryItems value) getCategoryItems,
   }) {
     return getParentCategories(this);
   }
@@ -179,9 +144,6 @@ class _$_GetParentCategories implements _GetParentCategories {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_GetParentCategories value)? getParentCategories,
-    TResult? Function(_AddItemToList value)? addItemToList,
-    TResult? Function(_SetActiveCategory value)? setActiveCategory,
-    TResult? Function(_GetCategoryItems value)? getCategoryItems,
   }) {
     return getParentCategories?.call(this);
   }
@@ -190,9 +152,6 @@ class _$_GetParentCategories implements _GetParentCategories {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_GetParentCategories value)? getParentCategories,
-    TResult Function(_AddItemToList value)? addItemToList,
-    TResult Function(_SetActiveCategory value)? setActiveCategory,
-    TResult Function(_GetCategoryItems value)? getCategoryItems,
     required TResult orElse(),
   }) {
     if (getParentCategories != null) {
@@ -203,455 +162,13 @@ class _$_GetParentCategories implements _GetParentCategories {
 }
 
 abstract class _GetParentCategories implements AddItemsEvent {
-  const factory _GetParentCategories() = _$_GetParentCategories;
-}
-
-/// @nodoc
-abstract class _$$_AddItemToListCopyWith<$Res> {
-  factory _$$_AddItemToListCopyWith(
-          _$_AddItemToList value, $Res Function(_$_AddItemToList) then) =
-      __$$_AddItemToListCopyWithImpl<$Res>;
-  @useResult
-  $Res call({GroceryModel groceryModel, String collectionPath});
-
-  $GroceryModelCopyWith<$Res> get groceryModel;
-}
-
-/// @nodoc
-class __$$_AddItemToListCopyWithImpl<$Res>
-    extends _$AddItemsEventCopyWithImpl<$Res, _$_AddItemToList>
-    implements _$$_AddItemToListCopyWith<$Res> {
-  __$$_AddItemToListCopyWithImpl(
-      _$_AddItemToList _value, $Res Function(_$_AddItemToList) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? groceryModel = null,
-    Object? collectionPath = null,
-  }) {
-    return _then(_$_AddItemToList(
-      groceryModel: null == groceryModel
-          ? _value.groceryModel
-          : groceryModel // ignore: cast_nullable_to_non_nullable
-              as GroceryModel,
-      collectionPath: null == collectionPath
-          ? _value.collectionPath
-          : collectionPath // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $GroceryModelCopyWith<$Res> get groceryModel {
-    return $GroceryModelCopyWith<$Res>(_value.groceryModel, (value) {
-      return _then(_value.copyWith(groceryModel: value));
-    });
-  }
-}
-
-/// @nodoc
-
-class _$_AddItemToList implements _AddItemToList {
-  const _$_AddItemToList(
-      {required this.groceryModel, required this.collectionPath});
-
-  @override
-  final GroceryModel groceryModel;
-  @override
-  final String collectionPath;
-
-  @override
-  String toString() {
-    return 'AddItemsEvent.addItemToList(groceryModel: $groceryModel, collectionPath: $collectionPath)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_AddItemToList &&
-            (identical(other.groceryModel, groceryModel) ||
-                other.groceryModel == groceryModel) &&
-            (identical(other.collectionPath, collectionPath) ||
-                other.collectionPath == collectionPath));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, groceryModel, collectionPath);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_AddItemToListCopyWith<_$_AddItemToList> get copyWith =>
-      __$$_AddItemToListCopyWithImpl<_$_AddItemToList>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() getParentCategories,
-    required TResult Function(GroceryModel groceryModel, String collectionPath)
-        addItemToList,
-    required TResult Function(String category) setActiveCategory,
-    required TResult Function() getCategoryItems,
-  }) {
-    return addItemToList(groceryModel, collectionPath);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? getParentCategories,
-    TResult? Function(GroceryModel groceryModel, String collectionPath)?
-        addItemToList,
-    TResult? Function(String category)? setActiveCategory,
-    TResult? Function()? getCategoryItems,
-  }) {
-    return addItemToList?.call(groceryModel, collectionPath);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getParentCategories,
-    TResult Function(GroceryModel groceryModel, String collectionPath)?
-        addItemToList,
-    TResult Function(String category)? setActiveCategory,
-    TResult Function()? getCategoryItems,
-    required TResult orElse(),
-  }) {
-    if (addItemToList != null) {
-      return addItemToList(groceryModel, collectionPath);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GetParentCategories value) getParentCategories,
-    required TResult Function(_AddItemToList value) addItemToList,
-    required TResult Function(_SetActiveCategory value) setActiveCategory,
-    required TResult Function(_GetCategoryItems value) getCategoryItems,
-  }) {
-    return addItemToList(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_GetParentCategories value)? getParentCategories,
-    TResult? Function(_AddItemToList value)? addItemToList,
-    TResult? Function(_SetActiveCategory value)? setActiveCategory,
-    TResult? Function(_GetCategoryItems value)? getCategoryItems,
-  }) {
-    return addItemToList?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetParentCategories value)? getParentCategories,
-    TResult Function(_AddItemToList value)? addItemToList,
-    TResult Function(_SetActiveCategory value)? setActiveCategory,
-    TResult Function(_GetCategoryItems value)? getCategoryItems,
-    required TResult orElse(),
-  }) {
-    if (addItemToList != null) {
-      return addItemToList(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _AddItemToList implements AddItemsEvent {
-  const factory _AddItemToList(
-      {required final GroceryModel groceryModel,
-      required final String collectionPath}) = _$_AddItemToList;
-
-  GroceryModel get groceryModel;
-  String get collectionPath;
-  @JsonKey(ignore: true)
-  _$$_AddItemToListCopyWith<_$_AddItemToList> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_SetActiveCategoryCopyWith<$Res> {
-  factory _$$_SetActiveCategoryCopyWith(_$_SetActiveCategory value,
-          $Res Function(_$_SetActiveCategory) then) =
-      __$$_SetActiveCategoryCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String category});
-}
-
-/// @nodoc
-class __$$_SetActiveCategoryCopyWithImpl<$Res>
-    extends _$AddItemsEventCopyWithImpl<$Res, _$_SetActiveCategory>
-    implements _$$_SetActiveCategoryCopyWith<$Res> {
-  __$$_SetActiveCategoryCopyWithImpl(
-      _$_SetActiveCategory _value, $Res Function(_$_SetActiveCategory) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? category = null,
-  }) {
-    return _then(_$_SetActiveCategory(
-      null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_SetActiveCategory implements _SetActiveCategory {
-  const _$_SetActiveCategory(this.category);
-
-  @override
-  final String category;
-
-  @override
-  String toString() {
-    return 'AddItemsEvent.setActiveCategory(category: $category)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_SetActiveCategory &&
-            (identical(other.category, category) ||
-                other.category == category));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, category);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_SetActiveCategoryCopyWith<_$_SetActiveCategory> get copyWith =>
-      __$$_SetActiveCategoryCopyWithImpl<_$_SetActiveCategory>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() getParentCategories,
-    required TResult Function(GroceryModel groceryModel, String collectionPath)
-        addItemToList,
-    required TResult Function(String category) setActiveCategory,
-    required TResult Function() getCategoryItems,
-  }) {
-    return setActiveCategory(category);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? getParentCategories,
-    TResult? Function(GroceryModel groceryModel, String collectionPath)?
-        addItemToList,
-    TResult? Function(String category)? setActiveCategory,
-    TResult? Function()? getCategoryItems,
-  }) {
-    return setActiveCategory?.call(category);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getParentCategories,
-    TResult Function(GroceryModel groceryModel, String collectionPath)?
-        addItemToList,
-    TResult Function(String category)? setActiveCategory,
-    TResult Function()? getCategoryItems,
-    required TResult orElse(),
-  }) {
-    if (setActiveCategory != null) {
-      return setActiveCategory(category);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GetParentCategories value) getParentCategories,
-    required TResult Function(_AddItemToList value) addItemToList,
-    required TResult Function(_SetActiveCategory value) setActiveCategory,
-    required TResult Function(_GetCategoryItems value) getCategoryItems,
-  }) {
-    return setActiveCategory(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_GetParentCategories value)? getParentCategories,
-    TResult? Function(_AddItemToList value)? addItemToList,
-    TResult? Function(_SetActiveCategory value)? setActiveCategory,
-    TResult? Function(_GetCategoryItems value)? getCategoryItems,
-  }) {
-    return setActiveCategory?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetParentCategories value)? getParentCategories,
-    TResult Function(_AddItemToList value)? addItemToList,
-    TResult Function(_SetActiveCategory value)? setActiveCategory,
-    TResult Function(_GetCategoryItems value)? getCategoryItems,
-    required TResult orElse(),
-  }) {
-    if (setActiveCategory != null) {
-      return setActiveCategory(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SetActiveCategory implements AddItemsEvent {
-  const factory _SetActiveCategory(final String category) =
-      _$_SetActiveCategory;
-
-  String get category;
-  @JsonKey(ignore: true)
-  _$$_SetActiveCategoryCopyWith<_$_SetActiveCategory> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_GetCategoryItemsCopyWith<$Res> {
-  factory _$$_GetCategoryItemsCopyWith(
-          _$_GetCategoryItems value, $Res Function(_$_GetCategoryItems) then) =
-      __$$_GetCategoryItemsCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_GetCategoryItemsCopyWithImpl<$Res>
-    extends _$AddItemsEventCopyWithImpl<$Res, _$_GetCategoryItems>
-    implements _$$_GetCategoryItemsCopyWith<$Res> {
-  __$$_GetCategoryItemsCopyWithImpl(
-      _$_GetCategoryItems _value, $Res Function(_$_GetCategoryItems) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_GetCategoryItems implements _GetCategoryItems {
-  const _$_GetCategoryItems();
-
-  @override
-  String toString() {
-    return 'AddItemsEvent.getCategoryItems()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_GetCategoryItems);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() getParentCategories,
-    required TResult Function(GroceryModel groceryModel, String collectionPath)
-        addItemToList,
-    required TResult Function(String category) setActiveCategory,
-    required TResult Function() getCategoryItems,
-  }) {
-    return getCategoryItems();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? getParentCategories,
-    TResult? Function(GroceryModel groceryModel, String collectionPath)?
-        addItemToList,
-    TResult? Function(String category)? setActiveCategory,
-    TResult? Function()? getCategoryItems,
-  }) {
-    return getCategoryItems?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? getParentCategories,
-    TResult Function(GroceryModel groceryModel, String collectionPath)?
-        addItemToList,
-    TResult Function(String category)? setActiveCategory,
-    TResult Function()? getCategoryItems,
-    required TResult orElse(),
-  }) {
-    if (getCategoryItems != null) {
-      return getCategoryItems();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_GetParentCategories value) getParentCategories,
-    required TResult Function(_AddItemToList value) addItemToList,
-    required TResult Function(_SetActiveCategory value) setActiveCategory,
-    required TResult Function(_GetCategoryItems value) getCategoryItems,
-  }) {
-    return getCategoryItems(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_GetParentCategories value)? getParentCategories,
-    TResult? Function(_AddItemToList value)? addItemToList,
-    TResult? Function(_SetActiveCategory value)? setActiveCategory,
-    TResult? Function(_GetCategoryItems value)? getCategoryItems,
-  }) {
-    return getCategoryItems?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GetParentCategories value)? getParentCategories,
-    TResult Function(_AddItemToList value)? addItemToList,
-    TResult Function(_SetActiveCategory value)? setActiveCategory,
-    TResult Function(_GetCategoryItems value)? getCategoryItems,
-    required TResult orElse(),
-  }) {
-    if (getCategoryItems != null) {
-      return getCategoryItems(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _GetCategoryItems implements AddItemsEvent {
-  const factory _GetCategoryItems() = _$_GetCategoryItems;
+  const factory _GetParentCategories() = _$GetParentCategoriesImpl;
 }
 
 /// @nodoc
 mixin _$AddItemsState {
-  List<CategoryModel> get categories => throw _privateConstructorUsedError;
-  List<GroceryModel> get baseGroceries => throw _privateConstructorUsedError;
-  String get selectedCategory => throw _privateConstructorUsedError;
-  String get error => throw _privateConstructorUsedError;
+  List<CategoryModel> get parentCategories =>
+      throw _privateConstructorUsedError;
   BlocStatus get status => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -665,12 +182,7 @@ abstract class $AddItemsStateCopyWith<$Res> {
           AddItemsState value, $Res Function(AddItemsState) then) =
       _$AddItemsStateCopyWithImpl<$Res, AddItemsState>;
   @useResult
-  $Res call(
-      {List<CategoryModel> categories,
-      List<GroceryModel> baseGroceries,
-      String selectedCategory,
-      String error,
-      BlocStatus status});
+  $Res call({List<CategoryModel> parentCategories, BlocStatus status});
 
   $BlocStatusCopyWith<$Res> get status;
 }
@@ -688,29 +200,14 @@ class _$AddItemsStateCopyWithImpl<$Res, $Val extends AddItemsState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? categories = null,
-    Object? baseGroceries = null,
-    Object? selectedCategory = null,
-    Object? error = null,
+    Object? parentCategories = null,
     Object? status = null,
   }) {
     return _then(_value.copyWith(
-      categories: null == categories
-          ? _value.categories
-          : categories // ignore: cast_nullable_to_non_nullable
+      parentCategories: null == parentCategories
+          ? _value.parentCategories
+          : parentCategories // ignore: cast_nullable_to_non_nullable
               as List<CategoryModel>,
-      baseGroceries: null == baseGroceries
-          ? _value.baseGroceries
-          : baseGroceries // ignore: cast_nullable_to_non_nullable
-              as List<GroceryModel>,
-      selectedCategory: null == selectedCategory
-          ? _value.selectedCategory
-          : selectedCategory // ignore: cast_nullable_to_non_nullable
-              as String,
-      error: null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -728,58 +225,38 @@ class _$AddItemsStateCopyWithImpl<$Res, $Val extends AddItemsState>
 }
 
 /// @nodoc
-abstract class _$$_AddItemsStateCopyWith<$Res>
+abstract class _$$AddItemsStateImplCopyWith<$Res>
     implements $AddItemsStateCopyWith<$Res> {
-  factory _$$_AddItemsStateCopyWith(
-          _$_AddItemsState value, $Res Function(_$_AddItemsState) then) =
-      __$$_AddItemsStateCopyWithImpl<$Res>;
+  factory _$$AddItemsStateImplCopyWith(
+          _$AddItemsStateImpl value, $Res Function(_$AddItemsStateImpl) then) =
+      __$$AddItemsStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {List<CategoryModel> categories,
-      List<GroceryModel> baseGroceries,
-      String selectedCategory,
-      String error,
-      BlocStatus status});
+  $Res call({List<CategoryModel> parentCategories, BlocStatus status});
 
   @override
   $BlocStatusCopyWith<$Res> get status;
 }
 
 /// @nodoc
-class __$$_AddItemsStateCopyWithImpl<$Res>
-    extends _$AddItemsStateCopyWithImpl<$Res, _$_AddItemsState>
-    implements _$$_AddItemsStateCopyWith<$Res> {
-  __$$_AddItemsStateCopyWithImpl(
-      _$_AddItemsState _value, $Res Function(_$_AddItemsState) _then)
+class __$$AddItemsStateImplCopyWithImpl<$Res>
+    extends _$AddItemsStateCopyWithImpl<$Res, _$AddItemsStateImpl>
+    implements _$$AddItemsStateImplCopyWith<$Res> {
+  __$$AddItemsStateImplCopyWithImpl(
+      _$AddItemsStateImpl _value, $Res Function(_$AddItemsStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? categories = null,
-    Object? baseGroceries = null,
-    Object? selectedCategory = null,
-    Object? error = null,
+    Object? parentCategories = null,
     Object? status = null,
   }) {
-    return _then(_$_AddItemsState(
-      categories: null == categories
-          ? _value._categories
-          : categories // ignore: cast_nullable_to_non_nullable
+    return _then(_$AddItemsStateImpl(
+      parentCategories: null == parentCategories
+          ? _value._parentCategories
+          : parentCategories // ignore: cast_nullable_to_non_nullable
               as List<CategoryModel>,
-      baseGroceries: null == baseGroceries
-          ? _value._baseGroceries
-          : baseGroceries // ignore: cast_nullable_to_non_nullable
-              as List<GroceryModel>,
-      selectedCategory: null == selectedCategory
-          ? _value.selectedCategory
-          : selectedCategory // ignore: cast_nullable_to_non_nullable
-              as String,
-      error: null == error
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -790,102 +267,65 @@ class __$$_AddItemsStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AddItemsState extends _AddItemsState {
-  const _$_AddItemsState(
-      {final List<CategoryModel> categories = const <CategoryModel>[],
-      final List<GroceryModel> baseGroceries = const <GroceryModel>[],
-      this.selectedCategory = 'All',
-      this.error = 'Failed to get data. Try again later.',
+class _$AddItemsStateImpl extends _AddItemsState {
+  const _$AddItemsStateImpl(
+      {final List<CategoryModel> parentCategories = const <CategoryModel>[],
       this.status = const BlocStatus.initial()})
-      : _categories = categories,
-        _baseGroceries = baseGroceries,
+      : _parentCategories = parentCategories,
         super._();
 
-  final List<CategoryModel> _categories;
+  final List<CategoryModel> _parentCategories;
   @override
   @JsonKey()
-  List<CategoryModel> get categories {
-    if (_categories is EqualUnmodifiableListView) return _categories;
+  List<CategoryModel> get parentCategories {
+    if (_parentCategories is EqualUnmodifiableListView)
+      return _parentCategories;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_categories);
+    return EqualUnmodifiableListView(_parentCategories);
   }
 
-  final List<GroceryModel> _baseGroceries;
-  @override
-  @JsonKey()
-  List<GroceryModel> get baseGroceries {
-    if (_baseGroceries is EqualUnmodifiableListView) return _baseGroceries;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_baseGroceries);
-  }
-
-  @override
-  @JsonKey()
-  final String selectedCategory;
-  @override
-  @JsonKey()
-  final String error;
   @override
   @JsonKey()
   final BlocStatus status;
 
   @override
   String toString() {
-    return 'AddItemsState(categories: $categories, baseGroceries: $baseGroceries, selectedCategory: $selectedCategory, error: $error, status: $status)';
+    return 'AddItemsState(parentCategories: $parentCategories, status: $status)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_AddItemsState &&
+            other is _$AddItemsStateImpl &&
             const DeepCollectionEquality()
-                .equals(other._categories, _categories) &&
-            const DeepCollectionEquality()
-                .equals(other._baseGroceries, _baseGroceries) &&
-            (identical(other.selectedCategory, selectedCategory) ||
-                other.selectedCategory == selectedCategory) &&
-            (identical(other.error, error) || other.error == error) &&
+                .equals(other._parentCategories, _parentCategories) &&
             (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_categories),
-      const DeepCollectionEquality().hash(_baseGroceries),
-      selectedCategory,
-      error,
-      status);
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_parentCategories), status);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_AddItemsStateCopyWith<_$_AddItemsState> get copyWith =>
-      __$$_AddItemsStateCopyWithImpl<_$_AddItemsState>(this, _$identity);
+  _$$AddItemsStateImplCopyWith<_$AddItemsStateImpl> get copyWith =>
+      __$$AddItemsStateImplCopyWithImpl<_$AddItemsStateImpl>(this, _$identity);
 }
 
 abstract class _AddItemsState extends AddItemsState {
   const factory _AddItemsState(
-      {final List<CategoryModel> categories,
-      final List<GroceryModel> baseGroceries,
-      final String selectedCategory,
-      final String error,
-      final BlocStatus status}) = _$_AddItemsState;
+      {final List<CategoryModel> parentCategories,
+      final BlocStatus status}) = _$AddItemsStateImpl;
   const _AddItemsState._() : super._();
 
   @override
-  List<CategoryModel> get categories;
-  @override
-  List<GroceryModel> get baseGroceries;
-  @override
-  String get selectedCategory;
-  @override
-  String get error;
+  List<CategoryModel> get parentCategories;
   @override
   BlocStatus get status;
   @override
   @JsonKey(ignore: true)
-  _$$_AddItemsStateCopyWith<_$_AddItemsState> get copyWith =>
+  _$$AddItemsStateImplCopyWith<_$AddItemsStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

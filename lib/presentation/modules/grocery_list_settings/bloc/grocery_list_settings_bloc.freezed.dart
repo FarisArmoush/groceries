@@ -70,25 +70,25 @@ class _$GroceryListSettingsEventCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_DeleteListCopyWith<$Res> {
-  factory _$$_DeleteListCopyWith(
-          _$_DeleteList value, $Res Function(_$_DeleteList) then) =
-      __$$_DeleteListCopyWithImpl<$Res>;
+abstract class _$$DeleteListImplCopyWith<$Res> {
+  factory _$$DeleteListImplCopyWith(
+          _$DeleteListImpl value, $Res Function(_$DeleteListImpl) then) =
+      __$$DeleteListImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_DeleteListCopyWithImpl<$Res>
-    extends _$GroceryListSettingsEventCopyWithImpl<$Res, _$_DeleteList>
-    implements _$$_DeleteListCopyWith<$Res> {
-  __$$_DeleteListCopyWithImpl(
-      _$_DeleteList _value, $Res Function(_$_DeleteList) _then)
+class __$$DeleteListImplCopyWithImpl<$Res>
+    extends _$GroceryListSettingsEventCopyWithImpl<$Res, _$DeleteListImpl>
+    implements _$$DeleteListImplCopyWith<$Res> {
+  __$$DeleteListImplCopyWithImpl(
+      _$DeleteListImpl _value, $Res Function(_$DeleteListImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_DeleteList implements _DeleteList {
-  const _$_DeleteList();
+class _$DeleteListImpl implements _DeleteList {
+  const _$DeleteListImpl();
 
   @override
   String toString() {
@@ -98,7 +98,7 @@ class _$_DeleteList implements _DeleteList {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_DeleteList);
+        (other.runtimeType == runtimeType && other is _$DeleteListImpl);
   }
 
   @override
@@ -162,7 +162,7 @@ class _$_DeleteList implements _DeleteList {
 }
 
 abstract class _DeleteList implements GroceryListSettingsEvent {
-  const factory _DeleteList() = _$_DeleteList;
+  const factory _DeleteList() = _$DeleteListImpl;
 }
 
 /// @nodoc
@@ -188,27 +188,28 @@ class _$GroceryListSettingsStateCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_GroceryListSettingsStateCopyWith<$Res> {
-  factory _$$_GroceryListSettingsStateCopyWith(
-          _$_GroceryListSettingsState value,
-          $Res Function(_$_GroceryListSettingsState) then) =
-      __$$_GroceryListSettingsStateCopyWithImpl<$Res>;
+abstract class _$$GroceryListSettingsStateImplCopyWith<$Res> {
+  factory _$$GroceryListSettingsStateImplCopyWith(
+          _$GroceryListSettingsStateImpl value,
+          $Res Function(_$GroceryListSettingsStateImpl) then) =
+      __$$GroceryListSettingsStateImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_GroceryListSettingsStateCopyWithImpl<$Res>
+class __$$GroceryListSettingsStateImplCopyWithImpl<$Res>
     extends _$GroceryListSettingsStateCopyWithImpl<$Res,
-        _$_GroceryListSettingsState>
-    implements _$$_GroceryListSettingsStateCopyWith<$Res> {
-  __$$_GroceryListSettingsStateCopyWithImpl(_$_GroceryListSettingsState _value,
-      $Res Function(_$_GroceryListSettingsState) _then)
+        _$GroceryListSettingsStateImpl>
+    implements _$$GroceryListSettingsStateImplCopyWith<$Res> {
+  __$$GroceryListSettingsStateImplCopyWithImpl(
+      _$GroceryListSettingsStateImpl _value,
+      $Res Function(_$GroceryListSettingsStateImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_GroceryListSettingsState extends _GroceryListSettingsState {
-  const _$_GroceryListSettingsState() : super._();
+class _$GroceryListSettingsStateImpl extends _GroceryListSettingsState {
+  const _$GroceryListSettingsStateImpl() : super._();
 
   @override
   String toString() {
@@ -219,7 +220,7 @@ class _$_GroceryListSettingsState extends _GroceryListSettingsState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GroceryListSettingsState);
+            other is _$GroceryListSettingsStateImpl);
   }
 
   @override
@@ -227,6 +228,6 @@ class _$_GroceryListSettingsState extends _GroceryListSettingsState {
 }
 
 abstract class _GroceryListSettingsState extends GroceryListSettingsState {
-  const factory _GroceryListSettingsState() = _$_GroceryListSettingsState;
+  const factory _GroceryListSettingsState() = _$GroceryListSettingsStateImpl;
   const _GroceryListSettingsState._() : super._();
 }

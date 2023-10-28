@@ -89,22 +89,22 @@ class _$RootNavigationEventCopyWithImpl<$Res, $Val extends RootNavigationEvent>
 }
 
 /// @nodoc
-abstract class _$$_NavigateToIndexCopyWith<$Res>
+abstract class _$$NavigateToIndexImplCopyWith<$Res>
     implements $RootNavigationEventCopyWith<$Res> {
-  factory _$$_NavigateToIndexCopyWith(
-          _$_NavigateToIndex value, $Res Function(_$_NavigateToIndex) then) =
-      __$$_NavigateToIndexCopyWithImpl<$Res>;
+  factory _$$NavigateToIndexImplCopyWith(_$NavigateToIndexImpl value,
+          $Res Function(_$NavigateToIndexImpl) then) =
+      __$$NavigateToIndexImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int index});
 }
 
 /// @nodoc
-class __$$_NavigateToIndexCopyWithImpl<$Res>
-    extends _$RootNavigationEventCopyWithImpl<$Res, _$_NavigateToIndex>
-    implements _$$_NavigateToIndexCopyWith<$Res> {
-  __$$_NavigateToIndexCopyWithImpl(
-      _$_NavigateToIndex _value, $Res Function(_$_NavigateToIndex) _then)
+class __$$NavigateToIndexImplCopyWithImpl<$Res>
+    extends _$RootNavigationEventCopyWithImpl<$Res, _$NavigateToIndexImpl>
+    implements _$$NavigateToIndexImplCopyWith<$Res> {
+  __$$NavigateToIndexImplCopyWithImpl(
+      _$NavigateToIndexImpl _value, $Res Function(_$NavigateToIndexImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -112,7 +112,7 @@ class __$$_NavigateToIndexCopyWithImpl<$Res>
   $Res call({
     Object? index = null,
   }) {
-    return _then(_$_NavigateToIndex(
+    return _then(_$NavigateToIndexImpl(
       null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
@@ -123,8 +123,8 @@ class __$$_NavigateToIndexCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_NavigateToIndex implements _NavigateToIndex {
-  const _$_NavigateToIndex(this.index);
+class _$NavigateToIndexImpl implements _NavigateToIndex {
+  const _$NavigateToIndexImpl(this.index);
 
   @override
   final int index;
@@ -138,7 +138,7 @@ class _$_NavigateToIndex implements _NavigateToIndex {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NavigateToIndex &&
+            other is _$NavigateToIndexImpl &&
             (identical(other.index, index) || other.index == index));
   }
 
@@ -148,8 +148,9 @@ class _$_NavigateToIndex implements _NavigateToIndex {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NavigateToIndexCopyWith<_$_NavigateToIndex> get copyWith =>
-      __$$_NavigateToIndexCopyWithImpl<_$_NavigateToIndex>(this, _$identity);
+  _$$NavigateToIndexImplCopyWith<_$NavigateToIndexImpl> get copyWith =>
+      __$$NavigateToIndexImplCopyWithImpl<_$NavigateToIndexImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -209,13 +210,13 @@ class _$_NavigateToIndex implements _NavigateToIndex {
 }
 
 abstract class _NavigateToIndex implements RootNavigationEvent {
-  const factory _NavigateToIndex(final int index) = _$_NavigateToIndex;
+  const factory _NavigateToIndex(final int index) = _$NavigateToIndexImpl;
 
   @override
   int get index;
   @override
   @JsonKey(ignore: true)
-  _$$_NavigateToIndexCopyWith<_$_NavigateToIndex> get copyWith =>
+  _$$NavigateToIndexImplCopyWith<_$NavigateToIndexImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -262,22 +263,22 @@ class _$RootNavigationStateCopyWithImpl<$Res, $Val extends RootNavigationState>
 }
 
 /// @nodoc
-abstract class _$$_RootNavigationStateCopyWith<$Res>
+abstract class _$$RootNavigationStateImplCopyWith<$Res>
     implements $RootNavigationStateCopyWith<$Res> {
-  factory _$$_RootNavigationStateCopyWith(_$_RootNavigationState value,
-          $Res Function(_$_RootNavigationState) then) =
-      __$$_RootNavigationStateCopyWithImpl<$Res>;
+  factory _$$RootNavigationStateImplCopyWith(_$RootNavigationStateImpl value,
+          $Res Function(_$RootNavigationStateImpl) then) =
+      __$$RootNavigationStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int index});
 }
 
 /// @nodoc
-class __$$_RootNavigationStateCopyWithImpl<$Res>
-    extends _$RootNavigationStateCopyWithImpl<$Res, _$_RootNavigationState>
-    implements _$$_RootNavigationStateCopyWith<$Res> {
-  __$$_RootNavigationStateCopyWithImpl(_$_RootNavigationState _value,
-      $Res Function(_$_RootNavigationState) _then)
+class __$$RootNavigationStateImplCopyWithImpl<$Res>
+    extends _$RootNavigationStateCopyWithImpl<$Res, _$RootNavigationStateImpl>
+    implements _$$RootNavigationStateImplCopyWith<$Res> {
+  __$$RootNavigationStateImplCopyWithImpl(_$RootNavigationStateImpl _value,
+      $Res Function(_$RootNavigationStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -285,7 +286,7 @@ class __$$_RootNavigationStateCopyWithImpl<$Res>
   $Res call({
     Object? index = null,
   }) {
-    return _then(_$_RootNavigationState(
+    return _then(_$RootNavigationStateImpl(
       index: null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
@@ -296,8 +297,8 @@ class __$$_RootNavigationStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_RootNavigationState extends _RootNavigationState {
-  _$_RootNavigationState({this.index = 0}) : super._();
+class _$RootNavigationStateImpl extends _RootNavigationState {
+  _$RootNavigationStateImpl({this.index = 0}) : super._();
 
   @override
   @JsonKey()
@@ -312,7 +313,7 @@ class _$_RootNavigationState extends _RootNavigationState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_RootNavigationState &&
+            other is _$RootNavigationStateImpl &&
             (identical(other.index, index) || other.index == index));
   }
 
@@ -322,19 +323,19 @@ class _$_RootNavigationState extends _RootNavigationState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_RootNavigationStateCopyWith<_$_RootNavigationState> get copyWith =>
-      __$$_RootNavigationStateCopyWithImpl<_$_RootNavigationState>(
+  _$$RootNavigationStateImplCopyWith<_$RootNavigationStateImpl> get copyWith =>
+      __$$RootNavigationStateImplCopyWithImpl<_$RootNavigationStateImpl>(
           this, _$identity);
 }
 
 abstract class _RootNavigationState extends RootNavigationState {
-  factory _RootNavigationState({final int index}) = _$_RootNavigationState;
+  factory _RootNavigationState({final int index}) = _$RootNavigationStateImpl;
   _RootNavigationState._() : super._();
 
   @override
   int get index;
   @override
   @JsonKey(ignore: true)
-  _$$_RootNavigationStateCopyWith<_$_RootNavigationState> get copyWith =>
+  _$$RootNavigationStateImplCopyWith<_$RootNavigationStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -69,25 +69,25 @@ class _$MyTasksEventCopyWithImpl<$Res, $Val extends MyTasksEvent>
 }
 
 /// @nodoc
-abstract class _$$_LoadMyTasksCopyWith<$Res> {
-  factory _$$_LoadMyTasksCopyWith(
-          _$_LoadMyTasks value, $Res Function(_$_LoadMyTasks) then) =
-      __$$_LoadMyTasksCopyWithImpl<$Res>;
+abstract class _$$LoadMyTasksImplCopyWith<$Res> {
+  factory _$$LoadMyTasksImplCopyWith(
+          _$LoadMyTasksImpl value, $Res Function(_$LoadMyTasksImpl) then) =
+      __$$LoadMyTasksImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LoadMyTasksCopyWithImpl<$Res>
-    extends _$MyTasksEventCopyWithImpl<$Res, _$_LoadMyTasks>
-    implements _$$_LoadMyTasksCopyWith<$Res> {
-  __$$_LoadMyTasksCopyWithImpl(
-      _$_LoadMyTasks _value, $Res Function(_$_LoadMyTasks) _then)
+class __$$LoadMyTasksImplCopyWithImpl<$Res>
+    extends _$MyTasksEventCopyWithImpl<$Res, _$LoadMyTasksImpl>
+    implements _$$LoadMyTasksImplCopyWith<$Res> {
+  __$$LoadMyTasksImplCopyWithImpl(
+      _$LoadMyTasksImpl _value, $Res Function(_$LoadMyTasksImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_LoadMyTasks implements _LoadMyTasks {
-  const _$_LoadMyTasks();
+class _$LoadMyTasksImpl implements _LoadMyTasks {
+  const _$LoadMyTasksImpl();
 
   @override
   String toString() {
@@ -97,7 +97,7 @@ class _$_LoadMyTasks implements _LoadMyTasks {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_LoadMyTasks);
+        (other.runtimeType == runtimeType && other is _$LoadMyTasksImpl);
   }
 
   @override
@@ -161,7 +161,7 @@ class _$_LoadMyTasks implements _LoadMyTasks {
 }
 
 abstract class _LoadMyTasks implements MyTasksEvent {
-  const factory _LoadMyTasks() = _$_LoadMyTasks;
+  const factory _LoadMyTasks() = _$LoadMyTasksImpl;
 }
 
 /// @nodoc
@@ -223,11 +223,11 @@ class _$MyTasksStateCopyWithImpl<$Res, $Val extends MyTasksState>
 }
 
 /// @nodoc
-abstract class _$$_MyTasksStateCopyWith<$Res>
+abstract class _$$MyTasksStateImplCopyWith<$Res>
     implements $MyTasksStateCopyWith<$Res> {
-  factory _$$_MyTasksStateCopyWith(
-          _$_MyTasksState value, $Res Function(_$_MyTasksState) then) =
-      __$$_MyTasksStateCopyWithImpl<$Res>;
+  factory _$$MyTasksStateImplCopyWith(
+          _$MyTasksStateImpl value, $Res Function(_$MyTasksStateImpl) then) =
+      __$$MyTasksStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({BlocStatus status, List<TaskModel> myTasks});
@@ -237,11 +237,11 @@ abstract class _$$_MyTasksStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_MyTasksStateCopyWithImpl<$Res>
-    extends _$MyTasksStateCopyWithImpl<$Res, _$_MyTasksState>
-    implements _$$_MyTasksStateCopyWith<$Res> {
-  __$$_MyTasksStateCopyWithImpl(
-      _$_MyTasksState _value, $Res Function(_$_MyTasksState) _then)
+class __$$MyTasksStateImplCopyWithImpl<$Res>
+    extends _$MyTasksStateCopyWithImpl<$Res, _$MyTasksStateImpl>
+    implements _$$MyTasksStateImplCopyWith<$Res> {
+  __$$MyTasksStateImplCopyWithImpl(
+      _$MyTasksStateImpl _value, $Res Function(_$MyTasksStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -250,7 +250,7 @@ class __$$_MyTasksStateCopyWithImpl<$Res>
     Object? status = null,
     Object? myTasks = null,
   }) {
-    return _then(_$_MyTasksState(
+    return _then(_$MyTasksStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -265,8 +265,8 @@ class __$$_MyTasksStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_MyTasksState extends _MyTasksState {
-  const _$_MyTasksState(
+class _$MyTasksStateImpl extends _MyTasksState {
+  const _$MyTasksStateImpl(
       {this.status = const BlocStatus.initial(),
       final List<TaskModel> myTasks = const <TaskModel>[]})
       : _myTasks = myTasks,
@@ -293,7 +293,7 @@ class _$_MyTasksState extends _MyTasksState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_MyTasksState &&
+            other is _$MyTasksStateImpl &&
             (identical(other.status, status) || other.status == status) &&
             const DeepCollectionEquality().equals(other._myTasks, _myTasks));
   }
@@ -305,14 +305,14 @@ class _$_MyTasksState extends _MyTasksState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_MyTasksStateCopyWith<_$_MyTasksState> get copyWith =>
-      __$$_MyTasksStateCopyWithImpl<_$_MyTasksState>(this, _$identity);
+  _$$MyTasksStateImplCopyWith<_$MyTasksStateImpl> get copyWith =>
+      __$$MyTasksStateImplCopyWithImpl<_$MyTasksStateImpl>(this, _$identity);
 }
 
 abstract class _MyTasksState extends MyTasksState {
   const factory _MyTasksState(
       {final BlocStatus status,
-      final List<TaskModel> myTasks}) = _$_MyTasksState;
+      final List<TaskModel> myTasks}) = _$MyTasksStateImpl;
   const _MyTasksState._() : super._();
 
   @override
@@ -321,6 +321,6 @@ abstract class _MyTasksState extends MyTasksState {
   List<TaskModel> get myTasks;
   @override
   @JsonKey(ignore: true)
-  _$$_MyTasksStateCopyWith<_$_MyTasksState> get copyWith =>
+  _$$MyTasksStateImplCopyWith<_$MyTasksStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
