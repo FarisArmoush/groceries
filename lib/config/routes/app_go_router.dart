@@ -2,11 +2,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/data/models/category_model/category_model.dart';
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
 import 'package:groceries/data/models/recipe_model/recipe_model.dart';
 import 'package:groceries/presentation/modules/account_settings/account_settings.dart';
 import 'package:groceries/presentation/modules/add_items/add_items.dart';
 import 'package:groceries/presentation/modules/additional_resources/additional_resources.dart';
+import 'package:groceries/presentation/modules/category_details/category_details.dart';
 import 'package:groceries/presentation/modules/create_list/create_list.dart';
 import 'package:groceries/presentation/modules/create_recipe/create_recipe.dart';
 import 'package:groceries/presentation/modules/credits/credits.dart';
@@ -155,6 +157,17 @@ final GoRouter appGoRouter = GoRouter(
                     child: AddItemsView(),
                     fullscreenDialog: true,
                   ),
+                  routes: [
+                    GoRoute(
+                      name: AppNamedRoutes.categoryDetails,
+                      path: AppNamedRoutes.categoryDetails,
+                      pageBuilder: (context, state) => CupertinoPage(
+                        child: CategoryDetailsView(
+                          parentCategoryModel: state.extra! as CategoryModel,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
                 GoRoute(
                   name: AppNamedRoutes.goceryListSettings,

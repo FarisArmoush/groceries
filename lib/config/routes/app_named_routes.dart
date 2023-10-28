@@ -49,6 +49,9 @@ class AppNamedRoutes {
   /// Add Items to list View
   static const String addItems = 'addItems';
 
+  /// Category Details
+  static const String categoryDetails = 'categoryDetails';
+
   /// Grocery List View
   static const String groceryListDetails = 'groceryListDetails';
 

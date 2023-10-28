@@ -3,10 +3,12 @@ part of '../grocery_list_details.dart';
 class GroceriesList extends StatelessWidget {
   const GroceriesList({
     required this.groceries,
+    this.showHeader = true,
     super.key,
   });
 
   final List<GroceryModel?>? groceries;
+  final bool showHeader;
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +27,14 @@ class GroceriesList extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: [
-            GroceriesBoxHeader(
-              category: category?.tr() ?? 'Null',
-              assetPath: Assets.svg.icAlertTriangle.path,
+            Visibility(
+              visible: showHeader,
+              child: GroceriesBoxHeader(
+                category: category?.tr() ?? 'Null',
+                assetPath: Assets.svg.icAlertTriangle.path,
+              ),
             ),
             GroceriesBoxList(
-              index: index,
               list: categoryItems,
             ),
           ],

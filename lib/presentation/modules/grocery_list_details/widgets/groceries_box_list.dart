@@ -3,10 +3,8 @@ part of '../grocery_list_details.dart';
 class GroceriesBoxList extends StatelessWidget {
   const GroceriesBoxList({
     required this.list,
-    required this.index,
     super.key,
   });
-  final int index;
   final List<GroceryModel?>? list;
 
   @override
