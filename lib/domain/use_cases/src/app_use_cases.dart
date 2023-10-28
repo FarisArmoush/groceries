@@ -20,3 +20,5 @@ abstract class FutureUseCase<Input, Output>
 
 abstract class FutureOutputUseCase<Output>
     extends OutputUseCase<Future<Output>> {}
+
+abstract class FutureInputUseCase<Input> extends UseCase<Input, Future<void>> {}

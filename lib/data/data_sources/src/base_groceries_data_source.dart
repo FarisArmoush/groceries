@@ -40,6 +40,4 @@ class BaseGroceriesDataSource {
       return [];
     }
   }
-
-  Future<void> addGroceryToList(GroceryModel groceryModel) async {}
 }

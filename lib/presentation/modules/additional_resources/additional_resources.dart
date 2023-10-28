@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/presentation/blocs/bloc/remote_config_bloc.dart';
+import 'package:groceries/presentation/blocs/remote_config/remote_config_bloc.dart';
 import 'package:groceries/presentation/widgets/widgets.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';

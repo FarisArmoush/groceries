@@ -1,7 +1,7 @@
 part of '../../use_cases.dart';
 
 class RegisterWithEmailAndPasswordUseCase
-    extends FutureUseCase<RegisterParam, void> {
+    extends FutureInputUseCase<RegisterParam> {
   RegisterWithEmailAndPasswordUseCase(this._authenticationRepository);
 
   final AuthenticationRepository _authenticationRepository;

@@ -11,12 +11,12 @@ class CategoriesDataSource {
           .collection('category')
           .orderBy('name')
           .where('parentCategoryId', isNull: true);
-      final result = await collectionReference.get(_fetchCategoriesGetOptions);
-      final listOfMaps = <CategoryModel>[];
+      final result = await collectionReference.get();
+      final parentCategories = <CategoryModel>[];
       for (final element in result.docs) {
-        listOfMaps.add(CategoryModel.fromJson(element.data()));
+        parentCategories.add(CategoryModel.fromJson(element.data()));
       }
-      return listOfMaps;
+      return parentCategories;
     } on FirebaseException catch (e) {
       log('fetchCategories Error Message => ${e.message}');
       return [];
@@ -31,21 +31,15 @@ class CategoriesDataSource {
           .collection('category')
           .orderBy('name')
           .where('parentCategoryId', isEqualTo: parentCategoryId);
-      final result = await collectionReference.get(_fetchCategoriesGetOptions);
-      final listOfMaps = <CategoryModel>[];
+      final result = await collectionReference.get();
+      final subCategories = <CategoryModel>[];
       for (final element in result.docs) {
-        listOfMaps.add(CategoryModel.fromJson(element.data()));
+        subCategories.add(CategoryModel.fromJson(element.data()));
       }
-      return listOfMaps;
+      return subCategories;
     } on FirebaseException catch (e) {
       log('fetchCategories Error Message => ${e.message}');
       return [];
     }
   }
-
-  final _fetchCategoriesGetOptions = GetOptions(
-    source: AppHelpers.isFirstDayOfTheMonth()
-        ? Source.server
-        : Source.serverAndCache,
-  );
 }

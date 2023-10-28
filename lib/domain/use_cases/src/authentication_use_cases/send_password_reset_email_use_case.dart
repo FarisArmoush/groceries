@@ -1,6 +1,6 @@
 part of '../../use_cases.dart';
 
-class SendPasswordResetEmailUseCase extends FutureUseCase<String, void> {
+class SendPasswordResetEmailUseCase extends FutureInputUseCase<String> {
   SendPasswordResetEmailUseCase(this._authenticationRepository);
 
   final AuthenticationRepository _authenticationRepository;

@@ -1,6 +1,6 @@
 part of '../../use_cases.dart';
 
-class UpdateDisplayNameUseCase extends FutureUseCase<String, void> {
+class UpdateDisplayNameUseCase extends FutureInputUseCase<String> {
   UpdateDisplayNameUseCase(this._authenticationRepository);
 
   final AuthenticationRepository _authenticationRepository;

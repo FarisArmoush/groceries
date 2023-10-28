@@ -1,6 +1,6 @@
 part of '../../use_cases.dart';
 
-class CreateListUseCase extends FutureUseCase<GroceryListModel, void> {
+class CreateListUseCase extends FutureInputUseCase<GroceryListModel> {
   CreateListUseCase(this._groceryListsRepository);
 
   final GroceryListsRepository _groceryListsRepository;

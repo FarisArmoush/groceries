@@ -11,11 +11,6 @@ class BaseGroceriesRepositoryImpl extends BaseGroceriesRepository {
   }
 
   @override
-  Future<void> addGroceryToList(GroceryModel groceryModel) {
-    return _groceriesDataSource.addGroceryToList(groceryModel);
-  }
-
-  @override
   Future<List<GroceryModel>> fetchCategoryItems(String categoryId) {
     return _groceriesDataSource.fetchCategoryItems(categoryId);
   }

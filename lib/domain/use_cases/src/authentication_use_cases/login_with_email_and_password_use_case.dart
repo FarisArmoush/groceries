@@ -1,6 +1,6 @@
 part of '../../use_cases.dart';
 
-class LoginWithEmailAndPasswordUseCase extends FutureUseCase<LoginParam, void> {
+class LoginWithEmailAndPasswordUseCase extends FutureInputUseCase<LoginParam> {
   LoginWithEmailAndPasswordUseCase(this._authenticationRepository);
 
   final AuthenticationRepository _authenticationRepository;

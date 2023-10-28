@@ -1,6 +1,6 @@
 part of '../../use_cases.dart';
 
-class UpdateEmailUseCase extends FutureUseCase<String, void> {
+class UpdateEmailUseCase extends FutureInputUseCase<String> {
   UpdateEmailUseCase(this._authenticationRepository);
 
   final AuthenticationRepository _authenticationRepository;
