@@ -16,19 +16,20 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$CreateRecipeEvent {
+  RecipeModel get recipeModel => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() createRecipe,
+    required TResult Function(RecipeModel recipeModel) createRecipe,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? createRecipe,
+    TResult? Function(RecipeModel recipeModel)? createRecipe,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? createRecipe,
+    TResult Function(RecipeModel recipeModel)? createRecipe,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +49,10 @@ mixin _$CreateRecipeEvent {
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $CreateRecipeEventCopyWith<CreateRecipeEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -55,6 +60,10 @@ abstract class $CreateRecipeEventCopyWith<$Res> {
   factory $CreateRecipeEventCopyWith(
           CreateRecipeEvent value, $Res Function(CreateRecipeEvent) then) =
       _$CreateRecipeEventCopyWithImpl<$Res, CreateRecipeEvent>;
+  @useResult
+  $Res call({RecipeModel recipeModel});
+
+  $RecipeModelCopyWith<$Res> get recipeModel;
 }
 
 /// @nodoc
@@ -66,13 +75,41 @@ class _$CreateRecipeEventCopyWithImpl<$Res, $Val extends CreateRecipeEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? recipeModel = null,
+  }) {
+    return _then(_value.copyWith(
+      recipeModel: null == recipeModel
+          ? _value.recipeModel
+          : recipeModel // ignore: cast_nullable_to_non_nullable
+              as RecipeModel,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $RecipeModelCopyWith<$Res> get recipeModel {
+    return $RecipeModelCopyWith<$Res>(_value.recipeModel, (value) {
+      return _then(_value.copyWith(recipeModel: value) as $Val);
+    });
+  }
 }
 
 /// @nodoc
-abstract class _$$CreateRecipeImplCopyWith<$Res> {
+abstract class _$$CreateRecipeImplCopyWith<$Res>
+    implements $CreateRecipeEventCopyWith<$Res> {
   factory _$$CreateRecipeImplCopyWith(
           _$CreateRecipeImpl value, $Res Function(_$CreateRecipeImpl) then) =
       __$$CreateRecipeImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({RecipeModel recipeModel});
+
+  @override
+  $RecipeModelCopyWith<$Res> get recipeModel;
 }
 
 /// @nodoc
@@ -82,51 +119,76 @@ class __$$CreateRecipeImplCopyWithImpl<$Res>
   __$$CreateRecipeImplCopyWithImpl(
       _$CreateRecipeImpl _value, $Res Function(_$CreateRecipeImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? recipeModel = null,
+  }) {
+    return _then(_$CreateRecipeImpl(
+      recipeModel: null == recipeModel
+          ? _value.recipeModel
+          : recipeModel // ignore: cast_nullable_to_non_nullable
+              as RecipeModel,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$CreateRecipeImpl implements _CreateRecipe {
-  const _$CreateRecipeImpl();
+  const _$CreateRecipeImpl({required this.recipeModel});
+
+  @override
+  final RecipeModel recipeModel;
 
   @override
   String toString() {
-    return 'CreateRecipeEvent.createRecipe()';
+    return 'CreateRecipeEvent.createRecipe(recipeModel: $recipeModel)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CreateRecipeImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$CreateRecipeImpl &&
+            (identical(other.recipeModel, recipeModel) ||
+                other.recipeModel == recipeModel));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, recipeModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CreateRecipeImplCopyWith<_$CreateRecipeImpl> get copyWith =>
+      __$$CreateRecipeImplCopyWithImpl<_$CreateRecipeImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() createRecipe,
+    required TResult Function(RecipeModel recipeModel) createRecipe,
   }) {
-    return createRecipe();
+    return createRecipe(recipeModel);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? createRecipe,
+    TResult? Function(RecipeModel recipeModel)? createRecipe,
   }) {
-    return createRecipe?.call();
+    return createRecipe?.call(recipeModel);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? createRecipe,
+    TResult Function(RecipeModel recipeModel)? createRecipe,
     required TResult orElse(),
   }) {
     if (createRecipe != null) {
-      return createRecipe();
+      return createRecipe(recipeModel);
     }
     return orElse();
   }
@@ -161,7 +223,15 @@ class _$CreateRecipeImpl implements _CreateRecipe {
 }
 
 abstract class _CreateRecipe implements CreateRecipeEvent {
-  const factory _CreateRecipe() = _$CreateRecipeImpl;
+  const factory _CreateRecipe({required final RecipeModel recipeModel}) =
+      _$CreateRecipeImpl;
+
+  @override
+  RecipeModel get recipeModel;
+  @override
+  @JsonKey(ignore: true)
+  _$$CreateRecipeImplCopyWith<_$CreateRecipeImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc

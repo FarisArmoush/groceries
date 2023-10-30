@@ -34,3 +34,4 @@ part 'src/remote_use_cases/remote_config_use_case.dart';
 part 'src/remote_use_cases/remove_member_from_list_use_case.dart';
 part 'src/remote_use_cases/update_list_image_use_case.dart';
 part 'src/remote_use_cases/update_list_name_use_case.dart';
+part 'src/remote_use_cases/create_recipe_use_case.dart';

@@ -69,11 +69,11 @@ class RecipesDataSource {
     return recipes;
   }
 
-  Future<RecipeModel> createRecipe(RecipeModel recipe) {
+  Future<void> createRecipe(RecipeModel recipe) {
     throw UnimplementedError();
   }
 
-  Future<RecipeModel> deleteRecipe(RecipeModel recipe) {
+  Future<void> deleteRecipe(RecipeModel recipe) {
     throw UnimplementedError();
   }
 }

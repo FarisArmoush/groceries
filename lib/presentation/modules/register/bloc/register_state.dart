@@ -14,5 +14,5 @@ class RegisterState with _$RegisterState {
     String? errorMessage,
   }) = _RegisterState;
 
-  RegisterState._();
+  const RegisterState._();
 }

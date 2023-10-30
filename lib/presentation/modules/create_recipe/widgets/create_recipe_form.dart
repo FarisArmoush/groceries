@@ -66,7 +66,7 @@ class CreateRecipeForm extends StatelessWidget {
         ],
       ),
       persistentFooterButtons: [
-        TextButton(
+        FilledButton(
           onPressed: () => context.pushReplacementNamed(
             AppNamedRoutes.recipeCreatedUnsuccessfully,
           ),
