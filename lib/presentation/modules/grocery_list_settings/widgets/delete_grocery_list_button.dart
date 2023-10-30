@@ -6,7 +6,7 @@ class DeleteGroceryListButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () => showModalBottomSheet<DeleteGroceryListBottomSheet>(
+      onPressed: () => showModalBottomSheet<void>(
         showDragHandle: true,
         elevation: 0,
         context: context,

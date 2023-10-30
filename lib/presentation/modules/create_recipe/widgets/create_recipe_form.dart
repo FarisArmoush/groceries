@@ -24,7 +24,7 @@ class CreateRecipeForm extends StatelessWidget {
           ),
           CachedImageWithEditButton(
             imageUrl: mockImage,
-            onPressed: () => showModalBottomSheet<UploadImageBottomSheet>(
+            onPressed: () => showModalBottomSheet<void>(
               context: context,
               elevation: 0,
               showDragHandle: true,

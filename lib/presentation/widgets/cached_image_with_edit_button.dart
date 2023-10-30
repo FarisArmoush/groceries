@@ -34,7 +34,7 @@ class CachedImageWithEditButton extends StatelessWidget {
           backgroundColor: AppColors.black.withOpacity(0.8),
           child: IconButton(
             onPressed: onPressed ??
-                () => showModalBottomSheet<Placeholder>(
+                () => showModalBottomSheet<void>(
                       context: context,
                       elevation: 0,
                       showDragHandle: true,

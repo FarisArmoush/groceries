@@ -33,7 +33,7 @@ class GroceriesBoxList extends StatelessWidget {
                         color: context.theme.primaryColor,
                       ),
               ),
-              onTap: () => showModalBottomSheet<GroceryItemDetailsBottomSheet>(
+              onTap: () => showModalBottomSheet<void>(
                 context: context,
                 elevation: 0,
                 showDragHandle: true,

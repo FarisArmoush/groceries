@@ -12,7 +12,7 @@ class EditUserImageButton extends StatelessWidget {
       label: Text(
         AppTranslations.accountSettings.editUserImage,
       ),
-      onPressed: () => showModalBottomSheet<UploadImageBottomSheet>(
+      onPressed: () => showModalBottomSheet<void>(
         context: context,
         showDragHandle: true,
         elevation: 0,
