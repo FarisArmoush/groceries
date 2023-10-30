@@ -1,11 +1,12 @@
 import 'package:bloc/bloc.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/domain/use_cases/use_cases.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 
+part 'delete_account_bloc.freezed.dart';
 part 'delete_account_event.dart';
 part 'delete_account_state.dart';
-part 'delete_account_bloc.freezed.dart';
 
 class DeleteAccountBloc extends Bloc<DeleteAccountEvent, DeleteAccountState> {
   DeleteAccountBloc(this._deleteAccountUseCase)
@@ -23,13 +24,25 @@ class DeleteAccountBloc extends Bloc<DeleteAccountEvent, DeleteAccountState> {
         status: const BlocStatus.loading(),
       ),
     );
-    // TODO(FarisArmoush): What the fuck is this?
-    await _deleteAccountUseCase().catchError(
-      (Object? e) => emit(
+    try {
+      await _deleteAccountUseCase();
+      emit(
         state.copyWith(
-          status: BlocStatus.failure('$e'),
+          status: const BlocStatus.success(),
         ),
-      ),
-    );
+      );
+    } on FirebaseException catch (e) {
+      emit(
+        state.copyWith(
+          status: BlocStatus.failure(e.message!),
+        ),
+      );
+    } catch (e) {
+      emit(
+        state.copyWith(
+          status: BlocStatus.failure(e.toString()),
+        ),
+      );
+    }
   }
 }
