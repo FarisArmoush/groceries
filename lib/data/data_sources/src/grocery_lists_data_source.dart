@@ -59,14 +59,27 @@ class GroceryListsDataSource {
   }
 
   Future<void> deleteGroceryList(String uid) async {
+    log('deleteGroceryList');
     throw UnimplementedError();
   }
 
   Future<void> createGroceryList(GroceryListModel groceryListModel) async {
+    log('createGroceryList');
     throw UnimplementedError();
   }
 
-  Future<void> editGroceryList(GroceryListModel groceryListModel) async {
+  Future<void> removeMember(UserModel userModel) async {
+    log('removeMember');
+    throw UnimplementedError();
+  }
+
+  Future<void> updateListImage(String image) {
+    log('updateListImage');
+    throw UnimplementedError();
+  }
+
+  Future<void> updateListName(String name) {
+    log('updateListName');
     throw UnimplementedError();
   }
 }

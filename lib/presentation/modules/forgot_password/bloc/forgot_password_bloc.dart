@@ -43,7 +43,7 @@ class ForgotPasswordBloc
       ),
     );
     try {
-      await _sendPasswordResetEmailUseCase.call(state.email.value);
+      await _sendPasswordResetEmailUseCase(state.email.value);
       emit(
         state.copyWith(
           status: FormzSubmissionStatus.success,

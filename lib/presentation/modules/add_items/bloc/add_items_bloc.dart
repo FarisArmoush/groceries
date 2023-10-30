@@ -27,7 +27,7 @@ class AddItemsBloc extends Bloc<AddItemsEvent, AddItemsState> {
       ),
     );
     try {
-      final parentCategories = await _fetchParentCategoriesUseCase.call();
+      final parentCategories = await _fetchParentCategoriesUseCase();
       emit(
         state.copyWith(
           status: const BlocStatus.success(),

@@ -23,12 +23,13 @@ class DeleteAccountBloc extends Bloc<DeleteAccountEvent, DeleteAccountState> {
         status: const BlocStatus.loading(),
       ),
     );
-    await _deleteAccountUseCase.call().catchError(
-          (Object? e) => emit(
-            state.copyWith(
-              status: BlocStatus.failure('$e'),
-            ),
-          ),
-        );
+    // TODO(FarisArmoush): What the fuck is this?
+    await _deleteAccountUseCase().catchError(
+      (Object? e) => emit(
+        state.copyWith(
+          status: BlocStatus.failure('$e'),
+        ),
+      ),
+    );
   }
 }

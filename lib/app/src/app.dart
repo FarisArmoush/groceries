@@ -210,6 +210,26 @@ class App extends StatelessWidget {
                               context.read<GroceryListsRepository>(),
                             ),
                           ),
+                          RepositoryProvider(
+                            create: (context) => DeleteGroceryListUseCase(
+                              context.read<GroceryListsRepository>(),
+                            ),
+                          ),
+                          RepositoryProvider(
+                            create: (context) => RemoveMemberFromListUseCase(
+                              context.read<GroceryListsRepository>(),
+                            ),
+                          ),
+                          RepositoryProvider(
+                            create: (context) => UpdateListImageUseCase(
+                              context.read<GroceryListsRepository>(),
+                            ),
+                          ),
+                          RepositoryProvider(
+                            create: (context) => UpdateListNameUseCase(
+                              context.read<GroceryListsRepository>(),
+                            ),
+                          ),
                         ],
                         child: const AppEasyLocalization(),
                       );

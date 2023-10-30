@@ -33,7 +33,7 @@ class CategoryDetailsBloc
       ),
     );
     try {
-      final categories = await _fetchSubCategoriesUseCase.call(
+      final categories = await _fetchSubCategoriesUseCase(
         event.parentCategoryId!,
       );
       emit(
@@ -67,7 +67,7 @@ class CategoryDetailsBloc
       ),
     );
     try {
-      final groceries = await _fetchCategoryItemsUseCase.call(
+      final groceries = await _fetchCategoryItemsUseCase(
         event.categoryId!,
       );
       emit(

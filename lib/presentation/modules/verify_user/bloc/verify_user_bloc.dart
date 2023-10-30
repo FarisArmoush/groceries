@@ -23,7 +23,7 @@ class VerifyUserBloc extends Bloc<VerifyUserEvent, VerifyUserState> {
       ),
     );
     try {
-      await _verifyUserUseCase.call();
+      await _verifyUserUseCase();
       emit(
         state.copyWith(
           status: const BlocStatus.success(),

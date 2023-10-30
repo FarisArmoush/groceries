@@ -22,7 +22,7 @@ class UpdateEmailBloc extends Bloc<UpdateEmailEvent, UpdateEmailState> {
   ) async {
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
     try {
-      await _updateEmailUseCase.call(state.email.value);
+      await _updateEmailUseCase(state.email.value);
       emit(state.copyWith(status: FormzSubmissionStatus.success));
     } on SendVerificationEmailException catch (e) {
       emit(

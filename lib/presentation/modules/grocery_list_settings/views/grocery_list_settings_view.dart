@@ -5,8 +5,30 @@ class GroceryListSettingsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => GroceryListSettingsBloc(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => DeleteListBloc(
+            context.read<DeleteGroceryListUseCase>(),
+          ),
+          child: const DeleteGroceryListButton(),
+        ),
+        BlocProvider(
+          create: (context) => RemoveMemberFromListBloc(
+            context.read<RemoveMemberFromListUseCase>(),
+          ),
+        ),
+        BlocProvider(
+          create: (context) => UpdateListImageBloc(
+            context.read<UpdateListImageUseCase>(),
+          ),
+        ),
+        BlocProvider(
+          create: (context) => UpdateListNameBloc(
+            context.read<UpdateListNameUseCase>(),
+          ),
+        ),
+      ],
       child: const GroceryListForm(),
     );
   }

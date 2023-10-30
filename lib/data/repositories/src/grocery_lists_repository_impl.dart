@@ -17,6 +17,17 @@ class GroceryListsRepositoryImpl extends GroceryListsRepository {
       _groceryListsDataSource.createGroceryList(groceryListModel);
 
   @override
-  Future<void> editGroceryList(GroceryListModel groceryListModel) =>
-      _groceryListsDataSource.editGroceryList(groceryListModel);
+  Future<void> removeMember(UserModel userModel) {
+    return _groceryListsDataSource.removeMember(userModel);
+  }
+
+  @override
+  Future<void> updateListImage(String image) {
+    return _groceryListsDataSource.updateListImage(image);
+  }
+
+  @override
+  Future<void> updateListName(String name) {
+    return _groceryListsDataSource.updateListName(name);
+  }
 }

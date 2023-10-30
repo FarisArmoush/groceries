@@ -26,7 +26,7 @@ class CreateListBloc extends Bloc<CreateListEvent, CreateListState> {
       ),
     );
     try {
-      await _createListUseCase.call(event.groceryListModel);
+      await _createListUseCase(event.groceryListModel);
       emit(
         state.copyWith(
           status: const BlocStatus.success(),

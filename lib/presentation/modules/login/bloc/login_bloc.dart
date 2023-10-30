@@ -65,7 +65,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       state.copyWith(status: FormzSubmissionStatus.inProgress),
     );
     try {
-      await _loginWithEmailAndPasswordUseCase.call(
+      await _loginWithEmailAndPasswordUseCase(
         LoginParam(
           email: state.email.value,
           password: state.password.value,

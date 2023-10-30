@@ -118,7 +118,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
     if (!state.isValid) return;
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
     try {
-      await _registerWithEmailAndPasswordUseCase.call(
+      await _registerWithEmailAndPasswordUseCase(
         RegisterParam(
           email: state.email.value,
           password: state.password.value,

@@ -25,7 +25,7 @@ class UpdateDisplayNameBloc
   ) async {
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
     try {
-      await _updateDisplayNameUseCase.call(state.displayName.value);
+      await _updateDisplayNameUseCase(state.displayName.value);
       emit(state.copyWith(status: FormzSubmissionStatus.success));
     } catch (_) {
       emit(
