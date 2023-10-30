@@ -5,6 +5,7 @@ class BottomSheetButton extends StatelessWidget {
     required this.text,
     required this.iconPath,
     required this.onTap,
+    this.color,
     super.key,
   });
 
@@ -14,16 +15,23 @@ class BottomSheetButton extends StatelessWidget {
 
   final String iconPath;
 
+  final Color? color;
+
   @override
   Widget build(BuildContext context) {
     return ListTile(
       onTap: onTap,
       tileColor: Colors.transparent,
-      title: Text(text),
+      title: Text(
+        text,
+        style: context.theme.listTileTheme.titleTextStyle!.copyWith(
+          color: color,
+        ),
+      ),
       leading: SvgPicture.asset(
         iconPath,
         // ignore: deprecated_member_use
-        color: context.theme.primaryColor,
+        color: color ?? context.theme.primaryColor,
         height: context.deviceHeight * 0.03,
       ),
     );
