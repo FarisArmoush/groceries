@@ -59,18 +59,3 @@ class _OnboardingPageState extends State<OnboardingPage> {
     ),
   ];
 }
-
-// TODO(FarisArmoush): Make it a freezed model.
-final class OnboardingPageModel {
-  const OnboardingPageModel({
-    required this.illustrationPath,
-    required this.title,
-    required this.body,
-    required this.backgroundColor,
-  });
-
-  final String illustrationPath;
-  final String title;
-  final String body;
-  final Color backgroundColor;
-}
