@@ -9,7 +9,7 @@ class UpdateEmailView extends StatelessWidget {
       create: (context) => UpdateEmailBloc(
         context.read<UpdateEmailUseCase>(),
       ),
-      child: const UpdateEmailForm(),
+      child: const UpdateEmailPage(),
     );
   }
 }

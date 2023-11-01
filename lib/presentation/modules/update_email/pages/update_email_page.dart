@@ -1,7 +1,7 @@
 part of '../update_email.dart';
 
-class UpdateEmailForm extends StatelessWidget {
-  const UpdateEmailForm({super.key});
+class UpdateEmailPage extends StatelessWidget {
+  const UpdateEmailPage({super.key});
 
   @override
   Widget build(BuildContext context) {

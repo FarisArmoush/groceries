@@ -9,7 +9,7 @@ class CreditsView extends StatelessWidget {
       create: (context) => CreditsCubit(
         context.read<FetchCreditsUseCase>(),
       ),
-      child: const CreditsForm(),
+      child: const CreditsPage(),
     );
   }
 }

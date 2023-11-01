@@ -17,5 +17,5 @@ import 'package:groceries/presentation/widgets/widgets.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 
+part 'pages/root_page.dart';
 part 'views/root_view.dart';
-part 'widgets/root_form.dart';

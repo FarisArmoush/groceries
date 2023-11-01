@@ -11,9 +11,9 @@ import 'package:groceries/presentation/widgets/widgets.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 
+part 'pages/update_display_name_page.dart';
 part 'views/update_display_name_view.dart';
 part 'widgets/submit_new_display_name_button.dart';
 part 'widgets/update_display_name_body_text.dart';
-part 'widgets/update_display_name_form.dart';
 part 'widgets/update_display_name_header_text.dart';
 part 'widgets/update_display_name_text_field.dart';

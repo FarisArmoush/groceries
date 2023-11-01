@@ -1,7 +1,7 @@
 part of '../recipe_details.dart';
 
-class RecipeDetailsForm extends StatelessWidget {
-  const RecipeDetailsForm({
+class RecipeDetailsPage extends StatelessWidget {
+  const RecipeDetailsPage({
     required this.recipeModel,
     super.key,
   });

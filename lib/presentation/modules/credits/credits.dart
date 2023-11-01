@@ -11,5 +11,5 @@ import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 part 'views/credits_view.dart';
 part 'widgets/credits_flutter_packages_text.dart';
-part 'widgets/credits_form.dart';
+part 'pages/credits_page.dart';
 part 'widgets/credits_list.dart';

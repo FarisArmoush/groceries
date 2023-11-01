@@ -1,7 +1,7 @@
 part of '../register.dart';
 
-class RegisterForm extends StatelessWidget {
-  const RegisterForm({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
 
   @override
   Widget build(BuildContext context) {

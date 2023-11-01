@@ -1,14 +1,16 @@
 part of '../grocery_list_settings.dart';
 
-class GroceryListForm extends StatelessWidget {
-  const GroceryListForm({super.key});
+class GroceryListSettingsPage extends StatelessWidget {
+  const GroceryListSettingsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(AppTranslations.groceryListSettings.listSettings),
-        actions: const [SaveGroceryListChangesButton()],
+        actions: const [
+          SaveGroceryListChangesButton(),
+        ],
       ),
       body: ListView(
         physics: const BouncingScrollPhysics(),

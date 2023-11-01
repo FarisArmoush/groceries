@@ -1,7 +1,7 @@
 part of '../verify_user.dart';
 
-class VerifyUserForm extends StatelessWidget {
-  const VerifyUserForm({super.key});
+class VerifyUserPage extends StatelessWidget {
+  const VerifyUserPage({super.key});
 
   @override
   Widget build(BuildContext context) {

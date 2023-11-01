@@ -19,7 +19,7 @@ import 'package:groceries/utils/extenstions/app_extensions.dart';
 part 'views/grocery_list_settings_view.dart';
 part 'widgets/delete_grocery_list_button.dart';
 part 'widgets/edit_list_image.dart';
-part 'widgets/grocery_list_form.dart';
+part 'pages/grocery_list_settings_page.dart';
 part 'widgets/grocery_list_members.dart';
 part 'widgets/grocery_list_name_text_field.dart';
 part 'widgets/member_card.dart';

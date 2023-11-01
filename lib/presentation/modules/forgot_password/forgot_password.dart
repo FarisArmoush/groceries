@@ -13,10 +13,10 @@ import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 
+part 'pages/forgot_password_page.dart';
 part 'views/forgot_password_view.dart';
 part 'views/reset_password_sent_successfully.dart';
 part 'widgets/forgot_password_body_text.dart';
 part 'widgets/forgot_password_email_text_field.dart';
-part 'widgets/forgot_password_form.dart';
 part 'widgets/forgot_password_header_text.dart';
 part 'widgets/send_forgot_password_email_button.dart';

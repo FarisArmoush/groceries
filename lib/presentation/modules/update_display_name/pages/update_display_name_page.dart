@@ -1,7 +1,7 @@
 part of '../update_display_name.dart';
 
-class UpdateDisplayNameForm extends StatelessWidget {
-  const UpdateDisplayNameForm({super.key});
+class UpdateDisplayNamePage extends StatelessWidget {
+  const UpdateDisplayNamePage({super.key});
 
   @override
   Widget build(BuildContext context) {

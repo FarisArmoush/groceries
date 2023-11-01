@@ -1,7 +1,7 @@
 part of '../category_details.dart';
 
-class CategoryDetailsForm extends StatelessWidget {
-  const CategoryDetailsForm({required this.parentCategoryModel, super.key});
+class CategoryDetailsPage extends StatelessWidget {
+  const CategoryDetailsPage({required this.parentCategoryModel, super.key});
 
   final CategoryModel parentCategoryModel;
 

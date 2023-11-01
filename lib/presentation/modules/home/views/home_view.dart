@@ -26,7 +26,7 @@ class HomeView extends StatelessWidget {
             SizedBox(
               height: context.deviceHeight * 0.05,
             ),
-            const _MockAddItemsToCloudFirestoreAutomatically(),
+            // const _MockAddItemsToCloudFirestoreAutomatically(),
           ],
         ),
       ),

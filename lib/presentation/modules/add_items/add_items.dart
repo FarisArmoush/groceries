@@ -15,11 +15,12 @@ import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
+
 export 'package:groceries/presentation/modules/add_items/bloc/add_items_bloc.dart';
 
+part 'pages/add_items_page.dart';
 part 'views/add_items_view.dart';
 part 'widgets/add_items_categories_list.dart';
-part 'widgets/add_items_form.dart';
 part 'widgets/add_items_text_field.dart';
 part 'widgets/category_box.dart';
 part 'widgets/category_box_divider.dart';

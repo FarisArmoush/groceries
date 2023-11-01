@@ -1,7 +1,7 @@
 part of '../recipes.dart';
 
-class RecipesForm extends StatelessWidget {
-  const RecipesForm({super.key});
+class RecipesPage extends StatelessWidget {
+  const RecipesPage({super.key});
 
   @override
   Widget build(BuildContext context) {

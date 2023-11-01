@@ -9,7 +9,7 @@ class ForgotPasswordView extends StatelessWidget {
       create: (context) => ForgotPasswordBloc(
         context.read<SendPasswordResetEmailUseCase>(),
       ),
-      child: const ForgotPasswordForm(),
+      child: const ForgotPasswordPage(),
     );
   }
 }

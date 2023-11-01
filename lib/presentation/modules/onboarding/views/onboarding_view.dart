@@ -9,7 +9,7 @@ class OnboardingView extends StatelessWidget {
       create: (context) => OnboardingBloc(
         context.read<SharedPreferences>(),
       ),
-      child: const OnboardingForm(),
+      child: const OnboardingPage(),
     );
   }
 }

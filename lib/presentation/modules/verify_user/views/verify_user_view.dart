@@ -9,7 +9,7 @@ class VerifyUserView extends StatelessWidget {
       create: (context) => VerifyUserBloc(
         context.read<VerifyUserUseCase>(),
       ),
-      child: const VerifyUserForm(),
+      child: const VerifyUserPage(),
     );
   }
 }
