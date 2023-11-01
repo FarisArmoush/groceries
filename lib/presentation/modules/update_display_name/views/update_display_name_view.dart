@@ -9,7 +9,7 @@ class UpdateDisplayNameView extends StatelessWidget {
       create: (context) => UpdateDisplayNameBloc(
         context.read<UpdateDisplayNameUseCase>(),
       ),
-      child: const UpdateDisplayNameForm(),
+      child: const UpdateDisplayNamePage(),
     );
   }
 }

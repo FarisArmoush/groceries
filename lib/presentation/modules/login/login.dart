@@ -13,12 +13,12 @@ import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 
+part 'pages/login_page.dart';
 part 'views/login_view.dart';
 part 'widgets/login_body_text.dart';
 part 'widgets/login_button.dart';
 part 'widgets/login_email_text_field.dart';
 part 'widgets/login_forgot_password_button.dart';
-part 'widgets/login_form.dart';
 part 'widgets/login_header_text.dart';
 part 'widgets/login_other_options_text_button.dart';
 part 'widgets/login_password_text_field.dart';

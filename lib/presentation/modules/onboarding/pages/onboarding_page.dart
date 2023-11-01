@@ -1,13 +1,13 @@
 part of '../onboarding.dart';
 
-class OnboardingForm extends StatefulWidget {
-  const OnboardingForm({super.key});
+class OnboardingPage extends StatefulWidget {
+  const OnboardingPage({super.key});
 
   @override
-  State<OnboardingForm> createState() => _OnboardingFormState();
+  State<OnboardingPage> createState() => _OnboardingPageState();
 }
 
-class _OnboardingFormState extends State<OnboardingForm> {
+class _OnboardingPageState extends State<OnboardingPage> {
   final pageController = PageController();
   @override
   Widget build(BuildContext context) {
@@ -58,18 +58,4 @@ class _OnboardingFormState extends State<OnboardingForm> {
       backgroundColor: Colors.blue,
     ),
   ];
-}
-
-final class OnboardingPageModel {
-  const OnboardingPageModel({
-    required this.illustrationPath,
-    required this.title,
-    required this.body,
-    required this.backgroundColor,
-  });
-
-  final String illustrationPath;
-  final String title;
-  final String body;
-  final Color backgroundColor;
 }

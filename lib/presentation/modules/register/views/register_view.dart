@@ -9,7 +9,7 @@ class RegisterView extends StatelessWidget {
       create: (context) => RegisterBloc(
         context.read<RegisterWithEmailAndPasswordUseCase>(),
       ),
-      child: const RegisterForm(),
+      child: const RegisterPage(),
     );
   }
 }

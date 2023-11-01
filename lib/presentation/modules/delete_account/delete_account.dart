@@ -16,5 +16,5 @@ import 'package:groceries/utils/extenstions/app_extensions.dart';
 part 'views/delete_account_view.dart';
 part 'widgets/delete_account_body_text.dart';
 part 'widgets/delete_account_button.dart';
-part 'widgets/delete_account_form.dart';
+part 'pages/delete_account_page.dart';
 part 'widgets/delete_account_header_text.dart';

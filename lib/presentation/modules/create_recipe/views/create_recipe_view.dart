@@ -9,7 +9,7 @@ class CreateRecipeView extends StatelessWidget {
       create: (context) => CreateRecipeBloc(
         context.read<CreateRecipeUseCase>(),
       ),
-      child: const CreateRecipeForm(),
+      child: const CreateRecipePage(),
     );
   }
 }

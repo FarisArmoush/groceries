@@ -29,7 +29,7 @@ class GroceryListSettingsView extends StatelessWidget {
           ),
         ),
       ],
-      child: const GroceryListForm(),
+      child: const GroceryListSettingsPage(),
     );
   }
 }

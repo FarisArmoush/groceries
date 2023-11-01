@@ -1,7 +1,7 @@
 part of '../add_items.dart';
 
-class AddItemsForm extends StatelessWidget {
-  const AddItemsForm({super.key});
+class AddItemsPage extends StatelessWidget {
+  const AddItemsPage({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -14,9 +14,9 @@ import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 
+part 'pages/create_recipe_page.dart';
 part 'views/create_recipe_view.dart';
 part 'views/recipe_created_successfully_view.dart';
 part 'views/recipe_created_unsuccessfully_view.dart';
 part 'widgets/add_steps_to_recipe_list.dart';
-part 'widgets/create_recipe_form.dart';
 part 'widgets/recipe_step_text_field.dart';

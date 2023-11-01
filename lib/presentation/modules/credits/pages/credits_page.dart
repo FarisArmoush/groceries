@@ -1,7 +1,7 @@
 part of '../credits.dart';
 
-class CreditsForm extends StatelessWidget {
-  const CreditsForm({super.key});
+class CreditsPage extends StatelessWidget {
+  const CreditsPage({super.key});
 
   @override
   Widget build(BuildContext context) {

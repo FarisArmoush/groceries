@@ -15,11 +15,11 @@ import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 
+part 'pages/create_list_page.dart';
 part 'views/create_list_view.dart';
 part 'views/list_created_successfully_view.dart';
 part 'views/list_created_unsuccessfully_view.dart';
 part 'widgets/cancel_list_creation_dialog.dart';
-part 'widgets/create_list_form.dart';
 part 'widgets/create_list_icons_grid.dart';
 part 'widgets/create_new_list_fab.dart';
 part 'widgets/invite_via_buttons_column.dart';

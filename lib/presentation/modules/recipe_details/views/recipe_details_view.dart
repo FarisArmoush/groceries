@@ -12,7 +12,7 @@ class RecipeDetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => RecipeDetailsBloc(),
-      child: RecipeDetailsForm(
+      child: RecipeDetailsPage(
         recipeModel: recipeModel,
       ),
     );

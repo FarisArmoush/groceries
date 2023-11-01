@@ -9,7 +9,7 @@ class CreateListView extends StatelessWidget {
       create: (context) => CreateListBloc(
         context.read<CreateListUseCase>(),
       ),
-      child: const CreateListForm(),
+      child: const CreateListPage(),
     );
   }
 }

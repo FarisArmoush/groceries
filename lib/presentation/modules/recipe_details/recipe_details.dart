@@ -10,8 +10,8 @@ import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 
+part 'pages/recipe_details_page.dart';
 part 'views/recipe_details_view.dart';
-part 'widgets/recipe_details_form.dart';
 part 'widgets/recipe_details_list_header.dart';
 part 'widgets/recipe_items_list.dart';
 part 'widgets/recipe_options_bottom_sheet.dart';

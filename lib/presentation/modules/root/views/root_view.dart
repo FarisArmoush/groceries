@@ -26,7 +26,7 @@ class RootView extends StatelessWidget {
           )..add(const RecipesEvent.loadMyRecipes()),
         ),
       ],
-      child: const RootForm(),
+      child: const RootPage(),
     );
   }
 }

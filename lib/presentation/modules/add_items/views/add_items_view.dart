@@ -9,7 +9,7 @@ class AddItemsView extends StatelessWidget {
       create: (context) => AddItemsBloc(
         context.read<FetchParentCategoriesUseCase>(),
       )..add(const AddItemsEvent.getParentCategories()),
-      child: const AddItemsForm(),
+      child: const AddItemsPage(),
     );
   }
 }

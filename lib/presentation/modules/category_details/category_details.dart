@@ -11,5 +11,5 @@ import 'package:groceries/presentation/modules/grocery_list_details/grocery_list
 import 'package:groceries/presentation/widgets/widgets.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 
+part 'pages/category_details_page.dart';
 part 'views/category_details_view.dart';
-part 'widgets/category_details_form.dart';

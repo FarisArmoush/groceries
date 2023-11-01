@@ -9,7 +9,7 @@ class DeleteAccountView extends StatelessWidget {
       create: (context) => DeleteAccountBloc(
         context.read<DeleteAccountUseCase>(),
       ),
-      child: const DeleteAccountForm(),
+      child: const DeleteAccountPage(),
     );
   }
 }

@@ -11,9 +11,9 @@ import 'package:groceries/presentation/widgets/widgets.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 
+part 'pages/update_email_page.dart';
 part 'views/update_email_view.dart';
 part 'widgets/submit_new_email_button.dart';
 part 'widgets/update_email_body_text.dart';
-part 'widgets/update_email_form.dart';
 part 'widgets/update_email_header_text.dart';
 part 'widgets/update_email_text_field.dart';

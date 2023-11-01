@@ -1,7 +1,7 @@
 part of '../delete_account.dart';
 
-class DeleteAccountForm extends StatelessWidget {
-  const DeleteAccountForm({super.key});
+class DeleteAccountPage extends StatelessWidget {
+  const DeleteAccountPage({super.key});
 
   @override
   Widget build(BuildContext context) {

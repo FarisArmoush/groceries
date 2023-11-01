@@ -1,7 +1,7 @@
 part of '../create_list.dart';
 
-class CreateListForm extends StatelessWidget {
-  const CreateListForm({super.key});
+class CreateListPage extends StatelessWidget {
+  const CreateListPage({super.key});
 
   @override
   Widget build(BuildContext context) {

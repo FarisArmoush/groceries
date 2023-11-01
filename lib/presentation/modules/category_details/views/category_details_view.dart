@@ -25,7 +25,7 @@ class CategoryDetailsView extends StatelessWidget {
             categoryId: parentCategoryModel.categoryId,
           ),
         ),
-      child: CategoryDetailsForm(
+      child: CategoryDetailsPage(
         parentCategoryModel: parentCategoryModel,
       ),
     );

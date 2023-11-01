@@ -9,7 +9,7 @@ class LoginView extends StatelessWidget {
       create: (context) => LoginBloc(
         context.read<LoginWithEmailAndPasswordUseCase>(),
       ),
-      child: const LoginForm(),
+      child: const LoginPage(),
     );
   }
 }

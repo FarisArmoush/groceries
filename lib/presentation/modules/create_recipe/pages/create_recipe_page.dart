@@ -2,8 +2,8 @@
 
 part of '../create_recipe.dart';
 
-class CreateRecipeForm extends StatelessWidget {
-  const CreateRecipeForm({super.key});
+class CreateRecipePage extends StatelessWidget {
+  const CreateRecipePage({super.key});
   static const _horizontalPadding = 24.0;
   @override
   Widget build(BuildContext context) {

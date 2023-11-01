@@ -18,7 +18,7 @@ class RecipesView extends StatelessWidget {
           ),
         ],
       ),
-      body: const RecipesForm(),
+      body: const RecipesPage(),
     );
   }
 }

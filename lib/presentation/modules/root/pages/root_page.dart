@@ -1,7 +1,7 @@
 part of '../root.dart';
 
-class RootForm extends StatelessWidget {
-  const RootForm({super.key});
+class RootPage extends StatelessWidget {
+  const RootPage({super.key});
 
   @override
   Widget build(BuildContext context) {
