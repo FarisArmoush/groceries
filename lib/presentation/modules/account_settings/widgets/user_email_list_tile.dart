@@ -16,7 +16,7 @@ class UserEmailListTile extends StatelessWidget {
       trailing: Assets.svg.icEdit.svg(color: context.theme.hintColor),
       onTap: isUserVerified == true
           ? () => context.pushNamed(AppNamedRoutes.updateEmail)
-          : () => showModalBottomSheet<VerifyToUpdateEmailBottomSheet>(
+          : () => showModalBottomSheet<void>(
                 context: context,
                 showDragHandle: true,
                 elevation: 0,

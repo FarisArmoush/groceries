@@ -14,4 +14,5 @@ part 'views/recipe_details_view.dart';
 part 'widgets/recipe_details_form.dart';
 part 'widgets/recipe_details_list_header.dart';
 part 'widgets/recipe_items_list.dart';
+part 'widgets/recipe_options_bottom_sheet.dart';
 part 'widgets/recipe_steps_list.dart';

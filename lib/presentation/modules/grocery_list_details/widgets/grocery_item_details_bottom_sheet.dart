@@ -67,7 +67,7 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
           BottomSheetButton(
             text: 'Add Image',
             iconPath: Assets.svg.icImage.path,
-            onTap: () => showModalBottomSheet<UploadImageBottomSheet>(
+            onTap: () => showModalBottomSheet<void>(
               context: context,
               elevation: 0,
               showDragHandle: true,

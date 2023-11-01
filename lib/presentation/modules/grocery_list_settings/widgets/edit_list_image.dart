@@ -18,7 +18,7 @@ class EditListImage extends StatelessWidget {
           backgroundColor: AppColors.black.withOpacity(0.7),
           child: IconButton(
             onPressed: () {
-              showModalBottomSheet<UploadImageBottomSheet>(
+              showModalBottomSheet<void>(
                 context: context,
                 elevation: 0,
                 showDragHandle: true,

@@ -10,7 +10,7 @@ class GroceryListOptionsButton extends StatelessWidget {
       icon: Assets.svg.icVerticalThreeDots.svg(
         color: context.theme.primaryColor,
       ),
-      onPressed: () => showModalBottomSheet<GroceryListOptionsBottomSheet>(
+      onPressed: () => showModalBottomSheet<void>(
         showDragHandle: true,
         elevation: 0,
         context: context,

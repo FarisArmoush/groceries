@@ -14,7 +14,7 @@ class MemberCard extends StatelessWidget {
       title: Text(userModel.name ?? 'null'),
       subtitle: Text(userModel.email ?? 'null'),
       trailing: IconButton(
-        onPressed: () => showModalBottomSheet<CancelBottomSheet>(
+        onPressed: () => showModalBottomSheet<void>(
           showDragHandle: true,
           elevation: 0,
           context: context,

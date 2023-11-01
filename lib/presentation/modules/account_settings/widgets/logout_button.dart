@@ -23,7 +23,7 @@ class LogoutButton extends StatelessWidget {
         title: AppTranslations.accountSettings.logout,
         icon: Assets.svg.icLogout.path,
         color: context.theme.primaryColorLight,
-        onTap: () => showModalBottomSheet<LogoutBottomSheet>(
+        onTap: () => showModalBottomSheet<void>(
           context: context,
           showDragHandle: true,
           elevation: 0,
