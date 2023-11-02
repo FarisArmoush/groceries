@@ -34,40 +34,13 @@ class HomeView extends StatelessWidget {
   }
 }
 
-class _MockAddItemsToCloudFirestoreAutomatically extends StatefulWidget {
+// ignore: unused_element
+class _MockAddItemsToCloudFirestoreAutomatically extends StatelessWidget {
   const _MockAddItemsToCloudFirestoreAutomatically();
 
-  @override
-  State<_MockAddItemsToCloudFirestoreAutomatically> createState() =>
-      __MockAddItemsToCloudFirestoreAutomaticallyState();
-}
-
-class __MockAddItemsToCloudFirestoreAutomaticallyState
-    extends State<_MockAddItemsToCloudFirestoreAutomatically> {
   Future<void> addToCloudFirestore() async {
     final firestore = FirebaseFirestore.instance;
-    final list = <String>[
-      'Water',
-      'Coffee',
-      'Tea',
-      'Soda Pop',
-      'Energy Drink',
-      'Sports Drink',
-      'Sparkling Water',
-      'Protein Shake',
-      'Nutritional Shake',
-      'Orange Juice',
-      'Apple Juice',
-      'Lemonade',
-      'Cranberry Juice',
-      'Pineapple Juice',
-      'Pomegranate Juice',
-      'Grape Juice',
-      'Fruit Juice',
-      'Vegetable Juice',
-      'Lemon Juice',
-      'Lime Juice',
-    ];
+    final list = <String>[];
 
     for (final element in list) {
       final doc = await firestore.collection('items').add(
