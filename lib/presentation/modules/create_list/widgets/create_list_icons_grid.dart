@@ -58,9 +58,10 @@ class _CreateListIconsGridState extends State<CreateListIconsGrid> {
             child: IconButton(
               icon: SvgPicture.asset(
                 _icons[index],
-                // ignore: deprecated_member_use
-                color: context.theme.primaryColor,
                 height: context.deviceHeight * 0.03,
+                theme: SvgTheme(
+                  currentColor: context.theme.primaryColor,
+                ),
               ),
               onPressed: () => setState(
                 () => _selectedIcon = _icons[index],
