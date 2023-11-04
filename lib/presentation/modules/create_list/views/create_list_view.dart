@@ -8,7 +8,9 @@ class CreateListView extends StatelessWidget {
     return BlocProvider(
       create: (context) => CreateListBloc(
         context.read<CreateListUseCase>(),
-      ),
+      )..add(
+          const CreateListEvent.getIcons(),
+        ),
       child: const CreateListPage(),
     );
   }

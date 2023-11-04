@@ -1,7 +1,7 @@
 part of '../create_list.dart';
 
-class InviteViaButtonsColumn extends StatelessWidget {
-  const InviteViaButtonsColumn({super.key});
+class InviteToListButtons extends StatelessWidget {
+  const InviteToListButtons({super.key});
 
   @override
   Widget build(BuildContext context) {

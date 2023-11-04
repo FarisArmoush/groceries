@@ -650,6 +650,11 @@ abstract class _GetIcons implements CreateListEvent {
 /// @nodoc
 mixin _$CreateListState {
   BlocStatus get status => throw _privateConstructorUsedError;
+  List<String> get iconsPaths => throw _privateConstructorUsedError;
+  FormzSubmissionStatus get formStatus => throw _privateConstructorUsedError;
+  bool get isValid => throw _privateConstructorUsedError;
+  GroceryListNameForm get listName => throw _privateConstructorUsedError;
+  String? get icon => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CreateListStateCopyWith<CreateListState> get copyWith =>
@@ -662,7 +667,13 @@ abstract class $CreateListStateCopyWith<$Res> {
           CreateListState value, $Res Function(CreateListState) then) =
       _$CreateListStateCopyWithImpl<$Res, CreateListState>;
   @useResult
-  $Res call({BlocStatus status});
+  $Res call(
+      {BlocStatus status,
+      List<String> iconsPaths,
+      FormzSubmissionStatus formStatus,
+      bool isValid,
+      GroceryListNameForm listName,
+      String? icon});
 
   $BlocStatusCopyWith<$Res> get status;
 }
@@ -681,12 +692,37 @@ class _$CreateListStateCopyWithImpl<$Res, $Val extends CreateListState>
   @override
   $Res call({
     Object? status = null,
+    Object? iconsPaths = null,
+    Object? formStatus = null,
+    Object? isValid = null,
+    Object? listName = null,
+    Object? icon = freezed,
   }) {
     return _then(_value.copyWith(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as BlocStatus,
+      iconsPaths: null == iconsPaths
+          ? _value.iconsPaths
+          : iconsPaths // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      formStatus: null == formStatus
+          ? _value.formStatus
+          : formStatus // ignore: cast_nullable_to_non_nullable
+              as FormzSubmissionStatus,
+      isValid: null == isValid
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      listName: null == listName
+          ? _value.listName
+          : listName // ignore: cast_nullable_to_non_nullable
+              as GroceryListNameForm,
+      icon: freezed == icon
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 
@@ -707,7 +743,13 @@ abstract class _$$CreateListStateImplCopyWith<$Res>
       __$$CreateListStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({BlocStatus status});
+  $Res call(
+      {BlocStatus status,
+      List<String> iconsPaths,
+      FormzSubmissionStatus formStatus,
+      bool isValid,
+      GroceryListNameForm listName,
+      String? icon});
 
   @override
   $BlocStatusCopyWith<$Res> get status;
@@ -725,12 +767,37 @@ class __$$CreateListStateImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = null,
+    Object? iconsPaths = null,
+    Object? formStatus = null,
+    Object? isValid = null,
+    Object? listName = null,
+    Object? icon = freezed,
   }) {
     return _then(_$CreateListStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as BlocStatus,
+      iconsPaths: null == iconsPaths
+          ? _value._iconsPaths
+          : iconsPaths // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      formStatus: null == formStatus
+          ? _value.formStatus
+          : formStatus // ignore: cast_nullable_to_non_nullable
+              as FormzSubmissionStatus,
+      isValid: null == isValid
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      listName: null == listName
+          ? _value.listName
+          : listName // ignore: cast_nullable_to_non_nullable
+              as GroceryListNameForm,
+      icon: freezed == icon
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -738,15 +805,42 @@ class __$$CreateListStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$CreateListStateImpl implements _CreateListState {
-  const _$CreateListStateImpl({this.status = const BlocStatus.initial()});
+  const _$CreateListStateImpl(
+      {this.status = const BlocStatus.initial(),
+      final List<String> iconsPaths = const <String>[],
+      this.formStatus = FormzSubmissionStatus.initial,
+      this.isValid = false,
+      this.listName = const GroceryListNameForm.pure(''),
+      this.icon})
+      : _iconsPaths = iconsPaths;
 
   @override
   @JsonKey()
   final BlocStatus status;
+  final List<String> _iconsPaths;
+  @override
+  @JsonKey()
+  List<String> get iconsPaths {
+    if (_iconsPaths is EqualUnmodifiableListView) return _iconsPaths;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_iconsPaths);
+  }
+
+  @override
+  @JsonKey()
+  final FormzSubmissionStatus formStatus;
+  @override
+  @JsonKey()
+  final bool isValid;
+  @override
+  @JsonKey()
+  final GroceryListNameForm listName;
+  @override
+  final String? icon;
 
   @override
   String toString() {
-    return 'CreateListState(status: $status)';
+    return 'CreateListState(status: $status, iconsPaths: $iconsPaths, formStatus: $formStatus, isValid: $isValid, listName: $listName, icon: $icon)';
   }
 
   @override
@@ -754,11 +848,26 @@ class _$CreateListStateImpl implements _CreateListState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CreateListStateImpl &&
-            (identical(other.status, status) || other.status == status));
+            (identical(other.status, status) || other.status == status) &&
+            const DeepCollectionEquality()
+                .equals(other._iconsPaths, _iconsPaths) &&
+            (identical(other.formStatus, formStatus) ||
+                other.formStatus == formStatus) &&
+            (identical(other.isValid, isValid) || other.isValid == isValid) &&
+            (identical(other.listName, listName) ||
+                other.listName == listName) &&
+            (identical(other.icon, icon) || other.icon == icon));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status);
+  int get hashCode => Object.hash(
+      runtimeType,
+      status,
+      const DeepCollectionEquality().hash(_iconsPaths),
+      formStatus,
+      isValid,
+      listName,
+      icon);
 
   @JsonKey(ignore: true)
   @override
@@ -769,11 +878,26 @@ class _$CreateListStateImpl implements _CreateListState {
 }
 
 abstract class _CreateListState implements CreateListState {
-  const factory _CreateListState({final BlocStatus status}) =
-      _$CreateListStateImpl;
+  const factory _CreateListState(
+      {final BlocStatus status,
+      final List<String> iconsPaths,
+      final FormzSubmissionStatus formStatus,
+      final bool isValid,
+      final GroceryListNameForm listName,
+      final String? icon}) = _$CreateListStateImpl;
 
   @override
   BlocStatus get status;
+  @override
+  List<String> get iconsPaths;
+  @override
+  FormzSubmissionStatus get formStatus;
+  @override
+  bool get isValid;
+  @override
+  GroceryListNameForm get listName;
+  @override
+  String? get icon;
   @override
   @JsonKey(ignore: true)
   _$$CreateListStateImplCopyWith<_$CreateListStateImpl> get copyWith =>

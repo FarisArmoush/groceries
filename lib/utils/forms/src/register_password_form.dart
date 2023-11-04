@@ -21,7 +21,6 @@ class RegisterPasswordForm extends FormzInput<String, String> {
   /// @param value The initial value of the password form field.
   const RegisterPasswordForm.dirty(super.value) : super.dirty();
 
-  // TODO(FarisArmoush): I dont like the validator.
   @override
   String? validator(String? value) {
     var errors = '';
