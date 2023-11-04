@@ -26,7 +26,7 @@ class LoginPasswordForm extends FormzInput<String, String> {
     if (value!.isEmpty) {
       return AppTranslations.inputValidationMessages.fieldCannotBeEmpty;
     }
-    if (value.length < 8) {
+    if (value.length.isLessThan(8)) {
       errors += AppTranslations
           .inputValidationMessages.fieldMustHaveAtLeastEightCharacters;
     }

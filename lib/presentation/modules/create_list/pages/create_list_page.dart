@@ -24,10 +24,7 @@ class CreateListPage extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           padding: const EdgeInsets.all(32),
           children: [
-            AppTextField(
-              labelText: AppTranslations.general.listName,
-              onTapOutside: (_) => FocusScope.of(context).unfocus(),
-            ),
+            const CreateListTextField(),
             SizedBox(
               height: context.deviceHeight * 0.05,
             ),
@@ -35,40 +32,15 @@ class CreateListPage extends StatelessWidget {
             Divider(
               height: context.deviceHeight * 0.1,
             ),
-            Text(
-              AppTranslations.createGroceryList.invitePeopleToList,
-              style: TextStyle(
-                fontFamily: AppFonts.semiBold(context),
-                color: context.theme.primaryColor,
-                fontSize: 28,
-              ),
-              textAlign: TextAlign.center,
-            ),
+            const InvitePeopleToListText(),
             SizedBox(
               height: context.deviceHeight * 0.04,
             ),
-            const InviteViaButtonsColumn(),
+            const InviteToListButtons(),
             SizedBox(
               height: context.deviceHeight * 0.06,
             ),
-            ElevatedButton.icon(
-              label: Text(AppTranslations.createGroceryList.createList),
-              icon: Assets.svg.icPlus.svg(
-                color: context.theme.colorScheme.secondary,
-              ),
-              onPressed: () => context.read<CreateListBloc>().add(
-                    CreateListEvent.createList(
-                      groceryListModel: GroceryListModel(
-                        id: '1',
-                        name: '',
-                        imageUrl: '',
-                        items: [],
-                        members: [],
-                        creationDate: DateTime.now(),
-                      ),
-                    ),
-                  ),
-            ),
+            const CreateListButton(),
           ],
         ),
       ),
