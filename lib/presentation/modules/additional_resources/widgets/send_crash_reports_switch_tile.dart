@@ -25,8 +25,8 @@ class _SwitchListTile extends StatelessWidget {
           onChanged: (_) => context.read<SendCrashReportsCubit>().toggle(),
           inactiveTrackColor: AppColors.black,
           activeColor: context.theme.primaryColorLight,
-          inactiveThumbColor: AppColors.veryLightGrey,
-          activeTrackColor: AppColors.veryLightGrey,
+          inactiveThumbColor: AppColors.offWhite,
+          activeTrackColor: AppColors.offWhite,
           tileColor: Colors.transparent,
           title: Text(AppTranslations.additionalResources.sendCrashReports),
           subtitle: Text(

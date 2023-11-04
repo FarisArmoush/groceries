@@ -24,8 +24,8 @@ void main() {
       expect(AppColors.lightGrey, const Color(0xFF909090));
     });
 
-    test('veryLightGrey should be Color(0xFFEFEFEF)', () {
-      expect(AppColors.veryLightGrey, const Color(0xFFEFEFEF));
+    test('offWhite should be Color(0xFFEFEFEF)', () {
+      expect(AppColors.offWhite, const Color(0xFFEFEFEF));
     });
 
     test('darkGrey should be Color(0xFF121212)', () {

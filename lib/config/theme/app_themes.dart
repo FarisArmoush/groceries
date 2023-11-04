@@ -35,7 +35,7 @@ class AppThemes {
         primaryColorLight: AppColors.darkRed,
         primaryColorDark: AppColors.lightRed,
         hintColor: AppColors.lightGrey,
-        cardColor: AppColors.veryLightGrey,
+        cardColor: AppColors.offWhite,
         shadowColor: AppColors.black.withOpacity(0.25),
         dividerColor: AppColors.black.withOpacity(0.25),
         scaffoldBackgroundColor: AppColors.white,
