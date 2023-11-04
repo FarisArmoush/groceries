@@ -3,7 +3,7 @@ part of 'app_themes.dart';
 class _AppListTileThemeData {
   static ListTileThemeData light(BuildContext context) {
     return ListTileThemeData(
-      tileColor: AppColors.veryLightGrey,
+      tileColor: AppColors.offWhite,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10),
       ),

@@ -17,10 +17,10 @@ abstract final class AppColors {
   /// Light Grey
   static const Color lightGrey = Color.fromARGB(255, 144, 144, 144);
 
-  /// Very Light Grey
-  static const Color veryLightGrey = Color.fromARGB(255, 239, 239, 239);
+  /// Off White
+  static const Color offWhite = Color.fromARGB(255, 239, 239, 239);
 
-  /// Background dark grey, used for views background.
+  /// Background dark grey, used for scaffolds background.
   static const Color darkGrey = Color.fromARGB(255, 18, 18, 18);
 
   /// Card dark drey used of cards and list tiles
