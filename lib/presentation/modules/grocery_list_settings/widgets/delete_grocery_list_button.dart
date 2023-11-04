@@ -49,7 +49,6 @@ class DeleteGroceryListBottomSheet extends StatelessWidget {
         ),
         FilledButton(
           onPressed: () {
-            // TODO(FarisArmoush): throws error; bloc is used in bottomSheet.
             context.read<DeleteListBloc>().add(
                   const DeleteListEvent.delete(
                     listId: '',
