@@ -22,32 +22,12 @@ class DisplayNameForm extends FormzInput<String, String> {
 
   @override
   String? validator(String? value) {
-    final englishLettersCount =
-        AppRegExps.englishLetters.allMatches(value!).length;
-
-    if (value.isEmpty) {
+    if (value!.isEmpty) {
       return AppTranslations.inputValidationMessages.fieldCannotBeEmpty;
     }
-    var errors = '';
-    if (value.length < 8) {
-      errors +=
-          '${AppTranslations.inputValidationMessages.fieldMustHaveAtLeastEightCharacters}\n';
+    if (value.length.isLessThan(8)) {
+      return '${AppTranslations.inputValidationMessages.fieldMustHaveAtLeastEightCharacters}\n';
     }
-    if (value.contains(AppRegExps.specialCharacters)) {
-      errors +=
-          '${AppTranslations.inputValidationMessages.fieldMustNotContainSpecialCharacters}\n';
-    }
-    if (englishLettersCount < 4) {
-      errors +=
-          '${AppTranslations.inputValidationMessages.fieldMustAtLeastContainFourLetters}\n';
-    }
-    if (value.contains(' ')) {
-      errors +=
-          '${AppTranslations.inputValidationMessages.fieldMustNotHaveSpace}\n';
-    }
-    if (errors.isEmpty) {
-      return null;
-    }
-    return errors.trim();
+    return null;
   }
 }

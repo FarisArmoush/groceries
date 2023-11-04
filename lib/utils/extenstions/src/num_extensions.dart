@@ -6,6 +6,6 @@ extension NumExtenstions on num {
   }
 
   bool isGreaterThan(num value) {
-    return this <= value;
+    return this >= value;
   }
 }
