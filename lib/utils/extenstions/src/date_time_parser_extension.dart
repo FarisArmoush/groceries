@@ -31,7 +31,7 @@ extension DateTimeParser on String {
   }
 
   String _getDayWithSuffix(int day) {
-    if (day >= 11 && day <= 13) {
+    if (day.isGreaterThan(11) && day.isLessThan(13)) {
       return '${day}th';
     }
     return switch (day % 10) {
