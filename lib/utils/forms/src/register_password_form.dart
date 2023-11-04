@@ -23,26 +23,15 @@ class RegisterPasswordForm extends FormzInput<String, String> {
 
   @override
   String? validator(String? value) {
-    var errors = '';
     if (value!.isEmpty) {
       return AppTranslations.inputValidationMessages.fieldCannotBeEmpty;
     }
     if (value.length.isLessThan(8)) {
-      errors += 'Cannot be less than 8 letters.\n';
-      errors +=
-          '${AppTranslations.inputValidationMessages.fieldMustHaveAtLeastEightCharacters}\n';
+      return '${AppTranslations.inputValidationMessages.fieldMustHaveAtLeastEightCharacters}\n';
     }
     if (!value.contains(AppRegExps.specialCharacters)) {
-      errors +=
-          '${AppTranslations.inputValidationMessages.fieldMustContainAtLeastOneSpecialCharacter}\n';
+      return '${AppTranslations.inputValidationMessages.fieldMustContainAtLeastOneSpecialCharacter}\n';
     }
-    if (!value.contains(AppRegExps.numbers)) {
-      errors +=
-          '${AppTranslations.inputValidationMessages.fieldMustContainAtLeastOneNumber}\n';
-    }
-    if (errors.isEmpty) {
-      return null;
-    }
-    return errors.trim();
+    return null;
   }
 }
