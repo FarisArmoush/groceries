@@ -21,13 +21,14 @@ class RegisterPasswordForm extends FormzInput<String, String> {
   /// @param value The initial value of the password form field.
   const RegisterPasswordForm.dirty(super.value) : super.dirty();
 
+  // TODO(FarisArmoush): I dont like the validator.
   @override
   String? validator(String? value) {
     var errors = '';
     if (value!.isEmpty) {
       return AppTranslations.inputValidationMessages.fieldCannotBeEmpty;
     }
-    if (value.length < 8) {
+    if (value.length.isLessThan(8)) {
       errors += 'Cannot be less than 8 letters.\n';
       errors +=
           '${AppTranslations.inputValidationMessages.fieldMustHaveAtLeastEightCharacters}\n';

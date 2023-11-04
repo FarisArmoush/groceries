@@ -8,3 +8,4 @@ part 'src/context_extensions.dart';
 part 'src/padding_extensions.dart';
 part 'src/widgets_as_extensions.dart';
 part 'src/date_time_parser_extension.dart';
+part 'src/num_extensions.dart';

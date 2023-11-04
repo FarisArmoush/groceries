@@ -16,42 +16,55 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$CreateListEvent {
-  GroceryListModel get groceryListModel => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(GroceryListModel groceryListModel) createList,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String icon) iconChanged,
+    required TResult Function() getIcons,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(GroceryListModel groceryListModel)? createList,
+    TResult? Function(String name)? nameChanged,
+    TResult? Function(String icon)? iconChanged,
+    TResult? Function()? getIcons,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(GroceryListModel groceryListModel)? createList,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String icon)? iconChanged,
+    TResult Function()? getIcons,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CreateList value) createList,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_IconChanged value) iconChanged,
+    required TResult Function(_GetIcons value) getIcons,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CreateList value)? createList,
+    TResult? Function(_NameChanged value)? nameChanged,
+    TResult? Function(_IconChanged value)? iconChanged,
+    TResult? Function(_GetIcons value)? getIcons,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CreateList value)? createList,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_IconChanged value)? iconChanged,
+    TResult Function(_GetIcons value)? getIcons,
     required TResult orElse(),
   }) =>
-      throw _privateConstructorUsedError;
-
-  @JsonKey(ignore: true)
-  $CreateListEventCopyWith<CreateListEvent> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -60,10 +73,6 @@ abstract class $CreateListEventCopyWith<$Res> {
   factory $CreateListEventCopyWith(
           CreateListEvent value, $Res Function(CreateListEvent) then) =
       _$CreateListEventCopyWithImpl<$Res, CreateListEvent>;
-  @useResult
-  $Res call({GroceryListModel groceryListModel});
-
-  $GroceryListModelCopyWith<$Res> get groceryListModel;
 }
 
 /// @nodoc
@@ -75,40 +84,16 @@ class _$CreateListEventCopyWithImpl<$Res, $Val extends CreateListEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? groceryListModel = null,
-  }) {
-    return _then(_value.copyWith(
-      groceryListModel: null == groceryListModel
-          ? _value.groceryListModel
-          : groceryListModel // ignore: cast_nullable_to_non_nullable
-              as GroceryListModel,
-    ) as $Val);
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $GroceryListModelCopyWith<$Res> get groceryListModel {
-    return $GroceryListModelCopyWith<$Res>(_value.groceryListModel, (value) {
-      return _then(_value.copyWith(groceryListModel: value) as $Val);
-    });
-  }
 }
 
 /// @nodoc
-abstract class _$$CreateListImplCopyWith<$Res>
-    implements $CreateListEventCopyWith<$Res> {
+abstract class _$$CreateListImplCopyWith<$Res> {
   factory _$$CreateListImplCopyWith(
           _$CreateListImpl value, $Res Function(_$CreateListImpl) then) =
       __$$CreateListImplCopyWithImpl<$Res>;
-  @override
   @useResult
   $Res call({GroceryListModel groceryListModel});
 
-  @override
   $GroceryListModelCopyWith<$Res> get groceryListModel;
 }
 
@@ -131,6 +116,14 @@ class __$$CreateListImplCopyWithImpl<$Res>
           : groceryListModel // ignore: cast_nullable_to_non_nullable
               as GroceryListModel,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $GroceryListModelCopyWith<$Res> get groceryListModel {
+    return $GroceryListModelCopyWith<$Res>(_value.groceryListModel, (value) {
+      return _then(_value.copyWith(groceryListModel: value));
+    });
   }
 }
 
@@ -169,6 +162,9 @@ class _$CreateListImpl implements _CreateList {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(GroceryListModel groceryListModel) createList,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String icon) iconChanged,
+    required TResult Function() getIcons,
   }) {
     return createList(groceryListModel);
   }
@@ -177,6 +173,9 @@ class _$CreateListImpl implements _CreateList {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(GroceryListModel groceryListModel)? createList,
+    TResult? Function(String name)? nameChanged,
+    TResult? Function(String icon)? iconChanged,
+    TResult? Function()? getIcons,
   }) {
     return createList?.call(groceryListModel);
   }
@@ -185,6 +184,9 @@ class _$CreateListImpl implements _CreateList {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(GroceryListModel groceryListModel)? createList,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String icon)? iconChanged,
+    TResult Function()? getIcons,
     required TResult orElse(),
   }) {
     if (createList != null) {
@@ -197,6 +199,9 @@ class _$CreateListImpl implements _CreateList {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_CreateList value) createList,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_IconChanged value) iconChanged,
+    required TResult Function(_GetIcons value) getIcons,
   }) {
     return createList(this);
   }
@@ -205,6 +210,9 @@ class _$CreateListImpl implements _CreateList {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_CreateList value)? createList,
+    TResult? Function(_NameChanged value)? nameChanged,
+    TResult? Function(_IconChanged value)? iconChanged,
+    TResult? Function(_GetIcons value)? getIcons,
   }) {
     return createList?.call(this);
   }
@@ -213,6 +221,9 @@ class _$CreateListImpl implements _CreateList {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_CreateList value)? createList,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_IconChanged value)? iconChanged,
+    TResult Function(_GetIcons value)? getIcons,
     required TResult orElse(),
   }) {
     if (createList != null) {
@@ -226,12 +237,414 @@ abstract class _CreateList implements CreateListEvent {
   const factory _CreateList(
       {required final GroceryListModel groceryListModel}) = _$CreateListImpl;
 
-  @override
   GroceryListModel get groceryListModel;
-  @override
   @JsonKey(ignore: true)
   _$$CreateListImplCopyWith<_$CreateListImpl> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$NameChangedImplCopyWith<$Res> {
+  factory _$$NameChangedImplCopyWith(
+          _$NameChangedImpl value, $Res Function(_$NameChangedImpl) then) =
+      __$$NameChangedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String name});
+}
+
+/// @nodoc
+class __$$NameChangedImplCopyWithImpl<$Res>
+    extends _$CreateListEventCopyWithImpl<$Res, _$NameChangedImpl>
+    implements _$$NameChangedImplCopyWith<$Res> {
+  __$$NameChangedImplCopyWithImpl(
+      _$NameChangedImpl _value, $Res Function(_$NameChangedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? name = null,
+  }) {
+    return _then(_$NameChangedImpl(
+      null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$NameChangedImpl implements _NameChanged {
+  const _$NameChangedImpl(this.name);
+
+  @override
+  final String name;
+
+  @override
+  String toString() {
+    return 'CreateListEvent.nameChanged(name: $name)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NameChangedImpl &&
+            (identical(other.name, name) || other.name == name));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, name);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$NameChangedImplCopyWith<_$NameChangedImpl> get copyWith =>
+      __$$NameChangedImplCopyWithImpl<_$NameChangedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(GroceryListModel groceryListModel) createList,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String icon) iconChanged,
+    required TResult Function() getIcons,
+  }) {
+    return nameChanged(name);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(GroceryListModel groceryListModel)? createList,
+    TResult? Function(String name)? nameChanged,
+    TResult? Function(String icon)? iconChanged,
+    TResult? Function()? getIcons,
+  }) {
+    return nameChanged?.call(name);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(GroceryListModel groceryListModel)? createList,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String icon)? iconChanged,
+    TResult Function()? getIcons,
+    required TResult orElse(),
+  }) {
+    if (nameChanged != null) {
+      return nameChanged(name);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CreateList value) createList,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_IconChanged value) iconChanged,
+    required TResult Function(_GetIcons value) getIcons,
+  }) {
+    return nameChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CreateList value)? createList,
+    TResult? Function(_NameChanged value)? nameChanged,
+    TResult? Function(_IconChanged value)? iconChanged,
+    TResult? Function(_GetIcons value)? getIcons,
+  }) {
+    return nameChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CreateList value)? createList,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_IconChanged value)? iconChanged,
+    TResult Function(_GetIcons value)? getIcons,
+    required TResult orElse(),
+  }) {
+    if (nameChanged != null) {
+      return nameChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NameChanged implements CreateListEvent {
+  const factory _NameChanged(final String name) = _$NameChangedImpl;
+
+  String get name;
+  @JsonKey(ignore: true)
+  _$$NameChangedImplCopyWith<_$NameChangedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$IconChangedImplCopyWith<$Res> {
+  factory _$$IconChangedImplCopyWith(
+          _$IconChangedImpl value, $Res Function(_$IconChangedImpl) then) =
+      __$$IconChangedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String icon});
+}
+
+/// @nodoc
+class __$$IconChangedImplCopyWithImpl<$Res>
+    extends _$CreateListEventCopyWithImpl<$Res, _$IconChangedImpl>
+    implements _$$IconChangedImplCopyWith<$Res> {
+  __$$IconChangedImplCopyWithImpl(
+      _$IconChangedImpl _value, $Res Function(_$IconChangedImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? icon = null,
+  }) {
+    return _then(_$IconChangedImpl(
+      null == icon
+          ? _value.icon
+          : icon // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$IconChangedImpl implements _IconChanged {
+  const _$IconChangedImpl(this.icon);
+
+  @override
+  final String icon;
+
+  @override
+  String toString() {
+    return 'CreateListEvent.iconChanged(icon: $icon)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$IconChangedImpl &&
+            (identical(other.icon, icon) || other.icon == icon));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, icon);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$IconChangedImplCopyWith<_$IconChangedImpl> get copyWith =>
+      __$$IconChangedImplCopyWithImpl<_$IconChangedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(GroceryListModel groceryListModel) createList,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String icon) iconChanged,
+    required TResult Function() getIcons,
+  }) {
+    return iconChanged(icon);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(GroceryListModel groceryListModel)? createList,
+    TResult? Function(String name)? nameChanged,
+    TResult? Function(String icon)? iconChanged,
+    TResult? Function()? getIcons,
+  }) {
+    return iconChanged?.call(icon);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(GroceryListModel groceryListModel)? createList,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String icon)? iconChanged,
+    TResult Function()? getIcons,
+    required TResult orElse(),
+  }) {
+    if (iconChanged != null) {
+      return iconChanged(icon);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CreateList value) createList,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_IconChanged value) iconChanged,
+    required TResult Function(_GetIcons value) getIcons,
+  }) {
+    return iconChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CreateList value)? createList,
+    TResult? Function(_NameChanged value)? nameChanged,
+    TResult? Function(_IconChanged value)? iconChanged,
+    TResult? Function(_GetIcons value)? getIcons,
+  }) {
+    return iconChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CreateList value)? createList,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_IconChanged value)? iconChanged,
+    TResult Function(_GetIcons value)? getIcons,
+    required TResult orElse(),
+  }) {
+    if (iconChanged != null) {
+      return iconChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _IconChanged implements CreateListEvent {
+  const factory _IconChanged(final String icon) = _$IconChangedImpl;
+
+  String get icon;
+  @JsonKey(ignore: true)
+  _$$IconChangedImplCopyWith<_$IconChangedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetIconsImplCopyWith<$Res> {
+  factory _$$GetIconsImplCopyWith(
+          _$GetIconsImpl value, $Res Function(_$GetIconsImpl) then) =
+      __$$GetIconsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$GetIconsImplCopyWithImpl<$Res>
+    extends _$CreateListEventCopyWithImpl<$Res, _$GetIconsImpl>
+    implements _$$GetIconsImplCopyWith<$Res> {
+  __$$GetIconsImplCopyWithImpl(
+      _$GetIconsImpl _value, $Res Function(_$GetIconsImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$GetIconsImpl implements _GetIcons {
+  const _$GetIconsImpl();
+
+  @override
+  String toString() {
+    return 'CreateListEvent.getIcons()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$GetIconsImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(GroceryListModel groceryListModel) createList,
+    required TResult Function(String name) nameChanged,
+    required TResult Function(String icon) iconChanged,
+    required TResult Function() getIcons,
+  }) {
+    return getIcons();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(GroceryListModel groceryListModel)? createList,
+    TResult? Function(String name)? nameChanged,
+    TResult? Function(String icon)? iconChanged,
+    TResult? Function()? getIcons,
+  }) {
+    return getIcons?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(GroceryListModel groceryListModel)? createList,
+    TResult Function(String name)? nameChanged,
+    TResult Function(String icon)? iconChanged,
+    TResult Function()? getIcons,
+    required TResult orElse(),
+  }) {
+    if (getIcons != null) {
+      return getIcons();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CreateList value) createList,
+    required TResult Function(_NameChanged value) nameChanged,
+    required TResult Function(_IconChanged value) iconChanged,
+    required TResult Function(_GetIcons value) getIcons,
+  }) {
+    return getIcons(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CreateList value)? createList,
+    TResult? Function(_NameChanged value)? nameChanged,
+    TResult? Function(_IconChanged value)? iconChanged,
+    TResult? Function(_GetIcons value)? getIcons,
+  }) {
+    return getIcons?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CreateList value)? createList,
+    TResult Function(_NameChanged value)? nameChanged,
+    TResult Function(_IconChanged value)? iconChanged,
+    TResult Function(_GetIcons value)? getIcons,
+    required TResult orElse(),
+  }) {
+    if (getIcons != null) {
+      return getIcons(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetIcons implements CreateListEvent {
+  const factory _GetIcons() = _$GetIconsImpl;
 }
 
 /// @nodoc
