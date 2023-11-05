@@ -6,19 +6,35 @@ class RecipesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(AppTranslations.recipes.recipes),
-        leading: const SizedBox.shrink(),
-        actions: [
-          IconButton(
-            onPressed: () => context.pushNamed(AppNamedRoutes.createRecipe),
-            icon: Assets.svg.icPlusCircle.svg(
-              color: context.theme.primaryColorLight,
+      body: RefreshIndicator.adaptive(
+        onRefresh: () async {
+          context.read<RecipesBloc>().add(const RecipesEvent.loadMyRecipes());
+        },
+        child: CustomScrollView(
+          physics: const BouncingScrollPhysics(),
+          slivers: [
+            GroceriesAppBar(
+              title: AppTranslations.recipes.recipes,
+              trailing: IconButton(
+                onPressed: () => context.pushNamed(AppNamedRoutes.createRecipe),
+                icon: Assets.svg.icPlusCircle.svg(
+                  color: context.theme.primaryColorLight,
+                ),
+              ),
             ),
-          ),
-        ],
+            BlocBuilder<RecipesBloc, RecipesState>(
+              builder: (context, state) => state.status.when(
+                initial: SizedBox.shrink,
+                loading: () => const ShimmeredRecipesList(),
+                failure: (error) => Center(child: Text(error)),
+                success: () => state.recipes.isEmpty
+                    ? const YouHaveNoRecipes()
+                    : RecipesList(recipes: state.recipes),
+              ),
+            ).asSliver(),
+          ],
+        ),
       ),
-      body: const RecipesPage(),
     );
   }
 }

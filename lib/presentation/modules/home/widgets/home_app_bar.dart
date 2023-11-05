@@ -13,6 +13,7 @@ class HomeAppBar extends StatelessWidget {
       ),
       alwaysShowMiddle: false,
       automaticallyImplyLeading: false,
+      backgroundColor: context.theme.scaffoldBackgroundColor,
     );
   }
 }
