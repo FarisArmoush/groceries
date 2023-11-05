@@ -12,7 +12,6 @@ import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
 
-part 'pages/recipes_page.dart';
 part 'views/recipes_view.dart';
 part 'widgets/recipe_card/recipe_card.dart';
 part 'widgets/recipe_card/recipe_card_image.dart';
