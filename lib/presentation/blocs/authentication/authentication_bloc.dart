@@ -18,7 +18,6 @@ class AuthenticationBloc
               : const _UnAuthenticated(),
         ) {
     on<_UserChanged>(_onUserChanged);
-    on<_Logout>(_onLogoutRequested);
 
     _userSubscription = _authenticationRepository.authStateChanges.listen(
       (user) => add(
@@ -39,13 +38,6 @@ class AuthenticationBloc
           ? _Authenticated(user: _authenticationRepository.currentUser)
           : const _UnAuthenticated(),
     );
-  }
-
-  Future<void> _onLogoutRequested(
-    _Logout event,
-    Emitter<AuthenticationState> emit,
-  ) async {
-    await _authenticationRepository.logOut();
   }
 
   @override
