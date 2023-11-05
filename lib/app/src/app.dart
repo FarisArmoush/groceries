@@ -165,6 +165,11 @@ class App extends StatelessWidget {
                             ),
                           ),
                           RepositoryProvider(
+                            create: (context) => LogoutUseCase(
+                              context.read<AuthenticationRepository>(),
+                            ),
+                          ),
+                          RepositoryProvider(
                             create: (context) =>
                                 RegisterWithEmailAndPasswordUseCase(
                               context.read<AuthenticationRepository>(),

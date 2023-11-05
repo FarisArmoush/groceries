@@ -33,8 +33,8 @@ class VerificationEmailSentSuccessfully extends StatelessWidget {
         FilledButton(
           onPressed: () {
             context
-              ..read<AuthenticationBloc>().add(
-                const AuthenticationEvent.logout(),
+              ..read<LogoutBloc>().add(
+                const LogoutEvent.logout(),
               )
               ..pop();
           },

@@ -5,19 +5,30 @@ class LogoutButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<AuthenticationBloc, AuthenticationState>(
-      listenWhen: (previous, current) => previous != current,
+    return BlocListener<LogoutBloc, LogoutState>(
+      listenWhen: (previous, current) => previous.status != current.status,
       listener: (context, state) {
-        if (state == const AuthenticationState.unAuthenticated()) {
-          ScaffoldMessenger.of(context)
+        state.status.maybeWhen(
+          failure: (error) => ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(
-              AppSnackBars.informative(
-                message: "We'll Miss you.",
+              AppSnackBars.error(
+                error: 'Failed to log you out',
               ),
-            );
-          context.pushReplacementNamed(AppNamedRoutes.welcome);
-        }
+            ),
+          success: () {
+            ScaffoldMessenger.of(context)
+              ..hideCurrentSnackBar()
+              ..showSnackBar(
+                AppSnackBars.informative(
+                  message: "We'll Miss you.",
+                ),
+              );
+
+            context.pushReplacementNamed(AppNamedRoutes.welcome);
+          },
+          orElse: () {},
+        );
       },
       child: AppListTileButton(
         title: AppTranslations.accountSettings.logout,
