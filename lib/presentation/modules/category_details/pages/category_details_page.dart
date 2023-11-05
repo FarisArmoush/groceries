@@ -21,8 +21,8 @@ class CategoryDetailsPage extends StatelessWidget {
             return CustomScrollView(
               physics: const BouncingScrollPhysics(),
               slivers: [
-                SliverAppBar.medium(
-                  title: Text(parentCategoryModel.name!),
+                GroceriesAppBar(
+                  title: parentCategoryModel.name!,
                 ),
                 if (state.categories.isEmpty)
                   SliverToBoxAdapter(

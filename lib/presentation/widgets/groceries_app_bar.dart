@@ -5,7 +5,8 @@ class GroceriesAppBar extends StatelessWidget {
     required this.title,
     this.automaticallyImplyLeading = true,
     this.trailing,
-    this.stretch = false,
+    this.stretch = true,
+    this.transitionBetweenRoutes = false,
     super.key,
   });
 
@@ -13,6 +14,7 @@ class GroceriesAppBar extends StatelessWidget {
   final bool automaticallyImplyLeading;
   final Widget? trailing;
   final bool stretch;
+  final bool transitionBetweenRoutes;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,7 @@ class GroceriesAppBar extends StatelessWidget {
         title,
         style: TextStyle(
           fontFamily: AppFonts.regular(context),
-          fontSize: 28,
+          fontSize: 24,
           color: context.theme.primaryColor,
         ),
       ),
@@ -36,6 +38,7 @@ class GroceriesAppBar extends StatelessWidget {
       trailing: trailing,
       alwaysShowMiddle: false,
       automaticallyImplyLeading: automaticallyImplyLeading,
+      transitionBetweenRoutes: transitionBetweenRoutes,
     );
   }
 }
