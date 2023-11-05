@@ -1,0 +1,18 @@
+part of '../home.dart';
+
+class HomeAppBar extends StatelessWidget {
+  const HomeAppBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return CupertinoSliverNavigationBar(
+      largeTitle: const HomeHeader(),
+      middle: Text(
+        'Home',
+        style: context.theme.appBarTheme.titleTextStyle,
+      ),
+      alwaysShowMiddle: false,
+      automaticallyImplyLeading: false,
+    );
+  }
+}

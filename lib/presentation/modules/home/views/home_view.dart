@@ -7,26 +7,23 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: ListView(
+        body: CustomScrollView(
           physics: const BouncingScrollPhysics(),
-          padding: const EdgeInsets.all(16),
-          children: [
-            SizedBox(
-              height: context.deviceHeight * 0.04,
-            ),
-            const HomeHeader(),
-            SizedBox(
+          slivers: [
+            const HomeAppBar(),
+            SliverSizedBox(
               height: context.deviceHeight * 0.05,
             ),
-            const GroceryListsForm(),
-            SizedBox(
+            const GroceryListsForm()
+                .symmetricPadding(horizontal: 16)
+                .asSliver(),
+            SliverSizedBox(
               height: context.deviceHeight * 0.05,
             ),
-            const MyTasksForm(),
-            SizedBox(
+            const MyTasksForm().symmetricPadding(horizontal: 16).asSliver(),
+            SliverSizedBox(
               height: context.deviceHeight * 0.05,
             ),
-            // const _MockAddItemsToCloudFirestoreAutomatically(),
           ],
         ),
       ),

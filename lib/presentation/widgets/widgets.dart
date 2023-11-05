@@ -2,6 +2,7 @@ library widgets;
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
@@ -30,3 +31,4 @@ part 'password_input_obscurity_button.dart';
 part 'shimmer_skeleton.dart';
 part 'upload_image_bottom_sheet.dart';
 part 'sliver_sized_box.dart';
+part 'groceries_app_bar.dart';
