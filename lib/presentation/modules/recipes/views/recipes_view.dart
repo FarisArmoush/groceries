@@ -14,7 +14,7 @@ class RecipesView extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           slivers: [
             GroceriesAppBar(
-              stretch: true,
+              automaticallyImplyLeading: false,
               title: AppTranslations.recipes.recipes,
               trailing: IconButton(
                 onPressed: () => context.pushNamed(AppNamedRoutes.createRecipe),
