@@ -8,7 +8,7 @@ class HomeAppBar extends StatelessWidget {
     return CupertinoSliverNavigationBar(
       largeTitle: const HomeHeader(),
       middle: Text(
-        'Home',
+        AppTranslations.home.home,
         style: context.theme.appBarTheme.titleTextStyle,
       ),
       alwaysShowMiddle: false,

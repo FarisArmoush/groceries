@@ -11,32 +11,62 @@ class GroceryListDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          children: [
-            Icon(
-              CupertinoIcons.bag,
-              color: context.theme.primaryColor,
+      body: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
+        slivers: [
+          CupertinoSliverNavigationBar(
+            transitionBetweenRoutes: false,
+            trailing: const Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                GroceryListOptionsButton(),
+                ClearGroceryListItemsButton(),
+              ],
             ),
-            SizedBox(
-              width: context.deviceWidth * 0.02,
+            largeTitle: _appBarTitle(
+              context,
+              TextStyle(
+                fontFamily: AppFonts.regular(context),
+                fontSize: 28,
+                color: context.theme.primaryColor,
+              ),
             ),
-            Text(listModel.name ?? 'null'),
-          ],
-        ),
-        actions: const [
-          GroceryListOptionsButton(),
-          ClearGroceryListItemsButton(),
+            middle: _appBarTitle(
+              context,
+              context.theme.appBarTheme.titleTextStyle,
+            ),
+            alwaysShowMiddle: false,
+            backgroundColor: context.theme.scaffoldBackgroundColor,
+          ),
+          if (listModel.items!.isEmpty)
+            const EmptyGroceryList().asSliver()
+          else
+            GroceryListDetailsForm(
+              listModel: listModel,
+            ).asSliver(),
         ],
       ),
-      body: listModel.items!.isEmpty
-          ? const EmptyGroceryList()
-          : GroceryListDetailsForm(
-              listModel: listModel,
-            ),
       floatingActionButton: listModel.items!.isEmpty
           ? const SizedBox.shrink()
           : const GroceryListDetailsFab(),
+    );
+  }
+
+  Widget _appBarTitle(BuildContext context, TextStyle? textStyle) {
+    return Row(
+      children: [
+        Icon(
+          CupertinoIcons.bag,
+          color: context.theme.primaryColor,
+        ),
+        SizedBox(
+          width: context.deviceWidth * 0.02,
+        ),
+        Text(
+          listModel.name ?? 'null',
+          style: textStyle,
+        ),
+      ],
     );
   }
 }
