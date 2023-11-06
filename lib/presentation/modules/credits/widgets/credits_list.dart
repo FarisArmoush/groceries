@@ -7,7 +7,7 @@ class CreditsList extends StatelessWidget {
     super.key,
   });
 
-  final String title;
+  final Widget title;
   final List<CreditModel> credits;
 
   @override
@@ -18,13 +18,13 @@ class CreditsList extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
-            title,
+          DefaultTextStyle(
             style: TextStyle(
               fontFamily: AppFonts.medium(context),
               color: context.theme.primaryColor,
               fontSize: 12,
             ),
+            child: title,
           ),
           SizedBox(
             height: context.deviceHeight * 0.01,
