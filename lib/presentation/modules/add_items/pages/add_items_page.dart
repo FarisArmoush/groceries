@@ -14,7 +14,10 @@ class AddItemsPage extends StatelessWidget {
           success: () => CustomScrollView(
             physics: const BouncingScrollPhysics(),
             slivers: [
-              GroceriesAppBar(title: AppTranslations.addItems.addItems),
+              GroceriesAppBar(
+                largeTitle: Text(AppTranslations.addItems.addItems),
+                middle: Text(AppTranslations.addItems.addItems),
+              ),
               const SliverToBoxAdapter(
                 child: AddItemsCategoriesList(),
               ),

@@ -15,7 +15,8 @@ class RecipeDetailsPage extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         slivers: [
           GroceriesAppBar(
-            title: recipeModel.name!,
+            middle: Text(recipeModel.name!),
+            largeTitle: Text(recipeModel.name!),
             trailing: IconButton(
               onPressed: () => showModalBottomSheet<void>(
                 context: context,

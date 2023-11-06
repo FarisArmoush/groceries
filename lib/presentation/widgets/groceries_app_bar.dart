@@ -2,7 +2,8 @@ part of 'widgets.dart';
 
 class GroceriesAppBar extends StatelessWidget {
   const GroceriesAppBar({
-    required this.title,
+    required this.largeTitle,
+    required this.middle,
     this.automaticallyImplyLeading = true,
     this.trailing,
     this.stretch = true,
@@ -10,30 +11,32 @@ class GroceriesAppBar extends StatelessWidget {
     super.key,
   });
 
-  final String title;
   final bool automaticallyImplyLeading;
   final Widget? trailing;
   final bool stretch;
   final bool transitionBetweenRoutes;
+
+  final Widget largeTitle;
+  final Widget middle;
 
   @override
   Widget build(BuildContext context) {
     return CupertinoSliverNavigationBar(
       backgroundColor: context.theme.scaffoldBackgroundColor,
       stretch: stretch,
-      largeTitle: Text(
-        title,
+      largeTitle: DefaultTextStyle.merge(
         style: TextStyle(
           fontFamily: AppFonts.regular(context),
           fontSize: 24,
           color: context.theme.primaryColor,
         ),
+        child: largeTitle,
       ),
-      middle: Text(
-        title,
+      middle: DefaultTextStyle.merge(
         style: context.theme.appBarTheme.titleTextStyle!.copyWith(
           fontSize: 18,
         ),
+        child: middle,
       ),
       trailing: trailing,
       alwaysShowMiddle: false,

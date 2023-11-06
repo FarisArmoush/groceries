@@ -22,7 +22,8 @@ class CategoryDetailsPage extends StatelessWidget {
               physics: const BouncingScrollPhysics(),
               slivers: [
                 GroceriesAppBar(
-                  title: parentCategoryModel.name!,
+                  largeTitle: Text(parentCategoryModel.name!),
+                  middle: Text(parentCategoryModel.name!),
                 ),
                 if (state.categories.isEmpty)
                   SliverToBoxAdapter(

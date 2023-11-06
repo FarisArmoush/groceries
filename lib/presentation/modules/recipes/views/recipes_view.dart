@@ -15,7 +15,8 @@ class RecipesView extends StatelessWidget {
           slivers: [
             GroceriesAppBar(
               automaticallyImplyLeading: false,
-              title: AppTranslations.recipes.recipes,
+              middle: Text(AppTranslations.recipes.recipes),
+              largeTitle: Text(AppTranslations.recipes.recipes),
               trailing: IconButton(
                 onPressed: () => context.pushNamed(AppNamedRoutes.createRecipe),
                 icon: Assets.svg.icPlusCircle.svg(

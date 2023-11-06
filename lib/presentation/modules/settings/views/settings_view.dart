@@ -10,7 +10,8 @@ class SettingsView extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         slivers: [
           GroceriesAppBar(
-            title: AppTranslations.settings.settings,
+            largeTitle: Text(AppTranslations.settings.settings),
+            middle: Text(AppTranslations.settings.settings),
             automaticallyImplyLeading: false,
           ),
           SliverPadding(

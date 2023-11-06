@@ -14,8 +14,7 @@ class GroceryListDetailsView extends StatelessWidget {
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [
-          CupertinoSliverNavigationBar(
-            transitionBetweenRoutes: false,
+          GroceriesAppBar(
             trailing: const Row(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -23,20 +22,8 @@ class GroceryListDetailsView extends StatelessWidget {
                 ClearGroceryListItemsButton(),
               ],
             ),
-            largeTitle: _appBarTitle(
-              context,
-              TextStyle(
-                fontFamily: AppFonts.regular(context),
-                fontSize: 28,
-                color: context.theme.primaryColor,
-              ),
-            ),
-            middle: _appBarTitle(
-              context,
-              context.theme.appBarTheme.titleTextStyle,
-            ),
-            alwaysShowMiddle: false,
-            backgroundColor: context.theme.scaffoldBackgroundColor,
+            largeTitle: _appBarTitle(context),
+            middle: _appBarTitle(context),
           ),
           if (listModel.items!.isEmpty)
             const EmptyGroceryList().asSliver()
@@ -52,7 +39,7 @@ class GroceryListDetailsView extends StatelessWidget {
     );
   }
 
-  Widget _appBarTitle(BuildContext context, TextStyle? textStyle) {
+  Widget _appBarTitle(BuildContext context) {
     return Row(
       children: [
         Icon(
@@ -62,10 +49,7 @@ class GroceryListDetailsView extends StatelessWidget {
         SizedBox(
           width: context.deviceWidth * 0.02,
         ),
-        Text(
-          listModel.name ?? 'null',
-          style: textStyle,
-        ),
+        Text(listModel.name!),
       ],
     );
   }

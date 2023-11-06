@@ -12,7 +12,8 @@ class CreditsPage extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         slivers: [
           GroceriesAppBar(
-            title: AppTranslations.additionalResources.credits,
+            largeTitle: Text(AppTranslations.additionalResources.credits),
+            middle: Text(AppTranslations.additionalResources.credits),
           ),
           SliverPadding(
             padding: const EdgeInsets.all(16),

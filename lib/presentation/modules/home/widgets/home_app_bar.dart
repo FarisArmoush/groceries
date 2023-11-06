@@ -5,15 +5,13 @@ class HomeAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoSliverNavigationBar(
+    return GroceriesAppBar(
       largeTitle: const HomeHeader(),
       middle: Text(
         AppTranslations.home.home,
         style: context.theme.appBarTheme.titleTextStyle,
       ),
-      alwaysShowMiddle: false,
       automaticallyImplyLeading: false,
-      backgroundColor: context.theme.scaffoldBackgroundColor,
     );
   }
 }

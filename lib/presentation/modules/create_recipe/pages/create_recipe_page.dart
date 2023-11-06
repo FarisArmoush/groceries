@@ -11,7 +11,8 @@ class CreateRecipePage extends StatelessWidget {
         physics: const BouncingScrollPhysics(),
         slivers: [
           GroceriesAppBar(
-            title: AppTranslations.createRecipe.createRecipe,
+            largeTitle: Text(AppTranslations.createRecipe.createRecipe),
+            middle: Text(AppTranslations.createRecipe.createRecipe),
           ),
           SliverPadding(
             padding: const EdgeInsetsDirectional.symmetric(
