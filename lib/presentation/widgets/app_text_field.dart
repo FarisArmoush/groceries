@@ -132,7 +132,7 @@ class AppTextField extends StatelessWidget {
       onChanged: onChanged,
       onTap: onTap,
       keyboardType: keyboardType,
-      onTapOutside: onTapOutside,
+      onTapOutside: onTapOutside ?? (_) => FocusScope.of(context).unfocus(),
       cursorColor: context.theme.primaryColorLight,
       cursorWidth: 1,
       onEditingComplete: onEditingComplete,
