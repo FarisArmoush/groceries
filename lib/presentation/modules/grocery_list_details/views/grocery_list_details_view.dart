@@ -11,32 +11,46 @@ class GroceryListDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Row(
-          children: [
-            Icon(
-              CupertinoIcons.bag,
-              color: context.theme.primaryColor,
+      body: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
+        slivers: [
+          GroceriesAppBar(
+            trailing: const Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                GroceryListOptionsButton(),
+                ClearGroceryListItemsButton(),
+              ],
             ),
-            SizedBox(
-              width: context.deviceWidth * 0.02,
-            ),
-            Text(listModel.name ?? 'null'),
-          ],
-        ),
-        actions: const [
-          GroceryListOptionsButton(),
-          ClearGroceryListItemsButton(),
+            largeTitle: _appBarTitle(context),
+            middle: _appBarTitle(context),
+          ),
+          if (listModel.items!.isEmpty)
+            const EmptyGroceryList().asSliver()
+          else
+            GroceryListDetailsForm(
+              listModel: listModel,
+            ).asSliver(),
         ],
       ),
-      body: listModel.items!.isEmpty
-          ? const EmptyGroceryList()
-          : GroceryListDetailsForm(
-              listModel: listModel,
-            ),
       floatingActionButton: listModel.items!.isEmpty
           ? const SizedBox.shrink()
           : const GroceryListDetailsFab(),
+    );
+  }
+
+  Widget _appBarTitle(BuildContext context) {
+    return Row(
+      children: [
+        Icon(
+          CupertinoIcons.bag,
+          color: context.theme.primaryColor,
+        ),
+        SizedBox(
+          width: context.deviceWidth * 0.02,
+        ),
+        Text(listModel.name!),
+      ],
     );
   }
 }

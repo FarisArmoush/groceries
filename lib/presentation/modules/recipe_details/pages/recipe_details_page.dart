@@ -14,21 +14,20 @@ class RecipeDetailsPage extends StatelessWidget {
       body: CustomScrollView(
         physics: const BouncingScrollPhysics(),
         slivers: [
-          SliverAppBar.medium(
-            title: Text(recipeModel.name!),
-            actions: [
-              IconButton(
-                onPressed: () => showModalBottomSheet<void>(
-                  context: context,
-                  elevation: 0,
-                  showDragHandle: true,
-                  builder: (context) => const RecipeOptionsBottomSheet(),
-                ),
-                icon: Assets.svg.icVerticalThreeDots.svg(
-                  color: context.theme.hintColor,
-                ),
+          GroceriesAppBar(
+            middle: Text(recipeModel.name!),
+            largeTitle: Text(recipeModel.name!),
+            trailing: IconButton(
+              onPressed: () => showModalBottomSheet<void>(
+                context: context,
+                elevation: 0,
+                showDragHandle: true,
+                builder: (context) => const RecipeOptionsBottomSheet(),
               ),
-            ],
+              icon: Assets.svg.icVerticalThreeDots.svg(
+                color: context.theme.hintColor,
+              ),
+            ),
           ),
           SliverPadding(
             padding: const EdgeInsets.symmetric(

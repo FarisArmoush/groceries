@@ -8,32 +8,40 @@ class CreditsPage extends StatelessWidget {
     final creditsCubit = context.watch<CreditsCubit>().state;
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(AppTranslations.additionalResources.credits),
-      ),
-      body: ListView(
-        padding: const EdgeInsets.all(16),
+      body: CustomScrollView(
         physics: const BouncingScrollPhysics(),
-        children: [
-          CreditsList(
-            title: 'Packages provided by the Flutter Community.',
-            credits: creditsCubit.uiPackages,
+        slivers: [
+          GroceriesAppBar(
+            largeTitle: Text(AppTranslations.additionalResources.credits),
+            middle: Text(AppTranslations.additionalResources.credits),
           ),
-          CreditsList(
-            title: 'State management packages.',
-            credits: creditsCubit.stateManagementPackages,
-          ),
-          CreditsList(
-            title: 'Development specific packages.',
-            credits: creditsCubit.devPackages,
-          ),
-          CreditsList(
-            title: 'Firebase Packages.',
-            credits: creditsCubit.backendPackages,
-          ),
-          CreditsList(
-            title: 'Misc.',
-            credits: creditsCubit.miscPackages,
+          SliverPadding(
+            padding: const EdgeInsets.all(16),
+            sliver: SliverList.list(
+              children: [
+                CreditsList(
+                  title:
+                      const Text('Packages provided by the Flutter Community.'),
+                  credits: creditsCubit.uiPackages,
+                ),
+                CreditsList(
+                  title: const Text('State management packages.'),
+                  credits: creditsCubit.stateManagementPackages,
+                ),
+                CreditsList(
+                  title: const Text('Development specific packages.'),
+                  credits: creditsCubit.devPackages,
+                ),
+                CreditsList(
+                  title: const Text('Firebase Packages.'),
+                  credits: creditsCubit.backendPackages,
+                ),
+                CreditsList(
+                  title: const Text('Misc.'),
+                  credits: creditsCubit.miscPackages,
+                ),
+              ],
+            ),
           ),
         ],
       ),

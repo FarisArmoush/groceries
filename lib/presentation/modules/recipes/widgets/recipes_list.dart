@@ -10,6 +10,7 @@ class RecipesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
+      shrinkWrap: true,
       physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.symmetric(
         horizontal: 16,

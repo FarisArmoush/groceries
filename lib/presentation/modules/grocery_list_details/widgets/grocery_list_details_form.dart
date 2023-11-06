@@ -11,6 +11,7 @@ class GroceryListDetailsForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      shrinkWrap: true,
       primary: true,
       physics: const BouncingScrollPhysics(),
       children: [
