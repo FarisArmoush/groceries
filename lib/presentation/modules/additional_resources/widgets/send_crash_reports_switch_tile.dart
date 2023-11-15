@@ -20,17 +20,16 @@ class _SwitchListTile extends StatelessWidget {
     return BlocBuilder<SendCrashReportsCubit, bool>(
       buildWhen: (previous, current) => previous != current,
       builder: (context, state) {
-        return SwitchListTile(
-          value: state,
-          onChanged: (_) => context.read<SendCrashReportsCubit>().toggle(),
-          inactiveTrackColor: AppColors.black,
-          activeColor: context.theme.primaryColorLight,
-          inactiveThumbColor: AppColors.offWhite,
-          activeTrackColor: AppColors.offWhite,
+        return ListTile(
           tileColor: Colors.transparent,
           title: Text(AppTranslations.additionalResources.sendCrashReports),
           subtitle: Text(
             AppTranslations.additionalResources.sendCrashReportsDescription,
+          ),
+          trailing: CupertinoSwitch(
+            activeColor: context.theme.primaryColorLight,
+            value: state,
+            onChanged: (_) => context.read<SendCrashReportsCubit>().toggle(),
           ),
         );
       },

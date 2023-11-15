@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CLIENT_ID</key>
-	<string>960305957931-q5fa19va1imtvnh34ltee42ju5s5c0ud.apps.googleusercontent.com</string>
-	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.960305957931-q5fa19va1imtvnh34ltee42ju5s5c0ud</string>
 	<key>API_KEY</key>
 	<string>AIzaSyAu8OIr4JZmnyFvUDgDKBrmXTgeWG_WHhk</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.example.grocories</string>
+	<string>com.example.groceries</string>
 	<key>PROJECT_ID</key>
 	<string>grocoriesapp</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +25,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:960305957931:ios:c6ef830431f83c974eae6e</string>
+	<string>1:960305957931:ios:a3af9162117397064eae6e</string>
 	<key>DATABASE_URL</key>
 	<string>https://grocoriesapp-default-rtdb.europe-west1.firebasedatabase.app</string>
 </dict>
