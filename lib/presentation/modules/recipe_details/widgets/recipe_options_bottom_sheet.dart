@@ -8,10 +8,7 @@ class RecipeOptionsBottomSheet extends StatelessWidget {
     return ListView(
       physics: const BouncingScrollPhysics(),
       shrinkWrap: true,
-      padding: const EdgeInsetsDirectional.symmetric(
-        vertical: 12,
-        horizontal: 24,
-      ),
+      padding: AppPaddings.bottomSheetPadding(context),
       children: [
         BottomSheetButton(
           onTap: () {},

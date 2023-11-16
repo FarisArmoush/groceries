@@ -34,10 +34,7 @@ class VerifyToUpdateEmailBottomSheet extends StatelessWidget {
     return ListView(
       physics: const BouncingScrollPhysics(),
       shrinkWrap: true,
-      padding: const EdgeInsets.symmetric(
-        vertical: 12,
-        horizontal: 24,
-      ),
+      padding: AppPaddings.bottomSheetPadding(context),
       children: [
         Assets.svg.illWriting.svg(
           height: context.deviceHeight * 0.25,

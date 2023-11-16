@@ -25,10 +25,7 @@ class DeleteGroceryListBottomSheet extends StatelessWidget {
     return ListView(
       shrinkWrap: true,
       physics: const BouncingScrollPhysics(),
-      padding: const EdgeInsets.symmetric(
-        vertical: 16,
-        horizontal: 24,
-      ),
+      padding: AppPaddings.bottomSheetPadding(context),
       children: [
         Text(
           AppTranslations

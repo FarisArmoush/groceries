@@ -12,9 +12,7 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       physics: const BouncingScrollPhysics(),
-      padding: const EdgeInsets.symmetric(
-        horizontal: 16,
-      ),
+      padding: AppPaddings.bottomSheetPadding(context),
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -8,7 +8,7 @@ class ClearGroceryListItemsBottomSheet extends StatelessWidget {
     return ListView(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      padding: const EdgeInsets.all(16),
+      padding: AppPaddings.bottomSheetPadding(context),
       children: [
         Text(
           AppTranslations.groceryLists.clearGroceriesFromList,
