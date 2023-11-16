@@ -41,7 +41,6 @@ class UpdateEmailPage extends StatelessWidget {
         body: SafeArea(
           child: ListView(
             shrinkWrap: true,
-            physics: const BouncingScrollPhysics(),
             padding: AppPaddings.scaffoldPadding(context),
             children: [
               const UpdateEmailHeaderText(),

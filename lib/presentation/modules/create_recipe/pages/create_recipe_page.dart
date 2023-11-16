@@ -8,7 +8,6 @@ class CreateRecipePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
-        physics: const BouncingScrollPhysics(),
         slivers: [
           GroceriesAppBar(
             largeTitle: Text(AppTranslations.createRecipe.createRecipe),

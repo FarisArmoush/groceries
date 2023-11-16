@@ -11,7 +11,6 @@ class RecipeCreatedSuccessfullyView extends StatelessWidget {
           padding: const EdgeInsets.symmetric(
             horizontal: 16,
           ),
-          physics: const BouncingScrollPhysics(),
           children: [
             SizedBox(
               height: context.deviceHeight * 0.15,

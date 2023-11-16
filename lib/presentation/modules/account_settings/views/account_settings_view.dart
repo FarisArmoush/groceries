@@ -11,7 +11,6 @@ class AccountSettingsView extends StatelessWidget {
       ),
       body: ListView(
         padding: AppPaddings.scaffoldPadding(context),
-        physics: const BouncingScrollPhysics(),
         children: [
           const UserImage(),
           const EditUserImageButton(),

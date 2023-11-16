@@ -9,7 +9,6 @@ class RegisterPage extends StatelessWidget {
       body: BlocListener<RegisterBloc, RegisterState>(
         listener: _listener,
         child: ListView(
-          physics: const BouncingScrollPhysics(),
           padding: AppPaddings.scaffoldPadding(context),
           children: [
             SizedBox(

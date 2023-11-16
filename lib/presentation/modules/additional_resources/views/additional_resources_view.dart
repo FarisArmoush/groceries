@@ -10,7 +10,6 @@ class AdditionalResourcesView extends StatelessWidget {
         title: Text(AppTranslations.additionalResources.additionalResources),
       ),
       body: ListView(
-        physics: const BouncingScrollPhysics(),
         padding: AppPaddings.scaffoldPadding(context),
         children: [
           const AppVersionListTile(),

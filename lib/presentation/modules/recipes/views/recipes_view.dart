@@ -11,7 +11,6 @@ class RecipesView extends StatelessWidget {
           context.read<RecipesBloc>().add(const RecipesEvent.loadMyRecipes());
         },
         child: CustomScrollView(
-          physics: const BouncingScrollPhysics(),
           slivers: [
             GroceriesAppBar(
               automaticallyImplyLeading: false,

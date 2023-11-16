@@ -13,7 +13,6 @@ class ForgotPasswordPage extends StatelessWidget {
           appBar: AppBar(),
           body: ListView(
             padding: AppPaddings.scaffoldPadding(context),
-            physics: const BouncingScrollPhysics(),
             children: [
               SizedBox(
                 height: context.deviceWidth * 0.02,

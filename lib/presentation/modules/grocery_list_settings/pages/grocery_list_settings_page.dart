@@ -13,7 +13,6 @@ class GroceryListSettingsPage extends StatelessWidget {
         ],
       ),
       body: ListView(
-        physics: const BouncingScrollPhysics(),
         primary: true,
         padding: AppPaddings.scaffoldPadding(context),
         children: [

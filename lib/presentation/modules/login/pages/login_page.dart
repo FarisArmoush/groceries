@@ -9,7 +9,6 @@ class LoginPage extends StatelessWidget {
       body: BlocListener<LoginBloc, LoginState>(
         listener: listener,
         child: ListView(
-          physics: const BouncingScrollPhysics(),
           padding: AppPaddings.scaffoldPadding(context),
           children: [
             SizedBox(
