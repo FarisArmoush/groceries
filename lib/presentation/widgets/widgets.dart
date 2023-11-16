@@ -2,13 +2,13 @@ library widgets;
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/app_bottom_navigation_bar_item/app_bottom_navigation_bar_item.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
+import 'package:groceries/presentation/widgets/app_custom_cupertino_sliver_navigation_bar.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';

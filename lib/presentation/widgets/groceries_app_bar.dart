@@ -21,7 +21,7 @@ class GroceriesAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoSliverNavigationBar(
+    return AppCustomCupertinoSliverNavigationBar(
       backgroundColor: context.theme.scaffoldBackgroundColor,
       stretch: stretch,
       largeTitle: DefaultTextStyle.merge(
