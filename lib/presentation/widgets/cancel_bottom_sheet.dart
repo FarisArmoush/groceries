@@ -2,12 +2,12 @@ part of 'widgets.dart';
 
 class CancelBottomSheet extends StatelessWidget {
   const CancelBottomSheet({
-    this.title = 'Discard Changes?',
+    this.title,
     this.onCancel,
     super.key,
   });
 
-  final String title;
+  final String? title;
   final void Function()? onCancel;
 
   @override
@@ -18,7 +18,7 @@ class CancelBottomSheet extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       children: [
         Text(
-          title,
+          title ?? AppTranslations.general.discardChanges,
           style: context.theme.dialogTheme.titleTextStyle,
           textAlign: TextAlign.center,
         ),
@@ -28,11 +28,11 @@ class CancelBottomSheet extends StatelessWidget {
               () => context
                 ..pop()
                 ..pop(),
-          child: const Text('Yes, Cancel'),
+          child: Text(AppTranslations.general.yesCancel),
         ),
         OutlinedButton(
           onPressed: () => context.pop(),
-          child: const Text("Don't Cancel"),
+          child: Text(AppTranslations.general.dontCancel),
         ),
       ],
     );

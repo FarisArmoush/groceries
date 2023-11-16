@@ -9,6 +9,15 @@ final class _GroceryLists {
   /// browse_groceries
   final browseGroceries = 'browse_groceries'.tr();
 
+  /// clear_groceries_from_list
+  final clearGroceriesFromList = 'clear_groceries_from_list'.tr();
+
+  /// yes_clear_groceries
+  final yesClearGroceries = 'yes_clear_groceries'.tr();
+
+  /// no_dont_clear_groceries
+  final noDontClearGroceries = 'no_dont_clear_groceries'.tr();
+
   /// list_options
   final listOptions = 'list_options'.tr();
 

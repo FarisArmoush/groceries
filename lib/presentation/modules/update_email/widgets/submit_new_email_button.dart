@@ -15,7 +15,7 @@ class SubmitNewEmailButton extends StatelessWidget {
                 : () => context.read<UpdateEmailBloc>().add(
                       const UpdateEmailEvent.updateEmail(),
                     ),
-            child: const Text('Submit'),
+            child: Text(AppTranslations.general.submit),
           );
         },
       ),

@@ -9,7 +9,7 @@ class GroceryListDetailsFab extends StatelessWidget {
       onPressed: () {
         context.pushNamed(AppNamedRoutes.addItems);
       },
-      label: const Text('Add Items'),
+      label: Text(AppTranslations.addItems.addItems),
       icon: Assets.svg.icPlus.svg(
         color: AppColors.white,
       ),
