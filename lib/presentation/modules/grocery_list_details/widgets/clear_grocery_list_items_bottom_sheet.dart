@@ -11,8 +11,7 @@ class ClearGroceryListItemsBottomSheet extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       children: [
         Text(
-          '''
-This action will remove all items from your list, are you sure you want to proceed?''',
+          AppTranslations.groceryLists.clearGroceriesFromList,
           style: context.theme.dialogTheme.titleTextStyle,
           textAlign: TextAlign.center,
         ),
@@ -21,11 +20,11 @@ This action will remove all items from your list, are you sure you want to proce
         ),
         FilledButton(
           onPressed: () => context.pop(),
-          child: const Text('Yes, Erase all items'),
+          child: Text(AppTranslations.groceryLists.yesClearGroceries),
         ),
         OutlinedButton(
           onPressed: () => context.pop(),
-          child: const Text("No, Don't erase anything"),
+          child: Text(AppTranslations.groceryLists.noDontClearGroceries),
         ),
       ],
     );

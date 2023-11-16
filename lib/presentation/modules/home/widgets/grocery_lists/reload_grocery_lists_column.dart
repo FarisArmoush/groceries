@@ -29,7 +29,7 @@ class ReloadGroceryListsColumn extends StatelessWidget {
             ..add(
               const GroceryListsEvent.loadGroceryLists(),
             ),
-          child: const Text('Try again'),
+          child: Text(AppTranslations.general.tryAgain),
         ),
       ],
     );

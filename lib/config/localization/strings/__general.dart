@@ -24,4 +24,18 @@ final class _General {
 
   /// password
   final password = 'password'.tr();
+
+  /// submit
+  final submit = 'submit'.tr();
+
+  /// try_again
+  final tryAgain = 'try_again'.tr();
+
+  /// yes_cancel
+  final yesCancel = 'yes_cancel'.tr();
+
+  /// dont_cancel
+  final dontCancel = 'dont_cancel'.tr();
+
+  final discardChanges = 'discard_changes'.tr();
 }
