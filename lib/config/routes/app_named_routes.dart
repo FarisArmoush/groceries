@@ -95,9 +95,6 @@ class AppNamedRoutes {
   /// Additional Resources View
   static const String additionalResources = 'additionalResources';
 
-  /// Credits View
-  static const String credits = 'credits';
-
   /// Page Not Found View
   ///
   /// Automatically used when the user goes to a view that doesnt exist

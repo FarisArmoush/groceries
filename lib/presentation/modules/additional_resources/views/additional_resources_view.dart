@@ -27,13 +27,6 @@ class AdditionalResourcesView extends StatelessWidget {
             height: context.deviceHeight * 0.02,
           ),
           const SendCrashReportsSwitchTile(),
-          Divider(
-            height: context.deviceHeight * 0.075,
-          ),
-          LegalListTile(
-            title: AppTranslations.additionalResources.credits,
-            onTap: () => context.pushNamed(AppNamedRoutes.credits),
-          ),
         ],
       ),
     );

@@ -11,7 +11,6 @@ import 'package:groceries/presentation/modules/additional_resources/additional_r
 import 'package:groceries/presentation/modules/category_details/category_details.dart';
 import 'package:groceries/presentation/modules/create_list/create_list.dart';
 import 'package:groceries/presentation/modules/create_recipe/create_recipe.dart';
-import 'package:groceries/presentation/modules/credits/credits.dart';
 import 'package:groceries/presentation/modules/delete_account/delete_account.dart';
 import 'package:groceries/presentation/modules/forgot_password/forgot_password.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/grocery_list_details.dart';
@@ -239,17 +238,6 @@ final GoRouter appGoRouter = GoRouter(
                 key: state.pageKey,
                 child: const AdditionalResourcesView(),
               ),
-              routes: [
-                GoRoute(
-                  name: AppNamedRoutes.credits,
-                  path: AppNamedRoutes.credits,
-                  pageBuilder: (context, state) => CupertinoPage(
-                    key: state.pageKey,
-                    fullscreenDialog: true,
-                    child: const CreditsView(),
-                  ),
-                ),
-              ],
             ),
             GoRoute(
               name: AppNamedRoutes.accountSettings,
