@@ -11,12 +11,8 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
       onClosing: () {},
       builder: (context) {
         return ListView(
-          padding: const EdgeInsets.symmetric(
-            vertical: 12,
-            horizontal: 32,
-          ),
+          padding: AppPaddings.bottomSheetPadding(context),
           shrinkWrap: true,
-          physics: const BouncingScrollPhysics(),
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

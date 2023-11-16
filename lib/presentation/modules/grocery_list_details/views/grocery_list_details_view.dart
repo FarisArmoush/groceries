@@ -12,7 +12,6 @@ class GroceryListDetailsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
-        physics: const BouncingScrollPhysics(),
         slivers: [
           GroceriesAppBar(
             trailing: const Row(

@@ -13,10 +13,7 @@ class UploadImageBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      padding: const EdgeInsets.symmetric(
-        vertical: 12,
-        horizontal: 24,
-      ),
+      padding: AppPaddings.bottomSheetPadding(context),
       shrinkWrap: true,
       physics: const BouncingScrollPhysics(),
       children: [

@@ -19,7 +19,6 @@ class CategoryDetailsPage extends StatelessWidget {
           failure: Text.new,
           success: () {
             return CustomScrollView(
-              physics: const BouncingScrollPhysics(),
               slivers: [
                 GroceriesAppBar(
                   largeTitle: Text(parentCategoryModel.name!),

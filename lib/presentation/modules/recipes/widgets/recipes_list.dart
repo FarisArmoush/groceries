@@ -12,10 +12,7 @@ class RecipesList extends StatelessWidget {
     return ListView.separated(
       shrinkWrap: true,
       physics: const BouncingScrollPhysics(),
-      padding: const EdgeInsets.symmetric(
-        horizontal: 16,
-        vertical: 32,
-      ),
+      padding: AppPaddings.scaffoldPadding(context),
       itemCount: recipes.length,
       itemBuilder: (context, index) {
         return RecipeCard(

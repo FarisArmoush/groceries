@@ -12,7 +12,6 @@ class AddItemsPage extends StatelessWidget {
           loading: AppLoadingIndicator.new,
           failure: Text.new,
           success: () => CustomScrollView(
-            physics: const BouncingScrollPhysics(),
             slivers: [
               GroceriesAppBar(
                 largeTitle: Text(AppTranslations.addItems.addItems),

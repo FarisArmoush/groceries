@@ -10,8 +10,7 @@ class ThemeSettingsView extends StatelessWidget {
         title: Text(AppTranslations.theme.theme),
       ),
       body: ListView(
-        physics: const BouncingScrollPhysics(),
-        padding: const EdgeInsets.all(16),
+        padding: AppPaddings.scaffoldPadding(context),
         children: [
           const ThemeHeaderText(),
           SizedBox(

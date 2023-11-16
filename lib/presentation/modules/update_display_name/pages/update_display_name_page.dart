@@ -43,11 +43,7 @@ class UpdateDisplayNamePage extends StatelessWidget {
         body: SafeArea(
           child: ListView(
             shrinkWrap: true,
-            physics: const BouncingScrollPhysics(),
-            padding: const EdgeInsets.symmetric(
-              vertical: 12,
-              horizontal: 24,
-            ),
+            padding: AppPaddings.scaffoldPadding(context),
             children: [
               const UpdateDisplayNameHeaderText(),
               SizedBox(

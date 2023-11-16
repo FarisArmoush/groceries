@@ -7,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/domain/use_cases/use_cases.dart';
+import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/modules/delete_account/bloc/delete_account_bloc.dart';
 import 'package:groceries/presentation/widgets/widgets.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';

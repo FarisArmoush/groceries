@@ -9,7 +9,6 @@ class WelcomeView extends StatelessWidget {
         padding: EdgeInsets.symmetric(
           horizontal: context.deviceWidth * 0.09,
         ),
-        physics: const BouncingScrollPhysics(),
         children: [
           SizedBox(
             height: context.deviceHeight * 0.15,
