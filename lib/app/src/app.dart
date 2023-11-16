@@ -36,9 +36,6 @@ class App extends StatelessWidget {
                 lazy: false,
               ),
               RepositoryProvider(
-                create: (context) => CreditsDataSource(),
-              ),
-              RepositoryProvider(
                 create: (context) => RemoteConfigDataSource(
                   context.read<FirebaseRemoteConfig>(),
                 ),
@@ -81,11 +78,6 @@ class App extends StatelessWidget {
                       ),
                       lazy: false,
                     ),
-                    RepositoryProvider<CreditsRepository>(
-                      create: (context) => CreditsRepositoryImpl(
-                        context.read<CreditsDataSource>(),
-                      ),
-                    ),
                     RepositoryProvider<RemoteConfigRepository>(
                       create: (context) => RemoteConfigRepositoryImpl(
                         context.read<RemoteConfigDataSource>(),
@@ -123,11 +115,6 @@ class App extends StatelessWidget {
                     builder: (context) {
                       return MultiRepositoryProvider(
                         providers: [
-                          RepositoryProvider(
-                            create: (context) => FetchCreditsUseCase(
-                              context.read<CreditsRepository>(),
-                            ),
-                          ),
                           RepositoryProvider(
                             create: (context) => RemoteConfigUseCase(
                               context.read<RemoteConfigRepository>(),
