@@ -30,6 +30,7 @@ import 'package:groceries/presentation/modules/update_email/update_email.dart';
 import 'package:groceries/presentation/modules/verify_user/verify_user.dart';
 import 'package:groceries/presentation/modules/welcome/welcome.dart';
 import 'package:groceries/presentation/modules/wrapper/wrapper.dart';
+import 'package:groceries/utils/extenstions/app_extensions.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// A variable that defines the routes and builders for the App.
@@ -54,12 +55,12 @@ final GoRouter appGoRouter = GoRouter(
     ),
     GoRoute(
       name: AppNamedRoutes.onboarding,
-      path: '/${AppNamedRoutes.onboarding}',
+      path: AppNamedRoutes.onboarding.path(),
       builder: (context, state) => const OnboardingView(),
     ),
     GoRoute(
       name: AppNamedRoutes.welcome,
-      path: '/${AppNamedRoutes.welcome}',
+      path: AppNamedRoutes.welcome.path(),
       builder: (context, state) => const WelcomeView(),
       routes: [
         GoRoute(
@@ -93,7 +94,7 @@ final GoRouter appGoRouter = GoRouter(
     ),
     GoRoute(
       name: AppNamedRoutes.root,
-      path: '/${AppNamedRoutes.root}',
+      path: AppNamedRoutes.root.path(),
       builder: (context, state) => const RootView(),
       routes: [
         GoRoute(
@@ -146,8 +147,8 @@ final GoRouter appGoRouter = GoRouter(
                   ],
                 ),
                 GoRoute(
-                  name: AppNamedRoutes.goceryListSettings,
-                  path: AppNamedRoutes.goceryListSettings,
+                  name: AppNamedRoutes.groceryListSettings,
+                  path: AppNamedRoutes.groceryListSettings,
                   builder: (context, state) => const GroceryListSettingsView(),
                 ),
               ],
@@ -245,7 +246,7 @@ final GoRouter appGoRouter = GoRouter(
     ),
     GoRoute(
       name: AppNamedRoutes.pageNotFound,
-      path: '/${AppNamedRoutes.pageNotFound}',
+      path: AppNamedRoutes.pageNotFound.path(),
       builder: (context, state) => const PageNotFoundView(),
     ),
   ],

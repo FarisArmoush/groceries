@@ -56,7 +56,7 @@ class AppNamedRoutes {
   static const String groceryListDetails = 'groceryListDetails';
 
   /// Grocery List Settings View
-  static const String goceryListSettings = 'goceryListSettings';
+  static const String groceryListSettings = 'groceryListSettings';
 
   /// Create View
   static const String createList = 'createList';

@@ -65,7 +65,7 @@ void main() {
             equals('groceryListDetails'),
           );
           expect(
-            AppNamedRoutes.goceryListSettings,
+            AppNamedRoutes.groceryListSettings,
             equals('goceryListSettings'),
           );
           expect(

@@ -16,7 +16,7 @@ class GroceryListDetailsForm extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       children: [
         SizedBox(
-          height: context.deviceHeight * 0.02,
+          height: context.deviceHeight * 0.01,
         ),
         GroceriesList(
           groceries: listModel.items,
