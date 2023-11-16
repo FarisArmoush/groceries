@@ -18,7 +18,7 @@ class GroceriesBoxList extends StatelessWidget {
           context: context,
           tiles: list!.map(
             (item) => ListTile(
-              tileColor: Colors.transparent,
+              tileColor: AppColors.transparent,
               title: Text(item!.name ?? ''),
               subtitle: item.notes == null || item.notes!.isEmpty
                   ? null

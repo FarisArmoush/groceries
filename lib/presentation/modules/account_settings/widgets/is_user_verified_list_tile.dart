@@ -13,7 +13,7 @@ class IsUserVerifiedListTile extends StatelessWidget {
           : null,
       trailing: isVerified == true
           ? Assets.svg.icVerified.svg(color: Colors.green)
-          : Assets.svg.icBadgeAlert.svg(color: Colors.red),
+          : Assets.svg.icBadgeAlert.svg(color: AppColors.lightRed),
       onTap: () => isVerified == true
           ? showModalBottomSheet<void>(
               context: context,

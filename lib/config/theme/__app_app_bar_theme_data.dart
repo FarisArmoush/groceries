@@ -6,7 +6,7 @@ class _AppAppBarThemeData {
       iconTheme: const IconThemeData(
         color: AppColors.black,
       ),
-      surfaceTintColor: Colors.transparent,
+      surfaceTintColor: AppColors.transparent,
       systemOverlayStyle: SystemUiOverlayStyle.light,
       elevation: 0,
       scrolledUnderElevation: 1,
@@ -24,12 +24,12 @@ class _AppAppBarThemeData {
     return AppBarTheme(
       scrolledUnderElevation: 1,
       iconTheme: IconThemeData(
-        color: Colors.white.withOpacity(0.99),
+        color: AppColors.white.withOpacity(0.99),
       ),
       actionsIconTheme: const IconThemeData(
-        color: Colors.white,
+        color: AppColors.white,
       ),
-      surfaceTintColor: Colors.transparent,
+      surfaceTintColor: AppColors.transparent,
       systemOverlayStyle: SystemUiOverlayStyle.light,
       elevation: 0,
       centerTitle: true,

@@ -21,7 +21,7 @@ class BottomSheetButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: onTap,
-      tileColor: Colors.transparent,
+      tileColor: AppColors.transparent,
       title: Text(
         text,
         style: context.theme.listTileTheme.titleTextStyle!.copyWith(

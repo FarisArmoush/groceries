@@ -8,7 +8,7 @@ class UserImage extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(2),
       decoration: BoxDecoration(
-        color: Colors.transparent,
+        color: AppColors.transparent,
         shape: BoxShape.circle,
         border: Border.all(
           color: context.theme.primaryColorLight,

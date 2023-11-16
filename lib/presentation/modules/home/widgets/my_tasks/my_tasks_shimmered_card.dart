@@ -6,7 +6,7 @@ class MyTasksShimmeredCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      tileColor: Colors.transparent,
+      tileColor: AppColors.transparent,
       contentPadding: EdgeInsets.zero,
       leading: ShimmerSkeleton(
         borderRadius: BorderRadius.circular(64),

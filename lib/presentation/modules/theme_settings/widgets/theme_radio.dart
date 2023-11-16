@@ -20,7 +20,7 @@ class ThemeRadio extends StatelessWidget {
       groupValue: groupValue,
       onChanged: onChanged,
       title: Text(title),
-      tileColor: Colors.transparent,
+      tileColor: AppColors.transparent,
       activeColor: context.theme.primaryColorLight,
       controlAffinity: ListTileControlAffinity.trailing,
     );
