@@ -23,7 +23,7 @@ class AppPrimaryBox extends StatelessWidget {
         color: backgroundColor ?? context.theme.cardColor,
       ),
       child: Material(
-        color: Colors.transparent,
+        color: AppColors.transparent,
         child: _child(context),
       ),
     );

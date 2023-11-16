@@ -31,7 +31,7 @@ class CreateListIconsGrid extends StatelessWidget {
                   border: Border.all(
                     color: state.icon == state.iconsPaths[index]
                         ? context.theme.primaryColorLight
-                        : Colors.transparent,
+                        : AppColors.transparent,
                     width: 2,
                   ),
                 ),

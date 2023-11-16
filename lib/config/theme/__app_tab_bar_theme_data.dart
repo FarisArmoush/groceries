@@ -19,7 +19,7 @@ class _AppTabBarThemeData {
       ),
       unselectedLabelColor: AppColors.lightGrey,
       labelColor: AppColors.black,
-      dividerColor: Colors.transparent,
+      dividerColor: AppColors.transparent,
       indicatorColor: AppColors.lightRed,
     );
   }
@@ -42,7 +42,7 @@ class _AppTabBarThemeData {
       ),
       unselectedLabelColor: AppColors.lightGrey,
       labelColor: AppColors.white,
-      dividerColor: Colors.transparent,
+      dividerColor: AppColors.transparent,
       indicatorColor: AppColors.darkRed,
     );
   }

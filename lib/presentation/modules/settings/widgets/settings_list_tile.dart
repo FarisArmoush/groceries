@@ -18,7 +18,7 @@ class SettingsListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       onTap: onTap,
-      tileColor: Colors.transparent,
+      tileColor: AppColors.transparent,
       leading: SvgPicture.asset(
         iconPath,
         // ignore: deprecated_member_use

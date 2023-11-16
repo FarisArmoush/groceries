@@ -21,7 +21,7 @@ class _SwitchListTile extends StatelessWidget {
       buildWhen: (previous, current) => previous != current,
       builder: (context, state) {
         return ListTile(
-          tileColor: Colors.transparent,
+          tileColor: AppColors.transparent,
           title: Text(AppTranslations.additionalResources.sendCrashReports),
           subtitle: Text(
             AppTranslations.additionalResources.sendCrashReportsDescription,
