@@ -15,7 +15,6 @@ class UploadImageBottomSheet extends StatelessWidget {
     return ListView(
       padding: AppPaddings.bottomSheetPadding(context),
       shrinkWrap: true,
-      physics: const BouncingScrollPhysics(),
       children: [
         BottomSheetButton(
           text: AppTranslations.general.takePhoto,

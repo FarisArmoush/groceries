@@ -6,7 +6,6 @@ class ShimmeredRecipesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      physics: const BouncingScrollPhysics(),
       padding: const EdgeInsets.symmetric(
         horizontal: 16,
         vertical: 32,

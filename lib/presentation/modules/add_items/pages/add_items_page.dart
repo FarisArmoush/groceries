@@ -5,36 +5,45 @@ class AddItemsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BlocConsumer<AddItemsBloc, AddItemsState>(
-        builder: (context, state) => state.status.when(
-          initial: AppLoadingIndicator.new,
-          loading: AppLoadingIndicator.new,
-          failure: Text.new,
-          success: () => CustomScrollView(
-            slivers: [
-              GroceriesAppBar(
-                largeTitle: Text(AppTranslations.addItems.addItems),
-                middle: Text(AppTranslations.addItems.addItems),
-              ),
-              const SliverToBoxAdapter(
-                child: AddItemsCategoriesList(),
-              ),
-              SliverSizedBox(
-                height: context.deviceHeight * 0.1,
-              ),
-            ],
+    return BlocConsumer<AddItemsBloc, AddItemsState>(
+      listener: (context, state) {
+        state.status.maybeWhen(
+          failure: (error) => ScaffoldMessenger.of(context).showSnackBar(
+            AppSnackBars.error(error: error),
           ),
-        ),
-        listener: (context, state) {
-          state.status.maybeWhen(
-            failure: (error) => ScaffoldMessenger.of(context)
-                .showSnackBar(SnackBar(content: Text(error))),
-            orElse: () {},
-          );
-        },
-      ),
-      bottomSheet: const AddItemsTextField(),
+          orElse: () {},
+        );
+      },
+      builder: (context, state) {
+        return Scaffold(
+          appBar: state.status.maybeWhen(
+            loading: AppBar.new,
+            initial: AppBar.new,
+            orElse: () {
+              return null;
+            },
+          ),
+          body: state.status.when(
+            initial: AppLoadingIndicator.new,
+            loading: AppLoadingIndicator.new,
+            failure: Text.new,
+            success: () => CustomScrollView(
+              slivers: [
+                GroceriesAppBar(
+                  largeTitle: Text(AppTranslations.addItems.addItems),
+                  middle: Text(AppTranslations.addItems.addItems),
+                ),
+                const SliverToBoxAdapter(
+                  child: AddItemsCategoriesList(),
+                ),
+                SliverSizedBox(
+                  height: context.deviceHeight * 0.1,
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }

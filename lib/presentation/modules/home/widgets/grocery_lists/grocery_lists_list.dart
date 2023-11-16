@@ -8,7 +8,6 @@ class GroceryListsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      physics: const BouncingScrollPhysics(),
       shrinkWrap: true,
       itemCount: lists.length,
       padding: const EdgeInsets.symmetric(vertical: 4),

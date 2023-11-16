@@ -13,7 +13,6 @@ class MyTasksList extends StatelessWidget {
     return ListView.separated(
       itemCount: tasks.length,
       shrinkWrap: true,
-      physics: const BouncingScrollPhysics(),
       itemBuilder: (context, index) {
         return MyTasksCard(
           taskModel: TaskModel(

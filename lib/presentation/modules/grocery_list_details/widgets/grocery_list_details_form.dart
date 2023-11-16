@@ -13,7 +13,6 @@ class GroceryListDetailsForm extends StatelessWidget {
     return ListView(
       shrinkWrap: true,
       primary: true,
-      physics: const BouncingScrollPhysics(),
       children: [
         SizedBox(
           height: context.deviceHeight * 0.01,

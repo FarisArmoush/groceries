@@ -32,7 +32,6 @@ class VerifyToUpdateEmailBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      physics: const BouncingScrollPhysics(),
       shrinkWrap: true,
       padding: AppPaddings.bottomSheetPadding(context),
       children: [

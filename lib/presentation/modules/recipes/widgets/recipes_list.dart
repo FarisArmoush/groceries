@@ -11,7 +11,6 @@ class RecipesList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
       shrinkWrap: true,
-      physics: const BouncingScrollPhysics(),
       padding: AppPaddings.scaffoldPadding(context),
       itemCount: recipes.length,
       itemBuilder: (context, index) {
