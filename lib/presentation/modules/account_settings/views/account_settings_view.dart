@@ -10,10 +10,7 @@ class AccountSettingsView extends StatelessWidget {
         title: Text(AppTranslations.accountSettings.accountSettings),
       ),
       body: ListView(
-        padding: const EdgeInsets.symmetric(
-          vertical: 16,
-          horizontal: 12,
-        ),
+        padding: AppPaddings.scaffoldPadding(context),
         physics: const BouncingScrollPhysics(),
         children: [
           const UserImage(),

@@ -15,9 +15,7 @@ class CreateRecipePage extends StatelessWidget {
             middle: Text(AppTranslations.createRecipe.createRecipe),
           ),
           SliverPadding(
-            padding: const EdgeInsetsDirectional.symmetric(
-              horizontal: 12,
-            ),
+            padding: AppPaddings.scaffoldPadding(context),
             sliver: SliverList.list(
               children: [
                 const CreateRecipeNameTextField(),

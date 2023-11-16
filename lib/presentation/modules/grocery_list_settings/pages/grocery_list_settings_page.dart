@@ -15,7 +15,7 @@ class GroceryListSettingsPage extends StatelessWidget {
       body: ListView(
         physics: const BouncingScrollPhysics(),
         primary: true,
-        padding: const EdgeInsets.all(16),
+        padding: AppPaddings.scaffoldPadding(context),
         children: [
           const EditListImage(),
           SizedBox(

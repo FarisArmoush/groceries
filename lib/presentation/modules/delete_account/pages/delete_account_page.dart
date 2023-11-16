@@ -12,9 +12,7 @@ class DeleteAccountPage extends StatelessWidget {
       body: ListView(
         shrinkWrap: true,
         physics: const BouncingScrollPhysics(),
-        padding: const EdgeInsets.symmetric(
-          horizontal: 24,
-        ),
+        padding: AppPaddings.scaffoldPadding(context),
         children: [
           Assets.svg.illGaming.svg(
             height: context.deviceHeight * 0.4,

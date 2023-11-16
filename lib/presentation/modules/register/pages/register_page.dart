@@ -10,10 +10,7 @@ class RegisterPage extends StatelessWidget {
         listener: _listener,
         child: ListView(
           physics: const BouncingScrollPhysics(),
-          padding: const EdgeInsets.symmetric(
-            vertical: 16,
-            horizontal: 24,
-          ),
+          padding: AppPaddings.scaffoldPadding(context),
           children: [
             SizedBox(
               height: context.deviceHeight * 0.09,

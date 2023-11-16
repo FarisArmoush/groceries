@@ -30,10 +30,7 @@ class RecipeDetailsPage extends StatelessWidget {
             ),
           ),
           SliverPadding(
-            padding: const EdgeInsets.symmetric(
-              vertical: 24,
-              horizontal: 12,
-            ),
+            padding: AppPaddings.scaffoldPadding(context),
             sliver: SliverList.list(
               children: [
                 CachedImage(

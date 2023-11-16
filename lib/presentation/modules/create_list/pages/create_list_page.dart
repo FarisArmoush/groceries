@@ -22,7 +22,7 @@ class CreateListPage extends StatelessWidget {
         body: ListView(
           shrinkWrap: true,
           physics: const BouncingScrollPhysics(),
-          padding: const EdgeInsets.all(32),
+          padding: AppPaddings.scaffoldPadding(context),
           children: [
             const CreateListTextField(),
             SizedBox(
