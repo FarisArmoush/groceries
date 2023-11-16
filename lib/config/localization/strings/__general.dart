@@ -37,5 +37,6 @@ final class _General {
   /// dont_cancel
   final dontCancel = 'dont_cancel'.tr();
 
+  /// discard_changes
   final discardChanges = 'discard_changes'.tr();
 }
