@@ -12,7 +12,6 @@ class RecipeItemsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
       shrinkWrap: true,
-      physics: const BouncingScrollPhysics(),
       primary: false,
       itemCount: recipeModel.items!.length,
       itemBuilder: (context, index) {

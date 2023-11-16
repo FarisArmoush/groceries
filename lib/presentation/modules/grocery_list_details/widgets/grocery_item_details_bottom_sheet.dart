@@ -11,7 +11,6 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      physics: const BouncingScrollPhysics(),
       padding: AppPaddings.bottomSheetPadding(context),
       children: [
         Row(
