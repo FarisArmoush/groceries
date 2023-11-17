@@ -18,7 +18,7 @@
 # The .vscode folder contains launch configuration and tasks you configure in
 # VS Code which you may wish to be included in version control, so this line
 # is commented out by default.
-#.vscode/
+.vscode/
 
 # Flutter/Dart/Pub related
 **/doc/api/
@@ -40,81 +40,14 @@ app.*.symbols
 # Obfuscation related
 app.*.map.json
 
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
-ios/Runner/Info.plist
-ios/Runner/Base.lproj/Main.storyboard
-ios/Runner/Base.lproj/LaunchScreen.storyboard
-ios/Runner/Assets.xcassets/LaunchImage.imageset/README.md
-ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@3x.png
-ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage@2x.png
-ios/Runner/Assets.xcassets/LaunchImage.imageset/LaunchImage.png
-ios/Runner/Assets.xcassets/LaunchImage.imageset/Contents.json
-ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png
-ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@2x.png
-ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-76x76@1x.png
-ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@3x.png
-ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60@2x.png
-ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@3x.png
-ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@2x.png
-ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-40x40@1x.png
-ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@3x.png
-ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@2x.png
-ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-29x29@1x.png
-ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@3x.png
-ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@2x.png
-ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-20x20@1x.png
-ios/Runner/Assets.xcassets/AppIcon.appiconset/Icon-App-1024x1024@1x.png
-ios/Runner/Assets.xcassets/AppIcon.appiconset/Contents.json
-ios/Runner/AppDelegate.swift
-ios/Runner.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
-ios/Runner.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
-ios/Runner.xcworkspace/contents.xcworkspacedata
-ios/Runner.xcodeproj/xcshareddata/xcschemes/Runner.xcscheme
-ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
-ios/Runner.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
-ios/Runner.xcodeproj/project.xcworkspace/contents.xcworkspacedata
-ios/Runner.xcodeproj/project.pbxproj
-ios/Flutter/Release.xcconfig
-ios/Flutter/Debug.xcconfig
-ios/Flutter/AppFrameworkInfo.plist
-android/settings.gradle
-android/gradle/wrapper/gradle-wrapper.properties
-android/gradle.properties
-android/app/src/profile/AndroidManifest.xml
-android/app/src/main/res/values/styles.xml
-android/app/src/main/res/values-night/styles.xml
-android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
-android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png
-android/app/src/main/res/mipmap-xhdpi/ic_launcher.png
-android/app/src/main/res/mipmap-mdpi/ic_launcher.png
-android/app/src/main/res/mipmap-hdpi/ic_launcher.png
-android/app/src/main/res/drawable-v21/launch_background.xml
-android/app/src/main/res/drawable/launch_background.xml
-android/app/src/main/kotlin/com/example/groceries/MainActivity.kt
-android/app/src/debug/AndroidManifest.xml
-android/app/src/main/AndroidManifest.xml
-.metadata
-ios/Runner/Runner-Bridging-Header.h
-pubspec.lock
-test/widget_test.dart
-web/favicon.png
-web/icons/Icon-192.png
-web/icons/Icon-512.png
-web/icons/Icon-maskable-192.png
-web/icons/Icon-maskable-512.png
-web/index.html
-web/manifest.json
-grocories/ios/Runner/GeneratedPluginRegistrant.m
-grocories/ios/Runner/GeneratedPluginRegistrant.h
-grocories/ios/Flutter/Generated.xcconfig
-grocories/ios/Flutter/flutter_export_environment.sh
-grocories/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
-grocories/android/local.properties
-windows/flutter/generated_plugins.cmake
-windows/flutter/generated_plugin_registrant.cc
-linux/flutter/generated_plugin_registrant.cc
-linux/flutter/generated_plugins.cmake
-macos/Flutter/GeneratedPluginRegistrant.swift
+# Remember to never publicly share your keystore.
+# See https://flutter.dev/docs/deployment/android#reference-the-keystore-from-the-app
+!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+/fastlane/metadata/envfiles/playstore.json
+/fastlane/metadata/envfiles/wger.properties
+/fastlane/metadata/envfiles/keys.jks
+/fastlane/metadata/envfiles/key.properties
+
+# Others
+/vendor/bundle/ruby/
+/coverage/
