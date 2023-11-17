@@ -1,4 +1,4 @@
-// ignore_for_file: lines_longer_than_80_chars, always_put_required_named_parameters_first, prefer_asserts_with_message, cascade_invocations, comment_references, unused_element
+// ignore_for_file: lines_longer_than_80_chars, always_put_required_named_parameters_first, prefer_asserts_with_message, cascade_invocations, comment_references, unused_element, deprecated_member_use
 
 // COPIED FROM FLUTTER SDK, DONT TOUCH.
 
