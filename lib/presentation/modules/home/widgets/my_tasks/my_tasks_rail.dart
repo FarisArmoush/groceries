@@ -12,6 +12,7 @@ class MyTasksRail extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       shrinkWrap: true,
+      primary: false,
       physics: const NeverScrollableScrollPhysics(),
       children: [
         RailTitle(

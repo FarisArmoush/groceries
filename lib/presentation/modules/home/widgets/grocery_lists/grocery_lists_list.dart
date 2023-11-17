@@ -11,6 +11,8 @@ class GroceryListsList extends StatelessWidget {
       shrinkWrap: true,
       itemCount: lists.length,
       padding: const EdgeInsets.symmetric(vertical: 4),
+      physics: const NeverScrollableScrollPhysics(),
+      primary: false,
       itemBuilder: (context, index) {
         return GroceryListCard(
           listModel: GroceryListModel(

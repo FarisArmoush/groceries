@@ -13,6 +13,7 @@ class GroceryListsRail extends StatelessWidget {
     return ListView(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
+      primary: false,
       children: [
         if (lists.isNotEmpty)
           const GroceryListsRailHeader()
