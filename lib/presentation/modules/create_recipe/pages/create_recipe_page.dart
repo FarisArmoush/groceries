@@ -29,7 +29,7 @@ class CreateRecipePage extends StatelessWidget {
                 SizedBox(
                   height: context.deviceHeight * 0.025,
                 ),
-                const CreateRecipeButton(),
+                const AddItemsToRecipeButton(),
                 SizedBox(
                   height: context.deviceHeight * 0.025,
                 ),
@@ -38,13 +38,8 @@ class CreateRecipePage extends StatelessWidget {
           ),
         ],
       ),
-      persistentFooterButtons: [
-        FilledButton(
-          onPressed: () => context.pushReplacementNamed(
-            AppNamedRoutes.recipeCreatedUnsuccessfully,
-          ),
-          child: Text(AppTranslations.createRecipe.createRecipe),
-        ),
+      persistentFooterButtons: const [
+        CreateRecipeButton(),
       ],
     );
   }
