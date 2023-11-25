@@ -11,26 +11,29 @@ class GroceryListDetailsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
-        slivers: [
-          GroceriesAppBar(
-            trailing: const Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                GroceryListOptionsButton(),
-                ClearGroceryListItemsButton(),
-              ],
+      body: SafeArea(
+        bottom: false,
+        child: CustomScrollView(
+          slivers: [
+            GroceriesAppBar(
+              trailing: const Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  GroceryListOptionsButton(),
+                  ClearGroceryListItemsButton(),
+                ],
+              ),
+              largeTitle: _appBarTitle(context),
+              middle: _appBarTitle(context),
             ),
-            largeTitle: _appBarTitle(context),
-            middle: _appBarTitle(context),
-          ),
-          if (listModel.items!.isEmpty)
-            const EmptyGroceryList().asSliver()
-          else
-            GroceryListDetailsForm(
-              listModel: listModel,
-            ).asSliver(),
-        ],
+            if (listModel.items!.isEmpty)
+              const EmptyGroceryList().asSliver()
+            else
+              GroceryListDetailsForm(
+                listModel: listModel,
+              ).asSliver(),
+          ],
+        ),
       ),
       floatingActionButton: listModel.items!.isEmpty
           ? const SizedBox.shrink()

@@ -10,13 +10,9 @@ class GroceryListDetailsForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      shrinkWrap: true,
-      primary: true,
+    return Column(
+      mainAxisSize: MainAxisSize.min,
       children: [
-        SizedBox(
-          height: context.deviceHeight * 0.01,
-        ),
         GroceriesList(
           groceries: listModel.items,
         ),

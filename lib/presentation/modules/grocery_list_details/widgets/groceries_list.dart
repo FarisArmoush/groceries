@@ -19,6 +19,7 @@ class GroceriesList extends StatelessWidget {
     return ListView.separated(
       shrinkWrap: true,
       primary: false,
+      physics: const NeverScrollableScrollPhysics(),
       itemCount: itemsGroupedByCategory.length,
       itemBuilder: (context, index) {
         final category = itemsGroupedByCategory.keys.elementAt(index);
