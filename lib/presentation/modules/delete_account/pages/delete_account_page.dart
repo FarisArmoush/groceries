@@ -26,7 +26,9 @@ class DeleteAccountPage extends StatelessWidget {
           const DeleteAccountBodyText(),
         ],
       ),
-      bottomSheet: const DeleteAccountButton(),
+      persistentFooterButtons: const [
+        DeleteAccountButton(),
+      ],
     );
   }
 }

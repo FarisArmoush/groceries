@@ -20,19 +20,13 @@ class DeleteAccountButton extends StatelessWidget {
           },
         );
       },
-      child: SizedBox(
-        width: context.deviceWidth,
-        child: FilledButton(
-          onPressed: () => context.read<DeleteAccountBloc>()
-            ..add(
-              const DeleteAccountEvent.deleteAccount(),
-            ),
-          child: Text(AppTranslations.deleteAccount.yesDeleteAccount),
-        ),
-      ).symmetricPadding(
-        vertical: 16,
-        horizontal: 24,
-      ),
+      child: FilledButton(
+        onPressed: () => context.read<DeleteAccountBloc>()
+          ..add(
+            const DeleteAccountEvent.deleteAccount(),
+          ),
+        child: Text(AppTranslations.deleteAccount.yesDeleteAccount),
+      ).bottomButtonSpacing(),
     );
   }
 }
