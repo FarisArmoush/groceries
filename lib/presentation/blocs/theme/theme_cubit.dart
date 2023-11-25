@@ -22,10 +22,10 @@ class ThemeCubit extends Cubit<ThemeMode> {
   /// If no theme mode is stored in [SharedPreferences], the default theme mode
   /// will be [ThemeMode.system].
   Future<void> loadTheme() async {
-    final themeString = _sharedPreferences.getString('themeMode') ??
+    final cachedTheme = _sharedPreferences.getString('themeMode') ??
         ThemeMode.system.toString();
     final theme = ThemeMode.values.firstWhere(
-      (value) => value.toString() == themeString,
+      (value) => value.toString() == cachedTheme,
     );
     await setTheme(theme);
   }
