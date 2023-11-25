@@ -70,3 +70,6 @@ To get started with the app, follow these steps:
 3. Run the app on your Flutter development environment.
 
 Feel free to explore the codebase, and if you have any questions or suggestions, don't hesitate to reach out!
+
+** Note:
+In the add items module, you will not be able to access my official database that has those items, but i will include an apk in the future for you to install it on your phone/emulator and test it out.
