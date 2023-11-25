@@ -70,7 +70,3 @@ To get started with the app, follow these steps:
 3. Run the app on your Flutter development environment.
 
 Feel free to explore the codebase, and if you have any questions or suggestions, don't hesitate to reach out!
-
----
-
-Feel free to customize it further based on the specific details of your project. If you have any specific sections you'd like to add or modify, let me know!
