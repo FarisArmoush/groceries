@@ -39,9 +39,11 @@ class CreateListPage extends StatelessWidget {
             SizedBox(
               height: context.deviceHeight * 0.06,
             ),
-            const CreateListButton(),
           ],
         ),
+        persistentFooterButtons: const [
+          CreateListButton(),
+        ],
       ),
     );
   }

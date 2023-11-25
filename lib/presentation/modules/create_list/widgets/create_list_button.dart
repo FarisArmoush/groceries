@@ -11,7 +11,7 @@ class CreateListButton extends StatelessWidget {
         orElse: () => ElevatedButton(
           onPressed: state.isValid ? () => _submit(context, state) : null,
           child: Text(AppTranslations.createGroceryList.createList),
-        ),
+        ).bottomButtonSpacing(),
       ),
       buildWhen: (previous, current) =>
           previous.status != current.status ||
