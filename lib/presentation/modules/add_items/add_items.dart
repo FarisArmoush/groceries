@@ -7,7 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/data/models/grocery_model/grocery_model.dart';
+import 'package:groceries/data/models/models.dart';
 import 'package:groceries/domain/use_cases/use_cases.dart';
 import 'package:groceries/presentation/modules/add_items/bloc/add_items_bloc.dart';
 import 'package:groceries/presentation/widgets/widgets.dart';

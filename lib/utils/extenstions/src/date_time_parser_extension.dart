@@ -1,7 +1,10 @@
 part of '../app_extensions.dart';
 
+/// Extension to parse and format date strings.
 extension DateTimeParser on String {
-  /// Formats date string to look like `11th of July 2023`
+  /// Formats date string to a human-readable format like `11th of July 2023`.
+  ///
+  /// Returns a formatted string representation of the date.
   String toDDofMMYYYY() {
     final dateTime = _parseDateString();
 
@@ -12,6 +15,9 @@ extension DateTimeParser on String {
     return '$day of $month $year';
   }
 
+  /// Formats date string to a numeric format like `11-07-2023`.
+  ///
+  /// Returns a formatted string representation of the date.
   String toDDMMYYYY() {
     final inputDateParts = split(' ')[0].split('-');
     final day = inputDateParts[2];
@@ -20,6 +26,9 @@ extension DateTimeParser on String {
     return '$day-$month-$year';
   }
 
+  /// Parses the date string into a [DateTime] object.
+  ///
+  /// Returns the parsed [DateTime] object.
   DateTime _parseDateString() {
     final dateParts = split(' ')[0].split('-');
 
@@ -30,6 +39,9 @@ extension DateTimeParser on String {
     return DateTime.utc(year, month, day);
   }
 
+  /// Adds the appropriate suffix to the day.
+  ///
+  /// Returns a string representation of the day with the appropriate suffix.
   String _getDayWithSuffix(int day) {
     if (day.isGreaterThan(11) && day.isLessThan(13)) {
       return '${day}th';
@@ -42,6 +54,9 @@ extension DateTimeParser on String {
     };
   }
 
+  /// Gets the month name based on the month index.
+  ///
+  /// Returns the name of the month.
   String _getMonthName(int month) {
     final months = <String>[
       '', // Index 0 is unused for month names

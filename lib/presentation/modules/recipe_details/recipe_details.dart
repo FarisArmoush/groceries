@@ -2,7 +2,7 @@ library recipe_details;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/data/models/recipe_model/recipe_model.dart';
+import 'package:groceries/data/models/models.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/modules/recipe_details/bloc/recipe_details_bloc.dart';
 import 'package:groceries/presentation/widgets/widgets.dart';

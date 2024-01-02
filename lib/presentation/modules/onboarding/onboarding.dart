@@ -6,7 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/data/models/onboarding_page_model/onboarding_page_model.dart';
+import 'package:groceries/data/models/models.dart';
 import 'package:groceries/presentation/modules/onboarding/bloc/onboarding_bloc.dart';
 import 'package:groceries/presentation/widgets/widgets.dart';
 import 'package:groceries/utils/constants/app_colors.dart';

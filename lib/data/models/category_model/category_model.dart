@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/utils/timestamp_serializer.dart';
+import 'package:groceries/utils/typedefs/json.dart';
 
 part 'category_model.freezed.dart';
 part 'category_model.g.dart';
@@ -16,6 +17,5 @@ class CategoryModel with _$CategoryModel {
     required String? parentCategoryId,
   }) = _CategoryModel;
 
-  factory CategoryModel.fromJson(Map<String, Object?> json) =>
-      _$CategoryModelFromJson(json);
+  factory CategoryModel.fromJson(Json json) => _$CategoryModelFromJson(json);
 }

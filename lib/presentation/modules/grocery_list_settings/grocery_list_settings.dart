@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/data/models/user_model/user_model.dart';
+import 'package:groceries/data/models/models.dart';
 import 'package:groceries/domain/use_cases/use_cases.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/modules/grocery_list_settings/blocs/delete_list/delete_list_bloc.dart';

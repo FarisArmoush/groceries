@@ -1,8 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:groceries/data/models/category_model/category_model.dart';
-import 'package:groceries/data/models/grocery_model/grocery_model.dart';
+import 'package:groceries/data/models/models.dart';
 import 'package:groceries/domain/use_cases/use_cases.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 

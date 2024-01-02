@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:groceries/data/models/task_model/task_model.dart';
+import 'package:groceries/data/models/models.dart';
 import 'package:groceries/domain/use_cases/use_cases.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 

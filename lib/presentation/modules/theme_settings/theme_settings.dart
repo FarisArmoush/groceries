@@ -3,7 +3,7 @@ library theme_settings;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/data/models/app_theme_model/app_theme_model.dart';
+import 'package:groceries/data/models/models.dart';
 import 'package:groceries/presentation/blocs/theme/theme_cubit.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/widgets/widgets.dart';

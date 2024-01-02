@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:groceries/data/models/recipe_model/recipe_model.dart';
+import 'package:groceries/data/models/models.dart';
 import 'package:groceries/domain/use_cases/use_cases.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 import 'package:groceries/utils/extenstions/app_extensions.dart';
