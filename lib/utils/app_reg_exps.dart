@@ -27,4 +27,9 @@ class AppRegExps {
   ///
   /// * [0-9]
   static final numbers = RegExp('[0-9]');
+
+  /// Holds a value for email
+  ///
+  /// * [^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$]
+  static final emailRegex = RegExp(r'^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$');
 }

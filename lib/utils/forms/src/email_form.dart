@@ -26,7 +26,7 @@ class EmailForm extends FormzInput<String, String> {
     if (value!.isEmpty) {
       return AppTranslations.inputValidationMessages.fieldCannotBeEmpty;
     }
-    if (!EmailValidator.validate(value)) {
+    if (!AppRegExps.emailRegex.hasMatch(value)) {
       return AppTranslations.inputValidationMessages.emailIsntValid;
     }
     return null;
