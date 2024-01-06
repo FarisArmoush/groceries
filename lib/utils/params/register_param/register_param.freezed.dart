@@ -130,7 +130,7 @@ class _$RegisterParamImpl implements _RegisterParam {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$RegisterParamImpl &&

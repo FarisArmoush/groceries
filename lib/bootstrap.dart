@@ -1,9 +1,11 @@
 import 'dart:async';
 import 'dart:developer';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/app/app.dart';
+import 'package:groceries/firebase_options.dart';
 
 /// Bootstraps the Flutter application by setting up error handling and
 /// configuring the global [Bloc.observer]
@@ -38,6 +40,11 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   };
 
   Bloc.observer = const AppBlocObserver();
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   await runZonedGuarded(
     () async => runApp(await builder()),

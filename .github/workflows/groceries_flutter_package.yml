@@ -1,7 +1,0 @@
-# .github/workflows/my_flutter_package.yaml
-name: groceries_flutter_package
-on: pull_request
-
-jobs:
-  build:
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
