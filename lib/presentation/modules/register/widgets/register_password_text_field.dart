@@ -17,8 +17,11 @@ class RegisterPasswordTextField extends StatelessWidget {
           errorText: state.password.displayError,
           obscureText: state.isObscure,
           prefixIcon: Assets.svg.icLock.svg(
-            color: context.theme.inputDecorationTheme.prefixIconColor,
             fit: BoxFit.scaleDown,
+            colorFilter: ColorFilter.mode(
+              context.theme.inputDecorationTheme.prefixIconColor!,
+              BlendMode.srcIn,
+            ),
           ),
           suffixIcon: PasswordInputObscurityButton(
             isObscure: state.isObscure,

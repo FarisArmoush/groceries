@@ -20,10 +20,16 @@ class GroceryItemCard extends StatelessWidget {
         onPressed: onPressed,
         icon: isDone!
             ? Assets.svg.icCheckCircle.svg(
-                color: Colors.green,
+                colorFilter: const ColorFilter.mode(
+                  Colors.green,
+                  BlendMode.srcIn,
+                ),
               )
             : Assets.svg.icPlus.svg(
-                color: context.theme.primaryColor,
+                colorFilter: ColorFilter.mode(
+                  context.theme.primaryColor,
+                  BlendMode.srcIn,
+                ),
               ),
       ),
     );

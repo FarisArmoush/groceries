@@ -8,7 +8,10 @@ class GroceryListOptionsButton extends StatelessWidget {
     return IconButton(
       tooltip: AppTranslations.groceryLists.listOptions,
       icon: Assets.svg.icVerticalThreeDots.svg(
-        color: context.theme.primaryColor,
+        colorFilter: ColorFilter.mode(
+          context.theme.primaryColor,
+          BlendMode.srcIn,
+        ),
       ),
       onPressed: () => showModalBottomSheet<void>(
         showDragHandle: true,

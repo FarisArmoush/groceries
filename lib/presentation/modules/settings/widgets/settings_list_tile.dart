@@ -21,8 +21,10 @@ class SettingsListTile extends StatelessWidget {
       tileColor: AppColors.transparent,
       leading: SvgPicture.asset(
         iconPath,
-        // ignore: deprecated_member_use
-        color: context.theme.hintColor,
+        colorFilter: ColorFilter.mode(
+          context.theme.hintColor,
+          BlendMode.srcIn,
+        ),
       ),
       title: Text(title),
       subtitle: Text(subtitle),

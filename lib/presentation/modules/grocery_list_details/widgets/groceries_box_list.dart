@@ -27,10 +27,16 @@ class GroceriesBoxList extends StatelessWidget {
                 onPressed: () {},
                 icon: item.isDone!
                     ? Assets.svg.icDoubleCheck.svg(
-                        color: Colors.green,
+                        colorFilter: const ColorFilter.mode(
+                          Colors.green,
+                          BlendMode.srcIn,
+                        ),
                       )
                     : Assets.svg.icCheck.svg(
-                        color: context.theme.primaryColor,
+                        colorFilter: ColorFilter.mode(
+                          context.theme.primaryColor,
+                          BlendMode.srcIn,
+                        ),
                       ),
               ),
               onTap: () => showModalBottomSheet<void>(

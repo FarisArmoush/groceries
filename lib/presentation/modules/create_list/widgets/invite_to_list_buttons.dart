@@ -12,8 +12,11 @@ class InviteToListButtons extends StatelessWidget {
         TextButton.icon(
           onPressed: () {},
           icon: Assets.svg.icAtSign.svg(
-            color: context.theme.primaryColor,
             height: context.deviceHeight * 0.03,
+            colorFilter: ColorFilter.mode(
+              context.theme.primaryColor,
+              BlendMode.srcIn,
+            ),
           ),
           label: Text(
             AppTranslations.general.email,
@@ -27,8 +30,11 @@ class InviteToListButtons extends StatelessWidget {
         TextButton.icon(
           onPressed: () {},
           icon: Assets.svg.icClipboardCopy.svg(
-            color: context.theme.primaryColor,
             height: context.deviceHeight * 0.03,
+            colorFilter: ColorFilter.mode(
+              context.theme.primaryColor,
+              BlendMode.srcIn,
+            ),
           ),
           label: Text(
             AppTranslations.createGroceryList.copyInvitationLink,

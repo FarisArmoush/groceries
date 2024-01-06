@@ -23,8 +23,10 @@ class AppListTileButton extends StatelessWidget {
       ),
       leading: SvgPicture.asset(
         icon,
-        // ignore: deprecated_member_use
-        color: color ?? context.theme.primaryColor,
+        colorFilter: ColorFilter.mode(
+          color ?? context.theme.primaryColor,
+          BlendMode.srcIn,
+        ),
       ),
       title: Text(
         title,

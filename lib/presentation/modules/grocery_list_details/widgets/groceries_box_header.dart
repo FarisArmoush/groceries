@@ -29,8 +29,10 @@ class GroceriesBoxHeader extends StatelessWidget {
             ),
             child: SvgPicture.asset(
               assetPath,
-              // ignore: deprecated_member_use
-              color: AppColors.black,
+              colorFilter: const ColorFilter.mode(
+                AppColors.black,
+                BlendMode.srcIn,
+              ),
             ),
           ),
           SizedBox(

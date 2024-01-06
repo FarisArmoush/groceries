@@ -15,7 +15,10 @@ class RegisterDisplayNameTextField extends StatelessWidget {
                 RegisterEvent.updateDisplayName(value),
               ),
           prefixIcon: Assets.svg.icUser.svg(
-            color: context.theme.inputDecorationTheme.prefixIconColor,
+            colorFilter: ColorFilter.mode(
+              context.theme.inputDecorationTheme.prefixIconColor!,
+              BlendMode.srcIn,
+            ),
             fit: BoxFit.scaleDown,
           ),
           keyboardType: TextInputType.name,

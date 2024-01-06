@@ -38,9 +38,12 @@ class _AddStepsToRecipeListState extends State<AddStepsToRecipeList> {
                   child: IconButton(
                     onPressed: () => index != 0 ? removeStep(index) : null,
                     icon: Assets.svg.icCircleX.svg(
-                      color: index != 0
-                          ? context.theme.primaryColorLight
-                          : context.theme.hintColor,
+                      colorFilter: ColorFilter.mode(
+                        index != 0
+                            ? context.theme.primaryColorLight
+                            : context.theme.hintColor,
+                        BlendMode.srcIn,
+                      ),
                     ),
                   ),
                 ),
@@ -54,7 +57,10 @@ class _AddStepsToRecipeListState extends State<AddStepsToRecipeList> {
         TextButton.icon(
           onPressed: addStep,
           icon: Assets.svg.icPlusCircle.svg(
-            color: context.theme.primaryColorLight,
+            colorFilter: ColorFilter.mode(
+              context.theme.primaryColorLight,
+              BlendMode.srcIn,
+            ),
           ),
           label: Text(AppTranslations.createRecipe.addStep),
         ),

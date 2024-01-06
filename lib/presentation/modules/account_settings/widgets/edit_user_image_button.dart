@@ -7,7 +7,10 @@ class EditUserImageButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton.icon(
       icon: Assets.svg.icEdit.svg(
-        color: context.theme.primaryColorLight,
+        colorFilter: ColorFilter.mode(
+          context.theme.primaryColorLight,
+          BlendMode.srcIn,
+        ),
       ),
       label: Text(
         AppTranslations.accountSettings.editUserImage,

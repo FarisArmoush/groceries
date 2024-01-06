@@ -29,7 +29,10 @@ class EditListImage extends StatelessWidget {
               );
             },
             icon: Assets.svg.icEdit.svg(
-              color: AppColors.white,
+              colorFilter: const ColorFilter.mode(
+                AppColors.white,
+                BlendMode.srcIn,
+              ),
             ),
           ),
         ).allPadding(8),

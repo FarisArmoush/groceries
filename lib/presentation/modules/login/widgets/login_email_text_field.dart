@@ -10,8 +10,11 @@ class LoginEmailTextField extends StatelessWidget {
       builder: (context, state) {
         return AppTextField(
           prefixIcon: Assets.svg.icMail.svg(
-            color: context.theme.inputDecorationTheme.prefixIconColor,
             fit: BoxFit.scaleDown,
+            colorFilter: ColorFilter.mode(
+              context.theme.inputDecorationTheme.prefixIconColor!,
+              BlendMode.srcIn,
+            ),
           ),
           onChanged: (email) =>
               context.read<LoginBloc>().add(LoginEvent.updateEmail(email)),

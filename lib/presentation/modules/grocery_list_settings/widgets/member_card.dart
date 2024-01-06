@@ -24,7 +24,10 @@ class MemberCard extends StatelessWidget {
           ),
         ),
         icon: Assets.svg.icUserX.svg(
-          color: context.theme.hintColor,
+          colorFilter: ColorFilter.mode(
+            context.theme.hintColor,
+            BlendMode.srcIn,
+          ),
         ),
       ),
     );

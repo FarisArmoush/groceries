@@ -19,7 +19,10 @@ class RecipeItemsList extends StatelessWidget {
           title: Text(recipeModel.items?[index]?.name ?? 'null'),
           subtitle: Text(recipeModel.items?[index]?.notes ?? 'null'),
           leading: Assets.svg.icArchive.svg(
-            color: context.theme.primaryColor,
+            colorFilter: ColorFilter.mode(
+              context.theme.primaryColor,
+              BlendMode.srcIn,
+            ),
           ),
         );
       },

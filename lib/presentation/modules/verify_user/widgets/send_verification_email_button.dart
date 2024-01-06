@@ -11,7 +11,10 @@ class SendVerificationEmailButton extends StatelessWidget {
           const VerifyUserEvent.verifyUser(),
         ),
       icon: Assets.svg.icSend.svg(
-        color: context.theme.colorScheme.secondary,
+        colorFilter: ColorFilter.mode(
+          context.theme.colorScheme.secondary,
+          BlendMode.srcIn,
+        ),
       ),
       label: Text(AppTranslations.forgotPassword.sendResetPassword),
     );

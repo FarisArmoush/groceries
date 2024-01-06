@@ -11,7 +11,10 @@ class GroceryListDetailsFab extends StatelessWidget {
       },
       label: Text(AppTranslations.addItems.addItems),
       icon: Assets.svg.icPlus.svg(
-        color: AppColors.white,
+        colorFilter: const ColorFilter.mode(
+          AppColors.white,
+          BlendMode.srcIn,
+        ),
       ),
     );
   }
