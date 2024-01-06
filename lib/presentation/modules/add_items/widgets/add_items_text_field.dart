@@ -7,11 +7,10 @@ class AddItemsTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AddItemsBloc, AddItemsState>(
       builder: (context, state) {
-        return state.status.maybeWhen(
+        return state.status.when(
           initial: SizedBox.shrink,
           loading: AppLoadingIndicator.new,
           failure: (_) => const SizedBox.shrink(),
-          orElse: SizedBox.shrink,
           success: () => Material(
             color: CupertinoColors.systemGrey5,
             borderRadius: BorderRadius.circular(9),

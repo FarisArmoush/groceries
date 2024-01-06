@@ -25,3 +25,4 @@ part 'widgets/add_items_text_field.dart';
 part 'widgets/category_box.dart';
 part 'widgets/category_box_divider.dart';
 part 'widgets/grocery_item_card.dart';
+part 'widgets/grocery_item_card_icon.dart';

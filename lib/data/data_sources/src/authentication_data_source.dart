@@ -1,7 +1,7 @@
 part of '../data_sources.dart';
 
 class AuthenticationDataSource {
-  AuthenticationDataSource({
+  const AuthenticationDataSource({
     required this.firebaseAuth,
     required this.firestore,
   });
