@@ -12,8 +12,11 @@ class LoginPasswordTextField extends StatelessWidget {
       builder: (context, state) {
         return AppTextField(
           prefixIcon: Assets.svg.icLock.svg(
-            color: context.theme.inputDecorationTheme.prefixIconColor,
             fit: BoxFit.scaleDown,
+            colorFilter: ColorFilter.mode(
+              context.theme.inputDecorationTheme.prefixIconColor!,
+              BlendMode.srcIn,
+            ),
           ),
           autofillHints: const [
             AutofillHints.password,

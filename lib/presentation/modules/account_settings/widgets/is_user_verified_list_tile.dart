@@ -12,8 +12,18 @@ class IsUserVerifiedListTile extends StatelessWidget {
           ? Text(AppTranslations.accountSettings.verified)
           : null,
       trailing: isVerified == true
-          ? Assets.svg.icVerified.svg(color: Colors.green)
-          : Assets.svg.icBadgeAlert.svg(color: AppColors.lightRed),
+          ? Assets.svg.icVerified.svg(
+              colorFilter: const ColorFilter.mode(
+                Colors.green,
+                BlendMode.srcIn,
+              ),
+            )
+          : Assets.svg.icBadgeAlert.svg(
+              colorFilter: const ColorFilter.mode(
+                AppColors.lightRed,
+                BlendMode.srcIn,
+              ),
+            ),
       onTap: () => isVerified == true
           ? showModalBottomSheet<void>(
               context: context,

@@ -13,7 +13,10 @@ class ClearGroceryListItemsButton extends StatelessWidget {
         builder: (context) => const ClearGroceryListItemsBottomSheet(),
       ),
       icon: Assets.svg.icEraser.svg(
-        color: context.theme.primaryColor,
+        colorFilter: ColorFilter.mode(
+          context.theme.primaryColor,
+          BlendMode.srcIn,
+        ),
       ),
     );
   }

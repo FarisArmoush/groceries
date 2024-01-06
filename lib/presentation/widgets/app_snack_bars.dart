@@ -15,7 +15,10 @@ class AppSnackBars {
         mainAxisSize: MainAxisSize.min,
         children: [
           Assets.svg.icCheckCircle.svg(
-            color: AppColors.white,
+            colorFilter: const ColorFilter.mode(
+              AppColors.white,
+              BlendMode.srcIn,
+            ),
           ),
           const SizedBox(width: 16),
           _SnackbarMessage(message: message),
@@ -36,7 +39,10 @@ class AppSnackBars {
         mainAxisSize: MainAxisSize.min,
         children: [
           Assets.svg.icInfo.svg(
-            color: AppColors.white,
+            colorFilter: const ColorFilter.mode(
+              AppColors.white,
+              BlendMode.srcIn,
+            ),
           ),
           const SizedBox(width: 16),
           _SnackbarMessage(message: message),
@@ -57,7 +63,10 @@ class AppSnackBars {
         mainAxisSize: MainAxisSize.min,
         children: [
           Assets.svg.icAlertTriangle.svg(
-            color: AppColors.white,
+            colorFilter: const ColorFilter.mode(
+              AppColors.white,
+              BlendMode.srcIn,
+            ),
           ),
           const SizedBox(width: 16),
           _SnackbarMessage(message: warning),
@@ -78,7 +87,10 @@ class AppSnackBars {
         mainAxisSize: MainAxisSize.min,
         children: [
           Assets.svg.icCircleX.svg(
-            color: AppColors.white,
+            colorFilter: const ColorFilter.mode(
+              AppColors.white,
+              BlendMode.srcIn,
+            ),
           ),
           const SizedBox(width: _widthSpace),
           _SnackbarMessage(message: error),

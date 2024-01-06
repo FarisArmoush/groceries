@@ -13,7 +13,10 @@ class GroceryListsRailHeader extends StatelessWidget {
           label: Text(AppTranslations.createGroceryList.createNewList),
           onPressed: () => context.pushNamed(AppNamedRoutes.createList),
           icon: Assets.svg.icPlusCircle.svg(
-            color: context.theme.primaryColorLight,
+            colorFilter: ColorFilter.mode(
+              context.theme.primaryColorLight,
+              BlendMode.srcIn,
+            ),
           ),
         ),
       ],

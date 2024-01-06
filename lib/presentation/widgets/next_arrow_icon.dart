@@ -21,8 +21,10 @@ class NextArrowIcon extends StatelessWidget {
       context.locale.languageCode == 'ar'
           ? Assets.svg.icLeftArrow.path
           : Assets.svg.icRightArrow.path,
-      // ignore: deprecated_member_use
-      color: color ?? context.theme.hintColor,
+      colorFilter: ColorFilter.mode(
+        color ?? context.theme.hintColor,
+        BlendMode.srcIn,
+      ),
     );
   }
 }

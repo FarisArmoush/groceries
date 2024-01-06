@@ -24,7 +24,10 @@ class RecipeDetailsPage extends StatelessWidget {
                 builder: (context) => const RecipeOptionsBottomSheet(),
               ),
               icon: Assets.svg.icVerticalThreeDots.svg(
-                color: context.theme.hintColor,
+                colorFilter: ColorFilter.mode(
+                  context.theme.hintColor,
+                  BlendMode.srcIn,
+                ),
               ),
             ),
           ),

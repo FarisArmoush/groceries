@@ -19,7 +19,10 @@ class RecipesView extends StatelessWidget {
               trailing: IconButton(
                 onPressed: () => context.pushNamed(AppNamedRoutes.createRecipe),
                 icon: Assets.svg.icPlusCircle.svg(
-                  color: context.theme.primaryColorLight,
+                  colorFilter: ColorFilter.mode(
+                    context.theme.primaryColorLight,
+                    BlendMode.srcIn,
+                  ),
                 ),
               ),
             ),

@@ -13,8 +13,11 @@ class RegisterConfirmPasswordTextField extends StatelessWidget {
       builder: (context, state) {
         return AppTextField(
           prefixIcon: Assets.svg.icRepeat.svg(
-            color: context.theme.inputDecorationTheme.prefixIconColor,
             fit: BoxFit.scaleDown,
+            colorFilter: ColorFilter.mode(
+              context.theme.inputDecorationTheme.prefixIconColor!,
+              BlendMode.srcIn,
+            ),
           ),
           onChanged: (value) {
             context.read<RegisterBloc>().add(

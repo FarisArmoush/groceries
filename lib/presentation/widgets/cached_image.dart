@@ -1,24 +1,6 @@
 part of 'widgets.dart';
 
-/// {@template cached_image}
-/// A widget that displays a cached network image.
-///
-/// * The [imageUrl] parameter specifies the URL of the image to display.
-///
-/// * The [height] parameter specifies the height of the image widget.
-///
-/// * The [width] parameter specifies the width of the image widget.
-///
-/// * The [boxFit] parameter specifies how the image
-///   should be fit within the widget's bounds.
-///
-/// * The [boxShape] parameter specifies the shape
-///   of the container that holds the image.
-///
-/// * The [borderRadius] parameter specifies the border radius of the container.
-/// {@endtemplate}
 class CachedImage extends StatelessWidget {
-  /// {@macro cached_image}
   const CachedImage({
     this.imageUrl = mockImage,
     this.height,
@@ -29,26 +11,11 @@ class CachedImage extends StatelessWidget {
     super.key,
   });
 
-  /// The URL of the image to display.
   final String imageUrl;
-
-  /// The height of the image widget.
   final double? height;
-
-  /// The width of the image widget.
   final double? width;
-
-  /// How the image should be fit within the widget's bounds.
-  ///
-  /// @Defaults to [BoxFit.cover]
   final BoxFit boxFit;
-
-  /// The shape of the container that holds the image.
-  ///
-  /// @Defaults to [BoxShape.circle]
   final BoxShape boxShape;
-
-  /// The border radius of the container.
   final BorderRadiusGeometry? borderRadius;
 
   @override
@@ -79,7 +46,10 @@ class CachedImage extends StatelessWidget {
       },
       errorWidget: (context, url, error) {
         return Assets.svg.icCircleX.svg(
-          color: context.theme.primaryColorLight,
+          colorFilter: ColorFilter.mode(
+            context.theme.primaryColorLight,
+            BlendMode.srcIn,
+          ),
         );
       },
     );

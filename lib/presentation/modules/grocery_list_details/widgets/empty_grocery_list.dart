@@ -42,7 +42,10 @@ class EmptyGroceryList extends StatelessWidget {
           onPressed: () => context.pushNamed(AppNamedRoutes.addItems),
           label: Text(AppTranslations.groceryLists.browseGroceries),
           icon: Assets.svg.icSearch.svg(
-            color: context.theme.colorScheme.secondary,
+            colorFilter: ColorFilter.mode(
+              context.theme.colorScheme.secondary,
+              BlendMode.srcIn,
+            ),
           ),
         ),
       ],

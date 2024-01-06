@@ -9,7 +9,12 @@ class UserDisplayNameListTile extends StatelessWidget {
     return ListTile(
       title: Text(AppTranslations.general.username),
       subtitle: Text(displayName ?? ''),
-      trailing: Assets.svg.icEdit.svg(color: context.theme.hintColor),
+      trailing: Assets.svg.icEdit.svg(
+        colorFilter: ColorFilter.mode(
+          context.theme.hintColor,
+          BlendMode.srcIn,
+        ),
+      ),
       onTap: () => context.pushNamed(AppNamedRoutes.updateDisplayName),
     );
   }

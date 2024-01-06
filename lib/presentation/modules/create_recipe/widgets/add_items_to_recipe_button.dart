@@ -8,7 +8,10 @@ class AddItemsToRecipeButton extends StatelessWidget {
     return ElevatedButton.icon(
       onPressed: () => context.pushNamed(AppNamedRoutes.addItems),
       icon: Assets.svg.icPlus.svg(
-        color: context.theme.colorScheme.secondary,
+        colorFilter: ColorFilter.mode(
+          context.theme.colorScheme.secondary,
+          BlendMode.srcIn,
+        ),
       ),
       label: Text(AppTranslations.createRecipe.addItemsToRecipe),
     );

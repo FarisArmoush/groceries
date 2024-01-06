@@ -56,19 +56,24 @@ class RootPage extends StatelessWidget {
     required String iconPath,
     required String activeIconPath,
   }) {
+    final height = context.deviceHeight * 0.03;
     return AppBottomNavigationBarItem(
       icon: SvgPicture.asset(
         iconPath,
-        // ignore: deprecated_member_use
-        color: context.theme.hintColor,
-        height: context.deviceHeight * 0.03,
+        height: height,
+        colorFilter: ColorFilter.mode(
+          context.theme.hintColor,
+          BlendMode.srcIn,
+        ),
       ),
       title: Text(label),
       activeIcon: SvgPicture.asset(
         activeIconPath,
-        // ignore: deprecated_member_use
-        color: context.theme.primaryColor,
-        height: context.deviceHeight * 0.03,
+        height: height,
+        colorFilter: ColorFilter.mode(
+          context.theme.primaryColor,
+          BlendMode.srcIn,
+        ),
       ),
       selectedColor: context.theme.primaryColor,
     );
