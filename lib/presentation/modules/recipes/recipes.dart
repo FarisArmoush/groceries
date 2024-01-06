@@ -20,3 +20,5 @@ part 'widgets/recipe_card/recipe_card_title.dart';
 part 'widgets/recipes_list.dart';
 part 'widgets/shimmered_recipes_list.dart';
 part 'widgets/you_have_no_recipes.dart';
+part 'widgets/shimmered_recipe_card.dart';
+part 'widgets/recipes_app_bar.dart';
