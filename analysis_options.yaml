@@ -1,6 +1,5 @@
 include: package:very_good_analysis/analysis_options.5.1.0.yaml
 analyzer: 
-# linter:
   exclude:
     - "**/*.g.dart"
     - "**/*.freezed.dart"
