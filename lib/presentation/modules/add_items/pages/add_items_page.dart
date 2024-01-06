@@ -19,14 +19,12 @@ class AddItemsPage extends StatelessWidget {
           appBar: state.status.maybeWhen(
             loading: AppBar.new,
             initial: AppBar.new,
-            orElse: () {
-              return null;
-            },
+            orElse: () => null,
           ),
           body: state.status.when(
             initial: AppLoadingIndicator.new,
             loading: AppLoadingIndicator.new,
-            failure: Text.new,
+            failure: (error) => ErrorState(title: Text(error)),
             success: () => CustomScrollView(
               slivers: [
                 GroceriesAppBar(

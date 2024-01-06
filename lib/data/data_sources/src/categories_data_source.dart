@@ -1,7 +1,7 @@
 part of '../data_sources.dart';
 
 class CategoriesDataSource {
-  CategoriesDataSource(this._firestore);
+  const CategoriesDataSource(this._firestore);
 
   final FirebaseFirestore _firestore;
 

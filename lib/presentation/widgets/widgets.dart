@@ -33,3 +33,4 @@ part 'password_input_obscurity_button.dart';
 part 'shimmer_skeleton.dart';
 part 'sliver_sized_box.dart';
 part 'upload_image_bottom_sheet.dart';
+part 'error_state.dart';

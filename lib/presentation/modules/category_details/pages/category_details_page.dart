@@ -46,11 +46,9 @@ class CategoryDetailsPage extends StatelessWidget {
                         },
                       ).symmetricPadding(horizontal: 8);
                     },
-                    separatorBuilder: (context, index) {
-                      return SizedBox(
-                        height: context.deviceHeight * 0.01,
-                      );
-                    },
+                    separatorBuilder: (context, index) => SizedBox(
+                      height: context.deviceHeight * 0.01,
+                    ),
                   ),
               ],
             );

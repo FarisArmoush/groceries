@@ -13,7 +13,7 @@ class GroceryItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDone = groceryModel.isDone;
     return ListTile(
-      leading: _icon(context),
+      leading: GroceryItemCardIcon(groceryModel: groceryModel),
       title: Text(groceryModel.name ?? 'null'),
       subtitle: Text(groceryModel.categoryId ?? 'null'),
       trailing: IconButton(
@@ -25,22 +25,6 @@ class GroceryItemCard extends StatelessWidget {
             : Assets.svg.icPlus.svg(
                 color: context.theme.primaryColor,
               ),
-      ),
-    );
-  }
-
-  Widget _icon(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(8),
-      decoration: BoxDecoration(
-        color: context.theme.primaryColor,
-        borderRadius: BorderRadius.circular(5),
-      ),
-      child: SvgPicture.asset(
-        Assets.svg.icBeef.path,
-        // ignore: deprecated_member_use
-        color: context.theme.colorScheme.secondary,
-        height: context.deviceHeight * 0.03,
       ),
     );
   }

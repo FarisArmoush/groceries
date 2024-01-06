@@ -1,7 +1,7 @@
 part of '../data_sources.dart';
 
 class BaseGroceriesDataSource {
-  BaseGroceriesDataSource(this._firestore);
+  const BaseGroceriesDataSource(this._firestore);
 
   final FirebaseFirestore _firestore;
 
