@@ -9,9 +9,7 @@ to coordinate their shopping activities.
 
 Overall, Groceries is designed to simplify the process of creating and managing 
 shopping lists, making it easier to remember what you need to buy and ensuring
-you dont forget any essential items while grocery shopping.
-
-Certainly, Faris! I'd be happy to help you with that. Here's a template you can use for your README file:
+you don't forget any essential items while grocery shopping.
 
 ---
 
