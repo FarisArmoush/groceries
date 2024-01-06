@@ -12,28 +12,27 @@ class RecipesList extends StatelessWidget {
     return ListView.separated(
       shrinkWrap: true,
       primary: false,
-      padding: AppPaddings.scaffoldPadding(context),
       itemCount: recipes.length,
+      padding: AppPaddings.scaffoldPadding(context),
       itemBuilder: (context, index) {
+        final recipe = recipes[index];
         return RecipeCard(
           recipeModel: RecipeModel(
-            id: recipes[index].id,
-            name: recipes[index].name,
-            imageUrl: recipes[index].imageUrl,
-            items: recipes[index].items,
-            creationDate: DateTime.timestamp(),
+            id: recipe.id,
+            name: recipe.name,
+            imageUrl: recipe.imageUrl,
+            items: recipe.items,
+            creationDate: recipe.creationDate,
           ),
           onTap: () => context.pushNamed(
             AppNamedRoutes.recipeDetails,
-            extra: recipes[index],
+            extra: recipe,
           ),
         );
       },
-      separatorBuilder: (context, index) {
-        return SizedBox(
-          height: context.deviceHeight * 0.04,
-        );
-      },
+      separatorBuilder: (context, index) => SizedBox(
+        height: context.deviceHeight * 0.04,
+      ),
     );
   }
 }
