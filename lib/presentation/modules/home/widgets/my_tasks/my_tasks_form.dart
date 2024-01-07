@@ -11,7 +11,7 @@ class MyTasksForm extends StatelessWidget {
         initial: SizedBox.shrink,
         loading: MyTasksShimmeredRail.new,
         success: () => MyTasksRail(tasks: state.myTasks),
-        failure: Text.new,
+        failure: (error) => ErrorState(title: Text(error)),
       ),
     );
   }

@@ -365,6 +365,9 @@ class GroceryListsDataSource {
         ],
       ),
     ]..sort((a, b) => a.name!.compareTo(b.name!));
+    await Future.delayed(Durations.extralong4, () {
+      return lists;
+    });
     return lists;
   }
 

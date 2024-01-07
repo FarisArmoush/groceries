@@ -7,23 +7,31 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: CustomScrollView(
-          slivers: [
-            const HomeAppBar(),
-            SliverSizedBox(
-              height: context.deviceHeight * 0.05,
-            ),
-            const GroceryListsForm()
-                .symmetricPadding(horizontal: 16)
-                .asSliver(),
-            SliverSizedBox(
-              height: context.deviceHeight * 0.05,
-            ),
-            const MyTasksForm().symmetricPadding(horizontal: 16).asSliver(),
-            SliverSizedBox(
-              height: context.deviceHeight * 0.05,
-            ),
-          ],
+        body: RefreshIndicator.adaptive(
+          onRefresh: () async {
+            context.read<GroceryListsBloc>().add(
+                  const GroceryListsEvent.loadGroceryLists(),
+                );
+            context.read<MyTasksBloc>().add(const MyTasksEvent.loadMyTasks());
+          },
+          child: CustomScrollView(
+            slivers: [
+              const HomeAppBar(),
+              // SliverSizedBox(
+              //   height: context.deviceHeight * 0.05,
+              // ),
+              // const GroceryListsForm()
+              //     .symmetricPadding(horizontal: 16)
+              //     .asSliver(),
+              // SliverSizedBox(
+              //   height: context.deviceHeight * 0.05,
+              // ),
+              const MyTasksForm().symmetricPadding(horizontal: 16).asSliver(),
+              SliverSizedBox(
+                height: context.deviceHeight * 0.05,
+              ),
+            ],
+          ),
         ),
       ),
     );
