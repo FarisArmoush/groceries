@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/utils/timestamp_serializer.dart';
+import 'package:groceries/utils/typedefs/typedefs.dart';
 
 part 'task_model.freezed.dart';
 part 'task_model.g.dart';
@@ -17,6 +18,5 @@ class TaskModel with _$TaskModel {
     @TimestampSerializer() required DateTime? creationDate,
   }) = _TaskModel;
 
-  factory TaskModel.fromJson(Map<String, Object?> json) =>
-      _$TaskModelFromJson(json);
+  factory TaskModel.fromJson(JSON json) => _$TaskModelFromJson(json);
 }
