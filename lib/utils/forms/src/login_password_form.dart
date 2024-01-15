@@ -22,17 +22,13 @@ class LoginPasswordForm extends FormzInput<String, String> {
 
   @override
   String? validator(String? value) {
-    var errors = '';
     if (value!.isEmpty) {
       return AppTranslations.inputValidationMessages.fieldCannotBeEmpty;
     }
     if (value.length.isLessThan(8)) {
-      errors += AppTranslations
+      return AppTranslations
           .inputValidationMessages.fieldMustHaveAtLeastEightCharacters;
     }
-    if (errors.isEmpty) {
-      return null;
-    }
-    return errors.trim();
+    return null;
   }
 }
