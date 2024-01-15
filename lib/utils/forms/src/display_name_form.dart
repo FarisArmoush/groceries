@@ -1,4 +1,3 @@
-// ignore_for_file: lines_longer_than_80_chars
 part of '../app_forms.dart';
 
 /// A class representing a display name input form field.
@@ -26,7 +25,8 @@ class DisplayNameForm extends FormzInput<String, String> {
       return AppTranslations.inputValidationMessages.fieldCannotBeEmpty;
     }
     if (value.length.isLessThan(8)) {
-      return '${AppTranslations.inputValidationMessages.fieldMustHaveAtLeastEightCharacters}\n';
+      return AppTranslations
+          .inputValidationMessages.fieldMustHaveAtLeastEightCharacters;
     }
     return null;
   }

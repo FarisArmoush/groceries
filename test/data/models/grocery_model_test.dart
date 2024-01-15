@@ -69,7 +69,7 @@ void main() {
       expect(json['notes'], 'Some notes about the grocery item');
       expect(json['refinements'], [
         const RefinementsModel(refinement: 'Category', isChecked: true),
-        const RefinementsModel(refinement: 'Organic', isChecked: false)
+        const RefinementsModel(refinement: 'Organic', isChecked: false),
       ]);
     });
   });
