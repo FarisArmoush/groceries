@@ -6,7 +6,7 @@ extension PaddingExtensions on Widget {
     double horizontal = 0,
   }) {
     return Padding(
-      padding: EdgeInsets.symmetric(
+      padding: EdgeInsetsDirectional.symmetric(
         vertical: vertical,
         horizontal: horizontal,
       ),
@@ -16,12 +16,12 @@ extension PaddingExtensions on Widget {
 
   Padding allPadding(double value) {
     return Padding(
-      padding: EdgeInsets.all(value),
+      padding: EdgeInsetsDirectional.all(value),
       child: this,
     );
   }
 
-  Padding directionalOnlyPadding({
+  Padding onlyPadding({
     double start = 0,
     double end = 0,
     double top = 0,

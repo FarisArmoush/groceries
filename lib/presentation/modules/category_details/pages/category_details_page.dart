@@ -28,7 +28,7 @@ class CategoryDetailsPage extends StatelessWidget {
                   SliverToBoxAdapter(
                     child: GroceriesBoxList(
                       list: state.groceries,
-                    ).directionalOnlyPadding(bottom: 32),
+                    ).onlyPadding(bottom: 32),
                   )
                 else
                   SliverList.separated(
