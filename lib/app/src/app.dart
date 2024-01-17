@@ -1,15 +1,23 @@
 part of '../app.dart';
 
 class App extends StatelessWidget {
-  const App({required this.sharedPreferences, super.key});
+  const App({
+    required this.sharedPreferences,
+    required this.flavor,
+    super.key,
+  });
 
   final SharedPreferences sharedPreferences;
+  final AppFlavor flavor;
 
   @override
   Widget build(BuildContext context) {
     // INSTANCES PROVIDER
     return MultiRepositoryProvider(
       providers: [
+        RepositoryProvider<AppFlavor>(
+          create: (context) => flavor,
+        ),
         RepositoryProvider<FirebaseAuth>(
           create: (context) => FirebaseAuth.instance,
         ),

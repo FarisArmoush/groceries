@@ -1,6 +1,6 @@
 part of '../app_translations.dart';
 
-class _Recipes {
+class RecipesKeys {
   /// recipes
   final recipes = 'recipes'.tr();
 

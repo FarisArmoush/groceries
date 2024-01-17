@@ -1,6 +1,6 @@
 part of '../app_translations.dart';
 
-final class _CreateRecipe {
+final class CreateRecipeKeys {
   /// create_recipe
   final createRecipe = 'create_recipe'.tr();
 

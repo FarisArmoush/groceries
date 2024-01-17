@@ -1,70 +1,71 @@
-// ignore_for_file: library_private_types_in_public_api
 import 'package:easy_localization/easy_localization.dart';
 
-part 'strings/__account_settings.dart';
-part 'strings/__add_items.dart';
-part 'strings/__additional_resources.dart';
-part 'strings/__create_grocery_list.dart';
-part 'strings/__create_recipe.dart';
-part 'strings/__delete_account.dart';
-part 'strings/__error_messages.dart';
-part 'strings/__forgot_password.dart';
-part 'strings/__general.dart';
-part 'strings/__grocery_list_settings.dart';
-part 'strings/__grocery_lists.dart';
-part 'strings/__home.dart';
-part 'strings/__input_validation_messages.dart';
-part 'strings/__login.dart';
-part 'strings/__onboarding.dart';
-part 'strings/__recipes.dart';
-part 'strings/__register.dart';
-part 'strings/__settings.dart';
-part 'strings/__theme.dart';
-part 'strings/__verify_account.dart';
-part 'strings/__welcome.dart';
+part 'strings/account_settings_keys.dart';
+part 'strings/add_items_keys.dart';
+part 'strings/additional_resources_keys.dart';
+part 'strings/create_grocery_list_keys.dart';
+part 'strings/create_recipe_keys.dart';
+part 'strings/delete_account_keys.dart';
+part 'strings/error_messages_keys.dart';
+part 'strings/forgot_password_keys.dart';
+part 'strings/general_keys.dart';
+part 'strings/grocery_list_settings_keys.dart';
+part 'strings/grocery_lists_keys.dart';
+part 'strings/home_keys.dart';
+part 'strings/input_validation_messages_keys.dart';
+part 'strings/login_keys.dart';
+part 'strings/onboarding_keys.dart';
+part 'strings/recipes_keys.dart';
+part 'strings/register_keys.dart';
+part 'strings/settings_keys.dart';
+part 'strings/theme_keys.dart';
+part 'strings/verify_account_keys.dart';
+part 'strings/welcome_keys.dart';
 
 /// This class provides translations for all app strings.
 abstract final class AppTranslations {
-  static _General general = _General();
+  static GeneralKeys general = GeneralKeys();
 
-  static _Onboarding onboarding = _Onboarding();
+  static OnboardingKeys onboarding = OnboardingKeys();
 
-  static _Welcome welcome = _Welcome();
+  static WelcomeKeys welcome = WelcomeKeys();
 
-  static _Login login = _Login();
+  static LoginKeys login = LoginKeys();
 
-  static _Register register = _Register();
+  static RegisterKeys register = RegisterKeys();
 
-  static _ForgotPassword forgotPassword = _ForgotPassword();
+  static ForgotPasswordKeys forgotPassword = ForgotPasswordKeys();
 
-  static _Home home = _Home();
+  static HomeKeys home = HomeKeys();
 
-  static _GroceryLists groceryLists = _GroceryLists();
+  static GroceryListsKeys groceryLists = GroceryListsKeys();
 
-  static _AddItems addItems = _AddItems();
+  static AddItemsKeys addItems = AddItemsKeys();
 
-  static _GroceryListSettings groceryListSettings = _GroceryListSettings();
+  static GroceryListSettingsKeys groceryListSettings =
+      GroceryListSettingsKeys();
 
-  static _Recipes recipes = _Recipes();
+  static RecipesKeys recipes = RecipesKeys();
 
-  static _CreateRecipe createRecipe = _CreateRecipe();
+  static CreateRecipeKeys createRecipe = CreateRecipeKeys();
 
-  static _CreateGroceryList createGroceryList = _CreateGroceryList();
+  static CreateGroceryListKeys createGroceryList = CreateGroceryListKeys();
 
-  static _Settings settings = _Settings();
+  static SettingsKeys settings = SettingsKeys();
 
-  static _Theme theme = _Theme();
+  static ThemeKeys theme = ThemeKeys();
 
-  static _AdditionalResources additionalResources = _AdditionalResources();
+  static AdditionalResourcesKeys additionalResources =
+      AdditionalResourcesKeys();
 
-  static _AccountSettings accountSettings = _AccountSettings();
+  static AccountSettingsKeys accountSettings = AccountSettingsKeys();
 
-  static _VerifyAccount verifyAccount = _VerifyAccount();
+  static VerifyAccountKeys verifyAccount = VerifyAccountKeys();
 
-  static _DeleteAccount deleteAccount = _DeleteAccount();
+  static DeleteAccountKeys deleteAccount = DeleteAccountKeys();
 
-  static _InputValidationMessages inputValidationMessages =
-      _InputValidationMessages();
+  static InputValidationMessagesKeys inputValidationMessages =
+      InputValidationMessagesKeys();
 
-  static _ErrorMessages errorMessages = _ErrorMessages();
+  static ErrorMessagesKeys errorMessages = ErrorMessagesKeys();
 }

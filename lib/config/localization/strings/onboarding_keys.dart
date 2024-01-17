@@ -1,6 +1,6 @@
 part of '../app_translations.dart';
 
-final class _Onboarding {
+final class OnboardingKeys {
   /// finish_introduction
   final finishIntroduction = 'finish_introduction'.tr();
 

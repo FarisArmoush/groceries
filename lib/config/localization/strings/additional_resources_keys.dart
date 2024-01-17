@@ -1,6 +1,6 @@
 part of '../app_translations.dart';
 
-final class _AdditionalResources {
+final class AdditionalResourcesKeys {
   /// additional_resources
   final additionalResources = 'additional_resources'.tr();
 

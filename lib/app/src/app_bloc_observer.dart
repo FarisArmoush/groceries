@@ -1,10 +1,9 @@
-// ignore_for_file: strict_raw_type
 part of '../app.dart';
 
 class AppBlocObserver extends BlocObserver {
   const AppBlocObserver();
   @override
-  void onCreate(BlocBase bloc) {
+  void onCreate(BlocBase<Object?> bloc) {
     super.onCreate(bloc);
     developer.log(
       'onCreate -- ${bloc.runtimeType}',
@@ -13,7 +12,7 @@ class AppBlocObserver extends BlocObserver {
   }
 
   @override
-  void onEvent(Bloc bloc, Object? event) {
+  void onEvent(Bloc<Object?, Object?> bloc, Object? event) {
     super.onEvent(bloc, event);
     developer.log(
       'onEvent -- ${bloc.runtimeType}, $event',
@@ -22,7 +21,7 @@ class AppBlocObserver extends BlocObserver {
   }
 
   @override
-  void onChange(BlocBase bloc, Change change) {
+  void onChange(BlocBase<Object?> bloc, Change<Object?> change) {
     super.onChange(bloc, change);
     developer.log(
       'onChange -- ${bloc.runtimeType}, $change',
@@ -31,7 +30,10 @@ class AppBlocObserver extends BlocObserver {
   }
 
   @override
-  void onTransition(Bloc bloc, Transition transition) {
+  void onTransition(
+    Bloc<Object?, Object?> bloc,
+    Transition<Object?, Object?> transition,
+  ) {
     super.onTransition(bloc, transition);
     developer.log(
       'onTransition -- ${bloc.runtimeType}, $transition',
@@ -40,7 +42,7 @@ class AppBlocObserver extends BlocObserver {
   }
 
   @override
-  void onError(BlocBase bloc, Object error, StackTrace stackTrace) {
+  void onError(BlocBase<Object?> bloc, Object error, StackTrace stackTrace) {
     developer.log(
       'onError -- ${bloc.runtimeType}, $error',
       error: error,
@@ -51,7 +53,7 @@ class AppBlocObserver extends BlocObserver {
   }
 
   @override
-  void onClose(BlocBase bloc) {
+  void onClose(BlocBase<Object?> bloc) {
     super.onClose(bloc);
     developer.log(
       'onClose -- ${bloc.runtimeType}',

@@ -1,6 +1,6 @@
 part of '../app_translations.dart';
 
-final class _General {
+final class GeneralKeys {
   /// close
   final close = 'close'.tr();
 

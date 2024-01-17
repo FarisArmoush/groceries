@@ -1,5 +1,3 @@
-// ignore_for_file: dead_code
-
 part of '../create_recipe.dart';
 
 class CreateRecipePage extends StatelessWidget {

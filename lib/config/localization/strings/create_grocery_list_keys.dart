@@ -1,6 +1,6 @@
 part of '../app_translations.dart';
 
-final class _CreateGroceryList {
+final class CreateGroceryListKeys {
   /// create_list
   final createList = 'create_list'.tr();
 

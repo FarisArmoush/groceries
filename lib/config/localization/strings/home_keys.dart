@@ -1,6 +1,6 @@
 part of '../app_translations.dart';
 
-final class _Home {
+final class HomeKeys {
   /// home
   final home = 'home'.tr();
 

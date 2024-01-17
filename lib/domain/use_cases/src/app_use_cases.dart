@@ -1,4 +1,3 @@
-// ignore_for_file: one_member_abstracts
 part of '../use_cases.dart';
 
 abstract class UseCase<Input, Output> {

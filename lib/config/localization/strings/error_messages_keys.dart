@@ -1,6 +1,6 @@
 part of '../app_translations.dart';
 
-final class _ErrorMessages {
+final class ErrorMessagesKeys {
   /// default_error_message
   final defaultErrorMessage = 'default_error_message'.tr();
 
