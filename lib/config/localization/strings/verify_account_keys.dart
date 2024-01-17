@@ -1,6 +1,6 @@
 part of '../app_translations.dart';
 
-class _VerifyAccount {
+class VerifyAccountKeys {
   /// verify_account
   final verifyAccount = 'verify_account'.tr();
 

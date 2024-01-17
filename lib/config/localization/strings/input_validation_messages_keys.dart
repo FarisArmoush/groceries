@@ -1,6 +1,6 @@
 part of '../app_translations.dart';
 
-final class _InputValidationMessages {
+final class InputValidationMessagesKeys {
   /// field_cannot_be_empty
   final fieldCannotBeEmpty = 'field_cannot_be_empty'.tr();
 

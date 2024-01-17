@@ -1,6 +1,6 @@
 part of '../app_translations.dart';
 
-class _Theme {
+class ThemeKeys {
   /// theme
   final theme = 'theme'.tr();
 

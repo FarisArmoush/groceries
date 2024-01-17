@@ -1,6 +1,6 @@
 part of '../app_translations.dart';
 
-final class _AccountSettings {
+final class AccountSettingsKeys {
   /// edit_user_image
   final editUserImage = 'edit_user_image'.tr();
 

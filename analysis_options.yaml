@@ -4,7 +4,6 @@ analyzer:
     - "**/*.g.dart"
     - "**/*.freezed.dart"
   errors:
-    invalid_annotation_target: ignore
     sort_pub_dependencies: false
     public_member_api_docs: false
-    use_if_null_to_convert_nulls_to_bools: false
+    one_member_abstracts: false

@@ -1,6 +1,6 @@
 part of '../app_translations.dart';
 
-class _Settings {
+class SettingsKeys {
   /// settings
   final settings = 'settings'.tr();
 }

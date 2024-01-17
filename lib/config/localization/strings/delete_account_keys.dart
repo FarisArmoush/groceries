@@ -1,6 +1,6 @@
 part of '../app_translations.dart';
 
-final class _DeleteAccount {
+final class DeleteAccountKeys {
   /// delete_account
   final deleteAccount = 'delete_account'.tr();
 
