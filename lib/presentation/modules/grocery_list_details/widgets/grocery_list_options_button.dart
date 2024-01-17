@@ -1,7 +1,12 @@
 part of '../grocery_list_details.dart';
 
 class GroceryListOptionsButton extends StatelessWidget {
-  const GroceryListOptionsButton({super.key});
+  const GroceryListOptionsButton({
+    required this.listModel,
+    super.key,
+  });
+
+  final GroceryListModel listModel;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +22,9 @@ class GroceryListOptionsButton extends StatelessWidget {
         showDragHandle: true,
         elevation: 0,
         context: context,
-        builder: (context) => const GroceryListOptionsBottomSheet(),
+        builder: (context) => GroceryListOptionsBottomSheet(
+          listModel: listModel,
+        ),
       ),
     );
   }

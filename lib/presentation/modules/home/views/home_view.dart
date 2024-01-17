@@ -17,15 +17,15 @@ class HomeView extends StatelessWidget {
           child: CustomScrollView(
             slivers: [
               const HomeAppBar(),
-              // SliverSizedBox(
-              //   height: context.deviceHeight * 0.05,
-              // ),
-              // const GroceryListsForm()
-              //     .symmetricPadding(horizontal: 16)
-              //     .asSliver(),
-              // SliverSizedBox(
-              //   height: context.deviceHeight * 0.05,
-              // ),
+              SliverSizedBox(
+                height: context.deviceHeight * 0.05,
+              ),
+              const GroceryListsForm()
+                  .symmetricPadding(horizontal: 16)
+                  .asSliver(),
+              SliverSizedBox(
+                height: context.deviceHeight * 0.05,
+              ),
               const MyTasksForm().symmetricPadding(horizontal: 16).asSliver(),
               SliverSizedBox(
                 height: context.deviceHeight * 0.05,

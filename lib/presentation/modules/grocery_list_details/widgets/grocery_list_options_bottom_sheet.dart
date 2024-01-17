@@ -1,10 +1,16 @@
 part of '../grocery_list_details.dart';
 
 class GroceryListOptionsBottomSheet extends StatelessWidget {
-  const GroceryListOptionsBottomSheet({super.key});
+  const GroceryListOptionsBottomSheet({
+    required this.listModel,
+    super.key,
+  });
+
+  final GroceryListModel listModel;
 
   @override
   Widget build(BuildContext context) {
+    final itemsIsEmpty = listModel.items!.isNotEmpty;
     return BottomSheet(
       showDragHandle: false,
       enableDrag: false,
@@ -36,15 +42,21 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
             SizedBox(
               height: context.deviceHeight * 0.01,
             ),
-            BottomSheetButton(
-              text: AppTranslations.groceryLists.sendListAsText,
-              iconPath: Assets.svg.icSend.path,
-              onTap: () {},
+            Visibility(
+              visible: itemsIsEmpty,
+              child: BottomSheetButton(
+                text: AppTranslations.groceryLists.sendListAsText,
+                iconPath: Assets.svg.icSend.path,
+                onTap: () {},
+              ),
             ),
-            BottomSheetButton(
-              text: AppTranslations.groceryLists.printList,
-              iconPath: Assets.svg.icPrinter.path,
-              onTap: () {},
+            Visibility(
+              visible: itemsIsEmpty,
+              child: BottomSheetButton(
+                text: AppTranslations.groceryLists.printList,
+                iconPath: Assets.svg.icPrinter.path,
+                onTap: () {},
+              ),
             ),
             BottomSheetButton(
               text: AppTranslations.groceryListSettings.listSettings,
