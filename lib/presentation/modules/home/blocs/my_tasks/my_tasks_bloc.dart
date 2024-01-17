@@ -18,24 +18,20 @@ class MyTasksBloc extends Bloc<MyTasksEvent, MyTasksState> {
     _LoadMyTasks event,
     Emitter<MyTasksState> emit,
   ) async {
-    await _myTasksUseCase
-        .fetchMyTasks()
-        .then(
-          (myTasks) => emit(
-            state.copyWith(
-              status: const BlocStatus.success(),
-              myTasks: myTasks,
-            ),
-          ),
-        )
-        .catchError(
-      (Object? e) {
-        emit(
-          state.copyWith(
-            status: BlocStatus.failure('$e'),
-          ),
-        );
-      },
-    );
+    try {
+      final myTasks = await _myTasksUseCase.fetchMyTasks();
+      emit(
+        state.copyWith(
+          status: const BlocStatus.success(),
+          myTasks: myTasks,
+        ),
+      );
+    } catch (e) {
+      emit(
+        state.copyWith(
+          status: BlocStatus.failure('$e'),
+        ),
+      );
+    }
   }
 }

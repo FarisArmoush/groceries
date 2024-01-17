@@ -34,7 +34,7 @@ class GroceryListCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   _icon(context),
-                  const GroceryListOptionsButton(),
+                  GroceryListOptionsButton(listModel: listModel),
                 ],
               ),
               SizedBox(

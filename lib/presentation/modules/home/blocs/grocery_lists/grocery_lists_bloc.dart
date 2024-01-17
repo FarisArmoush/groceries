@@ -24,22 +24,20 @@ class GroceryListsBloc extends Bloc<GroceryListsEvent, GroceryListsState> {
         status: const BlocStatus.loading(),
       ),
     );
-    await _groceryListsUseCase
-        .fetchMyGroceryLists()
-        .then(
-          (groceryLists) => emit(
-            state.copyWith(
-              status: const BlocStatus.success(),
-              groceryLists: groceryLists,
-            ),
-          ),
-        )
-        .catchError(
-          (Object? e) => emit(
-            state.copyWith(
-              status: BlocStatus.failure('$e'),
-            ),
-          ),
-        );
+    try {
+      final groceryLists = await _groceryListsUseCase.fetchMyGroceryLists();
+      emit(
+        state.copyWith(
+          status: const BlocStatus.success(),
+          groceryLists: groceryLists,
+        ),
+      );
+    } catch (e) {
+      emit(
+        state.copyWith(
+          status: BlocStatus.failure('$e'),
+        ),
+      );
+    }
   }
 }

@@ -16,11 +16,16 @@ class GroceryListDetailsView extends StatelessWidget {
         child: CustomScrollView(
           slivers: [
             GroceriesAppBar(
-              trailing: const Row(
+              trailing: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  GroceryListOptionsButton(),
-                  ClearGroceryListItemsButton(),
+                  GroceryListOptionsButton(
+                    listModel: listModel,
+                  ),
+                  Visibility(
+                    visible: listModel.items!.isNotEmpty,
+                    child: const ClearGroceryListItemsButton(),
+                  ),
                 ],
               ),
               largeTitle: _appBarTitle(context),

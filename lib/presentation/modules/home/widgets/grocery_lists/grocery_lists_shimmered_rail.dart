@@ -7,6 +7,7 @@ class GroceryListsShimmeredRail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
         ShimmerSkeleton(
           height: context.deviceHeight * 0.015,

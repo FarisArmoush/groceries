@@ -6,6 +6,7 @@ class GroceryListsForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<GroceryListsBloc, GroceryListsState>(
+      buildWhen: (previous, current) => previous.status != current.status,
       builder: (context, state) {
         return state.status.when(
           initial: SizedBox.shrink,
