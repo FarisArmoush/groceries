@@ -8,6 +8,7 @@ class CachedImage extends StatelessWidget {
     this.boxFit = BoxFit.cover,
     this.boxShape = BoxShape.circle,
     this.borderRadius,
+    this.progressIndicatorBuilder,
     super.key,
   });
 
@@ -17,6 +18,7 @@ class CachedImage extends StatelessWidget {
   final BoxFit boxFit;
   final BoxShape boxShape;
   final BorderRadiusGeometry? borderRadius;
+  final ProgressIndicatorBuilder? progressIndicatorBuilder;
 
   @override
   Widget build(BuildContext context) {
@@ -37,13 +39,14 @@ class CachedImage extends StatelessWidget {
           ),
         );
       },
-      progressIndicatorBuilder: (context, url, progress) {
-        return ShimmerSkeleton(
-          height: height,
-          width: width,
-          borderRadius: borderRadius,
-        );
-      },
+      progressIndicatorBuilder: progressIndicatorBuilder ??
+          (context, url, progress) {
+            return ShimmerSkeleton(
+              height: height,
+              width: width,
+              borderRadius: borderRadius,
+            );
+          },
       errorWidget: (context, url, error) {
         return Assets.svg.icCircleX.svg(
           colorFilter: ColorFilter.mode(

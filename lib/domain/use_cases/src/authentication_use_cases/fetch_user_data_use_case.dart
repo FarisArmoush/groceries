@@ -10,4 +10,5 @@ class FetchUserDataUseCase {
   String? get displayName => _authenticationRepository.displayName;
   String? get creationDate =>
       _authenticationRepository.creationDate?.toDDofMMYYYY();
+  String? get image => _authenticationRepository.image;
 }

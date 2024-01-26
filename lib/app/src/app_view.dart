@@ -37,6 +37,11 @@ class AppView extends StatelessWidget {
             context.read<LogoutUseCase>(),
           ),
         ),
+        BlocProvider(
+          create: (context) => UpdateUserImageBloc(
+            context.read<UpdateUserImageUseCase>(),
+          ),
+        ),
       ],
       // Used a builder to access the current theme.
       child: Builder(

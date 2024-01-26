@@ -5,6 +5,7 @@ class UserImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final imageFile = context.watch<UpdateUserImageBloc>().state.imageFile;
     return Container(
       padding: const EdgeInsets.all(2),
       decoration: BoxDecoration(
@@ -15,10 +16,33 @@ class UserImage extends StatelessWidget {
           width: 3,
         ),
       ),
-      child: CachedImage(
-        height: context.deviceHeight * 0.2,
-        boxFit: BoxFit.contain,
+      child: imageFile != null
+          ? fileImage(context, imageFile)
+          : _networkImage(context),
+    );
+  }
+
+  Widget fileImage(BuildContext context, File imageFile) {
+    return Container(
+      height: context.deviceHeight * 0.2,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        image: DecorationImage(
+          fit: BoxFit.contain,
+          image: AssetImage(imageFile.path),
+        ),
       ),
+    );
+  }
+
+  Widget _networkImage(BuildContext context) {
+    final userImageUrl = context.watch<UserDataCubit>().state.image ?? '';
+    return CachedImage(
+      imageUrl: userImageUrl,
+      height: context.deviceHeight * 0.2,
+      boxFit: BoxFit.contain,
+      progressIndicatorBuilder: (context, url, progress) =>
+          const SizedBox.shrink(),
     );
   }
 }

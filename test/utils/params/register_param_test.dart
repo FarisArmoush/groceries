@@ -8,12 +8,14 @@ void main() {
         email: 'john.doe@example.com',
         password: 'securePassword123',
         displayName: 'John Doe',
+        imagePath: 'files/default-image.png',
       );
 
       const model2 = RegisterParam(
         email: 'john.doe@example.com',
         password: 'securePassword123',
         displayName: 'John Doe',
+        imagePath: 'files/default-image.png',
       );
 
       expect(model1, model2);
@@ -24,6 +26,7 @@ void main() {
         email: 'john.doe@example.com',
         password: 'securePassword123',
         displayName: 'John Doe',
+        imagePath: 'files/default-image.png',
       );
 
       final modifiedModel = originalModel.copyWith(
@@ -33,6 +36,7 @@ void main() {
       expect(modifiedModel.email, originalModel.email);
       expect(modifiedModel.password, 'newSecurePassword456');
       expect(modifiedModel.displayName, originalModel.displayName);
+      expect(modifiedModel.imagePath, originalModel.imagePath);
       expect(modifiedModel, isNot(originalModel));
     });
   });

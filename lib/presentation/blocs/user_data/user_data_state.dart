@@ -7,5 +7,6 @@ class UserDataState with _$UserDataState {
     bool? emailVerified,
     String? displayName,
     String? creationDate,
+    String? image,
   }) = _UserDataState;
 }

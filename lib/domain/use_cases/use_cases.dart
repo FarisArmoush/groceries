@@ -1,5 +1,7 @@
 library use_cases;
 
+import 'dart:io';
+
 import 'package:groceries/data/models/category_model/category_model.dart';
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
@@ -20,6 +22,7 @@ part 'src/authentication_use_cases/register_with_email_and_password_use_case.dar
 part 'src/authentication_use_cases/send_password_reset_email_use_case.dart';
 part 'src/authentication_use_cases/update_display_name_use_case.dart';
 part 'src/authentication_use_cases/update_email_use_case.dart';
+part 'src/authentication_use_cases/update_user_image_use_case.dart';
 part 'src/authentication_use_cases/verify_user_use_case.dart';
 part 'src/remote_use_cases/create_list_use_case.dart';
 part 'src/remote_use_cases/create_recipe_use_case.dart';

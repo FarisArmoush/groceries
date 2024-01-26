@@ -19,6 +19,7 @@ mixin _$RegisterParam {
   String get email => throw _privateConstructorUsedError;
   String get password => throw _privateConstructorUsedError;
   String get displayName => throw _privateConstructorUsedError;
+  String get imagePath => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $RegisterParamCopyWith<RegisterParam> get copyWith =>
@@ -31,7 +32,8 @@ abstract class $RegisterParamCopyWith<$Res> {
           RegisterParam value, $Res Function(RegisterParam) then) =
       _$RegisterParamCopyWithImpl<$Res, RegisterParam>;
   @useResult
-  $Res call({String email, String password, String displayName});
+  $Res call(
+      {String email, String password, String displayName, String imagePath});
 }
 
 /// @nodoc
@@ -50,6 +52,7 @@ class _$RegisterParamCopyWithImpl<$Res, $Val extends RegisterParam>
     Object? email = null,
     Object? password = null,
     Object? displayName = null,
+    Object? imagePath = null,
   }) {
     return _then(_value.copyWith(
       email: null == email
@@ -64,6 +67,10 @@ class _$RegisterParamCopyWithImpl<$Res, $Val extends RegisterParam>
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
               as String,
+      imagePath: null == imagePath
+          ? _value.imagePath
+          : imagePath // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -76,7 +83,8 @@ abstract class _$$RegisterParamImplCopyWith<$Res>
       __$$RegisterParamImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String email, String password, String displayName});
+  $Res call(
+      {String email, String password, String displayName, String imagePath});
 }
 
 /// @nodoc
@@ -93,6 +101,7 @@ class __$$RegisterParamImplCopyWithImpl<$Res>
     Object? email = null,
     Object? password = null,
     Object? displayName = null,
+    Object? imagePath = null,
   }) {
     return _then(_$RegisterParamImpl(
       email: null == email
@@ -107,6 +116,10 @@ class __$$RegisterParamImplCopyWithImpl<$Res>
           ? _value.displayName
           : displayName // ignore: cast_nullable_to_non_nullable
               as String,
+      imagePath: null == imagePath
+          ? _value.imagePath
+          : imagePath // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -115,7 +128,10 @@ class __$$RegisterParamImplCopyWithImpl<$Res>
 
 class _$RegisterParamImpl implements _RegisterParam {
   const _$RegisterParamImpl(
-      {required this.email, required this.password, required this.displayName});
+      {required this.email,
+      required this.password,
+      required this.displayName,
+      required this.imagePath});
 
   @override
   final String email;
@@ -123,10 +139,12 @@ class _$RegisterParamImpl implements _RegisterParam {
   final String password;
   @override
   final String displayName;
+  @override
+  final String imagePath;
 
   @override
   String toString() {
-    return 'RegisterParam(email: $email, password: $password, displayName: $displayName)';
+    return 'RegisterParam(email: $email, password: $password, displayName: $displayName, imagePath: $imagePath)';
   }
 
   @override
@@ -138,11 +156,14 @@ class _$RegisterParamImpl implements _RegisterParam {
             (identical(other.password, password) ||
                 other.password == password) &&
             (identical(other.displayName, displayName) ||
-                other.displayName == displayName));
+                other.displayName == displayName) &&
+            (identical(other.imagePath, imagePath) ||
+                other.imagePath == imagePath));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, email, password, displayName);
+  int get hashCode =>
+      Object.hash(runtimeType, email, password, displayName, imagePath);
 
   @JsonKey(ignore: true)
   @override
@@ -155,7 +176,8 @@ abstract class _RegisterParam implements RegisterParam {
   const factory _RegisterParam(
       {required final String email,
       required final String password,
-      required final String displayName}) = _$RegisterParamImpl;
+      required final String displayName,
+      required final String imagePath}) = _$RegisterParamImpl;
 
   @override
   String get email;
@@ -163,6 +185,8 @@ abstract class _RegisterParam implements RegisterParam {
   String get password;
   @override
   String get displayName;
+  @override
+  String get imagePath;
   @override
   @JsonKey(ignore: true)
   _$$RegisterParamImplCopyWith<_$RegisterParamImpl> get copyWith =>

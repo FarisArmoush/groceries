@@ -20,8 +20,22 @@ class EditUserImageButton extends StatelessWidget {
         showDragHandle: true,
         elevation: 0,
         builder: (context) => UploadImageBottomSheet(
-          onTakePhoto: () {},
-          onUploadPhoto: () {},
+          onTakePhoto: () {
+            context.read<UpdateUserImageBloc>().add(
+                  const UpdateUserImageEvent.pickImage(
+                    source: ImageSource.camera,
+                  ),
+                );
+            context.pop();
+          },
+          onUploadPhoto: () {
+            context.read<UpdateUserImageBloc>().add(
+                  const UpdateUserImageEvent.pickImage(
+                    source: ImageSource.gallery,
+                  ),
+                );
+            context.pop();
+          },
         ),
       ),
     );

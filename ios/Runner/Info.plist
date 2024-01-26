@@ -5,8 +5,12 @@
 	<key>CFBundleLocalizations</key>
 	<array>
 		<string>en</string>
-		<string>es</string>
+		<string>ar</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Can we access your photo library?</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Can we access your camera?</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>

@@ -48,6 +48,10 @@ class AuthenticationRepositoryImpl extends AuthenticationRepository {
       _authenticationDataSource.sendVerificationEmail();
 
   @override
+  Future<void> updateUserImage(File file) =>
+      _authenticationDataSource.updateImage(file);
+
+  @override
   String? get displayName => _authenticationDataSource.displayName;
 
   @override
@@ -58,4 +62,7 @@ class AuthenticationRepositoryImpl extends AuthenticationRepository {
 
   @override
   String? get creationDate => _authenticationDataSource.creationDate;
+
+  @override
+  String? get image => _authenticationDataSource.image;
 }

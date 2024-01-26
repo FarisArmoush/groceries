@@ -27,6 +27,9 @@ class App extends StatelessWidget {
         RepositoryProvider<FirebaseRemoteConfig>(
           create: (context) => FirebaseRemoteConfig.instance,
         ),
+        RepositoryProvider<FirebaseStorage>(
+          create: (context) => FirebaseStorage.instance,
+        ),
         RepositoryProvider<SharedPreferences>.value(
           value: sharedPreferences,
         ),
@@ -40,6 +43,7 @@ class App extends StatelessWidget {
                 create: (context) => AuthenticationDataSource(
                   firebaseAuth: context.read<FirebaseAuth>(),
                   firestore: context.read<FirebaseFirestore>(),
+                  storage: context.read<FirebaseStorage>(),
                 ),
                 lazy: false,
               ),
@@ -233,6 +237,11 @@ class App extends StatelessWidget {
                           RepositoryProvider(
                             create: (context) => CreateRecipeUseCase(
                               context.read<RecipesRepository>(),
+                            ),
+                          ),
+                          RepositoryProvider(
+                            create: (context) => UpdateUserImageUseCase(
+                              context.read<AuthenticationRepository>(),
                             ),
                           ),
                         ],

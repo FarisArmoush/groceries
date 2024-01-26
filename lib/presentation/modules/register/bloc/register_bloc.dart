@@ -6,9 +6,9 @@ import 'package:groceries/utils/exceptions/exceptions.dart';
 import 'package:groceries/utils/forms/app_forms.dart';
 import 'package:groceries/utils/params/register_param/register_param.dart';
 
+part 'register_bloc.freezed.dart';
 part 'register_event.dart';
 part 'register_state.dart';
-part 'register_bloc.freezed.dart';
 
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
   RegisterBloc(this._registerWithEmailAndPasswordUseCase)
@@ -123,6 +123,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
           email: state.email.value,
           password: state.password.value,
           displayName: state.displayName.value,
+          imagePath: '',
         ),
       );
       emit(state.copyWith(status: FormzSubmissionStatus.success));

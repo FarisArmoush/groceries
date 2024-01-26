@@ -39,6 +39,9 @@ abstract class AuthenticationRepository {
   /// Sends a verification Email
   Future<void> sendVerificationEmail();
 
+  /// Updates user image
+  Future<void> updateUserImage(File file);
+
   /// A stream of authentication state changes.
   Stream<Object?> get authStateChanges;
 
@@ -49,4 +52,5 @@ abstract class AuthenticationRepository {
   String? get displayName;
   String? get creationDate;
   bool? get emailVerified;
+  String? get image;
 }

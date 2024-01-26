@@ -4,10 +4,12 @@ class AuthenticationDataSource {
   const AuthenticationDataSource({
     required this.firebaseAuth,
     required this.firestore,
+    required this.storage,
   });
 
   final FirebaseAuth firebaseAuth;
   final FirebaseFirestore firestore;
+  final FirebaseStorage storage;
 
   Stream<User?> get authStateChanges => firebaseAuth.userChanges().map(
         (fbUser) => fbUser,
@@ -35,17 +37,22 @@ class AuthenticationDataSource {
         email: registerParam.email,
         password: registerParam.password,
       )
-          .then((user) {
-        firestore.collection('users').doc(user.user!.uid).set(
+          .then((user) async {
+        final defaultImageUrl = await storage
+            .ref()
+            .child('default-user-image.png')
+            .getDownloadURL();
+        await firestore.collection(FirestoreKeys.users).doc(user.user!.uid).set(
           {
             'creationDate': DateTime.timestamp(),
             'email': registerParam.email,
             'id': user.user!.uid,
-            'image': '',
+            'image': defaultImageUrl,
             'displayName': registerParam.displayName,
           },
         );
-        firebaseAuth.currentUser!.updateDisplayName(
+        await firebaseAuth.currentUser?.updatePhotoURL(defaultImageUrl);
+        await firebaseAuth.currentUser?.updateDisplayName(
           registerParam.displayName,
         );
       });
@@ -58,9 +65,14 @@ class AuthenticationDataSource {
 
   Future<void> deleteAccount() async {
     try {
-      await firestore.collection('users').doc(currentUser?.uid).delete();
+      await firestore
+          .collection(FirestoreKeys.users)
+          .doc(currentUser?.uid)
+          .delete();
       await currentUser?.delete();
-    } catch (e) {
+    } on FirebaseAuthException catch (e) {
+      throw DeleteAccountException.fromCode(e.code);
+    } catch (_) {
       throw DeleteAccountException();
     }
   }
@@ -89,7 +101,10 @@ class AuthenticationDataSource {
     try {
       await currentUser?.updateDisplayName(displayName).then(
             (_) => {
-              firestore.collection('users').doc(currentUser!.uid).update(
+              firestore
+                  .collection(FirestoreKeys.users)
+                  .doc(currentUser!.uid)
+                  .update(
                 {
                   'displayName': displayName,
                 },
@@ -106,7 +121,10 @@ class AuthenticationDataSource {
   Future<void> updateEmail(String email) async {
     try {
       await currentUser?.updateEmail(email).then(
-            (_) => firestore.collection('users').doc(currentUser!.uid).update(
+            (_) => firestore
+                .collection(FirestoreKeys.users)
+                .doc(currentUser!.uid)
+                .update(
               {
                 'email': email,
               },
@@ -129,6 +147,25 @@ class AuthenticationDataSource {
     }
   }
 
+// TODO(FarisArmoush): Implement Proper Error Handling.
+  Future<void> updateImage(File file) async {
+    try {
+      await storage.ref().child('user_image').delete();
+      await storage.ref().child('user_image').putFile(file);
+
+      await firestore
+          .collection(FirestoreKeys.users)
+          .doc(currentUser!.uid)
+          .update({
+        'image': image,
+      });
+    } on FirebaseException catch (e) {
+      throw Exception(e.code);
+    } catch (_) {
+      throw Exception();
+    }
+  }
+
   Future<void> sendVerificationEmail() async {
     try {
       await currentUser?.sendEmailVerification();
@@ -143,4 +180,5 @@ class AuthenticationDataSource {
   String? get displayName => currentUser?.displayName;
   bool? get emailVerified => currentUser?.emailVerified;
   String? get creationDate => currentUser?.metadata.creationTime.toString();
+  String? get image => currentUser?.photoURL;
 }

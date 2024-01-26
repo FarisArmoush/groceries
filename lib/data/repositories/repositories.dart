@@ -1,6 +1,8 @@
 /// Contains all repostiory implementaions.
 library repositories;
 
+import 'dart:io';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:groceries/data/data_sources/data_sources.dart';
 import 'package:groceries/data/models/category_model/category_model.dart';
