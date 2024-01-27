@@ -5,11 +5,41 @@ class CreateRecipeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => CreateRecipeBloc(
-        context.read<CreateRecipeUseCase>(),
+    return Scaffold(
+      body: CustomScrollView(
+        slivers: [
+          GroceriesAppBar(
+            largeTitle: Text(AppTranslations.createRecipe.createRecipe),
+            middle: Text(AppTranslations.createRecipe.createRecipe),
+          ),
+          SliverPadding(
+            padding: AppPaddings.scaffoldPadding(context),
+            sliver: SliverList.list(
+              children: [
+                const CreateRecipeNameTextField(),
+                SizedBox(
+                  height: context.deviceHeight * 0.02,
+                ),
+                const CreateRecipeImage(),
+                SizedBox(
+                  height: context.deviceHeight * 0.02,
+                ),
+                const AddStepsToRecipeList(),
+                SizedBox(
+                  height: context.deviceHeight * 0.025,
+                ),
+                const AddItemsToRecipeButton(),
+                SizedBox(
+                  height: context.deviceHeight * 0.025,
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
-      child: const CreateRecipePage(),
+      persistentFooterButtons: const [
+        CreateRecipeButton(),
+      ],
     );
   }
 }

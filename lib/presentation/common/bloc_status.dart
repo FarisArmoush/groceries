@@ -4,11 +4,8 @@ part 'bloc_status.freezed.dart';
 
 @freezed
 class BlocStatus with _$BlocStatus {
-  const factory BlocStatus.initial() = Initial;
-
-  const factory BlocStatus.loading() = Loading;
-
-  const factory BlocStatus.success() = Success;
-
-  const factory BlocStatus.failure(String error) = Failure;
+  const factory BlocStatus.initial() = _Initial;
+  const factory BlocStatus.loading() = _Loading;
+  const factory BlocStatus.success() = _Success;
+  const factory BlocStatus.failure(String error) = _Failure;
 }

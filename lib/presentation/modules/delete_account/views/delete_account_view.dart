@@ -5,11 +5,30 @@ class DeleteAccountView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => DeleteAccountBloc(
-        context.read<DeleteAccountUseCase>(),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(AppTranslations.deleteAccount.deleteAccount),
       ),
-      child: const DeleteAccountPage(),
+      body: ListView(
+        shrinkWrap: true,
+        padding: AppPaddings.scaffoldPadding(context),
+        children: [
+          Assets.svg.illGaming.svg(
+            height: context.deviceHeight * 0.4,
+          ),
+          SizedBox(
+            height: context.deviceHeight * 0.01,
+          ),
+          const DeleteAccountHeaderText(),
+          SizedBox(
+            height: context.deviceHeight * 0.02,
+          ),
+          const DeleteAccountBodyText(),
+        ],
+      ),
+      persistentFooterButtons: const [
+        DeleteAccountButton(),
+      ],
     );
   }
 }

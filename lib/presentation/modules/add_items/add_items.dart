@@ -8,7 +8,6 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
-import 'package:groceries/domain/use_cases/use_cases.dart';
 import 'package:groceries/presentation/modules/add_items/bloc/add_items_bloc.dart';
 import 'package:groceries/presentation/widgets/widgets.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
@@ -18,7 +17,6 @@ import 'package:groceries/utils/extenstions/app_extensions.dart';
 
 export 'package:groceries/presentation/modules/add_items/bloc/add_items_bloc.dart';
 
-part 'pages/add_items_page.dart';
 part 'views/add_items_view.dart';
 part 'widgets/add_items_categories_list.dart';
 part 'widgets/add_items_text_field.dart';
