@@ -5,5 +5,5 @@ class RemoteConfigUseCase {
 
   final RemoteConfigRepository _remoteConfigRepository;
 
-  String fetchAppVersion() => _remoteConfigRepository.appVersion;
+  String fetchAppVersion() => _remoteConfigRepository.appVersion ?? '';
 }

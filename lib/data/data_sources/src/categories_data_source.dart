@@ -24,7 +24,7 @@ class CategoriesDataSource {
   }
 
   Future<List<CategoryModel>> fetchSubCategories(
-    String parentCategoryId,
+    String? parentCategoryId,
   ) async {
     try {
       final collectionReference = _firestore

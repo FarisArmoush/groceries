@@ -4,9 +4,9 @@ import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart
 import 'package:groceries/domain/use_cases/use_cases.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 
+part 'grocery_lists_bloc.freezed.dart';
 part 'grocery_lists_event.dart';
 part 'grocery_lists_state.dart';
-part 'grocery_lists_bloc.freezed.dart';
 
 class GroceryListsBloc extends Bloc<GroceryListsEvent, GroceryListsState> {
   GroceryListsBloc(this._groceryListsUseCase)
@@ -25,11 +25,11 @@ class GroceryListsBloc extends Bloc<GroceryListsEvent, GroceryListsState> {
       ),
     );
     try {
-      final groceryLists = await _groceryListsUseCase.fetchMyGroceryLists();
+      final groceryLists = await _groceryListsUseCase.call();
       emit(
         state.copyWith(
           status: const BlocStatus.success(),
-          groceryLists: groceryLists,
+          groceryLists: groceryLists ?? [],
         ),
       );
     } catch (e) {

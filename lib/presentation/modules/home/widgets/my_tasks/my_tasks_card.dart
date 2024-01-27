@@ -10,11 +10,12 @@ class MyTasksCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final length = '${taskModel.groceries?.length ?? 0}';
     return ListTile(
       onTap: () {},
       contentPadding: const EdgeInsets.all(8),
       leading: CachedImage(
-        imageUrl: taskModel.listModel?.imageUrl ?? 'null',
+        imageUrl: taskModel.listModel?.imageUrl ?? '',
         width: context.deviceWidth * 0.15,
         height: context.deviceHeight * 0.1,
       ),
@@ -23,7 +24,7 @@ class MyTasksCard extends StatelessWidget {
           Expanded(
             flex: 5,
             child: Text(
-              taskModel.listModel?.name ?? 'null',
+              taskModel.listModel?.name ?? '',
               style: context.theme.listTileTheme.titleTextStyle,
               overflow: TextOverflow.ellipsis,
             ),
@@ -43,9 +44,10 @@ class MyTasksCard extends StatelessWidget {
           ),
         ],
       ),
-      subtitle: taskModel.groceries!.isNotEmpty
+      // TODO(FarisArmoush): Test
+      subtitle: taskModel.groceries?.isNotEmpty ?? false
           ? Text(
-              '${taskModel.groceries!.length} ${AppTranslations.home.newTasks}',
+              '$length ${AppTranslations.home.newTasks}',
               style: context.theme.listTileTheme.subtitleTextStyle?.copyWith(
                 color: context.theme.primaryColorLight,
               ),

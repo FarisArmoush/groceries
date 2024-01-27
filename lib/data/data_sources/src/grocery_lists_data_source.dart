@@ -364,34 +364,34 @@ class GroceryListsDataSource {
           ),
         ],
       ),
-    ]..sort((a, b) => a.name!.compareTo(b.name!));
+    ]..sort((a, b) => a.name?.compareTo(b.name ?? '') ?? 0);
     await Future.delayed(Durations.extralong4, () {
       return lists;
     });
     return lists;
   }
 
-  Future<void> deleteGroceryList(String uid) async {
+  Future<void> deleteGroceryList(String? uid) async {
     log('deleteGroceryList');
     throw UnimplementedError();
   }
 
-  Future<void> createGroceryList(GroceryListModel groceryListModel) async {
+  Future<void> createGroceryList(GroceryListModel? groceryListModel) async {
     log('createGroceryList');
     throw UnimplementedError();
   }
 
-  Future<void> removeMember(UserModel userModel) async {
+  Future<void> removeMember(UserModel? userModel) async {
     log('removeMember');
     throw UnimplementedError();
   }
 
-  Future<void> updateListImage(String image) {
+  Future<void> updateListImage(String? image) {
     log('updateListImage');
     throw UnimplementedError();
   }
 
-  Future<void> updateListName(String name) {
+  Future<void> updateListName(String? name) {
     log('updateListName');
     throw UnimplementedError();
   }

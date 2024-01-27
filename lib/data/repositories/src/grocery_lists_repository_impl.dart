@@ -9,25 +9,25 @@ class GroceryListsRepositoryImpl extends GroceryListsRepository {
       _groceryListsDataSource.fetchMyGroceryLists();
 
   @override
-  Future<void> deleteGroceryList(String uid) async =>
+  Future<void> deleteGroceryList(String? uid) async =>
       _groceryListsDataSource.deleteGroceryList(uid);
 
   @override
-  Future<void> createGroceryList(GroceryListModel groceryListModel) async =>
+  Future<void> createGroceryList(GroceryListModel? groceryListModel) async =>
       _groceryListsDataSource.createGroceryList(groceryListModel);
 
   @override
-  Future<void> removeMember(UserModel userModel) {
+  Future<void> removeMember(UserModel? userModel) {
     return _groceryListsDataSource.removeMember(userModel);
   }
 
   @override
-  Future<void> updateListImage(String image) {
+  Future<void> updateListImage(String? image) {
     return _groceryListsDataSource.updateListImage(image);
   }
 
   @override
-  Future<void> updateListName(String name) {
+  Future<void> updateListName(String? name) {
     return _groceryListsDataSource.updateListName(name);
   }
 }

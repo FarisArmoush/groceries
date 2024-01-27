@@ -27,7 +27,7 @@ class RemoveMemberFromListBloc
       ),
     );
     try {
-      await _removeMemberFromListUseCase(event.userModel!);
+      await _removeMemberFromListUseCase(event.userModel);
       emit(
         state.copyWith(
           status: const BlocStatus.success(),
@@ -36,7 +36,7 @@ class RemoveMemberFromListBloc
     } on FirebaseException catch (e) {
       emit(
         state.copyWith(
-          status: BlocStatus.failure(e.message!),
+          status: BlocStatus.failure(e.message ?? ''),
         ),
       );
     } catch (e) {

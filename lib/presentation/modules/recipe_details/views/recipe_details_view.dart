@@ -14,8 +14,8 @@ class RecipeDetailsView extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           GroceriesAppBar(
-            middle: Text(recipeModel.name!),
-            largeTitle: Text(recipeModel.name!),
+            middle: Text(recipeModel.name ?? ''),
+            largeTitle: Text(recipeModel.name ?? ''),
             trailing: IconButton(
               onPressed: () => showModalBottomSheet<void>(
                 context: context,

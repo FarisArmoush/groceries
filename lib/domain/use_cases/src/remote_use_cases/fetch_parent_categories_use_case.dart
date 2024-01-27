@@ -1,7 +1,7 @@
 part of '../../use_cases.dart';
 
 class FetchParentCategoriesUseCase
-    extends FutureOutputUseCase<List<CategoryModel>> {
+    extends FutureOutputUseCase<List<CategoryModel>?> {
   FetchParentCategoriesUseCase(
     this._categoriesRepository,
   );

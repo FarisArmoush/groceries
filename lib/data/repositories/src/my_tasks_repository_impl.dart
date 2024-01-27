@@ -8,6 +8,6 @@ class MyTasksRepositoryImpl extends MyTasksRepository {
   Future<List<TaskModel>> fetchMyTasks() => _myTasksDataSource.fetchMyTasks();
 
   @override
-  Future<void> markTaskAsDone(TaskModel task) =>
+  Future<void> markTaskAsDone(TaskModel? task) =>
       _myTasksDataSource.markTaskAsDone(task);
 }

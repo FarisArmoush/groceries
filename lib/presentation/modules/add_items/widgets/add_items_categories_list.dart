@@ -13,7 +13,7 @@ class AddItemsCategoriesList extends StatelessWidget {
             context: context,
             tiles: state.parentCategories.map(
               (category) => ListTile(
-                title: Text(category.name!),
+                title: Text(category.name ?? ''),
                 onTap: () => context.pushNamed(
                   AppNamedRoutes.categoryDetails,
                   extra: category,

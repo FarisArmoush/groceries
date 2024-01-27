@@ -6,7 +6,7 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
     super.key,
   });
 
-  final GroceryModel groceryModel;
+  final GroceryModel? groceryModel;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              groceryModel.name ?? 'null',
+              groceryModel?.name ?? '',
               style: TextStyle(
                 fontFamily: AppFonts.regular(context),
                 color: context.theme.primaryColor,
@@ -36,7 +36,7 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
           height: context.deviceHeight * 0.015,
         ),
         AppTextField(
-          initialValue: groceryModel.notes,
+          initialValue: groceryModel?.notes,
           labelText: 'Notes',
           enabledBorder: _border(context),
           focusedBorder: _border(context),
@@ -44,13 +44,14 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
         SizedBox(
           height: context.deviceHeight * 0.02,
         ),
-        if (groceryModel.image!.isNotEmpty) ...[
+        // TODO(FarisArmoush): Test
+        if (groceryModel?.image?.isNotEmpty ?? false) ...[
           CachedImage(
             height: context.deviceHeight * 0.3,
             width: double.infinity,
             boxShape: BoxShape.rectangle,
             borderRadius: BorderRadius.circular(16),
-            imageUrl: groceryModel.image ?? '',
+            imageUrl: groceryModel?.image ?? '',
           ),
           SizedBox(
             height: context.deviceHeight * 0.02,

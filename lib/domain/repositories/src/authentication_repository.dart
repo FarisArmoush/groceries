@@ -19,10 +19,10 @@ abstract class AuthenticationRepository {
   Future<void> signUpWithEmailAndPassword(RegisterParam registerParam);
 
   /// Sends an email to the user to reset their password
-  Future<void> sendPasswordResetEmail(String email);
+  Future<void> sendPasswordResetEmail(String? email);
 
   /// Updates the user's display name
-  Future<void> updateDisplayName(String displayName);
+  Future<void> updateDisplayName(String? displayName);
 
   /// Signs out the current user.
   Future<void> logOut();
@@ -31,10 +31,10 @@ abstract class AuthenticationRepository {
   Future<void> deleteAccount();
 
   /// updates the current user's email
-  Future<void> updateEmail(String email);
+  Future<void> updateEmail(String? email);
 
   /// updates the current user's password
-  Future<void> updatePassword(String password);
+  Future<void> updatePassword(String? password);
 
   /// Sends a verification Email
   Future<void> sendVerificationEmail();

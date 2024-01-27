@@ -11,7 +11,7 @@ class CategoriesRepositoryImpl extends CategoriesRepository {
   }
 
   @override
-  Future<List<CategoryModel>> fetchSubCategories(String parentCategoryId) {
+  Future<List<CategoryModel>> fetchSubCategories(String? parentCategoryId) {
     return _categoriesDataSource.fetchSubCategories(parentCategoryId);
   }
 }

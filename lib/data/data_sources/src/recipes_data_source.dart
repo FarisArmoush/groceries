@@ -65,15 +65,15 @@ class RecipesDataSource {
           ),
         ],
       ),
-    ]..sort((a, b) => a.name!.compareTo(b.name!));
+    ]..sort((a, b) => a.name?.compareTo(b.name ?? '') ?? 0);
     return recipes;
   }
 
-  Future<void> createRecipe(RecipeModel recipe) {
+  Future<void> createRecipe(RecipeModel? recipe) {
     throw UnimplementedError();
   }
 
-  Future<void> deleteRecipe(RecipeModel recipe) {
+  Future<void> deleteRecipe(RecipeModel? recipe) {
     throw UnimplementedError();
   }
 }

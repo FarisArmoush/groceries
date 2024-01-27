@@ -10,7 +10,7 @@ class CreateListTextField extends StatelessWidget {
       builder: (context, state) {
         return AppTextField(
           labelText: AppTranslations.general.listName,
-          validator: (value) => state.listName.validator(value!),
+          validator: (value) => state.listName.validator(value ?? ''),
           errorText: state.listName.displayError,
           onChanged: (value) => context.read<CreateListBloc>().add(
                 CreateListEvent.nameChanged(value),

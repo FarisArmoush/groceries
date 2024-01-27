@@ -82,14 +82,14 @@ class MyTasksDataSource {
           ),
         ],
       ),
-    ]..sort((a, b) => b.dueDate!.compareTo(a.dueDate!));
+    ]..sort((a, b) => b.dueDate?.compareTo(a.dueDate ?? DateTime.now()) ?? 0);
     Future.delayed(Durations.extralong4, () {
       return myTasks;
     });
     return myTasks;
   }
 
-  Future<void> markTaskAsDone(TaskModel task) {
+  Future<void> markTaskAsDone(TaskModel? task) {
     throw UnimplementedError('Hasnt been implemented yet.');
   }
 }

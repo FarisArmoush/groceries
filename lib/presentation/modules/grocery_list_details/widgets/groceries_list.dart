@@ -13,8 +13,8 @@ class GroceriesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final itemsGroupedByCategory = groupBy(
-      groceries!,
-      (GroceryModel? groceryModel) => groceryModel!.categoryId,
+      groceries ?? <GroceryModel>[],
+      (GroceryModel? groceryModel) => groceryModel?.categoryId,
     );
     return ListView.separated(
       shrinkWrap: true,
@@ -31,7 +31,7 @@ class GroceriesList extends StatelessWidget {
             Visibility(
               visible: showHeader,
               child: GroceriesBoxHeader(
-                category: category?.tr() ?? 'Null',
+                category: category?.tr() ?? '',
                 assetPath: Assets.svg.icAlertTriangle.path,
               ),
             ),

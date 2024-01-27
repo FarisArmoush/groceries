@@ -11,7 +11,7 @@ class BaseGroceriesRepositoryImpl extends BaseGroceriesRepository {
   }
 
   @override
-  Future<List<GroceryModel>> fetchCategoryItems(String categoryId) {
+  Future<List<GroceryModel>> fetchCategoryItems(String? categoryId) {
     return _groceriesDataSource.fetchCategoryItems(categoryId);
   }
 }
