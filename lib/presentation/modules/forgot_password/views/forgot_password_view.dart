@@ -5,11 +5,55 @@ class ForgotPasswordView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ForgotPasswordBloc(
-        context.read<SendPasswordResetEmailUseCase>(),
+    return BlocListener<ForgotPasswordBloc, ForgotPasswordState>(
+      listener: _listener,
+      child: SafeArea(
+        top: false,
+        child: Scaffold(
+          appBar: AppBar(),
+          body: ListView(
+            padding: AppPaddings.scaffoldPadding(context),
+            children: [
+              SizedBox(
+                height: context.deviceWidth * 0.02,
+              ),
+              const ForgotPasswordHeaderText(),
+              SizedBox(
+                height: context.deviceHeight * 0.02,
+              ),
+              const ForgotPasswordBodyText(),
+              SizedBox(
+                height: context.deviceHeight * 0.06,
+              ),
+              const ForgotPasswordEmailTextField(),
+            ],
+          ),
+          bottomSheet: const SendForgotPasswordEmailButton(),
+        ),
       ),
-      child: const ForgotPasswordPage(),
     );
+  }
+
+  void _listener(BuildContext context, ForgotPasswordState state) {
+    if (state.status.isSuccess) {
+      context.pushReplacementNamed(
+        AppNamedRoutes.resetPasswordSentSuccessfully,
+      );
+    }
+    if (state.status.isFailure) {
+      context.pop();
+      ScaffoldMessenger.of(context).showSnackBar(
+        AppSnackBars.error(
+          error: state.errorMessage ?? 'Failed to send',
+        ),
+      );
+    }
+    if (state.status.isInProgress) {
+      showDialog<AppLoadingIndicator>(
+        context: context,
+        builder: (context) => const AppLoadingIndicator(),
+        barrierDismissible: false,
+      );
+    }
   }
 }

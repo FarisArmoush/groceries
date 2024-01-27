@@ -5,31 +5,46 @@ class GroceryListSettingsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(
-          create: (context) => DeleteListBloc(
-            context.read<DeleteGroceryListUseCase>(),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(AppTranslations.groceryListSettings.listSettings),
+        actions: const [
+          SaveGroceryListChangesButton(),
+        ],
+      ),
+      body: ListView(
+        primary: true,
+        padding: AppPaddings.scaffoldPadding(context),
+        children: [
+          const EditListImage(),
+          SizedBox(
+            height: context.deviceHeight * 0.05,
           ),
-          child: const DeleteGroceryListButton(),
-        ),
-        BlocProvider(
-          create: (context) => RemoveMemberFromListBloc(
-            context.read<RemoveMemberFromListUseCase>(),
+          const GroceryListNameTextField(),
+          SizedBox(
+            height: context.deviceHeight * 0.035,
           ),
-        ),
-        BlocProvider(
-          create: (context) => UpdateListImageBloc(
-            context.read<UpdateListImageUseCase>(),
+          Text(
+            AppTranslations.groceryListSettings.listMembers,
+            style: TextStyle(
+              fontFamily: AppFonts.regular(context),
+              color: context.theme.primaryColor,
+              fontSize: 16,
+            ),
           ),
-        ),
-        BlocProvider(
-          create: (context) => UpdateListNameBloc(
-            context.read<UpdateListNameUseCase>(),
+          SizedBox(
+            height: context.deviceHeight * 0.01,
           ),
-        ),
-      ],
-      child: const GroceryListSettingsPage(),
+          const GroceryListMembers(),
+          SizedBox(
+            height: context.deviceHeight * 0.04,
+          ),
+          const DeleteGroceryListButton(),
+          SizedBox(
+            height: context.deviceHeight * 0.03,
+          ),
+        ],
+      ),
     );
   }
 }
