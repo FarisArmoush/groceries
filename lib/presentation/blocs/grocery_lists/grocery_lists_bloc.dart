@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
-import 'package:groceries/domain/use_cases/use_cases.dart';
+import 'package:groceries/domain/use_cases/remote_use_cases/grocery_lists_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 
 part 'grocery_lists_bloc.freezed.dart';

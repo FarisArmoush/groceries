@@ -1,4 +1,10 @@
-part of '../login.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/presentation/modules/login/bloc/login_bloc.dart';
+import 'package:groceries/presentation/widgets/app_text_field.dart';
+import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class LoginEmailTextField extends StatelessWidget {
   const LoginEmailTextField({super.key});

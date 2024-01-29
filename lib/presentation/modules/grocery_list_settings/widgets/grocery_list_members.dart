@@ -1,4 +1,7 @@
-part of '../grocery_list_settings.dart';
+import 'package:flutter/material.dart';
+import 'package:groceries/data/models/user_model/user_model.dart';
+import 'package:groceries/presentation/modules/grocery_list_settings/widgets/member_card.dart';
+import 'package:groceries/utils/constants/app_colors.dart';
 
 class GroceryListMembers extends StatelessWidget {
   const GroceryListMembers({super.key});

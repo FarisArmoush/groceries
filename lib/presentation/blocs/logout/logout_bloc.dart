@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:groceries/domain/use_cases/use_cases.dart';
+import 'package:groceries/domain/use_cases/authentication_use_cases/logout_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 
 part 'logout_bloc.freezed.dart';

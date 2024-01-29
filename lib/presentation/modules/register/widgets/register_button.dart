@@ -1,4 +1,9 @@
-part of '../register.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:formz/formz.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/presentation/modules/register/bloc/register_bloc.dart';
+import 'package:groceries/presentation/widgets/buttons_loading_indicator.dart';
 
 class RegisterButton extends StatelessWidget {
   const RegisterButton({super.key});

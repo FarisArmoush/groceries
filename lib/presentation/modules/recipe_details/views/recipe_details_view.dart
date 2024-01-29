@@ -1,4 +1,14 @@
-part of '../recipe_details.dart';
+import 'package:flutter/material.dart';
+import 'package:groceries/data/models/recipe_model/recipe_model.dart';
+import 'package:groceries/presentation/common/app_paddings.dart';
+import 'package:groceries/presentation/modules/recipe_details/widgets/recipe_details_list_header.dart';
+import 'package:groceries/presentation/modules/recipe_details/widgets/recipe_items_list.dart';
+import 'package:groceries/presentation/modules/recipe_details/widgets/recipe_options_bottom_sheet.dart';
+import 'package:groceries/presentation/modules/recipe_details/widgets/recipe_steps_list.dart';
+import 'package:groceries/presentation/widgets/cached_image.dart';
+import 'package:groceries/presentation/widgets/groceries_app_bar.dart';
+import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class RecipeDetailsView extends StatelessWidget {
   const RecipeDetailsView({

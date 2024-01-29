@@ -1,4 +1,12 @@
-part of '../add_items.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:groceries/presentation/modules/add_items/bloc/add_items_bloc.dart';
+import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
+import 'package:groceries/presentation/widgets/app_text_field.dart';
+import 'package:groceries/utils/constants/app_colors.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/extenstions/padding_extensions.dart';
 
 class AddItemsTextField extends StatelessWidget {
   const AddItemsTextField({super.key});

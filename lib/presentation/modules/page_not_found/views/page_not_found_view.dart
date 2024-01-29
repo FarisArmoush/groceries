@@ -1,4 +1,6 @@
-part of '../page_not_found.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:groceries/config/routes/app_named_routes.dart';
 
 class PageNotFoundView extends StatelessWidget {
   const PageNotFoundView({super.key});

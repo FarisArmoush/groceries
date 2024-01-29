@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/utils/forms/app_forms.dart';
+import 'package:groceries/utils/forms/login_password_form.dart';
 
 void main() {
   group('LoginPasswordForm', () {

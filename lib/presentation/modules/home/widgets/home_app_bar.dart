@@ -1,4 +1,9 @@
-part of '../home.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/presentation/modules/home/widgets/home_header.dart';
+import 'package:groceries/presentation/widgets/groceries_app_bar.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({super.key});

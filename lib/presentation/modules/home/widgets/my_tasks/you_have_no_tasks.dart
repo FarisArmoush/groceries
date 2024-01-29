@@ -1,4 +1,9 @@
-part of '../../home.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class YouHaveNoTasks extends StatelessWidget {
   const YouHaveNoTasks({super.key});

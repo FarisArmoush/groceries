@@ -1,4 +1,9 @@
-part of '../onboarding.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:groceries/data/models/onboarding_page_model/onboarding_page_model.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/padding_extensions.dart';
 
 class OnboardingPageBase extends StatelessWidget {
   const OnboardingPageBase({

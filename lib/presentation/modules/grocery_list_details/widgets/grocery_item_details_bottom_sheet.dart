@@ -1,4 +1,15 @@
-part of '../grocery_list_details.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/data/models/grocery_model/grocery_model.dart';
+import 'package:groceries/presentation/common/app_paddings.dart';
+import 'package:groceries/presentation/widgets/app_text_field.dart';
+import 'package:groceries/presentation/widgets/bottom_sheet_button.dart';
+import 'package:groceries/presentation/widgets/cached_image.dart';
+import 'package:groceries/presentation/widgets/upload_image_bottom_sheet.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class GroceryItemDetailsBottomSheet extends StatelessWidget {
   const GroceryItemDetailsBottomSheet({

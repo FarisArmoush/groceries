@@ -1,4 +1,8 @@
-part of '../create_list.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/presentation/modules/create_list/bloc/create_list_bloc.dart';
+import 'package:groceries/presentation/widgets/app_text_field.dart';
 
 class CreateListTextField extends StatelessWidget {
   const CreateListTextField({super.key});

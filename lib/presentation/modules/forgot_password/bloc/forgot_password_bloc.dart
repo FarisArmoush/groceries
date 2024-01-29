@@ -1,13 +1,13 @@
 import 'package:bloc/bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:groceries/domain/use_cases/use_cases.dart';
-import 'package:groceries/utils/exceptions/exceptions.dart';
-import 'package:groceries/utils/forms/app_forms.dart';
+import 'package:groceries/domain/use_cases/authentication_use_cases/send_password_reset_email_use_case.dart';
+import 'package:groceries/utils/exceptions/send_password_reset_email_exception.dart';
+import 'package:groceries/utils/forms/email_form.dart';
 
+part 'forgot_password_bloc.freezed.dart';
 part 'forgot_password_event.dart';
 part 'forgot_password_state.dart';
-part 'forgot_password_bloc.freezed.dart';
 
 class ForgotPasswordBloc
     extends Bloc<ForgotPasswordEvent, ForgotPasswordState> {

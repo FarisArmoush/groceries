@@ -1,4 +1,10 @@
-part of '../../home.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
+import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocery_list_card.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class GroceryListsList extends StatelessWidget {
   const GroceryListsList({required this.lists, super.key});

@@ -1,4 +1,11 @@
-part of '../../home.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class YouDontHaveGroceryLists extends StatelessWidget {
   const YouDontHaveGroceryLists({super.key});

@@ -1,4 +1,9 @@
-part of '../add_items.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/presentation/modules/add_items/bloc/add_items_bloc.dart';
+import 'package:groceries/utils/extenstions/padding_extensions.dart';
 
 class AddItemsCategoriesList extends StatelessWidget {
   const AddItemsCategoriesList({super.key});

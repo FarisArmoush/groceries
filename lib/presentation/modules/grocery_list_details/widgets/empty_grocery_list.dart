@@ -1,4 +1,12 @@
-part of '../grocery_list_details.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/padding_extensions.dart';
+import 'package:groceries/utils/extenstions/widgets_as_extensions.dart';
 
 class EmptyGroceryList extends StatelessWidget {
   const EmptyGroceryList({super.key});

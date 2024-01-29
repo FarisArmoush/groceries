@@ -1,4 +1,12 @@
-part of '../../home.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
+import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocery_lists_list.dart';
+import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocery_lists_rail_header.dart';
+import 'package:groceries/presentation/modules/home/widgets/grocery_lists/you_have_no_grocery_lists.dart';
+import 'package:groceries/presentation/modules/home/widgets/rail_title.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class GroceryListsRail extends StatelessWidget {
   const GroceryListsRail({

@@ -1,4 +1,8 @@
-part of '../create_recipe.dart';
+import 'package:flutter/material.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/presentation/modules/create_recipe/widgets/recipe_step_text_field.dart';
+import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class AddStepsToRecipeList extends StatefulWidget {
   const AddStepsToRecipeList({super.key});

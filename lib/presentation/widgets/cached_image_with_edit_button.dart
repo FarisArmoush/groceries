@@ -1,4 +1,9 @@
-part of 'widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:groceries/presentation/widgets/cached_image.dart';
+import 'package:groceries/utils/constants/app_colors.dart';
+import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/padding_extensions.dart';
 
 class CachedImageWithEditButton extends StatelessWidget {
   const CachedImageWithEditButton({

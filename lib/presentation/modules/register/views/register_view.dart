@@ -1,4 +1,21 @@
-part of '../register.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:formz/formz.dart';
+import 'package:go_router/go_router.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/presentation/common/app_paddings.dart';
+import 'package:groceries/presentation/modules/register/bloc/register_bloc.dart';
+import 'package:groceries/presentation/modules/register/widgets/register_body_text.dart';
+import 'package:groceries/presentation/modules/register/widgets/register_button.dart';
+import 'package:groceries/presentation/modules/register/widgets/register_confirm_password_text_field.dart';
+import 'package:groceries/presentation/modules/register/widgets/register_display_name_text_field.dart';
+import 'package:groceries/presentation/modules/register/widgets/register_email_text_field.dart';
+import 'package:groceries/presentation/modules/register/widgets/register_header_text.dart';
+import 'package:groceries/presentation/modules/register/widgets/register_password_text_field.dart';
+import 'package:groceries/presentation/widgets/app_snack_bars.dart';
+import 'package:groceries/presentation/widgets/other_options_text_button.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({super.key});

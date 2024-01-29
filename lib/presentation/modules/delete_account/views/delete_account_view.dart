@@ -1,4 +1,11 @@
-part of '../delete_account.dart';
+import 'package:flutter/material.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/presentation/common/app_paddings.dart';
+import 'package:groceries/presentation/modules/delete_account/widgets/delete_account_body_text.dart';
+import 'package:groceries/presentation/modules/delete_account/widgets/delete_account_button.dart';
+import 'package:groceries/presentation/modules/delete_account/widgets/delete_account_header_text.dart';
+import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class DeleteAccountView extends StatelessWidget {
   const DeleteAccountView({super.key});

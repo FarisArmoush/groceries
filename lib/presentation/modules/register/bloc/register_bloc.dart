@@ -1,14 +1,17 @@
 import 'package:bloc/bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:groceries/domain/use_cases/use_cases.dart';
-import 'package:groceries/utils/exceptions/exceptions.dart';
-import 'package:groceries/utils/forms/app_forms.dart';
+import 'package:groceries/domain/use_cases/authentication_use_cases/register_with_email_and_password_use_case.dart';
+import 'package:groceries/utils/exceptions/register_with_email_and_password_exception.dart';
+import 'package:groceries/utils/forms/confirmed_password_form.dart';
+import 'package:groceries/utils/forms/display_name_form.dart';
+import 'package:groceries/utils/forms/email_form.dart';
+import 'package:groceries/utils/forms/register_password_form.dart';
 import 'package:groceries/utils/params/register_param/register_param.dart';
 
+part 'register_bloc.freezed.dart';
 part 'register_event.dart';
 part 'register_state.dart';
-part 'register_bloc.freezed.dart';
 
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
   RegisterBloc(this._registerWithEmailAndPasswordUseCase)

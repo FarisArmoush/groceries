@@ -1,4 +1,9 @@
-part of '../grocery_list_details.dart';
+import 'package:flutter/material.dart';
+import 'package:groceries/data/models/grocery_model/grocery_model.dart';
+import 'package:groceries/presentation/modules/grocery_list_details/widgets/grocery_item_details_bottom_sheet.dart';
+import 'package:groceries/utils/constants/app_colors.dart';
+import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class GroceriesBoxList extends StatelessWidget {
   const GroceriesBoxList({

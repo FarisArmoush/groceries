@@ -1,4 +1,14 @@
-part of '../account_settings.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/presentation/blocs/logout/logout_bloc.dart';
+import 'package:groceries/presentation/modules/account_settings/widgets/logout_bottom_sheet.dart';
+import 'package:groceries/presentation/widgets/app_list_tile_button.dart';
+import 'package:groceries/presentation/widgets/app_snack_bars.dart';
+import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class LogoutButton extends StatelessWidget {
   const LogoutButton({super.key});

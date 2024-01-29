@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/utils/exceptions/exceptions.dart';
+import 'package:groceries/utils/exceptions/register_with_email_and_password_exception.dart';
 
 void main() {
   group('RegisterWithEmailAndPasswordException', () {

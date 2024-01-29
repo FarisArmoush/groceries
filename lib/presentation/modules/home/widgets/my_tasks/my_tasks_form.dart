@@ -1,4 +1,10 @@
-part of '../../home.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:groceries/presentation/blocs/my_tasks/my_tasks_bloc.dart';
+import 'package:groceries/presentation/modules/home/widgets/my_tasks/my_tasks_rail.dart';
+import 'package:groceries/presentation/modules/home/widgets/my_tasks/my_tasks_shimmered_rail.dart';
+import 'package:groceries/presentation/widgets/error_state.dart';
 
 class MyTasksForm extends StatelessWidget {
   const MyTasksForm({super.key});

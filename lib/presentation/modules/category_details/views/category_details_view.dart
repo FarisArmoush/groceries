@@ -1,4 +1,16 @@
-part of '../category_details.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/data/models/category_model/category_model.dart';
+import 'package:groceries/presentation/modules/category_details/bloc/category_details_bloc.dart';
+import 'package:groceries/presentation/modules/grocery_list_details/widgets/groceries_box_list.dart';
+import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
+import 'package:groceries/presentation/widgets/error_state.dart';
+import 'package:groceries/presentation/widgets/groceries_app_bar.dart';
+import 'package:groceries/presentation/widgets/next_arrow_icon.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/padding_extensions.dart';
 
 class CategoryDetailsView extends StatefulWidget {
   const CategoryDetailsView({

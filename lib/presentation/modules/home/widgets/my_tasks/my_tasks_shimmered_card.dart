@@ -1,4 +1,6 @@
-part of '../../home.dart';
+import 'package:flutter/material.dart';
+import 'package:groceries/presentation/widgets/shimmer_skeleton.dart';
+import 'package:groceries/utils/constants/app_colors.dart';
 
 class MyTasksShimmeredCard extends StatelessWidget {
   const MyTasksShimmeredCard({super.key});

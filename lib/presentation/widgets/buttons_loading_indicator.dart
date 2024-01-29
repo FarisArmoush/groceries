@@ -1,4 +1,5 @@
-part of 'widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:groceries/utils/constants/app_colors.dart';
 
 class ButtonsLoadingIndicator extends StatelessWidget {
   const ButtonsLoadingIndicator({super.key});

@@ -1,4 +1,7 @@
-part of '../../home.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:groceries/presentation/widgets/shimmer_skeleton.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class GroceryListShimmeredCard extends StatelessWidget {
   const GroceryListShimmeredCard({super.key});

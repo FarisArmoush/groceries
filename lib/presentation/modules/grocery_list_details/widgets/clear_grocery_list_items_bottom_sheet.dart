@@ -1,4 +1,8 @@
-part of '../grocery_list_details.dart';
+import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/presentation/common/app_paddings.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class ClearGroceryListItemsBottomSheet extends StatelessWidget {
   const ClearGroceryListItemsBottomSheet({super.key});

@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:groceries/domain/use_cases/use_cases.dart';
+import 'package:groceries/domain/use_cases/remote_use_cases/remote_config_use_case.dart';
 
 part 'remote_config_bloc.freezed.dart';
 part 'remote_config_event.dart';
