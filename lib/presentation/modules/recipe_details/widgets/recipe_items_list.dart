@@ -13,11 +13,11 @@ class RecipeItemsList extends StatelessWidget {
     return ListView.separated(
       shrinkWrap: true,
       primary: false,
-      itemCount: recipeModel.items!.length,
+      itemCount: recipeModel.items?.length ?? 0,
       itemBuilder: (context, index) {
         return ListTile(
-          title: Text(recipeModel.items?[index]?.name ?? 'null'),
-          subtitle: Text(recipeModel.items?[index]?.notes ?? 'null'),
+          title: Text(recipeModel.items?[index]?.name ?? ''),
+          subtitle: Text(recipeModel.items?[index]?.notes ?? ''),
           leading: Assets.svg.icArchive.svg(
             colorFilter: ColorFilter.mode(
               context.theme.primaryColor,

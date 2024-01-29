@@ -34,7 +34,7 @@ class CategoryDetailsBloc
     );
     try {
       final categories = await _fetchSubCategoriesUseCase(
-        event.parentCategoryId!,
+        event.parentCategoryId ?? '',
       );
       emit(
         state.copyWith(
@@ -68,7 +68,7 @@ class CategoryDetailsBloc
     );
     try {
       final groceries = await _fetchCategoryItemsUseCase(
-        event.categoryId!,
+        event.categoryId ?? '',
       );
       emit(
         state.copyWith(

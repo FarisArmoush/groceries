@@ -22,7 +22,7 @@ class BaseGroceriesDataSource {
   }
 
   Future<List<GroceryModel>> fetchCategoryItems(
-    String categoryId,
+    String? categoryId,
   ) async {
     try {
       final collectionReference = _firestore

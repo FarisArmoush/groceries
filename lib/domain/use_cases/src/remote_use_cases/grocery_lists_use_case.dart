@@ -1,10 +1,11 @@
 part of '../../use_cases.dart';
 
-class GroceryListsUseCase {
-  const GroceryListsUseCase(this._groceryListsRepository);
+class GroceryListsUseCase extends FutureOutputUseCase<List<GroceryListModel>?> {
+  GroceryListsUseCase(this._groceryListsRepository);
 
   final GroceryListsRepository _groceryListsRepository;
 
-  Future<List<GroceryListModel>> fetchMyGroceryLists() =>
+  @override
+  Future<List<GroceryListModel>?> call() =>
       _groceryListsRepository.fetchMyGroceryLists();
 }

@@ -1,12 +1,12 @@
 part of '../../use_cases.dart';
 
-class CreateRecipeUseCase extends FutureInputUseCase<RecipeModel> {
+class CreateRecipeUseCase extends FutureInputUseCase<RecipeModel?> {
   CreateRecipeUseCase(this._recipesRepository);
 
   final RecipesRepository _recipesRepository;
 
   @override
-  Future<void> call(RecipeModel input) {
+  Future<void> call(RecipeModel? input) {
     return _recipesRepository.createRecipe(input);
   }
 }

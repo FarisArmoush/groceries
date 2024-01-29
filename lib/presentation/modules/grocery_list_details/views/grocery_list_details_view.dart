@@ -10,6 +10,7 @@ class GroceryListDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final listIsEmpty = listModel.items?.isEmpty ?? true;
     return Scaffold(
       body: SafeArea(
         bottom: false,
@@ -23,7 +24,7 @@ class GroceryListDetailsView extends StatelessWidget {
                     listModel: listModel,
                   ),
                   Visibility(
-                    visible: listModel.items!.isNotEmpty,
+                    visible: !listIsEmpty,
                     child: const ClearGroceryListItemsButton(),
                   ),
                 ],
@@ -31,7 +32,7 @@ class GroceryListDetailsView extends StatelessWidget {
               largeTitle: _appBarTitle(context),
               middle: _appBarTitle(context),
             ),
-            if (listModel.items!.isEmpty)
+            if (listIsEmpty)
               const EmptyGroceryList().asSliver()
             else
               GroceryListDetailsForm(
@@ -40,9 +41,10 @@ class GroceryListDetailsView extends StatelessWidget {
           ],
         ),
       ),
-      floatingActionButton: listModel.items!.isEmpty
-          ? const SizedBox.shrink()
-          : const GroceryListDetailsFab(),
+      floatingActionButton: Visibility(
+        visible: !listIsEmpty,
+        child: const GroceryListDetailsFab(),
+      ),
     );
   }
 
@@ -56,7 +58,7 @@ class GroceryListDetailsView extends StatelessWidget {
         SizedBox(
           width: context.deviceWidth * 0.02,
         ),
-        Text(listModel.name!),
+        Text(listModel.name ?? ''),
       ],
     );
   }

@@ -4,9 +4,9 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/domain/use_cases/use_cases.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 
+part 'logout_bloc.freezed.dart';
 part 'logout_event.dart';
 part 'logout_state.dart';
-part 'logout_bloc.freezed.dart';
 
 class LogoutBloc extends Bloc<LogoutEvent, LogoutState> {
   LogoutBloc(this._logoutUseCase) : super(const LogoutState()) {
@@ -34,7 +34,7 @@ class LogoutBloc extends Bloc<LogoutEvent, LogoutState> {
     } on FirebaseAuthException catch (e) {
       emit(
         state.copyWith(
-          status: BlocStatus.failure(e.message!),
+          status: BlocStatus.failure(e.message ?? ''),
         ),
       );
     } catch (e) {

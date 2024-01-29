@@ -36,16 +36,16 @@ class AuthenticationDataSource {
         password: registerParam.password,
       )
           .then((user) {
-        firestore.collection('users').doc(user.user!.uid).set(
+        firestore.collection('users').doc(user.user?.uid).set(
           {
             'creationDate': DateTime.timestamp(),
             'email': registerParam.email,
-            'id': user.user!.uid,
+            'id': user.user?.uid,
             'image': '',
             'displayName': registerParam.displayName,
           },
         );
-        firebaseAuth.currentUser!.updateDisplayName(
+        firebaseAuth.currentUser?.updateDisplayName(
           registerParam.displayName,
         );
       });
@@ -75,7 +75,10 @@ class AuthenticationDataSource {
     }
   }
 
-  Future<void> sendPasswordResetEmail(String email) async {
+  Future<void> sendPasswordResetEmail(String? email) async {
+    if (email == null) {
+      return;
+    }
     try {
       await firebaseAuth.sendPasswordResetEmail(email: email);
     } on FirebaseAuthException catch (e) {
@@ -85,11 +88,11 @@ class AuthenticationDataSource {
     }
   }
 
-  Future<void> updateDisplayName(String displayName) async {
+  Future<void> updateDisplayName(String? displayName) async {
     try {
       await currentUser?.updateDisplayName(displayName).then(
             (_) => {
-              firestore.collection('users').doc(currentUser!.uid).update(
+              firestore.collection('users').doc(currentUser?.uid).update(
                 {
                   'displayName': displayName,
                 },
@@ -103,10 +106,13 @@ class AuthenticationDataSource {
     }
   }
 
-  Future<void> updateEmail(String email) async {
+  Future<void> updateEmail(String? email) async {
+    if (email == null) {
+      return;
+    }
     try {
       await currentUser?.updateEmail(email).then(
-            (_) => firestore.collection('users').doc(currentUser!.uid).update(
+            (_) => firestore.collection('users').doc(currentUser?.uid).update(
               {
                 'email': email,
               },
@@ -119,7 +125,10 @@ class AuthenticationDataSource {
     }
   }
 
-  Future<void> updatePassword(String password) async {
+  Future<void> updatePassword(String? password) async {
+    if (password == null) {
+      return;
+    }
     try {
       await currentUser?.updatePassword(password);
     } on FirebaseAuthException catch (e) {

@@ -35,7 +35,7 @@ class UpdateListNameBloc
     } on FirebaseException catch (e) {
       emit(
         state.copyWith(
-          status: BlocStatus.failure(e.message!),
+          status: BlocStatus.failure(e.message ?? ''),
         ),
       );
     } catch (e) {

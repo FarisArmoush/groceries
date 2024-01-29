@@ -45,8 +45,8 @@ class _CategoryDetailsViewState extends State<CategoryDetailsView> {
             return CustomScrollView(
               slivers: [
                 GroceriesAppBar(
-                  largeTitle: Text(widget.parentCategoryModel.name!),
-                  middle: Text(widget.parentCategoryModel.name!),
+                  largeTitle: Text(widget.parentCategoryModel.name ?? ''),
+                  middle: Text(widget.parentCategoryModel.name ?? ''),
                 ),
                 if (state.categories.isEmpty)
                   SliverToBoxAdapter(
@@ -60,7 +60,7 @@ class _CategoryDetailsViewState extends State<CategoryDetailsView> {
                     itemBuilder: (context, index) {
                       final category = state.categories[index];
                       return ListTile(
-                        title: Text(category.name!),
+                        title: Text(category.name ?? ''),
                         trailing: const NextArrowIcon(),
                         onTap: () {
                           context.pushNamed(

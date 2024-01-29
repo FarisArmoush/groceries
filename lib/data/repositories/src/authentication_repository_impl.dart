@@ -28,19 +28,19 @@ class AuthenticationRepositoryImpl extends AuthenticationRepository {
       _authenticationDataSource.signInWithEmailAndPassword(loginParam);
 
   @override
-  Future<void> sendPasswordResetEmail(String email) =>
+  Future<void> sendPasswordResetEmail(String? email) =>
       _authenticationDataSource.sendPasswordResetEmail(email);
 
   @override
-  Future<void> updateDisplayName(String displayName) =>
+  Future<void> updateDisplayName(String? displayName) =>
       _authenticationDataSource.updateDisplayName(displayName);
 
   @override
-  Future<void> updateEmail(String email) =>
+  Future<void> updateEmail(String? email) =>
       _authenticationDataSource.updateEmail(email);
 
   @override
-  Future<void> updatePassword(String password) =>
+  Future<void> updatePassword(String? password) =>
       _authenticationDataSource.updatePassword(password);
 
   @override
