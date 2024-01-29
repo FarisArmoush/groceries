@@ -1,4 +1,10 @@
-part of '../onboarding.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/presentation/modules/onboarding/bloc/onboarding_bloc.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class LeaveOnboardingButton extends StatelessWidget {
   const LeaveOnboardingButton({super.key});

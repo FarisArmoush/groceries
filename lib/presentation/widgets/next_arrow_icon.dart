@@ -1,4 +1,8 @@
-part of 'widgets.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 /// {@template next_arrow_icon}
 /// An icon widget that represents a next arrow.

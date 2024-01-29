@@ -1,4 +1,7 @@
-part of '../account_settings.dart';
+import 'package:flutter/material.dart';
+import 'package:groceries/presentation/widgets/cached_image.dart';
+import 'package:groceries/utils/constants/app_colors.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class UserImage extends StatelessWidget {
   const UserImage({super.key});

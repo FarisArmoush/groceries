@@ -1,4 +1,9 @@
-part of '../grocery_list_details.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:groceries/utils/constants/app_colors.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class GroceriesBoxHeader extends StatelessWidget {
   const GroceriesBoxHeader({

@@ -1,4 +1,8 @@
-part of '../verify_user.dart';
+import 'package:flutter/material.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/presentation/modules/verify_user/widgets/send_verification_email_button.dart';
+import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class VerifyUserInitialBody extends StatelessWidget {
   const VerifyUserInitialBody({

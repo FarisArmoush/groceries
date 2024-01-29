@@ -1,4 +1,7 @@
-part of '../grocery_list_details.dart';
+import 'package:flutter/material.dart';
+import 'package:groceries/presentation/modules/grocery_list_details/widgets/clear_grocery_list_items_bottom_sheet.dart';
+import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class ClearGroceryListItemsButton extends StatelessWidget {
   const ClearGroceryListItemsButton({super.key});

@@ -1,4 +1,8 @@
-part of 'widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/presentation/common/app_paddings.dart';
+import 'package:groceries/presentation/widgets/bottom_sheet_button.dart';
+import 'package:groceries/utils/constants/assets.gen.dart';
 
 class UploadImageBottomSheet extends StatelessWidget {
   const UploadImageBottomSheet({

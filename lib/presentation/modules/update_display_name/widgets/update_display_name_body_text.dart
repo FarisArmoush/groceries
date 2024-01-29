@@ -1,4 +1,6 @@
-part of '../update_display_name.dart';
+import 'package:flutter/material.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class UpdateDisplayNameBodyText extends StatelessWidget {
   const UpdateDisplayNameBodyText({super.key});

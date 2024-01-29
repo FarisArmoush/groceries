@@ -1,4 +1,18 @@
-part of '../root.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/data/models/app_bottom_navigation_bar_item/app_bottom_navigation_bar_item.dart';
+import 'package:groceries/presentation/blocs/grocery_lists/grocery_lists_bloc.dart';
+import 'package:groceries/presentation/blocs/my_tasks/my_tasks_bloc.dart';
+import 'package:groceries/presentation/modules/home/views/home_view.dart';
+import 'package:groceries/presentation/modules/recipes/bloc/recipes_bloc.dart';
+import 'package:groceries/presentation/modules/recipes/views/recipes_view.dart';
+import 'package:groceries/presentation/modules/root/bloc/root_navigation_bloc.dart';
+import 'package:groceries/presentation/modules/settings/views/settings_view.dart';
+import 'package:groceries/presentation/widgets/app_bottom_navigation_bar.dart';
+import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class RootView extends StatefulWidget {
   const RootView({super.key});

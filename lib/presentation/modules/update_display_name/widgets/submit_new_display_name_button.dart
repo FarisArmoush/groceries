@@ -1,4 +1,9 @@
-part of '../update_display_name.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/presentation/modules/update_display_name/bloc/update_display_name_bloc.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/padding_extensions.dart';
 
 class SubmitNewDisplayNameButton extends StatelessWidget {
   const SubmitNewDisplayNameButton({super.key});

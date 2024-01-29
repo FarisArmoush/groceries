@@ -1,4 +1,6 @@
-part of '../add_items.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class CategoryBoxDivider extends StatelessWidget {
   const CategoryBoxDivider({super.key});

@@ -1,4 +1,7 @@
-part of '../home.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:groceries/presentation/modules/home/widgets/app_tip_text.dart';
+import 'package:groceries/presentation/modules/home/widgets/greeting_text.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({super.key});

@@ -1,4 +1,9 @@
-part of '../update_email.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/presentation/modules/update_email/bloc/update_email_bloc.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/padding_extensions.dart';
 
 class SubmitNewEmailButton extends StatelessWidget {
   const SubmitNewEmailButton({super.key});

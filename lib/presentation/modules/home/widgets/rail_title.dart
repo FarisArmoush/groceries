@@ -1,4 +1,7 @@
-part of '../home.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class RailTitle extends StatelessWidget {
   const RailTitle({required this.title, super.key});

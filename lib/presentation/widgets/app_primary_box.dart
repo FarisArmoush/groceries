@@ -1,4 +1,7 @@
-part of 'widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:groceries/utils/constants/app_colors.dart';
+import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class AppPrimaryBox extends StatelessWidget {
   const AppPrimaryBox({
