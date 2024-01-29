@@ -10,7 +10,6 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO(FarisArmoush): Test
     final itemsIsEmpty = listModel.items?.isNotEmpty ?? false;
     return BottomSheet(
       showDragHandle: false,

@@ -47,7 +47,6 @@ class GroceryListCard extends StatelessWidget {
                   SizedBox(
                     height: context.deviceHeight * 0.01,
                   ),
-                  // TODO(FarisArmoush): Test
                   if (listModel.items?.isNotEmpty ?? false)
                     _newTasksBox(context)
                   else

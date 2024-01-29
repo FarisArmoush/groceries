@@ -44,7 +44,6 @@ class MyTasksCard extends StatelessWidget {
           ),
         ],
       ),
-      // TODO(FarisArmoush): Test
       subtitle: taskModel.groceries?.isNotEmpty ?? false
           ? Text(
               '$length ${AppTranslations.home.newTasks}',

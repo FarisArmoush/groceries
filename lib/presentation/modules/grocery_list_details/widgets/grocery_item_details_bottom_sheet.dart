@@ -44,7 +44,6 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
         SizedBox(
           height: context.deviceHeight * 0.02,
         ),
-        // TODO(FarisArmoush): Test
         if (groceryModel?.image?.isNotEmpty ?? false) ...[
           CachedImage(
             height: context.deviceHeight * 0.3,

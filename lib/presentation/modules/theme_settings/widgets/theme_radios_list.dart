@@ -19,10 +19,7 @@ class ThemeRadiosList extends StatelessWidget {
               title: themeModel.title,
               value: themeModel.themeMode,
               groupValue: context.watch<ThemeCubit>().state,
-              // TODO(FarisArmoush): Test
-              onChanged: (theme) => context.read<ThemeCubit>().setTheme(
-                    theme ?? ThemeMode.system,
-                  ),
+              onChanged: (theme) => context.read<ThemeCubit>().setTheme(theme!),
             );
           },
         ),

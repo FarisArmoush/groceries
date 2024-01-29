@@ -21,13 +21,12 @@ class GroceriesBoxList extends StatelessWidget {
                   tileColor: AppColors.transparent,
                   title: Text(item?.name ?? ''),
                   subtitle:
-                      // TODO(FarisArmoush): Test
                       item?.notes == null || (item?.notes?.isEmpty ?? false)
                           ? null
                           : Text(item?.notes ?? ''),
                   trailing: IconButton(
                     onPressed: () {},
-                    icon: item?.isDone ?? false // TODO(FarisArmoush): Test
+                    icon: item?.isDone ?? false
                         ? Assets.svg.icDoubleCheck.svg(
                             colorFilter: const ColorFilter.mode(
                               Colors.green,

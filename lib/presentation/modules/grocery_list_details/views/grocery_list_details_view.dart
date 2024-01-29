@@ -24,7 +24,6 @@ class GroceryListDetailsView extends StatelessWidget {
                     listModel: listModel,
                   ),
                   Visibility(
-                    // TODO(FarisArmoush): Test
                     visible: !listIsEmpty,
                     child: const ClearGroceryListItemsButton(),
                   ),
@@ -33,7 +32,6 @@ class GroceryListDetailsView extends StatelessWidget {
               largeTitle: _appBarTitle(context),
               middle: _appBarTitle(context),
             ),
-            // TODO(FarisArmoush): Test
             if (listIsEmpty)
               const EmptyGroceryList().asSliver()
             else
@@ -43,9 +41,10 @@ class GroceryListDetailsView extends StatelessWidget {
           ],
         ),
       ),
-      // TODO(FarisArmoush): Test
-      floatingActionButton:
-          listIsEmpty ? const SizedBox.shrink() : const GroceryListDetailsFab(),
+      floatingActionButton: Visibility(
+        visible: !listIsEmpty,
+        child: const GroceryListDetailsFab(),
+      ),
     );
   }
 
