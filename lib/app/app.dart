@@ -1,53 +1,34 @@
-library app;
-
-import 'dart:developer' as developer;
-
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:easy_localization/easy_localization.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/config/localization/remote_config_translations_loader.dart';
-import 'package:groceries/config/routes/app_go_router.dart';
-import 'package:groceries/config/theme/app_themes.dart';
-import 'package:groceries/data/data_sources/data_sources.dart';
+import 'package:groceries/app/blocs_providers.dart';
+import 'package:groceries/app/data_sources_provider.dart';
+import 'package:groceries/app/instances_provider.dart';
+import 'package:groceries/app/repositories_provider.dart';
+import 'package:groceries/app/use_cases_provider.dart';
 import 'package:groceries/data/models/app_flavor/app_flavor.dart';
-import 'package:groceries/data/repositories/repositories.dart';
-import 'package:groceries/domain/repositories/repositories.dart';
-import 'package:groceries/domain/use_cases/use_cases.dart';
-import 'package:groceries/presentation/blocs/authentication/authentication_bloc.dart';
-import 'package:groceries/presentation/blocs/grocery_lists/grocery_lists_bloc.dart';
-import 'package:groceries/presentation/blocs/logout/logout_bloc.dart';
-import 'package:groceries/presentation/blocs/my_tasks/my_tasks_bloc.dart';
-import 'package:groceries/presentation/blocs/remote_config/remote_config_bloc.dart';
-import 'package:groceries/presentation/blocs/user_data/user_data_cubit.dart';
-import 'package:groceries/presentation/modules/add_items/add_items.dart';
-import 'package:groceries/presentation/modules/additional_resources/additional_resources.dart';
-import 'package:groceries/presentation/modules/category_details/category_details.dart';
-import 'package:groceries/presentation/modules/create_list/create_list.dart';
-import 'package:groceries/presentation/modules/create_recipe/create_recipe.dart';
-import 'package:groceries/presentation/modules/delete_account/delete_account.dart';
-import 'package:groceries/presentation/modules/forgot_password/forgot_password.dart';
-import 'package:groceries/presentation/modules/grocery_list_settings/grocery_list_settings.dart';
-import 'package:groceries/presentation/modules/login/login.dart';
-import 'package:groceries/presentation/modules/onboarding/onboarding.dart';
-import 'package:groceries/presentation/modules/recipe_details/recipe_details.dart';
-import 'package:groceries/presentation/modules/recipes/recipes.dart';
-import 'package:groceries/presentation/modules/register/register.dart';
-import 'package:groceries/presentation/modules/root/root.dart';
-import 'package:groceries/presentation/modules/theme_settings/theme_settings.dart';
-import 'package:groceries/presentation/modules/update_display_name/update_display_name.dart';
-import 'package:groceries/presentation/modules/update_email/update_email.dart';
-import 'package:groceries/presentation/modules/verify_user/verify_user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-part 'src/app.dart';
-part 'src/app_bloc_observer.dart';
-part 'src/app_easy_localization.dart';
-part 'src/app_view.dart';
-part 'src/blocs_providers.dart';
-part 'src/data_sources_provider.dart';
-part 'src/instances_provider.dart';
-part 'src/repositories_provider.dart';
-part 'src/use_cases_provider.dart';
+class App extends StatelessWidget {
+  const App({
+    required this.sharedPreferences,
+    required this.flavor,
+    super.key,
+  });
+
+  final SharedPreferences sharedPreferences;
+  final AppFlavor flavor;
+
+  @override
+  Widget build(BuildContext context) {
+    return InstancesProvider(
+      flavor: flavor,
+      sharedPreferences: sharedPreferences,
+      child: const DataSourcesProvider(
+        child: RepositoriesProvider(
+          child: UseCasesProvider(
+            child: BlocsProviders(),
+          ),
+        ),
+      ),
+    );
+  }
+}

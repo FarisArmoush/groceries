@@ -1,4 +1,9 @@
-part of '../app.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_remote_config/firebase_remote_config.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:groceries/data/data_sources/data_sources.dart';
 
 class DataSourcesProvider extends StatelessWidget {
   const DataSourcesProvider({required this.child, super.key});

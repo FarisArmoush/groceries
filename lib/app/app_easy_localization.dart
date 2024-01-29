@@ -1,4 +1,7 @@
-part of '../app.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
+import 'package:groceries/app/app_view.dart';
+import 'package:groceries/config/localization/remote_config_translations_loader.dart';
 
 class AppEasyLocalization extends StatelessWidget {
   const AppEasyLocalization({super.key});

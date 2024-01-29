@@ -1,4 +1,33 @@
-part of '../app.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:groceries/app/app_easy_localization.dart';
+import 'package:groceries/domain/repositories/repositories.dart';
+import 'package:groceries/domain/use_cases/use_cases.dart';
+import 'package:groceries/presentation/blocs/authentication/authentication_bloc.dart';
+import 'package:groceries/presentation/blocs/grocery_lists/grocery_lists_bloc.dart';
+import 'package:groceries/presentation/blocs/logout/logout_bloc.dart';
+import 'package:groceries/presentation/blocs/my_tasks/my_tasks_bloc.dart';
+import 'package:groceries/presentation/blocs/remote_config/remote_config_bloc.dart';
+import 'package:groceries/presentation/blocs/user_data/user_data_cubit.dart';
+import 'package:groceries/presentation/modules/add_items/add_items.dart';
+import 'package:groceries/presentation/modules/additional_resources/additional_resources.dart';
+import 'package:groceries/presentation/modules/category_details/category_details.dart';
+import 'package:groceries/presentation/modules/create_list/create_list.dart';
+import 'package:groceries/presentation/modules/create_recipe/create_recipe.dart';
+import 'package:groceries/presentation/modules/delete_account/delete_account.dart';
+import 'package:groceries/presentation/modules/forgot_password/forgot_password.dart';
+import 'package:groceries/presentation/modules/grocery_list_settings/grocery_list_settings.dart';
+import 'package:groceries/presentation/modules/login/login.dart';
+import 'package:groceries/presentation/modules/onboarding/onboarding.dart';
+import 'package:groceries/presentation/modules/recipe_details/recipe_details.dart';
+import 'package:groceries/presentation/modules/recipes/recipes.dart';
+import 'package:groceries/presentation/modules/register/register.dart';
+import 'package:groceries/presentation/modules/root/root.dart';
+import 'package:groceries/presentation/modules/theme_settings/theme_settings.dart';
+import 'package:groceries/presentation/modules/update_display_name/update_display_name.dart';
+import 'package:groceries/presentation/modules/update_email/update_email.dart';
+import 'package:groceries/presentation/modules/verify_user/verify_user.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class BlocsProviders extends StatelessWidget {
   const BlocsProviders({super.key});
