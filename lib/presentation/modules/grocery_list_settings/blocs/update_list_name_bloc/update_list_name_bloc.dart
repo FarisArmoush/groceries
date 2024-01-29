@@ -1,12 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:groceries/domain/use_cases/use_cases.dart';
+import 'package:groceries/domain/use_cases/remote_use_cases/update_list_name_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 
+part 'update_list_name_bloc.freezed.dart';
 part 'update_list_name_event.dart';
 part 'update_list_name_state.dart';
-part 'update_list_name_bloc.freezed.dart';
 
 class UpdateListNameBloc
     extends Bloc<UpdateListNameEvent, UpdateListNameState> {

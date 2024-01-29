@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:groceries/domain/use_cases/use_cases.dart';
+import 'package:groceries/domain/use_cases/authentication_use_cases/update_email_use_case.dart';
 import 'package:groceries/utils/exceptions/send_verification_email_exception.dart';
 import 'package:groceries/utils/forms/email_form.dart';
 

@@ -3,7 +3,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/data/data_sources/data_sources.dart';
+import 'package:groceries/data/data_sources/authentication_data_source.dart';
+import 'package:groceries/data/data_sources/base_groceries_data_source.dart';
+import 'package:groceries/data/data_sources/categories_data_source.dart';
+import 'package:groceries/data/data_sources/grocery_lists_data_source.dart';
+import 'package:groceries/data/data_sources/my_tasks_data_source.dart';
+import 'package:groceries/data/data_sources/recipes_data_source.dart';
+import 'package:groceries/data/data_sources/remote_config_data_source.dart';
 
 class DataSourcesProvider extends StatelessWidget {
   const DataSourcesProvider({required this.child, super.key});
