@@ -9,8 +9,8 @@ import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/error_state.dart';
 import 'package:groceries/presentation/widgets/groceries_app_bar.dart';
 import 'package:groceries/presentation/widgets/next_arrow_icon.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries/utils/extenstions/padding_extensions.dart';
+import 'package:groceries/utils/extenstions/widgets_as_extensions.dart';
 
 class CategoryDetailsView extends StatefulWidget {
   const CategoryDetailsView({
@@ -67,25 +67,46 @@ class _CategoryDetailsViewState extends State<CategoryDetailsView> {
                     ).onlyPadding(bottom: 32),
                   )
                 else
-                  SliverList.separated(
-                    itemCount: state.categories.length,
-                    itemBuilder: (context, index) {
-                      final category = state.categories[index];
-                      return ListTile(
-                        title: Text(category.name ?? ''),
-                        trailing: const NextArrowIcon(),
-                        onTap: () {
-                          context.pushNamed(
-                            AppNamedRoutes.categoryDetails,
-                            extra: category,
+                  Column(
+                    children: ListTile.divideTiles(
+                      context: context,
+                      tiles: List.generate(
+                        state.categories.length,
+                        (index) {
+                          final category = state.categories[index];
+                          return ListTile(
+                            title: Text(category.name ?? ''),
+                            trailing: const NextArrowIcon(),
+                            onTap: () {
+                              context.pushNamed(
+                                AppNamedRoutes.categoryDetails,
+                                extra: category,
+                              );
+                            },
                           );
                         },
-                      ).symmetricPadding(horizontal: 8);
-                    },
-                    separatorBuilder: (context, index) => SizedBox(
-                      height: context.deviceHeight * 0.01,
-                    ),
-                  ),
+                      ),
+                    ).toList(),
+                  ).asSliver(),
+                // SliverList.separated(
+                //   itemCount: state.categories.length,
+                //   itemBuilder: (context, index) {
+                //     final category = state.categories[index];
+                //     return ListTile(
+                //       title: Text(category.name ?? ''),
+                //       trailing: const NextArrowIcon(),
+                //       onTap: () {
+                //         context.pushNamed(
+                //           AppNamedRoutes.categoryDetails,
+                //           extra: category,
+                //         );
+                //       },
+                //     ).symmetricPadding(horizontal: 8);
+                //   },
+                //   separatorBuilder: (context, index) => SizedBox(
+                //     height: context.deviceHeight * 0.01,
+                //   ),
+                // ),
               ],
             );
           },
