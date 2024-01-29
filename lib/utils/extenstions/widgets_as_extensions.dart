@@ -1,4 +1,4 @@
-part of '../app_extensions.dart';
+import 'package:flutter/material.dart';
 
 extension WidgetsAsExtension on Widget {
   Center centered() => Center(child: this);

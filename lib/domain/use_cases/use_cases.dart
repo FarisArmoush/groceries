@@ -7,7 +7,7 @@ import 'package:groceries/data/models/recipe_model/recipe_model.dart';
 import 'package:groceries/data/models/task_model/task_model.dart';
 import 'package:groceries/data/models/user_model/user_model.dart';
 import 'package:groceries/domain/repositories/repositories.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+import 'package:groceries/utils/extenstions/date_time_parser_extension.dart';
 import 'package:groceries/utils/params/login_param/login_param.dart';
 import 'package:groceries/utils/params/register_param/register_param.dart';
 

@@ -2,12 +2,12 @@ import 'package:bloc/bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/domain/use_cases/use_cases.dart';
-import 'package:groceries/utils/exceptions/exceptions.dart';
-import 'package:groceries/utils/forms/app_forms.dart';
+import 'package:groceries/utils/exceptions/send_verification_email_exception.dart';
+import 'package:groceries/utils/forms/email_form.dart';
 
+part 'update_email_bloc.freezed.dart';
 part 'update_email_event.dart';
 part 'update_email_state.dart';
-part 'update_email_bloc.freezed.dart';
 
 class UpdateEmailBloc extends Bloc<UpdateEmailEvent, UpdateEmailState> {
   UpdateEmailBloc(this._updateEmailUseCase) : super(const UpdateEmailState()) {

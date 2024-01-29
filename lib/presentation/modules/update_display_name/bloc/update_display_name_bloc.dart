@@ -2,11 +2,11 @@ import 'package:bloc/bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/domain/use_cases/use_cases.dart';
-import 'package:groceries/utils/forms/app_forms.dart';
+import 'package:groceries/utils/forms/display_name_form.dart';
 
+part 'update_display_name_bloc.freezed.dart';
 part 'update_display_name_event.dart';
 part 'update_display_name_state.dart';
-part 'update_display_name_bloc.freezed.dart';
 
 class UpdateDisplayNameBloc
     extends Bloc<UpdateDisplayNameEvent, UpdateDisplayNameState> {

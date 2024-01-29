@@ -6,7 +6,7 @@ import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart
 import 'package:groceries/domain/use_cases/use_cases.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/forms/app_forms.dart';
+import 'package:groceries/utils/forms/grocery_list_name_form.dart';
 
 part 'create_list_bloc.freezed.dart';
 part 'create_list_event.dart';

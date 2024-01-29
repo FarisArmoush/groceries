@@ -8,7 +8,8 @@ import 'package:groceries/data/models/category_model/category_model.dart';
 import 'package:groceries/presentation/modules/category_details/bloc/category_details_bloc.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/grocery_list_details.dart';
 import 'package:groceries/presentation/widgets/widgets.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/padding_extensions.dart';
 
 export 'package:groceries/presentation/modules/category_details/bloc/category_details_bloc.dart';
 

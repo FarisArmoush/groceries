@@ -17,7 +17,10 @@ import 'package:groceries/presentation/widgets/widgets.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/date_time_parser_extension.dart';
+import 'package:groceries/utils/extenstions/padding_extensions.dart';
+import 'package:groceries/utils/extenstions/widgets_as_extensions.dart';
 
 part 'views/home_view.dart';
 part 'widgets/app_tip_text.dart';

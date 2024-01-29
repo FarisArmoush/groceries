@@ -1,4 +1,4 @@
-part of '../exceptions.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 
 class UpdateEmailException implements Exception {
   const UpdateEmailException([

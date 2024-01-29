@@ -30,7 +30,7 @@ import 'package:groceries/presentation/modules/update_email/update_email.dart';
 import 'package:groceries/presentation/modules/verify_user/verify_user.dart';
 import 'package:groceries/presentation/modules/welcome/welcome.dart';
 import 'package:groceries/presentation/modules/wrapper/wrapper.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+import 'package:groceries/utils/extenstions/route_path_extension.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// A variable that defines the routes and builders for the App.

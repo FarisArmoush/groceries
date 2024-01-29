@@ -13,7 +13,8 @@ import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/widgets/widgets.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 
 part 'views/account_settings_view.dart';
 part 'widgets/edit_user_image_button.dart';

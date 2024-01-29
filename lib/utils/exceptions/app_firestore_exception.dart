@@ -1,5 +1,3 @@
-part of '../exceptions.dart';
-
 class AppFirestoreException implements Exception {
   const AppFirestoreException([
     this.message = 'Someting went wrong.',

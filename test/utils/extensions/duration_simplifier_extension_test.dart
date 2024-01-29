@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 
 void main() {
   group('DurationSimplifier', () {

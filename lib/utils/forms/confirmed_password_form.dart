@@ -1,10 +1,10 @@
-part of '../app_forms.dart';
+import 'package:formz/formz.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 
 /// A class representing a confirmed password input form field.
 /// This class extends the FormzInput class and is specifically
 /// designed for handling confirmed password input fields.
 /// It provides validation logic for confirming passwords.
-
 class ConfirmedPasswordForm extends FormzInput<String, String> {
   /// Constructor which creates a pure [ConfirmedPasswordForm]
   /// with a given password.

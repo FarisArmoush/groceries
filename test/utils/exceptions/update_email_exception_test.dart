@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/utils/exceptions/exceptions.dart';
+import 'package:groceries/utils/exceptions/update_email_exception.dart';
 
 void main() {
   group('UpdateEmailException', () {

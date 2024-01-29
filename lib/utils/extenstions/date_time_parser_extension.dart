@@ -1,4 +1,4 @@
-part of '../app_extensions.dart';
+import 'package:groceries/utils/extenstions/num_extensions.dart';
 
 extension DateTimeParser on String {
   /// Formats date string to look like `11th of July 2023`

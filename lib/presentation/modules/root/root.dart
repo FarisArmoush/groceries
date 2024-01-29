@@ -13,7 +13,7 @@ import 'package:groceries/presentation/modules/root/bloc/root_navigation_bloc.da
 import 'package:groceries/presentation/modules/settings/settings.dart';
 import 'package:groceries/presentation/widgets/widgets.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 export 'package:groceries/presentation/modules/root/bloc/root_navigation_bloc.dart';
 

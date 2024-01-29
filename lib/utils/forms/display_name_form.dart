@@ -1,4 +1,6 @@
-part of '../app_forms.dart';
+import 'package:formz/formz.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/utils/extenstions/num_extensions.dart';
 
 /// A class representing a display name input form field.
 /// This class extends the FormzInput class and is specifically

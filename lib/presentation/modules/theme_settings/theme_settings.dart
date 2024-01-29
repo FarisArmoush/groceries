@@ -9,7 +9,7 @@ import 'package:groceries/presentation/modules/theme_settings/cubit/theme_cubit.
 import 'package:groceries/presentation/widgets/widgets.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 export 'package:groceries/presentation/modules/theme_settings/cubit/theme_cubit.dart';
 

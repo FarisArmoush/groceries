@@ -11,7 +11,8 @@ import 'package:groceries/presentation/modules/delete_account/bloc/delete_accoun
 import 'package:groceries/presentation/widgets/widgets.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/widgets_as_extensions.dart';
 
 export 'package:groceries/presentation/modules/delete_account/bloc/delete_account_bloc.dart';
 

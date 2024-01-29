@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 abstract final class AppPaddings {
   AppPaddings._();

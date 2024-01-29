@@ -1,4 +1,6 @@
-part of '../app_extensions.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:groceries/presentation/modules/theme_settings/cubit/theme_cubit.dart';
 
 extension ContextExtensions on BuildContext {
   double get deviceWidth => MediaQuery.sizeOf(this).width;

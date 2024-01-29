@@ -1,4 +1,6 @@
-part of '../app_forms.dart';
+import 'package:formz/formz.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/utils/app_reg_exps.dart';
 
 /// A class representing an email input form field.
 ///

@@ -1,4 +1,4 @@
-part of '../app_extensions.dart';
+import 'package:flutter/material.dart';
 
 extension PaddingExtensions on Widget {
   Padding symmetricPadding({

@@ -1,4 +1,6 @@
-part of '../app_forms.dart';
+import 'package:formz/formz.dart';
+import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/utils/extenstions/num_extensions.dart';
 
 class GroceryListNameForm extends FormzInput<String, String> {
   const GroceryListNameForm.pure(super.value) : super.pure();

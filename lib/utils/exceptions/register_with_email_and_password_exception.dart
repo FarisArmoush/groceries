@@ -1,4 +1,4 @@
-part of '../exceptions.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 
 /// Creates a new instance of [RegisterWithEmailAndPasswordException]
 /// from a Firebase error code.

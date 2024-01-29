@@ -12,7 +12,10 @@ import 'package:groceries/presentation/widgets/app_custom_cupertino_sliver_navig
 import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
+import 'package:groceries/utils/extenstions/padding_extensions.dart';
+import 'package:groceries/utils/extenstions/widgets_as_extensions.dart';
 import 'package:shimmer/shimmer.dart';
 
 part 'app_bottom_navigation_bar.dart';

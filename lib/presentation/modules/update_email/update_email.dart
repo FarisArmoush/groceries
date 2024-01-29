@@ -10,7 +10,8 @@ import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/modules/update_email/bloc/update_email_bloc.dart';
 import 'package:groceries/presentation/widgets/widgets.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
-import 'package:groceries/utils/extenstions/app_extensions.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/padding_extensions.dart';
 
 export 'package:groceries/presentation/modules/update_email/bloc/update_email_bloc.dart';
 
