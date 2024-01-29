@@ -54,14 +54,13 @@ class AccountSettingsView extends StatelessWidget {
             height: context.deviceHeight * 0.05,
           ),
           FilledButton(
-            onPressed: () async {
-              unawaited(
-                showDialog<AppLoadingIndicator>(
-                  context: context,
-                  builder: (context) => const AppLoadingIndicator(),
-                ),
+            onPressed: () {
+              showDialog<AppLoadingIndicator>(
+                context: context,
+                builder: (context) => const AppLoadingIndicator(),
+                barrierDismissible: false,
               );
-              await Future.delayed(
+              Future.delayed(
                 500.milliseconds,
                 () => context
                   ..pop()
