@@ -3,6 +3,7 @@ import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/register_with_email_and_password_use_case.dart';
 import 'package:groceries/utils/exceptions/register_with_email_and_password_exception.dart';
+import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 import 'package:groceries/utils/forms/confirmed_password_form.dart';
 import 'package:groceries/utils/forms/display_name_form.dart';
 import 'package:groceries/utils/forms/email_form.dart';
@@ -138,6 +139,11 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       );
     } catch (_) {
       emit(state.copyWith(status: FormzSubmissionStatus.failure));
+    } finally {
+      await Future.delayed(
+        200.milliseconds,
+        () => emit(state.copyWith(status: FormzSubmissionStatus.initial)),
+      );
     }
   }
 }

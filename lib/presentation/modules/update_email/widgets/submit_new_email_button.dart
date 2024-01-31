@@ -14,12 +14,13 @@ class SubmitNewEmailButton extends StatelessWidget {
       width: context.deviceHeight,
       child: BlocBuilder<UpdateEmailBloc, UpdateEmailState>(
         builder: (context, state) {
+          final canSubmit = state.isValid || state.email.value.isNotEmpty;
           return ElevatedButton(
-            onPressed: !state.isValid
-                ? null
-                : () => context.read<UpdateEmailBloc>().add(
+            onPressed: canSubmit
+                ? () => context.read<UpdateEmailBloc>().add(
                       const UpdateEmailEvent.updateEmail(),
-                    ),
+                    )
+                : null,
             child: Text(AppTranslations.general.submit),
           );
         },

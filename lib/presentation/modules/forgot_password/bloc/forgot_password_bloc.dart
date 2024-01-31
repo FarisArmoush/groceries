@@ -3,6 +3,7 @@ import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/send_password_reset_email_use_case.dart';
 import 'package:groceries/utils/exceptions/send_password_reset_email_exception.dart';
+import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 import 'package:groceries/utils/forms/email_form.dart';
 
 part 'forgot_password_bloc.freezed.dart';
@@ -61,6 +62,11 @@ class ForgotPasswordBloc
         state.copyWith(
           status: FormzSubmissionStatus.failure,
         ),
+      );
+    } finally {
+      await Future.delayed(
+        200.milliseconds,
+        () => emit(state.copyWith(status: FormzSubmissionStatus.initial)),
       );
     }
   }

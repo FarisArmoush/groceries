@@ -41,6 +41,7 @@ class AppTextField extends StatelessWidget {
     this.style,
     this.initialValue,
     this.textCapitalization = TextCapitalization.none,
+    this.onFieldSubmitted,
   });
 
   /// The text displayed as the label of the text field.
@@ -123,10 +124,13 @@ class AppTextField extends StatelessWidget {
 
   final TextCapitalization textCapitalization;
 
+  final void Function(String)? onFieldSubmitted;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       key: key,
+      onFieldSubmitted: onFieldSubmitted,
       textCapitalization: textCapitalization,
       validator: validator,
       initialValue: initialValue,
