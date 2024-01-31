@@ -26,7 +26,7 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
       onClosing: () {},
       builder: (context) {
         return ListView(
-          padding: AppPaddings.bottomSheetPadding(context),
+          padding: AppPaddings.bottomSheet(context),
           shrinkWrap: true,
           children: [
             Row(

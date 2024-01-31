@@ -11,7 +11,7 @@ class RecipeOptionsBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       shrinkWrap: true,
-      padding: AppPaddings.bottomSheetPadding(context),
+      padding: AppPaddings.bottomSheet(context),
       children: [
         BottomSheetButton(
           onTap: () {},

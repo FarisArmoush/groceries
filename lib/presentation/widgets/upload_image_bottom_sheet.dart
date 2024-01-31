@@ -17,7 +17,7 @@ class UploadImageBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      padding: AppPaddings.bottomSheetPadding(context),
+      padding: AppPaddings.bottomSheet(context),
       shrinkWrap: true,
       children: [
         BottomSheetButton(

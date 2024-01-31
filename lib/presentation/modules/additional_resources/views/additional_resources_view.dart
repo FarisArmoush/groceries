@@ -16,7 +16,7 @@ class AdditionalResourcesView extends StatelessWidget {
         title: Text(AppTranslations.additionalResources.additionalResources),
       ),
       body: ListView(
-        padding: AppPaddings.scaffoldPadding(context),
+        padding: AppPaddings.scaffold(context),
         children: [
           const AppVersionListTile(),
           Divider(

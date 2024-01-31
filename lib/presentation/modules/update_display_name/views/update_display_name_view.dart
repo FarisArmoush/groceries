@@ -25,7 +25,7 @@ class UpdateDisplayNameView extends StatelessWidget {
         body: SafeArea(
           child: ListView(
             shrinkWrap: true,
-            padding: AppPaddings.scaffoldPadding(context),
+            padding: AppPaddings.scaffold(context),
             children: [
               const UpdateDisplayNameHeaderText(),
               SizedBox(

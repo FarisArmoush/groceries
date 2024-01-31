@@ -16,7 +16,7 @@ class ThemeSettingsView extends StatelessWidget {
         title: Text(AppTranslations.theme.theme),
       ),
       body: ListView(
-        padding: AppPaddings.scaffoldPadding(context),
+        padding: AppPaddings.scaffold(context),
         children: [
           const ThemeHeaderText(),
           SizedBox(

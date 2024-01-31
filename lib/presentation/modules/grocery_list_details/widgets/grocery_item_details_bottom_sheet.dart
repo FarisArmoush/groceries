@@ -22,7 +22,7 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      padding: AppPaddings.bottomSheetPadding(context),
+      padding: AppPaddings.bottomSheet(context),
       children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

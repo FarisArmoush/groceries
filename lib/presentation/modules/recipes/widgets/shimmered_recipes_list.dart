@@ -12,7 +12,7 @@ class ShimmeredRecipesList extends StatelessWidget {
       shrinkWrap: true,
       primary: false,
       itemCount: 3,
-      padding: AppPaddings.scaffoldPadding(context),
+      padding: AppPaddings.scaffold(context),
       itemBuilder: (context, index) => const ShimmeredRecipeCard(),
       separatorBuilder: (context, index) => SizedBox(
         height: context.deviceHeight * 0.04,

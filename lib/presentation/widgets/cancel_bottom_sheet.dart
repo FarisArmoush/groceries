@@ -19,7 +19,7 @@ class CancelBottomSheet extends StatelessWidget {
     return ListView(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      padding: AppPaddings.bottomSheetPadding(context),
+      padding: AppPaddings.bottomSheet(context),
       children: [
         Text(
           title ?? AppTranslations.general.discardChanges,

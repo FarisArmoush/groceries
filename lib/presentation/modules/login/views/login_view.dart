@@ -24,7 +24,7 @@ class LoginView extends StatelessWidget {
       body: BlocListener<LoginBloc, LoginState>(
         listener: listener,
         child: ListView(
-          padding: AppPaddings.scaffoldPadding(context),
+          padding: AppPaddings.scaffold(context),
           children: [
             SizedBox(
               height: context.deviceHeight * 0.09,

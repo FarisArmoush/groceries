@@ -46,7 +46,7 @@ class _CreateListViewState extends State<CreateListView> {
         ),
         body: ListView(
           shrinkWrap: true,
-          padding: AppPaddings.scaffoldPadding(context),
+          padding: AppPaddings.scaffold(context),
           children: [
             const CreateListTextField(),
             SizedBox(
