@@ -18,4 +18,17 @@ abstract final class AppPaddings {
       vertical: context.deviceHeight * 0.035,
     );
   }
+
+  static EdgeInsetsDirectional scaffoldHorizontal(BuildContext context) {
+    return EdgeInsetsDirectional.symmetric(
+      horizontal: context.deviceWidth * 0.03,
+    );
+  }
+
+  static EdgeInsetsDirectional scaffoldVertical(BuildContext context) {
+    return EdgeInsetsDirectional.only(
+      top: context.deviceHeight * 0.035,
+      bottom: context.deviceHeight * 0.04,
+    );
+  }
 }
