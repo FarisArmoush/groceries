@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/domain/repositories/authentication_repository.dart';
 import 'package:groceries/domain/repositories/base_groceries_repository.dart';
 import 'package:groceries/domain/repositories/cateogries_repository.dart';
+import 'package:groceries/domain/repositories/grocery_list_details_repository.dart';
 import 'package:groceries/domain/repositories/grocery_lists_repository.dart';
 import 'package:groceries/domain/repositories/my_tasks_repository.dart';
 import 'package:groceries/domain/repositories/recipes_repository.dart';
@@ -128,22 +129,22 @@ class UseCasesProvider extends StatelessWidget {
             ),
             RepositoryProvider(
               create: (context) => DeleteGroceryListUseCase(
-                context.read<GroceryListsRepository>(),
+                context.read<GroceryListDetailsRepository>(),
               ),
             ),
             RepositoryProvider(
               create: (context) => RemoveMemberFromListUseCase(
-                context.read<GroceryListsRepository>(),
+                context.read<GroceryListDetailsRepository>(),
               ),
             ),
             RepositoryProvider(
               create: (context) => UpdateListImageUseCase(
-                context.read<GroceryListsRepository>(),
+                context.read<GroceryListDetailsRepository>(),
               ),
             ),
             RepositoryProvider(
               create: (context) => UpdateListNameUseCase(
-                context.read<GroceryListsRepository>(),
+                context.read<GroceryListDetailsRepository>(),
               ),
             ),
             RepositoryProvider(

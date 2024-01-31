@@ -1,12 +1,12 @@
-import 'package:groceries/domain/repositories/grocery_lists_repository.dart';
+import 'package:groceries/domain/repositories/grocery_list_details_repository.dart';
 import 'package:groceries/domain/use_cases/app_use_cases.dart';
 
 class UpdateListImageUseCase extends FutureInputUseCase<String?> {
-  UpdateListImageUseCase(this._groceryListsRepository);
+  UpdateListImageUseCase(this._repository);
 
-  final GroceryListsRepository _groceryListsRepository;
+  final GroceryListDetailsRepository _repository;
   @override
   Future<void> call(String? input) {
-    return _groceryListsRepository.updateListImage(input);
+    return _repository.updateListImage(input);
   }
 }
