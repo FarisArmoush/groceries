@@ -10,7 +10,8 @@ class UpdateDisplayNameTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<UpdateDisplayNameBloc, UpdateDisplayNameState>(
       buildWhen: (previous, current) =>
-          previous.displayName != current.displayName,
+          previous.displayName != current.displayName ||
+          previous.status != current.status,
       builder: (context, state) {
         return AppTextField(
           labelText: 'New username',
@@ -19,6 +20,11 @@ class UpdateDisplayNameTextField extends StatelessWidget {
               ),
           errorText: state.displayName.displayError,
           validator: (value) => state.displayName.validator(value),
+          onFieldSubmitted: (p0) => !state.isValid
+              ? null
+              : () => context.read<UpdateDisplayNameBloc>().add(
+                    const UpdateDisplayNameEvent.updateDisplayName(),
+                  ),
         );
       },
     );

@@ -21,7 +21,7 @@ class VerifyUserView extends StatelessWidget {
           initial: () => const VerifyUserInitialBody(),
           loading: () => const LoadingSendingVerificationEmail(),
           success: () => const VerificationEmailSentSuccessfully(),
-          failure: (_) => const FailedToSendVerificationEmail(),
+          failure: (error) => FailedToSendVerificationEmail(error: error),
         ),
       ),
     );

@@ -14,12 +14,13 @@ class SubmitNewDisplayNameButton extends StatelessWidget {
       width: context.deviceHeight,
       child: BlocBuilder<UpdateDisplayNameBloc, UpdateDisplayNameState>(
         builder: (context, state) {
+          final canSubmit = state.isValid || state.displayName.value.isNotEmpty;
           return ElevatedButton(
-            onPressed: !state.isValid
-                ? null
-                : () => context.read<UpdateDisplayNameBloc>().add(
+            onPressed: canSubmit
+                ? () => context.read<UpdateDisplayNameBloc>().add(
                       const UpdateDisplayNameEvent.updateDisplayName(),
-                    ),
+                    )
+                : null,
             child: Text(AppTranslations.general.submit),
           );
         },
