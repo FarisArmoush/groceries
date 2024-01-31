@@ -12,7 +12,7 @@ class ErrorState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO(FarisArmoush): Implement Error State Widget.
+    // TODO(FarisArmoush): Implement Error State Widget -> (https://github.com/FarisArmoush/groceries/issues/238)
     return const Center(
       child: Column(),
     );
