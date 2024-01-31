@@ -10,7 +10,7 @@ class YourAccountIsVerifiedBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: AppPaddings.bottomSheetPadding(context),
+      padding: AppPaddings.bottomSheet(context),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [

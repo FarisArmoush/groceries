@@ -25,7 +25,7 @@ class ForgotPasswordView extends StatelessWidget {
         child: Scaffold(
           appBar: AppBar(),
           body: ListView(
-            padding: AppPaddings.scaffoldPadding(context),
+            padding: AppPaddings.scaffold(context),
             children: [
               SizedBox(
                 height: context.deviceWidth * 0.02,

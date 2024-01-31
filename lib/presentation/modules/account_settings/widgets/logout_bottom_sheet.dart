@@ -18,7 +18,7 @@ class LogoutBottomSheet extends StatelessWidget {
           loading: AppLoadingIndicator.new,
           orElse: () {
             return ListView(
-              padding: AppPaddings.bottomSheetPadding(context),
+              padding: AppPaddings.bottomSheet(context),
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               children: [

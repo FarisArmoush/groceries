@@ -26,7 +26,7 @@ class AccountSettingsView extends StatelessWidget {
         title: Text(AppTranslations.accountSettings.accountSettings),
       ),
       body: ListView(
-        padding: AppPaddings.scaffoldPadding(context),
+        padding: AppPaddings.scaffold(context),
         children: [
           const UserImage(),
           const EditUserImageButton(),

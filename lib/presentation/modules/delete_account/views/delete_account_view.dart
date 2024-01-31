@@ -18,7 +18,7 @@ class DeleteAccountView extends StatelessWidget {
       ),
       body: ListView(
         shrinkWrap: true,
-        padding: AppPaddings.scaffoldPadding(context),
+        padding: AppPaddings.scaffold(context),
         children: [
           Assets.svg.illGaming.svg(
             height: context.deviceHeight * 0.4,

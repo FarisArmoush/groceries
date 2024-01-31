@@ -19,7 +19,7 @@ class RecipesList extends StatelessWidget {
       shrinkWrap: true,
       primary: false,
       itemCount: recipes.length,
-      padding: AppPaddings.scaffoldPadding(context),
+      padding: AppPaddings.scaffold(context),
       itemBuilder: (context, index) {
         final recipe = recipes[index];
         return RecipeCard(

@@ -3,7 +3,7 @@ import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 abstract final class AppPaddings {
   AppPaddings._();
-  static EdgeInsetsDirectional scaffoldPadding(BuildContext context) {
+  static EdgeInsetsDirectional scaffold(BuildContext context) {
     return EdgeInsetsDirectional.only(
       start: context.deviceWidth * 0.03,
       end: context.deviceWidth * 0.03,
@@ -12,7 +12,7 @@ abstract final class AppPaddings {
     );
   }
 
-  static EdgeInsetsDirectional bottomSheetPadding(BuildContext context) {
+  static EdgeInsetsDirectional bottomSheet(BuildContext context) {
     return EdgeInsetsDirectional.symmetric(
       horizontal: context.deviceWidth * 0.05,
       vertical: context.deviceHeight * 0.035,

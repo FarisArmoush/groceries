@@ -46,7 +46,7 @@ class VerifyToUpdateEmailBottomSheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       shrinkWrap: true,
-      padding: AppPaddings.bottomSheetPadding(context),
+      padding: AppPaddings.bottomSheet(context),
       children: [
         Assets.svg.illWriting.svg(
           height: context.deviceHeight * 0.25,

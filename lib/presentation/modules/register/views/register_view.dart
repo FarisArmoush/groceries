@@ -26,7 +26,7 @@ class RegisterView extends StatelessWidget {
       body: BlocListener<RegisterBloc, RegisterState>(
         listener: _listener,
         child: ListView(
-          padding: AppPaddings.scaffoldPadding(context),
+          padding: AppPaddings.scaffold(context),
           children: [
             SizedBox(
               height: context.deviceHeight * 0.09,

@@ -42,7 +42,7 @@ class RecipeDetailsView extends StatelessWidget {
             ),
           ),
           SliverPadding(
-            padding: AppPaddings.scaffoldPadding(context),
+            padding: AppPaddings.scaffold(context),
             sliver: SliverList.list(
               children: [
                 CachedImage(

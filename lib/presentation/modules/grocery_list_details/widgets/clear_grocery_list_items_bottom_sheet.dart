@@ -12,7 +12,7 @@ class ClearGroceryListItemsBottomSheet extends StatelessWidget {
     return ListView(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      padding: AppPaddings.bottomSheetPadding(context),
+      padding: AppPaddings.bottomSheet(context),
       children: [
         Text(
           AppTranslations.groceryLists.clearGroceriesFromList,

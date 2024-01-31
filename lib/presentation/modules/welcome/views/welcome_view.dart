@@ -12,13 +12,8 @@ class WelcomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        padding: EdgeInsets.symmetric(
-          horizontal: context.deviceWidth * 0.09,
-        ),
+        padding: EdgeInsetsDirectional.all(context.deviceWidth * 0.09),
         children: [
-          SizedBox(
-            height: context.deviceHeight * 0.15,
-          ),
           const WelcomeViewHeaderText(),
           SizedBox(
             height: context.deviceHeight * 0.065,

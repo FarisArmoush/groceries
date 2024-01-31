@@ -23,7 +23,7 @@ class GroceryListSettingsView extends StatelessWidget {
       ),
       body: ListView(
         primary: true,
-        padding: AppPaddings.scaffoldPadding(context),
+        padding: AppPaddings.scaffold(context),
         children: [
           const EditListImage(),
           SizedBox(

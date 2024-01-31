@@ -22,7 +22,7 @@ class CreateRecipeView extends StatelessWidget {
             middle: Text(AppTranslations.createRecipe.createRecipe),
           ),
           SliverPadding(
-            padding: AppPaddings.scaffoldPadding(context),
+            padding: AppPaddings.scaffold(context),
             sliver: SliverList.list(
               children: [
                 const CreateRecipeNameTextField(),
