@@ -40,6 +40,7 @@ class AppTextField extends StatelessWidget {
     this.floatingLabelStyle,
     this.style,
     this.initialValue,
+    this.textCapitalization = TextCapitalization.none,
   });
 
   /// The text displayed as the label of the text field.
@@ -120,11 +121,13 @@ class AppTextField extends StatelessWidget {
 
   final String? initialValue;
 
+  final TextCapitalization textCapitalization;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       key: key,
-      textCapitalization: TextCapitalization.words,
+      textCapitalization: textCapitalization,
       validator: validator,
       initialValue: initialValue,
       controller: controller,
