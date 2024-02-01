@@ -19,7 +19,7 @@ dependencies:
   collection: ^1.17.2
   cupertino_icons: ^1.0.2
   easy_localization: ^3.0.1
-  firebase_analytics: ^10.4.2
+  firebase_analytics: ^10.8.1
   firebase_auth: ^4.2.4
   firebase_core: ^2.4.1
   firebase_crashlytics: ^3.3.0
