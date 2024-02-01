@@ -15,17 +15,17 @@ dependencies:
     sdk: flutter
   bloc: ^8.1.1
   cached_network_image: ^3.2.3
-  cloud_firestore: ^4.3.1
+  cloud_firestore: ^4.15.0
   collection: ^1.17.2
   cupertino_icons: ^1.0.2
   easy_localization: ^3.0.1
-  firebase_analytics: ^10.4.2
+  firebase_analytics: ^10.8.2
   firebase_auth: ^4.2.4
-  firebase_core: ^2.4.1
+  firebase_core: ^2.25.1
   firebase_crashlytics: ^3.3.0
-  firebase_database: ^10.0.9
+  firebase_database: ^10.4.2
   firebase_performance: ^0.9.2+2
-  firebase_remote_config: ^4.2.0
+  firebase_remote_config: ^4.3.9
   firebase_storage: ^11.0.10
   flutter_bloc: ^8.1.1
   flutter_svg: ^2.0.6
