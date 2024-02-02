@@ -11,16 +11,20 @@ import 'package:groceries/domain/use_cases/authentication_use_cases/send_passwor
 import 'package:groceries/domain/use_cases/authentication_use_cases/update_display_name_use_case.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/update_email_use_case.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/verify_user_use_case.dart';
+import 'package:groceries/domain/use_cases/remote_use_cases/add_item_to_list_use_case.dart';
+import 'package:groceries/domain/use_cases/remote_use_cases/clear_grocery_list_items_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/create_list_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/create_recipe_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/delete_grocery_list_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/fetch_category_items_use_case.dart';
+import 'package:groceries/domain/use_cases/remote_use_cases/fetch_grocery_list_details_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/fetch_parent_categories_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/fetch_sub_categories_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/grocery_lists_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/my_tasks_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/recipes_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/remote_config_use_case.dart';
+import 'package:groceries/domain/use_cases/remote_use_cases/remove_item_from_list_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/remove_member_from_list_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/update_list_image_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/update_list_name_use_case.dart';
@@ -37,6 +41,7 @@ import 'package:groceries/presentation/modules/create_list/bloc/create_list_bloc
 import 'package:groceries/presentation/modules/create_recipe/bloc/create_recipe_bloc.dart';
 import 'package:groceries/presentation/modules/delete_account/bloc/delete_account_bloc.dart';
 import 'package:groceries/presentation/modules/forgot_password/bloc/forgot_password_bloc.dart';
+import 'package:groceries/presentation/modules/grocery_list_details/bloc/grocery_list_details_bloc.dart';
 import 'package:groceries/presentation/modules/grocery_list_settings/blocs/delete_list/delete_list_bloc.dart';
 import 'package:groceries/presentation/modules/grocery_list_settings/blocs/remove_member_from_list_bloc/remove_member_from_list_bloc.dart';
 import 'package:groceries/presentation/modules/grocery_list_settings/blocs/update_list_image_bloc/update_list_image_bloc.dart';
@@ -190,6 +195,17 @@ class BlocsProviders extends StatelessWidget {
             BlocProvider(
               create: (context) => LogoutBloc(
                 context.read<LogoutUseCase>(),
+              ),
+            ),
+            BlocProvider(
+              create: (context) => GroceryListDetailsBloc(
+                addItemToListUseCase: context.read<AddItemToListUseCase>(),
+                removeItemFromListUseCase:
+                    context.read<RemoveItemFromListUseCase>(),
+                fetchGroceryListDetailsUseCase:
+                    context.read<FetchGroceryListDetailsUseCase>(),
+                clearGroceryListItemsUseCase:
+                    context.read<ClearGroceryListItemsUseCase>(),
               ),
             ),
           ],

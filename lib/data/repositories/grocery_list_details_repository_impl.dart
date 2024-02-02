@@ -40,4 +40,9 @@ class GroceryListDetailsRepositoryImpl extends GroceryListDetailsRepository {
   Future<void> updateListName(String? name) async {
     return _dataSource.updateListName(name);
   }
+
+  @override
+  Future<void> clearList(String? uid) {
+    throw UnimplementedError();
+  }
 }

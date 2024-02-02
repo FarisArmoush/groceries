@@ -12,28 +12,30 @@ class GroceryListDetailsDataSource {
   final FirebaseFirestore _firestore;
 
   Future<GroceryListDetailsModel?> fetchDetails(String? uid) async {
-    Future.delayed(2.seconds, () {
-      return GroceryListDetailsModel(
-        id: uid,
-        name: 'Work',
-        imageUrl: mockImage,
-        items: [
-          GroceryModel(
-            categoryId: '1235',
-            name: 'Chicken',
-            id: '',
-            isDone: false,
-            refinements: <RefinementsModel>[],
-            notes: '',
-            image: '',
-            creationDate: DateTime.now(),
-          ),
-        ],
-        members: [],
-        creationDate: DateTime.now(),
-      );
-    });
-    return null;
+    await Future.delayed(2.seconds, () {});
+    return GroceryListDetailsModel(
+      id: uid,
+      name: 'Work',
+      imageUrl: mockImage,
+      items: [
+        GroceryModel(
+          categoryId: '1235',
+          name: 'Chicken',
+          id: '',
+          isDone: false,
+          refinements: <RefinementsModel>[],
+          notes: '',
+          image: '',
+          creationDate: DateTime.now(),
+        ),
+      ],
+      members: [],
+      creationDate: DateTime.now(),
+    );
+  }
+
+  Future<void> clearList(String? uid) async {
+    throw UnimplementedError();
   }
 
   Future<void> addItem(String? itemUid) async {
