@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/domain/repositories/authentication_repository.dart';
 import 'package:groceries/domain/repositories/base_groceries_repository.dart';
 import 'package:groceries/domain/repositories/cateogries_repository.dart';
+import 'package:groceries/domain/repositories/grocery_list_details_repository.dart';
 import 'package:groceries/domain/repositories/grocery_lists_repository.dart';
 import 'package:groceries/domain/repositories/my_tasks_repository.dart';
 import 'package:groceries/domain/repositories/recipes_repository.dart';
@@ -16,16 +17,20 @@ import 'package:groceries/domain/use_cases/authentication_use_cases/send_passwor
 import 'package:groceries/domain/use_cases/authentication_use_cases/update_display_name_use_case.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/update_email_use_case.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/verify_user_use_case.dart';
+import 'package:groceries/domain/use_cases/remote_use_cases/add_item_to_list_use_case.dart';
+import 'package:groceries/domain/use_cases/remote_use_cases/clear_grocery_list_items_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/create_list_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/create_recipe_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/delete_grocery_list_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/fetch_category_items_use_case.dart';
+import 'package:groceries/domain/use_cases/remote_use_cases/fetch_grocery_list_details_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/fetch_parent_categories_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/fetch_sub_categories_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/grocery_lists_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/my_tasks_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/recipes_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/remote_config_use_case.dart';
+import 'package:groceries/domain/use_cases/remote_use_cases/remove_item_from_list_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/remove_member_from_list_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/update_list_image_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/update_list_name_use_case.dart';
@@ -128,22 +133,42 @@ class UseCasesProvider extends StatelessWidget {
             ),
             RepositoryProvider(
               create: (context) => DeleteGroceryListUseCase(
-                context.read<GroceryListsRepository>(),
+                context.read<GroceryListDetailsRepository>(),
               ),
             ),
             RepositoryProvider(
               create: (context) => RemoveMemberFromListUseCase(
-                context.read<GroceryListsRepository>(),
+                context.read<GroceryListDetailsRepository>(),
               ),
             ),
             RepositoryProvider(
               create: (context) => UpdateListImageUseCase(
-                context.read<GroceryListsRepository>(),
+                context.read<GroceryListDetailsRepository>(),
               ),
             ),
             RepositoryProvider(
               create: (context) => UpdateListNameUseCase(
-                context.read<GroceryListsRepository>(),
+                context.read<GroceryListDetailsRepository>(),
+              ),
+            ),
+            RepositoryProvider(
+              create: (context) => FetchGroceryListDetailsUseCase(
+                context.read<GroceryListDetailsRepository>(),
+              ),
+            ),
+            RepositoryProvider(
+              create: (context) => AddItemToListUseCase(
+                context.read<GroceryListDetailsRepository>(),
+              ),
+            ),
+            RepositoryProvider(
+              create: (context) => RemoveItemFromListUseCase(
+                context.read<GroceryListDetailsRepository>(),
+              ),
+            ),
+            RepositoryProvider(
+              create: (context) => ClearGroceryListItemsUseCase(
+                context.read<GroceryListDetailsRepository>(),
               ),
             ),
             RepositoryProvider(

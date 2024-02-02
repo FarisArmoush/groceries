@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
+import 'package:groceries/data/models/grocery_list_details_model/grocery_list_details_model.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/widgets/bottom_sheet_button.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
@@ -15,11 +15,11 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
     super.key,
   });
 
-  final GroceryListModel listModel;
+  final GroceryListDetailsModel? listModel;
 
   @override
   Widget build(BuildContext context) {
-    final itemsIsEmpty = listModel.items?.isNotEmpty ?? false;
+    final itemsIsEmpty = listModel?.items?.isNotEmpty ?? false;
     return BottomSheet(
       showDragHandle: false,
       enableDrag: false,

@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/data/models/category_model/category_model.dart';
-import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
 import 'package:groceries/data/models/recipe_model/recipe_model.dart';
 import 'package:groceries/presentation/modules/account_settings/views/account_settings_view.dart';
 import 'package:groceries/presentation/modules/add_items/views/add_items_view.dart';
@@ -130,9 +129,9 @@ final GoRouter appGoRouter = GoRouter(
             ),
             GoRoute(
               name: AppNamedRoutes.groceryListDetails,
-              path: AppNamedRoutes.groceryListDetails,
+              path: '${AppNamedRoutes.groceryListDetails}/:uid',
               builder: (context, state) => GroceryListDetailsView(
-                listModel: state.extra! as GroceryListModel,
+                uid: state.pathParameters['uid'],
               ),
               routes: [
                 GoRoute(

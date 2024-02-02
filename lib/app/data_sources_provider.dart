@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/data/data_sources/authentication_data_source.dart';
 import 'package:groceries/data/data_sources/base_groceries_data_source.dart';
 import 'package:groceries/data/data_sources/categories_data_source.dart';
+import 'package:groceries/data/data_sources/grocery_list_details_data_source.dart';
 import 'package:groceries/data/data_sources/grocery_lists_data_source.dart';
 import 'package:groceries/data/data_sources/my_tasks_data_source.dart';
 import 'package:groceries/data/data_sources/recipes_data_source.dart';
@@ -56,6 +57,11 @@ class DataSourcesProvider extends StatelessWidget {
             ),
             RepositoryProvider(
               create: (context) => CategoriesDataSource(
+                context.read<FirebaseFirestore>(),
+              ),
+            ),
+            RepositoryProvider(
+              create: (context) => GroceryListDetailsDataSource(
                 context.read<FirebaseFirestore>(),
               ),
             ),

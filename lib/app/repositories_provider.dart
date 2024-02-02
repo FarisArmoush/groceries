@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/data/data_sources/authentication_data_source.dart';
 import 'package:groceries/data/data_sources/base_groceries_data_source.dart';
 import 'package:groceries/data/data_sources/categories_data_source.dart';
+import 'package:groceries/data/data_sources/grocery_list_details_data_source.dart';
 import 'package:groceries/data/data_sources/grocery_lists_data_source.dart';
 import 'package:groceries/data/data_sources/my_tasks_data_source.dart';
 import 'package:groceries/data/data_sources/recipes_data_source.dart';
@@ -10,6 +11,7 @@ import 'package:groceries/data/data_sources/remote_config_data_source.dart';
 import 'package:groceries/data/repositories/authentication_repository_impl.dart';
 import 'package:groceries/data/repositories/base_groceries_repository_impl.dart';
 import 'package:groceries/data/repositories/categories_repository_impl.dart';
+import 'package:groceries/data/repositories/grocery_list_details_repository_impl.dart';
 import 'package:groceries/data/repositories/grocery_lists_repository_impl.dart';
 import 'package:groceries/data/repositories/my_tasks_repository_impl.dart';
 import 'package:groceries/data/repositories/recipes_repository_impl.dart';
@@ -17,6 +19,7 @@ import 'package:groceries/data/repositories/remote_config_repository_impl.dart';
 import 'package:groceries/domain/repositories/authentication_repository.dart';
 import 'package:groceries/domain/repositories/base_groceries_repository.dart';
 import 'package:groceries/domain/repositories/cateogries_repository.dart';
+import 'package:groceries/domain/repositories/grocery_list_details_repository.dart';
 import 'package:groceries/domain/repositories/grocery_lists_repository.dart';
 import 'package:groceries/domain/repositories/my_tasks_repository.dart';
 import 'package:groceries/domain/repositories/recipes_repository.dart';
@@ -66,6 +69,11 @@ class RepositoriesProvider extends StatelessWidget {
             RepositoryProvider<CategoriesRepository>(
               create: (context) => CategoriesRepositoryImpl(
                 context.read<CategoriesDataSource>(),
+              ),
+            ),
+            RepositoryProvider<GroceryListDetailsRepository>(
+              create: (context) => GroceryListDetailsRepositoryImpl(
+                context.read<GroceryListDetailsDataSource>(),
               ),
             ),
           ],

@@ -1,13 +1,12 @@
-import 'package:groceries/data/models/user_model/user_model.dart';
-import 'package:groceries/domain/repositories/grocery_lists_repository.dart';
+import 'package:groceries/domain/repositories/grocery_list_details_repository.dart';
 import 'package:groceries/domain/use_cases/app_use_cases.dart';
 
-class RemoveMemberFromListUseCase extends FutureInputUseCase<UserModel?> {
-  RemoveMemberFromListUseCase(this._groceryListsRepository);
+class RemoveMemberFromListUseCase extends FutureInputUseCase<String?> {
+  RemoveMemberFromListUseCase(this._repository);
 
-  final GroceryListsRepository _groceryListsRepository;
+  final GroceryListDetailsRepository _repository;
   @override
-  Future<void> call(UserModel? input) {
-    return _groceryListsRepository.removeMember(input);
+  Future<void> call(String? input) {
+    return _repository.removeMember(input);
   }
 }

@@ -1,8 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
-import 'package:groceries/presentation/modules/grocery_list_details/widgets/grocery_list_options_button.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
@@ -36,13 +34,7 @@ class GroceryListCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             mainAxisSize: MainAxisSize.min,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  _icon(context),
-                  GroceryListOptionsButton(listModel: listModel),
-                ],
-              ),
+              _icon(context),
               SizedBox(
                 height: context.deviceHeight * 0.02,
               ),
@@ -53,10 +45,7 @@ class GroceryListCard extends StatelessWidget {
                   SizedBox(
                     height: context.deviceHeight * 0.01,
                   ),
-                  if (listModel.items?.isNotEmpty ?? false)
-                    _newTasksBox(context)
-                  else
-                    const SizedBox(),
+                  _newTasksBox(context),
                 ],
               ),
             ],
@@ -68,24 +57,27 @@ class GroceryListCard extends StatelessWidget {
 
   Icon _icon(BuildContext context) {
     return Icon(
-      CupertinoIcons.home,
+      Icons.home,
       size: context.deviceHeight * 0.045,
     );
   }
 
-  Container _newTasksBox(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(8),
-      decoration: BoxDecoration(
-        color: context.theme.primaryColor,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Text(
-        '${listModel.items?.length ?? 0} ${AppTranslations.home.newTasks}',
-        style: TextStyle(
-          fontFamily: AppFonts.light(context),
-          color: context.theme.colorScheme.secondary,
-          fontSize: 10,
+  Widget _newTasksBox(BuildContext context) {
+    return Visibility(
+      visible: listModel.items?.isNotEmpty ?? false,
+      child: Container(
+        padding: const EdgeInsets.all(8),
+        decoration: BoxDecoration(
+          color: context.theme.primaryColor,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Text(
+          '${listModel.items?.length ?? 0} ${AppTranslations.home.newTasks}',
+          style: TextStyle(
+            fontFamily: AppFonts.light(context),
+            color: context.theme.colorScheme.secondary,
+            fontSize: 10,
+          ),
         ),
       ),
     );
