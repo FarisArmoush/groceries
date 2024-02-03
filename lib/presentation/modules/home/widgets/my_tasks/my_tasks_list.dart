@@ -10,23 +10,23 @@ class MyTasksList extends StatelessWidget {
     super.key,
   });
 
-  final List<TaskModel> tasks;
+  final List<TaskModel>? tasks;
 
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      itemCount: tasks.length,
+      itemCount: tasks?.length ?? 0,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       primary: false,
       itemBuilder: (context, index) {
         return MyTasksCard(
           taskModel: TaskModel(
-            id: tasks[index].id,
-            listModel: tasks[index].listModel,
-            dueDate: tasks[index].dueDate,
-            groceries: tasks[index].groceries,
-            creationDate: tasks[index].creationDate,
+            id: tasks?[index].id,
+            listModel: tasks?[index].listModel,
+            dueDate: tasks?[index].dueDate,
+            groceries: tasks?[index].groceries,
+            creationDate: tasks?[index].creationDate,
           ),
         );
       },

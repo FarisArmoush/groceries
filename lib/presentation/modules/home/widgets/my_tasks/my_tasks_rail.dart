@@ -13,7 +13,7 @@ class MyTasksRail extends StatelessWidget {
     super.key,
   });
 
-  final List<TaskModel> tasks;
+  final List<TaskModel>? tasks;
 
   @override
   Widget build(BuildContext context) {
@@ -26,11 +26,11 @@ class MyTasksRail extends StatelessWidget {
           title: AppTranslations.home.myTasks,
         ),
         SizedBox(
-          height: tasks.isNotEmpty
+          height: tasks?.isNotEmpty ?? false
               ? context.deviceHeight * 0.025
               : context.deviceHeight * 0.05,
         ),
-        if (tasks.isNotEmpty)
+        if (tasks?.isNotEmpty ?? false)
           MyTasksList(
             tasks: tasks,
           )
