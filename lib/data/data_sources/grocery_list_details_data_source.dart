@@ -14,7 +14,7 @@ class GroceryListDetailsDataSource {
   FirebaseFirestore get _firestore => FirebaseFirestore.instance;
 
   Future<GroceryListDetailsModel?> fetchDetails(String? uid) async {
-    await Future.delayed(2.seconds, () {});
+    await Future.delayed(250.milliseconds, () {});
     return GroceryListDetailsModel(
       id: uid,
       name: 'Work',
