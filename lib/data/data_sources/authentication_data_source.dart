@@ -9,15 +9,14 @@ import 'package:groceries/utils/exceptions/update_email_exception.dart';
 import 'package:groceries/utils/exceptions/update_password_exception.dart';
 import 'package:groceries/utils/params/login_param/login_param.dart';
 import 'package:groceries/utils/params/register_param/register_param.dart';
+import 'package:injectable/injectable.dart';
 
+@singleton
 class AuthenticationDataSource {
-  const AuthenticationDataSource({
-    required this.firebaseAuth,
-    required this.firestore,
-  });
+  const AuthenticationDataSource();
 
-  final FirebaseAuth firebaseAuth;
-  final FirebaseFirestore firestore;
+  FirebaseAuth get firebaseAuth => FirebaseAuth.instance;
+  FirebaseFirestore get firestore => FirebaseFirestore.instance;
 
   Stream<User?> get authStateChanges => firebaseAuth.userChanges().map(
         (fbUser) => fbUser,

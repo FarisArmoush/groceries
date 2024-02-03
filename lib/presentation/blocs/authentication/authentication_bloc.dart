@@ -4,11 +4,13 @@ import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/domain/repositories/authentication_repository.dart';
+import 'package:injectable/injectable.dart';
 
 part 'authentication_bloc.freezed.dart';
 part 'authentication_event.dart';
 part 'authentication_state.dart';
 
+@lazySingleton
 class AuthenticationBloc
     extends Bloc<AuthenticationEvent, AuthenticationState> {
   AuthenticationBloc(this._authenticationRepository)
@@ -27,7 +29,7 @@ class AuthenticationBloc
   }
   final AuthenticationRepository _authenticationRepository;
 
-  late final StreamSubscription<Object?> _userSubscription;
+  late final StreamSubscription<User?> _userSubscription;
 
   void _onUserChanged(
     _UserChanged event,

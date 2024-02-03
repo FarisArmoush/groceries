@@ -22,26 +22,26 @@ class AppBlocObserver extends BlocObserver {
     );
   }
 
-  @override
-  void onChange(BlocBase<Object?> bloc, Change<Object?> change) {
-    super.onChange(bloc, change);
-    developer.log(
-      'onChange -- ${bloc.runtimeType}, $change',
-      name: bloc.runtimeType.toString(),
-    );
-  }
+  // @override
+  // void onChange(BlocBase<Object?> bloc, Change<Object?> change) {
+  //   super.onChange(bloc, change);
+  //   developer.log(
+  //     'onChange -- ${bloc.runtimeType}, $change',
+  //     name: bloc.runtimeType.toString(),
+  //   );
+  // }
 
-  @override
-  void onTransition(
-    Bloc<Object?, Object?> bloc,
-    Transition<Object?, Object?> transition,
-  ) {
-    super.onTransition(bloc, transition);
-    developer.log(
-      'onTransition -- ${bloc.runtimeType}, $transition',
-      name: bloc.runtimeType.toString(),
-    );
-  }
+  // @override
+  // void onTransition(
+  //   Bloc<Object?, Object?> bloc,
+  //   Transition<Object?, Object?> transition,
+  // ) {
+  //   super.onTransition(bloc, transition);
+  //   developer.log(
+  //     'onTransition -- ${bloc.runtimeType}, $transition',
+  //     name: bloc.runtimeType.toString(),
+  //   );
+  // }
 
   @override
   void onError(BlocBase<Object?> bloc, Object error, StackTrace stackTrace) {

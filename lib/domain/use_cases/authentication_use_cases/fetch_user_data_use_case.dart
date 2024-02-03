@@ -1,6 +1,8 @@
 import 'package:groceries/domain/repositories/authentication_repository.dart';
 import 'package:groceries/utils/extenstions/date_time_parser_extension.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class FetchUserDataUseCase {
   const FetchUserDataUseCase(this._authenticationRepository);
 

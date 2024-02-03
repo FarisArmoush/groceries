@@ -6,11 +6,13 @@ import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/fetch_category_items_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/fetch_sub_categories_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
+import 'package:injectable/injectable.dart';
 
 part 'category_details_bloc.freezed.dart';
 part 'category_details_event.dart';
 part 'category_details_state.dart';
 
+@injectable
 class CategoryDetailsBloc
     extends Bloc<CategoryDetailsEvent, CategoryDetailsState> {
   CategoryDetailsBloc(

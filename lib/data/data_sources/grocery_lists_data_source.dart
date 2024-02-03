@@ -7,12 +7,14 @@ import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/data/models/refinements_model/refinements_model.dart';
 import 'package:groceries/data/models/user_model/user_model.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
+import 'package:injectable/injectable.dart';
 
+@singleton
 class GroceryListsDataSource {
-  const GroceryListsDataSource(this._firestore);
+  const GroceryListsDataSource();
 
-  // ignore: unused_field
-  final FirebaseFirestore _firestore;
+  // ignore: unused_element
+  FirebaseFirestore get _firestore => FirebaseFirestore.instance;
 
   Future<List<GroceryListModel>> fetchMyGroceryLists() async {
     final lists = <GroceryListModel>[

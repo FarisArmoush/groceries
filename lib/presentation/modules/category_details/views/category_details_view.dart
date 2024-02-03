@@ -88,25 +88,6 @@ class _CategoryDetailsViewState extends State<CategoryDetailsView> {
                       ),
                     ).toList(),
                   ).asSliver(),
-                // SliverList.separated(
-                //   itemCount: state.categories.length,
-                //   itemBuilder: (context, index) {
-                //     final category = state.categories[index];
-                //     return ListTile(
-                //       title: Text(category.name ?? ''),
-                //       trailing: const NextArrowIcon(),
-                //       onTap: () {
-                //         context.pushNamed(
-                //           AppNamedRoutes.categoryDetails,
-                //           extra: category,
-                //         );
-                //       },
-                //     ).symmetricPadding(horizontal: 8);
-                //   },
-                //   separatorBuilder: (context, index) => SizedBox(
-                //     height: context.deviceHeight * 0.01,
-                //   ),
-                // ),
               ],
             );
           },

@@ -7,11 +7,13 @@ import 'package:groceries/domain/use_cases/remote_use_cases/fetch_grocery_list_d
 import 'package:groceries/domain/use_cases/remote_use_cases/remove_item_from_list_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
+import 'package:injectable/injectable.dart';
 
 part 'grocery_list_details_bloc.freezed.dart';
 part 'grocery_list_details_event.dart';
 part 'grocery_list_details_state.dart';
 
+@injectable
 class GroceryListDetailsBloc
     extends Bloc<GroceryListDetailsEvent, GroceryListDetailsState> {
   GroceryListDetailsBloc({

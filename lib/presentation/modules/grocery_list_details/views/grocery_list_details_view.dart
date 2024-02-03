@@ -22,17 +22,9 @@ class _GroceryListDetailsViewState extends State<GroceryListDetailsView> {
   @override
   void initState() {
     context.read<GroceryListDetailsBloc>().add(
-          const GroceryListDetailsEvent.getDetails(uid: ''),
+          GroceryListDetailsEvent.getDetails(uid: widget.uid),
         );
     super.initState();
-  }
-
-  @override
-  void dispose() {
-    context.read<GroceryListDetailsBloc>().add(
-          const GroceryListDetailsEvent.setToInitial(),
-        );
-    super.dispose();
   }
 
   @override

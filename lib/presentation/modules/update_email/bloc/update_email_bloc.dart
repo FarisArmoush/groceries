@@ -5,11 +5,13 @@ import 'package:groceries/domain/use_cases/authentication_use_cases/update_email
 import 'package:groceries/utils/exceptions/send_verification_email_exception.dart';
 import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 import 'package:groceries/utils/forms/email_form.dart';
+import 'package:injectable/injectable.dart';
 
 part 'update_email_bloc.freezed.dart';
 part 'update_email_event.dart';
 part 'update_email_state.dart';
 
+@injectable
 class UpdateEmailBloc extends Bloc<UpdateEmailEvent, UpdateEmailState> {
   UpdateEmailBloc(this._updateEmailUseCase) : super(const UpdateEmailState()) {
     on<_EmailChanged>(_onEmailChanged);

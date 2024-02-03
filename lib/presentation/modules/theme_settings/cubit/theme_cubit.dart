@@ -1,11 +1,11 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+@injectable
 class ThemeCubit extends Cubit<ThemeMode> {
-  ThemeCubit(this._sharedPreferences) : super(ThemeMode.system);
-
-  final SharedPreferences _sharedPreferences;
+  ThemeCubit() : super(ThemeMode.system);
 
   /// Sets the theme mode.
   ///
@@ -22,8 +22,9 @@ class ThemeCubit extends Cubit<ThemeMode> {
   /// If no theme mode is stored in [SharedPreferences], the default theme mode
   /// will be [ThemeMode.system].
   Future<void> loadTheme() async {
-    final cachedTheme = _sharedPreferences.getString('themeMode') ??
-        ThemeMode.system.toString();
+    final sharedPreferences = await SharedPreferences.getInstance();
+    final cachedTheme =
+        sharedPreferences.getString('themeMode') ?? ThemeMode.system.toString();
     final theme = ThemeMode.values.firstWhere(
       (value) => value.toString() == cachedTheme,
     );
@@ -31,6 +32,7 @@ class ThemeCubit extends Cubit<ThemeMode> {
   }
 
   Future<void> _cacheTheme(ThemeMode theme) async {
-    await _sharedPreferences.setString('themeMode', theme.toString());
+    final sharedPreferences = await SharedPreferences.getInstance();
+    await sharedPreferences.setString('themeMode', theme.toString());
   }
 }

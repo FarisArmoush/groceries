@@ -1,7 +1,9 @@
 import 'package:groceries/data/data_sources/my_tasks_data_source.dart';
 import 'package:groceries/data/models/task_model/task_model.dart';
 import 'package:groceries/domain/repositories/my_tasks_repository.dart';
+import 'package:injectable/injectable.dart';
 
+@Singleton(as: MyTasksRepository)
 class MyTasksRepositoryImpl extends MyTasksRepository {
   MyTasksRepositoryImpl(this._myTasksDataSource);
 

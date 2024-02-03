@@ -9,11 +9,13 @@ import 'package:groceries/utils/forms/display_name_form.dart';
 import 'package:groceries/utils/forms/email_form.dart';
 import 'package:groceries/utils/forms/register_password_form.dart';
 import 'package:groceries/utils/params/register_param/register_param.dart';
+import 'package:injectable/injectable.dart';
 
 part 'register_bloc.freezed.dart';
 part 'register_event.dart';
 part 'register_state.dart';
 
+@injectable
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
   RegisterBloc(this._registerWithEmailAndPasswordUseCase)
       : super(RegisterState()) {
