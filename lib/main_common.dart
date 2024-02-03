@@ -6,7 +6,6 @@ import 'package:groceries/app/app.dart';
 import 'package:groceries/config/services/remote_config_service.dart';
 import 'package:groceries/data/models/app_flavor/app_flavor.dart';
 import 'package:groceries/firebase_options.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 Future<Widget> mainCommon(AppFlavor flavor) async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,9 +16,6 @@ Future<Widget> mainCommon(AppFlavor flavor) async {
   final remoteConfigService = RemoteConfigService(remoteConfig);
   await remoteConfigService.init();
   await EasyLocalization.ensureInitialized();
-  final sharedPreferences = await SharedPreferences.getInstance();
-  return App(
-    sharedPreferences: sharedPreferences,
-    flavor: flavor,
-  );
+
+  return App(flavor: flavor);
 }

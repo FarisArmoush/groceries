@@ -10,11 +10,13 @@ import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 import 'package:groceries/utils/forms/email_form.dart';
 import 'package:groceries/utils/forms/login_password_form.dart';
 import 'package:groceries/utils/params/login_param/login_param.dart';
+import 'package:injectable/injectable.dart';
 
 part 'login_bloc.freezed.dart';
 part 'login_event.dart';
 part 'login_state.dart';
 
+@injectable
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc(this._loginWithEmailAndPasswordUseCase) : super(LoginState()) {
     on<_ToggleIsObscure>(_onToggleIsObscure);

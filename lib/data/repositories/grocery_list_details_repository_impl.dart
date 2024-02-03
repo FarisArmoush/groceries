@@ -1,7 +1,9 @@
 import 'package:groceries/data/data_sources/grocery_list_details_data_source.dart';
 import 'package:groceries/data/models/grocery_list_details_model/grocery_list_details_model.dart';
 import 'package:groceries/domain/repositories/grocery_list_details_repository.dart';
+import 'package:injectable/injectable.dart';
 
+@Singleton(as: GroceryListDetailsRepository)
 class GroceryListDetailsRepositoryImpl extends GroceryListDetailsRepository {
   GroceryListDetailsRepositoryImpl(this._dataSource);
 

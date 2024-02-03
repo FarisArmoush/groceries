@@ -2,12 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/data/models/recipe_model/recipe_model.dart';
 import 'package:groceries/data/models/refinements_model/refinements_model.dart';
+import 'package:injectable/injectable.dart';
 
+@singleton
 class RecipesDataSource {
-  const RecipesDataSource(this._firestore);
+  const RecipesDataSource();
 
-  // ignore: unused_field
-  final FirebaseFirestore _firestore;
+  // ignore: unused_element
+  FirebaseFirestore get _firestore => FirebaseFirestore.instance;
 
   Future<List<RecipeModel>> fetchRecipes() async {
     final recipes = <RecipeModel>[

@@ -3,11 +3,13 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/data/models/task_model/task_model.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/my_tasks_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
+import 'package:injectable/injectable.dart';
 
 part 'my_tasks_bloc.freezed.dart';
 part 'my_tasks_event.dart';
 part 'my_tasks_state.dart';
 
+@injectable
 class MyTasksBloc extends Bloc<MyTasksEvent, MyTasksState> {
   MyTasksBloc(this._myTasksUseCase) : super(const MyTasksState()) {
     on<_LoadMyTasks>(_onLoadMyTasks);

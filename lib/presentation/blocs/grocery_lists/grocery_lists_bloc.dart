@@ -3,11 +3,13 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/grocery_lists_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
+import 'package:injectable/injectable.dart';
 
 part 'grocery_lists_bloc.freezed.dart';
 part 'grocery_lists_event.dart';
 part 'grocery_lists_state.dart';
 
+@injectable
 class GroceryListsBloc extends Bloc<GroceryListsEvent, GroceryListsState> {
   GroceryListsBloc(this._groceryListsUseCase)
       : super(const GroceryListsState()) {

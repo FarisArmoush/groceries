@@ -4,12 +4,14 @@ import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/data/models/refinements_model/refinements_model.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
+import 'package:injectable/injectable.dart';
 
+@singleton
 class GroceryListDetailsDataSource {
-  GroceryListDetailsDataSource(this._firestore);
+  GroceryListDetailsDataSource();
 
-  // ignore: unused_field
-  final FirebaseFirestore _firestore;
+  // ignore: unused_element
+  FirebaseFirestore get _firestore => FirebaseFirestore.instance;
 
   Future<GroceryListDetailsModel?> fetchDetails(String? uid) async {
     await Future.delayed(2.seconds, () {});

@@ -3,6 +3,8 @@ analyzer:
   exclude:
     - "**/*.g.dart"
     - "**/*.freezed.dart"
+    - "**/*.config.dart"
+    - "lib/firebase_options.dart"
   errors:
     sort_pub_dependencies: false
     public_member_api_docs: false

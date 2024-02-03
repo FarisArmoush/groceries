@@ -2,11 +2,14 @@ import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
+import 'package:injectable/injectable.dart';
 
+@singleton
 class BaseGroceriesDataSource {
-  const BaseGroceriesDataSource(this._firestore);
+  const BaseGroceriesDataSource();
 
-  final FirebaseFirestore _firestore;
+  // ignore: unused_element
+  FirebaseFirestore get _firestore => FirebaseFirestore.instance;
 
   Future<List<GroceryModel>> fetchAllGroceries() async {
     try {

@@ -5,11 +5,13 @@ import 'package:groceries/domain/use_cases/authentication_use_cases/send_passwor
 import 'package:groceries/utils/exceptions/send_password_reset_email_exception.dart';
 import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 import 'package:groceries/utils/forms/email_form.dart';
+import 'package:injectable/injectable.dart';
 
 part 'forgot_password_bloc.freezed.dart';
 part 'forgot_password_event.dart';
 part 'forgot_password_state.dart';
 
+@injectable
 class ForgotPasswordBloc
     extends Bloc<ForgotPasswordEvent, ForgotPasswordState> {
   ForgotPasswordBloc(this._sendPasswordResetEmailUseCase)

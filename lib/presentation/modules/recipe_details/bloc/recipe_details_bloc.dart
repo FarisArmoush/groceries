@@ -1,10 +1,12 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 
 part 'recipe_details_bloc.freezed.dart';
 part 'recipe_details_event.dart';
 part 'recipe_details_state.dart';
 
+@injectable
 class RecipeDetailsBloc extends Bloc<RecipeDetailsEvent, RecipeDetailsState> {
   RecipeDetailsBloc() : super(const RecipeDetailsState()) {
     on<_DeleteRecipe>(_onDeleteRecipe);

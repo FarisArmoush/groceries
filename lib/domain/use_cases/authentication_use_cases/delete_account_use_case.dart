@@ -1,5 +1,7 @@
 import 'package:groceries/domain/repositories/authentication_repository.dart';
+import 'package:injectable/injectable.dart';
 
+@injectable
 class DeleteAccountUseCase {
   const DeleteAccountUseCase(this._authenticationRepository);
 
