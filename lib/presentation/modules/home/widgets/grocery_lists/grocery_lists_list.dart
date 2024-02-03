@@ -31,7 +31,7 @@ class GroceryListsList extends StatelessWidget {
           ),
           onTap: () => context.pushNamed(
             AppNamedRoutes.groceryListDetails,
-            pathParameters: {'uid': lists[index].id!},
+            extra: lists[index].id,
           ),
         );
       },

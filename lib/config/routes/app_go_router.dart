@@ -127,9 +127,9 @@ final GoRouter appGoRouter = GoRouter(
             ),
             GoRoute(
               name: AppNamedRoutes.groceryListDetails,
-              path: '${AppNamedRoutes.groceryListDetails}/:uid',
+              path: AppNamedRoutes.groceryListDetails,
               builder: (context, state) => GroceryListDetailsView(
-                uid: state.pathParameters['uid'],
+                uid: state.extra as String?,
               ),
               routes: [
                 GoRoute(
