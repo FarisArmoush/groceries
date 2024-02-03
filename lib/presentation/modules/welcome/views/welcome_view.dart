@@ -11,33 +11,35 @@ class WelcomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        padding: EdgeInsetsDirectional.all(context.deviceWidth * 0.09),
-        children: [
-          const WelcomeViewHeaderText(),
-          SizedBox(
-            height: context.deviceHeight * 0.065,
-          ),
-          const WelcomeViewBodyText(),
-          SizedBox(
-            height: context.deviceHeight * 0.09,
-          ),
-          FilledButton(
-            child: Text(AppTranslations.register.register),
-            onPressed: () {
-              context.pushReplacementNamed(AppNamedRoutes.register);
-            },
-          ),
-          SizedBox(
-            height: context.deviceHeight * 0.01,
-          ),
-          OutlinedButton(
-            child: Text(AppTranslations.login.login),
-            onPressed: () {
-              context.pushReplacementNamed(AppNamedRoutes.login);
-            },
-          ),
-        ],
+      body: SafeArea(
+        child: ListView(
+          padding: EdgeInsetsDirectional.all(context.deviceWidth * 0.09),
+          children: [
+            const WelcomeViewHeaderText(),
+            SizedBox(
+              height: context.deviceHeight * 0.065,
+            ),
+            const WelcomeViewBodyText(),
+            SizedBox(
+              height: context.deviceHeight * 0.09,
+            ),
+            FilledButton(
+              child: Text(AppTranslations.register.register),
+              onPressed: () {
+                context.pushReplacementNamed(AppNamedRoutes.register);
+              },
+            ),
+            SizedBox(
+              height: context.deviceHeight * 0.01,
+            ),
+            OutlinedButton(
+              child: Text(AppTranslations.login.login),
+              onPressed: () {
+                context.pushReplacementNamed(AppNamedRoutes.login);
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
