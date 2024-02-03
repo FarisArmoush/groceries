@@ -5,6 +5,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/blocs/logout/logout_bloc.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/logout_bottom_sheet.dart';
+import 'package:groceries/presentation/modules/root/bloc/root_navigation_bloc.dart';
 import 'package:groceries/presentation/widgets/app_list_tile_button.dart';
 import 'package:groceries/presentation/widgets/app_snack_bars.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -18,7 +19,7 @@ class LogoutButton extends StatelessWidget {
     return BlocListener<LogoutBloc, LogoutState>(
       listenWhen: (previous, current) => previous.status != current.status,
       listener: (context, state) {
-        state.status.maybeWhen(
+        state.status.whenOrNull(
           failure: (error) => ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
             ..showSnackBar(
@@ -27,6 +28,9 @@ class LogoutButton extends StatelessWidget {
               ),
             ),
           success: () {
+            context.read<RootNavigationBloc>().add(
+                  const RootNavigationEvent.navigateToIndex(0),
+                );
             ScaffoldMessenger.of(context)
               ..hideCurrentSnackBar()
               ..showSnackBar(
@@ -37,7 +41,6 @@ class LogoutButton extends StatelessWidget {
 
             context.pushReplacementNamed(AppNamedRoutes.welcome);
           },
-          orElse: () {},
         );
       },
       child: AppListTileButton(
