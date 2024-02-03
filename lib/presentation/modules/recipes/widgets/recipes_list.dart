@@ -27,12 +27,11 @@ class RecipesList extends StatelessWidget {
             id: recipe.id,
             name: recipe.name,
             imageUrl: recipe.imageUrl,
-            items: recipe.items,
             creationDate: recipe.creationDate,
           ),
           onTap: () => context.pushNamed(
             AppNamedRoutes.recipeDetails,
-            extra: recipe,
+            extra: recipe.id,
           ),
         );
       },

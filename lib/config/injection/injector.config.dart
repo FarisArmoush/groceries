@@ -8,7 +8,6 @@
 // coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:flutter/material.dart' as _i21;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:groceries/data/data_sources/authentication_data_source.dart'
     as _i3;
@@ -18,8 +17,10 @@ import 'package:groceries/data/data_sources/categories_data_source.dart' as _i9;
 import 'package:groceries/data/data_sources/grocery_list_details_data_source.dart'
     as _i17;
 import 'package:groceries/data/data_sources/grocery_lists_data_source.dart'
-    as _i22;
-import 'package:groceries/data/data_sources/my_tasks_data_source.dart' as _i28;
+    as _i20;
+import 'package:groceries/data/data_sources/my_tasks_data_source.dart' as _i26;
+import 'package:groceries/data/data_sources/recipe_details_data_source.dart'
+    as _i31;
 import 'package:groceries/data/data_sources/recipes_data_source.dart' as _i34;
 import 'package:groceries/data/data_sources/remote_config_data_source.dart'
     as _i39;
@@ -32,9 +33,11 @@ import 'package:groceries/data/repositories/categories_repository_impl.dart'
 import 'package:groceries/data/repositories/grocery_list_details_repository_impl.dart'
     as _i19;
 import 'package:groceries/data/repositories/grocery_lists_repository_impl.dart'
-    as _i24;
+    as _i22;
 import 'package:groceries/data/repositories/my_tasks_repository_impl.dart'
-    as _i30;
+    as _i28;
+import 'package:groceries/data/repositories/recipe_details_repository_impl.dart'
+    as _i33;
 import 'package:groceries/data/repositories/recipes_repository_impl.dart'
     as _i36;
 import 'package:groceries/data/repositories/remote_config_repository_impl.dart'
@@ -48,8 +51,10 @@ import 'package:groceries/domain/repositories/cateogries_repository.dart'
 import 'package:groceries/domain/repositories/grocery_list_details_repository.dart'
     as _i18;
 import 'package:groceries/domain/repositories/grocery_lists_repository.dart'
-    as _i23;
-import 'package:groceries/domain/repositories/my_tasks_repository.dart' as _i29;
+    as _i21;
+import 'package:groceries/domain/repositories/my_tasks_repository.dart' as _i27;
+import 'package:groceries/domain/repositories/recipe_details_repository.dart'
+    as _i32;
 import 'package:groceries/domain/repositories/recipes_repository.dart' as _i35;
 import 'package:groceries/domain/repositories/remote_config_repository.dart'
     as _i40;
@@ -58,9 +63,9 @@ import 'package:groceries/domain/use_cases/authentication_use_cases/delete_accou
 import 'package:groceries/domain/use_cases/authentication_use_cases/fetch_user_data_use_case.dart'
     as _i16;
 import 'package:groceries/domain/use_cases/authentication_use_cases/login_with_email_and_password_use_case.dart'
-    as _i26;
+    as _i24;
 import 'package:groceries/domain/use_cases/authentication_use_cases/logout_use_case.dart'
-    as _i27;
+    as _i25;
 import 'package:groceries/domain/use_cases/authentication_use_cases/register_with_email_and_password_use_case.dart'
     as _i38;
 import 'package:groceries/domain/use_cases/authentication_use_cases/send_password_reset_email_use_case.dart'
@@ -81,18 +86,22 @@ import 'package:groceries/domain/use_cases/remote_use_cases/create_recipe_use_ca
     as _i61;
 import 'package:groceries/domain/use_cases/remote_use_cases/delete_grocery_list_use_case.dart'
     as _i63;
+import 'package:groceries/domain/use_cases/remote_use_cases/delete_recipe_use_case.dart'
+    as _i64;
 import 'package:groceries/domain/use_cases/remote_use_cases/fetch_category_items_use_case.dart'
     as _i13;
 import 'package:groceries/domain/use_cases/remote_use_cases/fetch_grocery_list_details_use_case.dart'
-    as _i64;
+    as _i65;
 import 'package:groceries/domain/use_cases/remote_use_cases/fetch_parent_categories_use_case.dart'
     as _i14;
+import 'package:groceries/domain/use_cases/remote_use_cases/fetch_recipe_details_use_case.dart'
+    as _i66;
 import 'package:groceries/domain/use_cases/remote_use_cases/fetch_sub_categories_use_case.dart'
     as _i15;
 import 'package:groceries/domain/use_cases/remote_use_cases/grocery_lists_use_case.dart'
-    as _i25;
+    as _i23;
 import 'package:groceries/domain/use_cases/remote_use_cases/my_tasks_use_case.dart'
-    as _i31;
+    as _i29;
 import 'package:groceries/domain/use_cases/remote_use_cases/recipes_use_case.dart'
     as _i37;
 import 'package:groceries/domain/use_cases/remote_use_cases/remote_config_use_case.dart'
@@ -108,12 +117,12 @@ import 'package:groceries/domain/use_cases/remote_use_cases/update_list_name_use
 import 'package:groceries/presentation/blocs/authentication/authentication_bloc.dart'
     as _i57;
 import 'package:groceries/presentation/blocs/grocery_lists/grocery_lists_bloc.dart'
-    as _i67;
-import 'package:groceries/presentation/blocs/logout/logout_bloc.dart' as _i69;
+    as _i69;
+import 'package:groceries/presentation/blocs/logout/logout_bloc.dart' as _i71;
 import 'package:groceries/presentation/blocs/my_tasks/my_tasks_bloc.dart'
-    as _i70;
+    as _i72;
 import 'package:groceries/presentation/blocs/remote_config/remote_config_bloc.dart'
-    as _i73;
+    as _i76;
 import 'package:groceries/presentation/blocs/user_data/user_data_cubit.dart'
     as _i53;
 import 'package:groceries/presentation/modules/add_items/bloc/add_items_bloc.dart'
@@ -123,37 +132,35 @@ import 'package:groceries/presentation/modules/additional_resources/cubit/send_c
 import 'package:groceries/presentation/modules/category_details/bloc/category_details_bloc.dart'
     as _i58;
 import 'package:groceries/presentation/modules/create_list/bloc/create_list_bloc.dart'
-    as _i77;
+    as _i80;
 import 'package:groceries/presentation/modules/create_recipe/bloc/create_recipe_bloc.dart'
-    as _i78;
+    as _i81;
 import 'package:groceries/presentation/modules/delete_account/bloc/delete_account_bloc.dart'
     as _i62;
 import 'package:groceries/presentation/modules/forgot_password/bloc/forgot_password_bloc.dart'
-    as _i65;
+    as _i67;
 import 'package:groceries/presentation/modules/grocery_list_details/bloc/grocery_list_details_bloc.dart'
-    as _i66;
-import 'package:groceries/presentation/modules/grocery_list_settings/views/grocery_list_settings_view.dart'
-    as _i20;
-import 'package:groceries/presentation/modules/login/bloc/login_bloc.dart'
     as _i68;
+import 'package:groceries/presentation/modules/login/bloc/login_bloc.dart'
+    as _i70;
 import 'package:groceries/presentation/modules/onboarding/bloc/onboarding_bloc.dart'
-    as _i32;
+    as _i30;
 import 'package:groceries/presentation/modules/recipe_details/bloc/recipe_details_bloc.dart'
-    as _i33;
+    as _i73;
 import 'package:groceries/presentation/modules/recipes/bloc/recipes_bloc.dart'
-    as _i71;
+    as _i74;
 import 'package:groceries/presentation/modules/register/bloc/register_bloc.dart'
-    as _i72;
+    as _i75;
 import 'package:groceries/presentation/modules/root/bloc/root_navigation_bloc.dart'
     as _i45;
 import 'package:groceries/presentation/modules/theme_settings/cubit/theme_cubit.dart'
     as _i48;
 import 'package:groceries/presentation/modules/update_display_name/bloc/update_display_name_bloc.dart'
-    as _i74;
+    as _i77;
 import 'package:groceries/presentation/modules/update_email/bloc/update_email_bloc.dart'
-    as _i75;
+    as _i78;
 import 'package:groceries/presentation/modules/verify_user/bloc/verify_user_bloc.dart'
-    as _i76;
+    as _i79;
 import 'package:injectable/injectable.dart' as _i2;
 
 extension GetItInjectableX on _i1.GetIt {
@@ -193,26 +200,26 @@ extension GetItInjectableX on _i1.GetIt {
     gh.singleton<_i18.GroceryListDetailsRepository>(
         _i19.GroceryListDetailsRepositoryImpl(
             gh<_i17.GroceryListDetailsDataSource>()));
-    gh.factory<_i20.GroceryListSettingsView>(
-        () => _i20.GroceryListSettingsView(key: gh<_i21.Key>()));
-    gh.singleton<_i22.GroceryListsDataSource>(
-        const _i22.GroceryListsDataSource());
-    gh.singleton<_i23.GroceryListsRepository>(
-        _i24.GroceryListsRepositoryImpl(gh<_i22.GroceryListsDataSource>()));
-    gh.factory<_i25.GroceryListsUseCase>(
-        () => _i25.GroceryListsUseCase(gh<_i23.GroceryListsRepository>()));
-    gh.factory<_i26.LoginWithEmailAndPasswordUseCase>(() =>
-        _i26.LoginWithEmailAndPasswordUseCase(
+    gh.singleton<_i20.GroceryListsDataSource>(
+        const _i20.GroceryListsDataSource());
+    gh.singleton<_i21.GroceryListsRepository>(
+        _i22.GroceryListsRepositoryImpl(gh<_i20.GroceryListsDataSource>()));
+    gh.factory<_i23.GroceryListsUseCase>(
+        () => _i23.GroceryListsUseCase(gh<_i21.GroceryListsRepository>()));
+    gh.factory<_i24.LoginWithEmailAndPasswordUseCase>(() =>
+        _i24.LoginWithEmailAndPasswordUseCase(
             gh<_i4.AuthenticationRepository>()));
-    gh.factory<_i27.LogoutUseCase>(
-        () => _i27.LogoutUseCase(gh<_i4.AuthenticationRepository>()));
-    gh.singleton<_i28.MyTasksDataSource>(const _i28.MyTasksDataSource());
-    gh.singleton<_i29.MyTasksRepository>(
-        _i30.MyTasksRepositoryImpl(gh<_i28.MyTasksDataSource>()));
-    gh.factory<_i31.MyTasksUseCase>(
-        () => _i31.MyTasksUseCase(gh<_i29.MyTasksRepository>()));
-    gh.factory<_i32.OnboardingBloc>(() => _i32.OnboardingBloc());
-    gh.factory<_i33.RecipeDetailsBloc>(() => _i33.RecipeDetailsBloc());
+    gh.factory<_i25.LogoutUseCase>(
+        () => _i25.LogoutUseCase(gh<_i4.AuthenticationRepository>()));
+    gh.singleton<_i26.MyTasksDataSource>(const _i26.MyTasksDataSource());
+    gh.singleton<_i27.MyTasksRepository>(
+        _i28.MyTasksRepositoryImpl(gh<_i26.MyTasksDataSource>()));
+    gh.factory<_i29.MyTasksUseCase>(
+        () => _i29.MyTasksUseCase(gh<_i27.MyTasksRepository>()));
+    gh.factory<_i30.OnboardingBloc>(() => _i30.OnboardingBloc());
+    gh.singleton<_i31.RecipeDetailsDataSource>(_i31.RecipeDetailsDataSource());
+    gh.singleton<_i32.RecipeDetailsRepository>(
+        _i33.RecipeDetailsRepositoryImpl(gh<_i31.RecipeDetailsDataSource>()));
     gh.singleton<_i34.RecipesDataSource>(const _i34.RecipesDataSource());
     gh.singleton<_i35.RecipesRepository>(
         _i36.RecipesRepositoryImpl(gh<_i34.RecipesDataSource>()));
@@ -264,49 +271,57 @@ extension GetItInjectableX on _i1.GetIt {
         _i59.ClearGroceryListItemsUseCase(
             gh<_i18.GroceryListDetailsRepository>()));
     gh.factory<_i60.CreateListUseCase>(
-        () => _i60.CreateListUseCase(gh<_i23.GroceryListsRepository>()));
+        () => _i60.CreateListUseCase(gh<_i21.GroceryListsRepository>()));
     gh.factory<_i61.CreateRecipeUseCase>(
         () => _i61.CreateRecipeUseCase(gh<_i35.RecipesRepository>()));
     gh.factory<_i62.DeleteAccountBloc>(
         () => _i62.DeleteAccountBloc(gh<_i12.DeleteAccountUseCase>()));
     gh.factory<_i63.DeleteGroceryListUseCase>(() =>
         _i63.DeleteGroceryListUseCase(gh<_i18.GroceryListDetailsRepository>()));
-    gh.factory<_i64.FetchGroceryListDetailsUseCase>(() =>
-        _i64.FetchGroceryListDetailsUseCase(
+    gh.factory<_i64.DeleteRecipeUseCase>(
+        () => _i64.DeleteRecipeUseCase(gh<_i32.RecipeDetailsRepository>()));
+    gh.factory<_i65.FetchGroceryListDetailsUseCase>(() =>
+        _i65.FetchGroceryListDetailsUseCase(
             gh<_i18.GroceryListDetailsRepository>()));
-    gh.factory<_i65.ForgotPasswordBloc>(() =>
-        _i65.ForgotPasswordBloc(gh<_i47.SendPasswordResetEmailUseCase>()));
-    gh.factory<_i66.GroceryListDetailsBloc>(() => _i66.GroceryListDetailsBloc(
+    gh.factory<_i66.FetchRecipeDetailsUseCase>(() =>
+        _i66.FetchRecipeDetailsUseCase(gh<_i32.RecipeDetailsRepository>()));
+    gh.factory<_i67.ForgotPasswordBloc>(() =>
+        _i67.ForgotPasswordBloc(gh<_i47.SendPasswordResetEmailUseCase>()));
+    gh.factory<_i68.GroceryListDetailsBloc>(() => _i68.GroceryListDetailsBloc(
           addItemToListUseCase: gh<_i55.AddItemToListUseCase>(),
           removeItemFromListUseCase: gh<_i43.RemoveItemFromListUseCase>(),
           fetchGroceryListDetailsUseCase:
-              gh<_i64.FetchGroceryListDetailsUseCase>(),
+              gh<_i65.FetchGroceryListDetailsUseCase>(),
           clearGroceryListItemsUseCase: gh<_i59.ClearGroceryListItemsUseCase>(),
         ));
-    gh.factory<_i67.GroceryListsBloc>(
-        () => _i67.GroceryListsBloc(gh<_i25.GroceryListsUseCase>()));
-    gh.factory<_i68.LoginBloc>(
-        () => _i68.LoginBloc(gh<_i26.LoginWithEmailAndPasswordUseCase>()));
-    gh.factory<_i69.LogoutBloc>(
-        () => _i69.LogoutBloc(gh<_i27.LogoutUseCase>()));
-    gh.factory<_i70.MyTasksBloc>(
-        () => _i70.MyTasksBloc(gh<_i31.MyTasksUseCase>()));
-    gh.factory<_i71.RecipesBloc>(
-        () => _i71.RecipesBloc(gh<_i37.RecipesUseCase>()));
-    gh.factory<_i72.RegisterBloc>(() =>
-        _i72.RegisterBloc(gh<_i38.RegisterWithEmailAndPasswordUseCase>()));
-    gh.factory<_i73.RemoteConfigBloc>(
-        () => _i73.RemoteConfigBloc(gh<_i42.RemoteConfigUseCase>()));
-    gh.factory<_i74.UpdateDisplayNameBloc>(
-        () => _i74.UpdateDisplayNameBloc(gh<_i49.UpdateDisplayNameUseCase>()));
-    gh.factory<_i75.UpdateEmailBloc>(
-        () => _i75.UpdateEmailBloc(gh<_i50.UpdateEmailUseCase>()));
-    gh.factory<_i76.VerifyUserBloc>(
-        () => _i76.VerifyUserBloc(gh<_i54.VerifyUserUseCase>()));
-    gh.factory<_i77.CreateListBloc>(
-        () => _i77.CreateListBloc(gh<_i60.CreateListUseCase>()));
-    gh.factory<_i78.CreateRecipeBloc>(
-        () => _i78.CreateRecipeBloc(gh<_i61.CreateRecipeUseCase>()));
+    gh.factory<_i69.GroceryListsBloc>(
+        () => _i69.GroceryListsBloc(gh<_i23.GroceryListsUseCase>()));
+    gh.factory<_i70.LoginBloc>(
+        () => _i70.LoginBloc(gh<_i24.LoginWithEmailAndPasswordUseCase>()));
+    gh.factory<_i71.LogoutBloc>(
+        () => _i71.LogoutBloc(gh<_i25.LogoutUseCase>()));
+    gh.factory<_i72.MyTasksBloc>(
+        () => _i72.MyTasksBloc(gh<_i29.MyTasksUseCase>()));
+    gh.factory<_i73.RecipeDetailsBloc>(() => _i73.RecipeDetailsBloc(
+          deleteRecipeUseCase: gh<_i64.DeleteRecipeUseCase>(),
+          fetchRecipeDetailsUseCase: gh<_i66.FetchRecipeDetailsUseCase>(),
+        ));
+    gh.factory<_i74.RecipesBloc>(
+        () => _i74.RecipesBloc(gh<_i37.RecipesUseCase>()));
+    gh.factory<_i75.RegisterBloc>(() =>
+        _i75.RegisterBloc(gh<_i38.RegisterWithEmailAndPasswordUseCase>()));
+    gh.factory<_i76.RemoteConfigBloc>(
+        () => _i76.RemoteConfigBloc(gh<_i42.RemoteConfigUseCase>()));
+    gh.factory<_i77.UpdateDisplayNameBloc>(
+        () => _i77.UpdateDisplayNameBloc(gh<_i49.UpdateDisplayNameUseCase>()));
+    gh.factory<_i78.UpdateEmailBloc>(
+        () => _i78.UpdateEmailBloc(gh<_i50.UpdateEmailUseCase>()));
+    gh.factory<_i79.VerifyUserBloc>(
+        () => _i79.VerifyUserBloc(gh<_i54.VerifyUserUseCase>()));
+    gh.factory<_i80.CreateListBloc>(
+        () => _i80.CreateListBloc(gh<_i60.CreateListUseCase>()));
+    gh.factory<_i81.CreateRecipeBloc>(
+        () => _i81.CreateRecipeBloc(gh<_i61.CreateRecipeUseCase>()));
     return this;
   }
 }

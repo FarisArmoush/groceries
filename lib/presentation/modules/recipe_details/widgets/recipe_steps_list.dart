@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/data/models/recipe_details_model/recipe_details_model.dart';
 import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
@@ -6,16 +7,19 @@ import 'package:groceries/utils/extenstions/padding_extensions.dart';
 import 'package:groceries/utils/extenstions/widgets_as_extensions.dart';
 
 class RecipeStepsList extends StatelessWidget {
-  const RecipeStepsList({super.key});
+  const RecipeStepsList({required this.recipeModel, super.key});
+
+  final RecipeDetailsModel? recipeModel;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: List.generate(
-        5,
+        recipeModel?.steps?.length ?? 0,
         (index) => RecipeStep(
           stepNumber: index,
-          step: 'Put the thing in the thing\n' * (index + 1),
+          // step: 'Put the thing in the thing\n' * (index + 1),
+          step: recipeModel?.steps?[index] ?? '',
         ),
       ),
     );

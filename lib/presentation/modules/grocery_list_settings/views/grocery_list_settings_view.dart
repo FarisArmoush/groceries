@@ -8,9 +8,7 @@ import 'package:groceries/presentation/modules/grocery_list_settings/widgets/gro
 import 'package:groceries/presentation/modules/grocery_list_settings/widgets/save_grocery_list_changes_button.dart';
 import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:injectable/injectable.dart';
 
-@injectable
 class GroceryListSettingsView extends StatelessWidget {
   const GroceryListSettingsView({super.key});
 

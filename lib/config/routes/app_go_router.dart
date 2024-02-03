@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/data/models/category_model/category_model.dart';
-import 'package:groceries/data/models/recipe_model/recipe_model.dart';
 import 'package:groceries/presentation/modules/account_settings/views/account_settings_view.dart';
 import 'package:groceries/presentation/modules/add_items/views/add_items_view.dart';
 import 'package:groceries/presentation/modules/additional_resources/views/additional_resources_view.dart';
@@ -166,7 +165,7 @@ final GoRouter appGoRouter = GoRouter(
               name: AppNamedRoutes.recipeDetails,
               path: AppNamedRoutes.recipeDetails,
               builder: (context, state) => RecipeDetailsView(
-                recipeModel: state.extra! as RecipeModel,
+                uid: state.extra! as String?,
               ),
             ),
             GoRoute(
