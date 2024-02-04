@@ -26,9 +26,6 @@ class ForgotPasswordView extends StatelessWidget {
           child: ListView(
             padding: const EdgeInsetsDirectional.all(24),
             children: [
-              // SizedBox(
-              //   height: context.deviceWidth * 0.02,
-              // ),
               const ForgotPasswordHeaderText(),
               SizedBox(
                 height: context.deviceHeight * 0.02,
@@ -56,7 +53,7 @@ class ForgotPasswordView extends StatelessWidget {
       context.pop();
       ScaffoldMessenger.of(context).showSnackBar(
         AppSnackBars.error(
-          error: state.errorMessage ?? 'Failed to send',
+          error: state.errorMessage ?? 'Something went wrong!',
         ),
       );
     }
