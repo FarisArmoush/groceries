@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/modules/forgot_password/bloc/forgot_password_bloc.dart';
 import 'package:groceries/presentation/modules/forgot_password/widgets/forgot_password_body_text.dart';
 import 'package:groceries/presentation/modules/forgot_password/widgets/forgot_password_email_text_field.dart';
@@ -20,16 +19,16 @@ class ForgotPasswordView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<ForgotPasswordBloc, ForgotPasswordState>(
       listener: _listener,
-      child: SafeArea(
-        top: false,
-        child: Scaffold(
-          appBar: AppBar(),
-          body: ListView(
-            padding: AppPaddings.scaffold(context),
+      child: Scaffold(
+        appBar: AppBar(),
+        body: SafeArea(
+          bottom: false,
+          child: ListView(
+            padding: const EdgeInsetsDirectional.all(24),
             children: [
-              SizedBox(
-                height: context.deviceWidth * 0.02,
-              ),
+              // SizedBox(
+              //   height: context.deviceWidth * 0.02,
+              // ),
               const ForgotPasswordHeaderText(),
               SizedBox(
                 height: context.deviceHeight * 0.02,
@@ -41,8 +40,8 @@ class ForgotPasswordView extends StatelessWidget {
               const ForgotPasswordEmailTextField(),
             ],
           ),
-          bottomSheet: const SendForgotPasswordEmailButton(),
         ),
+        bottomSheet: const SendForgotPasswordEmailButton(),
       ),
     );
   }

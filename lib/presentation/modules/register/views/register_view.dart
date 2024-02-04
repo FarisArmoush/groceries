@@ -4,7 +4,6 @@ import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/modules/register/bloc/register_bloc.dart';
 import 'package:groceries/presentation/modules/register/widgets/register_body_text.dart';
 import 'package:groceries/presentation/modules/register/widgets/register_button.dart';
@@ -23,48 +22,48 @@ class RegisterView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocListener<RegisterBloc, RegisterState>(
-        listener: _listener,
-        child: ListView(
-          padding: AppPaddings.scaffold(context),
-          children: [
-            SizedBox(
-              height: context.deviceHeight * 0.09,
-            ),
-            const RegisterHeaderText(),
-            SizedBox(
-              height: context.deviceHeight * 0.01,
-            ),
-            const RegisterBodyText(),
-            SizedBox(
-              height: context.deviceHeight * 0.04,
-            ),
-            const RegisterDisplayNameTextField(),
-            SizedBox(
-              height: context.deviceHeight * 0.02,
-            ),
-            const RegisterEmailTextField(),
-            SizedBox(
-              height: context.deviceHeight * 0.02,
-            ),
-            const RegisterPasswordTextField(),
-            SizedBox(
-              height: context.deviceHeight * 0.02,
-            ),
-            const RegisterConfirmPasswordTextField(),
-            SizedBox(
-              height: context.deviceHeight * 0.04,
-            ),
-            const RegisterButton(),
-            SizedBox(
-              height: context.deviceHeight * 0.03,
-            ),
-            SwitchAuthenticationOptionTextButton(
-              upperText: AppTranslations.register.alreadyHaveAnAccount,
-              lowerText: AppTranslations.register.loginNow,
-              onTap: () => context.pushNamed(AppNamedRoutes.login),
-            ),
-          ],
+      body: SafeArea(
+        bottom: false,
+        child: BlocListener<RegisterBloc, RegisterState>(
+          listener: _listener,
+          child: ListView(
+            padding: const EdgeInsetsDirectional.all(24),
+            children: [
+              const RegisterHeaderText(),
+              SizedBox(
+                height: context.deviceHeight * 0.01,
+              ),
+              const RegisterBodyText(),
+              SizedBox(
+                height: context.deviceHeight * 0.04,
+              ),
+              const RegisterDisplayNameTextField(),
+              SizedBox(
+                height: context.deviceHeight * 0.02,
+              ),
+              const RegisterEmailTextField(),
+              SizedBox(
+                height: context.deviceHeight * 0.02,
+              ),
+              const RegisterPasswordTextField(),
+              SizedBox(
+                height: context.deviceHeight * 0.02,
+              ),
+              const RegisterConfirmPasswordTextField(),
+              SizedBox(
+                height: context.deviceHeight * 0.04,
+              ),
+              const RegisterButton(),
+              SizedBox(
+                height: context.deviceHeight * 0.03,
+              ),
+              SwitchAuthenticationOptionTextButton(
+                upperText: AppTranslations.register.alreadyHaveAnAccount,
+                lowerText: AppTranslations.register.loginNow,
+                onTap: () => context.pushNamed(AppNamedRoutes.login),
+              ),
+            ],
+          ),
         ),
       ),
     );
