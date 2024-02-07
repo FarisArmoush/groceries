@@ -6,7 +6,6 @@ import 'package:groceries/presentation/blocs/logout/logout_bloc.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries/utils/extenstions/padding_extensions.dart';
-import 'package:groceries/utils/extenstions/widgets_as_extensions.dart';
 
 class VerificationEmailSentSuccessfully extends StatelessWidget {
   const VerificationEmailSentSuccessfully({super.key});
@@ -17,7 +16,7 @@ class VerificationEmailSentSuccessfully extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Assets.svg.illCelebrating.svg(
-          height: context.deviceHeight * 0.2,
+          height: context.deviceHeight * 0.3,
         ),
         SizedBox(
           height: context.deviceHeight * 0.02,
@@ -49,6 +48,6 @@ class VerificationEmailSentSuccessfully extends StatelessWidget {
           child: Text(AppTranslations.accountSettings.logout),
         ),
       ],
-    ).centered().symmetricPadding(vertical: 12, horizontal: 24);
+    ).symmetricPadding(vertical: 12, horizontal: 24);
   }
 }

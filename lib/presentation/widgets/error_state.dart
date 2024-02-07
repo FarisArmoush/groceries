@@ -18,16 +18,18 @@ class ErrorState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        _buildIcon(),
-        SizedBox(height: context.deviceHeight * 0.01),
-        _buildTitle(context),
-        SizedBox(height: context.deviceHeight * 0.01),
-        _buildActionButton(),
-      ],
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          _buildIcon(),
+          SizedBox(height: context.deviceHeight * 0.01),
+          _buildTitle(context),
+          SizedBox(height: context.deviceHeight * 0.01),
+          _buildActionButton(),
+        ],
+      ),
     );
   }
 

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/verify_user/bloc/verify_user_bloc.dart';
-import 'package:groceries/presentation/modules/verify_user/widgets/failed_to_send_verification_email.dart';
-import 'package:groceries/presentation/modules/verify_user/widgets/loading_sending_verification_email.dart';
 import 'package:groceries/presentation/modules/verify_user/widgets/verification_email_sent_successfully.dart';
 import 'package:groceries/presentation/modules/verify_user/widgets/verify_user_initial_body.dart';
+import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
+import 'package:groceries/presentation/widgets/error_state.dart';
 
 class VerifyUserView extends StatelessWidget {
   const VerifyUserView({super.key});
@@ -19,9 +19,11 @@ class VerifyUserView extends StatelessWidget {
       body: BlocBuilder<VerifyUserBloc, VerifyUserState>(
         builder: (context, state) => state.status.when(
           initial: () => const VerifyUserInitialBody(),
-          loading: () => const LoadingSendingVerificationEmail(),
+          loading: () => const AppLoadingIndicator(
+            type: AppLoadingIndicatorType.linear,
+          ),
           success: () => const VerificationEmailSentSuccessfully(),
-          failure: (error) => FailedToSendVerificationEmail(error: error),
+          failure: (error) => ErrorState(title: Text(error)),
         ),
       ),
     );
