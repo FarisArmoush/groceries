@@ -25,20 +25,12 @@ class LogoutBottomSheet extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               children: [
                 Text(
-                  AppTranslations.accountSettings.logoutBottomSheetHeader,
+                  AppTranslations.accountSettings.logoutBottomSheetBody,
                   style: context.theme.dialogTheme.titleTextStyle,
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(
                   height: context.deviceHeight * 0.02,
-                ),
-                Text(
-                  AppTranslations.accountSettings.logoutBottomSheetBody,
-                  style: context.theme.dialogTheme.contentTextStyle,
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(
-                  height: context.deviceHeight * 0.01,
                 ),
                 FilledButton(
                   onPressed: () {
