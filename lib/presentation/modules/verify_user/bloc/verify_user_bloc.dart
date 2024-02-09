@@ -11,7 +11,11 @@ part 'verify_user_state.dart';
 @injectable
 class VerifyUserBloc extends Bloc<VerifyUserEvent, VerifyUserState> {
   VerifyUserBloc(this._verifyUserUseCase) : super(const VerifyUserState()) {
-    on<_VerifyUser>(_onVerifyUser);
+    on<VerifyUserEvent>(
+      (event, emit) => event.map(
+        verifyUser: (event) => _onVerifyUser(event, emit),
+      ),
+    );
   }
   final VerifyUserUseCase _verifyUserUseCase;
 

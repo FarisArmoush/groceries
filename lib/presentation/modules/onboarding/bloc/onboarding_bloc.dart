@@ -10,8 +10,13 @@ part 'onboarding_state.dart';
 @injectable
 class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
   OnboardingBloc() : super(const OnboardingState()) {
-    on<_UpdateIndex>(_onUpdateIndex);
-    on<_MarkOnboardingAsViewed>(_onMarkOnboardingAsViewed);
+    on<OnboardingEvent>(
+      (event, emit) => event.map(
+        updateIndex: (event) => _onUpdateIndex(event, emit),
+        markOnboardingAsViewed: (event) =>
+            _onMarkOnboardingAsViewed(event, emit),
+      ),
+    );
   }
 
   void _onUpdateIndex(

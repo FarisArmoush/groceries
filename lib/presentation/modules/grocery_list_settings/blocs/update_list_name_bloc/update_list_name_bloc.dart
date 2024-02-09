@@ -12,7 +12,11 @@ class UpdateListNameBloc
     extends Bloc<UpdateListNameEvent, UpdateListNameState> {
   UpdateListNameBloc(this._updateListNameUseCase)
       : super(const UpdateListNameState()) {
-    on<_Update>(_onUpdate);
+    on<UpdateListNameEvent>(
+      (event, emit) => event.map(
+        update: (event) => _onUpdate(event, emit),
+      ),
+    );
   }
   final UpdateListNameUseCase _updateListNameUseCase;
 

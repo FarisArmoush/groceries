@@ -19,10 +19,14 @@ part 'login_state.dart';
 @injectable
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc(this._loginWithEmailAndPasswordUseCase) : super(LoginState()) {
-    on<_ToggleIsObscure>(_onToggleIsObscure);
-    on<_UpdateEmail>(_onUpdateEmail);
-    on<_UpdatePassword>(_onUpdatePassword);
-    on<_Login>(_onLogin);
+    on<LoginEvent>(
+      (event, emit) => event.map(
+        updateEmail: (event) => _onUpdateEmail(event, emit),
+        updatePassword: (event) => _onUpdatePassword(event, emit),
+        toggleIsObscure: (event) => _onToggleIsObscure(event, emit),
+        login: (event) => _onLogin(event, emit),
+      ),
+    );
   }
   final LoginWithEmailAndPasswordUseCase _loginWithEmailAndPasswordUseCase;
 

@@ -13,7 +13,11 @@ part 'delete_account_state.dart';
 class DeleteAccountBloc extends Bloc<DeleteAccountEvent, DeleteAccountState> {
   DeleteAccountBloc(this._deleteAccountUseCase)
       : super(const DeleteAccountState()) {
-    on<_DeleteAccount>(_onDeleteAccount);
+    on<DeleteAccountEvent>(
+      (event, emit) => event.map(
+        deleteAccount: (event) => _onDeleteAccount(event, emit),
+      ),
+    );
   }
   final DeleteAccountUseCase _deleteAccountUseCase;
 

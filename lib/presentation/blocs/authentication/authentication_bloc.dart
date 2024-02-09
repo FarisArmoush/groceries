@@ -19,7 +19,11 @@ class AuthenticationBloc
               ? _Authenticated(user: _authenticationRepository.currentUser)
               : const _UnAuthenticated(),
         ) {
-    on<_UserChanged>(_onUserChanged);
+    on<AuthenticationEvent>(
+      (event, emit) => event.map(
+        userChanged: (event) => _onUserChanged(event, emit),
+      ),
+    );
 
     _userSubscription = _authenticationRepository.authStateChanges.listen(
       (user) => add(

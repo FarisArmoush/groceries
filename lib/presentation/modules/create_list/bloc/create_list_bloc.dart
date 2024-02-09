@@ -16,10 +16,14 @@ part 'create_list_state.dart';
 @injectable
 class CreateListBloc extends Bloc<CreateListEvent, CreateListState> {
   CreateListBloc(this._createListUseCase) : super(const CreateListState()) {
-    on<_CreateList>(_onCreateList);
-    on<_GetIcons>(_onGetIcons);
-    on<_IconChanged>(_onIconChanged);
-    on<_NameChanged>(_onNameChanged);
+    on<CreateListEvent>(
+      (event, emit) => event.map(
+        createList: (event) => _onCreateList(event, emit),
+        nameChanged: (event) => _onNameChanged(event, emit),
+        iconChanged: (event) => _onIconChanged(event, emit),
+        getIcons: (event) => _onGetIcons(event, emit),
+      ),
+    );
   }
 
   final CreateListUseCase _createListUseCase;

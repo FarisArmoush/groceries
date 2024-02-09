@@ -19,12 +19,16 @@ part 'register_state.dart';
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
   RegisterBloc(this._registerWithEmailAndPasswordUseCase)
       : super(RegisterState()) {
-    on<_UpdateDisplayName>(_onUpdateDisplayName);
-    on<_UpdateEmail>(_onUpdateEmail);
-    on<_UpdatePassword>(_onUpdatePassword);
-    on<_UpdateConfirmPassword>(_onUpdateConfirmPassword);
-    on<_ToggleIsObscure>(_onToggleIsObscure);
-    on<_Register>(_onRegister);
+    on<RegisterEvent>(
+      (event, emit) => event.map(
+        updateDisplayName: (event) => _onUpdateDisplayName(event, emit),
+        updateEmail: (event) => _onUpdateEmail(event, emit),
+        updatePassword: (event) => _onUpdatePassword(event, emit),
+        updateConfirmPassword: (event) => _onUpdateConfirmPassword(event, emit),
+        toggleIsObscure: (event) => _onToggleIsObscure(event, emit),
+        register: (event) => _onRegister(event, emit),
+      ),
+    );
   }
 
   final RegisterWithEmailAndPasswordUseCase

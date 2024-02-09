@@ -15,9 +15,12 @@ class UpdateDisplayNameBloc
     extends Bloc<UpdateDisplayNameEvent, UpdateDisplayNameState> {
   UpdateDisplayNameBloc(this._updateDisplayNameUseCase)
       : super(const UpdateDisplayNameState()) {
-    on<_DisplayNameChanged>(_onDisplayNameChanged);
-
-    on<_UpdateDisplayName>(_onUpdateDisplayName);
+    on<UpdateDisplayNameEvent>(
+      (event, emit) => event.map(
+        displayNameChanged: (event) => _onDisplayNameChanged(event, emit),
+        updateDisplayName: (event) => _onUpdateDisplayName(event, emit),
+      ),
+    );
   }
 
   final UpdateDisplayNameUseCase _updateDisplayNameUseCase;

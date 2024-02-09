@@ -13,7 +13,11 @@ part 'grocery_lists_state.dart';
 class GroceryListsBloc extends Bloc<GroceryListsEvent, GroceryListsState> {
   GroceryListsBloc(this._groceryListsUseCase)
       : super(const GroceryListsState()) {
-    on<_LoadGroceryLists>(_onLoadGroceryLists);
+    on<GroceryListsEvent>(
+      (event, emit) => event.map(
+        loadGroceryLists: (event) => _onLoadGroceryLists(event, emit),
+      ),
+    );
   }
   final GroceryListsUseCase _groceryListsUseCase;
 

@@ -14,8 +14,12 @@ part 'update_email_state.dart';
 @injectable
 class UpdateEmailBloc extends Bloc<UpdateEmailEvent, UpdateEmailState> {
   UpdateEmailBloc(this._updateEmailUseCase) : super(const UpdateEmailState()) {
-    on<_EmailChanged>(_onEmailChanged);
-    on<_UpdateEmail>(_onUpdateEmail);
+    on<UpdateEmailEvent>(
+      (event, emit) => event.map(
+        emailChanged: (event) => _onEmailChanged(event, emit),
+        updateEmail: (event) => _onUpdateEmail(event, emit),
+      ),
+    );
   }
   final UpdateEmailUseCase _updateEmailUseCase;
 
