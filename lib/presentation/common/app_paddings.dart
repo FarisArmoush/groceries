@@ -13,9 +13,11 @@ abstract final class AppPaddings {
   }
 
   static EdgeInsetsDirectional bottomSheet(BuildContext context) {
-    return EdgeInsetsDirectional.symmetric(
-      horizontal: context.deviceWidth * 0.05,
-      vertical: context.deviceHeight * 0.035,
+    return EdgeInsetsDirectional.only(
+      start: context.deviceWidth * 0.05,
+      end: context.deviceWidth * 0.05,
+      top: context.deviceHeight * 0.01,
+      bottom: context.deviceHeight * 0.035,
     );
   }
 
