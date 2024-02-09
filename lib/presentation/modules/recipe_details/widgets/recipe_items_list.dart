@@ -25,7 +25,7 @@ class RecipeItemsList extends StatelessWidget {
                   child: ListTile(
                     title: Text(item?.name ?? ''),
                     subtitle: Text(item?.notes ?? ''),
-                    leading: Assets.svg.icArchive.svg(
+                    leading: Assets.icons.archive.svg(
                       colorFilter: ColorFilter.mode(
                         context.theme.primaryColor,
                         BlendMode.srcIn,

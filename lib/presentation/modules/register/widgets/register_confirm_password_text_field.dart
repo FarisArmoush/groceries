@@ -19,7 +19,7 @@ class RegisterConfirmPasswordTextField extends StatelessWidget {
           previous.isObscure != current.isObscure,
       builder: (context, state) {
         return AppTextField(
-          prefixIcon: Assets.svg.icRepeat.svg(
+          prefixIcon: Assets.icons.repeat.svg(
             fit: BoxFit.scaleDown,
             colorFilter: ColorFilter.mode(
               context.theme.inputDecorationTheme.prefixIconColor!,

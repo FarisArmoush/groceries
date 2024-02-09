@@ -23,7 +23,7 @@ class ClearGroceryListItemsButton extends StatelessWidget {
           listModel: listModel,
         ),
       ),
-      icon: Assets.svg.icEraser.svg(
+      icon: Assets.icons.eraser.svg(
         colorFilter: ColorFilter.mode(
           context.theme.primaryColor,
           BlendMode.srcIn,

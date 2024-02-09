@@ -54,7 +54,7 @@ class _RecipeDetailsViewState extends State<RecipeDetailsView> {
                       showDragHandle: true,
                       builder: (context) => const RecipeOptionsBottomSheet(),
                     ),
-                    icon: Assets.svg.icVerticalThreeDots.svg(
+                    icon: Assets.icons.menu.svg(
                       colorFilter: ColorFilter.mode(
                         context.theme.hintColor,
                         BlendMode.srcIn,

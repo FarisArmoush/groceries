@@ -22,12 +22,12 @@ class UploadImageBottomSheet extends StatelessWidget {
       children: [
         BottomSheetButton(
           text: AppTranslations.general.takePhoto,
-          iconPath: Assets.svg.icCamera.path,
+          iconPath: Assets.icons.camera.path,
           onTap: onTakePhoto,
         ),
         BottomSheetButton(
           text: AppTranslations.general.uploadPhotoFromGallery,
-          iconPath: Assets.svg.icImage.path,
+          iconPath: Assets.icons.image.path,
           onTap: onUploadPhoto,
         ),
       ],

@@ -23,8 +23,8 @@ class NextArrowIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return SvgPicture.asset(
       context.locale.languageCode == 'ar'
-          ? Assets.svg.icLeftArrow.path
-          : Assets.svg.icRightArrow.path,
+          ? Assets.icons.leftArrow.path
+          : Assets.icons.rightArrow.path,
       colorFilter: ColorFilter.mode(
         color ?? context.theme.hintColor,
         BlendMode.srcIn,

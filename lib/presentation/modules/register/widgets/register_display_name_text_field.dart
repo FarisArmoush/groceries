@@ -20,7 +20,7 @@ class RegisterDisplayNameTextField extends StatelessWidget {
           onChanged: (value) => context.read<RegisterBloc>().add(
                 RegisterEvent.updateDisplayName(value),
               ),
-          prefixIcon: Assets.svg.icUser.svg(
+          prefixIcon: Assets.icons.user.svg(
             colorFilter: ColorFilter.mode(
               context.theme.inputDecorationTheme.prefixIconColor!,
               BlendMode.srcIn,

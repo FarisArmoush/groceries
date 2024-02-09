@@ -50,7 +50,7 @@ class CachedImage extends StatelessWidget {
         );
       },
       errorWidget: (context, url, error) {
-        return Assets.svg.icCircleX.svg(
+        return Assets.icons.circleX.svg(
           colorFilter: ColorFilter.mode(
             context.theme.primaryColorLight,
             BlendMode.srcIn,

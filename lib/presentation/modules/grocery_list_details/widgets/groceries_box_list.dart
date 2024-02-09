@@ -32,13 +32,13 @@ class GroceriesBoxList extends StatelessWidget {
                   trailing: IconButton(
                     onPressed: () {},
                     icon: item?.isDone ?? false
-                        ? Assets.svg.icDoubleCheck.svg(
+                        ? Assets.icons.doubleCheck.svg(
                             colorFilter: const ColorFilter.mode(
                               Colors.green,
                               BlendMode.srcIn,
                             ),
                           )
-                        : Assets.svg.icCheck.svg(
+                        : Assets.icons.check.svg(
                             colorFilter: ColorFilter.mode(
                               context.theme.primaryColor,
                               BlendMode.srcIn,

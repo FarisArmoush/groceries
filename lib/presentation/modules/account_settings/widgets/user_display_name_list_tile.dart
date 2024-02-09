@@ -16,7 +16,7 @@ class UserDisplayNameListTile extends StatelessWidget {
     return ListTile(
       title: Text(AppTranslations.general.username),
       subtitle: Text(displayName ?? ''),
-      trailing: Assets.svg.icEdit.svg(
+      trailing: Assets.icons.edit.svg(
         colorFilter: ColorFilter.mode(
           context.theme.hintColor,
           BlendMode.srcIn,

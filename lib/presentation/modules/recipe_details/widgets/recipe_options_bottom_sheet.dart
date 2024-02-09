@@ -16,17 +16,17 @@ class RecipeOptionsBottomSheet extends StatelessWidget {
         BottomSheetButton(
           onTap: () {},
           text: 'Edit',
-          iconPath: Assets.svg.icEdit.path,
+          iconPath: Assets.icons.edit.path,
         ),
         BottomSheetButton(
           onTap: () {},
           text: 'Share',
-          iconPath: Assets.svg.icShare.path,
+          iconPath: Assets.icons.share.path,
         ),
         BottomSheetButton(
           onTap: () {},
           text: 'Delete',
-          iconPath: Assets.svg.icTrash.path,
+          iconPath: Assets.icons.trash.path,
           color: context.theme.primaryColorLight,
         ),
       ],

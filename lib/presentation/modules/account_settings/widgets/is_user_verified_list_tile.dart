@@ -21,13 +21,13 @@ class IsUserVerifiedListTile extends StatelessWidget {
           ? Text(AppTranslations.accountSettings.verified)
           : null,
       trailing: isVerified == true
-          ? Assets.svg.icVerified.svg(
+          ? Assets.icons.verified.svg(
               colorFilter: const ColorFilter.mode(
                 Colors.green,
                 BlendMode.srcIn,
               ),
             )
-          : Assets.svg.icBadgeAlert.svg(
+          : Assets.icons.alertBadge.svg(
               colorFilter: const ColorFilter.mode(
                 AppColors.lightRed,
                 BlendMode.srcIn,

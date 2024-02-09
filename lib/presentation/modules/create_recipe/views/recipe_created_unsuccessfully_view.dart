@@ -21,7 +21,7 @@ class RecipeCreatedUnsuccessfullyView extends StatelessWidget {
             SizedBox(
               height: context.deviceHeight * 0.1,
             ),
-            Assets.svg.illError.svg(),
+            Assets.illustrations.error.svg(),
             Text(
               'oops...',
               style: TextStyle(

@@ -18,7 +18,7 @@ class GroceryListsRailHeader extends StatelessWidget {
         TextButton.icon(
           label: Text(AppTranslations.createGroceryList.createNewList),
           onPressed: () => context.pushNamed(AppNamedRoutes.createList),
-          icon: Assets.svg.icPlusCircle.svg(
+          icon: Assets.icons.plusCircle.svg(
             colorFilter: ColorFilter.mode(
               context.theme.primaryColorLight,
               BlendMode.srcIn,

@@ -45,7 +45,7 @@ class LogoutButton extends StatelessWidget {
       },
       child: AppListTileButton(
         title: AppTranslations.accountSettings.logout,
-        icon: Assets.svg.icLogout.path,
+        icon: Assets.icons.logout.path,
         color: context.theme.primaryColorLight,
         onTap: () => showModalBottomSheet<void>(
           context: context,

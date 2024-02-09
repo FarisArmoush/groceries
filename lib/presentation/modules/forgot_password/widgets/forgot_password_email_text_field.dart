@@ -22,7 +22,7 @@ class ForgotPasswordEmailTextField extends StatelessWidget {
           keyboardType: TextInputType.emailAddress,
           validator: (value) => state.email.validator(value),
           errorText: state.email.displayError,
-          prefixIcon: Assets.svg.icMail.svg(
+          prefixIcon: Assets.icons.mail.svg(
             fit: BoxFit.scaleDown,
             colorFilter: ColorFilter.mode(
               context.theme.inputDecorationTheme.prefixIconColor!,

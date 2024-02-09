@@ -24,7 +24,7 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
           SizedBox(
             height: context.deviceHeight * 0.01,
           ),
-          Assets.svg.illMail.svg(
+          Assets.illustrations.mail.svg(
             height: context.deviceHeight * 0.3,
           ),
           SizedBox(

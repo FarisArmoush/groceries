@@ -68,13 +68,13 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
           ),
           BottomSheetButton(
             text: 'Remove Image',
-            iconPath: Assets.svg.icImage.path,
+            iconPath: Assets.icons.image.path,
             onTap: () {},
           ),
         ] else
           BottomSheetButton(
             text: 'Add Image',
-            iconPath: Assets.svg.icImage.path,
+            iconPath: Assets.icons.image.path,
             onTap: () => showModalBottomSheet<void>(
               context: context,
               elevation: 0,
@@ -87,12 +87,12 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
           ),
         BottomSheetButton(
           text: 'Remove Item',
-          iconPath: Assets.svg.icTrash.path,
+          iconPath: Assets.icons.trash.path,
           onTap: () {},
         ),
         BottomSheetButton(
           text: 'Mark as done',
-          iconPath: Assets.svg.icDoubleCheck.path,
+          iconPath: Assets.icons.doubleCheck.path,
           onTap: () {},
         ),
         SizedBox(

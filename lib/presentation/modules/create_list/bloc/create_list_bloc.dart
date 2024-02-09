@@ -90,19 +90,20 @@ class CreateListBloc extends Bloc<CreateListEvent, CreateListState> {
     Emitter<CreateListState> emit,
   ) {
     final icons = [
-      Assets.svg.icBeef.path,
-      Assets.svg.icBook.path,
-      Assets.svg.icBriefcase.path,
-      Assets.svg.icCake.path,
-      Assets.svg.icCar.path,
-      Assets.svg.icChurch.path,
-      Assets.svg.icDumbbell.path,
-      Assets.svg.icHammer.path,
-      Assets.svg.icPalmTree.path,
-      Assets.svg.icPaw.path,
-      Assets.svg.icScissors.path,
-      Assets.svg.icStore.path,
-      Assets.svg.icBaby.path,
+      // TODO(FarisArmoush): add house icon, https://github.com/FarisArmoush/groceries/issues/165
+      Assets.icons.beef.path,
+      Assets.icons.book.path,
+      Assets.icons.briefCase.path,
+      Assets.icons.cake.path,
+      Assets.icons.car.path,
+      Assets.icons.church.path,
+      Assets.icons.dumbbell.path,
+      Assets.icons.hammer.path,
+      Assets.icons.palmTree.path,
+      Assets.icons.paw.path,
+      Assets.icons.scissors.path,
+      Assets.icons.store.path,
+      Assets.icons.baby.path,
     ];
     emit(
       state.copyWith(

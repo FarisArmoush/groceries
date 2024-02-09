@@ -16,7 +16,7 @@ class EmptyGroceryList extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Assets.svg.illWriting.svg(
+        Assets.illustrations.writing.svg(
           height: context.deviceHeight * 0.35,
         ),
         SizedBox(
@@ -49,7 +49,7 @@ class EmptyGroceryList extends StatelessWidget {
         ElevatedButton.icon(
           onPressed: () => context.pushNamed(AppNamedRoutes.addItems),
           label: Text(AppTranslations.groceryLists.browseGroceries),
-          icon: Assets.svg.icSearch.svg(
+          icon: Assets.icons.search.svg(
             colorFilter: ColorFilter.mode(
               context.theme.colorScheme.secondary,
               BlendMode.srcIn,

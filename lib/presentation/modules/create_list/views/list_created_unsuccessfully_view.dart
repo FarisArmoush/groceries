@@ -21,7 +21,7 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
             SizedBox(
               height: context.deviceHeight * 0.1,
             ),
-            Assets.svg.illError.svg(),
+            Assets.illustrations.error.svg(),
             Text(
               AppTranslations.createGroceryList.listCreatedUnsuccessfullyHeader,
               style: TextStyle(

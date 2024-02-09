@@ -15,7 +15,7 @@ class GroceryListDetailsFab extends StatelessWidget {
         context.pushNamed(AppNamedRoutes.addItems);
       },
       label: Text(AppTranslations.addItems.addItems),
-      icon: Assets.svg.icPlus.svg(
+      icon: Assets.icons.plus.svg(
         colorFilter: const ColorFilter.mode(
           AppColors.white,
           BlendMode.srcIn,

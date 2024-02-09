@@ -23,13 +23,13 @@ class GroceryItemCard extends StatelessWidget {
       trailing: IconButton(
         onPressed: onPressed,
         icon: isDone
-            ? Assets.svg.icCheckCircle.svg(
+            ? Assets.icons.checkCircle.svg(
                 colorFilter: const ColorFilter.mode(
                   Colors.green,
                   BlendMode.srcIn,
                 ),
               )
-            : Assets.svg.icPlus.svg(
+            : Assets.icons.plus.svg(
                 colorFilter: ColorFilter.mode(
                   context.theme.primaryColor,
                   BlendMode.srcIn,

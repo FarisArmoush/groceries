@@ -49,7 +49,7 @@ class ErrorState extends StatelessWidget {
   }
 
   Widget _buildIcon() {
-    return icon ?? Assets.svg.illError.svg();
+    return icon ?? Assets.illustrations.error.svg();
   }
 
   Widget _buildActionButton() {

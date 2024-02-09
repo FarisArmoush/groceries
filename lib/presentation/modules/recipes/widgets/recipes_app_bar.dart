@@ -17,7 +17,7 @@ class RecipesAppBar extends StatelessWidget {
       largeTitle: Text(AppTranslations.recipes.recipes),
       trailing: IconButton(
         onPressed: () => context.pushNamed(AppNamedRoutes.createRecipe),
-        icon: Assets.svg.icPlusCircle.svg(
+        icon: Assets.icons.plusCircle.svg(
           colorFilter: ColorFilter.mode(
             context.theme.primaryColorLight,
             BlendMode.srcIn,

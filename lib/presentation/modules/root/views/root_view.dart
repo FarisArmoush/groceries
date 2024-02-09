@@ -64,20 +64,20 @@ class _RootViewState extends State<RootView> {
       _bnbItem(
         context,
         label: AppTranslations.home.home,
-        iconPath: Assets.svg.icHouse.path,
-        activeIconPath: Assets.svg.icHouseFilled.path,
+        iconPath: Assets.icons.house.path,
+        activeIconPath: Assets.icons.houseFilled.path,
       ),
       _bnbItem(
         context,
         label: AppTranslations.recipes.recipes,
-        iconPath: Assets.svg.icCookingPot.path,
-        activeIconPath: Assets.svg.icCookingPotFilled.path,
+        iconPath: Assets.icons.cookingPot.path,
+        activeIconPath: Assets.icons.cookingPotFilled.path,
       ),
       _bnbItem(
         context,
         label: AppTranslations.settings.settings,
-        iconPath: Assets.svg.icGear.path,
-        activeIconPath: Assets.svg.icGearFilled.path,
+        iconPath: Assets.icons.gear.path,
+        activeIconPath: Assets.icons.gearFilled.path,
       ),
     ];
   }

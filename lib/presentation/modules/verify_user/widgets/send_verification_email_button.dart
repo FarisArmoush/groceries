@@ -15,7 +15,7 @@ class SendVerificationEmailButton extends StatelessWidget {
         ..add(
           const VerifyUserEvent.verifyUser(),
         ),
-      icon: Assets.svg.icSend.svg(
+      icon: Assets.icons.send.svg(
         colorFilter: ColorFilter.mode(
           context.theme.colorScheme.secondary,
           BlendMode.srcIn,

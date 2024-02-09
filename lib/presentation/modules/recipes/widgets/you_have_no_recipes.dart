@@ -12,9 +12,8 @@ class YouHaveNoRecipes extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SizedBox(
+        Assets.illustrations.eating.svg(
           height: context.deviceHeight * 0.35,
-          child: Assets.svg.illEating.svg(),
         ),
         SizedBox(
           height: context.deviceHeight * 0.02,
