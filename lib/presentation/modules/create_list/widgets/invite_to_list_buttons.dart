@@ -15,7 +15,7 @@ class InviteToListButtons extends StatelessWidget {
       children: [
         TextButton.icon(
           onPressed: () {},
-          icon: Assets.svg.icAtSign.svg(
+          icon: Assets.icons.atSign.svg(
             height: context.deviceHeight * 0.03,
             colorFilter: ColorFilter.mode(
               context.theme.primaryColor,
@@ -33,7 +33,7 @@ class InviteToListButtons extends StatelessWidget {
         ),
         TextButton.icon(
           onPressed: () {},
-          icon: Assets.svg.icClipboardCopy.svg(
+          icon: Assets.icons.copy.svg(
             height: context.deviceHeight * 0.03,
             colorFilter: ColorFilter.mode(
               context.theme.primaryColor,

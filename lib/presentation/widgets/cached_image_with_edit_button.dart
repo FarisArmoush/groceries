@@ -45,7 +45,7 @@ class CachedImageWithEditButton extends StatelessWidget {
                       showDragHandle: true,
                       builder: (context) => const Placeholder(),
                     ),
-            icon: Assets.svg.icEdit.svg(
+            icon: Assets.icons.edit.svg(
               colorFilter: const ColorFilter.mode(
                 AppColors.white,
                 BlendMode.srcIn,

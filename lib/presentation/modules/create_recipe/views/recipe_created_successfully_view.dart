@@ -21,7 +21,7 @@ class RecipeCreatedSuccessfullyView extends StatelessWidget {
             SizedBox(
               height: context.deviceHeight * 0.15,
             ),
-            Assets.svg.illCelebrating.svg(
+            Assets.illustrations.celebrating.svg(
               height: context.deviceHeight * 0.35,
             ),
             Text(

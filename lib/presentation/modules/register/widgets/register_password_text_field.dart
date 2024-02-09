@@ -23,7 +23,7 @@ class RegisterPasswordTextField extends StatelessWidget {
           labelText: AppTranslations.general.password,
           errorText: state.password.displayError,
           obscureText: state.isObscure,
-          prefixIcon: Assets.svg.icLock.svg(
+          prefixIcon: Assets.icons.lock.svg(
             fit: BoxFit.scaleDown,
             colorFilter: ColorFilter.mode(
               context.theme.inputDecorationTheme.prefixIconColor!,

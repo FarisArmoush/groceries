@@ -15,7 +15,7 @@ class VerificationEmailSentSuccessfully extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Assets.svg.illCelebrating.svg(
+        Assets.illustrations.celebrating.svg(
           height: context.deviceHeight * 0.3,
         ),
         SizedBox(

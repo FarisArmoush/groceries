@@ -20,7 +20,7 @@ class DeleteAccountView extends StatelessWidget {
         shrinkWrap: true,
         padding: AppPaddings.scaffold(context),
         children: [
-          Assets.svg.illGaming.svg(
+          Assets.illustrations.gaming.svg(
             height: context.deviceHeight * 0.4,
           ),
           SizedBox(

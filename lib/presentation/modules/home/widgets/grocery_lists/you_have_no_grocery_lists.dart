@@ -16,7 +16,7 @@ class YouDontHaveGroceryLists extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Assets.svg.illComputer.svg(
+        Assets.illustrations.computer.svg(
           height: context.deviceHeight * 0.2,
         ),
         SizedBox(

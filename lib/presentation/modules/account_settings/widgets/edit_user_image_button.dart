@@ -10,7 +10,7 @@ class EditUserImageButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton.icon(
-      icon: Assets.svg.icEdit.svg(
+      icon: Assets.icons.edit.svg(
         colorFilter: ColorFilter.mode(
           context.theme.primaryColorLight,
           BlendMode.srcIn,

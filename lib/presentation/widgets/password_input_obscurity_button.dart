@@ -17,7 +17,7 @@ class PasswordInputObscurityButton extends StatelessWidget {
     return IconButton(
       onPressed: onPressed,
       icon: SvgPicture.asset(
-        isObscure ? Assets.svg.icEye.path : Assets.svg.icEyeClosed.path,
+        isObscure ? Assets.icons.eye.path : Assets.icons.eyeClosed.path,
         height: context.deviceHeight * 0.03,
         colorFilter: ColorFilter.mode(
           context.theme.hintColor,

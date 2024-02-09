@@ -17,7 +17,7 @@ class AppSnackBars {
         textBaseline: TextBaseline.alphabetic,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Assets.svg.icCheckCircle.svg(
+          Assets.icons.checkCircle.svg(
             colorFilter: const ColorFilter.mode(
               AppColors.white,
               BlendMode.srcIn,
@@ -41,7 +41,7 @@ class AppSnackBars {
         textBaseline: TextBaseline.alphabetic,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Assets.svg.icInfo.svg(
+          Assets.icons.info.svg(
             colorFilter: const ColorFilter.mode(
               AppColors.white,
               BlendMode.srcIn,
@@ -65,7 +65,7 @@ class AppSnackBars {
         textBaseline: TextBaseline.alphabetic,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Assets.svg.icAlertTriangle.svg(
+          Assets.icons.alertTriangle.svg(
             colorFilter: const ColorFilter.mode(
               AppColors.white,
               BlendMode.srcIn,
@@ -89,7 +89,7 @@ class AppSnackBars {
         textBaseline: TextBaseline.alphabetic,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Assets.svg.icCircleX.svg(
+          Assets.icons.circleX.svg(
             colorFilter: const ColorFilter.mode(
               AppColors.white,
               BlendMode.srcIn,

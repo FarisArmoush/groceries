@@ -15,7 +15,7 @@ class VerifyUserInitialBody extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Assets.svg.illBirdWatching.svg(
+          Assets.illustrations.birdWatching.svg(
             height: context.deviceHeight * 0.3,
           ),
           SizedBox(

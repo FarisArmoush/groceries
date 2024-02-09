@@ -33,7 +33,7 @@ class EditListImage extends StatelessWidget {
                 ),
               );
             },
-            icon: Assets.svg.icEdit.svg(
+            icon: Assets.icons.edit.svg(
               colorFilter: const ColorFilter.mode(
                 AppColors.white,
                 BlendMode.srcIn,

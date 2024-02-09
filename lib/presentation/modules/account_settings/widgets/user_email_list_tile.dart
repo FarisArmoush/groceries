@@ -21,7 +21,7 @@ class UserEmailListTile extends StatelessWidget {
     return ListTile(
       title: Text(AppTranslations.general.email),
       subtitle: Text(email ?? ''),
-      trailing: Assets.svg.icEdit.svg(
+      trailing: Assets.icons.edit.svg(
         colorFilter: ColorFilter.mode(
           context.theme.hintColor,
           BlendMode.srcIn,
@@ -48,7 +48,7 @@ class VerifyToUpdateEmailBottomSheet extends StatelessWidget {
       shrinkWrap: true,
       padding: AppPaddings.bottomSheet(context),
       children: [
-        Assets.svg.illWriting.svg(
+        Assets.illustrations.writing.svg(
           height: context.deviceHeight * 0.25,
         ),
         SizedBox(

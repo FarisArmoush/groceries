@@ -30,7 +30,7 @@ class MemberCard extends StatelessWidget {
             onCancel: () => context.pop(),
           ),
         ),
-        icon: Assets.svg.icUserX.svg(
+        icon: Assets.icons.removeUser.svg(
           colorFilter: ColorFilter.mode(
             context.theme.hintColor,
             BlendMode.srcIn,

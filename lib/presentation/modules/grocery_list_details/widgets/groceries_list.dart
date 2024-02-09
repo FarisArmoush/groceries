@@ -40,7 +40,7 @@ class GroceriesList extends StatelessWidget {
               visible: showHeader,
               child: GroceriesBoxHeader(
                 category: category?.tr() ?? '',
-                assetPath: Assets.svg.icAlertTriangle.path,
+                assetPath: Assets.icons.alertTriangle.path,
               ),
             ),
             GroceriesBoxList(

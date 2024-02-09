@@ -55,7 +55,7 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
               visible: itemsIsEmpty,
               child: BottomSheetButton(
                 text: AppTranslations.groceryLists.sendListAsText,
-                iconPath: Assets.svg.icSend.path,
+                iconPath: Assets.icons.send.path,
                 onTap: () {},
               ),
             ),
@@ -63,13 +63,13 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
               visible: itemsIsEmpty,
               child: BottomSheetButton(
                 text: AppTranslations.groceryLists.printList,
-                iconPath: Assets.svg.icPrinter.path,
+                iconPath: Assets.icons.printer.path,
                 onTap: () {},
               ),
             ),
             BottomSheetButton(
               text: AppTranslations.groceryListSettings.listSettings,
-              iconPath: Assets.svg.icGear.path,
+              iconPath: Assets.icons.gear.path,
               onTap: () => context
                 ..pop()
                 ..pushNamed(

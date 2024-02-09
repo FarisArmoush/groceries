@@ -14,7 +14,7 @@ class YourAccountIsVerifiedBottomSheet extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Assets.svg.illCelebrating.svg(
+          Assets.illustrations.celebrating.svg(
             height: context.deviceHeight * 0.2,
           ),
           SizedBox(

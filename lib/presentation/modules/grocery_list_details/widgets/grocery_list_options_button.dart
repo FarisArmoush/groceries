@@ -17,7 +17,7 @@ class GroceryListOptionsButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       tooltip: AppTranslations.groceryLists.listOptions,
-      icon: Assets.svg.icVerticalThreeDots.svg(
+      icon: Assets.icons.menu.svg(
         colorFilter: ColorFilter.mode(
           context.theme.primaryColor,
           BlendMode.srcIn,

@@ -67,7 +67,8 @@ flutter_gen:
 flutter:
   uses-material-design: true
   assets:
-    - assets/svg/
+    - assets/icons/
+    - assets/illustrations/
   fonts:
     - family: PoppinsThin
       fonts:

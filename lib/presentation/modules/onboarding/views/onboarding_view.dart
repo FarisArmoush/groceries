@@ -48,19 +48,19 @@ class _OnboardingViewState extends State<OnboardingView> {
 
   final pages = <OnboardingPageModel>[
     OnboardingPageModel(
-      illustrationPath: Assets.svg.illCelebrating.path,
+      illustrationPath: Assets.illustrations.celebrating.path,
       title: AppTranslations.onboarding.onboardingFirstTitle,
       body: AppTranslations.onboarding.onboardingFirstBody,
       backgroundColor: Colors.amber,
     ),
     OnboardingPageModel(
-      illustrationPath: Assets.svg.illMail.path,
+      illustrationPath: Assets.illustrations.mail.path,
       title: AppTranslations.onboarding.onboardingSecondTitle,
       body: AppTranslations.onboarding.onboardingSecondBody,
       backgroundColor: Colors.purple,
     ),
     OnboardingPageModel(
-      illustrationPath: Assets.svg.illEating.path,
+      illustrationPath: Assets.illustrations.eating.path,
       title: AppTranslations.onboarding.onboardingThirdTitle,
       body: AppTranslations.onboarding.onboardingThirdBody,
       backgroundColor: Colors.blue,

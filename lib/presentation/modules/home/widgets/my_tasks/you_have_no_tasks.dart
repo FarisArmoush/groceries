@@ -14,7 +14,7 @@ class YouHaveNoTasks extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Assets.svg.illBirdWatching.svg(
+        Assets.illustrations.birdWatching.svg(
           height: context.deviceHeight * 0.2,
         ),
         SizedBox(
