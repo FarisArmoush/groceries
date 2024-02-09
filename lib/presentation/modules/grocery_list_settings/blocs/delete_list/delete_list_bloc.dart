@@ -11,7 +11,11 @@ part 'delete_list_state.dart';
 class DeleteListBloc extends Bloc<DeleteListEvent, DeleteListState> {
   DeleteListBloc(this._deleteGroceryListUseCase)
       : super(const DeleteListState()) {
-    on<_Delete>(_onDelete);
+    on<DeleteListEvent>(
+      (event, emit) => event.map(
+        delete: (event) => _onDelete(event, emit),
+      ),
+    );
   }
 
   final DeleteGroceryListUseCase _deleteGroceryListUseCase;

@@ -14,7 +14,11 @@ part 'add_items_state.dart';
 class AddItemsBloc extends Bloc<AddItemsEvent, AddItemsState> {
   AddItemsBloc(this._fetchParentCategoriesUseCase)
       : super(const AddItemsState()) {
-    on<_GetParentCategories>(_onGetParentCategories);
+    on<AddItemsEvent>(
+      (event, emit) => event.map(
+        getParentCategories: (event) => _onGetParentCategories(event, emit),
+      ),
+    );
   }
 
   final FetchParentCategoriesUseCase _fetchParentCategoriesUseCase;

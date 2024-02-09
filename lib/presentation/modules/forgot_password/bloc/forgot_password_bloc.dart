@@ -16,8 +16,12 @@ class ForgotPasswordBloc
     extends Bloc<ForgotPasswordEvent, ForgotPasswordState> {
   ForgotPasswordBloc(this._sendPasswordResetEmailUseCase)
       : super(const ForgotPasswordState()) {
-    on<_EmailChanged>(_onEmailChanged);
-    on<_SendEmail>(_onSendEmail);
+    on<ForgotPasswordEvent>(
+      (event, emit) => event.map(
+        emailChanged: (event) => _onEmailChanged(event, emit),
+        sendEmail: (event) => _onSendEmail(event, emit),
+      ),
+    );
   }
 
   final SendPasswordResetEmailUseCase _sendPasswordResetEmailUseCase;

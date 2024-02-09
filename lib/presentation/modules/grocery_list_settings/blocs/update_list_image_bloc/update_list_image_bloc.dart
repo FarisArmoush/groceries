@@ -12,7 +12,11 @@ class UpdateListImageBloc
     extends Bloc<UpdateListImageEvent, UpdateListImageState> {
   UpdateListImageBloc(this._updateListImageUseCase)
       : super(const UpdateListImageState()) {
-    on<_Update>(_onUpdate);
+    on<UpdateListImageEvent>(
+      (event, emit) => event.map(
+        update: (event) => _onUpdate(event, emit),
+      ),
+    );
   }
 
   final UpdateListImageUseCase _updateListImageUseCase;

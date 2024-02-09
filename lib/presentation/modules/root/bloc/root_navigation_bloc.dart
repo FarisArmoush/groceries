@@ -10,7 +10,11 @@ part 'root_navigation_state.dart';
 class RootNavigationBloc
     extends Bloc<RootNavigationEvent, RootNavigationState> {
   RootNavigationBloc() : super(RootNavigationState()) {
-    on<_NavigateToIndex>(_onNavigateToIndex);
+    on<RootNavigationEvent>(
+      (event, emit) => event.map(
+        navigateToIndex: (event) => _onNavigateToIndex(event, emit),
+      ),
+    );
   }
   void _onNavigateToIndex(
     _NavigateToIndex event,

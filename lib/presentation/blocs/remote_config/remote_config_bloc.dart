@@ -11,7 +11,11 @@ part 'remote_config_state.dart';
 class RemoteConfigBloc extends Bloc<RemoteConfigEvent, RemoteConfigState> {
   RemoteConfigBloc(this._remoteConfigUseCase)
       : super(const RemoteConfigState()) {
-    on<_GetAppVersion>(_onGetAppVersion);
+    on<RemoteConfigEvent>(
+      (event, emit) => event.map(
+        getAppVersion: (event) => _onGetAppVersion(event, emit),
+      ),
+    );
   }
   final RemoteConfigUseCase _remoteConfigUseCase;
 

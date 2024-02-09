@@ -12,7 +12,11 @@ part 'logout_state.dart';
 @injectable
 class LogoutBloc extends Bloc<LogoutEvent, LogoutState> {
   LogoutBloc(this._logoutUseCase) : super(const LogoutState()) {
-    on<_Logout>(_onLogout);
+    on<LogoutEvent>(
+      (event, emit) => event.map(
+        logout: (event) => _onLogout(event, emit),
+      ),
+    );
   }
 
   final LogoutUseCase _logoutUseCase;

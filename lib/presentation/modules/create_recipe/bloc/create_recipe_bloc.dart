@@ -14,7 +14,11 @@ part 'create_recipe_state.dart';
 class CreateRecipeBloc extends Bloc<CreateRecipeEvent, CreateRecipeState> {
   CreateRecipeBloc(this._createRecipeUseCase)
       : super(const CreateRecipeState()) {
-    on<_CreateRecipe>(_onCreateRecipe);
+    on<CreateRecipeEvent>(
+      (event, emit) => event.map(
+        createRecipe: (event) => _onCreateRecipe(event, emit),
+      ),
+    );
   }
 
   final CreateRecipeUseCase _createRecipeUseCase;

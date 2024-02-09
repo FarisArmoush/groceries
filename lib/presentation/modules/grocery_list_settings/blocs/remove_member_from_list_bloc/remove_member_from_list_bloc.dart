@@ -12,7 +12,11 @@ class RemoveMemberFromListBloc
     extends Bloc<RemoveMemberFromListEvent, RemoveMemberFromListState> {
   RemoveMemberFromListBloc(this._removeMemberFromListUseCase)
       : super(const RemoveMemberFromListState()) {
-    on<_Remove>(_onRemove);
+    on<RemoveMemberFromListEvent>(
+      (event, emit) => event.map(
+        remove: (event) => _onRemove(event, emit),
+      ),
+    );
   }
 
   final RemoveMemberFromListUseCase _removeMemberFromListUseCase;

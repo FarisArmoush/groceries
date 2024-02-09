@@ -19,8 +19,12 @@ class CategoryDetailsBloc
     this._fetchSubCategoriesUseCase,
     this._fetchCategoryItemsUseCase,
   ) : super(const CategoryDetailsState()) {
-    on<_GetSubCategories>(_onGetSubCategories);
-    on<_GetItems>(_onGetItems);
+    on<CategoryDetailsEvent>(
+      (event, emit) => event.map(
+        getSubCategories: (event) => _onGetSubCategories(event, emit),
+        getItems: (event) => _onGetItems(event, emit),
+      ),
+    );
   }
 
   final FetchSubCategoriesUseCase _fetchSubCategoriesUseCase;

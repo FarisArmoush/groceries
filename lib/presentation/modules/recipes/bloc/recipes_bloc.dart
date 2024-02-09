@@ -13,7 +13,11 @@ part 'recipes_state.dart';
 @injectable
 class RecipesBloc extends Bloc<RecipesEvent, RecipesState> {
   RecipesBloc(this._recipesUseCase) : super(const RecipesState()) {
-    on<_LoadMyRecipes>(_onLoadMyRecipes);
+    on<RecipesEvent>(
+      (event, emit) => event.map(
+        loadMyRecipes: (event) => _onLoadMyRecipes(event, emit),
+      ),
+    );
   }
   final RecipesUseCase _recipesUseCase;
 

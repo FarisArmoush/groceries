@@ -12,7 +12,11 @@ part 'my_tasks_state.dart';
 @injectable
 class MyTasksBloc extends Bloc<MyTasksEvent, MyTasksState> {
   MyTasksBloc(this._myTasksUseCase) : super(const MyTasksState()) {
-    on<_LoadMyTasks>(_onLoadMyTasks);
+    on<MyTasksEvent>(
+      (event, emit) => event.map(
+        loadMyTasks: (event) => _onLoadMyTasks(event, emit),
+      ),
+    );
   }
   final FetchMyTasksUseCase _myTasksUseCase;
 
