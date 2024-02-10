@@ -10,14 +10,14 @@ class EditUserImageButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton.icon(
+      label: Text(
+        AppTranslations.accountSettings.editUserImage,
+      ),
       icon: Assets.icons.edit.svg(
         colorFilter: ColorFilter.mode(
           context.theme.primaryColorLight,
           BlendMode.srcIn,
         ),
-      ),
-      label: Text(
-        AppTranslations.accountSettings.editUserImage,
       ),
       onPressed: () => showModalBottomSheet<void>(
         context: context,

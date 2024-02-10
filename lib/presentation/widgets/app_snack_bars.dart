@@ -102,7 +102,7 @@ class AppSnackBars {
     );
   }
 
-  static const _margin = EdgeInsets.all(8);
+  static const _margin = EdgeInsetsDirectional.all(8);
   static const _behavior = SnackBarBehavior.floating;
   static const _elevation = 20.0;
   static const _widthSpace = 16.0;

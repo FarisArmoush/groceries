@@ -17,10 +17,9 @@ class IsUserVerifiedListTile extends StatelessWidget {
         context.read<UserDataCubit>().state.emailVerified ?? false;
     return ListTile(
       title: Text(AppTranslations.accountSettings.verified),
-      subtitle: isVerified == true
-          ? Text(AppTranslations.accountSettings.verified)
-          : null,
-      trailing: isVerified == true
+      subtitle:
+          isVerified ? Text(AppTranslations.accountSettings.verified) : null,
+      trailing: isVerified
           ? Assets.icons.verified.svg(
               colorFilter: const ColorFilter.mode(
                 Colors.green,
@@ -33,7 +32,7 @@ class IsUserVerifiedListTile extends StatelessWidget {
                 BlendMode.srcIn,
               ),
             ),
-      onTap: () => isVerified == true
+      onTap: () => isVerified
           ? showModalBottomSheet<void>(
               context: context,
               showDragHandle: true,

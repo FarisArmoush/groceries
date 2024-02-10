@@ -13,7 +13,7 @@ class GroceryItemCardIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsetsDirectional.all(8),
       decoration: BoxDecoration(
         color: context.theme.primaryColor,
         borderRadius: BorderRadius.circular(5),

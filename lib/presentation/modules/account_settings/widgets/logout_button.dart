@@ -18,31 +18,7 @@ class LogoutButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LogoutBloc, LogoutState>(
       listenWhen: (previous, current) => previous.status != current.status,
-      listener: (context, state) {
-        state.status.whenOrNull(
-          failure: (error) => ScaffoldMessenger.of(context)
-            ..hideCurrentSnackBar()
-            ..showSnackBar(
-              AppSnackBars.error(
-                error: 'Failed to log you out',
-              ),
-            ),
-          success: () {
-            context.read<RootNavigationBloc>().add(
-                  const RootNavigationEvent.navigateToIndex(0),
-                );
-            ScaffoldMessenger.of(context)
-              ..hideCurrentSnackBar()
-              ..showSnackBar(
-                AppSnackBars.informative(
-                  message: "We'll Miss you.",
-                ),
-              );
-
-            context.pushReplacementNamed(AppNamedRoutes.welcome);
-          },
-        );
-      },
+      listener: _listener,
       child: AppListTileButton(
         title: AppTranslations.accountSettings.logout,
         icon: Assets.icons.logout.path,
@@ -54,6 +30,31 @@ class LogoutButton extends StatelessWidget {
           builder: (context) => const LogoutBottomSheet(),
         ),
       ),
+    );
+  }
+
+  void _listener(BuildContext context, LogoutState state) {
+    state.status.whenOrNull(
+      failure: (error) => ScaffoldMessenger.of(context)
+        ..hideCurrentSnackBar()
+        ..showSnackBar(
+          AppSnackBars.error(
+            error: 'Failed to log you out',
+          ),
+        ),
+      success: () {
+        context.read<RootNavigationBloc>().add(
+              const RootNavigationEvent.navigateToIndex(0),
+            );
+        ScaffoldMessenger.of(context)
+          ..hideCurrentSnackBar()
+          ..showSnackBar(
+            AppSnackBars.informative(
+              message: "We'll Miss you.",
+            ),
+          );
+        context.pushReplacementNamed(AppNamedRoutes.welcome);
+      },
     );
   }
 }

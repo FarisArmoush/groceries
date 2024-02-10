@@ -12,10 +12,10 @@ class UserDisplayNameListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final displayName = context.read<UserDataCubit>().state.displayName;
+    final displayName = context.read<UserDataCubit>().state.displayName ?? '';
     return ListTile(
       title: Text(AppTranslations.general.username),
-      subtitle: Text(displayName ?? ''),
+      subtitle: Text(displayName),
       trailing: Assets.icons.edit.svg(
         colorFilter: ColorFilter.mode(
           context.theme.hintColor,

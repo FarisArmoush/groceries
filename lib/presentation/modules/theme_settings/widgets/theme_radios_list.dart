@@ -16,7 +16,7 @@ class ThemeRadiosList extends StatelessWidget {
         primary: false,
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
-        padding: EdgeInsets.zero,
+        padding: EdgeInsetsDirectional.zero,
         children: List.generate(
           _themes.length,
           (index) {

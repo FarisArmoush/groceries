@@ -19,7 +19,6 @@ class CreateListTextField extends StatelessWidget {
           onChanged: (value) => context.read<CreateListBloc>().add(
                 CreateListEvent.nameChanged(value),
               ),
-          onTapOutside: (_) => FocusScope.of(context).unfocus(),
         );
       },
     );

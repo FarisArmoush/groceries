@@ -43,7 +43,7 @@ class RecipeStep extends StatelessWidget {
       children: [
         Container(
           width: context.deviceWidth * 0.075,
-          padding: const EdgeInsets.all(4),
+          padding: const EdgeInsetsDirectional.all(4),
           decoration: BoxDecoration(
             color: context.theme.primaryColorLight,
             shape: BoxShape.circle,

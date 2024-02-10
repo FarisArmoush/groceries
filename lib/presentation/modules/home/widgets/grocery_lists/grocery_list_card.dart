@@ -66,7 +66,7 @@ class GroceryListCard extends StatelessWidget {
     return Visibility(
       visible: listModel.items?.isNotEmpty ?? false,
       child: Container(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsetsDirectional.all(8),
         decoration: BoxDecoration(
           color: context.theme.primaryColor,
           borderRadius: BorderRadius.circular(12),

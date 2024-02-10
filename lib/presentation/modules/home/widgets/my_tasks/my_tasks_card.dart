@@ -19,7 +19,7 @@ class MyTasksCard extends StatelessWidget {
     final length = '${taskModel?.groceries?.length ?? 0}';
     return ListTile(
       onTap: () {},
-      contentPadding: const EdgeInsets.all(8),
+      contentPadding: const EdgeInsetsDirectional.all(8),
       leading: CachedImage(
         imageUrl: taskModel?.listModel?.imageUrl ?? '',
         width: context.deviceWidth * 0.15,

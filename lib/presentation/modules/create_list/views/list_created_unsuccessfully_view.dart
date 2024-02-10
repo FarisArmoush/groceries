@@ -14,7 +14,7 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: ListView(
-          padding: const EdgeInsets.symmetric(
+          padding: const EdgeInsetsDirectional.symmetric(
             horizontal: 16,
           ),
           children: [

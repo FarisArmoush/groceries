@@ -9,7 +9,7 @@ class MyTasksShimmeredCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       tileColor: AppColors.transparent,
-      contentPadding: EdgeInsets.zero,
+      contentPadding: EdgeInsetsDirectional.zero,
       leading: ShimmerSkeleton(
         borderRadius: BorderRadius.circular(64),
         height: 50,
@@ -17,24 +17,12 @@ class MyTasksShimmeredCard extends StatelessWidget {
       ),
       title: const Row(
         children: [
-          Expanded(
-            flex: 5,
-            child: ShimmerSkeleton(
-              height: 10,
-            ),
-          ),
+          Expanded(flex: 5, child: ShimmerSkeleton(height: 10)),
           Expanded(child: SizedBox.shrink()),
-          Expanded(
-            flex: 2,
-            child: ShimmerSkeleton(
-              height: 8,
-            ),
-          ),
+          Expanded(flex: 2, child: ShimmerSkeleton(height: 8)),
         ],
       ),
-      subtitle: const ShimmerSkeleton(
-        height: 10,
-      ),
+      subtitle: const ShimmerSkeleton(height: 10),
     );
   }
 }

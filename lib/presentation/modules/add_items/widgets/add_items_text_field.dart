@@ -14,6 +14,7 @@ class AddItemsTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AddItemsBloc, AddItemsState>(
+      buildWhen: (previous, current) => previous.status != current.status,
       builder: (context, state) {
         return state.status.when(
           initial: SizedBox.shrink,
@@ -28,7 +29,7 @@ class AddItemsTextField extends StatelessWidget {
                 color: AppColors.black,
                 fontSize: 14,
               ),
-              contentPadding: const EdgeInsets.symmetric(
+              contentPadding: const EdgeInsetsDirectional.symmetric(
                 horizontal: 16,
                 vertical: 8,
               ),
