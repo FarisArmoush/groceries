@@ -28,6 +28,8 @@ class _AddItemsViewState extends State<AddItemsView> {
   Widget build(BuildContext context) {
     return BlocConsumer<AddItemsBloc, AddItemsState>(
       listener: _listener,
+      listenWhen: (previous, current) => previous.status != current.status,
+      buildWhen: (previous, current) => previous.status != current.status,
       builder: (context, state) {
         return Scaffold(
           appBar: state.status.maybeWhen(
@@ -60,11 +62,10 @@ class _AddItemsViewState extends State<AddItemsView> {
   }
 
   void _listener(BuildContext context, AddItemsState state) {
-    state.status.maybeWhen(
+    state.status.whenOrNull(
       failure: (error) => ScaffoldMessenger.of(context).showSnackBar(
         AppSnackBars.error(error: error),
       ),
-      orElse: () {},
     );
   }
 }
