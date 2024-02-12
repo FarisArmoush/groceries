@@ -24,11 +24,11 @@ class AuthenticationDataSource {
 
   User? get currentUser => firebaseAuth.currentUser;
 
-  Future<void> signInWithEmailAndPassword(LoginParam loginParam) async {
+  Future<void> signInWithEmailAndPassword(LoginParam param) async {
     try {
       await firebaseAuth.signInWithEmailAndPassword(
-        email: loginParam.email,
-        password: loginParam.password,
+        email: param.email,
+        password: param.password,
       );
     } on FirebaseAuthException catch (e) {
       throw LoginWithEmailAndPasswordException.fromCode(e.code);
@@ -37,25 +37,25 @@ class AuthenticationDataSource {
     }
   }
 
-  Future<void> signUpWithEmailAndPassword(RegisterParam registerParam) async {
+  Future<void> signUpWithEmailAndPassword(RegisterParam param) async {
     try {
       await firebaseAuth
           .createUserWithEmailAndPassword(
-        email: registerParam.email,
-        password: registerParam.password,
+        email: param.email,
+        password: param.password,
       )
           .then((user) {
         firestore.collection('users').doc(user.user?.uid).set(
           {
             'creationDate': DateTime.timestamp(),
-            'email': registerParam.email,
+            'email': param.email,
             'id': user.user?.uid,
             'image': '',
-            'displayName': registerParam.displayName,
+            'displayName': param.displayName,
           },
         );
         firebaseAuth.currentUser?.updateDisplayName(
-          registerParam.displayName,
+          param.displayName,
         );
       });
     } on FirebaseAuthException catch (e) {
