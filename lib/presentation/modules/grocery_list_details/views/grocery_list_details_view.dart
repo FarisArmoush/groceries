@@ -30,7 +30,10 @@ class _GroceryListDetailsViewState extends State<GroceryListDetailsView> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<GroceryListDetailsBloc, GroceryListDetailsState>(
-      buildWhen: (previous, current) => previous.status != current.status,
+      buildWhen: (previous, current) =>
+          previous.status != current.status ||
+          // TODO(FarisArmoush): Maybe rename, way too long.
+          previous.groceryListDetailsModel != current.groceryListDetailsModel,
       builder: (context, state) {
         return state.status.when(
           initial: () => Scaffold(

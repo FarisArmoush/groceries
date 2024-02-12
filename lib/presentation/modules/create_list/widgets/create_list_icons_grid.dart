@@ -11,7 +11,9 @@ class CreateListIconsGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CreateListBloc, CreateListState>(
-      buildWhen: (previous, current) => previous.icon != current.icon,
+      buildWhen: (previous, current) =>
+          previous.icon != current.icon ||
+          previous.iconsPaths != current.iconsPaths,
       builder: (context, state) {
         return Container(
           decoration: BoxDecoration(

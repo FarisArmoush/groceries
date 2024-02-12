@@ -11,6 +11,7 @@ class AddItemsCategoriesList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AddItemsBloc, AddItemsState>(
+      // TODO(FarisArmoush): Investigate.
       buildWhen: (previous, current) => previous.status != current.status,
       builder: (context, state) {
         return Column(

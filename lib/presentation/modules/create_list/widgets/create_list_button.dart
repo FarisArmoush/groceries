@@ -12,6 +12,9 @@ class CreateListButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CreateListBloc, CreateListState>(
+      buildWhen: (previous, current) =>
+          previous.status != current.status ||
+          previous.isValid != current.isValid,
       builder: (context, state) => state.status.maybeWhen(
         loading: AppLoadingIndicator.new,
         orElse: () => ElevatedButton(
@@ -19,9 +22,6 @@ class CreateListButton extends StatelessWidget {
           child: Text(AppTranslations.createGroceryList.createList),
         ).bottomButtonSpacing(),
       ),
-      buildWhen: (previous, current) =>
-          previous.status != current.status ||
-          previous.isValid != current.isValid,
     );
   }
 
