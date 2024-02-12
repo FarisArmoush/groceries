@@ -13,6 +13,7 @@ class LogoutBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<LogoutBloc, LogoutState>(
+      buildWhen: (previous, current) => previous.status != current.status,
       builder: (context, state) {
         return state.status.maybeWhen(
           loading: () => const AppLoadingIndicator(

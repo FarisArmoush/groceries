@@ -16,12 +16,8 @@ class WrapperView extends StatelessWidget {
       buildWhen: (previous, current) => previous != current,
       builder: (context, state) {
         return state.when(
-          authenticated: (_) {
-            return const RootView();
-          },
-          unAuthenticated: () {
-            return const WelcomeView();
-          },
+          authenticated: (_) => const RootView(),
+          unAuthenticated: () => const WelcomeView(),
         );
       },
     );

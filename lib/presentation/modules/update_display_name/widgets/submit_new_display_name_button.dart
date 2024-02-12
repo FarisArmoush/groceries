@@ -13,6 +13,9 @@ class SubmitNewDisplayNameButton extends StatelessWidget {
     return SizedBox(
       width: context.deviceHeight,
       child: BlocBuilder<UpdateDisplayNameBloc, UpdateDisplayNameState>(
+        buildWhen: (previous, current) =>
+            previous.isValid != current.isValid ||
+            previous.displayName != current.displayName,
         builder: (context, state) {
           final canSubmit = state.isValid || state.displayName.value.isNotEmpty;
           return ElevatedButton(

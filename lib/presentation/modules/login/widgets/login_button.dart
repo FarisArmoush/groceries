@@ -11,11 +11,11 @@ class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<LoginBloc, LoginState>(
-      // TODO(FarisArmoush): refactor (make use of ignoring in IgnorePointer widget).
-      // TODO(FarisArmoush): add buildWhen.
+      buildWhen: (previous, current) =>
+          previous.isValid != current.isValid ||
+          current.status != previous.status,
       builder: (context, state) {
         if (state.status.isInProgress) {
-          // An untapable button with a loading indicator.
           return IgnorePointer(
             child: FilledButton.icon(
               onPressed: () {},

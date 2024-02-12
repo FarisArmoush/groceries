@@ -22,7 +22,7 @@ class GroceryListsShimmeredRail extends StatelessWidget {
         ListView.separated(
           shrinkWrap: true,
           itemCount: 3,
-          padding: const EdgeInsets.symmetric(vertical: 4),
+          padding: const EdgeInsetsDirectional.symmetric(vertical: 4),
           itemBuilder: (context, index) {
             return const GroceryListShimmeredCard();
           },

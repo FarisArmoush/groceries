@@ -23,6 +23,7 @@ class LoginView extends StatelessWidget {
       body: SafeArea(
         bottom: false,
         child: BlocListener<LoginBloc, LoginState>(
+          listenWhen: (previous, current) => previous.status != current.status,
           listener: listener,
           child: ListView(
             padding: const EdgeInsetsDirectional.all(24),

@@ -11,14 +11,16 @@ class CreateListIconsGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<CreateListBloc, CreateListState>(
-      // buildWhen: (previous, current) => previous.icon != current.icon,
+      buildWhen: (previous, current) =>
+          previous.icon != current.icon ||
+          previous.iconsPaths != current.iconsPaths,
       builder: (context, state) {
         return Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             color: context.theme.cardColor,
           ),
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsetsDirectional.all(16),
           child: GridView.builder(
             itemCount: state.iconsPaths.length,
             shrinkWrap: true,
@@ -30,11 +32,12 @@ class CreateListIconsGrid extends StatelessWidget {
               crossAxisSpacing: 15,
             ),
             itemBuilder: (context, index) {
+              final isSelected = state.icon == state.iconsPaths[index];
               return DecoratedBox(
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   border: Border.all(
-                    color: state.icon == state.iconsPaths[index]
+                    color: isSelected
                         ? context.theme.primaryColorLight
                         : AppColors.transparent,
                     width: 2,
@@ -44,16 +47,19 @@ class CreateListIconsGrid extends StatelessWidget {
                   icon: SvgPicture.asset(
                     state.iconsPaths[index],
                     height: context.deviceHeight * 0.03,
-                    theme: SvgTheme(
-                      currentColor: context.theme.primaryColor,
+                    colorFilter: ColorFilter.mode(
+                      context.theme.primaryColor,
+                      BlendMode.srcIn,
                     ),
                   ),
                   onPressed: () {
-                    context.read<CreateListBloc>().add(
-                          CreateListEvent.iconChanged(
-                            state.iconsPaths[index],
-                          ),
-                        );
+                    if (!isSelected) {
+                      context.read<CreateListBloc>().add(
+                            CreateListEvent.iconChanged(
+                              state.iconsPaths[index],
+                            ),
+                          );
+                    }
                   },
                 ),
               );

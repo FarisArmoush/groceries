@@ -16,7 +16,7 @@ class GroceryListsList extends StatelessWidget {
     return ListView.separated(
       shrinkWrap: true,
       itemCount: lists.length,
-      padding: const EdgeInsets.symmetric(vertical: 4),
+      padding: const EdgeInsetsDirectional.symmetric(vertical: 4),
       physics: const NeverScrollableScrollPhysics(),
       primary: false,
       itemBuilder: (context, index) {

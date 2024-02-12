@@ -17,6 +17,7 @@ class VerifyUserView extends StatelessWidget {
         title: Text(AppTranslations.verifyAccount.verifyAccount),
       ),
       body: BlocBuilder<VerifyUserBloc, VerifyUserState>(
+        buildWhen: (previous, current) => previous.status != current.status,
         builder: (context, state) => state.status.when(
           initial: () => const VerifyUserInitialBody(),
           loading: () => const AppLoadingIndicator(

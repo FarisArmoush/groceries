@@ -19,7 +19,7 @@ class GroceriesBoxHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: context.deviceWidth,
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsetsDirectional.all(16),
       decoration: const BoxDecoration(
         color: AppColors.black,
       ),
@@ -27,7 +27,7 @@ class GroceriesBoxHeader extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            padding: const EdgeInsets.all(8),
+            padding: const EdgeInsetsDirectional.all(8),
             decoration: BoxDecoration(
               color: AppColors.white,
               borderRadius: BorderRadius.circular(5),

@@ -17,7 +17,7 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
         leading: const SizedBox.shrink(),
       ),
       body: ListView(
-        padding: const EdgeInsets.symmetric(
+        padding: const EdgeInsetsDirectional.symmetric(
           horizontal: 24,
         ),
         children: [

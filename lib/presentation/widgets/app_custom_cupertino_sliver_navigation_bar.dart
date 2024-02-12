@@ -1119,7 +1119,7 @@ class _PersistentNavigationBar extends StatelessWidget {
 
     if (padding != null) {
       paddedToolbar = Padding(
-        padding: EdgeInsets.only(
+        padding: EdgeInsetsDirectional.only(
           top: padding!.top,
           bottom: padding!.bottom,
         ),
@@ -1253,7 +1253,7 @@ class _NavigationBarStaticComponents {
         route.canPop &&
         route.fullscreenDialog) {
       leadingContent = CupertinoButton(
-        padding: EdgeInsets.zero,
+        padding: EdgeInsetsDirectional.zero,
         onPressed: () {
           route.navigator!.maybePop();
         },
@@ -1496,7 +1496,7 @@ class CupertinoNavigationBarBackButton extends StatelessWidget {
     }
 
     return CupertinoButton(
-      padding: EdgeInsets.zero,
+      padding: EdgeInsetsDirectional.zero,
       child: Semantics(
         container: true,
         excludeSemantics: true,

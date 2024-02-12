@@ -90,7 +90,7 @@ class CreateListBloc extends Bloc<CreateListEvent, CreateListState> {
     Emitter<CreateListState> emit,
   ) {
     final icons = [
-      // TODO(FarisArmoush): add house icon, https://github.com/FarisArmoush/groceries/issues/165
+      Assets.icons.house.path,
       Assets.icons.beef.path,
       Assets.icons.book.path,
       Assets.icons.briefCase.path,

@@ -19,6 +19,7 @@ class UpdateEmailView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocListener<UpdateEmailBloc, UpdateEmailState>(
+      listenWhen: (previous, current) => previous.status != current.status,
       listener: listener,
       child: Scaffold(
         appBar: AppBar(),

@@ -27,7 +27,7 @@ class OnboardingPageBase extends StatelessWidget {
           Container(
             width: double.infinity,
             color: context.theme.cardColor,
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsetsDirectional.all(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

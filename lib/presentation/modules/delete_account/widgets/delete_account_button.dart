@@ -1,5 +1,3 @@
-import 'dart:developer' as developer;
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -14,20 +12,14 @@ class DeleteAccountButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocListener<DeleteAccountBloc, DeleteAccountState>(
-      listener: (context, state) {
-        state.status.when(
-          initial: () {},
-          success: () => context.pop(),
-          failure: (error) => context.pop(),
-          loading: () {
-            showDialog<AppLoadingIndicator>(
-              context: context,
-              builder: (context) => const AppLoadingIndicator(),
-            );
-            developer.log('DeleteAccountLoading');
-          },
-        );
-      },
+      listener: (context, state) => state.status.whenOrNull(
+        success: () => context.pop(),
+        failure: (error) => context.pop(),
+        loading: () => showDialog<AppLoadingIndicator>(
+          context: context,
+          builder: (context) => const AppLoadingIndicator(),
+        ),
+      ),
       child: FilledButton(
         onPressed: () => context.read<DeleteAccountBloc>()
           ..add(

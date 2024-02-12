@@ -3,6 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/modules/add_items/bloc/add_items_bloc.dart';
+import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
+import 'package:groceries/presentation/widgets/error_state.dart';
 import 'package:groceries/utils/extenstions/padding_extensions.dart';
 
 class AddItemsCategoriesList extends StatelessWidget {
@@ -13,20 +15,25 @@ class AddItemsCategoriesList extends StatelessWidget {
     return BlocBuilder<AddItemsBloc, AddItemsState>(
       buildWhen: (previous, current) => previous.status != current.status,
       builder: (context, state) {
-        return Column(
-          children: ListTile.divideTiles(
-            context: context,
-            tiles: state.parentCategories.map(
-              (category) => ListTile(
-                title: Text(category.name ?? ''),
-                onTap: () => context.pushNamed(
-                  AppNamedRoutes.categoryDetails,
-                  extra: category,
+        return state.status.when(
+          initial: AppLoadingIndicator.new,
+          loading: AppLoadingIndicator.new,
+          failure: (error) => ErrorState(title: Text(error)),
+          success: () => Column(
+            children: ListTile.divideTiles(
+              context: context,
+              tiles: state.parentCategories.map(
+                (category) => ListTile(
+                  title: Text(category.name ?? ''),
+                  onTap: () => context.pushNamed(
+                    AppNamedRoutes.categoryDetails,
+                    extra: category,
+                  ),
                 ),
               ),
-            ),
-          ).toList(),
-        ).symmetricPadding(horizontal: 4);
+            ).toList(),
+          ).symmetricPadding(horizontal: 4),
+        );
       },
     );
   }

@@ -40,7 +40,7 @@ class _RecipeDetailsViewState extends State<RecipeDetailsView> {
         loading: AppLoadingIndicator.new,
         failure: (error) => ErrorState(title: Text(error)),
         success: () {
-          final recipeModel = state.recipeDetailsModel;
+          final recipeModel = state.recipe;
           return Scaffold(
             body: CustomScrollView(
               slivers: [
