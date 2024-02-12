@@ -36,10 +36,10 @@ class RecipeDetailsBloc extends Bloc<RecipeDetailsEvent, RecipeDetailsState> {
   ) async {
     emit(state.copyWith(status: const BlocStatus.loading()));
     try {
-      final recipeDetailsModel = await fetchRecipeDetailsUseCase(event.uid);
+      final recipe = await fetchRecipeDetailsUseCase(event.uid);
       emit(
         state.copyWith(
-          recipeDetailsModel: recipeDetailsModel,
+          recipe: recipe,
           status: const BlocStatus.success(),
         ),
       );

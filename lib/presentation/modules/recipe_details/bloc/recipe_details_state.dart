@@ -5,6 +5,6 @@ class RecipeDetailsState with _$RecipeDetailsState {
   const factory RecipeDetailsState({
     @Default(BlocStatus.initial()) BlocStatus status,
     @Default(BlocStatus.initial()) BlocStatus deleteStatus,
-    RecipeDetailsModel? recipeDetailsModel,
+    RecipeDetailsModel? recipe,
   }) = _RecipeDetailsState;
 }
