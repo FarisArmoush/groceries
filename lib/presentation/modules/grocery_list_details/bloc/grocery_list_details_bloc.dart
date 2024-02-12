@@ -43,10 +43,10 @@ class GroceryListDetailsBloc
   ) async {
     emit(state.copyWith(status: const BlocStatus.loading()));
     try {
-      final list = await fetchGroceryListDetailsUseCase(event.uid);
+      final groceryList = await fetchGroceryListDetailsUseCase(event.uid);
       emit(
         state.copyWith(
-          groceryListDetailsModel: list,
+          groceryList: groceryList,
           status: const BlocStatus.success(),
         ),
       );
@@ -61,7 +61,7 @@ class GroceryListDetailsBloc
   ) async {
     emit(
       state.copyWith(
-        groceryListDetailsModel: null,
+        groceryList: null,
         status: const BlocStatus.initial(),
         addItemStatus: const BlocStatus.initial(),
         removeItemStatus: const BlocStatus.initial(),

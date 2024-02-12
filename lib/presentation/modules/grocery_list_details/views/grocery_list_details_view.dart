@@ -32,8 +32,7 @@ class _GroceryListDetailsViewState extends State<GroceryListDetailsView> {
     return BlocBuilder<GroceryListDetailsBloc, GroceryListDetailsState>(
       buildWhen: (previous, current) =>
           previous.status != current.status ||
-          // TODO(FarisArmoush): Maybe rename, way too long.
-          previous.groceryListDetailsModel != current.groceryListDetailsModel,
+          previous.groceryList != current.groceryList,
       builder: (context, state) {
         return state.status.when(
           initial: () => Scaffold(
@@ -51,10 +50,8 @@ class _GroceryListDetailsViewState extends State<GroceryListDetailsView> {
             ),
           ),
           success: () {
-            final listModel = context
-                .watch<GroceryListDetailsBloc>()
-                .state
-                .groceryListDetailsModel;
+            final listModel =
+                context.watch<GroceryListDetailsBloc>().state.groceryList;
             final listIsEmpty = listModel?.items?.isEmpty ?? true;
             return Scaffold(
               body: SafeArea(
