@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:groceries/utils/params/register_param/register_param.dart';
+import 'package:groceries/data/models/register_param/register_param.dart';
 
 void main() {
   group('RegisterParam', () {

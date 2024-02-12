@@ -1,5 +1,5 @@
-import 'package:groceries/utils/params/login_param/login_param.dart';
-import 'package:groceries/utils/params/register_param/register_param.dart';
+import 'package:groceries/data/models/login_param/login_param.dart';
+import 'package:groceries/data/models/register_param/register_param.dart';
 
 /// This abstract class defines a set of common methods
 /// and properties for authentication repositories.

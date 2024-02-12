@@ -4,12 +4,12 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:groceries/data/models/login_param/login_param.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/login_with_email_and_password_use_case.dart';
 import 'package:groceries/utils/exceptions/login_with_email_password_exception.dart';
 import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 import 'package:groceries/utils/forms/email_form.dart';
 import 'package:groceries/utils/forms/login_password_form.dart';
-import 'package:groceries/utils/params/login_param/login_param.dart';
 import 'package:injectable/injectable.dart';
 
 part 'login_bloc.freezed.dart';

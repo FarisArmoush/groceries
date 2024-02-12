@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:groceries/utils/params/login_param/login_param.dart';
+import 'package:groceries/data/models/login_param/login_param.dart';
 
 void main() {
   group('LoginParam', () {

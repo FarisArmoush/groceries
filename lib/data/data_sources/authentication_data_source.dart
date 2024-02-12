@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:groceries/data/models/login_param/login_param.dart';
+import 'package:groceries/data/models/register_param/register_param.dart';
 import 'package:groceries/utils/exceptions/delete_account_exception.dart';
 import 'package:groceries/utils/exceptions/login_with_email_password_exception.dart';
 import 'package:groceries/utils/exceptions/logout_exception.dart';
@@ -7,8 +9,6 @@ import 'package:groceries/utils/exceptions/register_with_email_and_password_exce
 import 'package:groceries/utils/exceptions/send_password_reset_email_exception.dart';
 import 'package:groceries/utils/exceptions/update_email_exception.dart';
 import 'package:groceries/utils/exceptions/update_password_exception.dart';
-import 'package:groceries/utils/params/login_param/login_param.dart';
-import 'package:groceries/utils/params/register_param/register_param.dart';
 import 'package:injectable/injectable.dart';
 
 @singleton
