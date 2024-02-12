@@ -25,6 +25,7 @@ class RegisterView extends StatelessWidget {
       body: SafeArea(
         bottom: false,
         child: BlocListener<RegisterBloc, RegisterState>(
+          listenWhen: (previous, current) => previous.status != current.status,
           listener: _listener,
           child: ListView(
             padding: const EdgeInsetsDirectional.all(24),

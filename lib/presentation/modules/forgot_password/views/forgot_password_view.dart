@@ -19,6 +19,7 @@ class ForgotPasswordView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<ForgotPasswordBloc, ForgotPasswordState>(
       listener: _listener,
+      listenWhen: (previous, current) => previous.status != current.status,
       child: Scaffold(
         appBar: AppBar(),
         body: SafeArea(
