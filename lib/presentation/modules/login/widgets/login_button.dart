@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:formz/formz.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/login/bloc/login_bloc.dart';
-import 'package:groceries/presentation/widgets/buttons_loading_indicator.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton({super.key});
@@ -11,28 +9,15 @@ class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<LoginBloc, LoginState>(
-      buildWhen: (previous, current) =>
-          previous.isValid != current.isValid ||
-          current.status != previous.status,
+      buildWhen: (previous, current) => previous.isValid != current.isValid,
       builder: (context, state) {
-        if (state.status.isInProgress) {
-          return IgnorePointer(
-            child: FilledButton.icon(
-              onPressed: () {},
-              icon: const ButtonsLoadingIndicator(),
-              label: _text(),
-            ),
-          );
-        }
         return FilledButton(
           onPressed: state.isValid
               ? () => context.read<LoginBloc>().add(const LoginEvent.login())
               : null,
-          child: _text(),
+          child: Text(AppTranslations.login.login),
         );
       },
     );
   }
-
-  Widget _text() => Text(AppTranslations.login.login);
 }

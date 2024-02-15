@@ -11,6 +11,7 @@ import 'package:groceries/presentation/modules/login/widgets/login_forgot_passwo
 import 'package:groceries/presentation/modules/login/widgets/login_header_text.dart';
 import 'package:groceries/presentation/modules/login/widgets/login_other_options_text_button.dart';
 import 'package:groceries/presentation/modules/login/widgets/login_password_text_field.dart';
+import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/app_snack_bars.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
@@ -62,6 +63,7 @@ class LoginView extends StatelessWidget {
 
   void listener(BuildContext context, LoginState state) {
     if (state.status.isFailure) {
+      context.pop();
       ScaffoldMessenger.of(context)
         ..hideCurrentSnackBar()
         ..showSnackBar(
@@ -71,6 +73,7 @@ class LoginView extends StatelessWidget {
         );
     }
     if (state.status.isSuccess) {
+      context.pop();
       ScaffoldMessenger.of(context)
         ..hideCurrentSnackBar()
         ..showSnackBar(
@@ -79,6 +82,16 @@ class LoginView extends StatelessWidget {
           ),
         );
       context.pushReplacementNamed(AppNamedRoutes.root);
+    }
+    if (state.status.isInProgress) {
+      ScaffoldMessenger.of(context).hideCurrentSnackBar();
+      showDialog<void>(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) => const AppLoadingIndicator(
+          type: AppLoadingIndicatorType.linear,
+        ),
+      );
     }
   }
 }

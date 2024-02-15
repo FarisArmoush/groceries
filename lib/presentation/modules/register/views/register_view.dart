@@ -12,6 +12,7 @@ import 'package:groceries/presentation/modules/register/widgets/register_display
 import 'package:groceries/presentation/modules/register/widgets/register_email_text_field.dart';
 import 'package:groceries/presentation/modules/register/widgets/register_header_text.dart';
 import 'package:groceries/presentation/modules/register/widgets/register_password_text_field.dart';
+import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/app_snack_bars.dart';
 import 'package:groceries/presentation/widgets/other_options_text_button.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
@@ -72,6 +73,7 @@ class RegisterView extends StatelessWidget {
 
   void _listener(BuildContext context, RegisterState state) {
     if (state.status.isFailure) {
+      context.pop();
       ScaffoldMessenger.of(context)
         ..hideCurrentSnackBar()
         ..showSnackBar(
@@ -82,6 +84,7 @@ class RegisterView extends StatelessWidget {
     }
 
     if (state.status.isSuccess) {
+      context.pop();
       ScaffoldMessenger.of(context)
         ..hideCurrentSnackBar()
         ..showSnackBar(
@@ -90,6 +93,16 @@ class RegisterView extends StatelessWidget {
           ),
         );
       context.pushReplacementNamed(AppNamedRoutes.root);
+    }
+    if (state.status.isInProgress) {
+      ScaffoldMessenger.of(context).hideCurrentSnackBar();
+      showDialog<void>(
+        context: context,
+        barrierDismissible: false,
+        builder: (context) => const AppLoadingIndicator(
+          type: AppLoadingIndicatorType.linear,
+        ),
+      );
     }
   }
 }
