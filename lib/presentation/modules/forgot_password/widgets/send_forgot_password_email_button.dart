@@ -24,9 +24,6 @@ class SendForgotPasswordEmailButton extends StatelessWidget {
           );
         },
       ),
-    ).symmetricPadding(
-      vertical: 24,
-      horizontal: 24,
-    );
+    ).allPadding(24);
   }
 }
