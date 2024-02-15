@@ -13,9 +13,6 @@ class SendForgotPasswordEmailButton extends StatelessWidget {
       width: double.infinity,
       child: BlocBuilder<ForgotPasswordBloc, ForgotPasswordState>(
         buildWhen: (previous, current) => previous.isValid != current.isValid,
-        // TODO(FarisArmoush): Investigate
-        //  ||
-        // previous.status != current.status,
         builder: (context, state) {
           return ElevatedButton(
             onPressed: state.isValid
