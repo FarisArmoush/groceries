@@ -8,4 +8,8 @@ class RemoteConfigUseCase {
   final RemoteConfigRepository _remoteConfigRepository;
 
   String fetchAppVersion() => _remoteConfigRepository.appVersion ?? '';
+  bool fetchShowDeleteAccountButton() =>
+      _remoteConfigRepository.showDeleteAccountButton ?? false;
+  bool fetchShowAdditionalResources() =>
+      _remoteConfigRepository.showAdditionalResources ?? false;
 }
