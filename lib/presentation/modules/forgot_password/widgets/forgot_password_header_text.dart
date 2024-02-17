@@ -11,7 +11,7 @@ class ForgotPasswordHeaderText extends StatelessWidget {
     return Text(
       AppTranslations.forgotPassword.forgotPassword,
       style: TextStyle(
-        fontFamily: AppFonts.semiBold(context),
+        fontWeight: AppFontWeights.semiBold,
         color: context.theme.primaryColorLight,
         fontSize: 32,
       ),

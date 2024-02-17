@@ -10,7 +10,7 @@ class UpdateDisplayNameHeaderText extends StatelessWidget {
     return Text(
       'Change username',
       style: TextStyle(
-        fontFamily: AppFonts.semiBold(context),
+        fontWeight: AppFontWeights.semiBold,
         color: context.theme.primaryColorLight,
         fontSize: 32,
       ),

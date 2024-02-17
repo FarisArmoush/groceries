@@ -65,7 +65,7 @@ class RecipeStep extends StatelessWidget {
             style: TextStyle(
               fontSize: 14,
               color: context.theme.primaryColor,
-              fontFamily: AppFonts.semiBold(context),
+              fontWeight: AppFontWeights.semiBold,
             ),
           ),
         ),

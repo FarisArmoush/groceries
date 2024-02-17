@@ -12,7 +12,7 @@ class WelcomeViewHeaderText extends StatelessWidget {
       AppTranslations.welcome.welcomeHeader,
       textAlign: TextAlign.start,
       style: TextStyle(
-        fontFamily: AppFonts.bold(context),
+        fontWeight: AppFontWeights.bold,
         color: context.theme.primaryColor,
         fontSize: 30,
       ),

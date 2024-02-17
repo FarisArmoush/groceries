@@ -33,7 +33,7 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
           Text(
             'Check your Email!',
             style: TextStyle(
-              fontFamily: AppFonts.bold(context),
+              fontWeight: AppFontWeights.bold,
               color: context.theme.primaryColorLight,
               fontSize: 30,
             ),

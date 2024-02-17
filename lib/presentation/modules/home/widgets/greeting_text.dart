@@ -17,7 +17,7 @@ class GreetingText extends StatelessWidget {
       text: TextSpan(
         text: '${AppTranslations.home.homeGreeting} ',
         style: TextStyle(
-          fontFamily: AppFonts.semiBold(context),
+          fontWeight: AppFontWeights.semiBold,
           color: context.theme.primaryColor,
           fontSize: 20,
         ),
@@ -25,7 +25,7 @@ class GreetingText extends StatelessWidget {
           TextSpan(
             text: displayName,
             style: TextStyle(
-              fontFamily: AppFonts.semiBold(context),
+              fontWeight: AppFontWeights.semiBold,
               color: context.theme.primaryColorLight,
               fontSize: 20,
             ),

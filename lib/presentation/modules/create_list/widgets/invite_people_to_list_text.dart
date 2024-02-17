@@ -13,7 +13,7 @@ class InvitePeopleToListText extends StatelessWidget {
     return Text(
       AppTranslations.createGroceryList.invitePeopleToList,
       style: TextStyle(
-        fontFamily: AppFonts.semiBold(context),
+        fontWeight: AppFontWeights.semiBold,
         color: context.theme.primaryColor,
         fontSize: 28,
       ),

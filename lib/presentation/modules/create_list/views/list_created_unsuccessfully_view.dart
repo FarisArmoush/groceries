@@ -25,7 +25,7 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
             Text(
               AppTranslations.createGroceryList.listCreatedUnsuccessfullyHeader,
               style: TextStyle(
-                fontFamily: AppFonts.semiBold(context),
+                fontWeight: AppFontWeights.semiBold,
                 color: context.theme.primaryColorLight,
                 fontSize: 32,
               ),

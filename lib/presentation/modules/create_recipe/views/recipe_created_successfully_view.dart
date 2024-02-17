@@ -27,7 +27,7 @@ class RecipeCreatedSuccessfullyView extends StatelessWidget {
             Text(
               'Yay!!',
               style: TextStyle(
-                fontFamily: AppFonts.semiBold(context),
+                fontWeight: AppFontWeights.semiBold,
                 color: context.theme.primaryColor,
                 fontSize: 32,
               ),

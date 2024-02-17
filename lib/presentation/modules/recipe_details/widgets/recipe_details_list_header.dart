@@ -10,7 +10,7 @@ class RecipeDetailsListHeader extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        fontFamily: AppFonts.semiBold(context),
+        fontWeight: AppFontWeights.semiBold,
         fontSize: 24,
         color: context.theme.primaryColor,
       ),

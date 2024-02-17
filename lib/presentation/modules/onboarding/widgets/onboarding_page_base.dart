@@ -34,7 +34,7 @@ class OnboardingPageBase extends StatelessWidget {
                 Text(
                   onboardingPageModel.title,
                   style: TextStyle(
-                    fontFamily: AppFonts.semiBold(context),
+                    fontWeight: AppFontWeights.semiBold,
                     color: context.theme.primaryColor,
                     fontSize: 26,
                   ),

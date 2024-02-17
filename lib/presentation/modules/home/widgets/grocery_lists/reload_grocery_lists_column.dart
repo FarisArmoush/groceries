@@ -21,7 +21,7 @@ class ReloadGroceryListsColumn extends StatelessWidget {
           error,
           style: TextStyle(
             color: context.theme.primaryColor,
-            fontFamily: AppFonts.semiBold(context),
+            fontWeight: AppFontWeights.semiBold,
             fontSize: 22,
           ),
           textAlign: TextAlign.center,

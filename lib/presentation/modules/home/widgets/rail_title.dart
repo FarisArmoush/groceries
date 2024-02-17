@@ -13,7 +13,7 @@ class RailTitle extends StatelessWidget {
     return Text(
       title,
       style: TextStyle(
-        fontFamily: AppFonts.semiBold(context),
+        fontWeight: AppFontWeights.semiBold,
         color: context.theme.primaryColor,
         fontSize: 22,
       ),

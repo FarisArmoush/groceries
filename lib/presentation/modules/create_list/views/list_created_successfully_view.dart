@@ -27,7 +27,7 @@ class ListCreatedSuccessfullyView extends StatelessWidget {
             Text(
               AppTranslations.createGroceryList.listCreatedSuccessfullyHeader,
               style: TextStyle(
-                fontFamily: AppFonts.semiBold(context),
+                fontWeight: AppFontWeights.semiBold,
                 color: context.theme.primaryColor,
                 fontSize: 32,
               ),

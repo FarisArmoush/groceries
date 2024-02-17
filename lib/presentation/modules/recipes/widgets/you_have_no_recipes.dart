@@ -21,7 +21,7 @@ class YouHaveNoRecipes extends StatelessWidget {
         Text(
           AppTranslations.recipes.emptyRecipesHeader,
           style: TextStyle(
-            fontFamily: AppFonts.semiBold(context),
+            fontWeight: AppFontWeights.semiBold,
             color: context.theme.primaryColor,
             fontSize: 24,
           ),

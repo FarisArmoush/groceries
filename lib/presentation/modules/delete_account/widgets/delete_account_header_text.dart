@@ -11,7 +11,7 @@ class DeleteAccountHeaderText extends StatelessWidget {
     return Text(
       AppTranslations.deleteAccount.deleteAccountHeader,
       style: TextStyle(
-        fontFamily: AppFonts.bold(context),
+        fontWeight: AppFontWeights.bold,
         color: context.theme.primaryColorLight,
         fontSize: 28,
       ),

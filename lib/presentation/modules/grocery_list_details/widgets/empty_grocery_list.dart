@@ -25,7 +25,7 @@ class EmptyGroceryList extends StatelessWidget {
         Text(
           AppTranslations.groceryLists.emptyListHeader,
           style: TextStyle(
-            fontFamily: AppFonts.semiBold(context),
+            fontWeight: AppFontWeights.semiBold,
             color: context.theme.primaryColor,
             fontSize: 24,
           ),

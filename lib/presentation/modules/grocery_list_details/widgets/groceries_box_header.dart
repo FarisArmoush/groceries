@@ -44,8 +44,8 @@ class GroceriesBoxHeader extends StatelessWidget {
           ),
           Text(
             category,
-            style: TextStyle(
-              fontFamily: AppFonts.semiBold(context),
+            style: const TextStyle(
+              fontWeight: AppFontWeights.semiBold,
               fontSize: 16,
               color: AppColors.white,
             ),

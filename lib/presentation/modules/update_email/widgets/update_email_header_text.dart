@@ -10,7 +10,7 @@ class UpdateEmailHeaderText extends StatelessWidget {
     return Text(
       'Change Email',
       style: TextStyle(
-        fontFamily: AppFonts.semiBold(context),
+        fontWeight: AppFontWeights.semiBold,
         color: context.theme.primaryColorLight,
         fontSize: 32,
       ),

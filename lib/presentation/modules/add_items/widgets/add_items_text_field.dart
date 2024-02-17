@@ -22,27 +22,27 @@ class AddItemsTextField extends StatelessWidget {
           success: () => Material(
             color: CupertinoColors.systemGrey5,
             borderRadius: BorderRadius.circular(9),
-            child: AppTextField(
+            child: const AppTextField(
               style: TextStyle(
-                fontFamily: AppFonts.semiBold(context),
+                fontWeight: AppFontWeights.semiBold,
                 color: AppColors.black,
                 fontSize: 14,
               ),
-              contentPadding: const EdgeInsetsDirectional.symmetric(
+              contentPadding: EdgeInsetsDirectional.symmetric(
                 horizontal: 16,
                 vertical: 8,
               ),
-              labelStyle: const TextStyle(
+              labelStyle: TextStyle(
                 fontWeight: AppFontWeights.medium,
                 color: AppColors.black,
                 fontSize: 14,
               ),
-              floatingLabelStyle: const TextStyle(
+              floatingLabelStyle: TextStyle(
                 fontWeight: AppFontWeights.medium,
                 color: AppColors.black,
                 fontSize: 16,
               ),
-              prefixIcon: const Icon(
+              prefixIcon: Icon(
                 CupertinoIcons.search,
                 color: AppColors.black,
               ),
