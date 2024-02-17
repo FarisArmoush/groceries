@@ -7,7 +7,7 @@ import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/widgets/bottom_sheet_button.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries_app_ui/app_theme.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class GroceryListOptionsBottomSheet extends StatelessWidget {
   const GroceryListOptionsBottomSheet({

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries_app_ui/app_theme.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 /// {@template app_text_field}
 /// A custom text field widget for the application.

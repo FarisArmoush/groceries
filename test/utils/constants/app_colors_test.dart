@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:groceries_app_ui/app_theme.dart';
+import 'package:groceries_theme/app_theme.dart';
 import 'package:test/test.dart';
 
 void main() {

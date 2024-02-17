@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries_app_ui/app_theme.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class ErrorState extends StatelessWidget {
   const ErrorState({

@@ -5,7 +5,7 @@ import 'package:groceries/presentation/modules/add_items/bloc/add_items_bloc.dar
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/app_text_field.dart';
 import 'package:groceries/utils/extenstions/padding_extensions.dart';
-import 'package:groceries_app_ui/app_theme.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class AddItemsTextField extends StatelessWidget {
   const AddItemsTextField({super.key});

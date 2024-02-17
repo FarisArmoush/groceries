@@ -13,7 +13,7 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  groceries_app_ui:
+  groceries_theme:
     path: app_theme
   bloc: ^8.1.1
   cached_network_image: ^3.2.3

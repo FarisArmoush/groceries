@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries_app_ui/app_theme.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class ButtonsLoadingIndicator extends StatelessWidget {
   const ButtonsLoadingIndicator({super.key});

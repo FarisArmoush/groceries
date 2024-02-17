@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/config/routes/app_go_router.dart';
 import 'package:groceries/presentation/modules/theme_settings/cubit/theme_cubit.dart';
-import 'package:groceries_app_ui/app_theme.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 /// The main application view that sets up the app's theme,
 /// localization, and routing.

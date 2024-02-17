@@ -5,7 +5,7 @@ import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries/utils/extenstions/padding_extensions.dart';
-import 'package:groceries_app_ui/app_theme.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class ResetPasswordSentSuccessfullyView extends StatelessWidget {
   const ResetPasswordSentSuccessfullyView({super.key});

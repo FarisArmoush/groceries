@@ -6,7 +6,7 @@ import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/blocs/user_data/user_data_cubit.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/your_account_is_verified_bottom_sheet.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries_app_ui/app_theme.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class IsUserVerifiedListTile extends StatelessWidget {
   const IsUserVerifiedListTile({super.key});

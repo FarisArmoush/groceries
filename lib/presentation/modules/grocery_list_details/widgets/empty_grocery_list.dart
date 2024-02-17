@@ -6,7 +6,7 @@ import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries/utils/extenstions/padding_extensions.dart';
 import 'package:groceries/utils/extenstions/widgets_as_extensions.dart';
-import 'package:groceries_app_ui/app_theme.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class EmptyGroceryList extends StatelessWidget {
   const EmptyGroceryList({super.key});

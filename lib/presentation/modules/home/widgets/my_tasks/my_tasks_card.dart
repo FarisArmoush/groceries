@@ -4,7 +4,7 @@ import 'package:groceries/data/models/task_model/task_model.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries/utils/extenstions/date_time_parser_extension.dart';
-import 'package:groceries_app_ui/app_theme.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class MyTasksCard extends StatelessWidget {
   const MyTasksCard({

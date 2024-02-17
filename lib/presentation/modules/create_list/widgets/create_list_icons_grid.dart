@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/presentation/modules/create_list/bloc/create_list_bloc.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries_app_ui/app_theme.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class CreateListIconsGrid extends StatelessWidget {
   const CreateListIconsGrid({super.key});

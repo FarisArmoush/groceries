@@ -7,7 +7,7 @@ import 'package:groceries/presentation/modules/grocery_list_settings/widgets/gro
 import 'package:groceries/presentation/modules/grocery_list_settings/widgets/grocery_list_name_text_field.dart';
 import 'package:groceries/presentation/modules/grocery_list_settings/widgets/save_grocery_list_changes_button.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries_app_ui/app_theme.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class GroceryListSettingsView extends StatelessWidget {
   const GroceryListSettingsView({super.key});

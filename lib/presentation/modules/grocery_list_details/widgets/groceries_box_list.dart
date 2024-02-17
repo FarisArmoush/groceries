@@ -3,7 +3,7 @@ import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/widgets/grocery_item_details_bottom_sheet.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries_app_ui/app_theme.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class GroceriesBoxList extends StatelessWidget {
   const GroceriesBoxList({
