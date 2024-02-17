@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/presentation/widgets/next_arrow_icon.dart';
-import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_app_ui/app_theme.dart';
 
 class SettingsListTile extends StatelessWidget {
   const SettingsListTile({

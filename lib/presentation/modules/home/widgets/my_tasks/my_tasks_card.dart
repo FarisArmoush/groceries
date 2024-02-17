@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/task_model/task_model.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries/utils/extenstions/date_time_parser_extension.dart';
+import 'package:groceries_app_ui/app_theme.dart';
 
 class MyTasksCard extends StatelessWidget {
   const MyTasksCard({
@@ -40,7 +40,7 @@ class MyTasksCard extends StatelessWidget {
             child: Text(
               taskModel?.dueDate.toString().toDDMMYYYY() ?? '',
               style: TextStyle(
-                fontFamily: AppFonts.regular(context),
+                fontWeight: AppFontWeights.regular,
                 color: context.theme.hintColor,
                 fontSize: 12,
               ),

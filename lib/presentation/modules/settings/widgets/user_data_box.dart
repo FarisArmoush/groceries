@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/presentation/blocs/user_data/user_data_cubit.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/user_image.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_app_ui/app_theme.dart';
 
 class UserDataBox extends StatelessWidget {
   const UserDataBox({super.key});
@@ -21,7 +21,7 @@ class UserDataBox extends StatelessWidget {
         SelectableText(
           user.displayName ?? '',
           style: TextStyle(
-            fontFamily: AppFonts.medium(context),
+            fontWeight: AppFontWeights.medium,
             color: context.theme.primaryColor,
             fontSize: 16,
           ),
@@ -33,7 +33,7 @@ class UserDataBox extends StatelessWidget {
         SelectableText(
           user.email ?? '',
           style: TextStyle(
-            fontFamily: AppFonts.light(context),
+            fontWeight: AppFontWeights.light,
             color: context.theme.hintColor,
             fontSize: 12,
           ),

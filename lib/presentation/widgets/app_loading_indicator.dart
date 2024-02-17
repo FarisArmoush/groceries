@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_app_ui/app_theme.dart';
 
 enum AppLoadingIndicatorType {
   circular,
@@ -52,7 +52,7 @@ class AppLoadingIndicator extends StatelessWidget {
             children: [
               DefaultTextStyle(
                 style: TextStyle(
-                  fontFamily: AppFonts.medium(context),
+                  fontWeight: AppFontWeights.medium,
                   color: context.theme.primaryColor,
                   fontSize: 20,
                 ),

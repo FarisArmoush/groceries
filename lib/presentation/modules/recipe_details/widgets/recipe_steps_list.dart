@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/data/models/recipe_details_model/recipe_details_model.dart';
-import 'package:groceries/utils/constants/app_colors.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries/utils/extenstions/padding_extensions.dart';
 import 'package:groceries/utils/extenstions/widgets_as_extensions.dart';
+import 'package:groceries_app_ui/app_theme.dart';
 
 class RecipeStepsList extends StatelessWidget {
   const RecipeStepsList({required this.recipeModel, super.key});
@@ -50,8 +49,8 @@ class RecipeStep extends StatelessWidget {
           ),
           child: Text(
             (stepNumber + 1).toString(),
-            style: TextStyle(
-              fontFamily: AppFonts.regular(context),
+            style: const TextStyle(
+              fontWeight: AppFontWeights.regular,
               fontSize: 16,
               color: AppColors.white,
             ),

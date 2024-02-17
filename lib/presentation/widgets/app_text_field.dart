@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_app_ui/app_theme.dart';
 
 /// {@template app_text_field}
 /// A custom text field widget for the application.
@@ -147,7 +147,7 @@ class AppTextField extends StatelessWidget {
       onEditingComplete: onEditingComplete,
       style: style ??
           TextStyle(
-            fontFamily: AppFonts.regular(context),
+            fontWeight: AppFontWeights.regular,
             color: context.theme.primaryColor,
             fontSize: 14,
           ),
@@ -169,13 +169,13 @@ class AppTextField extends StatelessWidget {
         focusedErrorBorder: focusedBorder,
         labelStyle: labelStyle ??
             TextStyle(
-              fontFamily: AppFonts.regular(context),
+              fontWeight: AppFontWeights.regular,
               color: context.theme.hintColor,
               fontSize: 16,
             ),
         floatingLabelStyle: floatingLabelStyle ??
             TextStyle(
-              fontFamily: AppFonts.regular(context),
+              fontWeight: AppFontWeights.regular,
               color: context.theme.primaryColor,
               fontSize: 16,
             ),

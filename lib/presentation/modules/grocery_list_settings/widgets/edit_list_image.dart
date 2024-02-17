@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/presentation/widgets/upload_image_bottom_sheet.dart';
-import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/padding_extensions.dart';
+import 'package:groceries_app_ui/app_theme.dart';
 
 class EditListImage extends StatelessWidget {
   const EditListImage({super.key});

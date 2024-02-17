@@ -8,19 +8,19 @@ abstract final class AppFonts {
   /// weight based on the current locale.
   static String thin(BuildContext context) {
     if (_isNotArabic(context)) {
-      return FontFamily.poppinsThin;
+      return FontFamily.poppins;
     } else {
-      return FontFamily.notoSansArabicThin;
+      return FontFamily.notoSansArabic;
     }
   }
 
   /// Returns the font family name for the extra light font
   /// weight based on the current locale.
-  static String extraLight(BuildContext context) {
+  static String extra(BuildContext context) {
     if (_isNotArabic(context)) {
-      return FontFamily.poppinsExtraLight;
+      return FontFamily.poppins;
     } else {
-      return FontFamily.poppinsExtraLight;
+      return FontFamily.poppins;
     }
   }
 
@@ -28,9 +28,9 @@ abstract final class AppFonts {
   /// weight based on the current locale.
   static String light(BuildContext context) {
     if (_isNotArabic(context)) {
-      return FontFamily.poppinsLight;
+      return FontFamily.poppins;
     } else {
-      return FontFamily.notoSansArabicLight;
+      return FontFamily.notoSansArabic;
     }
   }
 
@@ -38,9 +38,9 @@ abstract final class AppFonts {
   /// weight based on the current locale.
   static String regular(BuildContext context) {
     if (_isNotArabic(context)) {
-      return FontFamily.poppinsRegular;
+      return FontFamily.poppins;
     } else {
-      return FontFamily.notoSansArabicRegular;
+      return FontFamily.notoSansArabic;
     }
   }
 
@@ -48,9 +48,9 @@ abstract final class AppFonts {
   /// weight based on the current locale.
   static String medium(BuildContext context) {
     if (_isNotArabic(context)) {
-      return FontFamily.poppinsMedium;
+      return FontFamily.poppins;
     } else {
-      return FontFamily.notoSansArabicMedium;
+      return FontFamily.notoSansArabic;
     }
   }
 
@@ -58,9 +58,9 @@ abstract final class AppFonts {
   /// weight based on the current locale.
   static String semiBold(BuildContext context) {
     if (_isNotArabic(context)) {
-      return FontFamily.poppinsSemiBold;
+      return FontFamily.poppins;
     } else {
-      return FontFamily.notoSansArabicSemiBold;
+      return FontFamily.notoSansArabic;
     }
   }
 
@@ -68,9 +68,9 @@ abstract final class AppFonts {
   /// weight based on the current locale.
   static String bold(BuildContext context) {
     if (_isNotArabic(context)) {
-      return FontFamily.poppinsBold;
+      return FontFamily.poppins;
     } else {
-      return FontFamily.notoSansArabicBold;
+      return FontFamily.notoSansArabic;
     }
   }
 
@@ -78,9 +78,9 @@ abstract final class AppFonts {
   /// font weight based on the current locale.
   static String extraBold(BuildContext context) {
     if (_isNotArabic(context)) {
-      return FontFamily.poppinsExtraBold;
+      return FontFamily.poppins;
     } else {
-      return FontFamily.notoSansArabicExtraBold;
+      return FontFamily.notoSansArabic;
     }
   }
 
@@ -88,9 +88,9 @@ abstract final class AppFonts {
   /// weight based on the current locale.
   static String black(BuildContext context) {
     if (_isNotArabic(context)) {
-      return FontFamily.poppinsBlack;
+      return FontFamily.poppins;
     } else {
-      return FontFamily.notoSansArabicBlack;
+      return FontFamily.notoSansArabic;
     }
   }
 

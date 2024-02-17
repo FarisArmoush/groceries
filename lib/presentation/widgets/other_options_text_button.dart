@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_app_ui/app_theme.dart';
 
 class SwitchAuthenticationOptionTextButton extends StatelessWidget {
   const SwitchAuthenticationOptionTextButton({
@@ -24,7 +24,7 @@ class SwitchAuthenticationOptionTextButton extends StatelessWidget {
             TextSpan(
               text: '$upperText\n',
               style: TextStyle(
-                fontFamily: AppFonts.light(context),
+                fontWeight: AppFontWeights.light,
                 color: context.theme.hintColor,
                 fontSize: 14,
               ),
@@ -32,7 +32,7 @@ class SwitchAuthenticationOptionTextButton extends StatelessWidget {
             TextSpan(
               text: lowerText,
               style: TextStyle(
-                fontFamily: AppFonts.medium(context),
+                fontWeight: AppFontWeights.medium,
                 color: context.theme.primaryColorLight,
                 fontSize: 14,
               ),

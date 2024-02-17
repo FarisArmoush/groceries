@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:groceries/data/models/grocery_list_details_model/grocery_list_details_model.dart';
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/data/models/refinements_model/refinements_model.dart';
-import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 import 'package:injectable/injectable.dart';
 
@@ -18,7 +17,7 @@ class GroceryListDetailsDataSource {
     return GroceryListDetailsModel(
       id: uid,
       name: 'Work',
-      imageUrl: mockImage,
+      imageUrl: '',
       items: [
         GroceryModel(
           categoryId: '1235',

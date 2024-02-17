@@ -7,9 +7,9 @@ import 'package:groceries/presentation/widgets/app_text_field.dart';
 import 'package:groceries/presentation/widgets/bottom_sheet_button.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/presentation/widgets/upload_image_bottom_sheet.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_app_ui/app_theme.dart';
 
 class GroceryItemDetailsBottomSheet extends StatelessWidget {
   const GroceryItemDetailsBottomSheet({
@@ -30,7 +30,7 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
             Text(
               groceryModel?.name ?? '',
               style: TextStyle(
-                fontFamily: AppFonts.regular(context),
+                fontWeight: AppFontWeights.regular,
                 color: context.theme.primaryColor,
                 fontSize: 18,
               ),

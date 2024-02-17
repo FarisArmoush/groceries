@@ -6,8 +6,8 @@ import 'package:groceries/presentation/modules/grocery_list_settings/widgets/edi
 import 'package:groceries/presentation/modules/grocery_list_settings/widgets/grocery_list_members.dart';
 import 'package:groceries/presentation/modules/grocery_list_settings/widgets/grocery_list_name_text_field.dart';
 import 'package:groceries/presentation/modules/grocery_list_settings/widgets/save_grocery_list_changes_button.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_app_ui/app_theme.dart';
 
 class GroceryListSettingsView extends StatelessWidget {
   const GroceryListSettingsView({super.key});
@@ -36,7 +36,7 @@ class GroceryListSettingsView extends StatelessWidget {
           Text(
             AppTranslations.groceryListSettings.listMembers,
             style: TextStyle(
-              fontFamily: AppFonts.regular(context),
+              fontWeight: AppFontWeights.regular,
               color: context.theme.primaryColor,
               fontSize: 16,
             ),

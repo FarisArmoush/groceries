@@ -634,7 +634,7 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.24):
     - BoringSSL-GRPC/Interface (= 0.0.24)
   - BoringSSL-GRPC/Interface (0.0.24)
-  - cloud_firestore (4.15.2):
+  - cloud_firestore (4.15.4):
     - Firebase/Firestore (= 10.20.0)
     - firebase_core
     - Flutter
@@ -667,34 +667,34 @@ PODS:
   - Firebase/Storage (10.20.0):
     - Firebase/CoreOnly
     - FirebaseStorage (~> 10.20.0)
-  - firebase_analytics (10.8.3):
+  - firebase_analytics (10.8.5):
     - Firebase/Analytics (= 10.20.0)
     - firebase_core
     - Flutter
-  - firebase_auth (4.17.2):
+  - firebase_auth (4.17.4):
     - Firebase/Auth (= 10.20.0)
     - firebase_core
     - Flutter
-  - firebase_core (2.25.2):
+  - firebase_core (2.25.4):
     - Firebase/CoreOnly (= 10.20.0)
     - Flutter
-  - firebase_crashlytics (3.4.12):
+  - firebase_crashlytics (3.4.14):
     - Firebase/Crashlytics (= 10.20.0)
     - firebase_core
     - Flutter
-  - firebase_database (10.4.3):
+  - firebase_database (10.4.5):
     - Firebase/Database (= 10.20.0)
     - firebase_core
     - Flutter
-  - firebase_performance (0.9.3-11):
+  - firebase_performance (0.9.3-13):
     - Firebase/Performance (= 10.20.0)
     - firebase_core
     - Flutter
-  - firebase_remote_config (4.3.11):
+  - firebase_remote_config (4.3.13):
     - Firebase/RemoteConfig (= 10.20.0)
     - firebase_core
     - Flutter
-  - firebase_storage (11.6.3):
+  - firebase_storage (11.6.5):
     - Firebase/Storage (= 10.20.0)
     - firebase_core
     - Flutter
@@ -1022,16 +1022,16 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   abseil: 926fb7a82dc6d2b8e1f2ed7f3a718bce691d1e46
   BoringSSL-GRPC: 3175b25143e648463a56daeaaa499c6cb86dad33
-  cloud_firestore: b54008bcea391fccd7e3161e638b4701a520f761
+  cloud_firestore: ba576bee785a05ff952e4da7fa4e23c196917436
   Firebase: 10c8cb12fb7ad2ae0c09ffc86cd9c1ab392a0031
-  firebase_analytics: 51db026de0dc914d71c9a3d114fd6b1ae680dbe8
-  firebase_auth: aa5e5192542f7ba49037d1c37b0e860d7fd626db
-  firebase_core: 1612f1d8bbc8ed40598b1317e805658f1d79512f
-  firebase_crashlytics: 3e9de6b7346e5f1ad5f8fdafa53be592c5b3b521
-  firebase_database: fc2f276ad22919916a5bc40746869934c2f2d54f
-  firebase_performance: 73efdcd0c80fad2acc3f30c2a7a617c3226625a5
-  firebase_remote_config: c095690b78cc3fca8c2a6a9296dc86173fc956ac
-  firebase_storage: 3b130181510cd35388f70286e47167b538cdcfc3
+  firebase_analytics: 2e82fd84ce13f8321aa7b99336d6ee0e6cc7b984
+  firebase_auth: 29a10d4129d53aa690c10dbd838ed1a059ef0c9b
+  firebase_core: a46c312d8bae4defa3d009b2aa7b5b413aeb394e
+  firebase_crashlytics: 3d12285fcbd865d576b9965bd4090cd8b68e11fd
+  firebase_database: e6b72eeda8dadd6e3965d86b86c997d35e43d4e2
+  firebase_performance: f090bad21e0318995827cbab40992952a8850fcb
+  firebase_remote_config: e9e018e59700ab678c254cc9f36897ee53c15f94
+  firebase_storage: 5007be227e54a46f260b6040a23b4fdc8ca1c5c5
   FirebaseABTesting: 1d5d49804bcfc5fa782bc2491a8c1364e2cf7241
   FirebaseAnalytics: a2731bf3670747ce8f65368b118d18aa8e368246
   FirebaseAppCheckInterop: e81bdb1cdb82f8e0cef353ba5018a8402682032c
@@ -1070,4 +1070,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 819463e6a0290f5a72f145ba7cde16e8b6ef0796
 
-COCOAPODS: 1.14.2
+COCOAPODS: 1.15.2

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_app_ui/app_theme.dart';
 
 class ThemeHeaderText extends StatelessWidget {
   const ThemeHeaderText({super.key});
@@ -11,7 +11,7 @@ class ThemeHeaderText extends StatelessWidget {
     return Text(
       AppTranslations.theme.themeHeader,
       style: TextStyle(
-        fontFamily: AppFonts.medium(context),
+        fontWeight: AppFontWeights.medium,
         color: context.theme.primaryColor,
         fontSize: 12,
       ),

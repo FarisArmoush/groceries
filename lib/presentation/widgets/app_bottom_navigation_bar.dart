@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/data/models/app_bottom_navigation_bar_item/app_bottom_navigation_bar_item.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
+import 'package:groceries_app_ui/app_theme.dart';
 
 ///Took this code from the `salomon_bottom_bar` package and modified some of it.
 // https://pub.dev/packages/salomon_bottom_bar
@@ -109,7 +109,7 @@ class AppBottomNavigationBar extends StatelessWidget {
                                         t,
                                       ),
                                       fontSize: 14,
-                                      fontFamily: AppFonts.medium(context),
+                                      fontWeight: AppFontWeights.medium,
                                     ),
                                     child: item.title,
                                   ),

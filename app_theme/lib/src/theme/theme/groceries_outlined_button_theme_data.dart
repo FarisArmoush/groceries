@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:groceries_app_ui/app_theme.dart';
-import 'package:groceries_app_ui/src/app_fonts.dart';
 
 abstract final class GroceriesOutlinedButtonThemeData {
-  static OutlinedButtonThemeData light(BuildContext context) {
+  static OutlinedButtonThemeData light() {
     return OutlinedButtonThemeData(
       style: ButtonStyle(
         splashFactory: _splashFactory,
@@ -27,8 +26,8 @@ abstract final class GroceriesOutlinedButtonThemeData {
           AppColors.black,
         ),
         textStyle: MaterialStateProperty.all<TextStyle>(
-          TextStyle(
-            fontFamily: AppFonts.regular(context),
+          const TextStyle(
+            fontWeight: AppFontWeights.regular,
             color: AppColors.black,
             fontSize: 16,
           ),
@@ -37,7 +36,7 @@ abstract final class GroceriesOutlinedButtonThemeData {
     );
   }
 
-  static OutlinedButtonThemeData dark(BuildContext context) {
+  static OutlinedButtonThemeData dark() {
     return OutlinedButtonThemeData(
       style: ButtonStyle(
         splashFactory: _splashFactory,
@@ -61,8 +60,8 @@ abstract final class GroceriesOutlinedButtonThemeData {
           AppColors.white,
         ),
         textStyle: MaterialStateProperty.all<TextStyle>(
-          TextStyle(
-            fontFamily: AppFonts.regular(context),
+          const TextStyle(
+            fontWeight: AppFontWeights.regular,
             color: AppColors.white,
             fontSize: 16,
           ),

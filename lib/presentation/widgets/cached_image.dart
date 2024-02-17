@@ -1,13 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:groceries/presentation/widgets/shimmer_skeleton.dart';
-import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class CachedImage extends StatelessWidget {
   const CachedImage({
-    this.imageUrl = mockImage,
+    this.imageUrl,
     this.height,
     this.width,
     this.boxFit = BoxFit.cover,
@@ -16,7 +15,7 @@ class CachedImage extends StatelessWidget {
     super.key,
   });
 
-  final String imageUrl;
+  final String? imageUrl;
   final double? height;
   final double? width;
   final BoxFit boxFit;
@@ -28,7 +27,7 @@ class CachedImage extends StatelessWidget {
     return CachedNetworkImage(
       height: height,
       width: width,
-      imageUrl: imageUrl,
+      imageUrl: imageUrl ?? '',
       placeholderFadeInDuration: Duration.zero,
       imageBuilder: (context, imageProvider) {
         return Container(

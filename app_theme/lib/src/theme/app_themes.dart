@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries_app_ui/src/colors.dart';
+import 'package:groceries_app_ui/app_theme.dart';
 import 'package:groceries_app_ui/src/theme/theme/groceries_app_bar_theme_data.dart';
 import 'package:groceries_app_ui/src/theme/theme/groceries_bottom_sheet_theme_data.dart';
 import 'package:groceries_app_ui/src/theme/theme/groceries_color_scheme.dart';
@@ -23,10 +23,10 @@ abstract final class AppThemes {
 
   /// Returns the light theme for the application.
   ///
-  /// The [context] parameter is used to access the current build context.
-  static ThemeData lightTheme(BuildContext context) => ThemeData.light(
+  /// The [ ] parameter is used to access the current build  .
+  static ThemeData lightTheme() => ThemeData(
         useMaterial3: true,
-      ).copyWith(
+        fontFamily: FontFamily.poppins,
         brightness: Brightness.light,
         primaryColor: AppColors.black,
         primaryColorLight: AppColors.darkRed,
@@ -37,20 +37,20 @@ abstract final class AppThemes {
         dividerColor: AppColors.black.withOpacity(0.25),
         scaffoldBackgroundColor: AppColors.white,
         colorScheme: GroceriesColorScheme.light,
-        appBarTheme: GroceriesAppBarThemeData.light(context),
-        inputDecorationTheme: GroceriesInputDecorationThemeData.light(context),
-        listTileTheme: GroceriesListTileThemeData.light(context),
+        appBarTheme: GroceriesAppBarThemeData.light(),
+        inputDecorationTheme: GroceriesInputDecorationThemeData.light(),
+        listTileTheme: GroceriesListTileThemeData.light(),
         bottomSheetTheme: GroceriesBottomSheetThemeData.light,
         radioTheme: GroceriesRadioThemeData.light,
-        textButtonTheme: GroceriesTextButtonThemeData.light(context),
+        textButtonTheme: GroceriesTextButtonThemeData.light(),
         progressIndicatorTheme: GroceriesProgressIndicatorThemeData.light,
-        dialogTheme: GroceriesDialogThemeData.light(context),
-        filledButtonTheme: GroceriesFilledButtonThemeData.light(context),
-        outlinedButtonTheme: GroceriesOutlinedButtonThemeData.light(context),
-        elevatedButtonTheme: GroceriesElevatedButtonThemeData.light(context),
-        tabBarTheme: GroceriesTabBarThemeData.light(context),
+        dialogTheme: GroceriesDialogThemeData.light(),
+        filledButtonTheme: GroceriesFilledButtonThemeData.light(),
+        outlinedButtonTheme: GroceriesOutlinedButtonThemeData.light(),
+        elevatedButtonTheme: GroceriesElevatedButtonThemeData.light(),
+        tabBarTheme: GroceriesTabBarThemeData.light(),
         floatingActionButtonTheme:
-            GroceriesFloatingActionButtonThemeData.light(context),
+            GroceriesFloatingActionButtonThemeData.light(),
         dividerTheme: GroceriesDividerThemeData.light,
         iconButtonTheme: GroceriesIconButtonThemeData.light,
         visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -58,10 +58,10 @@ abstract final class AppThemes {
 
   /// Returns the dark theme for the application.
   ///
-  /// The [context] parameter is used to access the current build context.
-  static ThemeData darkTheme(BuildContext context) => ThemeData.dark(
+  /// The [ ] parameter is used to access the current build  .
+  static ThemeData darkTheme() => ThemeData(
         useMaterial3: true,
-      ).copyWith(
+        fontFamily: FontFamily.poppins,
         brightness: Brightness.dark,
         primaryColor: AppColors.white,
         primaryColorLight: AppColors.lightRed,
@@ -72,20 +72,20 @@ abstract final class AppThemes {
         dividerColor: AppColors.white.withOpacity(0.25),
         scaffoldBackgroundColor: AppColors.darkGrey,
         colorScheme: GroceriesColorScheme.dark,
-        appBarTheme: GroceriesAppBarThemeData.dark(context),
-        inputDecorationTheme: GroceriesInputDecorationThemeData.dark(context),
-        listTileTheme: GroceriesListTileThemeData.dark(context),
+        appBarTheme: GroceriesAppBarThemeData.dark(),
+        inputDecorationTheme: GroceriesInputDecorationThemeData.dark(),
+        listTileTheme: GroceriesListTileThemeData.dark(),
         bottomSheetTheme: GroceriesBottomSheetThemeData.dark,
         radioTheme: GroceriesRadioThemeData.dark,
-        textButtonTheme: GroceriesTextButtonThemeData.dark(context),
+        textButtonTheme: GroceriesTextButtonThemeData.dark(),
         progressIndicatorTheme: GroceriesProgressIndicatorThemeData.dark,
-        dialogTheme: GroceriesDialogThemeData.dark(context),
-        filledButtonTheme: GroceriesFilledButtonThemeData.dark(context),
-        outlinedButtonTheme: GroceriesOutlinedButtonThemeData.dark(context),
-        elevatedButtonTheme: GroceriesElevatedButtonThemeData.dark(context),
-        tabBarTheme: GroceriesTabBarThemeData.dark(context),
+        dialogTheme: GroceriesDialogThemeData.dark(),
+        filledButtonTheme: GroceriesFilledButtonThemeData.dark(),
+        outlinedButtonTheme: GroceriesOutlinedButtonThemeData.dark(),
+        elevatedButtonTheme: GroceriesElevatedButtonThemeData.dark(),
+        tabBarTheme: GroceriesTabBarThemeData.dark(),
         floatingActionButtonTheme:
-            GroceriesFloatingActionButtonThemeData.dark(context),
+            GroceriesFloatingActionButtonThemeData.dark(),
         dividerTheme: GroceriesDividerThemeData.dark,
         iconButtonTheme: GroceriesIconButtonThemeData.dark,
       );

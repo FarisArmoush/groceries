@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:groceries_app_ui/app_theme.dart';
-import 'package:groceries_app_ui/src/app_fonts.dart';
 
 abstract final class GroceriesAppBarThemeData {
-  static AppBarTheme light(BuildContext context) {
-    return AppBarTheme(
-      iconTheme: const IconThemeData(
+  static AppBarTheme light() {
+    return const AppBarTheme(
+      iconTheme: IconThemeData(
         color: AppColors.black,
       ),
       surfaceTintColor: AppColors.transparent,
@@ -15,7 +14,7 @@ abstract final class GroceriesAppBarThemeData {
       scrolledUnderElevation: 1,
       centerTitle: true,
       titleTextStyle: TextStyle(
-        fontFamily: AppFonts.medium(context),
+        fontWeight: AppFontWeights.medium,
         color: AppColors.black,
         fontSize: _fontSize,
       ),
@@ -23,7 +22,7 @@ abstract final class GroceriesAppBarThemeData {
     );
   }
 
-  static AppBarTheme dark(BuildContext context) {
+  static AppBarTheme dark() {
     return AppBarTheme(
       scrolledUnderElevation: 1,
       iconTheme: IconThemeData(
@@ -36,8 +35,8 @@ abstract final class GroceriesAppBarThemeData {
       systemOverlayStyle: SystemUiOverlayStyle.light,
       elevation: 0,
       centerTitle: true,
-      titleTextStyle: TextStyle(
-        fontFamily: AppFonts.medium(context),
+      titleTextStyle: const TextStyle(
+        fontWeight: AppFontWeights.medium,
         color: AppColors.white,
         fontSize: _fontSize,
       ),

@@ -1,32 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:groceries_app_ui/app_theme.dart';
-import 'package:groceries_app_ui/src/app_fonts.dart';
 
 abstract final class GroceriesInputDecorationThemeData {
-  static InputDecorationTheme light(BuildContext context) {
-    return InputDecorationTheme(
+  static InputDecorationTheme light() {
+    return const InputDecorationTheme(
       floatingLabelStyle: TextStyle(
-        fontFamily: AppFonts.regular(context),
+        fontWeight: AppFontWeights.regular,
         color: AppColors.black,
         fontSize: 16,
       ),
       errorStyle: TextStyle(
-        fontFamily: AppFonts.medium(context),
+        fontWeight: AppFontWeights.medium,
         fontSize: 12,
         color: AppColors.darkRed,
       ),
       labelStyle: TextStyle(
-        fontFamily: AppFonts.medium(context),
+        fontWeight: AppFontWeights.medium,
         color: AppColors.lightGrey,
         fontSize: 16,
       ),
       prefixIconColor: AppColors.lightGrey,
-      enabledBorder: const UnderlineInputBorder(
+      enabledBorder: UnderlineInputBorder(
         borderSide: BorderSide(
           color: AppColors.lightRed,
         ),
       ),
-      focusedBorder: const UnderlineInputBorder(
+      focusedBorder: UnderlineInputBorder(
         borderSide: BorderSide(
           color: AppColors.lightRed,
         ),
@@ -34,30 +33,30 @@ abstract final class GroceriesInputDecorationThemeData {
     );
   }
 
-  static InputDecorationTheme dark(BuildContext context) {
-    return InputDecorationTheme(
+  static InputDecorationTheme dark() {
+    return const InputDecorationTheme(
       floatingLabelStyle: TextStyle(
-        fontFamily: AppFonts.regular(context),
+        fontWeight: AppFontWeights.regular,
         color: AppColors.white,
         fontSize: 16,
       ),
       errorStyle: TextStyle(
-        fontFamily: AppFonts.medium(context),
+        fontWeight: AppFontWeights.medium,
         fontSize: 12,
         color: AppColors.lightRed,
       ),
       labelStyle: TextStyle(
-        fontFamily: AppFonts.medium(context),
+        fontWeight: AppFontWeights.medium,
         color: AppColors.lightGrey,
         fontSize: 16,
       ),
       prefixIconColor: AppColors.lightGrey,
-      enabledBorder: const UnderlineInputBorder(
+      enabledBorder: UnderlineInputBorder(
         borderSide: BorderSide(
           color: AppColors.darkRed,
         ),
       ),
-      focusedBorder: const UnderlineInputBorder(
+      focusedBorder: UnderlineInputBorder(
         borderSide: BorderSide(
           color: AppColors.darkRed,
         ),

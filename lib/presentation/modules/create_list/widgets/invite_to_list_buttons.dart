@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_app_ui/app_theme.dart';
 
 class InviteToListButtons extends StatelessWidget {
   const InviteToListButtons({super.key});
@@ -25,7 +25,7 @@ class InviteToListButtons extends StatelessWidget {
           label: Text(
             AppTranslations.general.email,
             style: TextStyle(
-              fontFamily: AppFonts.regular(context),
+              fontWeight: AppFontWeights.regular,
               color: context.theme.primaryColor,
               fontSize: 16,
             ),
@@ -43,7 +43,7 @@ class InviteToListButtons extends StatelessWidget {
           label: Text(
             AppTranslations.createGroceryList.copyInvitationLink,
             style: TextStyle(
-              fontFamily: AppFonts.regular(context),
+              fontWeight: AppFontWeights.regular,
               color: context.theme.primaryColor,
               fontSize: 16,
             ),

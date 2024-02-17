@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:groceries_app_ui/app_theme.dart';
-import 'package:groceries_app_ui/src/app_fonts.dart';
 
 abstract final class GroceriesElevatedButtonThemeData {
   GroceriesElevatedButtonThemeData._();
 
-  static ElevatedButtonThemeData light(BuildContext context) {
+  static ElevatedButtonThemeData light() {
     return ElevatedButtonThemeData(
       style: ButtonStyle(
         splashFactory: _splashFactory,
@@ -29,8 +28,8 @@ abstract final class GroceriesElevatedButtonThemeData {
           AppColors.white.withOpacity(0.12),
         ),
         textStyle: MaterialStateProperty.all<TextStyle>(
-          TextStyle(
-            fontFamily: AppFonts.regular(context),
+          const TextStyle(
+            fontWeight: AppFontWeights.regular,
             color: AppColors.white,
             fontSize: 16,
           ),
@@ -42,7 +41,7 @@ abstract final class GroceriesElevatedButtonThemeData {
     );
   }
 
-  static ElevatedButtonThemeData dark(BuildContext context) {
+  static ElevatedButtonThemeData dark() {
     return ElevatedButtonThemeData(
       style: ButtonStyle(
         splashFactory: _splashFactory,
@@ -71,8 +70,8 @@ abstract final class GroceriesElevatedButtonThemeData {
           AppColors.black.withOpacity(0.12),
         ),
         textStyle: MaterialStateProperty.all<TextStyle>(
-          TextStyle(
-            fontFamily: AppFonts.regular(context),
+          const TextStyle(
+            fontWeight: AppFontWeights.regular,
             color: AppColors.white,
             fontSize: 16,
           ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/data/models/user_model/user_model.dart';
 import 'package:groceries/presentation/modules/grocery_list_settings/widgets/member_card.dart';
-import 'package:groceries/utils/constants/app_colors.dart';
 
 class GroceryListMembers extends StatelessWidget {
   const GroceryListMembers({super.key});
@@ -19,7 +18,7 @@ class GroceryListMembers extends StatelessWidget {
               id: '',
               name: 'Faris $index',
               email: 'fariskarmoush@gmail.com $index',
-              imageUrl: mockImage,
+              imageUrl: 'mockImage',
               creationDate: DateTime.timestamp(),
             ),
           ),

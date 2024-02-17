@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:groceries_app_ui/app_theme.dart';
-import 'package:groceries_app_ui/src/app_fonts.dart';
 
 abstract final class GroceriesFilledButtonThemeData {
-  static FilledButtonThemeData light(BuildContext context) {
+  static FilledButtonThemeData light() {
     return FilledButtonThemeData(
       style: ButtonStyle(
         splashFactory: _splashFactory,
@@ -31,8 +30,8 @@ abstract final class GroceriesFilledButtonThemeData {
           },
         ),
         textStyle: MaterialStateProperty.all<TextStyle>(
-          TextStyle(
-            fontFamily: AppFonts.regular(context),
+          const TextStyle(
+            fontWeight: AppFontWeights.regular,
             color: AppColors.white,
             fontSize: 16,
           ),
@@ -41,7 +40,7 @@ abstract final class GroceriesFilledButtonThemeData {
     );
   }
 
-  static FilledButtonThemeData dark(BuildContext context) {
+  static FilledButtonThemeData dark() {
     return FilledButtonThemeData(
       style: ButtonStyle(
         splashFactory: _splashFactory,
@@ -69,8 +68,8 @@ abstract final class GroceriesFilledButtonThemeData {
           AppColors.white,
         ),
         textStyle: MaterialStateProperty.all<TextStyle>(
-          TextStyle(
-            fontFamily: AppFonts.regular(context),
+          const TextStyle(
+            fontWeight: AppFontWeights.regular,
             color: AppColors.white,
             fontSize: 16,
           ),

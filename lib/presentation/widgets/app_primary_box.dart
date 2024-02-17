@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_colors.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_app_ui/app_theme.dart';
 
 class AppPrimaryBox extends StatelessWidget {
   const AppPrimaryBox({
@@ -43,7 +42,7 @@ class AppPrimaryBox extends StatelessWidget {
       children: [
         DefaultTextStyle.merge(
           style: TextStyle(
-            fontFamily: AppFonts.regular(context),
+            fontWeight: AppFontWeights.regular,
             color: context.theme.primaryColor,
             fontSize: 16,
           ),

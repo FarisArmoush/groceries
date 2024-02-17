@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:groceries_app_ui/app_theme.dart';
-import 'package:groceries_app_ui/src/app_fonts.dart';
 
 abstract final class GroceriesTabBarThemeData {
-  static TabBarTheme light(BuildContext context) {
+  static TabBarTheme light() {
     return TabBarTheme(
-      labelStyle: TextStyle(
-        fontFamily: AppFonts.regular(context),
+      labelStyle: const TextStyle(
+        fontWeight: AppFontWeights.regular,
         color: AppColors.black,
         fontSize: _labelTextSize,
       ),
       splashFactory: _splashFactory,
-      unselectedLabelStyle: TextStyle(
-        fontFamily: AppFonts.regular(context),
+      unselectedLabelStyle: const TextStyle(
+        fontWeight: AppFontWeights.regular,
         color: AppColors.lightGrey,
         fontSize: _labelTextSize,
       ),
@@ -26,16 +25,16 @@ abstract final class GroceriesTabBarThemeData {
     );
   }
 
-  static TabBarTheme dark(BuildContext context) {
+  static TabBarTheme dark() {
     return TabBarTheme(
-      labelStyle: TextStyle(
-        fontFamily: AppFonts.regular(context),
+      labelStyle: const TextStyle(
+        fontWeight: AppFontWeights.regular,
         color: AppColors.white,
         fontSize: _labelTextSize,
       ),
       splashFactory: _splashFactory,
-      unselectedLabelStyle: TextStyle(
-        fontFamily: AppFonts.regular(context),
+      unselectedLabelStyle: const TextStyle(
+        fontWeight: AppFontWeights.regular,
         color: AppColors.lightGrey,
         fontSize: _labelTextSize,
       ),
