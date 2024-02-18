@@ -1,3 +1,4 @@
+import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -7,7 +8,7 @@ import 'package:groceries_theme/app_theme.dart';
 
 class CachedImageWithEditButton extends StatelessWidget {
   const CachedImageWithEditButton({
-    required this.imageUrl,
+    this.imageUrl,
     this.width,
     this.height,
     this.boxShape,
@@ -21,7 +22,7 @@ class CachedImageWithEditButton extends StatelessWidget {
   final BoxShape? boxShape;
   final BorderRadiusGeometry? borderRadius;
   final VoidCallback? onPressed;
-  final String imageUrl;
+  final String? imageUrl;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class CachedImageWithEditButton extends StatelessWidget {
           width: height ?? double.infinity,
           boxShape: boxShape ?? BoxShape.rectangle,
           borderRadius: borderRadius ?? BorderRadius.circular(16),
-          imageUrl: imageUrl,
+          imageUrl: imageUrl ?? faker.image.image(),
         ),
         CircleAvatar(
           backgroundColor: AppColors.black.withOpacity(0.8),

@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
@@ -23,7 +24,7 @@ class MyTasksDataSource {
         listModel: GroceryListModel(
           id: '123',
           name: 'Friends',
-          imageUrl: '',
+          imageUrl: faker.image.image(),
           members: <UserModel>[],
           items: <GroceryModel>[],
           creationDate: DateTime.timestamp(),
@@ -49,7 +50,7 @@ class MyTasksDataSource {
           creationDate: DateTime.timestamp(),
           id: '123',
           name: 'Work',
-          imageUrl: '',
+          imageUrl: faker.image.image(),
           members: <UserModel>[],
           items: <GroceryModel>[],
         ),
@@ -73,7 +74,7 @@ class MyTasksDataSource {
         listModel: GroceryListModel(
           id: '123',
           name: 'Home',
-          imageUrl: '',
+          imageUrl: faker.image.image(),
           members: <UserModel>[],
           items: <GroceryModel>[],
           creationDate: DateTime.timestamp(),

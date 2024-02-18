@@ -22,9 +22,7 @@ abstract final class AppThemes {
   AppThemes._();
 
   /// Returns the light theme for the application.
-  ///
-  /// The [ ] parameter is used to access the current build  .
-  static ThemeData lightTheme() => ThemeData(
+  static ThemeData get lightTheme => ThemeData(
         useMaterial3: true,
         fontFamily: FontFamily.poppins,
         brightness: Brightness.light,
@@ -57,9 +55,7 @@ abstract final class AppThemes {
       );
 
   /// Returns the dark theme for the application.
-  ///
-  /// The [ ] parameter is used to access the current build  .
-  static ThemeData darkTheme() => ThemeData(
+  static ThemeData get darkTheme => ThemeData(
         useMaterial3: true,
         fontFamily: FontFamily.poppins,
         brightness: Brightness.dark,

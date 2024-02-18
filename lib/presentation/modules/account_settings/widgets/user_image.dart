@@ -1,3 +1,4 @@
+import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
@@ -19,6 +20,7 @@ class UserImage extends StatelessWidget {
         ),
       ),
       child: CachedImage(
+        imageUrl: faker.image.image(),
         height: context.deviceHeight * 0.2,
         boxFit: BoxFit.contain,
       ),
