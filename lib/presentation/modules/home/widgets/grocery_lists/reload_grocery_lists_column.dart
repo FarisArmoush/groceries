@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/blocs/grocery_lists/grocery_lists_bloc.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class ReloadGroceryListsColumn extends StatelessWidget {
   const ReloadGroceryListsColumn({
@@ -21,7 +21,7 @@ class ReloadGroceryListsColumn extends StatelessWidget {
           error,
           style: TextStyle(
             color: context.theme.primaryColor,
-            fontFamily: AppFonts.semiBold(context),
+            fontWeight: AppFontWeights.semiBold,
             fontSize: 22,
           ),
           textAlign: TextAlign.center,

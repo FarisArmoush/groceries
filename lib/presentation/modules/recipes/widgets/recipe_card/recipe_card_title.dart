@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class RecipeCardTitle extends StatelessWidget {
   const RecipeCardTitle({
@@ -15,7 +15,7 @@ class RecipeCardTitle extends StatelessWidget {
     return Text(
       name,
       style: TextStyle(
-        fontFamily: AppFonts.semiBold(context),
+        fontWeight: AppFontWeights.semiBold,
         color: context.theme.primaryColor,
         fontSize: 32,
       ),

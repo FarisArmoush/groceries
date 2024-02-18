@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:groceries/utils/constants/app_colors.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class GroceriesBoxHeader extends StatelessWidget {
   const GroceriesBoxHeader({
@@ -45,8 +44,8 @@ class GroceriesBoxHeader extends StatelessWidget {
           ),
           Text(
             category,
-            style: TextStyle(
-              fontFamily: AppFonts.semiBold(context),
+            style: const TextStyle(
+              fontWeight: AppFontWeights.semiBold,
               fontSize: 16,
               color: AppColors.white,
             ),
