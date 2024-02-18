@@ -4,6 +4,7 @@ import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
+import 'package:groceries/presentation/modules/root/bloc/root_navigation_bloc.dart';
 import 'package:groceries/presentation/modules/update_display_name/bloc/update_display_name_bloc.dart';
 import 'package:groceries/presentation/modules/update_display_name/widgets/submit_new_display_name_button.dart';
 import 'package:groceries/presentation/modules/update_display_name/widgets/update_display_name_body_text.dart';
@@ -47,6 +48,9 @@ class UpdateDisplayNameView extends StatelessWidget {
 
   void listener(BuildContext context, UpdateDisplayNameState state) {
     if (state.status.isSuccess) {
+      context.read<RootNavigationBloc>().add(
+            const RootNavigationEvent.navigateToIndex(0),
+          );
       context.pop();
       ScaffoldMessenger.of(context)
         ..hideCurrentSnackBar()
@@ -58,6 +62,9 @@ class UpdateDisplayNameView extends StatelessWidget {
       context.pushReplacementNamed(AppNamedRoutes.root);
     }
     if (state.status.isFailure) {
+      context.read<RootNavigationBloc>().add(
+            const RootNavigationEvent.navigateToIndex(0),
+          );
       context.pop();
       ScaffoldMessenger.of(context)
         ..hideCurrentSnackBar()
