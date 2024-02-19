@@ -120,7 +120,7 @@ class AuthenticationDataSource {
       return;
     }
     try {
-      await currentUser?.updateEmail(email).then(
+      await currentUser?.verifyBeforeUpdateEmail(email).then(
             (_) => firestore.collection('users').doc(currentUser?.uid).update(
               {
                 'email': email,

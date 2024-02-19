@@ -13,7 +13,8 @@ class GroceryListNameForm extends FormzInput<String, String> {
   /// @param value The initial value of the grocery list name form field.
   const GroceryListNameForm.pure(super.value) : super.pure();
 
-  /// Constructor which creates a dirty [GroceryListNameForm] with a given value.
+  /// Constructor which creates a dirty [GroceryListNameForm]
+  /// with a given value.
   ///
   /// The dirty state indicates that the form field has been modified.
   ///
