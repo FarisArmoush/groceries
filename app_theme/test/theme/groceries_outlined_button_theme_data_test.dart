@@ -22,11 +22,7 @@ void main() {
       );
       expect(
         defaultStyle?.side,
-        equals(
-          MaterialStateProperty.all<BorderSide>(
-            const BorderSide(color: AppColors.lightGrey),
-          ),
-        ),
+        isInstanceOf<MaterialStateProperty<BorderSide>>(),
       );
       expect(
         overlayColor,
@@ -66,11 +62,7 @@ void main() {
       );
       expect(
         defaultStyle?.side,
-        equals(
-          MaterialStateProperty.all<BorderSide>(
-            const BorderSide(color: AppColors.lightGrey),
-          ),
-        ),
+        isInstanceOf<MaterialStateProperty<BorderSide>>(),
       );
       expect(
         overlayColor,

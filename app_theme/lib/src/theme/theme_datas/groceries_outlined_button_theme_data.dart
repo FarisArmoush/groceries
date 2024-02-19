@@ -37,7 +37,7 @@ abstract final class GroceriesOutlinedButtonThemeData {
   static final OutlinedButtonThemeData dark = OutlinedButtonThemeData(
     style: ButtonStyle(
       splashFactory: _splashFactory,
-      shape: MaterialStateProperty.all(
+      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
         RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
