@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_colors.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class AppSnackBars {
   AppSnackBars._();
@@ -118,8 +117,8 @@ class _SnackbarMessage extends StatelessWidget {
     return Flexible(
       child: Text(
         message,
-        style: TextStyle(
-          fontFamily: AppFonts.regular(context),
+        style: const TextStyle(
+          fontWeight: AppFontWeights.regular,
           color: AppColors.white,
           fontSize: 16,
         ),

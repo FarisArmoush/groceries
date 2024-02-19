@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_theme/app_theme.dart';
 import 'package:shimmer/shimmer.dart';
 
 class ShimmerSkeleton extends StatelessWidget {

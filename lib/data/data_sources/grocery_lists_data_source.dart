@@ -1,12 +1,12 @@
 import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/data/models/refinements_model/refinements_model.dart';
 import 'package:groceries/data/models/user_model/user_model.dart';
-import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:injectable/injectable.dart';
 
 @singleton
@@ -20,7 +20,7 @@ class GroceryListsDataSource {
     final lists = <GroceryListModel>[
       GroceryListModel(
         name: 'Home',
-        imageUrl: mockImage,
+        imageUrl: faker.image.image(),
         id: '123',
         members: <UserModel>[],
         creationDate: DateTime.timestamp(),
@@ -349,7 +349,7 @@ class GroceryListsDataSource {
       ),
       GroceryListModel(
         name: 'Work',
-        imageUrl: mockImage,
+        imageUrl: faker.image.image(),
         id: '123',
         members: <UserModel>[],
         items: <GroceryModel>[],
@@ -357,7 +357,7 @@ class GroceryListsDataSource {
       ),
       GroceryListModel(
         name: 'Friends',
-        imageUrl: mockImage,
+        imageUrl: faker.image.image(),
         id: '123',
         members: <UserModel>[],
         creationDate: DateTime.timestamp(),

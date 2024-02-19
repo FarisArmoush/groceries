@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/data/models/refinements_model/refinements_model.dart';
 import 'package:groceries/data/models/task_model/task_model.dart';
 import 'package:groceries/data/models/user_model/user_model.dart';
-import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:injectable/injectable.dart';
 
 @singleton
@@ -24,7 +24,7 @@ class MyTasksDataSource {
         listModel: GroceryListModel(
           id: '123',
           name: 'Friends',
-          imageUrl: mockImage,
+          imageUrl: faker.image.image(),
           members: <UserModel>[],
           items: <GroceryModel>[],
           creationDate: DateTime.timestamp(),
@@ -50,7 +50,7 @@ class MyTasksDataSource {
           creationDate: DateTime.timestamp(),
           id: '123',
           name: 'Work',
-          imageUrl: mockImage,
+          imageUrl: faker.image.image(),
           members: <UserModel>[],
           items: <GroceryModel>[],
         ),
@@ -74,7 +74,7 @@ class MyTasksDataSource {
         listModel: GroceryListModel(
           id: '123',
           name: 'Home',
-          imageUrl: mockImage,
+          imageUrl: faker.image.image(),
           members: <UserModel>[],
           items: <GroceryModel>[],
           creationDate: DateTime.timestamp(),

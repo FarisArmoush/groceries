@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/presentation/widgets/app_custom_cupertino_sliver_navigation_bar.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class GroceriesAppBar extends StatelessWidget {
   const GroceriesAppBar({
@@ -29,7 +29,7 @@ class GroceriesAppBar extends StatelessWidget {
       stretch: stretch,
       largeTitle: DefaultTextStyle.merge(
         style: TextStyle(
-          fontFamily: AppFonts.regular(context),
+          fontWeight: AppFontWeights.regular,
           fontSize: 24,
           color: context.theme.primaryColor,
         ),

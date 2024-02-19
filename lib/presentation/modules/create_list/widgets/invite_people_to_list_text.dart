@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class InvitePeopleToListText extends StatelessWidget {
   const InvitePeopleToListText({
@@ -13,7 +13,7 @@ class InvitePeopleToListText extends StatelessWidget {
     return Text(
       AppTranslations.createGroceryList.invitePeopleToList,
       style: TextStyle(
-        fontFamily: AppFonts.semiBold(context),
+        fontWeight: AppFontWeights.semiBold,
         color: context.theme.primaryColor,
         fontSize: 28,
       ),

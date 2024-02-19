@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/blocs/user_data/user_data_cubit.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class GreetingText extends StatelessWidget {
   const GreetingText({super.key});
@@ -17,7 +17,7 @@ class GreetingText extends StatelessWidget {
       text: TextSpan(
         text: '${AppTranslations.home.homeGreeting} ',
         style: TextStyle(
-          fontFamily: AppFonts.semiBold(context),
+          fontWeight: AppFontWeights.semiBold,
           color: context.theme.primaryColor,
           fontSize: 20,
         ),
@@ -25,7 +25,7 @@ class GreetingText extends StatelessWidget {
           TextSpan(
             text: displayName,
             style: TextStyle(
-              fontFamily: AppFonts.semiBold(context),
+              fontWeight: AppFontWeights.semiBold,
               color: context.theme.primaryColorLight,
               fontSize: 20,
             ),

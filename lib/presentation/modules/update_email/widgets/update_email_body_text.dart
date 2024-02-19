@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class UpdateEmailBodyText extends StatelessWidget {
   const UpdateEmailBodyText({super.key});
@@ -10,7 +10,7 @@ class UpdateEmailBodyText extends StatelessWidget {
     return Text(
       'Choose your new Email',
       style: TextStyle(
-        fontFamily: AppFonts.regular(context),
+        fontWeight: AppFontWeights.regular,
         color: context.theme.primaryColor,
         fontSize: 22,
       ),

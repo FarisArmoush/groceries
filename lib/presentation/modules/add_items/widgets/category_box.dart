@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/add_items/widgets/category_box_divider.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries/utils/extenstions/padding_extensions.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class CategoryBox extends StatelessWidget {
   const CategoryBox({required this.category, super.key});
@@ -21,7 +21,7 @@ class CategoryBox extends StatelessWidget {
           Text(
             category,
             style: TextStyle(
-              fontFamily: AppFonts.regular(context),
+              fontWeight: AppFontWeights.regular,
               color: context.theme.primaryColor,
               fontSize: 14,
             ),

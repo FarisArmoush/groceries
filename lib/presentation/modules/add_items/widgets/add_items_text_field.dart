@@ -4,9 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/presentation/modules/add_items/bloc/add_items_bloc.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/app_text_field.dart';
-import 'package:groceries/utils/constants/app_colors.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/padding_extensions.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class AddItemsTextField extends StatelessWidget {
   const AddItemsTextField({super.key});
@@ -23,27 +22,27 @@ class AddItemsTextField extends StatelessWidget {
           success: () => Material(
             color: CupertinoColors.systemGrey5,
             borderRadius: BorderRadius.circular(9),
-            child: AppTextField(
+            child: const AppTextField(
               style: TextStyle(
-                fontFamily: AppFonts.semiBold(context),
+                fontWeight: AppFontWeights.semiBold,
                 color: AppColors.black,
                 fontSize: 14,
               ),
-              contentPadding: const EdgeInsetsDirectional.symmetric(
+              contentPadding: EdgeInsetsDirectional.symmetric(
                 horizontal: 16,
                 vertical: 8,
               ),
               labelStyle: TextStyle(
-                fontFamily: AppFonts.medium(context),
+                fontWeight: AppFontWeights.medium,
                 color: AppColors.black,
                 fontSize: 14,
               ),
               floatingLabelStyle: TextStyle(
-                fontFamily: AppFonts.medium(context),
+                fontWeight: AppFontWeights.medium,
                 color: AppColors.black,
                 fontSize: 16,
               ),
-              prefixIcon: const Icon(
+              prefixIcon: Icon(
                 CupertinoIcons.search,
                 color: AppColors.black,
               ),

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class RailTitle extends StatelessWidget {
   const RailTitle({required this.title, super.key});
@@ -13,7 +13,7 @@ class RailTitle extends StatelessWidget {
     return Text(
       title,
       style: TextStyle(
-        fontFamily: AppFonts.semiBold(context),
+        fontWeight: AppFontWeights.semiBold,
         color: context.theme.primaryColor,
         fontSize: 22,
       ),

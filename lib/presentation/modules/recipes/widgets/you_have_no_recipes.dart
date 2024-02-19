@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class YouHaveNoRecipes extends StatelessWidget {
   const YouHaveNoRecipes({super.key});
@@ -21,7 +21,7 @@ class YouHaveNoRecipes extends StatelessWidget {
         Text(
           AppTranslations.recipes.emptyRecipesHeader,
           style: TextStyle(
-            fontFamily: AppFonts.semiBold(context),
+            fontWeight: AppFontWeights.semiBold,
             color: context.theme.primaryColor,
             fontSize: 24,
           ),
@@ -33,7 +33,7 @@ class YouHaveNoRecipes extends StatelessWidget {
         Text(
           AppTranslations.recipes.emptyRecipesBody,
           style: TextStyle(
-            fontFamily: AppFonts.light(context),
+            fontWeight: AppFontWeights.light,
             color: context.theme.hintColor,
             fontSize: 14,
           ),

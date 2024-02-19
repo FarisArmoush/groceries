@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class RecipeDetailsListHeader extends StatelessWidget {
   const RecipeDetailsListHeader(this.text, {super.key});
@@ -10,7 +10,7 @@ class RecipeDetailsListHeader extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        fontFamily: AppFonts.semiBold(context),
+        fontWeight: AppFontWeights.semiBold,
         fontSize: 24,
         color: context.theme.primaryColor,
       ),

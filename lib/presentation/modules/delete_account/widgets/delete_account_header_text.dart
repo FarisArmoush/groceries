@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class DeleteAccountHeaderText extends StatelessWidget {
   const DeleteAccountHeaderText({super.key});
@@ -11,7 +11,7 @@ class DeleteAccountHeaderText extends StatelessWidget {
     return Text(
       AppTranslations.deleteAccount.deleteAccountHeader,
       style: TextStyle(
-        fontFamily: AppFonts.bold(context),
+        fontWeight: AppFontWeights.bold,
         color: context.theme.primaryColorLight,
         fontSize: 28,
       ),
