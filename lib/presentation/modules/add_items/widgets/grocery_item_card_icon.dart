@@ -19,7 +19,6 @@ class GroceryItemCardIcon extends StatelessWidget {
         borderRadius: BorderRadius.circular(5),
       ),
       child: SvgPicture.asset(
-        // TODO(FarisArmoush): Connect icon here.
         Assets.icons.beef.path,
         colorFilter: ColorFilter.mode(
           context.theme.colorScheme.secondary,
