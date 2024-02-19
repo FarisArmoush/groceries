@@ -5,7 +5,7 @@ import 'package:groceries_theme/app_theme.dart';
 void main() {
   group('GroceriesTabBarThemeData', () {
     test('light theme should have correct properties', () {
-      final lightTheme = GroceriesTabBarThemeData.light();
+      final lightTheme = GroceriesTabBarThemeData.light;
 
       expect(
         lightTheme.labelStyle,
@@ -50,7 +50,7 @@ void main() {
     });
 
     test('dark theme should have correct properties', () {
-      final darkTheme = GroceriesTabBarThemeData.dark();
+      final darkTheme = GroceriesTabBarThemeData.dark;
 
       expect(
         darkTheme.labelStyle,

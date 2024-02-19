@@ -5,7 +5,7 @@ import 'package:groceries_theme/app_theme.dart';
 void main() {
   group('GroceriesOutlinedButtonThemeData', () {
     test('light theme should have correct properties', () {
-      final lightTheme = GroceriesOutlinedButtonThemeData.light();
+      final lightTheme = GroceriesOutlinedButtonThemeData.light;
 
       final defaultStyle = lightTheme.style;
       final overlayColor = defaultStyle?.overlayColor!.resolve({});
@@ -49,7 +49,7 @@ void main() {
     });
 
     test('dark theme should have correct properties', () {
-      final darkTheme = GroceriesOutlinedButtonThemeData.dark();
+      final darkTheme = GroceriesOutlinedButtonThemeData.dark;
 
       final defaultStyle = darkTheme.style;
       final overlayColor = defaultStyle?.overlayColor!.resolve({});

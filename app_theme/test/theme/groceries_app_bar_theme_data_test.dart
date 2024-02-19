@@ -5,7 +5,7 @@ import 'package:groceries_theme/app_theme.dart';
 void main() {
   group('GroceriesAppBarThemeData', () {
     test('light theme should have correct properties', () {
-      final lightTheme = GroceriesAppBarThemeData.light();
+      const lightTheme = GroceriesAppBarThemeData.light;
 
       expect(
         lightTheme.iconTheme!.color,
@@ -50,7 +50,7 @@ void main() {
     });
 
     test('dark theme should have correct properties', () {
-      final darkTheme = GroceriesAppBarThemeData.dark();
+      final darkTheme = GroceriesAppBarThemeData.dark;
       expect(
         darkTheme.iconTheme!.color,
         equals(AppColors.white.withOpacity(0.99)),

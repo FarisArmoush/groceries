@@ -5,7 +5,7 @@ import 'package:groceries_theme/app_theme.dart';
 void main() {
   group('GroceriesFloatingActionButtonThemeData', () {
     test('light theme should have correct properties', () {
-      final lightTheme = GroceriesFloatingActionButtonThemeData.light();
+      const lightTheme = GroceriesFloatingActionButtonThemeData.light;
 
       expect(
         lightTheme.backgroundColor,
@@ -24,7 +24,7 @@ void main() {
     });
 
     test('dark theme should have correct properties', () {
-      final darkTheme = GroceriesFloatingActionButtonThemeData.dark();
+      const darkTheme = GroceriesFloatingActionButtonThemeData.dark;
 
       expect(
         darkTheme.backgroundColor,

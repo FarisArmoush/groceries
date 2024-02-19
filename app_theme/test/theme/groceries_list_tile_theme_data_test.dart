@@ -5,7 +5,7 @@ import 'package:groceries_theme/app_theme.dart';
 void main() {
   group('GroceriesListTileThemeData', () {
     test('light theme should have correct properties', () {
-      final lightTheme = GroceriesListTileThemeData.light();
+      final lightTheme = GroceriesListTileThemeData.light;
 
       expect(
         lightTheme.tileColor,
@@ -52,7 +52,7 @@ void main() {
     });
 
     test('dark theme should have correct properties', () {
-      final darkTheme = GroceriesListTileThemeData.dark();
+      final darkTheme = GroceriesListTileThemeData.dark;
 
       expect(
         darkTheme.tileColor,

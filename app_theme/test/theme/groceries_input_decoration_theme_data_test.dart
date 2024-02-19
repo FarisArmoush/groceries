@@ -5,7 +5,7 @@ import 'package:groceries_theme/app_theme.dart';
 void main() {
   group('GroceriesInputDecorationThemeData', () {
     test('light theme should have correct properties', () {
-      final lightTheme = GroceriesInputDecorationThemeData.light();
+      const lightTheme = GroceriesInputDecorationThemeData.light;
 
       expect(
         lightTheme.floatingLabelStyle,
@@ -52,7 +52,7 @@ void main() {
     });
 
     test('dark theme should have correct properties', () {
-      final darkTheme = GroceriesInputDecorationThemeData.dark();
+      const darkTheme = GroceriesInputDecorationThemeData.dark;
 
       expect(
         darkTheme.floatingLabelStyle,

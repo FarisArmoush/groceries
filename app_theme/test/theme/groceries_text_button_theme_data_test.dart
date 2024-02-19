@@ -5,7 +5,7 @@ import 'package:groceries_theme/app_theme.dart';
 void main() {
   group('GroceriesTextButtonThemeData', () {
     test('light theme should have correct properties', () {
-      final lightTheme = GroceriesTextButtonThemeData.light();
+      final lightTheme = GroceriesTextButtonThemeData.light;
 
       final defaultStyle = lightTheme.style;
       final iconColor = defaultStyle?.iconColor!.resolve({});
@@ -39,7 +39,7 @@ void main() {
     });
 
     test('dark theme should have correct properties', () {
-      final darkTheme = GroceriesTextButtonThemeData.dark();
+      final darkTheme = GroceriesTextButtonThemeData.dark;
 
       final defaultStyle = darkTheme.style;
       final iconColor = defaultStyle?.iconColor!.resolve({});

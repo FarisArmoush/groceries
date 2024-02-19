@@ -5,7 +5,7 @@ import 'package:test/test.dart';
 void main() {
   group('GroceriesDialogThemeData', () {
     test('light theme should have correct properties', () {
-      final lightTheme = GroceriesDialogThemeData.light();
+      const lightTheme = GroceriesDialogThemeData.light;
 
       expect(
         lightTheme.backgroundColor,
@@ -46,7 +46,7 @@ void main() {
     });
 
     test('dark theme should have correct properties', () {
-      final darkTheme = GroceriesDialogThemeData.dark();
+      const darkTheme = GroceriesDialogThemeData.dark;
 
       expect(
         darkTheme.backgroundColor,

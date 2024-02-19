@@ -5,7 +5,7 @@ import 'package:groceries_theme/app_theme.dart';
 void main() {
   group('GroceriesFilledButtonThemeData', () {
     test('light theme should have correct properties', () {
-      final lightTheme = GroceriesFilledButtonThemeData.light();
+      final lightTheme = GroceriesFilledButtonThemeData.light;
 
       final defaultStyle = lightTheme.style;
       final disabledBackgroundColor = defaultStyle?.backgroundColor!.resolve(
@@ -59,7 +59,7 @@ void main() {
     });
 
     test('dark theme should have correct properties', () {
-      final darkTheme = GroceriesFilledButtonThemeData.dark();
+      final darkTheme = GroceriesFilledButtonThemeData.dark;
 
       final defaultStyle = darkTheme.style;
       final disabledBackgroundColor = defaultStyle?.backgroundColor!.resolve(
