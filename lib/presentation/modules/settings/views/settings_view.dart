@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/blocs/remote_config/remote_config_bloc.dart';
 import 'package:groceries/presentation/modules/settings/widgets/settings_list_tile.dart';
 import 'package:groceries/presentation/modules/settings/widgets/user_data_box.dart';
@@ -51,7 +51,7 @@ class _SettingsViewState extends State<SettingsView> {
                 subtitle:
                     AppTranslations.accountSettings.accountSettingsDescription,
                 iconPath: Assets.icons.user.path,
-                onTap: () => context.pushNamed(AppNamedRoutes.accountSettings),
+                onTap: () => context.pushNamed(AppRoute.accountSettings.name),
               ),
               SizedBox(
                 height: context.deviceHeight * 0.01,
@@ -60,7 +60,7 @@ class _SettingsViewState extends State<SettingsView> {
                 title: AppTranslations.theme.theme,
                 subtitle: AppTranslations.theme.themeHeader,
                 iconPath: Assets.icons.sunMoon.path,
-                onTap: () => context.pushNamed(AppNamedRoutes.themeSettings),
+                onTap: () => context.pushNamed(AppRoute.themeSettings.name),
               ),
               SizedBox(
                 height: context.deviceHeight * 0.01,
@@ -75,7 +75,7 @@ class _SettingsViewState extends State<SettingsView> {
                         .additionalResources.additionalResourcesDescription,
                     iconPath: Assets.icons.menu.path,
                     onTap: () =>
-                        context.pushNamed(AppNamedRoutes.additionalResources),
+                        context.pushNamed(AppRoute.additionalResources.name),
                   ),
                 ),
                 SizedBox(

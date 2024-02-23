@@ -8,7 +8,7 @@ import 'package:injectable/injectable.dart';
 
 @singleton
 class GroceryListDetailsDataSource {
-  GroceryListDetailsDataSource();
+  const GroceryListDetailsDataSource();
 
   // ignore: unused_element
   FirebaseFirestore get _firestore => FirebaseFirestore.instance;

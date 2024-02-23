@@ -4,7 +4,7 @@ import 'package:injectable/injectable.dart';
 
 @Singleton(as: RemoteConfigRepository)
 class RemoteConfigRepositoryImpl extends RemoteConfigRepository {
-  RemoteConfigRepositoryImpl(this._remoteConfigDataSource);
+  const RemoteConfigRepositoryImpl(this._remoteConfigDataSource);
 
   final RemoteConfigDataSource _remoteConfigDataSource;
 

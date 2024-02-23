@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
 import 'package:groceries/data/models/category_model/category_model.dart';
 import 'package:groceries/presentation/modules/category_details/bloc/category_details_bloc.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/widgets/groceries_box_list.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
+import 'package:groceries/presentation/widgets/categories_list.dart';
 import 'package:groceries/presentation/widgets/error_state.dart';
 import 'package:groceries/presentation/widgets/groceries_app_bar.dart';
-import 'package:groceries/presentation/widgets/next_arrow_icon.dart';
 import 'package:groceries/utils/extenstions/padding_extensions.dart';
 import 'package:groceries/utils/extenstions/widgets_as_extensions.dart';
 
@@ -67,26 +65,8 @@ class _CategoryDetailsViewState extends State<CategoryDetailsView> {
                     ).onlyPadding(bottom: 32),
                   )
                 else
-                  Column(
-                    children: ListTile.divideTiles(
-                      context: context,
-                      tiles: List.generate(
-                        state.categories.length,
-                        (index) {
-                          final category = state.categories[index];
-                          return ListTile(
-                            title: Text(category.name ?? ''),
-                            trailing: const NextArrowIcon(),
-                            onTap: () {
-                              context.pushNamed(
-                                AppNamedRoutes.categoryDetails,
-                                extra: category,
-                              );
-                            },
-                          );
-                        },
-                      ),
-                    ).toList(),
+                  CategoriesList(
+                    categories: state.categories,
                   ).asSliver(),
               ],
             );

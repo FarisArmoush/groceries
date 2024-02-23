@@ -1,4 +1,6 @@
 abstract class RemoteConfigRepository {
+  const RemoteConfigRepository();
+
   /// App Version
   String? get appVersion;
 

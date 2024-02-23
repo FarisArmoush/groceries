@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/modules/welcome/widgets/welcome_view_body_text.dart';
 import 'package:groceries/presentation/modules/welcome/widgets/welcome_view_header_text.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
@@ -26,7 +26,7 @@ class WelcomeView extends StatelessWidget {
             FilledButton(
               child: Text(AppTranslations.register.register),
               onPressed: () {
-                context.pushReplacementNamed(AppNamedRoutes.register);
+                context.pushReplacementNamed(AppRoute.register.name);
               },
             ),
             SizedBox(
@@ -35,7 +35,7 @@ class WelcomeView extends StatelessWidget {
             OutlinedButton(
               child: Text(AppTranslations.login.login),
               onPressed: () {
-                context.pushReplacementNamed(AppNamedRoutes.login);
+                context.pushReplacementNamed(AppRoute.login.name);
               },
             ),
           ],

@@ -5,7 +5,7 @@ import 'package:injectable/injectable.dart';
 
 @Singleton(as: CategoriesRepository)
 class CategoriesRepositoryImpl extends CategoriesRepository {
-  CategoriesRepositoryImpl(this._categoriesDataSource);
+  const CategoriesRepositoryImpl(this._categoriesDataSource);
 
   final CategoriesDataSource _categoriesDataSource;
 

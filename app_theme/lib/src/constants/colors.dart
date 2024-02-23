@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 /// A class that contains constants for commonly used colors in the app.
 abstract final class AppColors {
