@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 /// The thickness of the glyphs used to draw the text.
