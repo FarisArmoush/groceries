@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/blocs/user_data/user_data_cubit.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/modules/root/bloc/root_navigation_bloc.dart';
@@ -61,9 +61,12 @@ class UpdateDisplayNameView extends StatelessWidget {
             message: 'Username Changed Successfully',
           ),
         );
-      context.pushReplacementNamed(AppNamedRoutes.root);
+      context.pushReplacementNamed(AppRoute.root.name);
     }
     if (state.status.isFailure) {
+      context.read<RootNavigationBloc>().add(
+            const RootNavigationEvent.navigateToIndex(0),
+          );
       context.pop();
       ScaffoldMessenger.of(context)
         ..hideCurrentSnackBar()
@@ -73,7 +76,7 @@ class UpdateDisplayNameView extends StatelessWidget {
                 'Failed to change username, Try again later',
           ),
         );
-      context.pushReplacementNamed(AppNamedRoutes.root);
+      context.pushReplacementNamed(AppRoute.root.name);
     }
     if (state.status.isInProgress) {
       showDialog<AppLoadingIndicator>(

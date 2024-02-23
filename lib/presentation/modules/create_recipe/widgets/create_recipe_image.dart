@@ -1,7 +1,7 @@
+import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:groceries/presentation/widgets/cached_image_with_edit_button.dart';
 import 'package:groceries/presentation/widgets/upload_image_bottom_sheet.dart';
-import 'package:groceries/utils/constants/app_colors.dart';
 
 class CreateRecipeImage extends StatelessWidget {
   const CreateRecipeImage({super.key});
@@ -9,7 +9,7 @@ class CreateRecipeImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CachedImageWithEditButton(
-      imageUrl: mockImage,
+      imageUrl: faker.image.image(),
       onPressed: () => showModalBottomSheet<void>(
         context: context,
         elevation: 0,

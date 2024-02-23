@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class YouHaveNoTasks extends StatelessWidget {
   const YouHaveNoTasks({super.key});
@@ -23,7 +23,7 @@ class YouHaveNoTasks extends StatelessWidget {
         Text(
           AppTranslations.home.youDontHaveTasks,
           style: TextStyle(
-            fontFamily: AppFonts.medium(context),
+            fontWeight: AppFontWeights.medium,
             fontSize: 16,
             color: context.theme.primaryColor,
           ),

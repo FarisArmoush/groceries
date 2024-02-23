@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
+import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries/utils/extenstions/padding_extensions.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class ResetPasswordSentSuccessfullyView extends StatelessWidget {
   const ResetPasswordSentSuccessfullyView({super.key});
@@ -33,7 +33,7 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
           Text(
             'Check your Email!',
             style: TextStyle(
-              fontFamily: AppFonts.bold(context),
+              fontWeight: AppFontWeights.bold,
               color: context.theme.primaryColorLight,
               fontSize: 30,
             ),
@@ -45,7 +45,7 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
           Text(
             'We have sent a password reset instrucion to your email',
             style: TextStyle(
-              fontFamily: AppFonts.regular(context),
+              fontWeight: AppFontWeights.regular,
               color: context.theme.primaryColor,
               fontSize: 20,
             ),
@@ -56,7 +56,7 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
       bottomSheet: SizedBox(
         width: context.deviceWidth,
         child: ElevatedButton(
-          onPressed: () => context.pushReplacementNamed(AppNamedRoutes.login),
+          onPressed: () => context.pushReplacementNamed(AppRoute.login.name),
           child: Text(AppTranslations.login.login),
         ),
       ).symmetricPadding(

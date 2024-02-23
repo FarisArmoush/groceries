@@ -14,6 +14,10 @@ class RemoteConfigBloc extends Bloc<RemoteConfigEvent, RemoteConfigState> {
     on<RemoteConfigEvent>(
       (event, emit) => event.map(
         getAppVersion: (event) => _onGetAppVersion(event, emit),
+        getShowAdditionalResources: (event) =>
+            _onGetShowAdditionalResources(event, emit),
+        getShowDeleteAccountButton: (event) =>
+            _onGetShowDeleteAccountButton(event, emit),
       ),
     );
   }
@@ -26,6 +30,30 @@ class RemoteConfigBloc extends Bloc<RemoteConfigEvent, RemoteConfigState> {
     emit(
       state.copyWith(
         appVersion: _remoteConfigUseCase.fetchAppVersion(),
+      ),
+    );
+  }
+
+  Future<void> _onGetShowDeleteAccountButton(
+    _GetShowDeleteAccountButton event,
+    Emitter<RemoteConfigState> emit,
+  ) async {
+    emit(
+      state.copyWith(
+        showDeleteAccountButton:
+            _remoteConfigUseCase.fetchShowDeleteAccountButton(),
+      ),
+    );
+  }
+
+  void _onGetShowAdditionalResources(
+    _GetShowAdditionalResources event,
+    Emitter<RemoteConfigState> emit,
+  ) {
+    emit(
+      state.copyWith(
+        showAdditionalResources:
+            _remoteConfigUseCase.fetchShowAdditionalResources(),
       ),
     );
   }

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/data/models/grocery_list_details_model/grocery_list_details_model.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/widgets/bottom_sheet_button.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class GroceryListOptionsBottomSheet extends StatelessWidget {
   const GroceryListOptionsBottomSheet({
@@ -35,7 +35,7 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
                 Text(
                   AppTranslations.groceryLists.listOptions,
                   style: TextStyle(
-                    fontFamily: AppFonts.regular(context),
+                    fontWeight: AppFontWeights.regular,
                     color: context.theme.primaryColor,
                     fontSize: 18,
                   ),
@@ -72,9 +72,7 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
               iconPath: Assets.icons.gear.path,
               onTap: () => context
                 ..pop()
-                ..pushNamed(
-                  AppNamedRoutes.groceryListSettings,
-                ),
+                ..pushNamed(AppRoute.groceryListSettings.name),
             ),
           ],
         );

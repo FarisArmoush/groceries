@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class RegisterBodyText extends StatelessWidget {
   const RegisterBodyText({super.key});
@@ -11,7 +11,7 @@ class RegisterBodyText extends StatelessWidget {
     return Text(
       AppTranslations.register.registerBody,
       style: TextStyle(
-        fontFamily: AppFonts.regular(context),
+        fontWeight: AppFontWeights.regular,
         color: context.theme.primaryColor,
         fontSize: 22,
       ),

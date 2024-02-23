@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/data/models/onboarding_page_model/onboarding_page_model.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries/utils/extenstions/padding_extensions.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class OnboardingPageBase extends StatelessWidget {
   const OnboardingPageBase({
@@ -34,7 +34,7 @@ class OnboardingPageBase extends StatelessWidget {
                 Text(
                   onboardingPageModel.title,
                   style: TextStyle(
-                    fontFamily: AppFonts.semiBold(context),
+                    fontWeight: AppFontWeights.semiBold,
                     color: context.theme.primaryColor,
                     fontSize: 26,
                   ),
@@ -45,7 +45,7 @@ class OnboardingPageBase extends StatelessWidget {
                 Text(
                   onboardingPageModel.body,
                   style: TextStyle(
-                    fontFamily: AppFonts.regular(context),
+                    fontWeight: AppFontWeights.regular,
                     color: context.theme.hintColor,
                     fontSize: 18,
                   ),

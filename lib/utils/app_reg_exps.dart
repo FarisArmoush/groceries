@@ -1,8 +1,5 @@
 /// This class holds `RegExp` variables that are used in this app
-class AppRegExps {
-  /// Private constructor to prevent instantiation.
-  AppRegExps._();
-
+abstract class AppRegExps {
   /// Holds a value of all special characters
   ///
   /// * r'[!@#\$%\^&\*(),.?":{}|<>_\-]'

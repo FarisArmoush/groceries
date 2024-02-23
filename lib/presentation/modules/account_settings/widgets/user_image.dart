@@ -1,7 +1,8 @@
+import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
-import 'package:groceries/utils/constants/app_colors.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class UserImage extends StatelessWidget {
   const UserImage({super.key});
@@ -19,6 +20,7 @@ class UserImage extends StatelessWidget {
         ),
       ),
       child: CachedImage(
+        imageUrl: faker.image.image(),
         height: context.deviceHeight * 0.2,
         boxFit: BoxFit.contain,
       ),

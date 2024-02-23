@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/app_fonts.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class AdditionalResourcesTitle extends StatelessWidget {
   const AdditionalResourcesTitle(this.text, {super.key});
@@ -12,7 +12,7 @@ class AdditionalResourcesTitle extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        fontFamily: AppFonts.medium(context),
+        fontWeight: AppFontWeights.medium,
         color: context.theme.primaryColor,
         fontSize: 18,
       ),

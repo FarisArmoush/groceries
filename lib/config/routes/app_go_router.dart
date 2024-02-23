@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/data/models/category_model/category_model.dart';
 import 'package:groceries/presentation/modules/account_settings/views/account_settings_view.dart';
 import 'package:groceries/presentation/modules/add_items/views/add_items_view.dart';
@@ -32,7 +32,6 @@ import 'package:groceries/presentation/modules/update_email/views/update_email_v
 import 'package:groceries/presentation/modules/verify_user/views/verify_user_view.dart';
 import 'package:groceries/presentation/modules/welcome/views/welcome_view.dart';
 import 'package:groceries/presentation/modules/wrapper/views/wrapper_view.dart';
-import 'package:groceries/utils/extenstions/route_path_extension.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// A variable that defines the routes and builders for the App.
@@ -41,7 +40,7 @@ final GoRouter appGoRouter = GoRouter(
   initialLocation: '/',
   routes: [
     GoRoute(
-      name: AppNamedRoutes.wrapper,
+      name: AppRoute.wrapper.name,
       path: '/',
       builder: (context, state) => const WrapperView(),
       redirect: (context, state) async {
@@ -49,194 +48,243 @@ final GoRouter appGoRouter = GoRouter(
         final hasViewedOnboarding =
             sharedPreferences.getBool('hasViewedOnboarding');
         if (hasViewedOnboarding == false || hasViewedOnboarding == null) {
-          return '/${AppNamedRoutes.onboarding}';
+          return '/${AppRoute.onboarding}';
         }
         return null;
       },
     ),
     GoRoute(
-      name: AppNamedRoutes.onboarding,
-      path: AppNamedRoutes.onboarding.path(),
-      builder: (context, state) => const OnboardingView(),
+      name: AppRoute.onboarding.name,
+      path: AppRoute.onboarding.path,
+      builder: (context, state) => OnboardingView(
+        key: Key(AppRoute.onboarding.key),
+      ),
     ),
     GoRoute(
-      name: AppNamedRoutes.welcome,
-      path: AppNamedRoutes.welcome.path(),
-      builder: (context, state) => const WelcomeView(),
+      name: AppRoute.welcome.name,
+      path: AppRoute.welcome.path,
+      builder: (context, state) => WelcomeView(
+        key: Key(AppRoute.welcome.key),
+      ),
       routes: [
         GoRoute(
-          name: AppNamedRoutes.login,
-          path: AppNamedRoutes.login,
-          builder: (context, state) => const LoginView(),
+          name: AppRoute.login.name,
+          path: AppRoute.login.name,
+          builder: (context, state) => LoginView(
+            key: Key(AppRoute.login.key),
+          ),
           routes: [
             GoRoute(
-              name: AppNamedRoutes.forgotPassword,
-              path: AppNamedRoutes.forgotPassword,
+              name: AppRoute.forgotPassword.name,
+              path: AppRoute.forgotPassword.name,
               pageBuilder: (context, state) => _slideUpTransition(
-                const ForgotPasswordView(),
+                ForgotPasswordView(
+                  key: Key(AppRoute.forgotPassword.key),
+                ),
               ),
               routes: [
                 GoRoute(
-                  name: AppNamedRoutes.resetPasswordSentSuccessfully,
-                  path: AppNamedRoutes.resetPasswordSentSuccessfully,
+                  name: AppRoute.resetPasswordSentSuccessfully.name,
+                  path: AppRoute.resetPasswordSentSuccessfully.name,
                   builder: (context, state) =>
-                      const ResetPasswordSentSuccessfullyView(),
+                      ResetPasswordSentSuccessfullyView(
+                    key: Key(AppRoute.resetPasswordSentSuccessfully.key),
+                  ),
                 ),
               ],
             ),
           ],
         ),
         GoRoute(
-          name: AppNamedRoutes.register,
-          path: AppNamedRoutes.register,
-          builder: (context, state) => const RegisterView(),
+          name: AppRoute.register.name,
+          path: AppRoute.register.name,
+          builder: (context, state) => RegisterView(
+            key: Key(AppRoute.register.key),
+          ),
         ),
       ],
     ),
     GoRoute(
-      name: AppNamedRoutes.root,
-      path: AppNamedRoutes.root.path(),
-      builder: (context, state) => const RootView(),
+      name: AppRoute.root.name,
+      path: AppRoute.root.path,
+      builder: (context, state) => RootView(
+        key: Key(AppRoute.root.key),
+      ),
       routes: [
         GoRoute(
-          name: AppNamedRoutes.home,
-          path: AppNamedRoutes.home,
-          builder: (context, state) => const HomeView(),
+          name: AppRoute.home.name,
+          path: AppRoute.home.name,
+          builder: (context, state) => HomeView(
+            key: Key(AppRoute.home.key),
+          ),
           routes: [
             GoRoute(
-              name: AppNamedRoutes.createList,
-              path: AppNamedRoutes.createList,
+              name: AppRoute.createList.name,
+              path: AppRoute.createList.name,
               pageBuilder: (context, state) => _slideUpTransition(
-                const CreateListView(),
+                CreateListView(
+                  key: Key(AppRoute.createList.key),
+                ),
               ),
               routes: [
                 GoRoute(
-                  path: AppNamedRoutes.listCreatedSuccessfully,
-                  name: AppNamedRoutes.listCreatedSuccessfully,
-                  builder: (context, state) =>
-                      const ListCreatedSuccessfullyView(),
+                  path: AppRoute.listCreatedSuccessfully.name,
+                  name: AppRoute.listCreatedSuccessfully.name,
+                  builder: (context, state) => ListCreatedSuccessfullyView(
+                    key: Key(AppRoute.listCreatedSuccessfully.key),
+                  ),
                 ),
                 GoRoute(
-                  path: AppNamedRoutes.listCreatedUnsuccessfully,
-                  name: AppNamedRoutes.listCreatedUnsuccessfully,
-                  builder: (context, state) =>
-                      const ListCreatedUnsuccessfullyView(),
+                  path: AppRoute.listCreatedUnsuccessfully.name,
+                  name: AppRoute.listCreatedUnsuccessfully.name,
+                  builder: (context, state) => ListCreatedUnsuccessfullyView(
+                    key: Key(AppRoute.listCreatedUnsuccessfully.key),
+                  ),
                 ),
               ],
             ),
             GoRoute(
-              name: AppNamedRoutes.groceryListDetails,
-              path: AppNamedRoutes.groceryListDetails,
+              name: AppRoute.groceryListDetails.name,
+              path: AppRoute.groceryListDetails.name,
               builder: (context, state) => GroceryListDetailsView(
+                key: Key(AppRoute.groceryListDetails.key),
                 uid: state.extra as String?,
               ),
               routes: [
                 GoRoute(
-                  name: AppNamedRoutes.addItems,
-                  path: AppNamedRoutes.addItems,
+                  name: AppRoute.addItems.name,
+                  path: AppRoute.addItems.name,
                   pageBuilder: (context, state) => _slideUpTransition(
-                    const AddItemsView(),
+                    AddItemsView(
+                      key: Key(AppRoute.addItems.key),
+                    ),
                   ),
                   routes: [
                     GoRoute(
-                      name: AppNamedRoutes.categoryDetails,
-                      path: AppNamedRoutes.categoryDetails,
+                      name: AppRoute.categoryDetails.name,
+                      path: AppRoute.categoryDetails.name,
                       builder: (context, state) => CategoryDetailsView(
+                        key: Key(AppRoute.categoryDetails.key),
                         parentCategoryModel: state.extra! as CategoryModel,
                       ),
                     ),
                   ],
                 ),
                 GoRoute(
-                  name: AppNamedRoutes.groceryListSettings,
-                  path: AppNamedRoutes.groceryListSettings,
-                  builder: (context, state) => const GroceryListSettingsView(),
+                  name: AppRoute.groceryListSettings.name,
+                  path: AppRoute.groceryListSettings.name,
+                  builder: (context, state) => GroceryListSettingsView(
+                    key: Key(AppRoute.groceryListSettings.key),
+                  ),
                 ),
               ],
             ),
           ],
         ),
         GoRoute(
-          name: AppNamedRoutes.recipes,
-          path: AppNamedRoutes.recipes,
-          builder: (context, state) => const RecipesView(),
+          name: AppRoute.recipes.name,
+          path: AppRoute.recipes.name,
+          builder: (context, state) => RecipesView(
+            key: Key(AppRoute.recipes.key),
+          ),
           routes: [
             GoRoute(
-              name: AppNamedRoutes.recipeDetails,
-              path: AppNamedRoutes.recipeDetails,
+              name: AppRoute.recipeDetails.name,
+              path: AppRoute.recipeDetails.name,
               builder: (context, state) => RecipeDetailsView(
+                key: Key(AppRoute.recipeDetails.key),
                 uid: state.extra! as String?,
               ),
             ),
             GoRoute(
-              name: AppNamedRoutes.createRecipe,
-              path: AppNamedRoutes.createRecipe,
+              name: AppRoute.createRecipe.name,
+              path: AppRoute.createRecipe.name,
               pageBuilder: (context, state) => _slideUpTransition(
-                const CreateRecipeView(),
+                CreateRecipeView(
+                  key: Key(AppRoute.createRecipe.key),
+                ),
               ),
               routes: [
                 GoRoute(
-                  name: AppNamedRoutes.recipeCreatedSuccessfully,
-                  path: AppNamedRoutes.recipeCreatedSuccessfully,
-                  builder: (context, state) =>
-                      const RecipeCreatedSuccessfullyView(),
+                  name: AppRoute.recipeCreatedSuccessfully.name,
+                  path: AppRoute.recipeCreatedSuccessfully.name,
+                  builder: (context, state) => RecipeCreatedSuccessfullyView(
+                    key: Key(AppRoute.recipeCreatedSuccessfully.key),
+                  ),
                 ),
                 GoRoute(
-                  name: AppNamedRoutes.recipeCreatedUnsuccessfully,
-                  path: AppNamedRoutes.recipeCreatedUnsuccessfully,
-                  builder: (context, state) =>
-                      const RecipeCreatedUnsuccessfullyView(),
+                  name: AppRoute.recipeCreatedUnsuccessfully.name,
+                  path: AppRoute.recipeCreatedUnsuccessfully.name,
+                  builder: (context, state) => RecipeCreatedUnsuccessfullyView(
+                    key: Key(AppRoute.recipeCreatedUnsuccessfully.key),
+                  ),
                 ),
               ],
             ),
           ],
         ),
         GoRoute(
-          name: AppNamedRoutes.settings,
-          path: AppNamedRoutes.settings,
-          builder: (context, state) => const SettingsView(),
+          name: AppRoute.settings.name,
+          path: AppRoute.settings.name,
+          builder: (context, state) => SettingsView(
+            key: Key(AppRoute.settings.key),
+          ),
           routes: [
             GoRoute(
-              name: AppNamedRoutes.themeSettings,
-              path: AppNamedRoutes.themeSettings,
-              builder: (context, state) => const ThemeSettingsView(),
+              name: AppRoute.themeSettings.name,
+              path: AppRoute.themeSettings.name,
+              builder: (context, state) => ThemeSettingsView(
+                key: Key(AppRoute.themeSettings.key),
+              ),
             ),
             GoRoute(
-              name: AppNamedRoutes.additionalResources,
-              path: AppNamedRoutes.additionalResources,
-              builder: (context, state) => const AdditionalResourcesView(),
+              name: AppRoute.additionalResources.name,
+              path: AppRoute.additionalResources.name,
+              builder: (context, state) => AdditionalResourcesView(
+                key: Key(AppRoute.additionalResources.key),
+              ),
             ),
             GoRoute(
-              name: AppNamedRoutes.accountSettings,
-              path: AppNamedRoutes.accountSettings,
-              builder: (context, state) => const AccountSettingsView(),
+              name: AppRoute.accountSettings.name,
+              path: AppRoute.accountSettings.name,
+              builder: (context, state) => AccountSettingsView(
+                key: Key(AppRoute.accountSettings.key),
+              ),
               routes: [
                 GoRoute(
-                  name: AppNamedRoutes.deleteAccount,
-                  path: AppNamedRoutes.deleteAccount,
+                  name: AppRoute.deleteAccount.name,
+                  path: AppRoute.deleteAccount.name,
                   pageBuilder: (context, state) => _slideUpTransition(
-                    const DeleteAccountView(),
+                    DeleteAccountView(
+                      key: Key(AppRoute.deleteAccount.key),
+                    ),
                   ),
                 ),
                 GoRoute(
-                  name: AppNamedRoutes.updateDisplayName,
-                  path: AppNamedRoutes.updateDisplayName,
+                  name: AppRoute.updateDisplayName.name,
+                  path: AppRoute.updateDisplayName.name,
                   pageBuilder: (context, state) => _slideUpTransition(
-                    const UpdateDisplayNameView(),
+                    UpdateDisplayNameView(
+                      key: Key(AppRoute.updateDisplayName.key),
+                    ),
                   ),
                 ),
                 GoRoute(
-                  name: AppNamedRoutes.updateEmail,
-                  path: AppNamedRoutes.updateEmail,
+                  name: AppRoute.updateEmail.name,
+                  path: AppRoute.updateEmail.name,
                   pageBuilder: (context, state) => _slideUpTransition(
-                    const UpdateEmailView(),
+                    UpdateEmailView(
+                      key: Key(AppRoute.updateEmail.key),
+                    ),
                   ),
                 ),
                 GoRoute(
-                  name: AppNamedRoutes.verifyAccount,
-                  path: AppNamedRoutes.verifyAccount,
+                  name: AppRoute.verifyAccount.name,
+                  path: AppRoute.verifyAccount.name,
                   pageBuilder: (context, state) => _slideUpTransition(
-                    const VerifyUserView(),
+                    VerifyUserView(
+                      key: Key(AppRoute.verifyAccount.key),
+                    ),
                   ),
                 ),
               ],
@@ -246,9 +294,11 @@ final GoRouter appGoRouter = GoRouter(
       ],
     ),
     GoRoute(
-      name: AppNamedRoutes.pageNotFound,
-      path: AppNamedRoutes.pageNotFound.path(),
-      builder: (context, state) => const PageNotFoundView(),
+      name: AppRoute.pageNotFound.name,
+      path: AppRoute.pageNotFound.path,
+      builder: (context, state) => PageNotFoundView(
+        key: Key(AppRoute.pageNotFound.key),
+      ),
     ),
   ],
 );

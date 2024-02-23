@@ -4,10 +4,18 @@ import 'package:injectable/injectable.dart';
 
 @Singleton(as: RemoteConfigRepository)
 class RemoteConfigRepositoryImpl extends RemoteConfigRepository {
-  RemoteConfigRepositoryImpl(this._remoteConfigDataSource);
+  const RemoteConfigRepositoryImpl(this._remoteConfigDataSource);
 
   final RemoteConfigDataSource _remoteConfigDataSource;
 
   @override
   String get appVersion => _remoteConfigDataSource.getAppVersion();
+
+  @override
+  bool? get showAdditionalResources =>
+      _remoteConfigDataSource.getShowAdditionalResources();
+
+  @override
+  bool? get showDeleteAccountButton =>
+      _remoteConfigDataSource.getShowDeleteAccountButton();
 }

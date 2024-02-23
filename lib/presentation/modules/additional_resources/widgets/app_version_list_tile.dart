@@ -4,15 +4,25 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/blocs/remote_config/remote_config_bloc.dart';
 
 /// A [ListTile] widget that shows the app's current version.
-class AppVersionListTile extends StatelessWidget {
+class AppVersionListTile extends StatefulWidget {
   /// Creates an instance of [AppVersionListTile]
   const AppVersionListTile({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    context.watch<RemoteConfigBloc>().add(
+  State<AppVersionListTile> createState() => _AppVersionListTileState();
+}
+
+class _AppVersionListTileState extends State<AppVersionListTile> {
+  @override
+  void initState() {
+    context.read<RemoteConfigBloc>().add(
           const RemoteConfigEvent.getAppVersion(),
         );
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final appVersion = context.watch<RemoteConfigBloc>().state.appVersion;
     return ListTile(
       title: Text(AppTranslations.additionalResources.appVersion),

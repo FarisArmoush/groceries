@@ -1,9 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/config/routes/app_route.dart';
+import 'package:groceries/presentation/blocs/remote_config/remote_config_bloc.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/edit_user_image_button.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/is_user_verified_list_tile.dart';
@@ -53,28 +55,51 @@ class AccountSettingsView extends StatelessWidget {
           SizedBox(
             height: context.deviceHeight * 0.05,
           ),
-          _buildDeleteAccountButton(context),
+          const _DeleteAccountButton(),
         ],
       ),
     );
   }
+}
 
-  Widget _buildDeleteAccountButton(BuildContext context) {
-    return FilledButton(
-      onPressed: () {
-        showDialog<AppLoadingIndicator>(
-          context: context,
-          builder: (context) => const AppLoadingIndicator(),
-          barrierDismissible: false,
+class _DeleteAccountButton extends StatefulWidget {
+  const _DeleteAccountButton();
+
+  @override
+  State<_DeleteAccountButton> createState() => _DeleteAccountButtonState();
+}
+
+class _DeleteAccountButtonState extends State<_DeleteAccountButton> {
+  @override
+  void initState() {
+    context.read<RemoteConfigBloc>().add(
+          const RemoteConfigEvent.getShowDeleteAccountButton(),
         );
-        Future.delayed(
-          500.milliseconds,
-          () => context
-            ..pop()
-            ..pushNamed(AppNamedRoutes.deleteAccount),
-        );
-      },
-      child: Text(AppTranslations.deleteAccount.deleteAccount),
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final bloc = context.watch<RemoteConfigBloc>();
+    final visible = bloc.state.showDeleteAccountButton;
+    return Visibility(
+      visible: visible,
+      child: FilledButton(
+        onPressed: () {
+          showDialog<AppLoadingIndicator>(
+            context: context,
+            builder: (context) => const AppLoadingIndicator(),
+            barrierDismissible: false,
+          );
+          Future.delayed(
+            500.milliseconds,
+            () => context
+              ..pop()
+              ..pushNamed(AppRoute.deleteAccount.name),
+          );
+        },
+        child: Text(AppTranslations.deleteAccount.deleteAccount),
+      ),
     );
   }
 }

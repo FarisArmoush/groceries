@@ -1,0 +1,1 @@
+Groceries UI configuration

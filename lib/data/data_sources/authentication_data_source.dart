@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:groceries/data/models/login_param/login_param.dart';
+import 'package:groceries/data/models/register_param/register_param.dart';
 import 'package:groceries/utils/exceptions/delete_account_exception.dart';
 import 'package:groceries/utils/exceptions/login_with_email_password_exception.dart';
 import 'package:groceries/utils/exceptions/logout_exception.dart';
@@ -7,8 +9,6 @@ import 'package:groceries/utils/exceptions/register_with_email_and_password_exce
 import 'package:groceries/utils/exceptions/send_password_reset_email_exception.dart';
 import 'package:groceries/utils/exceptions/update_email_exception.dart';
 import 'package:groceries/utils/exceptions/update_password_exception.dart';
-import 'package:groceries/utils/params/login_param/login_param.dart';
-import 'package:groceries/utils/params/register_param/register_param.dart';
 import 'package:injectable/injectable.dart';
 
 @singleton
@@ -24,11 +24,11 @@ class AuthenticationDataSource {
 
   User? get currentUser => firebaseAuth.currentUser;
 
-  Future<void> signInWithEmailAndPassword(LoginParam loginParam) async {
+  Future<void> signInWithEmailAndPassword(LoginParam param) async {
     try {
       await firebaseAuth.signInWithEmailAndPassword(
-        email: loginParam.email,
-        password: loginParam.password,
+        email: param.email,
+        password: param.password,
       );
     } on FirebaseAuthException catch (e) {
       throw LoginWithEmailAndPasswordException.fromCode(e.code);
@@ -37,25 +37,25 @@ class AuthenticationDataSource {
     }
   }
 
-  Future<void> signUpWithEmailAndPassword(RegisterParam registerParam) async {
+  Future<void> signUpWithEmailAndPassword(RegisterParam param) async {
     try {
       await firebaseAuth
           .createUserWithEmailAndPassword(
-        email: registerParam.email,
-        password: registerParam.password,
+        email: param.email,
+        password: param.password,
       )
           .then((user) {
         firestore.collection('users').doc(user.user?.uid).set(
           {
             'creationDate': DateTime.timestamp(),
-            'email': registerParam.email,
+            'email': param.email,
             'id': user.user?.uid,
             'image': '',
-            'displayName': registerParam.displayName,
+            'displayName': param.displayName,
           },
         );
         firebaseAuth.currentUser?.updateDisplayName(
-          registerParam.displayName,
+          param.displayName,
         );
       });
     } on FirebaseAuthException catch (e) {
@@ -120,7 +120,7 @@ class AuthenticationDataSource {
       return;
     }
     try {
-      await currentUser?.updateEmail(email).then(
+      await currentUser?.verifyBeforeUpdateEmail(email).then(
             (_) => firestore.collection('users').doc(currentUser?.uid).update(
               {
                 'email': email,
