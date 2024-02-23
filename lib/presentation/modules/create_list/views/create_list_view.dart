@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/modules/create_list/bloc/create_list_bloc.dart';
 import 'package:groceries/presentation/modules/create_list/widgets/create_list_button.dart';
@@ -84,10 +84,10 @@ class _CreateListViewState extends State<CreateListView> {
         );
       },
       success: () {
-        context.pushReplacementNamed(AppNamedRoutes.listCreatedSuccessfully);
+        context.pushReplacementNamed(AppRoute.listCreatedSuccessfully.name);
       },
       failure: (error) {
-        context.pushReplacementNamed(AppNamedRoutes.listCreatedUnsuccessfully);
+        context.pushReplacementNamed(AppRoute.listCreatedUnsuccessfully.name);
       },
     );
   }

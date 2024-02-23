@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/config/routes/app_route.dart';
 
 class PageNotFoundView extends StatelessWidget {
   const PageNotFoundView({super.key});
@@ -14,7 +14,7 @@ class PageNotFoundView extends StatelessWidget {
           const Text('Page Not Found'),
           TextButton(
             onPressed: () => context.pushReplacementNamed(
-              AppNamedRoutes.wrapper,
+              AppRoute.wrapper.name,
             ),
             child: const Text('Go Back'),
           ),

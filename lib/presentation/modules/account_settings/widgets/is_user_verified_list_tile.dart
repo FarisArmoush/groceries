@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/blocs/user_data/user_data_cubit.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/your_account_is_verified_bottom_sheet.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -39,7 +39,7 @@ class IsUserVerifiedListTile extends StatelessWidget {
               elevation: 0,
               builder: (context) => const YourAccountIsVerifiedBottomSheet(),
             )
-          : context.pushNamed(AppNamedRoutes.verifyAccount),
+          : context.pushNamed(AppRoute.verifyAccount.name),
     );
   }
 }

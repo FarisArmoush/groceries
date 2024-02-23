@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries/utils/extenstions/padding_extensions.dart';
@@ -47,7 +47,7 @@ class EmptyGroceryList extends StatelessWidget {
           height: context.deviceHeight * 0.02,
         ),
         ElevatedButton.icon(
-          onPressed: () => context.pushNamed(AppNamedRoutes.addItems),
+          onPressed: () => context.pushNamed(AppRoute.addItems.name),
           label: Text(AppTranslations.groceryLists.browseGroceries),
           icon: Assets.icons.search.svg(
             colorFilter: ColorFilter.mode(

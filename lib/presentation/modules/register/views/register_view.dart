@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/modules/register/bloc/register_bloc.dart';
 import 'package:groceries/presentation/modules/register/widgets/register_body_text.dart';
 import 'package:groceries/presentation/modules/register/widgets/register_button.dart';
@@ -62,7 +62,7 @@ class RegisterView extends StatelessWidget {
               SwitchAuthenticationOptionTextButton(
                 upperText: AppTranslations.register.alreadyHaveAnAccount,
                 lowerText: AppTranslations.register.loginNow,
-                onTap: () => context.pushNamed(AppNamedRoutes.login),
+                onTap: () => context.pushNamed(AppRoute.login.name),
               ),
             ],
           ),
@@ -92,7 +92,7 @@ class RegisterView extends StatelessWidget {
             message: 'Account Created Successfully',
           ),
         );
-      context.pushReplacementNamed(AppNamedRoutes.root);
+      context.pushReplacementNamed(AppRoute.root.name);
     }
     if (state.status.isInProgress) {
       ScaffoldMessenger.of(context).hideCurrentSnackBar();

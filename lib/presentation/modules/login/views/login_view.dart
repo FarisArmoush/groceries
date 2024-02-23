@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/modules/login/bloc/login_bloc.dart';
 import 'package:groceries/presentation/modules/login/widgets/login_body_text.dart';
 import 'package:groceries/presentation/modules/login/widgets/login_button.dart';
@@ -81,7 +81,7 @@ class LoginView extends StatelessWidget {
             message: 'Welcome Back',
           ),
         );
-      context.pushReplacementNamed(AppNamedRoutes.root);
+      context.pushReplacementNamed(AppRoute.root.name);
     }
     if (state.status.isInProgress) {
       ScaffoldMessenger.of(context).hideCurrentSnackBar();

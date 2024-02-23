@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/modules/root/bloc/root_navigation_bloc.dart';
 import 'package:groceries/presentation/modules/update_email/bloc/update_email_bloc.dart';
@@ -58,7 +58,7 @@ class UpdateEmailView extends StatelessWidget {
             message: 'Username Changed Successfully',
           ),
         );
-      context.pushReplacementNamed(AppNamedRoutes.root);
+      context.pushReplacementNamed(AppRoute.root.name);
     }
     if (state.status.isFailure) {
       context.read<RootNavigationBloc>().add(
@@ -72,7 +72,7 @@ class UpdateEmailView extends StatelessWidget {
                 'Failed to change username, Try again later',
           ),
         );
-      context.pushReplacementNamed(AppNamedRoutes.root);
+      context.pushReplacementNamed(AppRoute.root.name);
     }
     if (state.status.isInProgress) {
       showDialog<AppLoadingIndicator>(
