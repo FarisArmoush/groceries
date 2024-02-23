@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/routes/app_named_routes.dart';
+import 'package:groceries/presentation/blocs/user_data/user_data_cubit.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
+import 'package:groceries/presentation/modules/root/bloc/root_navigation_bloc.dart';
 import 'package:groceries/presentation/modules/update_email/bloc/update_email_bloc.dart';
 import 'package:groceries/presentation/modules/update_email/widgets/submit_new_email_button.dart';
 import 'package:groceries/presentation/modules/update_email/widgets/update_email_body_text.dart';
@@ -47,6 +49,10 @@ class UpdateEmailView extends StatelessWidget {
 
   void listener(BuildContext context, UpdateEmailState state) {
     if (state.status.isSuccess) {
+      context.read<RootNavigationBloc>().add(
+            const RootNavigationEvent.navigateToIndex(0),
+          );
+      context.read<UserDataCubit>().loadUser();
       ScaffoldMessenger.of(context)
         ..hideCurrentSnackBar()
         ..showSnackBar(
