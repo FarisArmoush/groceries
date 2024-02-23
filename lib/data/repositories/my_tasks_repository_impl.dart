@@ -5,7 +5,7 @@ import 'package:injectable/injectable.dart';
 
 @Singleton(as: MyTasksRepository)
 class MyTasksRepositoryImpl extends MyTasksRepository {
-  MyTasksRepositoryImpl(this._myTasksDataSource);
+  const MyTasksRepositoryImpl(this._myTasksDataSource);
 
   final MyTasksDataSource _myTasksDataSource;
   @override

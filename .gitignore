@@ -13,6 +13,7 @@ migrate_working_dir/
 # App Related
 *.freezed.dart
 *.g.dart
+*.config.dart
 
 # IntelliJ related
 *.iml

@@ -5,7 +5,7 @@ import 'package:injectable/injectable.dart';
 
 @Singleton(as: BaseGroceriesRepository)
 class BaseGroceriesRepositoryImpl extends BaseGroceriesRepository {
-  BaseGroceriesRepositoryImpl(this._groceriesDataSource);
+  const BaseGroceriesRepositoryImpl(this._groceriesDataSource);
 
   final BaseGroceriesDataSource _groceriesDataSource;
 

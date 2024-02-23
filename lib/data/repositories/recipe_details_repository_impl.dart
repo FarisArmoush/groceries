@@ -5,7 +5,7 @@ import 'package:injectable/injectable.dart';
 
 @Singleton(as: RecipeDetailsRepository)
 class RecipeDetailsRepositoryImpl extends RecipeDetailsRepository {
-  RecipeDetailsRepositoryImpl(this._recipeDetailsDataSource);
+  const RecipeDetailsRepositoryImpl(this._recipeDetailsDataSource);
 
   final RecipeDetailsDataSource _recipeDetailsDataSource;
   @override

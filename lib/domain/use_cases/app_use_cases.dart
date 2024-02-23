@@ -1,8 +1,10 @@
 abstract class UseCase<Input, Output> {
+  const UseCase();
   Output call(Input input);
 }
 
 abstract class OutputUseCase<Output> {
+  const OutputUseCase();
   Output call();
 }
 

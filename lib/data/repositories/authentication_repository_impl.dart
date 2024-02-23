@@ -7,7 +7,7 @@ import 'package:injectable/injectable.dart';
 
 @Singleton(as: AuthenticationRepository)
 class AuthenticationRepositoryImpl extends AuthenticationRepository {
-  AuthenticationRepositoryImpl(
+  const AuthenticationRepositoryImpl(
     this._authenticationDataSource,
   );
 
