@@ -15,39 +15,44 @@ class GroceryListCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      splashFactory: NoSplash.splashFactory,
-      onTap: () => context.pushNamed(
-        AppRoute.groceryListDetails.name,
-        extra: listModel.id,
-      ),
-      child: Container(
-        padding: const EdgeInsetsDirectional.only(
-          start: 16,
-          end: 12,
-          top: 20,
-          bottom: 16,
+    return Material(
+      type: MaterialType.card,
+      borderRadius: BorderRadius.circular(12),
+      color: context.theme.cardColor,
+      child: InkWell(
+        splashFactory: NoSplash.splashFactory,
+        onTap: () => context.pushNamed(
+          AppRoute.groceryListDetails.name,
+          extra: listModel.id,
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            _icon(context),
-            SizedBox(
-              height: context.deviceHeight * 0.02,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                _listName(context),
-                SizedBox(
-                  height: context.deviceHeight * 0.01,
-                ),
-                _newTasksBox(context),
-              ],
-            ),
-          ],
+        child: Container(
+          padding: const EdgeInsetsDirectional.only(
+            start: 16,
+            end: 12,
+            top: 20,
+            bottom: 16,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              _icon(context),
+              SizedBox(
+                height: context.deviceHeight * 0.02,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  _listName(context),
+                  SizedBox(
+                    height: context.deviceHeight * 0.01,
+                  ),
+                  _newTasksBox(context),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
