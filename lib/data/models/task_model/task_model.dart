@@ -11,11 +11,11 @@ part 'task_model.g.dart';
 @freezed
 class TaskModel with _$TaskModel {
   const factory TaskModel({
-     String? id,
-     GroceryListModel? listModel,
-     DateTime? dueDate,
-     List<GroceryModel?>? groceries,
-    @TimestampSerializer()  DateTime? creationDate,
+    String? id,
+    GroceryListModel? listModel,
+    DateTime? dueDate,
+    List<GroceryModel?>? groceries,
+    @TimestampSerializer() DateTime? creationDate,
   }) = _TaskModel;
 
   factory TaskModel.fromJson(JSON json) => _$TaskModelFromJson(json);

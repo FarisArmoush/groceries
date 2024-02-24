@@ -10,9 +10,9 @@ part 'recipe_model.g.dart';
 @freezed
 class RecipeModel with _$RecipeModel {
   const factory RecipeModel({
-     String? id,
-     String? name,
-     String? imageUrl,
+    String? id,
+    String? name,
+    String? imageUrl,
     @TimestampSerializer() DateTime? creationDate,
   }) = _RecipeModel;
 

@@ -29,11 +29,8 @@ class CreateListButton extends StatelessWidget {
     context.read<CreateListBloc>().add(
           CreateListEvent.createList(
             groceryListModel: GroceryListModel(
-              id: null,
               name: state.listName.value,
               imageUrl: state.icon,
-              items: null,
-              members: null,
               creationDate: DateTime.now(),
             ),
           ),
