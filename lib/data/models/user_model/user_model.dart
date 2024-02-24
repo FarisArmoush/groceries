@@ -10,11 +10,11 @@ part 'user_model.g.dart';
 @freezed
 class UserModel with _$UserModel {
   const factory UserModel({
-    required String? id,
-    required String? name,
-    required String? email,
-    required String? imageUrl,
-    @TimestampSerializer() required DateTime? creationDate,
+    String? id,
+    String? name,
+    String? email,
+    String? imageUrl,
+    @TimestampSerializer() DateTime? creationDate,
   }) = _UserModel;
 
   factory UserModel.fromJson(JSON json) => _$UserModelFromJson(json);

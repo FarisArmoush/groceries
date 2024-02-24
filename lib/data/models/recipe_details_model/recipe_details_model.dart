@@ -11,7 +11,7 @@ class RecipeDetailsModel with _$RecipeDetailsModel {
     String? name,
     String? imageUrl,
     List<GroceryModel?>? items,
-    @Default(<String>[]) List<String>? steps,
+    List<String>? steps,
   }) = _RecipeDetailsModel;
 
   factory RecipeDetailsModel.fromJson(Map<String, dynamic> json) =>

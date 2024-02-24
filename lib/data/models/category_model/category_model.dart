@@ -10,11 +10,11 @@ part 'category_model.g.dart';
 @freezed
 class CategoryModel with _$CategoryModel {
   const factory CategoryModel({
-    required String? categoryId,
-    @TimestampSerializer() required DateTime? creationDate,
-    required String? image,
-    required String? name,
-    required String? parentCategoryId,
+    String? categoryId,
+    @TimestampSerializer() DateTime? creationDate,
+    String? image,
+    String? name,
+    String? parentCategoryId,
   }) = _CategoryModel;
 
   factory CategoryModel.fromJson(JSON json) => _$CategoryModelFromJson(json);

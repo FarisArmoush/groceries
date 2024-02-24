@@ -10,10 +10,10 @@ part 'recipe_model.g.dart';
 @freezed
 class RecipeModel with _$RecipeModel {
   const factory RecipeModel({
-    required String? id,
-    required String? name,
-    required String? imageUrl,
-    @TimestampSerializer() required DateTime? creationDate,
+     String? id,
+     String? name,
+     String? imageUrl,
+    @TimestampSerializer() DateTime? creationDate,
   }) = _RecipeModel;
 
   factory RecipeModel.fromJson(JSON json) => _$RecipeModelFromJson(json);

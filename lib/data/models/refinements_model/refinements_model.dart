@@ -7,8 +7,8 @@ part 'refinements_model.g.dart';
 @freezed
 class RefinementsModel with _$RefinementsModel {
   const factory RefinementsModel({
-    required String? refinement,
-    required bool? isChecked,
+    String? refinement,
+    bool? isChecked,
   }) = _RefinementsModel;
 
   factory RefinementsModel.fromJson(JSON json) =>
