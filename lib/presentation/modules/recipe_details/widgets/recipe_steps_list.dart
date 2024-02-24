@@ -12,13 +12,13 @@ class RecipeStepsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final steps = recipeModel?.steps;
     return Column(
       children: List.generate(
-        recipeModel?.steps?.length ?? 0,
+        steps?.length ?? 0,
         (index) => RecipeStep(
           stepNumber: index,
-          // step: 'Put the thing in the thing\n' * (index + 1),
-          step: recipeModel?.steps?[index] ?? '',
+          step: steps?[index] ?? '',
         ),
       ),
     );

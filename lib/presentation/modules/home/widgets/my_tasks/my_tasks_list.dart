@@ -19,17 +19,7 @@ class MyTasksList extends StatelessWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       primary: false,
-      itemBuilder: (context, index) {
-        return MyTasksCard(
-          taskModel: TaskModel(
-            id: tasks?[index].id,
-            listModel: tasks?[index].listModel,
-            dueDate: tasks?[index].dueDate,
-            groceries: tasks?[index].groceries,
-            creationDate: tasks?[index].creationDate,
-          ),
-        );
-      },
+      itemBuilder: (context, index) => MyTasksCard(taskModel: tasks?[index]),
       separatorBuilder: (context, index) {
         return SizedBox(
           height: context.deviceHeight * 0.01,

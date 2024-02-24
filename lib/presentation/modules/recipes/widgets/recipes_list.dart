@@ -23,12 +23,7 @@ class RecipesList extends StatelessWidget {
       itemBuilder: (context, index) {
         final recipe = recipes[index];
         return RecipeCard(
-          recipeModel: RecipeModel(
-            id: recipe.id,
-            name: recipe.name,
-            imageUrl: recipe.imageUrl,
-            creationDate: recipe.creationDate,
-          ),
+          recipeModel: recipe,
           onTap: () => context.pushNamed(
             AppRoute.recipeDetails.name,
             extra: recipe.id,

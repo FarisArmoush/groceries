@@ -48,7 +48,7 @@ final GoRouter appGoRouter = GoRouter(
         final hasViewedOnboarding =
             sharedPreferences.getBool('hasViewedOnboarding');
         if (hasViewedOnboarding == false || hasViewedOnboarding == null) {
-          return '/${AppRoute.onboarding}';
+          return AppRoute.onboarding.path;
         }
         return null;
       },

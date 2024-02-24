@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries_theme/app_theme.dart';
@@ -7,11 +9,9 @@ import 'package:groceries_theme/app_theme.dart';
 class GroceryListCard extends StatelessWidget {
   const GroceryListCard({
     required this.listModel,
-    required this.onTap,
     super.key,
   });
   final GroceryListModel listModel;
-  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,10 @@ class GroceryListCard extends StatelessWidget {
       color: context.theme.cardColor,
       child: InkWell(
         splashFactory: NoSplash.splashFactory,
-        onTap: onTap,
+        onTap: () => context.pushNamed(
+          AppRoute.groceryListDetails.name,
+          extra: listModel.id,
+        ),
         child: Container(
           padding: const EdgeInsetsDirectional.only(
             start: 16,
