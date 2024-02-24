@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries_theme/app_theme.dart';
@@ -7,49 +9,45 @@ import 'package:groceries_theme/app_theme.dart';
 class GroceryListCard extends StatelessWidget {
   const GroceryListCard({
     required this.listModel,
-    required this.onTap,
     super.key,
   });
   final GroceryListModel listModel;
-  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      type: MaterialType.card,
-      borderRadius: BorderRadius.circular(12),
-      color: context.theme.cardColor,
-      child: InkWell(
-        splashFactory: NoSplash.splashFactory,
-        onTap: onTap,
-        child: Container(
-          padding: const EdgeInsetsDirectional.only(
-            start: 16,
-            end: 12,
-            top: 20,
-            bottom: 16,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              _icon(context),
-              SizedBox(
-                height: context.deviceHeight * 0.02,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  _listName(context),
-                  SizedBox(
-                    height: context.deviceHeight * 0.01,
-                  ),
-                  _newTasksBox(context),
-                ],
-              ),
-            ],
-          ),
+    return InkWell(
+      splashFactory: NoSplash.splashFactory,
+      onTap: () => context.pushNamed(
+        AppRoute.groceryListDetails.name,
+        extra: listModel.id,
+      ),
+      child: Container(
+        padding: const EdgeInsetsDirectional.only(
+          start: 16,
+          end: 12,
+          top: 20,
+          bottom: 16,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            _icon(context),
+            SizedBox(
+              height: context.deviceHeight * 0.02,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                _listName(context),
+                SizedBox(
+                  height: context.deviceHeight * 0.01,
+                ),
+                _newTasksBox(context),
+              ],
+            ),
+          ],
         ),
       ),
     );

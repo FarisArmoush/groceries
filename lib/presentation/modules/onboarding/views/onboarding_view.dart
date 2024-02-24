@@ -31,9 +31,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                 ),
             children: List.generate(
               pages.length,
-              (index) => OnboardingPageBase(
-                onboardingPageModel: pages[index],
-              ),
+              (index) => OnboardingPageBase(onboardingPageModel: pages[index]),
             ),
           ),
           floatingActionButton: isLastPage
