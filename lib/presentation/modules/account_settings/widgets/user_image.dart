@@ -22,7 +22,7 @@ class UserImage extends StatelessWidget {
       child: CachedImage(
         imageUrl: faker.image.image(),
         height: context.deviceHeight * 0.2,
-        boxFit: BoxFit.contain,
+        fit: BoxFit.contain,
       ),
     );
   }

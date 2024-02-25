@@ -16,7 +16,7 @@ class EditListImage extends StatelessWidget {
         CachedImage(
           height: 200,
           width: double.infinity,
-          boxShape: BoxShape.rectangle,
+          shape: BoxShape.rectangle,
           borderRadius: BorderRadius.circular(16),
         ),
         CircleAvatar(
