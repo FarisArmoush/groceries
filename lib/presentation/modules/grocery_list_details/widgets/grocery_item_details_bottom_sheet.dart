@@ -59,7 +59,7 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
           CachedImage(
             height: context.deviceHeight * 0.3,
             width: double.infinity,
-            boxShape: BoxShape.rectangle,
+            shape: BoxShape.rectangle,
             borderRadius: BorderRadius.circular(16),
             imageUrl: groceryModel?.image ?? '',
           ),

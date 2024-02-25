@@ -70,7 +70,7 @@ class _RecipeDetailsViewState extends State<RecipeDetailsView> {
                         imageUrl: recipeModel?.imageUrl ?? '',
                         height: context.deviceHeight * 0.3,
                         width: context.deviceWidth,
-                        boxShape: BoxShape.rectangle,
+                        shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.circular(12),
                       ),
                       SizedBox(
