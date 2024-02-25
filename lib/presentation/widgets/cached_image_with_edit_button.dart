@@ -32,7 +32,7 @@ class CachedImageWithEditButton extends StatelessWidget {
         CachedImage(
           height: width ?? context.deviceHeight * 0.3,
           width: height ?? double.infinity,
-          boxShape: boxShape ?? BoxShape.rectangle,
+          shape: boxShape ?? BoxShape.rectangle,
           borderRadius: borderRadius ?? BorderRadius.circular(16),
           imageUrl: imageUrl ?? faker.image.image(),
         ),

@@ -4,14 +4,13 @@ import 'package:groceries/presentation/widgets/shimmer_skeleton.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
-// TODO(FarisArmoush): rename boxFit to fit, rename boxShape to shape.
 class CachedImage extends StatefulWidget {
   const CachedImage({
     this.imageUrl,
     this.height,
     this.width,
-    this.boxFit = BoxFit.cover,
-    this.boxShape = BoxShape.circle,
+    this.fit = BoxFit.cover,
+    this.shape = BoxShape.circle,
     this.borderRadius,
     super.key,
   });
@@ -19,8 +18,8 @@ class CachedImage extends StatefulWidget {
   final String? imageUrl;
   final double? height;
   final double? width;
-  final BoxFit boxFit;
-  final BoxShape boxShape;
+  final BoxFit fit;
+  final BoxShape shape;
   final BorderRadiusGeometry? borderRadius;
 
   @override
@@ -45,10 +44,10 @@ class _CachedImageState extends State<CachedImage> {
         return Container(
           decoration: BoxDecoration(
             borderRadius: widget.borderRadius,
-            shape: widget.boxShape,
+            shape: widget.shape,
             image: DecorationImage(
               image: imageProvider,
-              fit: widget.boxFit,
+              fit: widget.fit,
             ),
           ),
         );
