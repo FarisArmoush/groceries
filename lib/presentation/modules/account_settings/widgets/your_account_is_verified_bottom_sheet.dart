@@ -9,26 +9,29 @@ class YourAccountIsVerifiedBottomSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: AppPaddings.bottomSheet(context),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Assets.illustrations.celebrating.svg(
-            height: context.deviceHeight * 0.2,
-          ),
-          SizedBox(
-            height: context.deviceHeight * 0.03,
-          ),
-          Text(
-            AppTranslations.verifyAccount.yourAccountIsVerified,
-            style: context.theme.dialogTheme.titleTextStyle,
-            textAlign: TextAlign.center,
-          ),
-          SizedBox(
-            height: context.deviceHeight * 0.03,
-          ),
-        ],
+    return SizedBox(
+      width: context.deviceWidth,
+      child: Padding(
+        padding: AppPaddings.bottomSheet(context),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Assets.illustrations.celebrating.svg(
+              height: context.deviceHeight * 0.2,
+            ),
+            SizedBox(
+              height: context.deviceHeight * 0.03,
+            ),
+            Text(
+              AppTranslations.verifyAccount.yourAccountIsVerified,
+              style: context.theme.dialogTheme.titleTextStyle,
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(
+              height: context.deviceHeight * 0.03,
+            ),
+          ],
+        ),
       ),
     );
   }
