@@ -4,7 +4,8 @@ import 'package:groceries/presentation/widgets/shimmer_skeleton.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
-class CachedImage extends StatelessWidget {
+// TODO(FarisArmoush): rename boxFit to fit, rename boxShape to shape.
+class CachedImage extends StatefulWidget {
   const CachedImage({
     this.imageUrl,
     this.height,
@@ -23,29 +24,40 @@ class CachedImage extends StatelessWidget {
   final BorderRadiusGeometry? borderRadius;
 
   @override
+  State<CachedImage> createState() => _CachedImageState();
+}
+
+class _CachedImageState extends State<CachedImage> {
+  @override
+  void didChangeDependencies() {
+    precacheImage(NetworkImage(widget.imageUrl ?? ''), context);
+    super.didChangeDependencies();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
-      height: height,
-      width: width,
-      imageUrl: imageUrl ?? '',
+      height: widget.height,
+      width: widget.width,
+      imageUrl: widget.imageUrl ?? '',
       placeholderFadeInDuration: Duration.zero,
       imageBuilder: (context, imageProvider) {
         return Container(
           decoration: BoxDecoration(
-            borderRadius: borderRadius,
-            shape: boxShape,
+            borderRadius: widget.borderRadius,
+            shape: widget.boxShape,
             image: DecorationImage(
               image: imageProvider,
-              fit: boxFit,
+              fit: widget.boxFit,
             ),
           ),
         );
       },
       progressIndicatorBuilder: (context, url, progress) {
         return ShimmerSkeleton(
-          height: height,
-          width: width,
-          borderRadius: borderRadius,
+          height: widget.height,
+          width: widget.width,
+          borderRadius: widget.borderRadius,
         );
       },
       errorWidget: (context, url, error) {
