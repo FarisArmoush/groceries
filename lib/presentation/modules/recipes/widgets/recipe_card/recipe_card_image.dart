@@ -16,16 +16,14 @@ class RecipeCardImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: InkWell(
-        onTap: onTap,
-        child: CachedImage(
-          imageUrl: recipeModel.imageUrl ?? '',
-          height: context.deviceHeight * 0.2,
-          width: double.infinity,
-          boxShape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(16),
-        ),
+    return InkWell(
+      onTap: onTap,
+      child: CachedImage(
+        imageUrl: recipeModel.imageUrl ?? '',
+        height: context.deviceHeight * 0.2,
+        width: double.infinity,
+        boxShape: BoxShape.rectangle,
+        borderRadius: BorderRadius.circular(16),
       ),
     );
   }
