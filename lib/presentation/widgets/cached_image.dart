@@ -13,6 +13,8 @@ class CachedImage extends StatefulWidget {
     this.shape = BoxShape.circle,
     this.borderRadius,
     super.key,
+    this.progressIndicatorBuilder,
+    this.errorWidget,
   });
 
   final String? imageUrl;
@@ -21,6 +23,8 @@ class CachedImage extends StatefulWidget {
   final BoxFit fit;
   final BoxShape shape;
   final BorderRadiusGeometry? borderRadius;
+  final ProgressIndicatorBuilder? progressIndicatorBuilder;
+  final LoadingErrorWidgetBuilder? errorWidget;
 
   @override
   State<CachedImage> createState() => _CachedImageState();
@@ -52,21 +56,30 @@ class _CachedImageState extends State<CachedImage> {
           ),
         );
       },
-      progressIndicatorBuilder: (context, url, progress) {
-        return ShimmerSkeleton(
-          height: widget.height,
-          width: widget.width,
-          borderRadius: widget.borderRadius,
-        );
-      },
-      errorWidget: (context, url, error) {
-        return Assets.icons.circleX.svg(
-          colorFilter: ColorFilter.mode(
-            context.theme.primaryColorLight,
-            BlendMode.srcIn,
-          ),
-        );
-      },
+      progressIndicatorBuilder:
+          widget.progressIndicatorBuilder ?? _buildDefaultProgressIndicator,
+      errorWidget: widget.errorWidget ?? _buildDefaultError,
+    );
+  }
+
+  Widget _buildDefaultProgressIndicator(
+    BuildContext context,
+    String url,
+    DownloadProgress progress,
+  ) {
+    return ShimmerSkeleton(
+      height: widget.height,
+      width: widget.width,
+      borderRadius: widget.borderRadius,
+    );
+  }
+
+  Widget _buildDefaultError(BuildContext context, String url, Object error) {
+    return Assets.icons.circleX.svg(
+      colorFilter: ColorFilter.mode(
+        context.theme.primaryColorLight,
+        BlendMode.srcIn,
+      ),
     );
   }
 }

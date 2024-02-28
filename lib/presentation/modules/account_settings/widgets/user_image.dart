@@ -23,6 +23,9 @@ class UserImage extends StatelessWidget {
         imageUrl: faker.image.image(),
         height: context.deviceHeight * 0.2,
         fit: BoxFit.contain,
+        progressIndicatorBuilder: (context, url, progress) {
+          return const SizedBox.shrink();
+        },
       ),
     );
   }

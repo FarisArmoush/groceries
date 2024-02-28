@@ -1,3 +1,4 @@
+import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
@@ -17,6 +18,10 @@ class MemberCard extends StatelessWidget {
     return ListTile(
       leading: CachedImage(
         width: context.deviceWidth * 0.12,
+        imageUrl: faker.image.image(),
+        progressIndicatorBuilder: (context, url, progress) {
+          return const SizedBox.shrink();
+        },
       ),
       title: Text(userModel.name ?? ''),
       subtitle: Text(userModel.email ?? ''),

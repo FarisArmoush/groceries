@@ -33,6 +33,9 @@ class MyTasksCard extends StatelessWidget {
             imageUrl: taskModel?.listModel?.imageUrl ?? '',
             width: context.deviceWidth * 0.15,
             height: context.deviceHeight * 0.1,
+            progressIndicatorBuilder: (context, url, progress) {
+              return const SizedBox.shrink();
+            },
           ),
           SizedBox(width: context.deviceWidth * 0.03),
           Column(
