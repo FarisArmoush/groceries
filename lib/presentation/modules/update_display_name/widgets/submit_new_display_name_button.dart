@@ -17,7 +17,7 @@ class SubmitNewDisplayNameButton extends StatelessWidget {
             previous.isValid != current.isValid ||
             previous.displayName != current.displayName,
         builder: (context, state) {
-          final canSubmit = state.isValid || state.displayName.value.isNotEmpty;
+          final canSubmit = state.isValid || state.displayName.isValid;
           return ElevatedButton(
             onPressed: canSubmit
                 ? () => context.read<UpdateDisplayNameBloc>().add(

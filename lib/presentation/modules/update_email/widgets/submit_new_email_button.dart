@@ -17,7 +17,7 @@ class SubmitNewEmailButton extends StatelessWidget {
             previous.isValid != current.isValid ||
             previous.email != current.email,
         builder: (context, state) {
-          final canSubmit = state.isValid || state.email.value.isNotEmpty;
+          final canSubmit = state.isValid || state.email.isValid;
           return ElevatedButton(
             onPressed: canSubmit
                 ? () => context.read<UpdateEmailBloc>().add(
