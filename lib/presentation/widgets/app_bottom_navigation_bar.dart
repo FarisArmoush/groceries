@@ -40,92 +40,93 @@ class AppBottomNavigationBar extends StatelessWidget {
       child: SafeArea(
         minimum: const EdgeInsets.all(8),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            for (final item in items)
-              TweenAnimationBuilder<double>(
-                tween: Tween(
-                  end: items.indexOf(item) == currentIndex ? 1 : 0,
-                ),
-                curve: Curves.easeOutQuint,
-                duration: 500.milliseconds,
-                builder: (context, t, _) {
-                  final selectedColor = item.selectedColor ??
-                      selectedItemColor ??
-                      context.theme.primaryColor;
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: items.map(item).toList(),
+        ),
+      ),
+    );
+  }
 
-                  final unselectedColor = item.unselectedColor ??
-                      unselectedItemColor ??
-                      context.theme.iconTheme.color;
+  TweenAnimationBuilder<double> item(AppBottomNavigationBarItem item) {
+    return TweenAnimationBuilder<double>(
+      tween: Tween(
+        end: items.indexOf(item) == currentIndex ? 1 : 0,
+      ),
+      curve: Curves.easeOutQuint,
+      duration: 500.milliseconds,
+      builder: (context, t, _) {
+        final selectedColor = item.selectedColor ??
+            selectedItemColor ??
+            context.theme.primaryColor;
 
-                  return Material(
-                    type: MaterialType.button,
-                    color: Color.lerp(
-                      selectedColor.withOpacity(0),
-                      selectedColor.withOpacity(selectedColorOpacity ?? 0.1),
-                      t,
+        final unselectedColor = item.unselectedColor ??
+            unselectedItemColor ??
+            context.theme.iconTheme.color;
+
+        return Material(
+          type: MaterialType.button,
+          color: Color.lerp(
+            selectedColor.withOpacity(0),
+            selectedColor.withOpacity(selectedColorOpacity ?? 0.1),
+            t,
+          ),
+          shape: const StadiumBorder(),
+          child: InkWell(
+            splashFactory: NoSplash.splashFactory,
+            onTap: () => onTap?.call(items.indexOf(item)),
+            customBorder: const StadiumBorder(),
+            focusColor: selectedColor.withOpacity(0.1),
+            highlightColor: selectedColor.withOpacity(0.1),
+            splashColor: selectedColor.withOpacity(0.1),
+            hoverColor: selectedColor.withOpacity(0.1),
+            child: Padding(
+              padding: itemPadding,
+              child: Row(
+                children: [
+                  IconTheme(
+                    data: IconThemeData(
+                      color: Color.lerp(
+                        unselectedColor,
+                        selectedColor,
+                        t,
+                      ),
+                      size: 24,
                     ),
-                    shape: const StadiumBorder(),
-                    child: InkWell(
-                      splashFactory: NoSplash.splashFactory,
-                      onTap: () => onTap?.call(items.indexOf(item)),
-                      customBorder: const StadiumBorder(),
-                      focusColor: selectedColor.withOpacity(0.1),
-                      highlightColor: selectedColor.withOpacity(0.1),
-                      splashColor: selectedColor.withOpacity(0.1),
-                      hoverColor: selectedColor.withOpacity(0.1),
-                      child: Padding(
-                        padding: itemPadding,
-                        child: Row(
-                          children: [
-                            IconTheme(
-                              data: IconThemeData(
-                                color: Color.lerp(
-                                  unselectedColor,
-                                  selectedColor,
-                                  t,
-                                ),
-                                size: 24,
-                              ),
-                              child: items.indexOf(item) == currentIndex
-                                  ? item.activeIcon ?? item.icon
-                                  : item.icon,
+                    child: items.indexOf(item) == currentIndex
+                        ? item.activeIcon ?? item.icon
+                        : item.icon,
+                  ),
+                  SizedBox(
+                    width: context.deviceWidth * 0.025,
+                  ),
+                  ClipRect(
+                    clipBehavior: Clip.antiAlias,
+                    child: SizedBox(
+                      height: 30,
+                      child: Align(
+                        alignment: const Alignment(-0.2, 0),
+                        widthFactor: t,
+                        child: DefaultTextStyle(
+                          style: TextStyle(
+                            color: Color.lerp(
+                              selectedColor.withOpacity(0),
+                              selectedColor,
+                              t,
                             ),
-                            SizedBox(
-                              width: context.deviceWidth * 0.025,
-                            ),
-                            ClipRect(
-                              clipBehavior: Clip.antiAlias,
-                              child: SizedBox(
-                                height: 30,
-                                child: Align(
-                                  alignment: const Alignment(-0.2, 0),
-                                  widthFactor: t,
-                                  child: DefaultTextStyle(
-                                    style: TextStyle(
-                                      color: Color.lerp(
-                                        selectedColor.withOpacity(0),
-                                        selectedColor,
-                                        t,
-                                      ),
-                                      fontSize: 14,
-                                      fontWeight: AppFontWeights.medium,
-                                    ),
-                                    child: item.title,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
+                            fontSize: 14,
+                            fontWeight: AppFontWeights.medium,
+                          ),
+                          child: item.title,
                         ),
                       ),
                     ),
-                  );
-                },
+                  ),
+                ],
               ),
-          ],
-        ),
-      ),
+            ),
+          ),
+        );
+      },
     );
   }
 }
