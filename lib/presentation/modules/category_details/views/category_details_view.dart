@@ -7,7 +7,6 @@ import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/categories_list.dart';
 import 'package:groceries/presentation/widgets/error_state.dart';
 import 'package:groceries/presentation/widgets/groceries_app_bar.dart';
-import 'package:groceries/utils/extenstions/padding_extensions.dart';
 import 'package:groceries/utils/extenstions/widgets_as_extensions.dart';
 
 class CategoryDetailsView extends StatefulWidget {
@@ -42,35 +41,37 @@ class _CategoryDetailsViewState extends State<CategoryDetailsView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocBuilder<CategoryDetailsBloc, CategoryDetailsState>(
-        buildWhen: (previous, current) =>
-            previous.status != current.status ||
-            previous.categories != current.categories ||
-            previous.groceries != current.groceries,
-        builder: (context, state) => state.status.when(
-          initial: AppLoadingIndicator.new,
-          loading: AppLoadingIndicator.new,
-          failure: (error) => ErrorState(title: Text(error)),
-          success: () {
-            return CustomScrollView(
-              slivers: [
-                GroceriesAppBar(
-                  largeTitle: Text(widget.parentCategoryModel.name ?? ''),
-                  middle: Text(widget.parentCategoryModel.name ?? ''),
-                ),
-                if (state.categories.isEmpty)
-                  SliverToBoxAdapter(
-                    child: GroceriesBoxList(
-                      list: state.groceries,
-                    ).onlyPadding(bottom: 32),
-                  )
-                else
-                  CategoriesList(
-                    categories: state.categories,
-                  ).asSliver(),
-              ],
-            );
-          },
+      body: SafeArea(
+        child: BlocBuilder<CategoryDetailsBloc, CategoryDetailsState>(
+          buildWhen: (previous, current) =>
+              previous.status != current.status ||
+              previous.categories != current.categories ||
+              previous.groceries != current.groceries,
+          builder: (context, state) => state.status.when(
+            initial: AppLoadingIndicator.new,
+            loading: AppLoadingIndicator.new,
+            failure: (error) => ErrorState(title: Text(error)),
+            success: () {
+              return CustomScrollView(
+                slivers: [
+                  GroceriesAppBar(
+                    largeTitle: Text(widget.parentCategoryModel.name ?? ''),
+                    middle: Text(widget.parentCategoryModel.name ?? ''),
+                  ),
+                  if (state.categories.isEmpty)
+                    SliverToBoxAdapter(
+                      child: GroceriesBoxList(
+                        list: state.groceries,
+                      ),
+                    )
+                  else
+                    CategoriesList(
+                      categories: state.categories,
+                    ).asSliver(),
+                ],
+              );
+            },
+          ),
         ),
       ),
     );
