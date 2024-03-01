@@ -1,6 +1,9 @@
 import 'package:groceries/config/routes/app_route.dart';
 
+/// Extension to provide keys corresponding to different routes in
+/// the application.
 extension AppRouteKeys on AppRoute {
+  /// Returns the key corresponding to the route.
   String get key => switch (this) {
         AppRoute.wrapper => 'K_WRAPPER_VIEW_KEY',
         AppRoute.onboarding => 'K_ONBOARDING_VIEW_KEY',
