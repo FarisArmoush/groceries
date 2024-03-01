@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/delete_account_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 import 'package:injectable/injectable.dart';
@@ -43,10 +44,12 @@ class DeleteAccountBloc extends Bloc<DeleteAccountEvent, DeleteAccountState> {
           status: BlocStatus.failure(e.message ?? ''),
         ),
       );
-    } catch (e) {
+    } catch (_) {
       emit(
         state.copyWith(
-          status: BlocStatus.failure(e.toString()),
+          status: BlocStatus.failure(
+            AppTranslations.errorMessages.defaultErrorMessage,
+          ),
         ),
       );
     }

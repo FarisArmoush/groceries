@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/modules/delete_account/bloc/delete_account_bloc.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
+import 'package:groceries/presentation/widgets/app_snack_bars.dart';
 import 'package:groceries/utils/extenstions/widgets_as_extensions.dart';
 
 class DeleteAccountButton extends StatelessWidget {
@@ -13,8 +15,15 @@ class DeleteAccountButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<DeleteAccountBloc, DeleteAccountState>(
       listener: (context, state) => state.status.whenOrNull(
-        success: () => context.pop(),
-        failure: (error) => context.pop(),
+        success: () => context.pushReplacementNamed(AppRoute.welcome.path),
+        failure: (error) {
+          context.pop();
+          return ScaffoldMessenger.of(context)
+            ..hideCurrentSnackBar()
+            ..showSnackBar(
+              AppSnackBars.error(error: error),
+            );
+        },
         loading: () => showDialog<AppLoadingIndicator>(
           context: context,
           builder: (context) => const AppLoadingIndicator(),
