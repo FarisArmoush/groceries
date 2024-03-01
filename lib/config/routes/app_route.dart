@@ -100,4 +100,7 @@ enum AppRoute {
   ///
   /// Automatically used when the user goes to a view that doesnt exist
   pageNotFound,
+
+  /// Buy Premium View
+  premium
 }

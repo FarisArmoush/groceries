@@ -21,6 +21,7 @@ import 'package:groceries/presentation/modules/grocery_list_settings/blocs/remov
 import 'package:groceries/presentation/modules/grocery_list_settings/blocs/update_list_name_bloc/update_list_name_bloc.dart';
 import 'package:groceries/presentation/modules/login/bloc/login_bloc.dart';
 import 'package:groceries/presentation/modules/onboarding/bloc/onboarding_bloc.dart';
+import 'package:groceries/presentation/modules/premium/bloc/bloc/premium_bloc.dart';
 import 'package:groceries/presentation/modules/recipe_details/bloc/recipe_details_bloc.dart';
 import 'package:groceries/presentation/modules/recipes/bloc/recipes_bloc.dart';
 import 'package:groceries/presentation/modules/register/bloc/register_bloc.dart';
@@ -121,6 +122,9 @@ class App extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => injector<GroceryListDetailsBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<PremiumBloc>(),
         ),
       ],
       child: const AppEasyLocalization(),

@@ -21,6 +21,7 @@ import 'package:groceries/presentation/modules/home/views/home_view.dart';
 import 'package:groceries/presentation/modules/login/views/login_view.dart';
 import 'package:groceries/presentation/modules/onboarding/views/onboarding_view.dart';
 import 'package:groceries/presentation/modules/page_not_found/views/page_not_found_view.dart';
+import 'package:groceries/presentation/modules/premium/views/premium_view.dart';
 import 'package:groceries/presentation/modules/recipe_details/views/recipe_details_view.dart';
 import 'package:groceries/presentation/modules/recipes/views/recipes_view.dart';
 import 'package:groceries/presentation/modules/register/views/register_view.dart';
@@ -118,6 +119,13 @@ final GoRouter appGoRouter = GoRouter(
             key: Key(AppRoute.home.key),
           ),
           routes: [
+            GoRoute(
+              path: AppRoute.premium.name,
+              name: AppRoute.premium.name,
+              builder: (context, state) => PremiumView(
+                key: Key(AppRoute.premium.key),
+              ),
+            ),
             GoRoute(
               name: AppRoute.createList.name,
               path: AppRoute.createList.name,
