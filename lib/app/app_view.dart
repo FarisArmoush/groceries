@@ -13,21 +13,17 @@ class AppView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Builder(
-      builder: (context) {
-        final currentTheme = context.watch<ThemeCubit>().state;
-        return MaterialApp.router(
-          title: 'Groceries',
-          debugShowCheckedModeBanner: false,
-          localizationsDelegates: context.localizationDelegates,
-          supportedLocales: context.supportedLocales,
-          locale: context.locale,
-          routerConfig: appGoRouter,
-          themeMode: currentTheme,
-          theme: AppThemes.lightTheme,
-          darkTheme: AppThemes.darkTheme,
-        );
-      },
+    final currentTheme = context.watch<ThemeCubit>().state;
+    return MaterialApp.router(
+      title: 'Groceries',
+      debugShowCheckedModeBanner: false,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+      routerConfig: appGoRouter,
+      themeMode: currentTheme,
+      theme: AppThemes.lightTheme,
+      darkTheme: AppThemes.darkTheme,
     );
   }
 }

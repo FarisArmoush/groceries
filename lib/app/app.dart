@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/app/app_easy_localization.dart';
 import 'package:groceries/config/injection/injector.dart';
-import 'package:groceries/data/models/app_flavor/app_flavor.dart';
 import 'package:groceries/presentation/blocs/authentication/authentication_bloc.dart';
 import 'package:groceries/presentation/blocs/grocery_lists/grocery_lists_bloc.dart';
 import 'package:groceries/presentation/blocs/logout/logout_bloc.dart';
@@ -32,111 +31,99 @@ import 'package:groceries/presentation/modules/update_email/bloc/update_email_bl
 import 'package:groceries/presentation/modules/verify_user/bloc/verify_user_bloc.dart';
 
 class App extends StatelessWidget {
-  const App({
-    required this.flavor,
-    super.key,
-  });
-
-  final AppFlavor flavor;
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return RepositoryProvider(
-      create: (context) => flavor,
-      child: Builder(
-        builder: (context) {
-          return MultiBlocProvider(
-            providers: [
-              BlocProvider(
-                create: (context) => injector<AuthenticationBloc>(),
-                lazy: false,
-              ),
-              BlocProvider(
-                create: (context) => injector<VerifyUserBloc>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<UpdateEmailBloc>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<UpdateDisplayNameBloc>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<RegisterBloc>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<RootNavigationBloc>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<GroceryListsBloc>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<MyTasksBloc>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<RecipesBloc>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<RecipeDetailsBloc>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<OnboardingBloc>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<LoginBloc>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<DeleteListBloc>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<RemoveMemberFromListBloc>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<RegisterBloc>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<UpdateListNameBloc>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<ForgotPasswordBloc>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<DeleteAccountBloc>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<CreateRecipeBloc>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<CreateListBloc>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<CategoryDetailsBloc>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<AddItemsBloc>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<SendCrashReportsCubit>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<ThemeCubit>()..loadTheme(),
-              ),
-              BlocProvider(
-                create: (context) => injector<RemoteConfigBloc>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<UserDataCubit>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<LogoutBloc>(),
-              ),
-              BlocProvider(
-                create: (context) => injector<GroceryListDetailsBloc>(),
-              ),
-            ],
-            child: const AppEasyLocalization(),
-          );
-        },
-      ),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => injector<AuthenticationBloc>(),
+          lazy: false,
+        ),
+        BlocProvider(
+          create: (context) => injector<VerifyUserBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<UpdateEmailBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<UpdateDisplayNameBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<RegisterBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<RootNavigationBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<GroceryListsBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<MyTasksBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<RecipesBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<RecipeDetailsBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<OnboardingBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<LoginBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<DeleteListBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<RemoveMemberFromListBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<RegisterBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<UpdateListNameBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<ForgotPasswordBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<DeleteAccountBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<CreateRecipeBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<CreateListBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<CategoryDetailsBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<AddItemsBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<SendCrashReportsCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<ThemeCubit>()..loadTheme(),
+        ),
+        BlocProvider(
+          create: (context) => injector<RemoteConfigBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<UserDataCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<LogoutBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<GroceryListDetailsBloc>(),
+        ),
+      ],
+      child: const AppEasyLocalization(),
     );
   }
 }
