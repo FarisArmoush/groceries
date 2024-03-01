@@ -10,11 +10,6 @@ class BaseGroceriesRepositoryImpl extends BaseGroceriesRepository {
   final BaseGroceriesDataSource _groceriesDataSource;
 
   @override
-  Future<List<GroceryModel>> fetchAllBaseGroceries() async {
-    return _groceriesDataSource.fetchAllGroceries();
-  }
-
-  @override
   Future<List<GroceryModel>> fetchCategoryItems(String? categoryId) {
     return _groceriesDataSource.fetchCategoryItems(categoryId);
   }

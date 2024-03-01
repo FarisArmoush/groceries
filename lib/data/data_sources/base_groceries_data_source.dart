@@ -8,24 +8,7 @@ import 'package:injectable/injectable.dart';
 class BaseGroceriesDataSource {
   const BaseGroceriesDataSource();
 
-  // ignore: unused_element
   FirebaseFirestore get _firestore => FirebaseFirestore.instance;
-
-  Future<List<GroceryModel>> fetchAllGroceries() async {
-    try {
-      final collectionReference =
-          _firestore.collection('items').orderBy('name');
-      final result = await collectionReference.get();
-      final items = <GroceryModel>[];
-      for (final element in result.docs) {
-        items.add(GroceryModel.fromJson(element.data()));
-      }
-      return items;
-    } on FirebaseException catch (e) {
-      log('fetchCategories Error Message => ${e.message}');
-      return [];
-    }
-  }
 
   Future<List<GroceryModel>> fetchCategoryItems(
     String? categoryId,
