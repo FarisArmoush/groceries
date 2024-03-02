@@ -12,9 +12,7 @@ class ConfirmedPasswordForm extends FormzInput<String, String> {
   /// The pure state indicates that the form field has not been modified.
   ///
   /// @param password The password to be confirmed.
-  const ConfirmedPasswordForm.pure({
-    this.password = '',
-  }) : super.pure('');
+  const ConfirmedPasswordForm.pure({this.password = ''}) : super.pure('');
 
   /// Constructor which creates a dirty [ConfirmedPasswordForm]
   /// with a given password and value.
@@ -23,19 +21,17 @@ class ConfirmedPasswordForm extends FormzInput<String, String> {
   ///
   /// @param password The password to be confirmed.
   /// @param value The initial value of the confirmed password form field.
-  const ConfirmedPasswordForm.dirty({
-    required this.password,
-    String value = '',
-  }) : super.dirty(value);
+  const ConfirmedPasswordForm.dirty({required this.password, String value = ''})
+      : super.dirty(value);
 
+  /// passowrd.
   final String password;
 
   @override
   String? validator(String? value) {
     if (password.isEmpty) {
       return AppTranslations.inputValidationMessages.fieldCannotBeEmpty;
-    }
-    if (password != value) {
+    } else if (password != value) {
       return AppTranslations.inputValidationMessages.passwordsDoNotMatch;
     }
 
