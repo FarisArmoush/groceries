@@ -23,7 +23,7 @@ void main() {
       );
       expect(
         defaultStyle?.splashFactory,
-        equals(_splashFactory),
+        equals(appSplashFactory),
       );
       expect(
         defaultStyle?.shadowColor!.resolve({}),
@@ -77,7 +77,7 @@ void main() {
         defaultStyle?.shape,
         isInstanceOf<MaterialStateProperty<OutlinedBorder?>>(),
       );
-      expect(defaultStyle?.splashFactory, equals(_splashFactory));
+      expect(defaultStyle?.splashFactory, equals(appSplashFactory));
       expect(
         defaultStyle?.shadowColor!.resolve({}),
         equals(AppColors.white.withOpacity(0.2)),
@@ -112,5 +112,3 @@ void main() {
     });
   });
 }
-
-const _splashFactory = NoSplash.splashFactory;

@@ -20,7 +20,6 @@ class GroceryListCard extends StatelessWidget {
       borderRadius: BorderRadius.circular(12),
       color: context.theme.cardColor,
       child: InkWell(
-        splashFactory: NoSplash.splashFactory,
         onTap: () => context.pushNamed(
           AppRoute.groceryListDetails.name,
           extra: listModel.id,

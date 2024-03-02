@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 abstract final class GroceriesAppBarThemeData {
-  static const AppBarTheme light = AppBarTheme(
+  static const light = AppBarTheme(
     iconTheme: IconThemeData(
       color: AppColors.black,
     ),
@@ -20,7 +20,7 @@ abstract final class GroceriesAppBarThemeData {
     backgroundColor: AppColors.white,
   );
 
-  static final AppBarTheme dark = AppBarTheme(
+  static final dark = AppBarTheme(
     scrolledUnderElevation: 1,
     iconTheme: IconThemeData(
       color: AppColors.white.withOpacity(0.99),

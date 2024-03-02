@@ -21,7 +21,7 @@ export 'package:groceries_theme/src/theme/theme_datas/groceries_text_button_them
 /// A class that provides light and dark themes for the application.
 abstract final class AppThemes {
   /// Returns the light theme for the application.
-  static ThemeData get lightTheme => ThemeData(
+  static ThemeData? get lightTheme => ThemeData(
         useMaterial3: true,
         fontFamily: FontFamily.poppins,
         brightness: Brightness.light,
@@ -50,10 +50,11 @@ abstract final class AppThemes {
         dividerTheme: GroceriesDividerThemeData.light,
         iconButtonTheme: GroceriesIconButtonThemeData.light,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        splashFactory: appSplashFactory,
       );
 
   /// Returns the dark theme for the application.
-  static ThemeData get darkTheme => ThemeData(
+  static ThemeData? get darkTheme => ThemeData(
         useMaterial3: true,
         fontFamily: FontFamily.poppins,
         brightness: Brightness.dark,
@@ -81,5 +82,6 @@ abstract final class AppThemes {
         floatingActionButtonTheme: GroceriesFloatingActionButtonThemeData.dark,
         dividerTheme: GroceriesDividerThemeData.dark,
         iconButtonTheme: GroceriesIconButtonThemeData.dark,
+        splashFactory: appSplashFactory,
       );
 }

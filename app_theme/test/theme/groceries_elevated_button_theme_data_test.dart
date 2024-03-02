@@ -23,7 +23,7 @@ void main() {
       );
       expect(
         defaultStyle?.splashFactory,
-        equals(_splashFactory),
+        equals(appSplashFactory),
       );
       expect(
         defaultForegroundColor,
@@ -78,7 +78,7 @@ void main() {
       );
       expect(
         defaultStyle?.splashFactory,
-        equals(_splashFactory),
+        equals(appSplashFactory),
       );
       expect(
         defaultForegroundColor,
@@ -113,5 +113,3 @@ void main() {
     });
   });
 }
-
-const _splashFactory = NoSplash.splashFactory;

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 abstract final class GroceriesElevatedButtonThemeData {
-  static final ElevatedButtonThemeData light = ElevatedButtonThemeData(
+  static final light = ElevatedButtonThemeData(
     style: ButtonStyle(
-      splashFactory: _splashFactory,
+      splashFactory: appSplashFactory,
       shape: MaterialStateProperty.all<OutlinedBorder>(
         RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
@@ -37,9 +37,9 @@ abstract final class GroceriesElevatedButtonThemeData {
     ),
   );
 
-  static final ElevatedButtonThemeData dark = ElevatedButtonThemeData(
+  static final dark = ElevatedButtonThemeData(
     style: ButtonStyle(
-      splashFactory: _splashFactory,
+      splashFactory: appSplashFactory,
       shape: MaterialStateProperty.all<OutlinedBorder>(
         RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
@@ -76,6 +76,4 @@ abstract final class GroceriesElevatedButtonThemeData {
       ),
     ),
   );
-
-  static const _splashFactory = NoSplash.splashFactory;
 }
