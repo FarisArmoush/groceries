@@ -21,10 +21,8 @@ class ConfirmedPasswordForm extends FormzInput<String, String> {
   ///
   /// @param password The password to be confirmed.
   /// @param value The initial value of the confirmed password form field.
-  const ConfirmedPasswordForm.dirty({
-    required this.password,
-    String value = '',
-  }) : super.dirty(value);
+  const ConfirmedPasswordForm.dirty({required this.password, String value = ''})
+      : super.dirty(value);
 
   /// passowrd.
   final String password;
@@ -33,9 +31,7 @@ class ConfirmedPasswordForm extends FormzInput<String, String> {
   String? validator(String? value) {
     if (password.isEmpty) {
       return AppTranslations.inputValidationMessages.fieldCannotBeEmpty;
-    }
-
-    if (password != value) {
+    } else if (password != value) {
       return AppTranslations.inputValidationMessages.passwordsDoNotMatch;
     }
 
