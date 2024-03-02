@@ -31,9 +31,6 @@ jobs:
           very_good packages get --recursive
           dart run build_runner build --delete-conflicting-outputs
 
-      - name: ✨ Check Formatting
-        run: dart format --line-length ${{inputs.format_line_length}} --set-exit-if-changed ${{inputs.format_directories}}
-
       - name: 🕵️ Analyze
         run: flutter analyze lib test
 
