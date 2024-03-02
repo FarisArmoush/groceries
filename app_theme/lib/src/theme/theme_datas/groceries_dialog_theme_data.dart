@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 abstract final class GroceriesDialogThemeData {
-  static const DialogTheme light = DialogTheme(
+  static const light = DialogTheme(
     backgroundColor: AppColors.white,
     elevation: 0,
     titleTextStyle: TextStyle(
@@ -18,7 +18,7 @@ abstract final class GroceriesDialogThemeData {
     alignment: Alignment.center,
   );
 
-  static const DialogTheme dark = DialogTheme(
+  static const dark = DialogTheme(
     backgroundColor: AppColors.darkGrey,
     elevation: 0,
     titleTextStyle: TextStyle(

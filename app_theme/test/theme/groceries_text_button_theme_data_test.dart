@@ -15,7 +15,7 @@ void main() {
 
       expect(
         defaultStyle?.splashFactory,
-        equals(_splashFactory),
+        equals(appSplashFactory),
       );
       expect(
         iconColor,
@@ -49,7 +49,7 @@ void main() {
 
       expect(
         defaultStyle?.splashFactory,
-        equals(_splashFactory),
+        equals(appSplashFactory),
       );
       expect(
         iconColor,
@@ -73,5 +73,3 @@ void main() {
     });
   });
 }
-
-const _splashFactory = NoSplash.splashFactory;

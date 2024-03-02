@@ -17,64 +17,67 @@ class MyTasksCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final length = '${taskModel?.groceries?.length ?? 0}';
-    return Container(
-      padding: const EdgeInsetsDirectional.symmetric(
-        vertical: 4,
-        horizontal: 12,
-      ),
-      decoration: BoxDecoration(
-        color: context.theme.cardColor,
-        borderRadius: BorderRadiusDirectional.circular(8),
-      ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          CachedImage(
-            imageUrl: taskModel?.listModel?.imageUrl ?? '',
-            width: context.deviceWidth * 0.15,
-            height: context.deviceHeight * 0.1,
-            progressIndicatorBuilder: (context, url, progress) {
-              return const SizedBox.shrink();
-            },
+    return Material(
+      color: context.theme.cardColor,
+      borderRadius: BorderRadiusDirectional.circular(8),
+      child: InkWell(
+        onTap: () {},
+        child: Padding(
+          padding: const EdgeInsetsDirectional.symmetric(
+            vertical: 4,
+            horizontal: 12,
           ),
-          SizedBox(width: context.deviceWidth * 0.03),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
             children: [
-              SizedBox(
-                width: context.deviceWidth * 0.45,
-                child: Text(
-                  taskModel?.listModel?.name ?? '',
-                  style: context.theme.listTileTheme.titleTextStyle,
-                  overflow: TextOverflow.ellipsis,
-                ),
+              CachedImage(
+                imageUrl: taskModel?.listModel?.imageUrl ?? '',
+                width: context.deviceWidth * 0.15,
+                height: context.deviceHeight * 0.1,
+                progressIndicatorBuilder: (context, url, progress) {
+                  return const SizedBox.shrink();
+                },
               ),
-              Visibility(
-                visible: taskModel?.groceries?.isNotEmpty ?? false,
-                child: Text(
-                  '$length ${AppTranslations.home.newTasks}',
-                  style:
-                      context.theme.listTileTheme.subtitleTextStyle?.copyWith(
-                    color: context.theme.primaryColorLight,
+              SizedBox(width: context.deviceWidth * 0.03),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: context.deviceWidth * 0.45,
+                    child: Text(
+                      taskModel?.listModel?.name ?? '',
+                      style: context.theme.listTileTheme.titleTextStyle,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
+                  Visibility(
+                    visible: taskModel?.groceries?.isNotEmpty ?? false,
+                    child: Text(
+                      '$length ${AppTranslations.home.newTasks}',
+                      style: context.theme.listTileTheme.subtitleTextStyle
+                          ?.copyWith(
+                        color: context.theme.primaryColorLight,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              const Spacer(),
+              SizedBox(
+                width: context.deviceWidth * 0.2,
+                child: Text(
+                  taskModel?.dueDate.toString().toDDMMYYYY() ?? '',
+                  style: TextStyle(
+                    fontWeight: AppFontWeights.regular,
+                    color: context.theme.hintColor,
+                    fontSize: 12,
+                  ),
+                  textAlign: TextAlign.end,
                 ),
               ),
             ],
           ),
-          const Spacer(),
-          SizedBox(
-            width: context.deviceWidth * 0.2,
-            child: Text(
-              taskModel?.dueDate.toString().toDDMMYYYY() ?? '',
-              style: TextStyle(
-                fontWeight: AppFontWeights.regular,
-                color: context.theme.hintColor,
-                fontSize: 12,
-              ),
-              textAlign: TextAlign.end,
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }

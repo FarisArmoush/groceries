@@ -18,7 +18,7 @@ void main() {
       );
       expect(
         defaultStyle?.splashFactory,
-        equals(_splashFactory),
+        equals(appSplashFactory),
       );
       expect(
         defaultStyle?.side,
@@ -58,7 +58,7 @@ void main() {
       );
       expect(
         defaultStyle?.splashFactory,
-        equals(_splashFactory),
+        equals(appSplashFactory),
       );
       expect(
         defaultStyle?.side,
@@ -85,5 +85,3 @@ void main() {
     });
   });
 }
-
-const _splashFactory = NoSplash.splashFactory;

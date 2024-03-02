@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 abstract final class GroceriesFilledButtonThemeData {
-  static FilledButtonThemeData light = FilledButtonThemeData(
+  static final light = FilledButtonThemeData(
     style: ButtonStyle(
-      splashFactory: _splashFactory,
+      splashFactory: appSplashFactory,
       shadowColor: MaterialStateProperty.all(
         AppColors.black,
       ),
@@ -38,9 +38,9 @@ abstract final class GroceriesFilledButtonThemeData {
     ),
   );
 
-  static final FilledButtonThemeData dark = FilledButtonThemeData(
+  static final dark = FilledButtonThemeData(
     style: ButtonStyle(
-      splashFactory: _splashFactory,
+      splashFactory: appSplashFactory,
       shadowColor: MaterialStateProperty.all(
         AppColors.white.withOpacity(0.2),
       ),
@@ -73,6 +73,4 @@ abstract final class GroceriesFilledButtonThemeData {
       ),
     ),
   );
-
-  static const _splashFactory = NoSplash.splashFactory;
 }

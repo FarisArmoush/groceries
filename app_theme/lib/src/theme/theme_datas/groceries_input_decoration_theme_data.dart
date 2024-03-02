@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 abstract final class GroceriesInputDecorationThemeData {
-  static const InputDecorationTheme light = InputDecorationTheme(
+  static const light = InputDecorationTheme(
     floatingLabelStyle: TextStyle(
       fontWeight: AppFontWeights.regular,
       color: AppColors.black,
@@ -31,7 +31,7 @@ abstract final class GroceriesInputDecorationThemeData {
     ),
   );
 
-  static const InputDecorationTheme dark = InputDecorationTheme(
+  static const dark = InputDecorationTheme(
     floatingLabelStyle: TextStyle(
       fontWeight: AppFontWeights.regular,
       color: AppColors.white,
