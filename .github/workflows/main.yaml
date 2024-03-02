@@ -14,7 +14,6 @@ on:
 
 jobs:
   build:
-    run: dart run build_runner build --delete-conflicting-outputs
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
     with:
       flutter_channel: stable
