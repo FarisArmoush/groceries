@@ -42,5 +42,6 @@ extension AppRoutePath on AppRoute {
         AppRoute.themeSettings => '/theme_settings',
         AppRoute.additionalResources => '/additional_resources',
         AppRoute.pageNotFound => '/page_not_found',
+        AppRoute.premium => '/buy_premium',
       };
 }

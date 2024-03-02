@@ -40,5 +40,6 @@ extension AppRouteKeys on AppRoute {
         AppRoute.themeSettings => 'K_THEME_SETTINGS_VIEW_KEY',
         AppRoute.additionalResources => 'K_ADDITIONAL_RESOURCES_VIEW_KEY',
         AppRoute.pageNotFound => 'K_PAGE_NOT_FOUND_VIEW_KEY',
+        AppRoute.premium => 'K_BUY_PREMIUM_VIEW_KEY',
       };
 }
