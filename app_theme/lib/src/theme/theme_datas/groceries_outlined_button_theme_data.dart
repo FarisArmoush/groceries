@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 abstract final class GroceriesOutlinedButtonThemeData {
-  static final OutlinedButtonThemeData light = OutlinedButtonThemeData(
+  static final light = OutlinedButtonThemeData(
     style: ButtonStyle(
-      splashFactory: _splashFactory,
+      splashFactory: appSplashFactory,
       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
         RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
@@ -34,9 +34,9 @@ abstract final class GroceriesOutlinedButtonThemeData {
     ),
   );
 
-  static final OutlinedButtonThemeData dark = OutlinedButtonThemeData(
+  static final dark = OutlinedButtonThemeData(
     style: ButtonStyle(
-      splashFactory: _splashFactory,
+      splashFactory: appSplashFactory,
       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
         RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
@@ -65,6 +65,4 @@ abstract final class GroceriesOutlinedButtonThemeData {
       ),
     ),
   );
-
-  static const _splashFactory = NoSplash.splashFactory;
 }

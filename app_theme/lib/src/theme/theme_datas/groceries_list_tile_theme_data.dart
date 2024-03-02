@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 abstract final class GroceriesListTileThemeData {
-  static final ListTileThemeData light = ListTileThemeData(
+  static final light = ListTileThemeData(
     tileColor: AppColors.offWhite,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(10),
@@ -24,7 +24,7 @@ abstract final class GroceriesListTileThemeData {
     ),
   );
 
-  static final ListTileThemeData dark = ListTileThemeData(
+  static final dark = ListTileThemeData(
     tileColor: AppColors.cardDarkGrey,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(10),

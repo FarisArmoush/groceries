@@ -72,7 +72,6 @@ class AppBottomNavigationBar extends StatelessWidget {
           ),
           shape: const StadiumBorder(),
           child: InkWell(
-            splashFactory: NoSplash.splashFactory,
             onTap: () => onTap?.call(items.indexOf(item)),
             customBorder: const StadiumBorder(),
             focusColor: selectedColor.withOpacity(0.1),

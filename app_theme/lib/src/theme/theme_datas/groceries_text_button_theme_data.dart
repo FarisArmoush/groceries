@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 abstract final class GroceriesTextButtonThemeData {
-  static final TextButtonThemeData light = TextButtonThemeData(
+  static final light = TextButtonThemeData(
     style: ButtonStyle(
-      splashFactory: _splashFactory,
+      splashFactory: appSplashFactory,
       iconColor: MaterialStateProperty.all<Color>(
         AppColors.black,
       ),
@@ -24,9 +24,9 @@ abstract final class GroceriesTextButtonThemeData {
     ),
   );
 
-  static final TextButtonThemeData dark = TextButtonThemeData(
+  static final dark = TextButtonThemeData(
     style: ButtonStyle(
-      splashFactory: _splashFactory,
+      splashFactory: appSplashFactory,
       iconColor: MaterialStateProperty.all<Color>(
         AppColors.white,
       ),
@@ -45,6 +45,4 @@ abstract final class GroceriesTextButtonThemeData {
       ),
     ),
   );
-
-  static const _splashFactory = NoSplash.splashFactory;
 }

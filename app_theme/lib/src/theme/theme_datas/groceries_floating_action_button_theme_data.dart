@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 abstract final class GroceriesFloatingActionButtonThemeData {
-  static const FloatingActionButtonThemeData light =
-      FloatingActionButtonThemeData(
+  static const light = FloatingActionButtonThemeData(
     backgroundColor: Color.fromRGBO(176, 8, 8, 1),
     extendedTextStyle: TextStyle(
       fontWeight: AppFontWeights.regular,
@@ -12,8 +11,7 @@ abstract final class GroceriesFloatingActionButtonThemeData {
     ),
   );
 
-  static const FloatingActionButtonThemeData dark =
-      FloatingActionButtonThemeData(
+  static const dark = FloatingActionButtonThemeData(
     backgroundColor: AppColors.lightRed,
     extendedTextStyle: TextStyle(
       fontWeight: AppFontWeights.regular,
