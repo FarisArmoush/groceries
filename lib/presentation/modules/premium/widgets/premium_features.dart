@@ -19,28 +19,23 @@ class PremiumFeatures extends StatelessWidget {
 
   static List<PremiumFeatureCell> get _cells => [
         PremiumFeatureCell(
-          title: const Text('Hello World'),
-          iconBackgroundColor: Colors.purple,
-          iconPath: Assets.icons.alertBadge.path,
-        ),
-        PremiumFeatureCell(
-          title: const Text('RED'),
-          iconBackgroundColor: Colors.black,
-          iconPath: Assets.icons.alertBadge.path,
-        ),
-        PremiumFeatureCell(
-          title: const Text('Hello World'),
-          iconBackgroundColor: Colors.redAccent,
-          iconPath: Assets.icons.alertBadge.path,
-        ),
-        PremiumFeatureCell(
-          title: const Text('Hello World '),
+          title: const Text('Hello, World!'),
           iconBackgroundColor: Colors.green,
           iconPath: Assets.icons.alertBadge.path,
         ),
         PremiumFeatureCell(
-          title: const Text('Hello World'),
-          iconBackgroundColor: Colors.blue,
+          title: const Text('Hello, World!'),
+          iconBackgroundColor: Colors.deepPurpleAccent,
+          iconPath: Assets.icons.alertBadge.path,
+        ),
+        PremiumFeatureCell(
+          title: const Text('Hello, World!'),
+          iconBackgroundColor: Colors.redAccent,
+          iconPath: Assets.icons.alertBadge.path,
+        ),
+        PremiumFeatureCell(
+          title: const Text('Hello, World!'),
+          iconBackgroundColor: Colors.cyan,
           iconPath: Assets.icons.alertBadge.path,
         ),
       ];

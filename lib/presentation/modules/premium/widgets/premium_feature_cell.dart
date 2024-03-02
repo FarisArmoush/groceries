@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries_theme/app_theme.dart';
 
 class PremiumFeatureCell extends StatelessWidget {
   const PremiumFeatureCell({
@@ -10,13 +10,15 @@ class PremiumFeatureCell extends StatelessWidget {
     required this.iconPath,
     super.key,
   });
+
   final Widget title;
   final Color iconBackgroundColor;
   final String iconPath;
+
   @override
   Widget build(BuildContext context) {
     return Row(
-      
+      mainAxisSize: MainAxisSize.min,
       children: [
         _buildIcon(context),
         const SizedBox(width: 8),
@@ -41,8 +43,8 @@ class PremiumFeatureCell extends StatelessWidget {
       padding: const EdgeInsetsDirectional.all(4),
       child: SvgPicture.asset(
         iconPath,
-        colorFilter: ColorFilter.mode(
-          context.theme.primaryColor,
+        colorFilter: const ColorFilter.mode(
+          AppColors.white,
           BlendMode.srcIn,
         ),
         height: 20,

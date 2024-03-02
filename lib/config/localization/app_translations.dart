@@ -15,6 +15,7 @@ part 'strings/home_keys.dart';
 part 'strings/input_validation_messages_keys.dart';
 part 'strings/login_keys.dart';
 part 'strings/onboarding_keys.dart';
+part 'strings/premium_keys.dart';
 part 'strings/recipes_keys.dart';
 part 'strings/register_keys.dart';
 part 'strings/settings_keys.dart';
@@ -63,6 +64,8 @@ abstract final class AppTranslations {
   static VerifyAccountKeys verifyAccount = VerifyAccountKeys();
 
   static DeleteAccountKeys deleteAccount = DeleteAccountKeys();
+
+  static PremiumKeys premium = PremiumKeys();
 
   static InputValidationMessagesKeys inputValidationMessages =
       InputValidationMessagesKeys();
