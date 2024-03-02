@@ -1,8 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
-import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/blocs/grocery_lists/grocery_lists_bloc.dart';
 import 'package:groceries/presentation/blocs/my_tasks/my_tasks_bloc.dart';
 import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocery_lists_form.dart';
@@ -32,12 +30,6 @@ class HomeView extends StatelessWidget {
               const HomeAppBar(),
               SliverSizedBox(
                 height: context.deviceHeight * 0.05,
-              ),
-              SliverToBoxAdapter(
-                child: IconButton(
-                  onPressed: () => context.pushNamed(AppRoute.premium.name),
-                  icon: const Icon(Icons.abc),
-                ),
               ),
               const GroceryListsForm()
                   .symmetricPadding(horizontal: 16)

@@ -8,16 +8,16 @@ class PremiumFeatures extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
+      shrinkWrap: true,
       primary: false,
       physics: const NeverScrollableScrollPhysics(),
-      shrinkWrap: true,
       itemBuilder: (context, index) => _cells[index],
       separatorBuilder: (context, index) => const SizedBox(height: 8),
       itemCount: _cells.length,
     );
   }
 
-  static List<PremiumFeatureCell> get _cells => [
+  static List<PremiumFeatureCell> get _cells => <PremiumFeatureCell>[
         PremiumFeatureCell(
           title: const Text('Hello, World!'),
           iconBackgroundColor: Colors.green,
