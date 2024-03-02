@@ -24,48 +24,66 @@ part 'strings/welcome_keys.dart';
 
 /// This class provides translations for all app strings.
 abstract final class AppTranslations {
-  static GeneralKeys general = GeneralKeys();
+  /// General Keys
+  static final general = GeneralKeys();
 
-  static OnboardingKeys onboarding = OnboardingKeys();
+  /// Onboarding Keys
+  static final onboarding = OnboardingKeys();
 
-  static WelcomeKeys welcome = WelcomeKeys();
+  /// Welcome Keys
+  static final welcome = WelcomeKeys();
 
-  static LoginKeys login = LoginKeys();
+  /// Login Keys
+  static final login = LoginKeys();
 
-  static RegisterKeys register = RegisterKeys();
+  /// Register Keys
+  static final register = RegisterKeys();
 
-  static ForgotPasswordKeys forgotPassword = ForgotPasswordKeys();
+  /// Forgot Password Keys
+  static final forgotPassword = ForgotPasswordKeys();
 
-  static HomeKeys home = HomeKeys();
+  /// Home Keys
+  static final home = HomeKeys();
 
-  static GroceryListsKeys groceryLists = GroceryListsKeys();
+  /// Grocery Lists Keys
+  static final groceryLists = GroceryListsKeys();
 
-  static AddItemsKeys addItems = AddItemsKeys();
+  /// Add Items Keys
+  static final addItems = AddItemsKeys();
 
-  static GroceryListSettingsKeys groceryListSettings =
-      GroceryListSettingsKeys();
+  /// Grocery List Settings Keys
+  static final groceryListSettings = GroceryListSettingsKeys();
 
-  static RecipesKeys recipes = RecipesKeys();
+  /// Recipes Keys
+  static final recipes = RecipesKeys();
 
-  static CreateRecipeKeys createRecipe = CreateRecipeKeys();
+  /// Create Recipe Keys
+  static final createRecipe = CreateRecipeKeys();
 
-  static CreateGroceryListKeys createGroceryList = CreateGroceryListKeys();
+  /// Create Grocery List Keys
+  static final createGroceryList = CreateGroceryListKeys();
 
-  static SettingsKeys settings = SettingsKeys();
+  /// Settings Keys
+  static final settings = SettingsKeys();
 
-  static ThemeKeys theme = ThemeKeys();
+  /// Theme Keys
+  static final theme = ThemeKeys();
 
-  static AdditionalResourcesKeys additionalResources =
-      AdditionalResourcesKeys();
+  /// Additional Resources Keys
+  static final additionalResources = AdditionalResourcesKeys();
 
-  static AccountSettingsKeys accountSettings = AccountSettingsKeys();
+  /// Account Settings Keys
+  static final accountSettings = AccountSettingsKeys();
 
-  static VerifyAccountKeys verifyAccount = VerifyAccountKeys();
+  /// Verify Account Keys
+  static final verifyAccount = VerifyAccountKeys();
 
-  static DeleteAccountKeys deleteAccount = DeleteAccountKeys();
+  /// Delete Account Keys
+  static final deleteAccount = DeleteAccountKeys();
 
-  static InputValidationMessagesKeys inputValidationMessages =
-      InputValidationMessagesKeys();
+  /// Input Validation Messages Keys
+  static final inputValidationMessages = InputValidationMessagesKeys();
 
-  static ErrorMessagesKeys errorMessages = ErrorMessagesKeys();
+  /// Error Messages Keys
+  static final errorMessages = ErrorMessagesKeys();
 }
