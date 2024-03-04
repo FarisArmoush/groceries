@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:groceries/data/models/recipe_model/recipe_model.dart';
-import 'package:test/test.dart';
 
 void main() {
   group('RecipeModel', () {

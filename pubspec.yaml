@@ -50,7 +50,6 @@ dev_dependencies:
   freezed: ^2.4.0
   flutter_test: 
     sdk: flutter
-  test: ^1.24.1
 
 flutter_native_splash:
   background_image: assets/icons/splashBackground.png

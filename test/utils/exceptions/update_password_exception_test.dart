@@ -1,6 +1,6 @@
+import 'package:flutter_test/flutter_test.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/utils/exceptions/update_password_exception.dart';
-import 'package:test/test.dart';
 
 void main() {
   group('UpdatePasswordException', () {
