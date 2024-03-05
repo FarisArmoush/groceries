@@ -4,7 +4,7 @@ import 'package:injectable/injectable.dart';
 
 @injectable
 class UpdateEmailUseCase extends FutureInputUseCase<String> {
-  UpdateEmailUseCase(this._authenticationRepository);
+  const UpdateEmailUseCase(this._authenticationRepository);
 
   final AuthenticationRepository _authenticationRepository;
 

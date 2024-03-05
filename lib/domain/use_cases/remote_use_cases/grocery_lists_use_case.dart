@@ -5,7 +5,7 @@ import 'package:injectable/injectable.dart';
 
 @injectable
 class GroceryListsUseCase extends FutureOutputUseCase<List<GroceryListModel>?> {
-  GroceryListsUseCase(this._groceryListsRepository);
+  const GroceryListsUseCase(this._groceryListsRepository);
 
   final GroceryListsRepository _groceryListsRepository;
 

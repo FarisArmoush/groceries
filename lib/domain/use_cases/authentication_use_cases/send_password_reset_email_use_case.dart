@@ -4,8 +4,8 @@ import 'package:injectable/injectable.dart';
 
 @injectable
 class SendPasswordResetEmailUseCase extends FutureInputUseCase<String> {
-  SendPasswordResetEmailUseCase(this._authenticationRepository);
-
+  const SendPasswordResetEmailUseCase(this._authenticationRepository);
+  
   final AuthenticationRepository _authenticationRepository;
   @override
   Future<void> call(String input) async {

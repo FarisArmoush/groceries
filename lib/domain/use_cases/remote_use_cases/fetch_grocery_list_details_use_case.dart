@@ -6,7 +6,7 @@ import 'package:injectable/injectable.dart';
 @injectable
 class FetchGroceryListDetailsUseCase
     extends FutureUseCase<String?, GroceryListDetailsModel?> {
-  FetchGroceryListDetailsUseCase(this._repository);
+  const FetchGroceryListDetailsUseCase(this._repository);
 
   final GroceryListDetailsRepository _repository;
   @override

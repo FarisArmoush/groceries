@@ -4,7 +4,7 @@ import 'package:injectable/injectable.dart';
 
 @injectable
 class AddItemToListUseCase extends FutureInputUseCase<String> {
-  AddItemToListUseCase(this._repository);
+  const AddItemToListUseCase(this._repository);
 
   final GroceryListDetailsRepository _repository;
   @override

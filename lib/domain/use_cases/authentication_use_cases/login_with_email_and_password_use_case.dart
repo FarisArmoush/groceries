@@ -5,7 +5,7 @@ import 'package:injectable/injectable.dart';
 
 @injectable
 class LoginWithEmailAndPasswordUseCase extends FutureInputUseCase<LoginParam> {
-  LoginWithEmailAndPasswordUseCase(this._authenticationRepository);
+  const LoginWithEmailAndPasswordUseCase(this._authenticationRepository);
 
   final AuthenticationRepository _authenticationRepository;
   @override

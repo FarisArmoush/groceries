@@ -6,7 +6,7 @@ import 'package:injectable/injectable.dart';
 @injectable
 class FetchRecipeDetailsUseCase
     extends FutureUseCase<String?, RecipeDetailsModel?> {
-  FetchRecipeDetailsUseCase(this._repository);
+  const FetchRecipeDetailsUseCase(this._repository);
 
   final RecipeDetailsRepository _repository;
 

@@ -5,7 +5,7 @@ import 'package:injectable/injectable.dart';
 
 @injectable
 class FetchMyTasksUseCase extends FutureOutputUseCase<List<TaskModel>?> {
-  FetchMyTasksUseCase(this._repository);
+  const FetchMyTasksUseCase(this._repository);
 
   final MyTasksRepository _repository;
   @override

@@ -4,7 +4,7 @@ import 'package:injectable/injectable.dart';
 
 @injectable
 class UpdateDisplayNameUseCase extends FutureInputUseCase<String> {
-  UpdateDisplayNameUseCase(this._authenticationRepository);
+  const UpdateDisplayNameUseCase(this._authenticationRepository);
 
   final AuthenticationRepository _authenticationRepository;
 

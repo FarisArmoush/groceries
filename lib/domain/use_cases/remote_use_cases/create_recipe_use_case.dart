@@ -5,7 +5,7 @@ import 'package:injectable/injectable.dart';
 
 @injectable
 class CreateRecipeUseCase extends FutureInputUseCase<RecipeModel?> {
-  CreateRecipeUseCase(this._recipesRepository);
+  const CreateRecipeUseCase(this._recipesRepository);
 
   final RecipesRepository _recipesRepository;
 

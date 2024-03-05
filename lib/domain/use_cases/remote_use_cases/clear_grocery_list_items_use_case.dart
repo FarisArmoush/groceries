@@ -4,7 +4,7 @@ import 'package:injectable/injectable.dart';
 
 @injectable
 class ClearGroceryListItemsUseCase extends FutureInputUseCase<String?> {
-  ClearGroceryListItemsUseCase(this._repository);
+  const ClearGroceryListItemsUseCase(this._repository);
 
   final GroceryListDetailsRepository _repository;
 

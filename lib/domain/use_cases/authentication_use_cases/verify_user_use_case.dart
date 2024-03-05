@@ -4,7 +4,7 @@ import 'package:injectable/injectable.dart';
 
 @injectable
 class VerifyUserUseCase extends FutureOutputUseCase<void> {
-  VerifyUserUseCase(this._authenticationRepository);
+  const VerifyUserUseCase(this._authenticationRepository);
 
   final AuthenticationRepository _authenticationRepository;
 

@@ -4,7 +4,7 @@ import 'package:injectable/injectable.dart';
 
 @injectable
 class DeleteRecipeUseCase extends FutureInputUseCase<String?> {
-  DeleteRecipeUseCase(this._repository);
+  const DeleteRecipeUseCase(this._repository);
 
   final RecipeDetailsRepository _repository;
   @override

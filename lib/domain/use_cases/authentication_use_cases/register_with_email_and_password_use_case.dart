@@ -6,7 +6,7 @@ import 'package:injectable/injectable.dart';
 @injectable
 class RegisterWithEmailAndPasswordUseCase
     extends FutureInputUseCase<RegisterParam> {
-  RegisterWithEmailAndPasswordUseCase(this._authenticationRepository);
+  const RegisterWithEmailAndPasswordUseCase(this._authenticationRepository);
 
   final AuthenticationRepository _authenticationRepository;
 

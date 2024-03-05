@@ -6,7 +6,7 @@ import 'package:injectable/injectable.dart';
 @injectable
 class FetchParentCategoriesUseCase
     extends FutureOutputUseCase<List<CategoryModel>?> {
-  FetchParentCategoriesUseCase(
+  const FetchParentCategoriesUseCase(
     this._categoriesRepository,
   );
   final CategoriesRepository _categoriesRepository;
