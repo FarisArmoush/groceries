@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries_theme/app_theme.dart';
 
-class AppSnackBars {
-  AppSnackBars._();
-
+abstract final class AppSnackBars {
   static SnackBar success({required String message}) {
     return SnackBar(
       margin: _margin,

@@ -2,7 +2,6 @@ import 'package:flutter/widgets.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 abstract final class AppPaddings {
-  AppPaddings._();
   static EdgeInsetsDirectional scaffold(BuildContext context) {
     return EdgeInsetsDirectional.only(
       start: context.deviceWidth * 0.03,
