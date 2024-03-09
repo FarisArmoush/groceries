@@ -1,7 +1,7 @@
 ---
 name: Performance Update
 about: A code change that improves performance
-title: "performance: "
+title: "performance/ "
 labels: performance
 ---
 
