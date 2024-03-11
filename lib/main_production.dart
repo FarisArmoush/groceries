@@ -14,6 +14,6 @@ void main() {
     CrashlyticsService()
       ..initCrashlytics()
       ..initPlatformErrorsHandler();
-    return mainCommon(flavor);
+    return mainCommon();
   });
 }

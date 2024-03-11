@@ -9,5 +9,5 @@ void main() {
     environment: FlavorEnvironments.development,
   );
   injector.registerSingleton<AppFlavor>(flavor);
-  bootstrap(() => mainCommon(flavor));
+  bootstrap(mainCommon);
 }

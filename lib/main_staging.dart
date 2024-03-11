@@ -10,6 +10,6 @@ void main() {
       environment: FlavorEnvironments.staging,
     );
     injector.registerSingleton<AppFlavor>(flavor);
-    return mainCommon(flavor);
+    return mainCommon();
   });
 }
