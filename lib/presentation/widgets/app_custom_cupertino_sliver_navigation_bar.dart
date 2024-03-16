@@ -1471,7 +1471,7 @@ class CupertinoNavigationBarBackButton extends StatelessWidget {
   /// situations.
   ///
   /// Defaults to null.
-  final VoidCallback? onPressed;
+  final void Function()? onPressed;
 
   final Widget? _backChevron;
 

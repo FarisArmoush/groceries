@@ -11,8 +11,8 @@ class UploadImageBottomSheet extends StatelessWidget {
     super.key,
   });
 
-  final VoidCallback onTakePhoto;
-  final VoidCallback onUploadPhoto;
+  final void Function()? onTakePhoto;
+  final void Function()? onUploadPhoto;
 
   @override
   Widget build(BuildContext context) {
@@ -20,15 +20,21 @@ class UploadImageBottomSheet extends StatelessWidget {
       padding: AppPaddings.bottomSheet(context),
       shrinkWrap: true,
       children: [
-        BottomSheetButton(
-          text: AppTranslations.general.takePhoto,
-          iconPath: Assets.icons.camera.path,
-          onTap: onTakePhoto,
+        Visibility(
+          visible: onTakePhoto != null,
+          child: BottomSheetButton(
+            text: AppTranslations.general.takePhoto,
+            iconPath: Assets.icons.camera.path,
+            onTap: onTakePhoto ?? () {},
+          ),
         ),
-        BottomSheetButton(
-          text: AppTranslations.general.uploadPhotoFromGallery,
-          iconPath: Assets.icons.image.path,
-          onTap: onUploadPhoto,
+        Visibility(
+          visible: onUploadPhoto != null,
+          child: BottomSheetButton(
+            text: AppTranslations.general.uploadPhotoFromGallery,
+            iconPath: Assets.icons.image.path,
+            onTap: onUploadPhoto ?? () {},
+          ),
         ),
       ],
     );

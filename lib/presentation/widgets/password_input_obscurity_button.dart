@@ -9,7 +9,7 @@ class PasswordInputObscurityButton extends StatelessWidget {
     required this.onPressed,
     super.key,
   });
-  final VoidCallback onPressed;
+  final void Function() onPressed;
   final bool isObscure;
 
   @override

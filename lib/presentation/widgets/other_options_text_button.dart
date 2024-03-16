@@ -11,7 +11,7 @@ class SwitchAuthenticationOptionTextButton extends StatelessWidget {
   });
   final String upperText;
   final String lowerText;
-  final VoidCallback onTap;
+  final void Function() onTap;
 
   @override
   Widget build(BuildContext context) {

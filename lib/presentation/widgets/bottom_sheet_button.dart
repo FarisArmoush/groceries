@@ -12,7 +12,7 @@ class BottomSheetButton extends StatelessWidget {
     super.key,
   });
 
-  final VoidCallback onTap;
+  final void Function() onTap;
 
   final String text;
 
