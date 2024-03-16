@@ -4,9 +4,10 @@ import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 import 'package:groceries_theme/app_theme.dart';
 
-///Took this code from the `salomon_bottom_bar` package and modified some of it.
-// https://pub.dev/packages/salomon_bottom_bar
-
+/// A customizable bottom navigation bar widget for the application.
+///
+/// Took this code from the `salomon_bottom_bar` package and modified some of it
+/// https://pub.dev/packages/salomon_bottom_bar
 class AppBottomNavigationBar extends StatelessWidget {
   const AppBottomNavigationBar({
     required this.items,
@@ -15,23 +16,33 @@ class AppBottomNavigationBar extends StatelessWidget {
     this.selectedItemColor,
     this.unselectedItemColor,
     this.selectedColorOpacity,
-    this.itemPadding = const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
+    this.itemPadding = const EdgeInsetsDirectional.symmetric(
+      vertical: 12,
+      horizontal: 24,
+    ),
     super.key,
   });
 
+  /// A list of items to be displayed in the navigation bar.
   final List<AppBottomNavigationBarItem> items;
 
+  /// The index of the currently selected item.
   final int currentIndex;
 
+  /// Callback function triggered when an item is tapped.
   final void Function(int)? onTap;
 
+  /// The color of the selected item.
   final Color? selectedItemColor;
 
+  /// The color of the unselected items.
   final Color? unselectedItemColor;
 
+  /// The opacity of the selected item's background color.
   final double? selectedColorOpacity;
 
-  final EdgeInsets itemPadding;
+  /// Padding around each item in the navigation bar.
+  final EdgeInsetsDirectional itemPadding;
 
   @override
   Widget build(BuildContext context) {
@@ -41,13 +52,13 @@ class AppBottomNavigationBar extends StatelessWidget {
         minimum: const EdgeInsets.all(8),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: items.map(item).toList(),
+          children: items.map(_item).toList(),
         ),
       ),
     );
   }
 
-  TweenAnimationBuilder<double> item(AppBottomNavigationBarItem item) {
+  TweenAnimationBuilder<double> _item(AppBottomNavigationBarItem item) {
     return TweenAnimationBuilder<double>(
       tween: Tween(
         end: items.indexOf(item) == currentIndex ? 1 : 0,
