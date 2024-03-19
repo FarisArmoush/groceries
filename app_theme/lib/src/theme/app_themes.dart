@@ -21,7 +21,7 @@ export 'package:groceries_theme/src/theme/theme_datas/groceries_text_button_them
 /// A class that provides light and dark themes for the application.
 abstract final class AppThemes {
   /// Returns the light theme for the application.
-  static ThemeData? get lightTheme => ThemeData(
+  static ThemeData? get light => ThemeData(
         useMaterial3: true,
         fontFamily: FontFamily.poppins,
         brightness: Brightness.light,
@@ -54,7 +54,7 @@ abstract final class AppThemes {
       );
 
   /// Returns the dark theme for the application.
-  static ThemeData? get darkTheme => ThemeData(
+  static ThemeData? get dark => ThemeData(
         useMaterial3: true,
         fontFamily: FontFamily.poppins,
         brightness: Brightness.dark,

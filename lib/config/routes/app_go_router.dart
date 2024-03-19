@@ -18,6 +18,7 @@ import 'package:groceries/presentation/modules/forgot_password/views/reset_passw
 import 'package:groceries/presentation/modules/grocery_list_details/views/grocery_list_details_view.dart';
 import 'package:groceries/presentation/modules/grocery_list_settings/views/grocery_list_settings_view.dart';
 import 'package:groceries/presentation/modules/home/views/home_view.dart';
+import 'package:groceries/presentation/modules/items/views/items_view.dart';
 import 'package:groceries/presentation/modules/login/views/login_view.dart';
 import 'package:groceries/presentation/modules/onboarding/views/onboarding_view.dart';
 import 'package:groceries/presentation/modules/page_not_found/views/page_not_found_view.dart';
@@ -27,6 +28,7 @@ import 'package:groceries/presentation/modules/recipes/views/recipes_view.dart';
 import 'package:groceries/presentation/modules/register/views/register_view.dart';
 import 'package:groceries/presentation/modules/root/views/root_view.dart';
 import 'package:groceries/presentation/modules/settings/views/settings_view.dart';
+import 'package:groceries/presentation/modules/sub_categories/views/sub_categories_view.dart';
 import 'package:groceries/presentation/modules/theme_settings/views/theme_settings_view.dart';
 import 'package:groceries/presentation/modules/update_display_name/views/update_display_name_view.dart';
 import 'package:groceries/presentation/modules/update_email/views/update_email_view.dart';
@@ -168,6 +170,22 @@ final GoRouter appGoRouter = GoRouter(
                     ),
                   ),
                   routes: [
+                    GoRoute(
+                      name: AppRoute.items.name,
+                      path: AppRoute.items.name,
+                      builder: (context, state) => ItemsView(
+                        key: Key(AppRoute.items.key),
+                        categoryModel: state.extra! as CategoryModel,
+                      ),
+                    ),
+                    GoRoute(
+                      name: AppRoute.subCategories.name,
+                      path: AppRoute.subCategories.name,
+                      builder: (context, state) => SubCategoriesView(
+                        key: Key(AppRoute.subCategories.key),
+                        parentCategoryModel: state.extra! as CategoryModel,
+                      ),
+                    ),
                     GoRoute(
                       name: AppRoute.categoryDetails.name,
                       path: AppRoute.categoryDetails.name,

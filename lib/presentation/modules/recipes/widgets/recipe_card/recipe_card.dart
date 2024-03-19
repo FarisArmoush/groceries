@@ -11,7 +11,7 @@ class RecipeCard extends StatelessWidget {
     super.key,
   });
 
-  final VoidCallback onTap;
+  final void Function() onTap;
   final RecipeModel recipeModel;
 
   @override

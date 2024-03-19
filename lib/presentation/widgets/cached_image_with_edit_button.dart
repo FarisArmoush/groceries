@@ -21,7 +21,7 @@ class CachedImageWithEditButton extends StatelessWidget {
   final double? height;
   final BoxShape? boxShape;
   final BorderRadiusGeometry? borderRadius;
-  final VoidCallback? onPressed;
+  final void Function()? onPressed;
   final String? imageUrl;
 
   @override

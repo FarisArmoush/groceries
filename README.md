@@ -74,3 +74,26 @@ Feel free to explore the codebase, and if you have any questions or suggestions,
 
 ## Note
 In the add items module, you will not be able to access my official database that has those items, but i will include an apk in the future for you to install it on your phone/emulator and test it out.
+
+## Generation Commands
+flutter clean
+flutter pub get
+dart run build_runner build --delete-conflicting-outputs
+
+dart run build_runner watch --delete-conflicting-outputs
+
+
+## Release APK 
+flutter build apk --release -t lib/main_development.dart --flavor development
+
+flutter build apk --release -t lib/main_staging.dart --flavor staging
+
+flutter build apk --release -t lib/main_production.dart --flavor production
+
+## Release IPA
+
+flutter build ipa --release -t lib/main_development.dart --flavor development
+
+flutter build ipa --release -t lib/main_staging.dart --flavor staging
+
+flutter build ipa --release -t lib/main_production.dart --flavor production

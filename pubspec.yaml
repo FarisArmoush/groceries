@@ -1,10 +1,11 @@
 name: groceries
-version: 1.0.0+69420
+version: 1.0.0+0
 repository: https://github.com/FarisArmoush/groceries
 issue_tracker: https://github.com/FarisArmoush/groceries/issues
+topics: [clean-code, clean-architecture, flutter, bloc]
 
 publish_to: none
-description: an amazing app
+description: Groceries Mobile Application
 environment:
   sdk: ">=3.2.6 <4.0.0"
 
@@ -38,6 +39,7 @@ dependencies:
   injectable: ^2.3.2
   get_it: ^7.6.7
   faker: ^2.1.0
+  wolt_modal_sheet: ^0.4.1
 
 dev_dependencies:
   build_runner: ^2.4.8

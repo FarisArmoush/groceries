@@ -60,7 +60,7 @@ class AppTextField extends StatelessWidget {
   final ValueChanged<String>? onChanged;
 
   /// A callback function called when editing is completed.
-  final VoidCallback? onEditingComplete;
+  final void Function()? onEditingComplete;
 
   /// A callback function called when tapping outside the text field.
   final TapRegionCallback? onTapOutside;

@@ -10,9 +10,8 @@ class RecipeCardImage extends StatelessWidget {
     super.key,
   });
 
-  final VoidCallback onTap;
-
   final RecipeModel recipeModel;
+  final void Function() onTap;
 
   @override
   Widget build(BuildContext context) {

@@ -15,6 +15,7 @@ class CategoryModel with _$CategoryModel {
     String? image,
     String? name,
     String? parentCategoryId,
+    bool? hasSubCategories,
   }) = _CategoryModel;
 
   factory CategoryModel.fromJson(JSON json) => _$CategoryModelFromJson(json);

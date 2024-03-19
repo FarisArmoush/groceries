@@ -26,8 +26,8 @@ class AppView extends StatelessWidget {
       locale: context.locale,
       routerConfig: appGoRouter,
       themeMode: currentTheme,
-      theme: AppThemes.lightTheme,
-      darkTheme: AppThemes.darkTheme,
+      theme: AppThemes.light,
+      darkTheme: AppThemes.dark,
     );
   }
 }
