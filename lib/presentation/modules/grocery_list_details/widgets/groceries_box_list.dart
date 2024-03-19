@@ -11,7 +11,7 @@ class GroceriesBoxList extends StatelessWidget {
     required this.list,
     super.key,
   });
-  final List<GroceryModel?>? list;
+  final List<GroceryModel?> list;
 
   @override
   Widget build(BuildContext context) {
@@ -22,41 +22,45 @@ class GroceriesBoxList extends StatelessWidget {
         children: ListTile.divideTiles(
           color: context.theme.hintColor.withOpacity(0.75),
           context: context,
-          tiles: list?.map(
-                (item) {
-                  final notesIsEmpty = item?.notes?.isEmpty ?? false;
-                  final notesIsNull = item?.notes == null;
-                  final isDone = item?.isDone ?? false;
-                  return ListTile(
-                    tileColor: AppColors.transparent,
-                    title: Text(item?.name ?? ''),
-                    subtitle: notesIsNull || notesIsEmpty
-                        ? null
-                        : Text(item?.notes ?? ''),
-                    trailing: IconButton(
-                      onPressed: () {},
-                      icon: isDone
-                          ? Assets.icons.doubleCheck.svg(
-                              colorFilter: const ColorFilter.mode(
-                                Colors.green,
-                                BlendMode.srcIn,
-                              ),
-                            )
-                          : Assets.icons.check.svg(
-                              colorFilter: ColorFilter.mode(
-                                context.theme.primaryColor,
-                                BlendMode.srcIn,
-                              ),
-                            ),
-                    ),
-                    onTap: () => _showBottomSheet(context, item),
-                  );
-                },
-              ) ??
-              [],
+          tiles: list.map(
+            (item) {
+              final notesIsEmpty = item?.notes?.isEmpty ?? false;
+              final notesIsNull = item?.notes == null;
+              final iconButton = IconButton(
+                onPressed: () {},
+                icon: _buildIcon(context, item),
+              );
+              return ListTile(
+                tileColor: AppColors.transparent,
+                title: Text(item?.name ?? ''),
+                subtitle: notesIsNull || notesIsEmpty
+                    ? null
+                    : Text(item?.notes ?? ''),
+                trailing: iconButton,
+                onTap: () => _showBottomSheet(context, item),
+              );
+            },
+          ),
         ).toList(),
       ),
     );
+  }
+
+  Widget _buildIcon(BuildContext context, GroceryModel? item) {
+    final isDone = item?.isDone ?? false;
+    return isDone
+        ? Assets.icons.doubleCheck.svg(
+            colorFilter: const ColorFilter.mode(
+              Colors.green,
+              BlendMode.srcIn,
+            ),
+          )
+        : Assets.icons.check.svg(
+            colorFilter: ColorFilter.mode(
+              context.theme.primaryColor,
+              BlendMode.srcIn,
+            ),
+          );
   }
 
   void _showBottomSheet(BuildContext context, GroceryModel? item) {
