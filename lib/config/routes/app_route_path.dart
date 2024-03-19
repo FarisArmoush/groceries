@@ -43,5 +43,7 @@ extension AppRoutePath on AppRoute {
         AppRoute.additionalResources => '/additional_resources',
         AppRoute.pageNotFound => '/page_not_found',
         AppRoute.premium => '/buy_premium',
+        AppRoute.items => '/items',
+        AppRoute.subCategories => '/sub_categories',
       };
 }

@@ -19,6 +19,7 @@ import 'package:groceries/presentation/modules/grocery_list_details/bloc/grocery
 import 'package:groceries/presentation/modules/grocery_list_settings/blocs/delete_list/delete_list_bloc.dart';
 import 'package:groceries/presentation/modules/grocery_list_settings/blocs/remove_member_from_list_bloc/remove_member_from_list_bloc.dart';
 import 'package:groceries/presentation/modules/grocery_list_settings/blocs/update_list_name_bloc/update_list_name_bloc.dart';
+import 'package:groceries/presentation/modules/items/bloc/items_bloc.dart';
 import 'package:groceries/presentation/modules/login/bloc/login_bloc.dart';
 import 'package:groceries/presentation/modules/onboarding/bloc/onboarding_bloc.dart';
 import 'package:groceries/presentation/modules/premium/bloc/bloc/premium_bloc.dart';
@@ -26,6 +27,7 @@ import 'package:groceries/presentation/modules/recipe_details/bloc/recipe_detail
 import 'package:groceries/presentation/modules/recipes/bloc/recipes_bloc.dart';
 import 'package:groceries/presentation/modules/register/bloc/register_bloc.dart';
 import 'package:groceries/presentation/modules/root/bloc/root_navigation_bloc.dart';
+import 'package:groceries/presentation/modules/sub_categories/bloc/sub_categories_bloc.dart';
 import 'package:groceries/presentation/modules/theme_settings/cubit/theme_cubit.dart';
 import 'package:groceries/presentation/modules/update_display_name/bloc/update_display_name_bloc.dart';
 import 'package:groceries/presentation/modules/update_email/bloc/update_email_bloc.dart';
@@ -125,6 +127,12 @@ class App extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => injector<PremiumBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<ItemsBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<SubCategoriesBloc>(),
         ),
       ],
       child: const AppEasyLocalization(),

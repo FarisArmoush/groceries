@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/data/models/category_model/category_model.dart';
-import 'package:groceries/presentation/modules/category_details/bloc/category_details_bloc.dart';
-import 'package:groceries/presentation/modules/grocery_list_details/widgets/groceries_box_list.dart';
+import 'package:groceries/presentation/modules/sub_categories/bloc/sub_categories_bloc.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/categories_list.dart';
 import 'package:groceries/presentation/widgets/error_state.dart';
 import 'package:groceries/presentation/widgets/groceries_app_bar.dart';
 import 'package:groceries/utils/extenstions/widgets_as_extensions.dart';
 
-class CategoryDetailsView extends StatefulWidget {
-  const CategoryDetailsView({
+class SubCategoriesView extends StatefulWidget {
+  const SubCategoriesView({
     required this.parentCategoryModel,
     super.key,
   });
@@ -18,33 +17,27 @@ class CategoryDetailsView extends StatefulWidget {
   final CategoryModel parentCategoryModel;
 
   @override
-  State<CategoryDetailsView> createState() => _CategoryDetailsViewState();
+  State<SubCategoriesView> createState() => _SubCategoriesViewState();
 }
 
-class _CategoryDetailsViewState extends State<CategoryDetailsView> {
+class _SubCategoriesViewState extends State<SubCategoriesView> {
   @override
   void initState() {
-    final categoryId = widget.parentCategoryModel.categoryId;
-    if (widget.parentCategoryModel.hasSubCategories ?? false) {
-      context.read<CategoryDetailsBloc>().add(
-            CategoryDetailsEvent.getSubCategories(parentCategoryId: categoryId),
-          );
-    } else {
-      context.read<CategoryDetailsBloc>().add(
-            CategoryDetailsEvent.getItems(categoryId: categoryId),
-          );
-    }
+    context.read<SubCategoriesBloc>().add(
+          SubCategoriesEvent.getSubCategories(
+            parentCategoryId: widget.parentCategoryModel.categoryId,
+          ),
+        );
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BlocBuilder<CategoryDetailsBloc, CategoryDetailsState>(
+      body: BlocBuilder<SubCategoriesBloc, SubCategoriesState>(
         buildWhen: (previous, current) =>
             previous.status != current.status ||
-            previous.categories != current.categories ||
-            previous.groceries != current.groceries,
+            previous.categories != current.categories,
         builder: (context, state) => state.status.when(
           initial: AppLoadingIndicator.new,
           loading: AppLoadingIndicator.new,
@@ -57,10 +50,7 @@ class _CategoryDetailsViewState extends State<CategoryDetailsView> {
                   largeTitle: Text(categoryName),
                   middle: Text(categoryName),
                 ),
-                if (state.categories.isEmpty)
-                  GroceriesBoxList(list: state.groceries).asSliver()
-                else
-                  CategoriesList(categories: state.categories).asSliver(),
+                CategoriesList(categories: state.categories).asSliver(),
               ],
             );
           },

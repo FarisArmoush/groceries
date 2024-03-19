@@ -102,5 +102,11 @@ enum AppRoute {
   pageNotFound,
 
   /// Buy Premium View
-  premium
+  premium,
+
+  /// Items View
+  items,
+
+  /// Sub-Categories View
+  subCategories,
 }
