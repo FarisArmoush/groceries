@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:formz/formz.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/forgot_password/bloc/forgot_password_bloc.dart';
 import 'package:groceries/utils/extenstions/padding_extensions.dart';
@@ -14,13 +15,16 @@ class SendForgotPasswordEmailButton extends StatelessWidget {
       child: BlocBuilder<ForgotPasswordBloc, ForgotPasswordState>(
         buildWhen: (previous, current) => previous.isValid != current.isValid,
         builder: (context, state) {
-          return ElevatedButton(
-            onPressed: state.isValid
-                ? () => context.read<ForgotPasswordBloc>().add(
-                      const ForgotPasswordEvent.sendEmail(),
-                    )
-                : null,
-            child: Text(AppTranslations.forgotPassword.sendResetPassword),
+          return IgnorePointer(
+            ignoring: state.status.isInProgressOrSuccess,
+            child: ElevatedButton(
+              onPressed: state.isValid
+                  ? () => context.read<ForgotPasswordBloc>().add(
+                        const ForgotPasswordEvent.sendEmail(),
+                      )
+                  : null,
+              child: Text(AppTranslations.forgotPassword.sendResetPassword),
+            ),
           );
         },
       ),

@@ -14,5 +14,5 @@ class RegisterEvent with _$RegisterEvent {
 
   const factory RegisterEvent.toggleIsObscure() = _ToggleIsObscure;
 
-  const factory RegisterEvent.register() = _Register;
+  const factory RegisterEvent.submit() = _Submit;
 }

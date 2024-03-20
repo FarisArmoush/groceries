@@ -25,11 +25,13 @@ class EmailForm extends FormzInput<String, String> {
 
   @override
   String? validator(String? value) {
+    final messages = AppTranslations.inputValidationMessages;
+
     if (value!.isEmpty) {
-      return AppTranslations.inputValidationMessages.fieldCannotBeEmpty;
+      return messages.fieldCannotBeEmpty;
     }
     if (!AppRegExps.emailRegex.hasMatch(value)) {
-      return AppTranslations.inputValidationMessages.emailIsntValid;
+      return messages.emailIsntValid;
     }
     return null;
   }

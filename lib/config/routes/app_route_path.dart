@@ -17,7 +17,7 @@ extension AppRoutePath on AppRoute {
         AppRoute.register => '/register',
         AppRoute.forgotPassword => '/forgot_password',
         AppRoute.resetPasswordSentSuccessfully =>
-          'reset_password_sent_successfully',
+          '/reset_password_sent_successfully',
         AppRoute.root => '/root',
         AppRoute.home => '/home',
         AppRoute.recipes => '/recipes',

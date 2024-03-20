@@ -18,15 +18,15 @@ class UpdateDisplayNameBloc
     on<UpdateDisplayNameEvent>(
       (event, emit) => event.map(
         displayNameChanged: (event) => _onDisplayNameChanged(event, emit),
-        updateDisplayName: (event) => _onUpdateDisplayName(event, emit),
+        submit: (event) => _onSubmit(event, emit),
       ),
     );
   }
 
   final UpdateDisplayNameUseCase _updateDisplayNameUseCase;
 
-  Future<void> _onUpdateDisplayName(
-    _UpdateDisplayName event,
+  Future<void> _onSubmit(
+    _Submit event,
     Emitter<UpdateDisplayNameState> emit,
   ) async {
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));

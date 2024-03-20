@@ -13,7 +13,7 @@ class SendVerificationEmailButton extends StatelessWidget {
     return ElevatedButton.icon(
       onPressed: () => context.read<VerifyUserBloc>()
         ..add(
-          const VerifyUserEvent.verifyUser(),
+          const VerifyUserEvent.submit(),
         ),
       icon: Assets.icons.send.svg(
         colorFilter: ColorFilter.mode(

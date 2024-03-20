@@ -8,5 +8,5 @@ class LoginEvent with _$LoginEvent {
 
   const factory LoginEvent.toggleIsObscure() = _ToggleIsObscure;
 
-  const factory LoginEvent.login() = _Login;
+  const factory LoginEvent.submit() = _Submit;
 }

@@ -34,24 +34,11 @@ class _GroceryListDetailsViewState extends State<GroceryListDetailsView> {
           previous.status != current.status ||
           previous.groceryList != current.groceryList,
       builder: (context, state) {
-        return state.status.when(
-          initial: () => Scaffold(
-            appBar: AppBar(),
-            body: const AppLoadingIndicator(),
-          ),
-          loading: () => Scaffold(
-            appBar: AppBar(),
-            body: const AppLoadingIndicator(),
-          ),
-          failure: (error) => Scaffold(
-            appBar: AppBar(),
-            body: ErrorState(
-              title: Text(error),
-            ),
-          ),
+        return state.status.maybeWhen(
+          orElse: _buildLoading,
+          failure: _buildFailure,
           success: () {
-            final listModel =
-                context.watch<GroceryListDetailsBloc>().state.groceryList;
+            final listModel = state.groceryList;
             final listIsEmpty = listModel?.items?.isEmpty ?? true;
             return Scaffold(
               body: SafeArea(
@@ -74,6 +61,22 @@ class _GroceryListDetailsViewState extends State<GroceryListDetailsView> {
           },
         );
       },
+    );
+  }
+
+  Widget _buildLoading() {
+    return Scaffold(
+      appBar: AppBar(),
+      body: const AppLoadingIndicator(),
+    );
+  }
+
+  Widget _buildFailure(String error) {
+    return Scaffold(
+      appBar: AppBar(),
+      body: ErrorState(
+        title: Text(error),
+      ),
     );
   }
 }

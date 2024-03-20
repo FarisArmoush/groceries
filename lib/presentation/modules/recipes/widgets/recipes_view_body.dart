@@ -17,9 +17,12 @@ class RecipesViewBody extends StatelessWidget {
         initial: SizedBox.shrink,
         loading: () => const ShimmeredRecipesList(),
         failure: (error) => ErrorState(title: Text(error)),
-        success: () => state.recipes.isEmpty
-            ? const YouHaveNoRecipes()
-            : RecipesList(recipes: state.recipes),
+        success: () {
+          if (state.recipes.isEmpty) {
+            return const YouHaveNoRecipes();
+          }
+          return RecipesList(recipes: state.recipes);
+        },
       ),
     );
   }

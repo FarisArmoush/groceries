@@ -17,14 +17,14 @@ class UpdateEmailBloc extends Bloc<UpdateEmailEvent, UpdateEmailState> {
     on<UpdateEmailEvent>(
       (event, emit) => event.map(
         emailChanged: (event) => _onEmailChanged(event, emit),
-        updateEmail: (event) => _onUpdateEmail(event, emit),
+        submit: (event) => _onSubmit(event, emit),
       ),
     );
   }
   final UpdateEmailUseCase _updateEmailUseCase;
 
-  Future<void> _onUpdateEmail(
-    _UpdateEmail event,
+  Future<void> _onSubmit(
+    _Submit event,
     Emitter<UpdateEmailState> emit,
   ) async {
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));

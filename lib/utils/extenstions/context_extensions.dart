@@ -4,17 +4,20 @@ import 'package:groceries/presentation/modules/theme_settings/cubit/theme_cubit.
 
 /// Extension containing utility methods for the BuildContext class.
 extension ContextExtensions on BuildContext {
+  /// returns the extent of the device.
+  Size get deviceSize => MediaQuery.maybeSizeOf(this)!;
+
   /// returns the horizontal extent of the device's size
-  double get deviceWidth => MediaQuery.sizeOf(this).width;
+  double get deviceWidth => MediaQuery.maybeSizeOf(this)!.width;
 
   /// returns the vertical extent of the device's size
-  double get deviceHeight => MediaQuery.sizeOf(this).height;
-
-  /// returns the extent of the device.
-  Size get deviceSize => MediaQuery.sizeOf(this);
+  double get deviceHeight => MediaQuery.maybeSizeOf(this)!.height;
 
   /// returns the current [ThemeData].
   ThemeData get theme => Theme.of(this);
+
+  /// returns the current [ColorScheme].
+  ColorScheme get colorScheme => Theme.of(this).colorScheme;
 
   /// returns a bool indicating if the current theme is dark or not.
   bool get isDarkMode => watch<ThemeCubit>().state == ThemeMode.dark;

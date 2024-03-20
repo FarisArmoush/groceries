@@ -33,7 +33,7 @@ class LoginPasswordTextField extends StatelessWidget {
             context.read<LoginBloc>().add(LoginEvent.updatePassword(password));
           },
           onFieldSubmitted: (_) => state.isValid
-              ? () => context.read<LoginBloc>().add(const LoginEvent.login())
+              ? () => context.read<LoginBloc>().add(const LoginEvent.submit())
               : null,
           labelText: AppTranslations.general.password,
           errorText: state.password.displayError,
