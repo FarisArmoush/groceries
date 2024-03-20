@@ -15,16 +15,16 @@ class UpdateDisplayNameTextField extends StatelessWidget {
       builder: (context, state) {
         return AppTextField(
           labelText: 'New username',
+          errorText: state.displayName.displayError,
+          validator: (value) => state.displayName.validator(value),
           onChanged: (value) => context.read<UpdateDisplayNameBloc>().add(
                 UpdateDisplayNameEvent.displayNameChanged(value),
               ),
-          errorText: state.displayName.displayError,
-          validator: (value) => state.displayName.validator(value),
-          onFieldSubmitted: (p0) => !state.isValid
-              ? null
-              : () => context.read<UpdateDisplayNameBloc>().add(
+          onFieldSubmitted: (_) => state.isValid
+              ? () => context.read<UpdateDisplayNameBloc>().add(
                     const UpdateDisplayNameEvent.updateDisplayName(),
-                  ),
+                  )
+              : null,
         );
       },
     );
