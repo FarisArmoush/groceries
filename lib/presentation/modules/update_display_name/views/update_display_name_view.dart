@@ -81,9 +81,7 @@ class UpdateDisplayNameView extends StatelessWidget {
     if (state.status.isInProgress) {
       showDialog<AppLoadingIndicator>(
         context: context,
-        builder: (context) => const AppLoadingIndicator(
-          type: AppLoadingIndicatorType.linear,
-        ),
+        builder: (context) => const AppLoadingIndicator.linear(),
         barrierDismissible: false,
       );
     }

@@ -20,9 +20,7 @@ class VerifyUserView extends StatelessWidget {
         buildWhen: (previous, current) => previous.status != current.status,
         builder: (context, state) => state.status.when(
           initial: () => const VerifyUserInitialBody(),
-          loading: () => const AppLoadingIndicator(
-            type: AppLoadingIndicatorType.linear,
-          ),
+          loading: () => const AppLoadingIndicator.linear(),
           success: () => const VerificationEmailSentSuccessfully(),
           failure: (error) => ErrorState(title: Text(error)),
         ),

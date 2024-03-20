@@ -99,9 +99,7 @@ class RegisterView extends StatelessWidget {
       showDialog<void>(
         context: context,
         barrierDismissible: false,
-        builder: (context) => const AppLoadingIndicator(
-          type: AppLoadingIndicatorType.linear,
-        ),
+        builder: (context) => const AppLoadingIndicator.linear(),
       );
     }
   }
