@@ -13,14 +13,14 @@ class VerifyUserBloc extends Bloc<VerifyUserEvent, VerifyUserState> {
   VerifyUserBloc(this._verifyUserUseCase) : super(const VerifyUserState()) {
     on<VerifyUserEvent>(
       (event, emit) => event.map(
-        verifyUser: (event) => _onVerifyUser(event, emit),
+        submit: (event) => _onSubmit(event, emit),
       ),
     );
   }
   final VerifyUserUseCase _verifyUserUseCase;
 
-  Future<void> _onVerifyUser(
-    _VerifyUser event,
+  Future<void> _onSubmit(
+    _Submit event,
     Emitter<VerifyUserState> emit,
   ) async {
     emit(

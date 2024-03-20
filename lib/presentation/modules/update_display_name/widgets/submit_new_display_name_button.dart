@@ -25,7 +25,7 @@ class SubmitNewDisplayNameButton extends StatelessWidget {
             child: ElevatedButton(
               onPressed: canSubmit
                   ? () => context.read<UpdateDisplayNameBloc>().add(
-                        const UpdateDisplayNameEvent.updateDisplayName(),
+                        const UpdateDisplayNameEvent.submit(),
                       )
                   : null,
               child: Text(AppTranslations.general.submit),

@@ -26,7 +26,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
         updatePassword: (event) => _onUpdatePassword(event, emit),
         updateConfirmPassword: (event) => _onUpdateConfirmPassword(event, emit),
         toggleIsObscure: (event) => _onToggleIsObscure(event, emit),
-        register: (event) => _onRegister(event, emit),
+        submit: (event) => _onSubmit(event, emit),
       ),
     );
   }
@@ -121,8 +121,8 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
     emit(state.copyWith(isObscure: !state.isObscure));
   }
 
-  Future<void> _onRegister(
-    _Register event,
+  Future<void> _onSubmit(
+    _Submit event,
     Emitter<RegisterState> emit,
   ) async {
     if (!state.isValid) return;

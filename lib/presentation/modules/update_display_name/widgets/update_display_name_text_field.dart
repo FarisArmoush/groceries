@@ -22,7 +22,7 @@ class UpdateDisplayNameTextField extends StatelessWidget {
               ),
           onFieldSubmitted: (_) => state.isValid
               ? () => context.read<UpdateDisplayNameBloc>().add(
-                    const UpdateDisplayNameEvent.updateDisplayName(),
+                    const UpdateDisplayNameEvent.submit(),
                   )
               : null,
         );

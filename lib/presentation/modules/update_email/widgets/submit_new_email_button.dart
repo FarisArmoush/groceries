@@ -25,7 +25,7 @@ class SubmitNewEmailButton extends StatelessWidget {
             child: ElevatedButton(
               onPressed: canSubmit
                   ? () => context.read<UpdateEmailBloc>().add(
-                        const UpdateEmailEvent.updateEmail(),
+                        const UpdateEmailEvent.submit(),
                       )
                   : null,
               child: Text(AppTranslations.general.submit),

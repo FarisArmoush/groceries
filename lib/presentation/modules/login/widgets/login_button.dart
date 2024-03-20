@@ -18,7 +18,7 @@ class LoginButton extends StatelessWidget {
           ignoring: state.status.isInProgressOrSuccess,
           child: FilledButton(
             onPressed: state.isValid
-                ? () => context.read<LoginBloc>().add(const LoginEvent.login())
+                ? () => context.read<LoginBloc>().add(const LoginEvent.submit())
                 : null,
             child: Text(AppTranslations.login.login),
           ),

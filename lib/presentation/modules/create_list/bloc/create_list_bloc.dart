@@ -18,7 +18,7 @@ class CreateListBloc extends Bloc<CreateListEvent, CreateListState> {
   CreateListBloc(this._createListUseCase) : super(const CreateListState()) {
     on<CreateListEvent>(
       (event, emit) => event.map(
-        createList: (event) => _onCreateList(event, emit),
+        submit: (event) => _onSubmit(event, emit),
         nameChanged: (event) => _onNameChanged(event, emit),
         iconChanged: (event) => _onIconChanged(event, emit),
         getIcons: (event) => _onGetIcons(event, emit),
@@ -28,8 +28,8 @@ class CreateListBloc extends Bloc<CreateListEvent, CreateListState> {
 
   final CreateListUseCase _createListUseCase;
 
-  Future<void> _onCreateList(
-    _CreateList event,
+  Future<void> _onSubmit(
+    _Submit event,
     Emitter<CreateListState> emit,
   ) async {
     emit(
@@ -38,7 +38,13 @@ class CreateListBloc extends Bloc<CreateListEvent, CreateListState> {
       ),
     );
     try {
-      await _createListUseCase(event.groceryListModel);
+      await _createListUseCase(
+        GroceryListModel(
+          creationDate: DateTime.now(),
+          imageUrl: state.icon,
+          name: state.listName.value,
+        ),
+      );
       emit(
         state.copyWith(
           status: const BlocStatus.success(),

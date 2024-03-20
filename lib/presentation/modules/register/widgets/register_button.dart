@@ -19,7 +19,7 @@ class RegisterButton extends StatelessWidget {
           child: FilledButton(
             onPressed: state.isValid
                 ? () => context.read<RegisterBloc>().add(
-                      const RegisterEvent.register(),
+                      const RegisterEvent.submit(),
                     )
                 : null,
             child: Text(AppTranslations.register.register),

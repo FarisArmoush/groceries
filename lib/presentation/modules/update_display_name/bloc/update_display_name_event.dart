@@ -6,5 +6,5 @@ class UpdateDisplayNameEvent with _$UpdateDisplayNameEvent {
     String displayName,
   ) = _DisplayNameChanged;
 
-  const factory UpdateDisplayNameEvent.updateDisplayName() = _UpdateDisplayName;
+  const factory UpdateDisplayNameEvent.submit() = _Submit;
 }

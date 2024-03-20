@@ -16,15 +16,15 @@ class CreateRecipeBloc extends Bloc<CreateRecipeEvent, CreateRecipeState> {
       : super(const CreateRecipeState()) {
     on<CreateRecipeEvent>(
       (event, emit) => event.map(
-        createRecipe: (event) => _onCreateRecipe(event, emit),
+        submit: (event) => _onSubmit(event, emit),
       ),
     );
   }
 
   final CreateRecipeUseCase _createRecipeUseCase;
 
-  Future<void> _onCreateRecipe(
-    _CreateRecipe event,
+  Future<void> _onSubmit(
+    _Submit event,
     Emitter<CreateRecipeState> emit,
   ) async {
     emit(
@@ -34,7 +34,7 @@ class CreateRecipeBloc extends Bloc<CreateRecipeEvent, CreateRecipeState> {
     );
 
     try {
-      await _createRecipeUseCase(event.recipeModel);
+      await _createRecipeUseCase(const RecipeModel());
       emit(
         state.copyWith(
           status: const BlocStatus.success(),

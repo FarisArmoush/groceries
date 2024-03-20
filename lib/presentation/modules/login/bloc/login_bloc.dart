@@ -24,7 +24,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         updateEmail: (event) => _onUpdateEmail(event, emit),
         updatePassword: (event) => _onUpdatePassword(event, emit),
         toggleIsObscure: (event) => _onToggleIsObscure(event, emit),
-        login: (event) => _onLogin(event, emit),
+        submit: (event) => _onSubmit(event, emit),
       ),
     );
   }
@@ -67,7 +67,10 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     );
   }
 
-  Future<void> _onLogin(_Login event, Emitter<LoginState> emit) async {
+  Future<void> _onSubmit(
+    _Submit event,
+    Emitter<LoginState> emit,
+  ) async {
     if (!state.isValid) return;
     emit(
       state.copyWith(status: FormzSubmissionStatus.inProgress),
