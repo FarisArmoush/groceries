@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:groceries/utils/keys/storage_keys.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -31,6 +32,6 @@ class OnboardingBloc extends Bloc<OnboardingEvent, OnboardingState> {
     Emitter<OnboardingState> emit,
   ) async {
     final sharedPreferences = await SharedPreferences.getInstance();
-    await sharedPreferences.setBool('hasViewedOnboarding', true);
+    await sharedPreferences.setBool(StorageKeys.hasViewedOnboarding, true);
   }
 }

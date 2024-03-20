@@ -35,6 +35,7 @@ import 'package:groceries/presentation/modules/update_email/views/update_email_v
 import 'package:groceries/presentation/modules/verify_user/views/verify_user_view.dart';
 import 'package:groceries/presentation/modules/welcome/views/welcome_view.dart';
 import 'package:groceries/presentation/modules/wrapper/views/wrapper_view.dart';
+import 'package:groceries/utils/keys/storage_keys.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// A variable that defines the routes and builders for the App.
@@ -48,8 +49,9 @@ final GoRouter appGoRouter = GoRouter(
       builder: (context, state) => const WrapperView(),
       redirect: (context, state) async {
         final sharedPreferences = await SharedPreferences.getInstance();
-        final hasViewedOnboarding =
-            sharedPreferences.getBool('hasViewedOnboarding');
+        final hasViewedOnboarding = sharedPreferences.getBool(
+          StorageKeys.hasViewedOnboarding,
+        );
         if (hasViewedOnboarding == false || hasViewedOnboarding == null) {
           return AppRoute.onboarding.path;
         }

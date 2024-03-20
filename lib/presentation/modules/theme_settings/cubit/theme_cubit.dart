@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:groceries/utils/keys/storage_keys.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -23,8 +24,8 @@ class ThemeCubit extends Cubit<ThemeMode> {
   /// will be [ThemeMode.system].
   Future<void> loadTheme() async {
     final sharedPreferences = await SharedPreferences.getInstance();
-    final cachedTheme =
-        sharedPreferences.getString('themeMode') ?? ThemeMode.system.toString();
+    final cachedTheme = sharedPreferences.getString(StorageKeys.themeMode) ??
+        ThemeMode.system.toString();
     final theme = ThemeMode.values.firstWhere(
       (value) => value.toString() == cachedTheme,
     );
@@ -33,6 +34,9 @@ class ThemeCubit extends Cubit<ThemeMode> {
 
   Future<void> _cacheTheme(ThemeMode theme) async {
     final sharedPreferences = await SharedPreferences.getInstance();
-    await sharedPreferences.setString('themeMode', theme.toString());
+    await sharedPreferences.setString(
+      StorageKeys.themeMode,
+      theme.toString(),
+    );
   }
 }
