@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/padding_extensions.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 enum _AppLoadingIndicatorType { circular, linear }
@@ -52,37 +53,32 @@ class _LinearProgressIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Padding(
-        padding: const EdgeInsetsDirectional.symmetric(horizontal: 32),
-        child: Container(
-          padding: const EdgeInsetsDirectional.all(16),
-          decoration: BoxDecoration(
-            color: context.theme.scaffoldBackgroundColor,
-            borderRadius: BorderRadiusDirectional.circular(16),
-          ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              DefaultTextStyle(
-                style: TextStyle(
-                  fontWeight: AppFontWeights.medium,
-                  color: context.theme.primaryColor,
-                  fontSize: 20,
-                ),
-                child: title ?? const Text('Just a sec...'),
+      child: Container(
+        decoration: BoxDecoration(
+          color: context.theme.scaffoldBackgroundColor,
+          borderRadius: BorderRadiusDirectional.circular(16),
+        ),
+        padding: const EdgeInsetsDirectional.all(16),
+        margin: const EdgeInsetsDirectional.symmetric(horizontal: 32),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            DefaultTextStyle(
+              style: TextStyle(
+                fontWeight: AppFontWeights.medium,
+                color: context.theme.primaryColor,
+                fontSize: 20,
               ),
-              const SizedBox(height: 20),
-              Container(
-                padding: const EdgeInsetsDirectional.all(8),
-                child: LinearProgressIndicator(
-                  minHeight: 5,
-                  borderRadius: BorderRadiusDirectional.circular(16),
-                  color: context.theme.primaryColorLight,
-                ),
-              ),
-            ],
-          ),
+              child: title ?? const Text('Just a sec...'),
+            ),
+            const SizedBox(height: 20),
+            LinearProgressIndicator(
+              minHeight: 5,
+              borderRadius: BorderRadiusDirectional.circular(16),
+              color: context.theme.primaryColorLight,
+            ).allPadding(8),
+          ],
         ),
       ),
     );
