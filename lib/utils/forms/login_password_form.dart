@@ -24,12 +24,12 @@ class LoginPasswordForm extends FormzInput<String, String> {
 
   @override
   String? validator(String? value) {
+    final messages = AppTranslations.inputValidationMessages;
     if (value!.isEmpty) {
-      return AppTranslations.inputValidationMessages.fieldCannotBeEmpty;
+      return messages.fieldCannotBeEmpty;
     }
     if (value.length.isLessThan(8)) {
-      return AppTranslations
-          .inputValidationMessages.fieldMustHaveAtLeastEightCharacters;
+      return messages.fieldMustHaveAtLeastEightCharacters;
     }
     return null;
   }
