@@ -14,14 +14,14 @@ class MyTasksBloc extends Bloc<MyTasksEvent, MyTasksState> {
   MyTasksBloc(this._myTasksUseCase) : super(const MyTasksState()) {
     on<MyTasksEvent>(
       (event, emit) => event.map(
-        loadMyTasks: (event) => _onLoadMyTasks(event, emit),
+        getMyTasks: (event) => _onGetMyTasks(event, emit),
       ),
     );
   }
   final FetchMyTasksUseCase _myTasksUseCase;
 
-  Future<void> _onLoadMyTasks(
-    _LoadMyTasks event,
+  Future<void> _onGetMyTasks(
+    _GetMyTasks event,
     Emitter<MyTasksState> emit,
   ) async {
     try {

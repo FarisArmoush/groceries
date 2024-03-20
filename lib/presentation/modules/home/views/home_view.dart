@@ -21,9 +21,9 @@ class HomeView extends StatelessWidget {
         body: RefreshIndicator.adaptive(
           onRefresh: () async {
             context.read<GroceryListsBloc>().add(
-                  const GroceryListsEvent.loadGroceryLists(),
+                  const GroceryListsEvent.getGroceryLists(),
                 );
-            context.read<MyTasksBloc>().add(const MyTasksEvent.loadMyTasks());
+            context.read<MyTasksBloc>().add(const MyTasksEvent.getMyTasks());
           },
           child: CustomScrollView(
             slivers: [

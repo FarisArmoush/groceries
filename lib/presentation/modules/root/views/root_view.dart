@@ -31,10 +31,10 @@ class _RootViewState extends State<RootView> {
   @override
   void initState() {
     context.read<GroceryListsBloc>().add(
-          const GroceryListsEvent.loadGroceryLists(),
+          const GroceryListsEvent.getGroceryLists(),
         );
     context.read<MyTasksBloc>().add(
-          const MyTasksEvent.loadMyTasks(),
+          const MyTasksEvent.getMyTasks(),
         );
     context.read<RecipesBloc>().add(const RecipesEvent.loadMyRecipes());
     super.initState();

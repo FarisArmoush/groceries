@@ -15,14 +15,14 @@ class GroceryListsBloc extends Bloc<GroceryListsEvent, GroceryListsState> {
       : super(const GroceryListsState()) {
     on<GroceryListsEvent>(
       (event, emit) => event.map(
-        loadGroceryLists: (event) => _onLoadGroceryLists(event, emit),
+        getGroceryLists: (event) => _onGetGroceryLists(event, emit),
       ),
     );
   }
   final GroceryListsUseCase _groceryListsUseCase;
 
-  Future<void> _onLoadGroceryLists(
-    _LoadGroceryLists event,
+  Future<void> _onGetGroceryLists(
+    _GetGroceryLists event,
     Emitter<GroceryListsState> emit,
   ) async {
     emit(
@@ -41,7 +41,7 @@ class GroceryListsBloc extends Bloc<GroceryListsEvent, GroceryListsState> {
     } catch (e) {
       emit(
         state.copyWith(
-          status: BlocStatus.failure('$e'),
+          status: BlocStatus.failure(e.toString()),
         ),
       );
     }
