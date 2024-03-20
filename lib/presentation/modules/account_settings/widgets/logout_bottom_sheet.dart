@@ -16,9 +16,7 @@ class LogoutBottomSheet extends StatelessWidget {
       buildWhen: (previous, current) => previous.status != current.status,
       builder: (context, state) {
         return state.status.maybeWhen(
-          loading: () => const AppLoadingIndicator(
-            type: AppLoadingIndicatorType.linear,
-          ),
+          loading: () => const AppLoadingIndicator.linear(),
           orElse: () {
             return ListView(
               padding: AppPaddings.bottomSheet(context),
