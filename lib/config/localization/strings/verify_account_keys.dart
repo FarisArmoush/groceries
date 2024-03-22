@@ -8,21 +8,17 @@ class VerifyAccountKeys {
   final sendVerificationEmail = 'send_verification_email'.tr();
 
   /// failed_to_send_verification_email
-  final failedToSendVerificationEmail =
-      'failed_to_send_verification_email'.tr();
+  final failedMessage = 'failed_to_send_verification_email'.tr();
 
   /// verification_email_sent_successfully_header
-  final verificationEmailSentSuccessfullyHeader =
-      'verification_email_sent_successfully_header'.tr();
+  final successHeader = 'verification_email_sent_successfully_header'.tr();
 
   /// verification_email_sent_successfully_body
-  final verificationEmailSentSuccessfullyBody =
-      'verification_email_sent_successfully_body'.tr();
+  final successBody = 'verification_email_sent_successfully_body'.tr();
 
   /// sending_verification_email_loading_message
-  final sendingVerificationEmailLoadingMessage =
-      'sending_verification_email_loading_message'.tr();
+  final loadingMessage = 'sending_verification_email_loading_message'.tr();
 
   /// your_account_is_verified
-  final yourAccountIsVerified = 'your_account_is_verified'.tr();
+  final isVerified = 'your_account_is_verified'.tr();
 }

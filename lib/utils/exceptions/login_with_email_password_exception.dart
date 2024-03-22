@@ -42,7 +42,7 @@ class LoginWithEmailAndPasswordException implements Exception {
         );
       default:
         return LoginWithEmailAndPasswordException(
-          AppTranslations.errorMessages.defaultErrorMessage,
+          AppTranslations.errorMessages.defaultError,
         );
     }
   }

@@ -2,7 +2,7 @@ part of '../app_translations.dart';
 
 final class ErrorMessagesKeys {
   /// default_error_message
-  final defaultErrorMessage = 'default_error_message'.tr();
+  final defaultError = 'default_error_message'.tr();
 
   /// invalid_email
   final invalidEmail = 'invalid_email'.tr();

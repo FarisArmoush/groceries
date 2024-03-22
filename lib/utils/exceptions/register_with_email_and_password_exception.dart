@@ -46,7 +46,7 @@ class RegisterWithEmailAndPasswordException implements Exception {
         );
       default:
         return RegisterWithEmailAndPasswordException(
-          AppTranslations.errorMessages.defaultErrorMessage,
+          AppTranslations.errorMessages.defaultError,
         );
     }
   }

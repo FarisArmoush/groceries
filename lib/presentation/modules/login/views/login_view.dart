@@ -71,7 +71,7 @@ class LoginView extends StatelessWidget {
         ..showSnackBar(
           AppSnackBars.error(
             error: state.errorMessage ??
-                AppTranslations.errorMessages.defaultErrorMessage,
+                AppTranslations.errorMessages.defaultError,
           ),
         );
     }

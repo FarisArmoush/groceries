@@ -25,7 +25,7 @@ class AccountSettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppTranslations.accountSettings.accountSettings),
+        title: Text(AppTranslations.accountSettings.title),
       ),
       body: ListView(
         padding: AppPaddings.scaffold(context),

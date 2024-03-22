@@ -16,7 +16,7 @@ class UpdatePasswordException implements Exception {
         );
       default:
         return UpdatePasswordException(
-          AppTranslations.errorMessages.defaultErrorMessage,
+          AppTranslations.errorMessages.defaultError,
         );
     }
   }

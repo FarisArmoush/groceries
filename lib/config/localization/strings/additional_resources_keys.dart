@@ -2,11 +2,10 @@ part of '../app_translations.dart';
 
 final class AdditionalResourcesKeys {
   /// additional_resources
-  final additionalResources = 'additional_resources'.tr();
+  final title = 'additional_resources'.tr();
 
   /// additional_resources_description
-  final additionalResourcesDescription =
-      'additional_resources_description'.tr();
+  final description = 'additional_resources_description'.tr();
 
   /// app_version
   final appVersion = 'app_version'.tr();

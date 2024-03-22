@@ -5,10 +5,10 @@ final class LoginKeys {
   final login = 'login'.tr();
 
   /// loginHeader
-  final loginHeader = 'login_header'.tr();
+  final header = 'login_header'.tr();
 
   /// login_body
-  final loginBody = 'login_body'.tr();
+  final body = 'login_body'.tr();
 
   /// dont_have_an_account
   final dontHaveAnAccount = 'dont_have_an_account'.tr();

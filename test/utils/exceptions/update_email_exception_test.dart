@@ -48,7 +48,7 @@ Factory constructor should create exception with default message for unknown cod
       final exception = UpdateEmailException.fromCode('unknown-code');
       expect(
         exception.message,
-        AppTranslations.errorMessages.defaultErrorMessage,
+        AppTranslations.errorMessages.defaultError,
       );
     });
   });

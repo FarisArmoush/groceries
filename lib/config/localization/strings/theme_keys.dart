@@ -5,17 +5,17 @@ class ThemeKeys {
   final theme = 'theme'.tr();
 
   /// theme_header
-  final themeHeader = 'theme_header'.tr();
+  final header = 'theme_header'.tr();
 
   /// theme_hint
-  final themeHint = 'theme_hint'.tr();
+  final hint = 'theme_hint'.tr();
 
   /// theme_hint
-  final lightMode = 'light_mode'.tr();
+  final light = 'light_mode'.tr();
 
   /// dark_mode
-  final darkMode = 'dark_mode'.tr();
+  final dark = 'dark_mode'.tr();
 
   /// system_mode
-  final systemMode = 'system_mode'.tr();
+  final system = 'system_mode'.tr();
 }

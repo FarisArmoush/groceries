@@ -52,7 +52,7 @@ class ForgotPasswordView extends StatelessWidget {
       );
     }
     if (state.status.isFailure) {
-      final defaultError = AppTranslations.errorMessages.defaultErrorMessage;
+      final defaultError = AppTranslations.errorMessages.defaultError;
       context.pop();
       ScaffoldMessenger.of(context).showSnackBar(
         AppSnackBars.error(

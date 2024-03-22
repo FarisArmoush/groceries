@@ -38,7 +38,7 @@ class UpdateDisplayNameBloc
       emit(
         state.copyWith(
           status: FormzSubmissionStatus.failure,
-          errorMessage: AppTranslations.errorMessages.defaultErrorMessage,
+          errorMessage: AppTranslations.errorMessages.defaultError,
         ),
       );
     } finally {

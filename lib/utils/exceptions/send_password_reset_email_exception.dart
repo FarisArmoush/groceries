@@ -63,7 +63,7 @@ class SendPasswordResetEmailException implements Exception {
         );
       default:
         return SendPasswordResetEmailException(
-          AppTranslations.errorMessages.defaultErrorMessage,
+          AppTranslations.errorMessages.defaultError,
         );
     }
   }

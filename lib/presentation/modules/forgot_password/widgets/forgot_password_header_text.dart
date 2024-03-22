@@ -9,7 +9,7 @@ class ForgotPasswordHeaderText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      AppTranslations.forgotPassword.forgotPassword,
+      AppTranslations.forgotPassword.header,
       style: TextStyle(
         fontWeight: AppFontWeights.semiBold,
         color: context.theme.primaryColorLight,

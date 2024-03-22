@@ -5,10 +5,7 @@ import 'package:groceries/data/models/category_model/category_model.dart';
 import 'package:groceries/utils/keys/firestore_keys.dart';
 import 'package:injectable/injectable.dart';
 
-// TODO(FarisArmoush): Refactor to where there is only one function and if the
-// parent category id
-// is null, fetch parent categories, and if it isnt null it fetches the
-// sub-categories of this parent category.
+// TODO(FarisArmoush): refactor/ CategoriesDataSource #313 (https://github.com/FarisArmoush/groceries/issues/313)
 @singleton
 class CategoriesDataSource {
   const CategoriesDataSource();

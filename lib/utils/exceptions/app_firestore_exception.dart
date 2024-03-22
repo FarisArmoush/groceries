@@ -13,7 +13,7 @@ class AppFirestoreException implements Exception {
         );
       default:
         return AppFirestoreException(
-          AppTranslations.errorMessages.defaultErrorMessage,
+          AppTranslations.errorMessages.defaultError,
         );
     }
   }

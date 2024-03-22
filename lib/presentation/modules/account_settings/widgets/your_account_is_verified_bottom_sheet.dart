@@ -23,7 +23,7 @@ class YourAccountIsVerifiedBottomSheet extends StatelessWidget {
               height: context.deviceHeight * 0.03,
             ),
             Text(
-              AppTranslations.verifyAccount.yourAccountIsVerified,
+              AppTranslations.verifyAccount.isVerified,
               style: context.theme.dialogTheme.titleTextStyle,
               textAlign: TextAlign.center,
             ),

@@ -100,7 +100,7 @@ Factory constructor should create exception with default message for unknown cod
           SendPasswordResetEmailException.fromCode('unknown-code');
       expect(
         exception.message,
-        AppTranslations.errorMessages.defaultErrorMessage,
+        AppTranslations.errorMessages.defaultError,
       );
     });
   });

@@ -21,7 +21,7 @@ class UpdateEmailException implements Exception {
         );
       default:
         return UpdateEmailException(
-          AppTranslations.errorMessages.defaultErrorMessage,
+          AppTranslations.errorMessages.defaultError,
         );
     }
   }

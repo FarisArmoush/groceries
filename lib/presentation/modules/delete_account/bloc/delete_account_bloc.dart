@@ -48,7 +48,7 @@ class DeleteAccountBloc extends Bloc<DeleteAccountEvent, DeleteAccountState> {
       emit(
         state.copyWith(
           status: BlocStatus.failure(
-            AppTranslations.errorMessages.defaultErrorMessage,
+            AppTranslations.errorMessages.defaultError,
           ),
         ),
       );

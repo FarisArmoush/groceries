@@ -36,15 +36,15 @@ class ThemeRadiosList extends StatelessWidget {
   List<AppThemeModel> get _themes {
     return [
       AppThemeModel(
-        title: AppTranslations.theme.lightMode,
+        title: AppTranslations.theme.light,
         themeMode: ThemeMode.light,
       ),
       AppThemeModel(
-        title: AppTranslations.theme.darkMode,
+        title: AppTranslations.theme.dark,
         themeMode: ThemeMode.dark,
       ),
       AppThemeModel(
-        title: AppTranslations.theme.systemMode,
+        title: AppTranslations.theme.system,
         themeMode: ThemeMode.system,
       ),
     ];

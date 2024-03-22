@@ -43,7 +43,7 @@ class UpdateEmailBloc extends Bloc<UpdateEmailEvent, UpdateEmailState> {
       emit(
         state.copyWith(
           status: FormzSubmissionStatus.failure,
-          errorMessage: AppTranslations.errorMessages.defaultErrorMessage,
+          errorMessage: AppTranslations.errorMessages.defaultError,
         ),
       );
     } finally {

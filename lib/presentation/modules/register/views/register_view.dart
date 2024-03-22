@@ -80,7 +80,7 @@ class RegisterView extends StatelessWidget {
         ..showSnackBar(
           AppSnackBars.error(
             error: state.errorMessage ??
-                AppTranslations.errorMessages.defaultErrorMessage,
+                AppTranslations.errorMessages.defaultError,
           ),
         );
     }

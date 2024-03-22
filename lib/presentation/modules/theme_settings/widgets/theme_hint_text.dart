@@ -9,7 +9,7 @@ class ThemeHintText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      AppTranslations.theme.themeHint,
+      AppTranslations.theme.hint,
       style: TextStyle(
         fontWeight: AppFontWeights.light,
         color: context.theme.hintColor,
