@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/hard_coded_extension.dart';
 import 'package:groceries/utils/extenstions/padding_extensions.dart';
 import 'package:groceries_theme/app_theme.dart';
 
@@ -70,7 +71,7 @@ class _LinearProgressIndicator extends StatelessWidget {
                 color: context.theme.primaryColor,
                 fontSize: 20,
               ),
-              child: title ?? const Text('Just a sec...'),
+              child: title ?? Text('Just a sec...'.hardCoded),
             ),
             const SizedBox(height: 20),
             LinearProgressIndicator(

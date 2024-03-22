@@ -12,4 +12,10 @@ final class CreateRecipeKeys {
 
   /// add_step
   final addStep = 'add_step'.tr();
+
+  /// failed_to_create_recipe_header
+  final failedToCreateHeader = 'failed_to_create_recipe_header'.tr();
+
+  /// failed_to_create_recipe_body
+  final failedToCreateBody = 'failed_to_create_recipe_body'.tr();
 }

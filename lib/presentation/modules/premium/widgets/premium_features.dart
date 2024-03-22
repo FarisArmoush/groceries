@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/presentation/modules/premium/widgets/premium_feature_cell.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/utils/extenstions/hard_coded_extension.dart';
 
 class PremiumFeatures extends StatelessWidget {
   const PremiumFeatures({super.key});
@@ -17,24 +18,24 @@ class PremiumFeatures extends StatelessWidget {
     );
   }
 
-  static List<PremiumFeatureCell> get _cells => <PremiumFeatureCell>[
+  static List<PremiumFeatureCell> get _cells => [
         PremiumFeatureCell(
-          title: const Text('Hello, World!'),
+          title: Text('Hello, World!'.hardCoded),
           iconBackgroundColor: Colors.green,
           iconPath: Assets.icons.alertBadge.path,
         ),
         PremiumFeatureCell(
-          title: const Text('Hello, World!'),
+          title: Text('Hello, World!'.hardCoded),
           iconBackgroundColor: Colors.deepPurpleAccent,
           iconPath: Assets.icons.alertBadge.path,
         ),
         PremiumFeatureCell(
-          title: const Text('Hello, World!'),
+          title: Text('Hello, World!'.hardCoded),
           iconBackgroundColor: Colors.redAccent,
           iconPath: Assets.icons.alertBadge.path,
         ),
         PremiumFeatureCell(
-          title: const Text('Hello, World!'),
+          title: Text('Hello, World!'.hardCoded),
           iconBackgroundColor: Colors.cyan,
           iconPath: Assets.icons.alertBadge.path,
         ),

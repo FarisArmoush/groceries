@@ -26,4 +26,13 @@ final class GroceryListsKeys {
 
   /// print_list
   final printList = 'print_list'.tr();
+
+  /// edit
+  final edit = 'edit'.tr();
+
+  /// share
+  final share = 'share'.tr();
+
+  /// delete
+  final delete = 'delete'.tr();
 }

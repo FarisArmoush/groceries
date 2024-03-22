@@ -4,7 +4,6 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries/utils/extenstions/hard_coded_extension.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 class RecipeCreatedUnsuccessfullyView extends StatelessWidget {
@@ -24,7 +23,7 @@ class RecipeCreatedUnsuccessfullyView extends StatelessWidget {
             ),
             Assets.illustrations.error.svg(),
             Text(
-              'oops...'.hardCoded,
+              AppTranslations.createRecipe.failedToCreateHeader,
               style: TextStyle(
                 fontWeight: AppFontWeights.semiBold,
                 color: context.theme.primaryColorLight,
@@ -36,7 +35,7 @@ class RecipeCreatedUnsuccessfullyView extends StatelessWidget {
               height: context.deviceHeight * 0.01,
             ),
             Text(
-              'Something went wrong, try again later.'.hardCoded,
+              AppTranslations.createRecipe.failedToCreateBody,
               style: TextStyle(
                 fontWeight: AppFontWeights.regular,
                 color: context.theme.hintColor,

@@ -35,7 +35,9 @@ class MyTasksBloc extends Bloc<MyTasksEvent, MyTasksState> {
     } catch (e) {
       emit(
         state.copyWith(
-          status: BlocStatus.failure('$e'),
+          status: BlocStatus.failure(
+            e.toString(),
+          ),
         ),
       );
     }

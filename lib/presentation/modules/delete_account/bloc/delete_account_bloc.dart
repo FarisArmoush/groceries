@@ -41,7 +41,9 @@ class DeleteAccountBloc extends Bloc<DeleteAccountEvent, DeleteAccountState> {
     } on FirebaseException catch (e) {
       emit(
         state.copyWith(
-          status: BlocStatus.failure(e.message ?? ''),
+          status: BlocStatus.failure(
+            e.message ?? AppTranslations.errorMessages.defaultError,
+          ),
         ),
       );
     } catch (_) {
