@@ -6,7 +6,7 @@ void main() {
   group('RegisterWithEmailAndPasswordException', () {
     test('Default constructor should have the default error message', () {
       const exception = RegisterWithEmailAndPasswordException();
-      expect(exception.message, 'Something went wrong...');
+      expect(exception.message, isNull);
     });
 
     test('''
@@ -76,7 +76,10 @@ Factory constructor should create exception with default message for unknown cod
         () {
       final exception =
           RegisterWithEmailAndPasswordException.fromCode('unknown-code');
-      expect(exception.message, 'Something went wrong...');
+      expect(
+        exception.message,
+        AppTranslations.errorMessages.defaultErrorMessage,
+      );
     });
   });
 }
