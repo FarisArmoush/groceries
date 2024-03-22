@@ -17,7 +17,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 /// * weak-password: Please enter a stronger password.
 class RegisterWithEmailAndPasswordException implements Exception {
   const RegisterWithEmailAndPasswordException([
-    this.message = 'Something went wrong...',
+    this.message,
   ]);
 
   /// Creates a new instance of [RegisterWithEmailAndPasswordException]
@@ -45,10 +45,12 @@ class RegisterWithEmailAndPasswordException implements Exception {
           AppTranslations.errorMessages.weakPassword,
         );
       default:
-        return const RegisterWithEmailAndPasswordException();
+        return RegisterWithEmailAndPasswordException(
+          AppTranslations.errorMessages.defaultErrorMessage,
+        );
     }
   }
 
   /// The error message associated with the failure.
-  final String message;
+  final String? message;
 }

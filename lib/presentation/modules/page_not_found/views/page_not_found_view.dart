@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 
 class PageNotFoundView extends StatelessWidget {
@@ -11,12 +12,12 @@ class PageNotFoundView extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Text('Page Not Found'),
+          Text(AppTranslations.pageNotFound.title),
           TextButton(
             onPressed: () => context.pushReplacementNamed(
               AppRoute.wrapper.name,
             ),
-            child: const Text('Go Back'),
+            child: Text(AppTranslations.pageNotFound.goBack),
           ),
         ],
       ),

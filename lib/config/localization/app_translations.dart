@@ -1,4 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:groceries/config/localization/strings/page_not_found_keys.dart';
 
 part 'strings/account_settings_keys.dart';
 part 'strings/add_items_keys.dart';
@@ -86,6 +87,9 @@ class AppTranslations {
 
   /// Premium Keys
   static PremiumKeys get premium => PremiumKeys();
+
+  /// Page not found Keys
+  static PageNotFoundKeys get pageNotFound => PageNotFoundKeys();
 
   /// Input Validation Messages Keys
   static InputValidationMessagesKeys get inputValidationMessages =>

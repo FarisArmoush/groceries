@@ -9,6 +9,7 @@ import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/presentation/widgets/upload_image_bottom_sheet.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/hard_coded_extension.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 class GroceryItemDetailsBottomSheet extends StatelessWidget {
@@ -49,7 +50,7 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
           ),
           AppTextField(
             initialValue: groceryModel?.notes,
-            labelText: 'Notes',
+            labelText: 'Notes'.hardCoded,
             enabledBorder: _border(context),
             focusedBorder: _border(context),
           ),
@@ -68,13 +69,13 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
               height: context.deviceHeight * 0.02,
             ),
             BottomSheetButton(
-              text: 'Remove Image',
+              text: 'Remove Image'.hardCoded,
               iconPath: Assets.icons.image.path,
               onTap: () {},
             ),
           ] else
             BottomSheetButton(
-              text: 'Add Image',
+              text: 'Add Image'.hardCoded,
               iconPath: Assets.icons.image.path,
               onTap: () => showModalBottomSheet<void>(
                 context: context,
@@ -87,12 +88,12 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
               ),
             ),
           BottomSheetButton(
-            text: 'Remove Item',
+            text: 'Remove Item'.hardCoded,
             iconPath: Assets.icons.trash.path,
             onTap: () {},
           ),
           BottomSheetButton(
-            text: 'Mark as done',
+            text: 'Mark as done'.hardCoded,
             iconPath: Assets.icons.doubleCheck.path,
             onTap: () {},
           ),

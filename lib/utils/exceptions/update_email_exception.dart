@@ -2,7 +2,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 
 class UpdateEmailException implements Exception {
   const UpdateEmailException([
-    this.message = 'Something went wrong...',
+    this.message,
   ]);
 
   factory UpdateEmailException.fromCode(String code) {
@@ -20,7 +20,9 @@ class UpdateEmailException implements Exception {
           AppTranslations.errorMessages.emailAlreadyInUse,
         );
       default:
-        return const UpdateEmailException();
+        return UpdateEmailException(
+          AppTranslations.errorMessages.defaultErrorMessage,
+        );
     }
   }
 

@@ -17,7 +17,7 @@ class LoginWithEmailAndPasswordException implements Exception {
   /// Creates a new instance of [LoginWithEmailAndPasswordException]
   /// with an optional error [message].
   const LoginWithEmailAndPasswordException([
-    this.message = 'An unknown exception occurred.',
+    this.message,
   ]);
 
   /// Creates a new instance of [LoginWithEmailAndPasswordException]
@@ -41,10 +41,12 @@ class LoginWithEmailAndPasswordException implements Exception {
           AppTranslations.errorMessages.wrongPassword,
         );
       default:
-        return const LoginWithEmailAndPasswordException();
+        return LoginWithEmailAndPasswordException(
+          AppTranslations.errorMessages.defaultErrorMessage,
+        );
     }
   }
 
   /// The error message associated with the failure.
-  final String message;
+  final String? message;
 }

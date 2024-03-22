@@ -7,6 +7,7 @@ import 'package:groceries/presentation/blocs/user_data/user_data_cubit.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/hard_coded_extension.dart';
 
 class UserEmailListTile extends StatelessWidget {
   const UserEmailListTile({super.key});
@@ -54,7 +55,8 @@ class VerifyToUpdateEmailBottomSheet extends StatelessWidget {
           height: context.deviceHeight * 0.05,
         ),
         Text(
-          'You need to verify your account in order to change your email.',
+          'You need to verify your account in order to change your email.'
+              .hardCoded,
           style: context.theme.dialogTheme.titleTextStyle,
           textAlign: TextAlign.center,
         ),

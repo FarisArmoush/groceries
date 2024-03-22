@@ -14,6 +14,7 @@ import 'package:groceries/presentation/modules/update_email/widgets/update_email
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/app_snack_bars.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/hard_coded_extension.dart';
 
 class UpdateEmailView extends StatelessWidget {
   const UpdateEmailView({super.key});
@@ -57,7 +58,7 @@ class UpdateEmailView extends StatelessWidget {
         ..hideCurrentSnackBar()
         ..showSnackBar(
           AppSnackBars.success(
-            message: 'Username Changed Successfully',
+            message: 'Username Changed Successfully'.hardCoded,
           ),
         );
       context.pushReplacementNamed(AppRoute.root.name);
@@ -71,7 +72,7 @@ class UpdateEmailView extends StatelessWidget {
         ..showSnackBar(
           AppSnackBars.error(
             error: state.errorMessage ??
-                'Failed to change username, Try again later',
+                'Failed to change username, Try again later'.hardCoded,
           ),
         );
       context.pushReplacementNamed(AppRoute.root.name);

@@ -1,6 +1,8 @@
+import 'package:groceries/config/localization/app_translations.dart';
+
 class AppFirestoreException implements Exception {
   const AppFirestoreException([
-    this.message = 'Someting went wrong.',
+    this.message,
   ]);
 
   factory AppFirestoreException.fromCode(String code) {
@@ -10,7 +12,9 @@ class AppFirestoreException implements Exception {
           'S',
         );
       default:
-        return const AppFirestoreException();
+        return AppFirestoreException(
+          AppTranslations.errorMessages.defaultErrorMessage,
+        );
     }
   }
 

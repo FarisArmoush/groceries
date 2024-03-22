@@ -23,7 +23,7 @@ class SendPasswordResetEmailException implements Exception {
   /// Creates a new instance of [SendPasswordResetEmailException]
   /// with an optional error [message].
   const SendPasswordResetEmailException([
-    this.message = 'Something went wrong...',
+    this.message,
   ]);
 
   factory SendPasswordResetEmailException.fromCode(String code) {
@@ -62,10 +62,12 @@ class SendPasswordResetEmailException implements Exception {
           AppTranslations.errorMessages.missingAndroidPackageName,
         );
       default:
-        return const SendPasswordResetEmailException();
+        return SendPasswordResetEmailException(
+          AppTranslations.errorMessages.defaultErrorMessage,
+        );
     }
   }
 
   /// The error message associated with the failure.
-  final String message;
+  final String? message;
 }

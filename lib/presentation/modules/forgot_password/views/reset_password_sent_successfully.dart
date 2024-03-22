@@ -4,6 +4,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/utils/extenstions/hard_coded_extension.dart';
 import 'package:groceries/utils/extenstions/padding_extensions.dart';
 import 'package:groceries_theme/app_theme.dart';
 
@@ -31,7 +32,7 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
             height: context.deviceHeight * 0.045,
           ),
           Text(
-            'Check your Email!',
+            'Check your Email!'.hardCoded,
             style: TextStyle(
               fontWeight: AppFontWeights.bold,
               color: context.theme.primaryColorLight,
@@ -43,7 +44,7 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
             height: context.deviceHeight * 0.01,
           ),
           Text(
-            'We have sent a password reset instrucion to your email',
+            'We have sent a password reset instrucion to your email'.hardCoded,
             style: TextStyle(
               fontWeight: AppFontWeights.regular,
               color: context.theme.primaryColor,
