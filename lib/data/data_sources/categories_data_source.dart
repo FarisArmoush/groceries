@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:groceries/data/models/category_model/category_model.dart';
-import 'package:groceries/utils/extenstions/hard_coded_extension.dart';
+import 'package:groceries/utils/keys/firestore_keys.dart';
 import 'package:injectable/injectable.dart';
 
 // TODO(FarisArmoush): Refactor to where there is only one function and if the
@@ -18,9 +18,9 @@ class CategoriesDataSource {
   Future<List<CategoryModel>> fetchParentCategories() async {
     try {
       final collectionReference = _firestore
-          .collection('category'.hardCoded)
-          .orderBy('name')
-          .where('parentCategoryId', isNull: true);
+          .collection(FirestoreCollection.category)
+          .orderBy(FirestoreField.name)
+          .where(FirestoreField.parentCategoryId, isNull: true);
       final result = await collectionReference.get();
       final parentCategories = <CategoryModel>[];
       for (final element in result.docs) {
@@ -38,9 +38,9 @@ class CategoriesDataSource {
   ) async {
     try {
       final collectionReference = _firestore
-          .collection('category')
-          .orderBy('name')
-          .where('parentCategoryId', isEqualTo: parentCategoryId);
+          .collection(FirestoreCollection.category)
+          .orderBy(FirestoreField.name)
+          .where(FirestoreField.parentCategoryId, isEqualTo: parentCategoryId);
       final result = await collectionReference.get();
       final subCategories = <CategoryModel>[];
       for (final element in result.docs) {

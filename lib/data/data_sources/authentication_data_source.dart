@@ -9,6 +9,7 @@ import 'package:groceries/utils/exceptions/register_with_email_and_password_exce
 import 'package:groceries/utils/exceptions/send_password_reset_email_exception.dart';
 import 'package:groceries/utils/exceptions/update_email_exception.dart';
 import 'package:groceries/utils/exceptions/update_password_exception.dart';
+import 'package:groceries/utils/keys/firestore_keys.dart';
 import 'package:injectable/injectable.dart';
 
 @singleton
@@ -45,13 +46,13 @@ class AuthenticationDataSource {
         password: param.password,
       )
           .then((user) {
-        firestore.collection('users').doc(user.user?.uid).set(
+        firestore.collection(FirestoreCollection.users).doc(user.user?.uid).set(
           {
-            'creationDate': DateTime.timestamp(),
-            'email': param.email,
-            'id': user.user?.uid,
-            'image': '',
-            'displayName': param.displayName,
+            FirestoreField.creationDate: DateTime.timestamp(),
+            FirestoreField.email: param.email,
+            FirestoreField.id: user.user?.uid,
+            FirestoreField.image: '',
+            FirestoreField.displayName: param.displayName,
           },
         );
         firebaseAuth.currentUser?.updateDisplayName(
@@ -67,7 +68,10 @@ class AuthenticationDataSource {
 
   Future<void> deleteAccount() async {
     try {
-      await firestore.collection('users').doc(currentUser?.uid).delete();
+      await firestore
+          .collection(FirestoreCollection.users)
+          .doc(currentUser?.uid)
+          .delete();
       await currentUser?.delete();
     } catch (e) {
       throw DeleteAccountException();
@@ -101,9 +105,12 @@ class AuthenticationDataSource {
     try {
       await currentUser?.updateDisplayName(displayName).then(
             (_) => {
-              firestore.collection('users').doc(currentUser?.uid).update(
+              firestore
+                  .collection(FirestoreCollection.users)
+                  .doc(currentUser?.uid)
+                  .update(
                 {
-                  'displayName': displayName,
+                  FirestoreField.displayName: displayName,
                 },
               ),
             },
@@ -121,11 +128,10 @@ class AuthenticationDataSource {
     }
     try {
       await currentUser?.verifyBeforeUpdateEmail(email).then(
-            (_) => firestore.collection('users').doc(currentUser?.uid).update(
-              {
-                'email': email,
-              },
-            ),
+            (_) => firestore
+                .collection(FirestoreCollection.users)
+                .doc(currentUser?.uid)
+                .update({FirestoreField.email: email}),
           );
     } on FirebaseAuthException catch (e) {
       throw UpdateEmailException.fromCode(e.code);

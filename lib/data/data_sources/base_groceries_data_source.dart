@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
-import 'package:groceries/utils/extenstions/hard_coded_extension.dart';
+import 'package:groceries/utils/keys/firestore_keys.dart';
 import 'package:injectable/injectable.dart';
 
 @singleton
@@ -16,9 +16,12 @@ class BaseGroceriesDataSource {
   ) async {
     try {
       final collectionReference = _firestore
-          .collection('items'.hardCoded)
-          .orderBy('name')
-          .where('categoryId', isEqualTo: categoryId);
+          .collection(FirestoreCollection.items)
+          .orderBy(FirestoreField.name)
+          .where(
+            FirestoreField.categoryId,
+            isEqualTo: categoryId,
+          );
       final result = await collectionReference.get();
       final items = <GroceryModel>[];
       for (final element in result.docs) {
