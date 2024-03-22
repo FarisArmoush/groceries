@@ -15,7 +15,6 @@ import 'package:groceries/presentation/modules/update_display_name/widgets/updat
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/app_snack_bars.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries/utils/extenstions/hard_coded_extension.dart';
 
 class UpdateDisplayNameView extends StatelessWidget {
   const UpdateDisplayNameView({super.key});
@@ -60,7 +59,7 @@ class UpdateDisplayNameView extends StatelessWidget {
         ..hideCurrentSnackBar()
         ..showSnackBar(
           AppSnackBars.success(
-            message: 'Username Changed Successfully'.hardCoded,
+            message: AppTranslations.updateName.nameUpdatedSuccessfully,
           ),
         );
       context.pushReplacementNamed(AppRoute.root.name);

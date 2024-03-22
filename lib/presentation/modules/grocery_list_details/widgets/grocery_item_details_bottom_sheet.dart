@@ -9,7 +9,6 @@ import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/presentation/widgets/upload_image_bottom_sheet.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries/utils/extenstions/hard_coded_extension.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 class GroceryItemDetailsBottomSheet extends StatelessWidget {
@@ -50,7 +49,7 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
           ),
           AppTextField(
             initialValue: groceryModel?.notes,
-            labelText: 'Notes'.hardCoded,
+            labelText: AppTranslations.groceryLists.notes,
             enabledBorder: _border(context),
             focusedBorder: _border(context),
           ),
@@ -69,13 +68,13 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
               height: context.deviceHeight * 0.02,
             ),
             BottomSheetButton(
-              text: 'Remove Image'.hardCoded,
+              text: AppTranslations.groceryLists.removeImage,
               iconPath: Assets.icons.image.path,
               onTap: () {},
             ),
           ] else
             BottomSheetButton(
-              text: 'Add Image'.hardCoded,
+              text: AppTranslations.groceryLists.addImage,
               iconPath: Assets.icons.image.path,
               onTap: () => showModalBottomSheet<void>(
                 context: context,
@@ -88,12 +87,12 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
               ),
             ),
           BottomSheetButton(
-            text: 'Remove Item'.hardCoded,
+            text: AppTranslations.groceryLists.removeImage,
             iconPath: Assets.icons.trash.path,
             onTap: () {},
           ),
           BottomSheetButton(
-            text: 'Mark as done'.hardCoded,
+            text: AppTranslations.groceryLists.markAsDone,
             iconPath: Assets.icons.doubleCheck.path,
             onTap: () {},
           ),

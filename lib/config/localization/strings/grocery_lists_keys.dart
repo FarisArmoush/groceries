@@ -35,4 +35,16 @@ final class GroceryListsKeys {
 
   /// delete
   final delete = 'delete'.tr();
+
+  /// mark_item_as_done
+  final markAsDone = 'mark_item_as_done'.tr();
+
+  /// add_item_image
+  final addImage = 'add_item_image'.tr();
+
+  /// remove_item_image
+  final removeImage = 'remove_item_image'.tr();
+
+  /// item_notes
+  final notes = 'item_notes'.tr();
 }

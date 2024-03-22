@@ -16,7 +16,6 @@ import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/app_snack_bars.dart';
 import 'package:groceries/presentation/widgets/other_options_text_button.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries/utils/extenstions/hard_coded_extension.dart';
 
 class RegisterView extends StatelessWidget {
   const RegisterView({super.key});
@@ -91,7 +90,7 @@ class RegisterView extends StatelessWidget {
         ..hideCurrentSnackBar()
         ..showSnackBar(
           AppSnackBars.success(
-            message: 'Account Created Successfully'.hardCoded,
+            message: AppTranslations.register.accountCreatedSuccessfully,
           ),
         );
       context.pushReplacementNamed(AppRoute.root.name);

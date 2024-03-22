@@ -4,7 +4,6 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries/utils/extenstions/hard_coded_extension.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 class RecipeCreatedSuccessfullyView extends StatelessWidget {
@@ -26,7 +25,7 @@ class RecipeCreatedSuccessfullyView extends StatelessWidget {
               height: context.deviceHeight * 0.35,
             ),
             Text(
-              'Yay!!'.hardCoded,
+              AppTranslations.createRecipe.successHeader,
               style: TextStyle(
                 fontWeight: AppFontWeights.semiBold,
                 color: context.theme.primaryColor,
@@ -38,7 +37,7 @@ class RecipeCreatedSuccessfullyView extends StatelessWidget {
               height: context.deviceHeight * 0.01,
             ),
             Text(
-              'Recipe was created Successfully!'.hardCoded,
+              AppTranslations.createRecipe.successBody,
               style: TextStyle(
                 fontWeight: AppFontWeights.regular,
                 color: context.theme.hintColor,

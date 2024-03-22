@@ -18,4 +18,7 @@ class RegisterKeys {
 
   /// repeat_password
   final repeatPassword = 'repeat_password'.tr();
+
+  /// account_created_successfully
+  final accountCreatedSuccessfully = 'account_created_successfully'.tr();
 }

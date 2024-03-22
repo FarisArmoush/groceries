@@ -15,7 +15,6 @@ import 'package:groceries/presentation/modules/login/widgets/login_password_text
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/app_snack_bars.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries/utils/extenstions/hard_coded_extension.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({super.key});
@@ -81,7 +80,7 @@ class LoginView extends StatelessWidget {
         ..hideCurrentSnackBar()
         ..showSnackBar(
           AppSnackBars.success(
-            message: 'Welcome Back'.hardCoded,
+            message: AppTranslations.login.welcomeBack,
           ),
         );
       context.pushReplacementNamed(AppRoute.root.name);

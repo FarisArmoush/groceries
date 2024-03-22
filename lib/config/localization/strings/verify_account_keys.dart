@@ -21,4 +21,6 @@ class VerifyAccountKeys {
 
   /// your_account_is_verified
   final isVerified = 'your_account_is_verified'.tr();
+
+  final verifyToUpdateEmail = 'verify_to_update_email'.tr();
 }

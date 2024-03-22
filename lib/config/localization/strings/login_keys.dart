@@ -15,4 +15,7 @@ final class LoginKeys {
 
   /// register_now
   final registerNow = 'register_now'.tr();
+
+  /// welcome_back
+  final welcomeBack = 'welcome_back'.tr();
 }
