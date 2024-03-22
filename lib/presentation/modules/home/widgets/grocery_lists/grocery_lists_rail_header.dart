@@ -14,7 +14,9 @@ class GroceryListsRailHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        RailTitle(title: AppTranslations.home.myLists),
+        RailTitle(
+          title: Text(AppTranslations.home.myLists),
+        ),
         TextButton.icon(
           label: Text(AppTranslations.createGroceryList.createNewList),
           onPressed: () => context.pushNamed(AppRoute.createList.name),
