@@ -81,6 +81,7 @@ class LoginView extends StatelessWidget {
             message: 'Welcome Back',
           ),
         );
+      context.read<LoginBloc>().add(const LoginEvent.resetState());
       context.pushReplacementNamed(AppRoute.root.name);
     }
     if (state.status.isInProgress) {

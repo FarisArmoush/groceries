@@ -27,12 +27,31 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
         updateConfirmPassword: (event) => _onUpdateConfirmPassword(event, emit),
         toggleIsObscure: (event) => _onToggleIsObscure(event, emit),
         submit: (event) => _onSubmit(event, emit),
+        resetState: (event) => _onResetState(event, emit),
       ),
     );
   }
 
   final RegisterWithEmailAndPasswordUseCase
       _registerWithEmailAndPasswordUseCase;
+
+  void _onResetState(
+    _ResetState event,
+    Emitter<RegisterState> emit,
+  ) {
+    emit(
+      state.copyWith(
+        isValid: false,
+        isObscure: true,
+        status: FormzSubmissionStatus.initial,
+        confirmPassword: const ConfirmedPasswordForm.pure(),
+        displayName: const DisplayNameForm.pure(),
+        email: const EmailForm.pure(),
+        password: const RegisterPasswordForm.pure(),
+        errorMessage: null,
+      ),
+    );
+  }
 
   void _onUpdateDisplayName(
     _UpdateDisplayName event,

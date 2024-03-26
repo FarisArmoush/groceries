@@ -9,4 +9,6 @@ class LoginEvent with _$LoginEvent {
   const factory LoginEvent.toggleIsObscure() = _ToggleIsObscure;
 
   const factory LoginEvent.submit() = _Submit;
+
+  const factory LoginEvent.resetState() = _ResetState;
 }

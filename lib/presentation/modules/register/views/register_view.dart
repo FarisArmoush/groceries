@@ -92,6 +92,7 @@ class RegisterView extends StatelessWidget {
             message: 'Account Created Successfully',
           ),
         );
+      context.read<RegisterBloc>().add(const RegisterEvent.resetState());
       context.pushReplacementNamed(AppRoute.root.name);
     }
     if (state.status.isInProgress) {

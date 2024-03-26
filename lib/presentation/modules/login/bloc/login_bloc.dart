@@ -25,10 +25,27 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         updatePassword: (event) => _onUpdatePassword(event, emit),
         toggleIsObscure: (event) => _onToggleIsObscure(event, emit),
         submit: (event) => _onSubmit(event, emit),
+        resetState: (event) => _onResetState(event, emit),
       ),
     );
   }
   final LoginWithEmailAndPasswordUseCase _loginWithEmailAndPasswordUseCase;
+
+  void _onResetState(
+    _ResetState event,
+    Emitter<LoginState> emit,
+  ) {
+    emit(
+      state.copyWith(
+        isValid: false,
+        isObscure: true,
+        status: FormzSubmissionStatus.initial,
+        email: const EmailForm.pure(),
+        password: const LoginPasswordForm.pure(),
+        errorMessage: null,
+      ),
+    );
+  }
 
   void _onUpdateEmail(
     _UpdateEmail event,
