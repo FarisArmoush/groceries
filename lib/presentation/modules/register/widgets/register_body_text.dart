@@ -9,7 +9,7 @@ class RegisterBodyText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      AppTranslations.register.registerBody,
+      AppTranslations.register.body,
       style: TextStyle(
         fontWeight: AppFontWeights.regular,
         color: context.theme.primaryColor,

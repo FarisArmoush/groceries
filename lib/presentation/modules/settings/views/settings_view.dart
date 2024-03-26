@@ -47,9 +47,8 @@ class _SettingsViewState extends State<SettingsView> {
                 height: context.deviceHeight * 0.05,
               ),
               SettingsListTile(
-                title: AppTranslations.accountSettings.accountSettings,
-                subtitle:
-                    AppTranslations.accountSettings.accountSettingsDescription,
+                title: AppTranslations.accountSettings.title,
+                subtitle: AppTranslations.accountSettings.description,
                 iconPath: Assets.icons.user.path,
                 onTap: () => context.pushNamed(AppRoute.accountSettings.name),
               ),
@@ -58,7 +57,7 @@ class _SettingsViewState extends State<SettingsView> {
               ),
               SettingsListTile(
                 title: AppTranslations.theme.theme,
-                subtitle: AppTranslations.theme.themeHeader,
+                subtitle: AppTranslations.theme.header,
                 iconPath: Assets.icons.sunMoon.path,
                 onTap: () => context.pushNamed(AppRoute.themeSettings.name),
               ),
@@ -69,10 +68,8 @@ class _SettingsViewState extends State<SettingsView> {
                 Visibility(
                   visible: showAdditionalResources,
                   child: SettingsListTile(
-                    title:
-                        AppTranslations.additionalResources.additionalResources,
-                    subtitle: AppTranslations
-                        .additionalResources.additionalResourcesDescription,
+                    title: AppTranslations.additionalResources.title,
+                    subtitle: AppTranslations.additionalResources.description,
                     iconPath: Assets.icons.menu.path,
                     onTap: () =>
                         context.pushNamed(AppRoute.additionalResources.name),

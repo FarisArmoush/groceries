@@ -39,7 +39,7 @@ class LogoutButton extends StatelessWidget {
         ..hideCurrentSnackBar()
         ..showSnackBar(
           AppSnackBars.error(
-            error: 'Failed to log you out',
+            error: AppTranslations.settings.logoutFailed,
           ),
         ),
       success: () {
@@ -50,7 +50,7 @@ class LogoutButton extends StatelessWidget {
           ..hideCurrentSnackBar()
           ..showSnackBar(
             AppSnackBars.informative(
-              message: "We'll Miss you.",
+              message: AppTranslations.settings.logoutSuccess,
             ),
           );
         context.pushReplacementNamed(AppRoute.welcome.name);

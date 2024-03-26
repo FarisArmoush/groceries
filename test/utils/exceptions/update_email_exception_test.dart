@@ -6,7 +6,7 @@ void main() {
   group('UpdateEmailException', () {
     test('Default constructor should have the default error message', () {
       const exception = UpdateEmailException();
-      expect(exception.message, 'Something went wrong...');
+      expect(exception.message, isNull);
     });
 
     test('''
@@ -48,7 +48,7 @@ Factory constructor should create exception with default message for unknown cod
       final exception = UpdateEmailException.fromCode('unknown-code');
       expect(
         exception.message,
-        'Something went wrong...',
+        AppTranslations.errorMessages.defaultError,
       );
     });
   });

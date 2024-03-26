@@ -26,7 +26,9 @@ class GroceryListsRail extends StatelessWidget {
         if (lists.isNotEmpty)
           const GroceryListsRailHeader()
         else
-          RailTitle(title: AppTranslations.home.myLists),
+          RailTitle(
+            title: Text(AppTranslations.home.myLists),
+          ),
         SizedBox(
           height: lists.isNotEmpty
               ? context.deviceHeight * 0.025

@@ -9,7 +9,7 @@ class RegisterHeaderText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      AppTranslations.register.registerHeader,
+      AppTranslations.register.header,
       style: TextStyle(
         fontWeight: AppFontWeights.semiBold,
         color: context.theme.primaryColorLight,

@@ -9,7 +9,7 @@ class WelcomeViewBodyText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      AppTranslations.welcome.welcomeBody,
+      AppTranslations.welcome.body,
       style: TextStyle(
         fontWeight: AppFontWeights.regular,
         color: context.theme.primaryColor.withOpacity(0.9),

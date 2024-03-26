@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/modules/forgot_password/bloc/forgot_password_bloc.dart';
 import 'package:groceries/presentation/modules/forgot_password/widgets/forgot_password_body_text.dart';
@@ -51,10 +52,11 @@ class ForgotPasswordView extends StatelessWidget {
       );
     }
     if (state.status.isFailure) {
+      final defaultError = AppTranslations.errorMessages.defaultError;
       context.pop();
       ScaffoldMessenger.of(context).showSnackBar(
         AppSnackBars.error(
-          error: state.errorMessage ?? 'Something went wrong!',
+          error: state.errorMessage ?? defaultError,
         ),
       );
     }

@@ -9,7 +9,7 @@ class ForgotPasswordBodyText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      AppTranslations.forgotPassword.forgotPasswordBody,
+      AppTranslations.forgotPassword.body,
       style: TextStyle(
         fontWeight: AppFontWeights.regular,
         color: context.theme.primaryColor,

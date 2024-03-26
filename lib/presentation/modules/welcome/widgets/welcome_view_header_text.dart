@@ -9,7 +9,7 @@ class WelcomeViewHeaderText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      AppTranslations.welcome.welcomeHeader,
+      AppTranslations.welcome.header,
       textAlign: TextAlign.start,
       style: TextStyle(
         fontWeight: AppFontWeights.bold,

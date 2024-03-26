@@ -25,7 +25,7 @@ class RecipeCreatedSuccessfullyView extends StatelessWidget {
               height: context.deviceHeight * 0.35,
             ),
             Text(
-              'Yay!!',
+              AppTranslations.createRecipe.successHeader,
               style: TextStyle(
                 fontWeight: AppFontWeights.semiBold,
                 color: context.theme.primaryColor,
@@ -37,7 +37,7 @@ class RecipeCreatedSuccessfullyView extends StatelessWidget {
               height: context.deviceHeight * 0.01,
             ),
             Text(
-              'Recipe was created Successfully!',
+              AppTranslations.createRecipe.successBody,
               style: TextStyle(
                 fontWeight: AppFontWeights.regular,
                 color: context.theme.hintColor,

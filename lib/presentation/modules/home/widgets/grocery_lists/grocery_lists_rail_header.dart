@@ -12,17 +12,30 @@ class GroceryListsRailHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      mainAxisSize: MainAxisSize.min,
       children: [
-        RailTitle(title: AppTranslations.home.myLists),
-        TextButton.icon(
-          label: Text(AppTranslations.createGroceryList.createNewList),
-          onPressed: () => context.pushNamed(AppRoute.createList.name),
-          icon: Assets.icons.plusCircle.svg(
-            colorFilter: ColorFilter.mode(
-              context.theme.primaryColorLight,
-              BlendMode.srcIn,
+        Expanded(
+          child: RailTitle(
+            title: Text(AppTranslations.home.myLists),
+          ),
+        ),
+        const Spacer(),
+        Expanded(
+          flex: 2,
+          child: TextButton.icon(
+            label: FittedBox(
+              child: Text(
+                AppTranslations.createGroceryList.createNewList,
+                maxLines: 1,
+              ),
             ),
+            icon: Assets.icons.plusCircle.svg(
+              colorFilter: ColorFilter.mode(
+                context.theme.primaryColorLight,
+                BlendMode.srcIn,
+              ),
+            ),
+            onPressed: () => context.pushNamed(AppRoute.createList.name),
           ),
         ),
       ],

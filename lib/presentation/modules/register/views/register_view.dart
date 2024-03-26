@@ -78,7 +78,8 @@ class RegisterView extends StatelessWidget {
         ..hideCurrentSnackBar()
         ..showSnackBar(
           AppSnackBars.error(
-            error: state.errorMessage ?? 'Authentication Failure',
+            error: state.errorMessage ??
+                AppTranslations.errorMessages.defaultError,
           ),
         );
     }
@@ -89,7 +90,7 @@ class RegisterView extends StatelessWidget {
         ..hideCurrentSnackBar()
         ..showSnackBar(
           AppSnackBars.success(
-            message: 'Account Created Successfully',
+            message: AppTranslations.register.accountCreatedSuccessfully,
           ),
         );
       context.read<RegisterBloc>().add(const RegisterEvent.resetState());

@@ -89,6 +89,9 @@ class _RootViewState extends State<RootView> {
     required String activeIconPath,
   }) {
     final height = context.deviceHeight * 0.03;
+    final activeColor = context.isDarkMode
+        ? context.theme.primaryColorLight
+        : context.theme.primaryColorDark;
     return AppBottomNavigationBarItem(
       icon: SvgPicture.asset(
         iconPath,
@@ -103,11 +106,11 @@ class _RootViewState extends State<RootView> {
         activeIconPath,
         height: height,
         colorFilter: ColorFilter.mode(
-          context.theme.primaryColor,
+          activeColor,
           BlendMode.srcIn,
         ),
       ),
-      selectedColor: context.theme.primaryColor,
+      selectedColor: activeColor,
     );
   }
 }

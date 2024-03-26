@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/blocs/user_data/user_data_cubit.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
@@ -57,7 +58,7 @@ class UpdateEmailView extends StatelessWidget {
         ..hideCurrentSnackBar()
         ..showSnackBar(
           AppSnackBars.success(
-            message: 'Username Changed Successfully',
+            message: AppTranslations.updateEmail.emailUpdatedSuccessfully,
           ),
         );
       context.pushReplacementNamed(AppRoute.root.name);
@@ -71,7 +72,7 @@ class UpdateEmailView extends StatelessWidget {
         ..showSnackBar(
           AppSnackBars.error(
             error: state.errorMessage ??
-                'Failed to change username, Try again later',
+                AppTranslations.errorMessages.defaultError,
           ),
         );
       context.pushReplacementNamed(AppRoute.root.name);

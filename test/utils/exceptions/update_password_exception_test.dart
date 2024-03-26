@@ -6,7 +6,7 @@ void main() {
   group('UpdatePasswordException', () {
     test('Default constructor should have the default error message', () {
       const exception = UpdatePasswordException();
-      expect(exception.message, 'Something went wrong..');
+      expect(exception.message, isNull);
     });
 
     test('''
@@ -36,7 +36,10 @@ Factory constructor should create exception with custom message for requires rec
 Factory constructor should create exception with default message for unknown code''',
         () {
       final exception = UpdatePasswordException.fromCode('unknown-code');
-      expect(exception.message, 'Something went wrong..');
+      expect(
+        exception.message,
+        AppTranslations.errorMessages.defaultError,
+      );
     });
   });
 }

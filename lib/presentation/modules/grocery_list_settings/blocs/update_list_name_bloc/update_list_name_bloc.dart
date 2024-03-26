@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/update_list_name_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 
@@ -39,7 +40,9 @@ class UpdateListNameBloc
     } on FirebaseException catch (e) {
       emit(
         state.copyWith(
-          status: BlocStatus.failure(e.message ?? ''),
+          status: BlocStatus.failure(
+            e.message ?? AppTranslations.errorMessages.defaultError,
+          ),
         ),
       );
     } catch (e) {

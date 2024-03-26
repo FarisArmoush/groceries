@@ -9,7 +9,7 @@ class DeleteAccountBodyText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      AppTranslations.deleteAccount.deleteAccountBody,
+      AppTranslations.deleteAccount.body,
       style: TextStyle(
         fontWeight: AppFontWeights.regular,
         color: context.theme.primaryColor,
