@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/category_model/category_model.dart';
-import 'package:groceries/domain/use_cases/remote_use_cases/fetch_parent_categories_use_case.dart';
+import 'package:groceries/domain/use_cases/fetch_categories_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 import 'package:injectable/injectable.dart';
 
@@ -13,8 +13,7 @@ part 'add_items_state.dart';
 
 @injectable
 class AddItemsBloc extends Bloc<AddItemsEvent, AddItemsState> {
-  AddItemsBloc(this._fetchParentCategoriesUseCase)
-      : super(const AddItemsState()) {
+  AddItemsBloc(this._fetchCategoriesUseCase) : super(const AddItemsState()) {
     on<AddItemsEvent>(
       (event, emit) => event.map(
         getParentCategories: (event) => _onGetParentCategories(event, emit),
@@ -22,7 +21,7 @@ class AddItemsBloc extends Bloc<AddItemsEvent, AddItemsState> {
     );
   }
 
-  final FetchParentCategoriesUseCase _fetchParentCategoriesUseCase;
+  final FetchCategoriesUseCase _fetchCategoriesUseCase;
 
   Future<void> _onGetParentCategories(
     _GetParentCategories event,
@@ -34,7 +33,7 @@ class AddItemsBloc extends Bloc<AddItemsEvent, AddItemsState> {
       ),
     );
     try {
-      final parentCategories = await _fetchParentCategoriesUseCase();
+      final parentCategories = await _fetchCategoriesUseCase();
       emit(
         state.copyWith(
           status: const BlocStatus.success(),
