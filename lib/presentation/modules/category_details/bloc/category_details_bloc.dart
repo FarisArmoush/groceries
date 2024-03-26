@@ -4,8 +4,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/category_model/category_model.dart';
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
+import 'package:groceries/domain/use_cases/fetch_categories_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/fetch_category_items_use_case.dart';
-import 'package:groceries/domain/use_cases/remote_use_cases/fetch_sub_categories_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 import 'package:injectable/injectable.dart';
 
@@ -17,7 +17,7 @@ part 'category_details_state.dart';
 class CategoryDetailsBloc
     extends Bloc<CategoryDetailsEvent, CategoryDetailsState> {
   CategoryDetailsBloc(
-    this._fetchSubCategoriesUseCase,
+    this._fetchCategoriesUseCase,
     this._fetchCategoryItemsUseCase,
   ) : super(const CategoryDetailsState()) {
     on<CategoryDetailsEvent>(
@@ -28,7 +28,7 @@ class CategoryDetailsBloc
     );
   }
 
-  final FetchSubCategoriesUseCase _fetchSubCategoriesUseCase;
+  final FetchCategoriesUseCase _fetchCategoriesUseCase;
   final FetchCategoryItemsUseCase _fetchCategoryItemsUseCase;
 
   Future<void> _onGetSubCategories(
@@ -41,7 +41,7 @@ class CategoryDetailsBloc
       ),
     );
     try {
-      final categories = await _fetchSubCategoriesUseCase(
+      final categories = await _fetchCategoriesUseCase(
         event.parentCategoryId ?? '',
       );
       emit(

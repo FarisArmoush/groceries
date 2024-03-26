@@ -1,51 +1,43 @@
-import 'dart:developer';
+import 'dart:developer' as developer;
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:groceries/data/models/category_model/category_model.dart';
 import 'package:groceries/utils/keys/firestore_keys.dart';
 import 'package:injectable/injectable.dart';
 
-// TODO(FarisArmoush): refactor/ CategoriesDataSource #313 (https://github.com/FarisArmoush/groceries/issues/313)
 @singleton
 class CategoriesDataSource {
   const CategoriesDataSource();
 
   FirebaseFirestore get _firestore => FirebaseFirestore.instance;
 
-  Future<List<CategoryModel>> fetchParentCategories() async {
+  Future<List<CategoryModel>> fetchCategories([String? categoryId]) async {
     try {
-      final collectionReference = _firestore
-          .collection(FirestoreCollection.category)
-          .orderBy(FirestoreField.name)
-          .where(FirestoreField.parentCategoryId, isNull: true);
-      final result = await collectionReference.get();
-      final parentCategories = <CategoryModel>[];
-      for (final element in result.docs) {
-        parentCategories.add(CategoryModel.fromJson(element.data()));
-      }
-      return parentCategories;
-    } on FirebaseException catch (e) {
-      log('fetchCategories Error Message => ${e.message}');
-      return [];
-    }
-  }
+      Query<Map<String, Object?>> query;
 
-  Future<List<CategoryModel>> fetchSubCategories(
-    String? parentCategoryId,
-  ) async {
-    try {
-      final collectionReference = _firestore
-          .collection(FirestoreCollection.category)
-          .orderBy(FirestoreField.name)
-          .where(FirestoreField.parentCategoryId, isEqualTo: parentCategoryId);
-      final result = await collectionReference.get();
-      final subCategories = <CategoryModel>[];
-      for (final element in result.docs) {
-        subCategories.add(CategoryModel.fromJson(element.data()));
+      if (categoryId != null) {
+        // Sub-Categories Query
+        query = _firestore
+            .collection(FirestoreCollection.category)
+            .orderBy(FirestoreField.name)
+            .where(FirestoreField.parentCategoryId, isEqualTo: categoryId);
+      } else {
+        // Parent-Categories Query
+        query = _firestore
+            .collection(FirestoreCollection.category)
+            .orderBy(FirestoreField.name)
+            .where(FirestoreField.parentCategoryId, isNull: true);
       }
-      return subCategories;
+
+      final result = await query.get();
+      final categories = <CategoryModel>[];
+      for (final document in result.docs) {
+        final json = document.data();
+        categories.add(CategoryModel.fromJson(json));
+      }
+      return categories;
     } on FirebaseException catch (e) {
-      log('fetchCategories Error Message => ${e.message}');
+      developer.log('fetchCategories Error Message => ${e.message}');
       return [];
     }
   }

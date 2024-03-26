@@ -3,7 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/category_model/category_model.dart';
-import 'package:groceries/domain/use_cases/remote_use_cases/fetch_sub_categories_use_case.dart';
+import 'package:groceries/domain/use_cases/fetch_categories_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 import 'package:injectable/injectable.dart';
 
@@ -13,7 +13,7 @@ part 'sub_categories_state.dart';
 
 @injectable
 class SubCategoriesBloc extends Bloc<SubCategoriesEvent, SubCategoriesState> {
-  SubCategoriesBloc(this._fetchSubCategoriesUseCase)
+  SubCategoriesBloc(this._fetchCategoriesUseCase)
       : super(const SubCategoriesState()) {
     on<SubCategoriesEvent>(
       (event, emit) => event.map(
@@ -21,7 +21,7 @@ class SubCategoriesBloc extends Bloc<SubCategoriesEvent, SubCategoriesState> {
       ),
     );
   }
-  final FetchSubCategoriesUseCase _fetchSubCategoriesUseCase;
+  final FetchCategoriesUseCase _fetchCategoriesUseCase;
 
   Future<void> _onGetSubCategories(
     _GetSubCategories event,
@@ -33,7 +33,7 @@ class SubCategoriesBloc extends Bloc<SubCategoriesEvent, SubCategoriesState> {
       ),
     );
     try {
-      final categories = await _fetchSubCategoriesUseCase(
+      final categories = await _fetchCategoriesUseCase(
         event.parentCategoryId ?? '',
       );
       emit(
