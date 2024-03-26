@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/logout_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 import 'package:injectable/injectable.dart';
@@ -40,7 +41,9 @@ class LogoutBloc extends Bloc<LogoutEvent, LogoutState> {
     } on FirebaseAuthException catch (e) {
       emit(
         state.copyWith(
-          status: BlocStatus.failure(e.message ?? ''),
+          status: BlocStatus.failure(
+            e.message ?? AppTranslations.errorMessages.defaultError,
+          ),
         ),
       );
     } catch (e) {

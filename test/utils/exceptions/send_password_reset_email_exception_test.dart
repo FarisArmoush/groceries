@@ -6,10 +6,7 @@ void main() {
   group('SendPasswordResetEmailException', () {
     test('Default constructor should have the default error message', () {
       const exception = SendPasswordResetEmailException();
-      expect(
-        exception.message,
-        'Something went wrong...',
-      );
+      expect(exception.message, isNull);
     });
 
     test('''
@@ -96,8 +93,6 @@ Factory constructor should create exception with custom message for missing andr
       );
     });
 
-    // Add more test cases for other error codes as needed
-
     test('''
 Factory constructor should create exception with default message for unknown code''',
         () {
@@ -105,7 +100,7 @@ Factory constructor should create exception with default message for unknown cod
           SendPasswordResetEmailException.fromCode('unknown-code');
       expect(
         exception.message,
-        'Something went wrong...',
+        AppTranslations.errorMessages.defaultError,
       );
     });
   });

@@ -9,7 +9,7 @@ class ThemeHeaderText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      AppTranslations.theme.themeHeader,
+      AppTranslations.theme.header,
       style: TextStyle(
         fontWeight: AppFontWeights.medium,
         color: context.theme.primaryColor,

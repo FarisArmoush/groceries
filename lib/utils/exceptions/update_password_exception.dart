@@ -2,7 +2,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 
 class UpdatePasswordException implements Exception {
   const UpdatePasswordException([
-    this.message = 'Something went wrong..',
+    this.message,
   ]);
   factory UpdatePasswordException.fromCode(String code) {
     switch (code) {
@@ -15,7 +15,9 @@ class UpdatePasswordException implements Exception {
           AppTranslations.errorMessages.requiresRecentLogin,
         );
       default:
-        return const UpdatePasswordException();
+        return UpdatePasswordException(
+          AppTranslations.errorMessages.defaultError,
+        );
     }
   }
   final String? message;

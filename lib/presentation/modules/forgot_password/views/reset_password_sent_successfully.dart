@@ -31,7 +31,7 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
             height: context.deviceHeight * 0.045,
           ),
           Text(
-            'Check your Email!',
+            AppTranslations.resetPassword.successHeader,
             style: TextStyle(
               fontWeight: AppFontWeights.bold,
               color: context.theme.primaryColorLight,
@@ -43,7 +43,7 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
             height: context.deviceHeight * 0.01,
           ),
           Text(
-            'We have sent a password reset instrucion to your email',
+            AppTranslations.resetPassword.successBody,
             style: TextStyle(
               fontWeight: AppFontWeights.regular,
               color: context.theme.primaryColor,

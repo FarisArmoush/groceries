@@ -9,7 +9,7 @@ class LoginBodyText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      AppTranslations.login.loginBody,
+      AppTranslations.login.body,
       style: TextStyle(
         fontWeight: AppFontWeights.regular,
         color: context.theme.primaryColor,

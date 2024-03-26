@@ -49,7 +49,7 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
           ),
           AppTextField(
             initialValue: groceryModel?.notes,
-            labelText: 'Notes',
+            labelText: AppTranslations.groceryLists.notes,
             enabledBorder: _border(context),
             focusedBorder: _border(context),
           ),
@@ -68,13 +68,13 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
               height: context.deviceHeight * 0.02,
             ),
             BottomSheetButton(
-              text: 'Remove Image',
+              text: AppTranslations.groceryLists.removeImage,
               iconPath: Assets.icons.image.path,
               onTap: () {},
             ),
           ] else
             BottomSheetButton(
-              text: 'Add Image',
+              text: AppTranslations.groceryLists.addImage,
               iconPath: Assets.icons.image.path,
               onTap: () => showModalBottomSheet<void>(
                 context: context,
@@ -87,12 +87,12 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
               ),
             ),
           BottomSheetButton(
-            text: 'Remove Item',
+            text: AppTranslations.groceryLists.removeImage,
             iconPath: Assets.icons.trash.path,
             onTap: () {},
           ),
           BottomSheetButton(
-            text: 'Mark as done',
+            text: AppTranslations.groceryLists.markAsDone,
             iconPath: Assets.icons.doubleCheck.path,
             onTap: () {},
           ),

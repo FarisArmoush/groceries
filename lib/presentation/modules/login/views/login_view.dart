@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/modules/login/bloc/login_bloc.dart';
 import 'package:groceries/presentation/modules/login/widgets/login_body_text.dart';
@@ -68,7 +69,8 @@ class LoginView extends StatelessWidget {
         ..hideCurrentSnackBar()
         ..showSnackBar(
           AppSnackBars.error(
-            error: state.errorMessage ?? 'Authentication Failure',
+            error: state.errorMessage ??
+                AppTranslations.errorMessages.defaultError,
           ),
         );
     }
@@ -78,7 +80,7 @@ class LoginView extends StatelessWidget {
         ..hideCurrentSnackBar()
         ..showSnackBar(
           AppSnackBars.success(
-            message: 'Welcome Back',
+            message: AppTranslations.login.welcomeBack,
           ),
         );
       context.pushReplacementNamed(AppRoute.root.name);

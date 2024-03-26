@@ -13,7 +13,7 @@ class AdditionalResourcesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppTranslations.additionalResources.additionalResources),
+        title: Text(AppTranslations.additionalResources.title),
       ),
       body: ListView(
         padding: AppPaddings.scaffold(context),

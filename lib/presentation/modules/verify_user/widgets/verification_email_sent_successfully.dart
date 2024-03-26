@@ -22,7 +22,7 @@ class VerificationEmailSentSuccessfully extends StatelessWidget {
           height: context.deviceHeight * 0.02,
         ),
         Text(
-          AppTranslations.verifyAccount.verificationEmailSentSuccessfullyHeader,
+          AppTranslations.verifyAccount.successHeader,
           textAlign: TextAlign.center,
           style: context.theme.dialogTheme.titleTextStyle,
         ),
@@ -30,7 +30,7 @@ class VerificationEmailSentSuccessfully extends StatelessWidget {
           height: context.deviceHeight * 0.01,
         ),
         Text(
-          AppTranslations.verifyAccount.verificationEmailSentSuccessfullyBody,
+          AppTranslations.verifyAccount.successBody,
           textAlign: TextAlign.center,
           style: context.theme.dialogTheme.contentTextStyle,
         ),

@@ -9,7 +9,7 @@ class LoginHeaderText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      AppTranslations.login.loginHeader,
+      AppTranslations.login.header,
       style: TextStyle(
         fontWeight: AppFontWeights.semiBold,
         color: context.theme.primaryColorLight,

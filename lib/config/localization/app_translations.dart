@@ -1,4 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:groceries/config/localization/strings/page_not_found_keys.dart';
+import 'package:groceries/config/localization/strings/reset_password_keys.dart';
+import 'package:groceries/config/localization/strings/update_display_name_keys.dart';
+import 'package:groceries/config/localization/strings/update_email_keys.dart';
 
 part 'strings/account_settings_keys.dart';
 part 'strings/add_items_keys.dart';
@@ -26,71 +30,80 @@ part 'strings/welcome_keys.dart';
 /// This class provides translations for all app strings.
 class AppTranslations {
   /// General Keys
-  static GeneralKeys get general => GeneralKeys();
+  static final general = GeneralKeys();
 
   /// Onboarding Keys
-  static OnboardingKeys get onboarding => OnboardingKeys();
+  static final onboarding = OnboardingKeys();
 
   /// Welcome Keys
-  static WelcomeKeys get welcome => WelcomeKeys();
+  static final welcome = WelcomeKeys();
 
   /// Login Keys
-  static LoginKeys get login => LoginKeys();
+  static final login = LoginKeys();
 
   /// Register Keys
-  static RegisterKeys get register => RegisterKeys();
+  static final register = RegisterKeys();
 
   /// Forgot Password Keys
-  static ForgotPasswordKeys get forgotPassword => ForgotPasswordKeys();
+  static final forgotPassword = ForgotPasswordKeys();
 
   /// Home Keys
-  static HomeKeys get home => HomeKeys();
+  static final home = HomeKeys();
 
   /// Grocery Lists Keys
-  static GroceryListsKeys get groceryLists => GroceryListsKeys();
+  static final groceryLists = GroceryListsKeys();
 
   /// Add Items Keys
-  static AddItemsKeys get addItems => AddItemsKeys();
+  static final addItems = AddItemsKeys();
 
   /// Grocery List Settings Keys
-  static GroceryListSettingsKeys get groceryListSettings =>
-      GroceryListSettingsKeys();
+  static final groceryListSettings = GroceryListSettingsKeys();
 
   /// Recipes Keys
-  static RecipesKeys get recipes => RecipesKeys();
+  static final recipes = RecipesKeys();
 
   /// Create Recipe Keys
-  static CreateRecipeKeys get createRecipe => CreateRecipeKeys();
+  static final createRecipe = CreateRecipeKeys();
 
   /// Create Grocery List Keys
-  static CreateGroceryListKeys get createGroceryList => CreateGroceryListKeys();
+  static final createGroceryList = CreateGroceryListKeys();
 
   /// Settings Keys
-  static SettingsKeys get settings => SettingsKeys();
+  static final settings = SettingsKeys();
 
   /// Theme Keys
-  static ThemeKeys get theme => ThemeKeys();
+  static final theme = ThemeKeys();
 
   /// Additional Resources Keys
-  static AdditionalResourcesKeys get additionalResources =>
-      AdditionalResourcesKeys();
+  static final additionalResources = AdditionalResourcesKeys();
 
   /// Account Settings Keys
-  static AccountSettingsKeys get accountSettings => AccountSettingsKeys();
+  static final accountSettings = AccountSettingsKeys();
 
   /// Verify Account Keys
-  static VerifyAccountKeys get verifyAccount => VerifyAccountKeys();
+  static final verifyAccount = VerifyAccountKeys();
 
   /// Delete Account Keys
-  static DeleteAccountKeys get deleteAccount => DeleteAccountKeys();
+  static final deleteAccount = DeleteAccountKeys();
 
   /// Premium Keys
-  static PremiumKeys get premium => PremiumKeys();
+  static final premium = PremiumKeys();
+
+  /// Page not found Keys
+  static final pageNotFound = PageNotFoundKeys();
+
+  /// Reset password Keys
+  static final resetPassword = ResetPasswordKeys();
+
+  /// Update Email Keys
+  static final updateEmail = UpdateEmailKeys();
+
+  /// Update Display Name Keys
+  static final updateName = UpdateDisplayNameKeys();
 
   /// Input Validation Messages Keys
-  static InputValidationMessagesKeys get inputValidationMessages =>
-      InputValidationMessagesKeys();
+  static final inputValidationMessages = InputValidationMessagesKeys();
 
   /// Error Messages Keys
-  static ErrorMessagesKeys get errorMessages => ErrorMessagesKeys();
+  static final errorMessages = ErrorMessagesKeys();
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/widgets/app_text_field.dart';
 
 class RecipeStepTextField extends StatelessWidget {
@@ -6,8 +7,8 @@ class RecipeStepTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const AppTextField(
-      labelText: 'Label',
+    return AppTextField(
+      labelText: AppTranslations.createRecipe.stepHint,
     );
   }
 }

@@ -54,7 +54,7 @@ class VerifyToUpdateEmailBottomSheet extends StatelessWidget {
           height: context.deviceHeight * 0.05,
         ),
         Text(
-          'You need to verify your account in order to change your email.',
+          AppTranslations.verifyAccount.verifyToUpdateEmail,
           style: context.theme.dialogTheme.titleTextStyle,
           textAlign: TextAlign.center,
         ),

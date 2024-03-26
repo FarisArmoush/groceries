@@ -17,20 +17,21 @@ class MyTasksRail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final tasksIsNotEmpty = tasks?.isNotEmpty ?? false;
     return ListView(
       shrinkWrap: true,
       primary: false,
       physics: const NeverScrollableScrollPhysics(),
       children: [
         RailTitle(
-          title: AppTranslations.home.myTasks,
+          title: Text(AppTranslations.home.myTasks),
         ),
         SizedBox(
-          height: tasks?.isNotEmpty ?? false
+          height: tasksIsNotEmpty
               ? context.deviceHeight * 0.025
               : context.deviceHeight * 0.05,
         ),
-        if (tasks?.isNotEmpty ?? false)
+        if (tasksIsNotEmpty)
           MyTasksList(
             tasks: tasks,
           )

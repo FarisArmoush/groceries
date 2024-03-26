@@ -48,19 +48,21 @@ class GroceriesBoxList extends StatelessWidget {
 
   Widget _buildIcon(BuildContext context, GroceryModel? item) {
     final isDone = item?.isDone ?? false;
-    return isDone
-        ? Assets.icons.doubleCheck.svg(
-            colorFilter: const ColorFilter.mode(
-              Colors.green,
-              BlendMode.srcIn,
-            ),
-          )
-        : Assets.icons.check.svg(
-            colorFilter: ColorFilter.mode(
-              context.theme.primaryColor,
-              BlendMode.srcIn,
-            ),
-          );
+    if (isDone) {
+      return Assets.icons.doubleCheck.svg(
+        colorFilter: const ColorFilter.mode(
+          Colors.green,
+          BlendMode.srcIn,
+        ),
+      );
+    } else {
+      return Assets.icons.check.svg(
+        colorFilter: ColorFilter.mode(
+          context.theme.primaryColor,
+          BlendMode.srcIn,
+        ),
+      );
+    }
   }
 
   void _showBottomSheet(BuildContext context, GroceryModel? item) {

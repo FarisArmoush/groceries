@@ -39,4 +39,7 @@ final class GeneralKeys {
 
   /// discard_changes
   final discardChanges = 'discard_changes'.tr();
+
+  /// loading_message
+  final loadingMessage = 'loading_message'.tr();
 }

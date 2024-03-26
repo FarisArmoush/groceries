@@ -23,7 +23,7 @@ class RecipeCreatedUnsuccessfullyView extends StatelessWidget {
             ),
             Assets.illustrations.error.svg(),
             Text(
-              'oops...',
+              AppTranslations.createRecipe.failedToCreateHeader,
               style: TextStyle(
                 fontWeight: AppFontWeights.semiBold,
                 color: context.theme.primaryColorLight,
@@ -35,7 +35,7 @@ class RecipeCreatedUnsuccessfullyView extends StatelessWidget {
               height: context.deviceHeight * 0.01,
             ),
             Text(
-              'Something went wrong, try again later.',
+              AppTranslations.createRecipe.failedToCreateBody,
               style: TextStyle(
                 fontWeight: AppFontWeights.regular,
                 color: context.theme.hintColor,

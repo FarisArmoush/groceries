@@ -5,10 +5,10 @@ class RegisterKeys {
   final register = 'register'.tr();
 
   /// register_header
-  final registerHeader = 'register_header'.tr();
+  final header = 'register_header'.tr();
 
   /// register_body
-  final registerBody = 'register_body'.tr();
+  final body = 'register_body'.tr();
 
   /// already_have_an_account
   final alreadyHaveAnAccount = 'already_have_an_account'.tr();
@@ -18,4 +18,7 @@ class RegisterKeys {
 
   /// repeat_password
   final repeatPassword = 'repeat_password'.tr();
+
+  /// account_created_successfully
+  final accountCreatedSuccessfully = 'account_created_successfully'.tr();
 }

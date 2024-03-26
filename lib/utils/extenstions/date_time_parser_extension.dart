@@ -1,3 +1,4 @@
+import 'package:groceries/utils/extenstions/hard_coded_extension.dart';
 import 'package:groceries/utils/extenstions/num_extensions.dart';
 
 /// Extension providing utility methods for parsing and formatting date strings.
@@ -41,7 +42,7 @@ extension DateTimeParser on String {
       return '${day}th';
     }
     return switch (day % 10) {
-      1 => '${day}st',
+      1 => '${day}st'.hardCoded,
       2 => '${day}nd',
       3 => '${day}rd',
       _ => '${day}th',

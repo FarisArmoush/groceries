@@ -5,10 +5,10 @@ final class AccountSettingsKeys {
   final editUserImage = 'edit_user_image'.tr();
 
   /// account_settings
-  final accountSettings = 'account_settings'.tr();
+  final title = 'account_settings'.tr();
 
   /// account_settings_description
-  final accountSettingsDescription = 'account_settings_description'.tr();
+  final description = 'account_settings_description'.tr();
 
   /// verified
   final verified = 'verified'.tr();
