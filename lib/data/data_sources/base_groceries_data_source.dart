@@ -1,7 +1,6 @@
-import 'dart:developer';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
+import 'package:groceries/utils/exceptions/app_network_exception.dart';
 import 'package:groceries/utils/keys/firestore_keys.dart';
 import 'package:injectable/injectable.dart';
 
@@ -29,8 +28,9 @@ class BaseGroceriesDataSource {
       }
       return items;
     } on FirebaseException catch (e) {
-      log('fetchCategories Error Message => ${e.message}');
-      return [];
+      throw AppNetworkException.fromCode(e.code);
+    } catch (_) {
+      throw const AppNetworkException();
     }
   }
 }

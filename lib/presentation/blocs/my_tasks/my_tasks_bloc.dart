@@ -1,8 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/task_model/task_model.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/fetch_my_tasks_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
+import 'package:groceries/utils/exceptions/app_network_exception.dart';
 import 'package:injectable/injectable.dart';
 
 part 'my_tasks_bloc.freezed.dart';
@@ -32,11 +34,19 @@ class MyTasksBloc extends Bloc<MyTasksEvent, MyTasksState> {
           myTasks: myTasks,
         ),
       );
-    } catch (e) {
+    } on AppNetworkException catch (e) {
       emit(
         state.copyWith(
           status: BlocStatus.failure(
-            e.toString(),
+            e.message ?? AppTranslations.errorMessages.defaultError,
+          ),
+        ),
+      );
+    } catch (_) {
+      emit(
+        state.copyWith(
+          status: BlocStatus.failure(
+            AppTranslations.errorMessages.defaultError,
           ),
         ),
       );

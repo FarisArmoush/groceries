@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/send_password_reset_email_use_case.dart';
-import 'package:groceries/utils/exceptions/send_password_reset_email_exception.dart';
+import 'package:groceries/utils/exceptions/app_network_exception.dart';
 import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 import 'package:groceries/utils/forms/email_form.dart';
 import 'package:injectable/injectable.dart';
@@ -56,7 +56,7 @@ class ForgotPasswordBloc
           status: FormzSubmissionStatus.success,
         ),
       );
-    } on SendPasswordResetEmailException catch (e) {
+    } on AppNetworkException catch (e) {
       emit(
         state.copyWith(
           errorMessage: e.message,

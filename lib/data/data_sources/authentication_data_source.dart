@@ -2,13 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:groceries/data/models/login_param/login_param.dart';
 import 'package:groceries/data/models/register_param/register_param.dart';
-import 'package:groceries/utils/exceptions/delete_account_exception.dart';
-import 'package:groceries/utils/exceptions/login_with_email_password_exception.dart';
-import 'package:groceries/utils/exceptions/logout_exception.dart';
-import 'package:groceries/utils/exceptions/register_with_email_and_password_exception.dart';
-import 'package:groceries/utils/exceptions/send_password_reset_email_exception.dart';
-import 'package:groceries/utils/exceptions/update_email_exception.dart';
-import 'package:groceries/utils/exceptions/update_password_exception.dart';
+import 'package:groceries/utils/exceptions/app_network_exception.dart';
 import 'package:groceries/utils/keys/firestore_keys.dart';
 import 'package:injectable/injectable.dart';
 
@@ -32,9 +26,9 @@ class AuthenticationDataSource {
         password: param.password,
       );
     } on FirebaseAuthException catch (e) {
-      throw LoginWithEmailAndPasswordException.fromCode(e.code);
+      throw AppNetworkException.fromCode(e.code);
     } catch (_) {
-      throw const LoginWithEmailAndPasswordException();
+      throw const AppNetworkException();
     }
   }
 
@@ -60,9 +54,9 @@ class AuthenticationDataSource {
         );
       });
     } on FirebaseAuthException catch (e) {
-      throw RegisterWithEmailAndPasswordException.fromCode(e.code);
+      throw AppNetworkException.fromCode(e.code);
     } catch (_) {
-      throw const RegisterWithEmailAndPasswordException();
+      throw const AppNetworkException();
     }
   }
 
@@ -73,8 +67,10 @@ class AuthenticationDataSource {
           .doc(currentUser?.uid)
           .delete();
       await currentUser?.delete();
-    } catch (e) {
-      throw DeleteAccountException();
+    } on FirebaseAuthException catch (e) {
+      throw AppNetworkException.fromCode(e.message ?? '');
+    } catch (_) {
+      throw const AppNetworkException();
     }
   }
 
@@ -83,8 +79,10 @@ class AuthenticationDataSource {
       await Future.wait([
         firebaseAuth.signOut(),
       ]);
+    } on FirebaseAuthException catch (e) {
+      throw AppNetworkException.fromCode(e.message ?? '');
     } catch (_) {
-      throw LogoutException();
+      throw const AppNetworkException();
     }
   }
 
@@ -95,9 +93,9 @@ class AuthenticationDataSource {
     try {
       await firebaseAuth.sendPasswordResetEmail(email: email);
     } on FirebaseAuthException catch (e) {
-      throw SendPasswordResetEmailException.fromCode(e.code);
+      throw AppNetworkException.fromCode(e.message ?? '');
     } catch (_) {
-      throw const SendPasswordResetEmailException();
+      throw const AppNetworkException();
     }
   }
 
@@ -116,9 +114,9 @@ class AuthenticationDataSource {
             },
           );
     } on FirebaseAuthException catch (e) {
-      throw Exception(e.code);
+      throw AppNetworkException.fromCode(e.message ?? '');
     } catch (_) {
-      throw Exception('Somethign');
+      throw const AppNetworkException();
     }
   }
 
@@ -134,9 +132,9 @@ class AuthenticationDataSource {
                 .update({FirestoreField.email: email}),
           );
     } on FirebaseAuthException catch (e) {
-      throw UpdateEmailException.fromCode(e.code);
+      throw AppNetworkException.fromCode(e.message ?? '');
     } catch (_) {
-      throw const UpdateEmailException();
+      throw const AppNetworkException();
     }
   }
 
@@ -147,9 +145,9 @@ class AuthenticationDataSource {
     try {
       await currentUser?.updatePassword(password);
     } on FirebaseAuthException catch (e) {
-      throw UpdatePasswordException.fromCode(e.code);
+      throw AppNetworkException.fromCode(e.message ?? '');
     } catch (_) {
-      throw const UpdatePasswordException();
+      throw const AppNetworkException();
     }
   }
 
@@ -157,9 +155,9 @@ class AuthenticationDataSource {
     try {
       await currentUser?.sendEmailVerification();
     } on FirebaseAuthException catch (e) {
-      throw Exception(e.code);
+      throw AppNetworkException.fromCode(e.code);
     } catch (_) {
-      throw Exception('Something went wrong!');
+      throw const AppNetworkException();
     }
   }
 

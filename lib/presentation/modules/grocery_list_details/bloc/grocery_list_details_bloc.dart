@@ -1,11 +1,13 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/grocery_list_details_model/grocery_list_details_model.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/add_item_to_list_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/clear_grocery_list_items_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/fetch_grocery_list_details_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/remove_item_from_list_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
+import 'package:groceries/utils/exceptions/app_network_exception.dart';
 import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 import 'package:injectable/injectable.dart';
 
@@ -50,8 +52,22 @@ class GroceryListDetailsBloc
           status: const BlocStatus.success(),
         ),
       );
-    } catch (e) {
-      emit(state.copyWith(status: BlocStatus.failure(e.toString())));
+    } on AppNetworkException catch (e) {
+      emit(
+        state.copyWith(
+          status: BlocStatus.failure(
+            e.message ?? AppTranslations.errorMessages.defaultError,
+          ),
+        ),
+      );
+    } catch (_) {
+      emit(
+        state.copyWith(
+          status: BlocStatus.failure(
+            AppTranslations.errorMessages.defaultError,
+          ),
+        ),
+      );
     }
   }
 
@@ -82,8 +98,22 @@ class GroceryListDetailsBloc
           addItemStatus: const BlocStatus.success(),
         ),
       );
-    } catch (e) {
-      emit(state.copyWith(addItemStatus: BlocStatus.failure(e.toString())));
+    } on AppNetworkException catch (e) {
+      emit(
+        state.copyWith(
+          status: BlocStatus.failure(
+            e.message ?? AppTranslations.errorMessages.defaultError,
+          ),
+        ),
+      );
+    } catch (_) {
+      emit(
+        state.copyWith(
+          status: BlocStatus.failure(
+            AppTranslations.errorMessages.defaultError,
+          ),
+        ),
+      );
     } finally {
       await Future.delayed(
         200.milliseconds,
@@ -104,8 +134,22 @@ class GroceryListDetailsBloc
           removeItemStatus: const BlocStatus.success(),
         ),
       );
-    } catch (e) {
-      emit(state.copyWith(removeItemStatus: BlocStatus.failure(e.toString())));
+    } on AppNetworkException catch (e) {
+      emit(
+        state.copyWith(
+          status: BlocStatus.failure(
+            e.message ?? AppTranslations.errorMessages.defaultError,
+          ),
+        ),
+      );
+    } catch (_) {
+      emit(
+        state.copyWith(
+          status: BlocStatus.failure(
+            AppTranslations.errorMessages.defaultError,
+          ),
+        ),
+      );
     } finally {
       await Future.delayed(
         200.milliseconds,
@@ -127,8 +171,22 @@ class GroceryListDetailsBloc
           clearStatus: const BlocStatus.success(),
         ),
       );
-    } catch (e) {
-      emit(state.copyWith(clearStatus: BlocStatus.failure(e.toString())));
+    } on AppNetworkException catch (e) {
+      emit(
+        state.copyWith(
+          status: BlocStatus.failure(
+            e.message ?? AppTranslations.errorMessages.defaultError,
+          ),
+        ),
+      );
+    } catch (_) {
+      emit(
+        state.copyWith(
+          status: BlocStatus.failure(
+            AppTranslations.errorMessages.defaultError,
+          ),
+        ),
+      );
     } finally {
       await Future.delayed(
         200.milliseconds,

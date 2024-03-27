@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/category_model/category_model.dart';
@@ -7,6 +6,7 @@ import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/domain/use_cases/fetch_categories_use_case.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/fetch_category_items_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
+import 'package:groceries/utils/exceptions/app_network_exception.dart';
 import 'package:injectable/injectable.dart';
 
 part 'category_details_bloc.freezed.dart';
@@ -50,7 +50,7 @@ class CategoryDetailsBloc
           categories: categories,
         ),
       );
-    } on FirebaseException catch (e) {
+    } on AppNetworkException catch (e) {
       emit(
         state.copyWith(
           status: BlocStatus.failure(
@@ -86,7 +86,7 @@ class CategoryDetailsBloc
           groceries: groceries,
         ),
       );
-    } on FirebaseException catch (e) {
+    } on AppNetworkException catch (e) {
       emit(
         state.copyWith(
           status: BlocStatus.failure(
