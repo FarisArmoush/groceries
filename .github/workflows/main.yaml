@@ -41,5 +41,5 @@ jobs:
         uses: VeryGoodOpenSource/very_good_coverage@v3
         with:
           path: ./coverage/lcov.info
-          min_coverage: 84
+          min_coverage: 85
           exclude: '**/*.g.dart **/*.freezed.dart'
