@@ -3,7 +3,7 @@ import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/update_email_use_case.dart';
-import 'package:groceries/utils/exceptions/send_verification_email_exception.dart';
+import 'package:groceries/utils/exceptions/app_network_exception.dart';
 import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 import 'package:groceries/utils/forms/email_form.dart';
 import 'package:injectable/injectable.dart';
@@ -32,11 +32,11 @@ class UpdateEmailBloc extends Bloc<UpdateEmailEvent, UpdateEmailState> {
     try {
       await _updateEmailUseCase(state.email.value);
       emit(state.copyWith(status: FormzSubmissionStatus.success));
-    } on SendVerificationEmailException catch (e) {
+    } on AppNetworkException catch (e) {
       emit(
         state.copyWith(
           status: FormzSubmissionStatus.failure,
-          errorMessage: e.error,
+          errorMessage: e.message,
         ),
       );
     } catch (_) {

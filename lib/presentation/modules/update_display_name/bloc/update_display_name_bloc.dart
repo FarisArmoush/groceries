@@ -3,6 +3,7 @@ import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/update_display_name_use_case.dart';
+import 'package:groceries/utils/exceptions/app_network_exception.dart';
 import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 import 'package:groceries/utils/forms/display_name_form.dart';
 import 'package:injectable/injectable.dart';
@@ -34,6 +35,13 @@ class UpdateDisplayNameBloc
     try {
       await _updateDisplayNameUseCase(state.displayName.value);
       emit(state.copyWith(status: FormzSubmissionStatus.success));
+    } on AppNetworkException catch (e) {
+      emit(
+        state.copyWith(
+          status: FormzSubmissionStatus.failure,
+          errorMessage: e.message,
+        ),
+      );
     } catch (_) {
       emit(
         state.copyWith(

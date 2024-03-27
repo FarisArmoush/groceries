@@ -1,8 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
 import 'package:groceries/domain/use_cases/remote_use_cases/grocery_lists_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
+import 'package:groceries/utils/exceptions/app_network_exception.dart';
 import 'package:injectable/injectable.dart';
 
 part 'grocery_lists_bloc.freezed.dart';
@@ -38,10 +40,20 @@ class GroceryListsBloc extends Bloc<GroceryListsEvent, GroceryListsState> {
           groceryLists: groceryLists ?? [],
         ),
       );
-    } catch (e) {
+    } on AppNetworkException catch (e) {
       emit(
         state.copyWith(
-          status: BlocStatus.failure(e.toString()),
+          status: BlocStatus.failure(
+            e.message ?? AppTranslations.errorMessages.defaultError,
+          ),
+        ),
+      );
+    } catch (_) {
+      emit(
+        state.copyWith(
+          status: BlocStatus.failure(
+            AppTranslations.errorMessages.defaultError,
+          ),
         ),
       );
     }
