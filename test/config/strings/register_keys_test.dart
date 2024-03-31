@@ -1,25 +1,43 @@
-
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 
-class RegisterKeys {
-  /// register
-  final register = 'register'.tr();
+void main() {
+  group('RegisterKeys', () {
+    test('translations should not be null', () {
+      final keys = RegisterKeys();
 
-  /// register_header
-  final header = 'register_header'.tr();
+      expect(keys.register, isNotNull);
+      expect(keys.header, isNotNull);
+      expect(keys.body, isNotNull);
+      expect(keys.alreadyHaveAnAccount, isNotNull);
+      expect(keys.loginNow, isNotNull);
+      expect(keys.repeatPassword, isNotNull);
+      expect(keys.accountCreatedSuccessfully, isNotNull);
+    });
 
-  /// register_body
-  final body = 'register_body'.tr();
+    test('translations should not be empty', () {
+      final keys = RegisterKeys();
 
-  /// already_have_an_account
-  final alreadyHaveAnAccount = 'already_have_an_account'.tr();
+      expect(keys.register.isNotEmpty, true);
+      expect(keys.header.isNotEmpty, true);
+      expect(keys.body.isNotEmpty, true);
+      expect(keys.alreadyHaveAnAccount.isNotEmpty, true);
+      expect(keys.loginNow.isNotEmpty, true);
+      expect(keys.repeatPassword.isNotEmpty, true);
+      expect(keys.accountCreatedSuccessfully.isNotEmpty, true);
+    });
 
-  /// login_now
-  final loginNow = 'login_now'.tr();
+    test('translations should be localized', () {
+      final keys = RegisterKeys();
 
-  /// repeat_password
-  final repeatPassword = 'repeat_password'.tr();
-
-  /// account_created_successfully
-  final accountCreatedSuccessfully = 'account_created_successfully'.tr();
+      expect(tr(keys.register), isNotNull);
+      expect(tr(keys.header), isNotNull);
+      expect(tr(keys.body), isNotNull);
+      expect(tr(keys.alreadyHaveAnAccount), isNotNull);
+      expect(tr(keys.loginNow), isNotNull);
+      expect(tr(keys.repeatPassword), isNotNull);
+      expect(tr(keys.accountCreatedSuccessfully), isNotNull);
+    });
+  });
 }

@@ -1,30 +1,49 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 
-final class CreateRecipeKeys {
-  /// create_recipe
-  final createRecipe = 'create_recipe'.tr();
+void main() {
+  group('CreateRecipeKeys', () {
+    test('translations should not be null', () {
+      final keys = CreateRecipeKeys();
 
-  /// recipe_name
-  final recipeName = 'recipe_name'.tr();
+      expect(keys.createRecipe, isNotNull);
+      expect(keys.recipeName, isNotNull);
+      expect(keys.addItemsToRecipe, isNotNull);
+      expect(keys.addStep, isNotNull);
+      expect(keys.failedToCreateHeader, isNotNull);
+      expect(keys.failedToCreateBody, isNotNull);
+      expect(keys.successHeader, isNotNull);
+      expect(keys.successBody, isNotNull);
+      expect(keys.stepHint, isNotNull);
+    });
 
-  /// add_items_to_recipe
-  final addItemsToRecipe = 'add_items_to_recipe'.tr();
+    test('translations should not be empty', () {
+      final keys = CreateRecipeKeys();
 
-  /// add_step
-  final addStep = 'add_step'.tr();
+      expect(keys.createRecipe.isNotEmpty, true);
+      expect(keys.recipeName.isNotEmpty, true);
+      expect(keys.addItemsToRecipe.isNotEmpty, true);
+      expect(keys.addStep.isNotEmpty, true);
+      expect(keys.failedToCreateHeader.isNotEmpty, true);
+      expect(keys.failedToCreateBody.isNotEmpty, true);
+      expect(keys.successHeader.isNotEmpty, true);
+      expect(keys.successBody.isNotEmpty, true);
+      expect(keys.stepHint.isNotEmpty, true);
+    });
 
-  /// failed_to_create_recipe_header
-  final failedToCreateHeader = 'failed_to_create_recipe_header'.tr();
+    test('translations should be localized', () {
+      final keys = CreateRecipeKeys();
 
-  /// failed_to_create_recipe_body
-  final failedToCreateBody = 'failed_to_create_recipe_body'.tr();
-
-  /// recipe_created_successfully_header
-  final successHeader = 'recipe_created_successfully_header'.tr();
-
-  /// recipe_created_successfully_body
-  final successBody = 'recipe_created_successfully_body'.tr();
-
-  /// create_recipe_step_hint
-  final stepHint = 'create_recipe_step_hint'.tr();
+      expect(tr(keys.createRecipe), isNotNull);
+      expect(tr(keys.recipeName), isNotNull);
+      expect(tr(keys.addItemsToRecipe), isNotNull);
+      expect(tr(keys.addStep), isNotNull);
+      expect(tr(keys.failedToCreateHeader), isNotNull);
+      expect(tr(keys.failedToCreateBody), isNotNull);
+      expect(tr(keys.successHeader), isNotNull);
+      expect(tr(keys.successBody), isNotNull);
+      expect(tr(keys.stepHint), isNotNull);
+    });
+  });
 }

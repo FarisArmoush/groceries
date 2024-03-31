@@ -1,27 +1,46 @@
-
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 
-class VerifyAccountKeys {
-  /// verify_account
-  final verifyAccount = 'verify_account'.tr();
+void main() {
+  group('VerifyAccountKeys', () {
+    test('translations should not be null', () {
+      final keys = VerifyAccountKeys();
 
-  /// send_verification_email
-  final sendVerificationEmail = 'send_verification_email'.tr();
+      expect(keys.verifyAccount, isNotNull);
+      expect(keys.sendVerificationEmail, isNotNull);
+      expect(keys.failedMessage, isNotNull);
+      expect(keys.successHeader, isNotNull);
+      expect(keys.successBody, isNotNull);
+      expect(keys.loadingMessage, isNotNull);
+      expect(keys.isVerified, isNotNull);
+      expect(keys.verifyToUpdateEmail, isNotNull);
+    });
 
-  /// failed_to_send_verification_email
-  final failedMessage = 'failed_to_send_verification_email'.tr();
+    test('translations should not be empty', () {
+      final keys = VerifyAccountKeys();
 
-  /// verification_email_sent_successfully_header
-  final successHeader = 'verification_email_sent_successfully_header'.tr();
+      expect(keys.verifyAccount.isNotEmpty, true);
+      expect(keys.sendVerificationEmail.isNotEmpty, true);
+      expect(keys.failedMessage.isNotEmpty, true);
+      expect(keys.successHeader.isNotEmpty, true);
+      expect(keys.successBody.isNotEmpty, true);
+      expect(keys.loadingMessage.isNotEmpty, true);
+      expect(keys.isVerified.isNotEmpty, true);
+      expect(keys.verifyToUpdateEmail.isNotEmpty, true);
+    });
 
-  /// verification_email_sent_successfully_body
-  final successBody = 'verification_email_sent_successfully_body'.tr();
+    test('translations should be localized', () {
+      final keys = VerifyAccountKeys();
 
-  /// sending_verification_email_loading_message
-  final loadingMessage = 'sending_verification_email_loading_message'.tr();
-
-  /// your_account_is_verified
-  final isVerified = 'your_account_is_verified'.tr();
-
-  final verifyToUpdateEmail = 'verify_to_update_email'.tr();
+      expect(tr(keys.verifyAccount), isNotNull);
+      expect(tr(keys.sendVerificationEmail), isNotNull);
+      expect(tr(keys.failedMessage), isNotNull);
+      expect(tr(keys.successHeader), isNotNull);
+      expect(tr(keys.successBody), isNotNull);
+      expect(tr(keys.loadingMessage), isNotNull);
+      expect(tr(keys.isVerified), isNotNull);
+      expect(tr(keys.verifyToUpdateEmail), isNotNull);
+    });
+  });
 }

@@ -1,21 +1,40 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 
-final class PremiumKeys {
-  /// buy_premium
-  final buyPremium = 'buy_premium'.tr();
+void main() {
+  group('PremiumKeys', () {
+    test('translations should not be null', () {
+      final keys = PremiumKeys();
 
-  /// premium_title
-  final title = 'premium_title'.tr();
+      expect(keys.buyPremium, isNotNull);
+      expect(keys.title, isNotNull);
+      expect(keys.description, isNotNull);
+      expect(keys.suscribe, isNotNull);
+      expect(keys.annual, isNotNull);
+      expect(keys.monthly, isNotNull);
+    });
 
-  /// premium_title
-  final description = 'premium_description'.tr();
+    test('translations should not be empty', () {
+      final keys = PremiumKeys();
 
-  /// buy_premium_cta
-  final suscribe = 'buy_premium_cta'.tr();
+      expect(keys.buyPremium.isNotEmpty, true);
+      expect(keys.title.isNotEmpty, true);
+      expect(keys.description.isNotEmpty, true);
+      expect(keys.suscribe.isNotEmpty, true);
+      expect(keys.annual.isNotEmpty, true);
+      expect(keys.monthly.isNotEmpty, true);
+    });
 
-  /// annual
-  final annual = 'annual'.tr();
+    test('translations should be localized', () {
+      final keys = PremiumKeys();
 
-  /// monthly
-  final monthly = 'monthly'.tr();
+      expect(tr(keys.buyPremium), isNotNull);
+      expect(tr(keys.title), isNotNull);
+      expect(tr(keys.description), isNotNull);
+      expect(tr(keys.suscribe), isNotNull);
+      expect(tr(keys.annual), isNotNull);
+      expect(tr(keys.monthly), isNotNull);
+    });
+  });
 }

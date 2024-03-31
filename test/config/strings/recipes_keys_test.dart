@@ -1,42 +1,58 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 
-class RecipesKeys {
-  /// recipes
-  final recipes = 'recipes'.tr();
+void main() {
+  group('RecipesKeys', () {
+    test('translations should not be null', () {
+      final keys = RecipesKeys();
 
-  /// add_recipe_to_list
-  final addRecipeToList = 'add_recipe_to_list'.tr();
+      expect(keys.recipes, isNotNull);
+      expect(keys.addRecipeToList, isNotNull);
+      expect(keys.archiveRecipe, isNotNull);
+      expect(keys.deleteRecipe, isNotNull);
+      expect(keys.deleteRecipeBottomSheetHeader, isNotNull);
+      expect(keys.yesDeleteRecipe, isNotNull);
+      expect(keys.dontDeleteRecipe, isNotNull);
+      expect(keys.createFirstRecipe, isNotNull);
+      expect(keys.emptyRecipesHeader, isNotNull);
+      expect(keys.emptyRecipesBody, isNotNull);
+      expect(keys.addRecipeToListBottomSheetHeader, isNotNull);
+      expect(keys.addRecipeToListBottomSheetBody, isNotNull);
+    });
 
-  /// archive_recipe
-  final archiveRecipe = 'archive_recipe'.tr();
+    test('translations should not be empty', () {
+      final keys = RecipesKeys();
 
-  /// delete_recipe
-  final deleteRecipe = 'delete_recipe'.tr();
+      expect(keys.recipes.isNotEmpty, true);
+      expect(keys.addRecipeToList.isNotEmpty, true);
+      expect(keys.archiveRecipe.isNotEmpty, true);
+      expect(keys.deleteRecipe.isNotEmpty, true);
+      expect(keys.deleteRecipeBottomSheetHeader.isNotEmpty, true);
+      expect(keys.yesDeleteRecipe.isNotEmpty, true);
+      expect(keys.dontDeleteRecipe.isNotEmpty, true);
+      expect(keys.createFirstRecipe.isNotEmpty, true);
+      expect(keys.emptyRecipesHeader.isNotEmpty, true);
+      expect(keys.emptyRecipesBody.isNotEmpty, true);
+      expect(keys.addRecipeToListBottomSheetHeader.isNotEmpty, true);
+      expect(keys.addRecipeToListBottomSheetBody.isNotEmpty, true);
+    });
 
-  /// delete_recipe_bottom_sheet_header
-  final deleteRecipeBottomSheetHeader =
-      'delete_recipe_bottom_sheet_header'.tr();
+    test('translations should be localized', () {
+      final keys = RecipesKeys();
 
-  /// yes_delete_recipe
-  final yesDeleteRecipe = 'yes_delete_recipe'.tr();
-
-  /// dont_delete_recipe
-  final dontDeleteRecipe = 'dont_delete_recipe'.tr();
-
-  /// create_first_recipe
-  final createFirstRecipe = 'create_first_recipe'.tr();
-
-  /// empty_recipes_header
-  final emptyRecipesHeader = 'empty_recipes_header'.tr();
-
-  /// empty_recipes_body
-  final emptyRecipesBody = 'empty_recipes_body'.tr();
-
-  /// add_recipe_to_list_bottom_sheet_header
-  final addRecipeToListBottomSheetHeader =
-      'add_recipe_to_list_bottom_sheet_header'.tr();
-
-  ///add_recipe_to_list_bottom_sheet_body
-  final addRecipeToListBottomSheetBody =
-      'add_recipe_to_list_bottom_sheet_body'.tr();
+      expect(tr(keys.recipes), isNotNull);
+      expect(tr(keys.addRecipeToList), isNotNull);
+      expect(tr(keys.archiveRecipe), isNotNull);
+      expect(tr(keys.deleteRecipe), isNotNull);
+      expect(tr(keys.deleteRecipeBottomSheetHeader), isNotNull);
+      expect(tr(keys.yesDeleteRecipe), isNotNull);
+      expect(tr(keys.dontDeleteRecipe), isNotNull);
+      expect(tr(keys.createFirstRecipe), isNotNull);
+      expect(tr(keys.emptyRecipesHeader), isNotNull);
+      expect(tr(keys.emptyRecipesBody), isNotNull);
+      expect(tr(keys.addRecipeToListBottomSheetHeader), isNotNull);
+      expect(tr(keys.addRecipeToListBottomSheetBody), isNotNull);
+    });
+  });
 }

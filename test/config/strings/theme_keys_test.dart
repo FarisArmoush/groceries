@@ -1,21 +1,40 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 
-class ThemeKeys {
-  /// theme
-  final theme = 'theme'.tr();
+void main() {
+  group('ThemeKeys', () {
+    test('translations should not be null', () {
+      final keys = ThemeKeys();
 
-  /// theme_header
-  final header = 'theme_header'.tr();
+      expect(keys.theme, isNotNull);
+      expect(keys.header, isNotNull);
+      expect(keys.hint, isNotNull);
+      expect(keys.light, isNotNull);
+      expect(keys.dark, isNotNull);
+      expect(keys.system, isNotNull);
+    });
 
-  /// theme_hint
-  final hint = 'theme_hint'.tr();
+    test('translations should not be empty', () {
+      final keys = ThemeKeys();
 
-  /// theme_hint
-  final light = 'light_mode'.tr();
+      expect(keys.theme.isNotEmpty, true);
+      expect(keys.header.isNotEmpty, true);
+      expect(keys.hint.isNotEmpty, true);
+      expect(keys.light.isNotEmpty, true);
+      expect(keys.dark.isNotEmpty, true);
+      expect(keys.system.isNotEmpty, true);
+    });
 
-  /// dark_mode
-  final dark = 'dark_mode'.tr();
+    test('translations should be localized', () {
+      final keys = ThemeKeys();
 
-  /// system_mode
-  final system = 'system_mode'.tr();
+      expect(tr(keys.theme), isNotNull);
+      expect(tr(keys.header), isNotNull);
+      expect(tr(keys.hint), isNotNull);
+      expect(tr(keys.light), isNotNull);
+      expect(tr(keys.dark), isNotNull);
+      expect(tr(keys.system), isNotNull);
+    });
+  });
 }

@@ -1,22 +1,46 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 
-final class ForgotPasswordKeys {
-  /// forgot_password
-  final header = 'forsgot_password'.tr();
+void main() {
+  group('ForgotPasswordKeys', () {
+    test('translations should not be null', () {
+      final keys = ForgotPasswordKeys();
 
-  /// forgot_password_body
-  final body = 'forgot_password_body'.tr();
+      expect(keys.header, isNotNull);
+      expect(keys.body, isNotNull);
+      expect(keys.sendResetPassword, isNotNull);
+      expect(keys.cancelDialogHeader, isNotNull);
+      expect(keys.yesCancel, isNotNull);
+      expect(keys.dontCancel, isNotNull);
+      expect(keys.successHeader, isNotNull);
+      expect(keys.successBody, isNotNull);
+    });
 
-  /// send_reset_password
-  final sendResetPassword = 'send_reset_password'.tr();
+    test('translations should not be empty', () {
+      final keys = ForgotPasswordKeys();
 
-  /// cancel_forgot_password_dialog_header
-  final cancelDialogHeader =
-      'cancel_forgot_password_dialog_header'.tr();
+      expect(keys.header.isNotEmpty, true);
+      expect(keys.body.isNotEmpty, true);
+      expect(keys.sendResetPassword.isNotEmpty, true);
+      expect(keys.cancelDialogHeader.isNotEmpty, true);
+      expect(keys.yesCancel.isNotEmpty, true);
+      expect(keys.dontCancel.isNotEmpty, true);
+      expect(keys.successHeader.isNotEmpty, true);
+      expect(keys.successBody.isNotEmpty, true);
+    });
 
-  /// yes_cancel_forgot_password
-  final yesCancel = 'yes_cancel_forgot_password'.tr();
+    test('translations should be localized', () {
+      final keys = ForgotPasswordKeys();
 
-  /// dont_cancel_forgot_password
-  final dontCancel = 'dont_cancel_forgot_password'.tr();
+      expect(tr(keys.header), isNotNull);
+      expect(tr(keys.body), isNotNull);
+      expect(tr(keys.sendResetPassword), isNotNull);
+      expect(tr(keys.cancelDialogHeader), isNotNull);
+      expect(tr(keys.yesCancel), isNotNull);
+      expect(tr(keys.dontCancel), isNotNull);
+      expect(tr(keys.successHeader), isNotNull);
+      expect(tr(keys.successBody), isNotNull);
+    });
+  });
 }

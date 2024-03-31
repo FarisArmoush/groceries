@@ -31,7 +31,7 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
             height: context.deviceHeight * 0.045,
           ),
           Text(
-            AppTranslations.resetPassword.successHeader,
+            AppTranslations.forgotPassword.successHeader,
             style: TextStyle(
               fontWeight: AppFontWeights.bold,
               color: context.theme.primaryColorLight,
@@ -43,7 +43,7 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
             height: context.deviceHeight * 0.01,
           ),
           Text(
-            AppTranslations.resetPassword.successBody,
+            AppTranslations.forgotPassword.successBody,
             style: TextStyle(
               fontWeight: AppFontWeights.regular,
               color: context.theme.primaryColor,

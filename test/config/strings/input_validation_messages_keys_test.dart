@@ -1,35 +1,49 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 
-final class InputValidationMessagesKeys {
-  /// field_cannot_be_empty
-  final fieldCannotBeEmpty = 'field_cannot_be_empty'.tr();
+void main() {
+  group('InputValidationMessagesKeys', () {
+    test('translations should not be null', () {
+      final keys = InputValidationMessagesKeys();
 
-  /// passwords_do_not_match
-  final passwordsDoNotMatch = 'passwords_do_not_match'.tr();
+      expect(keys.fieldCannotBeEmpty, isNotNull);
+      expect(keys.passwordsDoNotMatch, isNotNull);
+      expect(keys.fieldMustHaveAtLeastEightCharacters, isNotNull);
+      expect(keys.fieldMustNotContainSpecialCharacters, isNotNull);
+      expect(keys.fieldMustNotHaveSpace, isNotNull);
+      expect(keys.fieldMustAtLeastContainFourLetters, isNotNull);
+      expect(keys.emailIsntValid, isNotNull);
+      expect(keys.fieldMustContainAtLeastOneSpecialCharacter, isNotNull);
+      expect(keys.fieldMustContainAtLeastOneNumber, isNotNull);
+    });
 
-  /// filed_must_have_at_least_eight_characters
-  final fieldMustHaveAtLeastEightCharacters =
-      'filed_must_have_at_least_eight_characters'.tr();
+    test('translations should not be empty', () {
+      final keys = InputValidationMessagesKeys();
 
-  /// filed_must_not_contain_special_characters
-  final fieldMustNotContainSpecialCharacters =
-      'filed_must_not_contain_special_characters'.tr();
+      expect(keys.fieldCannotBeEmpty.isNotEmpty, true);
+      expect(keys.passwordsDoNotMatch.isNotEmpty, true);
+      expect(keys.fieldMustHaveAtLeastEightCharacters.isNotEmpty, true);
+      expect(keys.fieldMustNotContainSpecialCharacters.isNotEmpty, true);
+      expect(keys.fieldMustNotHaveSpace.isNotEmpty, true);
+      expect(keys.fieldMustAtLeastContainFourLetters.isNotEmpty, true);
+      expect(keys.emailIsntValid.isNotEmpty, true);
+      expect(keys.fieldMustContainAtLeastOneSpecialCharacter.isNotEmpty, true);
+      expect(keys.fieldMustContainAtLeastOneNumber.isNotEmpty, true);
+    });
 
-  /// field_must_not_have_space
-  final fieldMustNotHaveSpace = 'field_must_not_have_space'.tr();
+    test('translations should be localized', () {
+      final keys = InputValidationMessagesKeys();
 
-  /// field_must_at_least_contain_four_letters
-  final fieldMustAtLeastContainFourLetters =
-      'field_must_at_least_contain_four_letters'.tr();
-
-  /// email_isnt_valid
-  final emailIsntValid = 'email_isnt_valid'.tr();
-
-  /// field_must_contain_at_least_one_special_character
-  final fieldMustContainAtLeastOneSpecialCharacter =
-      'field_must_contain_at_least_one_special_character'.tr();
-
-  /// field_must_contain_at_least_one_number
-  final fieldMustContainAtLeastOneNumber =
-      'field_must_contain_at_least_one_number'.tr();
+      expect(tr(keys.fieldCannotBeEmpty), isNotNull);
+      expect(tr(keys.passwordsDoNotMatch), isNotNull);
+      expect(tr(keys.fieldMustHaveAtLeastEightCharacters), isNotNull);
+      expect(tr(keys.fieldMustNotContainSpecialCharacters), isNotNull);
+      expect(tr(keys.fieldMustNotHaveSpace), isNotNull);
+      expect(tr(keys.fieldMustAtLeastContainFourLetters), isNotNull);
+      expect(tr(keys.emailIsntValid), isNotNull);
+      expect(tr(keys.fieldMustContainAtLeastOneSpecialCharacter), isNotNull);
+      expect(tr(keys.fieldMustContainAtLeastOneNumber), isNotNull);
+    });
+  });
 }

@@ -1,15 +1,34 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 
-final class DeleteAccountKeys {
-  /// delete_account
-  final deleteAccount = 'delete_account'.tr();
+void main() {
+  group('DeleteAccountKeys', () {
+    test('translations should not be null', () {
+      final keys = DeleteAccountKeys();
 
-  /// delete_account_header
-  final header = 'delete_account_header'.tr();
+      expect(keys.deleteAccount, isNotNull);
+      expect(keys.header, isNotNull);
+      expect(keys.body, isNotNull);
+      expect(keys.yesDeleteAccount, isNotNull);
+    });
 
-  /// delete_account_body
-  final body = 'delete_account_body'.tr();
+    test('translations should not be empty', () {
+      final keys = DeleteAccountKeys();
 
-  /// yes_delete_account
-  final yesDeleteAccount = 'yes_delete_account'.tr();
+      expect(keys.deleteAccount.isNotEmpty, true);
+      expect(keys.header.isNotEmpty, true);
+      expect(keys.body.isNotEmpty, true);
+      expect(keys.yesDeleteAccount.isNotEmpty, true);
+    });
+
+    test('translations should be localized', () {
+      final keys = DeleteAccountKeys();
+
+      expect(tr(keys.deleteAccount), isNotNull);
+      expect(tr(keys.header), isNotNull);
+      expect(tr(keys.body), isNotNull);
+      expect(tr(keys.yesDeleteAccount), isNotNull);
+    });
+  });
 }

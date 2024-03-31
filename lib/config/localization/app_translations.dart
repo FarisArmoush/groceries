@@ -1,8 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:groceries/config/localization/strings/page_not_found_keys.dart';
-import 'package:groceries/config/localization/strings/reset_password_keys.dart';
-import 'package:groceries/config/localization/strings/update_display_name_keys.dart';
-import 'package:groceries/config/localization/strings/update_email_keys.dart';
+part 'strings/page_not_found_keys.dart';
+part 'strings/update_display_name_keys.dart';
+part 'strings/update_email_keys.dart';
 
 part 'strings/account_settings_keys.dart';
 part 'strings/add_items_keys.dart';
@@ -91,9 +90,6 @@ class AppTranslations {
 
   /// Page not found Keys
   static final pageNotFound = PageNotFoundKeys();
-
-  /// Reset password Keys
-  static final resetPassword = ResetPasswordKeys();
 
   /// Update Email Keys
   static final updateEmail = UpdateEmailKeys();

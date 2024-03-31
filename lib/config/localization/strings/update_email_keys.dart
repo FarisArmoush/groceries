@@ -1,4 +1,4 @@
-import 'package:easy_localization/easy_localization.dart';
+part of '../app_translations.dart';
 
 final class UpdateEmailKeys {
   /// update_display_name_header

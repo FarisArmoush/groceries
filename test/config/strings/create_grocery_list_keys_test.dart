@@ -1,53 +1,70 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 
-final class CreateGroceryListKeys {
-  /// create_list
-  final createList = 'create_list'.tr();
+void main() {
+  group('CreateGroceryListKeys', () {
+    test('translations should not be null', () {
+      final keys = CreateGroceryListKeys();
 
-  /// create_new_list
-  final createNewList = 'create_new_list'.tr();
+      expect(keys.createList, isNotNull);
+      expect(keys.createNewList, isNotNull);
+      expect(keys.addListImage, isNotNull);
+      expect(keys.invitePeopleToList, isNotNull);
+      expect(keys.copyInvitationLink, isNotNull);
+      expect(keys.yesCancelListCreation, isNotNull);
+      expect(keys.dontCancelListCreation, isNotNull);
+      expect(keys.listCreationCancelDialogHeader, isNotNull);
+      expect(keys.listCreationCancelDialogBody, isNotNull);
+      expect(keys.listCreatedUnsuccessfullyHeader, isNotNull);
+      expect(keys.listCreatedUnsuccessfullyBody, isNotNull);
+      expect(keys.listCreatedSuccessfullyHeader, isNotNull);
+      expect(keys.listCreatedSuccessfullyBody, isNotNull);
+      expect(keys.goHome, isNotNull);
+      expect(keys.tryAgain, isNotNull);
+      expect(keys.goToList, isNotNull);
+    });
 
-  /// add_list_image
-  final addListImage = 'add_list_image'.tr();
+    test('translations should not be empty', () {
+      final keys = CreateGroceryListKeys();
 
-  /// invite_people_to_list
-  final invitePeopleToList = 'invite_people_to_list'.tr();
+      expect(keys.createList.isNotEmpty, true);
+      expect(keys.createNewList.isNotEmpty, true);
+      expect(keys.addListImage.isNotEmpty, true);
+      expect(keys.invitePeopleToList.isNotEmpty, true);
+      expect(keys.copyInvitationLink.isNotEmpty, true);
+      expect(keys.yesCancelListCreation.isNotEmpty, true);
+      expect(keys.dontCancelListCreation.isNotEmpty, true);
+      expect(keys.listCreationCancelDialogHeader.isNotEmpty, true);
+      expect(keys.listCreationCancelDialogBody.isNotEmpty, true);
+      expect(keys.listCreatedUnsuccessfullyHeader.isNotEmpty, true);
+      expect(keys.listCreatedUnsuccessfullyBody.isNotEmpty, true);
+      expect(keys.listCreatedSuccessfullyHeader.isNotEmpty, true);
+      expect(keys.listCreatedSuccessfullyBody.isNotEmpty, true);
+      expect(keys.goHome.isNotEmpty, true);
+      expect(keys.tryAgain.isNotEmpty, true);
+      expect(keys.goToList.isNotEmpty, true);
+    });
 
-  /// copy_invitation_link
-  final copyInvitationLink = 'copy_invitation_link'.tr();
+    test('translations should be localized', () {
+      final keys = CreateGroceryListKeys();
 
-  /// yes_cancel_list_creation
-  final yesCancelListCreation = 'yes_cancel_list_creation'.tr();
-
-  /// dont_cancel_list_creation
-  final dontCancelListCreation = 'dont_cancel_list_creation'.tr();
-
-  /// list_creation_cancel_dialog_header
-  final listCreationCancelDialogHeader =
-      'list_creation_cancel_dialog_header'.tr();
-
-  /// list_creation_cancel_dialog_body
-  final listCreationCancelDialogBody = 'list_creation_cancel_dialog_body'.tr();
-
-  /// listCreatedUnsuccessfullyHeader
-  final listCreatedUnsuccessfullyHeader =
-      'list_created_unsuccessfully_header'.tr();
-
-  /// listCreatedUnsuccessfullyBody
-  final listCreatedUnsuccessfullyBody = 'list_created_unsuccessfully_body'.tr();
-
-  /// list_created_successfully_header
-  final listCreatedSuccessfullyHeader = 'list_created_successfully_header'.tr();
-
-  /// list_created_successfully_body
-  final listCreatedSuccessfullyBody = 'list_created_successfully_body'.tr();
-
-  /// go_home
-  final goHome = 'go_home'.tr();
-
-  /// try_again
-  final tryAgain = 'try_again'.tr();
-
-  /// go_to_list
-  final goToList = 'go_to_list'.tr();
+      expect(tr(keys.createList), isNotNull);
+      expect(tr(keys.createNewList), isNotNull);
+      expect(tr(keys.addListImage), isNotNull);
+      expect(tr(keys.invitePeopleToList), isNotNull);
+      expect(tr(keys.copyInvitationLink), isNotNull);
+      expect(tr(keys.yesCancelListCreation), isNotNull);
+      expect(tr(keys.dontCancelListCreation), isNotNull);
+      expect(tr(keys.listCreationCancelDialogHeader), isNotNull);
+      expect(tr(keys.listCreationCancelDialogBody), isNotNull);
+      expect(tr(keys.listCreatedUnsuccessfullyHeader), isNotNull);
+      expect(tr(keys.listCreatedUnsuccessfullyBody), isNotNull);
+      expect(tr(keys.listCreatedSuccessfullyHeader), isNotNull);
+      expect(tr(keys.listCreatedSuccessfullyBody), isNotNull);
+      expect(tr(keys.goHome), isNotNull);
+      expect(tr(keys.tryAgain), isNotNull);
+      expect(tr(keys.goToList), isNotNull);
+    });
+  });
 }

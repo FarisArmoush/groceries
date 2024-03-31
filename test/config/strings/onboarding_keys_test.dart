@@ -1,27 +1,46 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 
-final class OnboardingKeys {
-  /// finish_introduction
-  final finishIntroduction = 'finish_introduction'.tr();
+void main() {
+  group('OnboardingKeys', () {
+    test('translations should not be null', () {
+      final keys = OnboardingKeys();
 
-  /// next_page
-  final nextPage = 'next_page'.tr();
+      expect(keys.finishIntroduction, isNotNull);
+      expect(keys.nextPage, isNotNull);
+      expect(keys.firstBody, isNotNull);
+      expect(keys.firstTitle, isNotNull);
+      expect(keys.secondBody, isNotNull);
+      expect(keys.secondTitle, isNotNull);
+      expect(keys.thirdBody, isNotNull);
+      expect(keys.thirdTitle, isNotNull);
+    });
 
-  /// onboarding_first_body
-  final firstBody = 'onboarding_first_body'.tr();
+    test('translations should not be empty', () {
+      final keys = OnboardingKeys();
 
-  /// onboarding_first_title
-  final firstTitle = 'onboarding_first_title'.tr();
+      expect(keys.finishIntroduction.isNotEmpty, true);
+      expect(keys.nextPage.isNotEmpty, true);
+      expect(keys.firstBody.isNotEmpty, true);
+      expect(keys.firstTitle.isNotEmpty, true);
+      expect(keys.secondBody.isNotEmpty, true);
+      expect(keys.secondTitle.isNotEmpty, true);
+      expect(keys.thirdBody.isNotEmpty, true);
+      expect(keys.thirdTitle.isNotEmpty, true);
+    });
 
-  /// onboarding_second_body
-  final secondBody = 'onboarding_second_body'.tr();
+    test('translations should be localized', () {
+      final keys = OnboardingKeys();
 
-  /// onboarding_second_title
-  final secondTitle = 'onboarding_second_title'.tr();
-
-  /// onboarding_third_body
-  final thirdBody = 'onboarding_third_body'.tr();
-
-  /// onboarding_third_title
-  final thirdTitle = 'onboarding_third_title'.tr();
+      expect(tr(keys.finishIntroduction), isNotNull);
+      expect(tr(keys.nextPage), isNotNull);
+      expect(tr(keys.firstBody), isNotNull);
+      expect(tr(keys.firstTitle), isNotNull);
+      expect(tr(keys.secondBody), isNotNull);
+      expect(tr(keys.secondTitle), isNotNull);
+      expect(tr(keys.thirdBody), isNotNull);
+      expect(tr(keys.thirdTitle), isNotNull);
+    });
+  });
 }

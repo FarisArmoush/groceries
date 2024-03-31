@@ -1,21 +1,40 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:groceries/config/localization/app_translations.dart';
 
-final class LoginKeys {
-  /// login
-  final login = 'login'.tr();
+void main() {
+  group('LoginKeys', () {
+    test('translations should not be null', () {
+      final keys = LoginKeys();
 
-  /// loginHeader
-  final header = 'login_header'.tr();
+      expect(keys.login, isNotNull);
+      expect(keys.header, isNotNull);
+      expect(keys.body, isNotNull);
+      expect(keys.dontHaveAnAccount, isNotNull);
+      expect(keys.registerNow, isNotNull);
+      expect(keys.welcomeBack, isNotNull);
+    });
 
-  /// login_body
-  final body = 'login_body'.tr();
+    test('translations should not be empty', () {
+      final keys = LoginKeys();
 
-  /// dont_have_an_account
-  final dontHaveAnAccount = 'dont_have_an_account'.tr();
+      expect(keys.login.isNotEmpty, true);
+      expect(keys.header.isNotEmpty, true);
+      expect(keys.body.isNotEmpty, true);
+      expect(keys.dontHaveAnAccount.isNotEmpty, true);
+      expect(keys.registerNow.isNotEmpty, true);
+      expect(keys.welcomeBack.isNotEmpty, true);
+    });
 
-  /// register_now
-  final registerNow = 'register_now'.tr();
+    test('translations should be localized', () {
+      final keys = LoginKeys();
 
-  /// welcome_back
-  final welcomeBack = 'welcome_back'.tr();
+      expect(tr(keys.login), isNotNull);
+      expect(tr(keys.header), isNotNull);
+      expect(tr(keys.body), isNotNull);
+      expect(tr(keys.dontHaveAnAccount), isNotNull);
+      expect(tr(keys.registerNow), isNotNull);
+      expect(tr(keys.welcomeBack), isNotNull);
+    });
+  });
 }
