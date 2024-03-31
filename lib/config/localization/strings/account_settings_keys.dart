@@ -1,4 +1,5 @@
-part of '../app_translations.dart';
+
+import 'package:easy_localization/easy_localization.dart';
 
 final class AccountSettingsKeys {
   /// edit_user_image

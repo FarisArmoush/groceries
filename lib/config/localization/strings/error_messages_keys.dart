@@ -1,4 +1,4 @@
-part of '../app_translations.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 final class ErrorMessagesKeys {
   /// default_error_message

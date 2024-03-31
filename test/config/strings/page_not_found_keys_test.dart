@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/strings/page_not_found_keys.dart';
 
 void main() {
   group('PageNotFoundKeys', () {

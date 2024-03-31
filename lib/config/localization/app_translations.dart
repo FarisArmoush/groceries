@@ -1,30 +1,28 @@
-import 'package:easy_localization/easy_localization.dart';
-part 'strings/page_not_found_keys.dart';
-part 'strings/update_display_name_keys.dart';
-part 'strings/update_email_keys.dart';
-
-part 'strings/account_settings_keys.dart';
-part 'strings/add_items_keys.dart';
-part 'strings/additional_resources_keys.dart';
-part 'strings/create_grocery_list_keys.dart';
-part 'strings/create_recipe_keys.dart';
-part 'strings/delete_account_keys.dart';
-part 'strings/error_messages_keys.dart';
-part 'strings/forgot_password_keys.dart';
-part 'strings/general_keys.dart';
-part 'strings/grocery_list_settings_keys.dart';
-part 'strings/grocery_lists_keys.dart';
-part 'strings/home_keys.dart';
-part 'strings/input_validation_messages_keys.dart';
-part 'strings/login_keys.dart';
-part 'strings/onboarding_keys.dart';
-part 'strings/premium_keys.dart';
-part 'strings/recipes_keys.dart';
-part 'strings/register_keys.dart';
-part 'strings/settings_keys.dart';
-part 'strings/theme_keys.dart';
-part 'strings/verify_account_keys.dart';
-part 'strings/welcome_keys.dart';
+import 'package:groceries/config/localization/strings/account_settings_keys.dart';
+import 'package:groceries/config/localization/strings/add_items_keys.dart';
+import 'package:groceries/config/localization/strings/additional_resources_keys.dart';
+import 'package:groceries/config/localization/strings/create_grocery_list_keys.dart';
+import 'package:groceries/config/localization/strings/create_recipe_keys.dart';
+import 'package:groceries/config/localization/strings/delete_account_keys.dart';
+import 'package:groceries/config/localization/strings/error_messages_keys.dart';
+import 'package:groceries/config/localization/strings/forgot_password_keys.dart';
+import 'package:groceries/config/localization/strings/general_keys.dart';
+import 'package:groceries/config/localization/strings/grocery_list_settings_keys.dart';
+import 'package:groceries/config/localization/strings/grocery_lists_keys.dart';
+import 'package:groceries/config/localization/strings/home_keys.dart';
+import 'package:groceries/config/localization/strings/input_validation_messages_keys.dart';
+import 'package:groceries/config/localization/strings/login_keys.dart';
+import 'package:groceries/config/localization/strings/onboarding_keys.dart';
+import 'package:groceries/config/localization/strings/page_not_found_keys.dart';
+import 'package:groceries/config/localization/strings/premium_keys.dart';
+import 'package:groceries/config/localization/strings/recipes_keys.dart';
+import 'package:groceries/config/localization/strings/register_keys.dart';
+import 'package:groceries/config/localization/strings/settings_keys.dart';
+import 'package:groceries/config/localization/strings/theme_keys.dart';
+import 'package:groceries/config/localization/strings/update_display_name_keys.dart';
+import 'package:groceries/config/localization/strings/update_email_keys.dart';
+import 'package:groceries/config/localization/strings/verify_account_keys.dart';
+import 'package:groceries/config/localization/strings/welcome_keys.dart';
 
 /// This class provides translations for all app strings.
 class AppTranslations {
