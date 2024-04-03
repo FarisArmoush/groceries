@@ -27,7 +27,6 @@ extension AppRoutePath on AppRoute {
         AppRoute.recipeCreatedUnsuccessfully =>
           '/recipe_created_unsuccessfully',
         AppRoute.addItems => '/add_items',
-        AppRoute.categoryDetails => '/category_details',
         AppRoute.groceryListDetails => '/grocery_list_details',
         AppRoute.groceryListSettings => '/grocery_list_settings',
         AppRoute.createList => '/create_list',

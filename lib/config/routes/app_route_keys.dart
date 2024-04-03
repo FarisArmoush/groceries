@@ -23,7 +23,6 @@ extension AppRouteKeys on AppRoute {
         AppRoute.recipeCreatedUnsuccessfully =>
           'K_RECIPE_CREATED_UNSUCCESSFULLY_VIEW_KEY',
         AppRoute.addItems => 'K_ADD_ITEMS_VIEW_KEY',
-        AppRoute.categoryDetails => 'K_CATEGORY_DETAILS_VIEW_KEY',
         AppRoute.groceryListDetails => 'K_GROCERY_LIST_DETAILS_VIEW_KEY',
         AppRoute.groceryListSettings => 'K_GROCERY_LIST_SETTINGS_VIEW_KEY',
         AppRoute.createList => 'K_CREATE_LIST_VIEW_KEY',
