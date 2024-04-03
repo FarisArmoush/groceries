@@ -5,7 +5,6 @@ import 'package:groceries/data/models/category_model/category_model.dart';
 import 'package:groceries/presentation/modules/account_settings/views/account_settings_view.dart';
 import 'package:groceries/presentation/modules/add_items/views/add_items_view.dart';
 import 'package:groceries/presentation/modules/additional_resources/views/additional_resources_view.dart';
-import 'package:groceries/presentation/modules/category_details/views/category_details_view.dart';
 import 'package:groceries/presentation/modules/create_list/views/create_list_view.dart';
 import 'package:groceries/presentation/modules/create_list/views/list_created_successfully_view.dart';
 import 'package:groceries/presentation/modules/create_list/views/list_created_unsuccessfully_view.dart';
@@ -185,14 +184,6 @@ final GoRouter appGoRouter = GoRouter(
                       path: AppRoute.subCategories.name,
                       builder: (context, state) => SubCategoriesView(
                         key: Key(AppRoute.subCategories.key),
-                        parentCategoryModel: state.extra! as CategoryModel,
-                      ),
-                    ),
-                    GoRoute(
-                      name: AppRoute.categoryDetails.name,
-                      path: AppRoute.categoryDetails.name,
-                      builder: (context, state) => CategoryDetailsView(
-                        key: Key(AppRoute.categoryDetails.key),
                         parentCategoryModel: state.extra! as CategoryModel,
                       ),
                     ),

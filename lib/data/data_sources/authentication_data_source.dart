@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:groceries/data/models/login_param/login_param.dart';
 import 'package:groceries/data/models/register_param/register_param.dart';
+import 'package:groceries/data/models/user_model/user_model.dart';
 import 'package:groceries/utils/exceptions/app_network_exception.dart';
 import 'package:groceries/utils/keys/firestore_keys.dart';
 import 'package:injectable/injectable.dart';
@@ -17,7 +18,16 @@ class AuthenticationDataSource {
         (fbUser) => fbUser,
       );
 
-  User? get currentUser => firebaseAuth.currentUser;
+  UserModel? get currentUser {
+    final user = firebaseAuth.currentUser;
+    return UserModel(
+      id: user?.tenantId,
+      creationDate: user?.metadata.creationTime,
+      email: user?.email,
+      imageUrl: user?.photoURL,
+      name: user?.displayName,
+    );
+  }
 
   Future<void> signInWithEmailAndPassword(LoginParam param) async {
     try {
@@ -64,9 +74,9 @@ class AuthenticationDataSource {
     try {
       await firestore
           .collection(FirestoreCollection.users)
-          .doc(currentUser?.uid)
+          .doc(firebaseAuth.currentUser?.uid)
           .delete();
-      await currentUser?.delete();
+      await firebaseAuth.currentUser?.delete();
     } on FirebaseAuthException catch (e) {
       throw AppNetworkException.fromCode(e.message ?? '');
     } catch (_) {
@@ -101,11 +111,11 @@ class AuthenticationDataSource {
 
   Future<void> updateDisplayName(String? displayName) async {
     try {
-      await currentUser?.updateDisplayName(displayName).then(
+      await firebaseAuth.currentUser?.updateDisplayName(displayName).then(
             (_) => {
               firestore
                   .collection(FirestoreCollection.users)
-                  .doc(currentUser?.uid)
+                  .doc(firebaseAuth.currentUser?.uid)
                   .update(
                 {
                   FirestoreField.displayName: displayName,
@@ -125,10 +135,10 @@ class AuthenticationDataSource {
       return;
     }
     try {
-      await currentUser?.verifyBeforeUpdateEmail(email).then(
+      await firebaseAuth.currentUser?.verifyBeforeUpdateEmail(email).then(
             (_) => firestore
                 .collection(FirestoreCollection.users)
-                .doc(currentUser?.uid)
+                .doc(firebaseAuth.currentUser?.uid)
                 .update({FirestoreField.email: email}),
           );
     } on FirebaseAuthException catch (e) {
@@ -143,7 +153,7 @@ class AuthenticationDataSource {
       return;
     }
     try {
-      await currentUser?.updatePassword(password);
+      await firebaseAuth.currentUser?.updatePassword(password);
     } on FirebaseAuthException catch (e) {
       throw AppNetworkException.fromCode(e.message ?? '');
     } catch (_) {
@@ -153,7 +163,7 @@ class AuthenticationDataSource {
 
   Future<void> sendVerificationEmail() async {
     try {
-      await currentUser?.sendEmailVerification();
+      await firebaseAuth.currentUser?.sendEmailVerification();
     } on FirebaseAuthException catch (e) {
       throw AppNetworkException.fromCode(e.code);
     } catch (_) {
@@ -161,8 +171,9 @@ class AuthenticationDataSource {
     }
   }
 
-  String? get email => currentUser?.email;
-  String? get displayName => currentUser?.displayName;
-  bool? get emailVerified => currentUser?.emailVerified;
-  String? get creationDate => currentUser?.metadata.creationTime.toString();
+  String? get email => firebaseAuth.currentUser?.email;
+  String? get displayName => firebaseAuth.currentUser?.displayName;
+  bool? get emailVerified => firebaseAuth.currentUser?.emailVerified;
+  String? get creationDate =>
+      firebaseAuth.currentUser?.metadata.creationTime.toString();
 }

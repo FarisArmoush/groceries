@@ -10,7 +10,7 @@ class UserDataBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = context.watch<UserDataCubit>().state;
+    final user = context.watch<UserDataCubit>().state.user;
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -19,7 +19,7 @@ class UserDataBox extends StatelessWidget {
           height: context.deviceHeight * 0.02,
         ),
         SelectableText(
-          user.displayName ?? '',
+          user?.name ?? '',
           style: TextStyle(
             fontWeight: AppFontWeights.medium,
             color: context.theme.primaryColor,
@@ -31,7 +31,7 @@ class UserDataBox extends StatelessWidget {
           height: context.deviceHeight * 0.005,
         ),
         SelectableText(
-          user.email ?? '',
+          user?.email ?? '',
           style: TextStyle(
             fontWeight: AppFontWeights.light,
             color: context.theme.hintColor,

@@ -50,9 +50,6 @@ enum AppRoute {
   /// Add Items to list View
   addItems,
 
-  /// Category Details
-  categoryDetails,
-
   /// Grocery List View
   groceryListDetails,
 

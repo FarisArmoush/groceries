@@ -14,7 +14,7 @@ class IsUserVerifiedListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isVerified =
-        context.read<UserDataCubit>().state.emailVerified ?? false;
+        context.read<UserDataCubit>().state.user?.isVerified ?? false;
     return ListTile(
       title: Text(AppTranslations.accountSettings.verified),
       subtitle:

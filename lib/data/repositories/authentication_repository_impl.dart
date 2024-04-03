@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:groceries/data/data_sources/authentication_data_source.dart';
 import 'package:groceries/data/models/login_param/login_param.dart';
 import 'package:groceries/data/models/register_param/register_param.dart';
+import 'package:groceries/data/models/user_model/user_model.dart';
 import 'package:groceries/domain/repositories/authentication_repository.dart';
 import 'package:injectable/injectable.dart';
 
@@ -17,7 +18,7 @@ class AuthenticationRepositoryImpl extends AuthenticationRepository {
       _authenticationDataSource.authStateChanges;
 
   @override
-  User? get currentUser => _authenticationDataSource.currentUser;
+  UserModel? get currentUser => _authenticationDataSource.currentUser;
 
   @override
   Future<void> signUpWithEmailAndPassword(RegisterParam registerParam) =>
