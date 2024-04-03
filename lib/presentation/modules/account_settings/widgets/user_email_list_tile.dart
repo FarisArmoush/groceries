@@ -13,10 +13,10 @@ class UserEmailListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = context.read<UserDataCubit>().state;
+    final user = context.read<UserDataCubit>().state.user;
 
-    final email = user.email ?? '';
-    final isUserVerified = user.emailVerified ?? false;
+    final email = user?.email ?? '';
+    final isUserVerified = user?.isVerified ?? false;
     return ListTile(
       title: Text(AppTranslations.general.email),
       subtitle: Text(email),

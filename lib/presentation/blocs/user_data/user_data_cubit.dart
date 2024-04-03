@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:groceries/data/models/user_model/user_model.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/fetch_user_data_use_case.dart';
 import 'package:injectable/injectable.dart';
 
@@ -12,21 +13,13 @@ class UserDataCubit extends Cubit<UserDataState> {
   UserDataCubit(this.fetchUserDataUseCase)
       : super(
           UserDataState(
-            displayName: fetchUserDataUseCase.displayName,
-            email: fetchUserDataUseCase.email,
-            emailVerified: fetchUserDataUseCase.emailVerified,
-            creationDate: fetchUserDataUseCase.creationDate,
+            user: fetchUserDataUseCase(),
           ),
         );
   final FetchUserDataUseCase fetchUserDataUseCase;
-  Future<void> loadUser() async {
-    emit(
-      state.copyWith(
-        displayName: fetchUserDataUseCase.displayName,
-        email: fetchUserDataUseCase.email,
-        emailVerified: fetchUserDataUseCase.emailVerified,
-        creationDate: fetchUserDataUseCase.creationDate,
-      ),
-    );
-  }
+  void loadUser() => emit(
+        state.copyWith(
+          user: fetchUserDataUseCase(),
+        ),
+      );
 }

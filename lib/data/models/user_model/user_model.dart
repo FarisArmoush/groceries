@@ -14,6 +14,7 @@ class UserModel with _$UserModel {
     String? name,
     String? email,
     String? imageUrl,
+    bool? isVerified,
     @TimestampSerializer() DateTime? creationDate,
   }) = _UserModel;
 
