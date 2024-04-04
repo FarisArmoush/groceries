@@ -48,9 +48,4 @@ abstract class AuthenticationRepository {
 
   /// The currently authenticated user.
   UserModel? get currentUser;
-
-  String? get email;
-  String? get displayName;
-  String? get creationDate;
-  bool? get emailVerified;
 }

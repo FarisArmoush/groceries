@@ -53,16 +53,4 @@ class AuthenticationRepositoryImpl extends AuthenticationRepository {
   @override
   Future<void> sendVerificationEmail() =>
       _authenticationDataSource.sendVerificationEmail();
-
-  @override
-  String? get displayName => _authenticationDataSource.displayName;
-
-  @override
-  String? get email => _authenticationDataSource.email;
-
-  @override
-  bool? get emailVerified => _authenticationDataSource.emailVerified;
-
-  @override
-  String? get creationDate => _authenticationDataSource.creationDate;
 }

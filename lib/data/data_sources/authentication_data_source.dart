@@ -170,10 +170,4 @@ class AuthenticationDataSource {
       throw const AppNetworkException();
     }
   }
-
-  String? get email => firebaseAuth.currentUser?.email;
-  String? get displayName => firebaseAuth.currentUser?.displayName;
-  bool? get emailVerified => firebaseAuth.currentUser?.emailVerified;
-  String? get creationDate =>
-      firebaseAuth.currentUser?.metadata.creationTime.toString();
 }
