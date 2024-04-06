@@ -8,6 +8,8 @@ class LoginState with _$LoginState {
     @Default(FormzSubmissionStatus.initial) FormzSubmissionStatus status,
     @Default(false) bool isValid,
     @Default(true) bool isObscure,
+    FocusNode? emailNode,
+    FocusNode? passwordNode,
     String? errorMessage,
   }) = _LoginState;
 

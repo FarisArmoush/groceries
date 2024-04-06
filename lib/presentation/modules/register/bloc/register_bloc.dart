@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/data/models/register_param/register_param.dart';
@@ -18,7 +19,14 @@ part 'register_state.dart';
 @injectable
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
   RegisterBloc(this._registerWithEmailAndPasswordUseCase)
-      : super(RegisterState()) {
+      : super(
+          RegisterState(
+            nameNode: FocusNode(),
+            passwordNode: FocusNode(),
+            emailNode: FocusNode(),
+            confirmPasswordNode: FocusNode(),
+          ),
+        ) {
     on<RegisterEvent>(
       (event, emit) => event.map(
         updateDisplayName: (event) => _onUpdateDisplayName(event, emit),
@@ -28,12 +36,23 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
         toggleIsObscure: (event) => _onToggleIsObscure(event, emit),
         submit: (event) => _onSubmit(event, emit),
         resetState: (event) => _onResetState(event, emit),
+        dismissKeyboard: (event) => _onDismissKeyboard(event, emit),
       ),
     );
   }
 
   final RegisterWithEmailAndPasswordUseCase
       _registerWithEmailAndPasswordUseCase;
+
+  void _onDismissKeyboard(
+    _DismissKeyboard event,
+    Emitter<RegisterState> emit,
+  ) {
+    state.nameNode!.unfocus();
+    state.passwordNode!.unfocus();
+    state.emailNode!.unfocus();
+    state.confirmPasswordNode!.unfocus();
+  }
 
   void _onResetState(
     _ResetState event,

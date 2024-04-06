@@ -11,4 +11,7 @@ class LoginEvent with _$LoginEvent {
   const factory LoginEvent.submit() = _Submit;
 
   const factory LoginEvent.resetState() = _ResetState;
+
+  const factory LoginEvent.dismissKeyboard() = _DismissKeyboard;
+  
 }

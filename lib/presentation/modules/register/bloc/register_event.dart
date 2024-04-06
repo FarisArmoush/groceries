@@ -17,4 +17,7 @@ class RegisterEvent with _$RegisterEvent {
   const factory RegisterEvent.submit() = _Submit;
 
   const factory RegisterEvent.resetState() = _ResetState;
+
+  const factory RegisterEvent.dismissKeyboard() = _DismissKeyboard;
+  
 }

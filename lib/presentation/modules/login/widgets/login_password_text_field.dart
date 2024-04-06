@@ -18,6 +18,7 @@ class LoginPasswordTextField extends StatelessWidget {
           previous.isObscure != current.isObscure,
       builder: (context, state) {
         return AppTextField(
+          focusNode: state.passwordNode,
           prefixIcon: Assets.icons.lock.svg(
             fit: BoxFit.scaleDown,
             colorFilter: ColorFilter.mode(
