@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:groceries_theme/app_theme.dart';
+import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class ButtonsLoadingIndicator extends StatelessWidget {
   const ButtonsLoadingIndicator({super.key});
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
+    return SizedBox(
       height: 20,
       width: 20,
       child: CircularProgressIndicator.adaptive(
         strokeWidth: 2,
-        backgroundColor: AppColors.white,
+        backgroundColor: context.colorScheme.secondary,
       ),
     );
   }

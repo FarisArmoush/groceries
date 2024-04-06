@@ -11,6 +11,10 @@ class RegisterState with _$RegisterState {
     @Default(FormzSubmissionStatus.initial) FormzSubmissionStatus status,
     @Default(false) bool isValid,
     @Default(true) bool isObscure,
+    FocusNode? nameNode,
+    FocusNode? emailNode,
+    FocusNode? passwordNode,
+    FocusNode? confirmPasswordNode,
     String? errorMessage,
   }) = _RegisterState;
 

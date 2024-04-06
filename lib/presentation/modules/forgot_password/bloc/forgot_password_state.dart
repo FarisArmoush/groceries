@@ -6,6 +6,7 @@ class ForgotPasswordState with _$ForgotPasswordState {
     @Default(EmailForm.pure()) EmailForm email,
     @Default(FormzSubmissionStatus.initial) FormzSubmissionStatus status,
     @Default(false) bool isValid,
+    FocusNode? emailNode,
     String? errorMessage,
   }) = _ForgotPasswordState;
 

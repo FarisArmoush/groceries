@@ -9,7 +9,6 @@ import 'package:groceries/presentation/modules/forgot_password/widgets/forgot_pa
 import 'package:groceries/presentation/modules/forgot_password/widgets/forgot_password_email_text_field.dart';
 import 'package:groceries/presentation/modules/forgot_password/widgets/forgot_password_header_text.dart';
 import 'package:groceries/presentation/modules/forgot_password/widgets/send_forgot_password_email_button.dart';
-import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/app_snack_bars.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
@@ -53,18 +52,10 @@ class ForgotPasswordView extends StatelessWidget {
     }
     if (state.status.isFailure) {
       final defaultError = AppTranslations.errorMessages.defaultError;
-      context.pop();
       ScaffoldMessenger.of(context).showSnackBar(
         AppSnackBars.error(
           error: state.errorMessage ?? defaultError,
         ),
-      );
-    }
-    if (state.status.isInProgress) {
-      showDialog<AppLoadingIndicator>(
-        context: context,
-        builder: (context) => const AppLoadingIndicator.linear(),
-        barrierDismissible: false,
       );
     }
   }

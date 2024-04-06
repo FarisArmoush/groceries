@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -18,7 +19,13 @@ part 'login_state.dart';
 
 @injectable
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
-  LoginBloc(this._loginWithEmailAndPasswordUseCase) : super(LoginState()) {
+  LoginBloc(this._loginWithEmailAndPasswordUseCase)
+      : super(
+          LoginState(
+            emailNode: FocusNode(),
+            passwordNode: FocusNode(),
+          ),
+        ) {
     on<LoginEvent>(
       (event, emit) => event.map(
         updateEmail: (event) => _onUpdateEmail(event, emit),
@@ -26,10 +33,19 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         toggleIsObscure: (event) => _onToggleIsObscure(event, emit),
         submit: (event) => _onSubmit(event, emit),
         resetState: (event) => _onResetState(event, emit),
+        dismissKeyboard: (event) => _onDismissKeyboard(event, emit),
       ),
     );
   }
   final LoginWithEmailAndPasswordUseCase _loginWithEmailAndPasswordUseCase;
+
+  void _onDismissKeyboard(
+    _DismissKeyboard event,
+    Emitter<LoginState> emit,
+  ) {
+    state.emailNode!.unfocus();
+    state.passwordNode!.unfocus();
+  }
 
   void _onResetState(
     _ResetState event,

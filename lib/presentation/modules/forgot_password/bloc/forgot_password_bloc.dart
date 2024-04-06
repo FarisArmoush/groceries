@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/widgets.dart';
 import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/send_password_reset_email_use_case.dart';
@@ -15,16 +16,28 @@ part 'forgot_password_state.dart';
 class ForgotPasswordBloc
     extends Bloc<ForgotPasswordEvent, ForgotPasswordState> {
   ForgotPasswordBloc(this._sendPasswordResetEmailUseCase)
-      : super(const ForgotPasswordState()) {
+      : super(
+          ForgotPasswordState(
+            emailNode: FocusNode(),
+          ),
+        ) {
     on<ForgotPasswordEvent>(
       (event, emit) => event.map(
         emailChanged: (event) => _onEmailChanged(event, emit),
         sendEmail: (event) => _onSendEmail(event, emit),
+        dismissKeyboard: (event) => _onDismissKeyboard(event, emit),
       ),
     );
   }
 
   final SendPasswordResetEmailUseCase _sendPasswordResetEmailUseCase;
+
+  void _onDismissKeyboard(
+    _DismissKeyboard event,
+    Emitter<ForgotPasswordState> emit,
+  ) {
+    state.emailNode!.unfocus();
+  }
 
   void _onEmailChanged(
     _EmailChanged event,

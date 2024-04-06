@@ -42,6 +42,7 @@ class AppTextField extends StatelessWidget {
     this.initialValue,
     this.textCapitalization = TextCapitalization.none,
     this.onFieldSubmitted,
+    this.focusNode,
   });
 
   /// The text displayed as the label of the text field.
@@ -114,6 +115,7 @@ class AppTextField extends StatelessWidget {
   final AutovalidateMode? autovalidateMode;
 
   final TextStyle? labelStyle;
+
   final TextStyle? style;
 
   final TextStyle? floatingLabelStyle;
@@ -126,10 +128,13 @@ class AppTextField extends StatelessWidget {
 
   final void Function(String)? onFieldSubmitted;
 
+  final FocusNode? focusNode;
+
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       key: key,
+      focusNode: focusNode,
       onFieldSubmitted: onFieldSubmitted,
       textCapitalization: textCapitalization,
       validator: validator,
@@ -145,12 +150,7 @@ class AppTextField extends StatelessWidget {
       cursorColor: context.theme.primaryColorLight,
       cursorWidth: 1,
       onEditingComplete: onEditingComplete,
-      style: style ??
-          TextStyle(
-            fontWeight: AppFontWeights.regular,
-            color: context.theme.primaryColor,
-            fontSize: 14,
-          ),
+      style: style ?? _defaultStyle(context),
       autovalidateMode: autovalidateMode,
       decoration: InputDecoration(
         contentPadding: contentPadding,
@@ -167,19 +167,33 @@ class AppTextField extends StatelessWidget {
         errorBorder: errorBorder,
         disabledBorder: disabledBorder,
         focusedErrorBorder: focusedBorder,
-        labelStyle: labelStyle ??
-            TextStyle(
-              fontWeight: AppFontWeights.regular,
-              color: context.theme.hintColor,
-              fontSize: 16,
-            ),
-        floatingLabelStyle: floatingLabelStyle ??
-            TextStyle(
-              fontWeight: AppFontWeights.regular,
-              color: context.theme.primaryColor,
-              fontSize: 16,
-            ),
+        labelStyle: labelStyle ?? _labelStyle(context),
+        floatingLabelStyle: floatingLabelStyle ?? _floatingLabelStyle(context),
       ),
+    );
+  }
+
+  TextStyle _defaultStyle(BuildContext context) {
+    return TextStyle(
+      fontWeight: AppFontWeights.regular,
+      color: context.theme.primaryColor,
+      fontSize: 14,
+    );
+  }
+
+  TextStyle _labelStyle(BuildContext context) {
+    return TextStyle(
+      fontWeight: AppFontWeights.regular,
+      color: context.theme.hintColor,
+      fontSize: 16,
+    );
+  }
+
+  TextStyle _floatingLabelStyle(BuildContext context) {
+    return TextStyle(
+      fontWeight: AppFontWeights.regular,
+      color: context.theme.primaryColor,
+      fontSize: 16,
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:formz/formz.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/presentation/modules/register/bloc/register_bloc.dart';
 import 'package:groceries/presentation/widgets/app_text_field.dart';
@@ -16,21 +17,25 @@ class RegisterEmailTextField extends StatelessWidget {
         return previous.email != current.email;
       },
       builder: (context, state) {
-        return AppTextField(
-          keyboardType: TextInputType.emailAddress,
-          labelText: AppTranslations.general.email,
-          validator: (value) => state.email.validator(value),
-          errorText: state.email.displayError,
-          prefixIcon: Assets.icons.mail.svg(
-            fit: BoxFit.scaleDown,
-            colorFilter: ColorFilter.mode(
-              context.theme.inputDecorationTheme.prefixIconColor!,
-              BlendMode.srcIn,
-            ),
-          ),
-          onChanged: (value) => context.read<RegisterBloc>().add(
-                RegisterEvent.updateEmail(value),
+        return IgnorePointer(
+          ignoring: state.status.isInProgressOrSuccess,
+          child: AppTextField(
+            focusNode: state.emailNode,
+            keyboardType: TextInputType.emailAddress,
+            labelText: AppTranslations.general.email,
+            validator: (value) => state.email.validator(value),
+            errorText: state.email.displayError,
+            prefixIcon: Assets.icons.mail.svg(
+              fit: BoxFit.scaleDown,
+              colorFilter: ColorFilter.mode(
+                context.theme.inputDecorationTheme.prefixIconColor!,
+                BlendMode.srcIn,
               ),
+            ),
+            onChanged: (value) => context.read<RegisterBloc>().add(
+                  RegisterEvent.updateEmail(value),
+                ),
+          ),
         );
       },
     );
