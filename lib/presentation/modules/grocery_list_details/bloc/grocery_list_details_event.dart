@@ -18,5 +18,5 @@ class GroceryListDetailsEvent with _$GroceryListDetailsEvent {
     required String? uid,
   }) = _Clear;
 
-  const factory GroceryListDetailsEvent.setToInitial() = _SetToInitial;
+  const factory GroceryListDetailsEvent.resetState() = _ResetState;
 }
