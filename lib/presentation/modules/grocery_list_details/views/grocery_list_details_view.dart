@@ -19,12 +19,21 @@ class GroceryListDetailsView extends StatefulWidget {
 }
 
 class _GroceryListDetailsViewState extends State<GroceryListDetailsView> {
+  late final GroceryListDetailsBloc bloc;
   @override
   void initState() {
-    context.read<GroceryListDetailsBloc>().add(
-          GroceryListDetailsEvent.getDetails(uid: widget.uid),
-        );
+    bloc = context.read<GroceryListDetailsBloc>();
+    bloc.add(
+      GroceryListDetailsEvent.getDetails(uid: widget.uid),
+    );
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    bloc.add(const GroceryListDetailsEvent.resetState());
+
+    super.dispose();
   }
 
   @override

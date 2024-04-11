@@ -29,7 +29,7 @@ class GroceryListDetailsBloc
         getDetails: (event) => _onGetDetails(event, emit),
         addItem: (event) => _onAddItem(event, emit),
         removeItem: (event) => _onRemoveItem(event, emit),
-        setToInitial: (event) => _onSetToInitial(event, emit),
+        resetState: (event) => _onResetState(event, emit),
         clear: (event) => _onClear(event, emit),
       ),
     );
@@ -71,16 +71,17 @@ class GroceryListDetailsBloc
     }
   }
 
-  Future<void> _onSetToInitial(
-    _SetToInitial event,
+  void _onResetState(
+    _ResetState event,
     Emitter<GroceryListDetailsState> emit,
-  ) async {
+  ) {
     emit(
       state.copyWith(
         groceryList: null,
         status: const BlocStatus.initial(),
         addItemStatus: const BlocStatus.initial(),
         removeItemStatus: const BlocStatus.initial(),
+        clearStatus: const BlocStatus.initial(),
       ),
     );
   }
@@ -174,7 +175,7 @@ class GroceryListDetailsBloc
     } on AppNetworkException catch (e) {
       emit(
         state.copyWith(
-          status: BlocStatus.failure(
+          clearStatus: BlocStatus.failure(
             e.message ?? AppTranslations.errorMessages.defaultError,
           ),
         ),
@@ -182,7 +183,7 @@ class GroceryListDetailsBloc
     } catch (_) {
       emit(
         state.copyWith(
-          status: BlocStatus.failure(
+          clearStatus: BlocStatus.failure(
             AppTranslations.errorMessages.defaultError,
           ),
         ),
