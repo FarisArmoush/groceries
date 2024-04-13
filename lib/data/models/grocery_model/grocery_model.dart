@@ -17,6 +17,7 @@ class GroceryModel with _$GroceryModel {
     bool? isDone,
     String? name,
     String? notes,
+    String? priorityId,
     List<RefinementsModel?>? refinements,
   }) = _GroceryModel;
 

@@ -45,6 +45,7 @@ class GroceriesList extends StatelessWidget {
             ),
             GroceriesBoxList(
               list: categoryItems ?? [],
+              showPriority: true,
             ),
           ],
         );
