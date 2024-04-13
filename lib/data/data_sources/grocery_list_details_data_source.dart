@@ -28,6 +28,7 @@ class GroceryListDetailsDataSource {
           refinements: <RefinementsModel>[],
           notes: '',
           image: '',
+          priorityId: 'lnw0egeudF8ixG18Hd3K',
           creationDate: DateTime.now(),
         ),
       ],

@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
+import 'package:groceries/presentation/modules/grocery_list_details/widgets/item_priority_button.dart';
 import 'package:groceries/presentation/widgets/app_text_field.dart';
 import 'package:groceries/presentation/widgets/bottom_sheet_button.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
@@ -31,7 +32,7 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
               Text(
                 groceryModel?.name ?? '',
                 style: TextStyle(
-                  fontWeight: AppFontWeights.regular,
+                  fontWeight: AppFontWeights.medium,
                   color: context.theme.primaryColor,
                   fontSize: 18,
                 ),
@@ -56,6 +57,12 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
           SizedBox(
             height: context.deviceHeight * 0.02,
           ),
+          ItemPriorityButton(
+            groceryModel: groceryModel,
+          ),
+          SizedBox(
+            height: context.deviceHeight * 0.02,
+          ),
           if (groceryModel?.image?.isNotEmpty ?? false) ...[
             CachedImage(
               height: context.deviceHeight * 0.3,
@@ -69,7 +76,7 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
             ),
             BottomSheetButton(
               text: AppTranslations.groceryLists.removeImage,
-              iconPath: Assets.icons.image.path,
+              iconPath: Assets.icons.trash.path,
               onTap: () {},
             ),
           ] else
@@ -86,11 +93,11 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
                 ),
               ),
             ),
-          BottomSheetButton(
-            text: AppTranslations.groceryLists.removeImage,
-            iconPath: Assets.icons.trash.path,
-            onTap: () {},
-          ),
+          // BottomSheetButton(
+          //   text: AppTranslations.groceryLists.removeImage,
+          //   iconPath: Assets.icons.trash.path,
+          //   onTap: () {},
+          // ),
           BottomSheetButton(
             text: AppTranslations.groceryLists.markAsDone,
             iconPath: Assets.icons.doubleCheck.path,

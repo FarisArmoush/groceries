@@ -1,8 +1,11 @@
+import 'dart:developer';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/presentation/blocs/grocery_lists/grocery_lists_bloc.dart';
 import 'package:groceries/presentation/blocs/my_tasks/my_tasks_bloc.dart';
+import 'package:groceries/presentation/blocs/priorities/priorities_bloc.dart';
 import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocery_lists_form.dart';
 import 'package:groceries/presentation/modules/home/widgets/home_app_bar.dart';
 import 'package:groceries/presentation/modules/home/widgets/my_tasks/my_tasks_form.dart';
@@ -24,6 +27,10 @@ class HomeView extends StatelessWidget {
                   const GroceryListsEvent.getGroceryLists(),
                 );
             context.read<MyTasksBloc>().add(const MyTasksEvent.getMyTasks());
+
+            context.read<PrioritiesBloc>().add(
+                  const PrioritiesEvent.getPriorities(),
+                );
           },
           child: CustomScrollView(
             slivers: [
@@ -41,6 +48,7 @@ class HomeView extends StatelessWidget {
               SliverSizedBox(
                 height: context.deviceHeight * 0.05,
               ),
+              // const _MockAddItemsToCloudFirestoreAutomatically(),
             ],
           ),
         ),
@@ -58,20 +66,23 @@ class _MockAddItemsToCloudFirestoreAutomatically extends StatelessWidget {
     final list = <String>[];
 
     for (final element in list) {
-      final doc = await firestore.collection('items').add(
-        {
-          'id': 'id',
-          'categoryId': 'eLvGGZimPFgjiP2RUZUi',
-          'creationDate': DateTime.timestamp(),
-          'isDone': false,
-          'image': '',
-          'notes': '',
-          'name': element.trim(),
-          'refinements': <dynamic>[],
-        },
+      await Future.delayed(
+        Durations.long4,
+        () => firestore.collection('items').add(
+          {
+            'categoryId': 'eLvGGZimPFgjiP2RUZUi',
+            'creationDate': DateTime.timestamp(),
+            'isDone': false,
+            'image': '',
+            'notes': '',
+            'priorityId': 'wvPfYWa0hb9EUSPDLwO1',
+            'name': element.trim(),
+            'refinements': <dynamic>[],
+          },
+        ),
       );
-      await doc.update({'id': doc.id});
     }
+    log('Done');
   }
 
   @override
@@ -79,6 +90,6 @@ class _MockAddItemsToCloudFirestoreAutomatically extends StatelessWidget {
     return FilledButton(
       onPressed: addToCloudFirestore,
       child: const Text('Add'),
-    );
+    ).asSliver();
   }
 }

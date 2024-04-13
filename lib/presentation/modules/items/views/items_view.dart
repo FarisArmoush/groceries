@@ -46,7 +46,10 @@ class _ItemsViewState extends State<ItemsView> {
                   largeTitle: Text(categoryName),
                   middle: Text(categoryName),
                 ),
-                GroceriesBoxList(list: state.groceries).asSliver(),
+                GroceriesBoxList(
+                  list: state.groceries,
+                  showPriority: false,
+                ).asSliver(),
                 const SliverSizedBox(height: 24),
               ],
             );

@@ -5,6 +5,7 @@ import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/app_bottom_navigation_bar_item/app_bottom_navigation_bar_item.dart';
 import 'package:groceries/presentation/blocs/grocery_lists/grocery_lists_bloc.dart';
 import 'package:groceries/presentation/blocs/my_tasks/my_tasks_bloc.dart';
+import 'package:groceries/presentation/blocs/priorities/priorities_bloc.dart';
 import 'package:groceries/presentation/modules/home/views/home_view.dart';
 import 'package:groceries/presentation/modules/recipes/bloc/recipes_bloc.dart';
 import 'package:groceries/presentation/modules/recipes/views/recipes_view.dart';
@@ -37,6 +38,10 @@ class _RootViewState extends State<RootView> {
           const MyTasksEvent.getMyTasks(),
         );
     context.read<RecipesBloc>().add(const RecipesEvent.loadMyRecipes());
+
+    context.read<PrioritiesBloc>().add(
+          const PrioritiesEvent.getPriorities(),
+        );
     super.initState();
   }
 

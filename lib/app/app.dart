@@ -6,6 +6,7 @@ import 'package:groceries/presentation/blocs/authentication/authentication_bloc.
 import 'package:groceries/presentation/blocs/grocery_lists/grocery_lists_bloc.dart';
 import 'package:groceries/presentation/blocs/logout/logout_bloc.dart';
 import 'package:groceries/presentation/blocs/my_tasks/my_tasks_bloc.dart';
+import 'package:groceries/presentation/blocs/priorities/priorities_bloc.dart';
 import 'package:groceries/presentation/blocs/remote_config/remote_config_bloc.dart';
 import 'package:groceries/presentation/blocs/user_data/user_data_cubit.dart';
 import 'package:groceries/presentation/modules/add_items/bloc/add_items_bloc.dart';
@@ -129,6 +130,9 @@ class App extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => injector<SubCategoriesBloc>(),
+        ),
+        BlocProvider(
+          create: (context) => injector<PrioritiesBloc>(),
         ),
       ],
       child: const AppEasyLocalization(),
