@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,7 +26,6 @@ class GroceryItemTile extends StatelessWidget {
     final itemPriority = priorities.firstWhereOrNull(
       (element) => item?.priorityId == element.id,
     );
-    log(itemPriority?.name ?? 'null');
     final notesIsEmpty = item?.notes?.isEmpty ?? false;
     final notesIsNull = item?.notes == null;
     final iconButton = IconButton(
