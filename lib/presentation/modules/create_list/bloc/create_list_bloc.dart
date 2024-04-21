@@ -3,7 +3,7 @@ import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/config/localization/app_translations.dart';
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
-import 'package:groceries/domain/use_cases/remote_use_cases/create_list_use_case.dart';
+import 'package:groceries/domain/use_cases/create_list_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/exceptions/app_network_exception.dart';
