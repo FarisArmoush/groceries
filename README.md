@@ -76,24 +76,38 @@ Feel free to explore the codebase, and if you have any questions or suggestions,
 In the add items module, you will not be able to access my official database that has those items, but i will include an apk in the future for you to install it on your phone/emulator and test it out.
 
 ## Generation Commands
+```ssh
 flutter clean
 flutter pub get
 dart run build_runner build --delete-conflicting-outputs
-
+```
+```ssh
 dart run build_runner watch --delete-conflicting-outputs
-
+```
 
 ## Release APK 
+```ssh
 flutter build apk --release -t lib/main_development.dart --flavor development
+```
 
+```ssh
 flutter build apk --release -t lib/main_staging.dart --flavor staging
+``` 
 
+```ssh
 flutter build apk --release -t lib/main_production.dart --flavor production
+```
 
 ## Release IPA
 
+```ssh
 flutter build ipa --release -t lib/main_development.dart --flavor development
+```
 
+```ssh
 flutter build ipa --release -t lib/main_staging.dart --flavor staging
+``` 
 
+```ssh
 flutter build ipa --release -t lib/main_production.dart --flavor production
+```
