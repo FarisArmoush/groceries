@@ -29,7 +29,7 @@ abstract class AuthenticationRepository {
   Future<void> updateDisplayName(String? displayName);
 
   /// Signs out the current user.
-  Future<void> logOut();
+  Future<void> logout();
 
   /// Deletes the account of the current user.
   Future<void> deleteAccount();

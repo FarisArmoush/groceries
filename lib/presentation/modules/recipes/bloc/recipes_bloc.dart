@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/data/models/recipe_model/recipe_model.dart';
-import 'package:groceries/domain/use_cases/remote_use_cases/recipes_use_case.dart';
+import 'package:groceries/domain/use_cases/recipes_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 import 'package:injectable/injectable.dart';
@@ -30,7 +30,7 @@ class RecipesBloc extends Bloc<RecipesEvent, RecipesState> {
         status: const BlocStatus.loading(),
       ),
     );
-    final recipes = await _recipesUseCase.fetchRecipes();
+    final recipes = await _recipesUseCase();
     await Future.delayed(
       500.milliseconds,
       () => emit(

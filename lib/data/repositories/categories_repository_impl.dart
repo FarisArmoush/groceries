@@ -1,26 +1,19 @@
-import 'package:groceries/data/data_sources/categories_data_source.dart';
+import 'package:groceries/data/data_sources/interfaces/categories_data_source.dart';
+import 'package:groceries/data/data_sources/remote/firestore_categories_data_source.dart';
 import 'package:groceries/data/models/category_model/category_model.dart';
 import 'package:groceries/domain/repositories/cateogries_repository.dart';
 import 'package:injectable/injectable.dart';
 
 @Singleton(as: CategoriesRepository)
 class CategoriesRepositoryImpl extends CategoriesRepository {
-  const CategoriesRepositoryImpl(this._categoriesDataSource);
+  const CategoriesRepositoryImpl(
+    @Named.from(FirestoreCategoriesDataSource) this._dataSource,
+  );
 
-  final CategoriesDataSource _categoriesDataSource;
+  final CategoriesDataSource _dataSource;
 
   @override
   Future<List<CategoryModel>> fetchCategories([String? categoryId]) {
-    return _categoriesDataSource.fetchCategories(categoryId);
+    return _dataSource.fetchCategories(categoryId);
   }
-
-  // @override
-  // Future<List<CategoryModel>> fetchParentCategories() {
-  //   return _categoriesDataSource.fetchParentCategories();
-  // }
-
-  // @override
-  // Future<List<CategoryModel>> fetchSubCategories(String? parentCategoryId) {
-  //   return _categoriesDataSource.fetchSubCategories(parentCategoryId);
-  // }
 }

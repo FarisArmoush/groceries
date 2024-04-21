@@ -7,7 +7,5 @@ class LogoutUseCase {
 
   final AuthenticationRepository _authenticationRepository;
 
-  Future<void> call() {
-    return _authenticationRepository.logOut();
-  }
+  Future<void> call() => _authenticationRepository.logout();
 }

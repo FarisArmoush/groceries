@@ -1,17 +1,20 @@
-import 'package:groceries/data/data_sources/my_tasks_data_source.dart';
+import 'package:groceries/data/data_sources/interfaces/my_tasks_data_source.dart';
+import 'package:groceries/data/data_sources/mock/mock_my_tasks_data_source.dart';
 import 'package:groceries/data/models/task_model/task_model.dart';
 import 'package:groceries/domain/repositories/my_tasks_repository.dart';
 import 'package:injectable/injectable.dart';
 
 @Singleton(as: MyTasksRepository)
 class MyTasksRepositoryImpl extends MyTasksRepository {
-  const MyTasksRepositoryImpl(this._myTasksDataSource);
+  const MyTasksRepositoryImpl(
+    @Named.from(MockMyTasksDataSource) this._dataSource,
+  );
 
-  final MyTasksDataSource _myTasksDataSource;
+  final MyTasksDataSource _dataSource;
   @override
-  Future<List<TaskModel>> fetchMyTasks() => _myTasksDataSource.fetchMyTasks();
+  Future<List<TaskModel>> fetchMyTasks() => _dataSource.fetchMyTasks();
 
   @override
   Future<void> markTaskAsDone(TaskModel? task) =>
-      _myTasksDataSource.markTaskAsDone(task);
+      _dataSource.markTaskAsDone(task);
 }

@@ -1,11 +1,14 @@
-import 'package:groceries/data/data_sources/grocery_list_details_data_source.dart';
+import 'package:groceries/data/data_sources/interfaces/grocery_list_details_data_source.dart';
+import 'package:groceries/data/data_sources/mock/mock_grocery_list_details_data_source.dart';
 import 'package:groceries/data/models/grocery_list_details_model/grocery_list_details_model.dart';
 import 'package:groceries/domain/repositories/grocery_list_details_repository.dart';
 import 'package:injectable/injectable.dart';
 
 @Singleton(as: GroceryListDetailsRepository)
 class GroceryListDetailsRepositoryImpl extends GroceryListDetailsRepository {
-  const GroceryListDetailsRepositoryImpl(this._dataSource);
+  const GroceryListDetailsRepositoryImpl(
+    @Named.from(MockGroceryListDetailsDataSource) this._dataSource,
+  );
 
   final GroceryListDetailsDataSource _dataSource;
   @override
@@ -45,6 +48,6 @@ class GroceryListDetailsRepositoryImpl extends GroceryListDetailsRepository {
 
   @override
   Future<void> clearList(String? uid) {
-    throw UnimplementedError();
+    return _dataSource.clearList(uid);
   }
 }
