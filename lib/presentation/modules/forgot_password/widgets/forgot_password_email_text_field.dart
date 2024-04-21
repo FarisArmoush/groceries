@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/modules/forgot_password/bloc/forgot_password_bloc.dart';
 import 'package:groceries/presentation/widgets/app_text_field.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -22,7 +22,7 @@ class ForgotPasswordEmailTextField extends StatelessWidget {
             onChanged: (value) => context.read<ForgotPasswordBloc>().add(
                   ForgotPasswordEvent.emailChanged(value),
                 ),
-            labelText: AppTranslations.general.email,
+            labelText: Translations.general.email,
             keyboardType: TextInputType.emailAddress,
             validator: (value) => state.email.validator(value),
             errorText: state.email.displayError,

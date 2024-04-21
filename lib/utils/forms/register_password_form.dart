@@ -1,5 +1,5 @@
 import 'package:formz/formz.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/utils/app_reg_exps.dart';
 import 'package:groceries/utils/extenstions/num_extensions.dart';
 
@@ -25,7 +25,7 @@ class RegisterPasswordForm extends FormzInput<String, String> {
 
   @override
   String? validator(String? value) {
-    final messages = AppTranslations.inputValidationMessages;
+    final messages = Translations.validation;
 
     if (value!.isEmpty) {
       return messages.fieldCannotBeEmpty;

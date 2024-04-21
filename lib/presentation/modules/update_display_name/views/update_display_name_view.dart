@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/blocs/user_data/user_data_cubit.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
@@ -59,7 +59,7 @@ class UpdateDisplayNameView extends StatelessWidget {
         ..hideCurrentSnackBar()
         ..showSnackBar(
           AppSnackBars.success(
-            message: AppTranslations.updateName.nameUpdatedSuccessfully,
+            message: Translations.updateName.nameUpdatedSuccessfully,
           ),
         );
       context.pushReplacementNamed(AppRoute.root.name);
@@ -73,8 +73,7 @@ class UpdateDisplayNameView extends StatelessWidget {
         ..hideCurrentSnackBar()
         ..showSnackBar(
           AppSnackBars.error(
-            error: state.errorMessage ??
-                AppTranslations.errorMessages.defaultError,
+            error: state.errorMessage ?? Translations.errors.defaultError,
           ),
         );
       context.pushReplacementNamed(AppRoute.root.name);

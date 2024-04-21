@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/modules/verify_user/bloc/verify_user_bloc.dart';
 import 'package:groceries/presentation/modules/verify_user/widgets/verification_email_sent_successfully.dart';
 import 'package:groceries/presentation/modules/verify_user/widgets/verify_user_initial_body.dart';
@@ -14,7 +14,7 @@ class VerifyUserView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppTranslations.verifyAccount.verifyAccount),
+        title: Text(Translations.verifyAccount.verifyAccount),
       ),
       body: BlocBuilder<VerifyUserBloc, VerifyUserState>(
         buildWhen: (previous, current) => previous.status != current.status,

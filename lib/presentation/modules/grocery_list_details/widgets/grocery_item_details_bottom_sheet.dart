@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/widgets/item_priority_button.dart';
@@ -39,7 +39,7 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
               ),
               TextButton(
                 child: Text(
-                  AppTranslations.general.close,
+                  Translations.general.close,
                 ),
                 onPressed: () => context.pop(),
               ),
@@ -50,7 +50,7 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
           ),
           AppTextField(
             initialValue: groceryModel?.notes,
-            labelText: AppTranslations.groceryLists.notes,
+            labelText: Translations.groceryLists.notes,
             enabledBorder: _border(context),
             focusedBorder: _border(context),
           ),
@@ -75,13 +75,13 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
               height: context.deviceHeight * 0.02,
             ),
             BottomSheetButton(
-              text: AppTranslations.groceryLists.removeImage,
+              text: Translations.groceryLists.removeImage,
               iconPath: Assets.icons.trash.path,
               onTap: () {},
             ),
           ] else
             BottomSheetButton(
-              text: AppTranslations.groceryLists.addImage,
+              text: Translations.groceryLists.addImage,
               iconPath: Assets.icons.image.path,
               onTap: () => showModalBottomSheet<void>(
                 context: context,
@@ -99,7 +99,7 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
           //   onTap: () {},
           // ),
           BottomSheetButton(
-            text: AppTranslations.groceryLists.markAsDone,
+            text: Translations.groceryLists.markAsDone,
             iconPath: Assets.icons.doubleCheck.path,
             onTap: () {},
           ),

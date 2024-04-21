@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
@@ -23,7 +23,7 @@ class RecipeCreatedUnsuccessfullyView extends StatelessWidget {
             ),
             Assets.illustrations.error.svg(),
             Text(
-              AppTranslations.createRecipe.failedToCreateHeader,
+              Translations.createRecipe.failedToCreateHeader,
               style: TextStyle(
                 fontWeight: AppFontWeights.semiBold,
                 color: context.theme.primaryColorLight,
@@ -35,7 +35,7 @@ class RecipeCreatedUnsuccessfullyView extends StatelessWidget {
               height: context.deviceHeight * 0.01,
             ),
             Text(
-              AppTranslations.createRecipe.failedToCreateBody,
+              Translations.createRecipe.failedToCreateBody,
               style: TextStyle(
                 fontWeight: AppFontWeights.regular,
                 color: context.theme.hintColor,
@@ -50,13 +50,13 @@ class RecipeCreatedUnsuccessfullyView extends StatelessWidget {
               onPressed: () => context.pushReplacementNamed(
                 AppRoute.root.name,
               ),
-              child: Text(AppTranslations.createGroceryList.goHome),
+              child: Text(Translations.createGroceryList.goHome),
             ),
             OutlinedButton(
               onPressed: () => context.pushReplacementNamed(
                 AppRoute.createRecipe.name,
               ),
-              child: Text(AppTranslations.createGroceryList.tryAgain),
+              child: Text(Translations.createGroceryList.tryAgain),
             ),
           ],
         ),

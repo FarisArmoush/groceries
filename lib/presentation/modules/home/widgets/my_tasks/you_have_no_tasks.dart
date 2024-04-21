@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries_theme/app_theme.dart';
@@ -21,7 +21,7 @@ class YouHaveNoTasks extends StatelessWidget {
           height: context.deviceHeight * 0.015,
         ),
         Text(
-          AppTranslations.home.youDontHaveTasks,
+          Translations.home.youDontHaveTasks,
           style: TextStyle(
             fontWeight: AppFontWeights.medium,
             fontSize: 16,

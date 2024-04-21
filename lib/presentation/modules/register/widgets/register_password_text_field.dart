@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/modules/register/bloc/register_bloc.dart';
 import 'package:groceries/presentation/widgets/app_text_field.dart';
 import 'package:groceries/presentation/widgets/password_input_obscurity_button.dart';
@@ -24,7 +24,7 @@ class RegisterPasswordTextField extends StatelessWidget {
             focusNode: state.passwordNode,
             autofillHints: const [AutofillHints.password],
             keyboardType: TextInputType.visiblePassword,
-            labelText: AppTranslations.general.password,
+            labelText: Translations.general.password,
             errorText: state.password.displayError,
             obscureText: state.isObscure,
             prefixIcon: Assets.icons.lock.svg(

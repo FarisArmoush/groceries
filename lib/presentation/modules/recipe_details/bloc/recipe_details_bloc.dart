@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/data/models/recipe_details_model/recipe_details_model.dart';
 import 'package:groceries/domain/use_cases/delete_recipe_use_case.dart';
 import 'package:groceries/domain/use_cases/fetch_recipe_details_use_case.dart';
@@ -49,7 +49,7 @@ class RecipeDetailsBloc extends Bloc<RecipeDetailsEvent, RecipeDetailsState> {
       emit(
         state.copyWith(
           status: BlocStatus.failure(
-            e.message ?? AppTranslations.errorMessages.defaultError,
+            e.message ?? Translations.errors.defaultError,
           ),
         ),
       );
@@ -57,7 +57,7 @@ class RecipeDetailsBloc extends Bloc<RecipeDetailsEvent, RecipeDetailsState> {
       emit(
         state.copyWith(
           status: BlocStatus.failure(
-            AppTranslations.errorMessages.defaultError,
+            Translations.errors.defaultError,
           ),
         ),
       );

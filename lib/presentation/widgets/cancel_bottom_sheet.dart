@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
@@ -22,7 +22,7 @@ class CancelBottomSheet extends StatelessWidget {
       padding: AppPaddings.bottomSheet(context),
       children: [
         Text(
-          title ?? AppTranslations.general.discardChanges,
+          title ?? Translations.general.discardChanges,
           style: context.theme.dialogTheme.titleTextStyle,
           textAlign: TextAlign.center,
         ),
@@ -32,11 +32,11 @@ class CancelBottomSheet extends StatelessWidget {
               () => context
                 ..pop()
                 ..pop(),
-          child: Text(AppTranslations.general.yesCancel),
+          child: Text(Translations.general.yesCancel),
         ),
         OutlinedButton(
           onPressed: () => context.pop(),
-          child: Text(AppTranslations.general.dontCancel),
+          child: Text(Translations.general.dontCancel),
         ),
       ],
     );

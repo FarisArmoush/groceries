@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/blocs/logout/logout_bloc.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
@@ -24,7 +24,7 @@ class LogoutBottomSheet extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               children: [
                 Text(
-                  AppTranslations.accountSettings.logoutBottomSheetBody,
+                  Translations.accountSettings.logoutBottomSheetBody,
                   style: context.theme.dialogTheme.titleTextStyle,
                   textAlign: TextAlign.center,
                 ),
@@ -35,11 +35,11 @@ class LogoutBottomSheet extends StatelessWidget {
                   onPressed: () {
                     context.read<LogoutBloc>().add(const LogoutEvent.logout());
                   },
-                  child: Text(AppTranslations.accountSettings.yesLogout),
+                  child: Text(Translations.accountSettings.yesLogout),
                 ),
                 OutlinedButton(
                   onPressed: () => context.pop(),
-                  child: Text(AppTranslations.accountSettings.dontLogout),
+                  child: Text(Translations.accountSettings.dontLogout),
                 ),
               ],
             );

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/modules/register/bloc/register_bloc.dart';
 import 'package:groceries/presentation/modules/register/widgets/register_body_text.dart';
@@ -72,8 +72,7 @@ class RegisterView extends StatelessWidget {
         ..hideCurrentSnackBar()
         ..showSnackBar(
           AppSnackBars.error(
-            error: state.errorMessage ??
-                AppTranslations.errorMessages.defaultError,
+            error: state.errorMessage ?? Translations.errors.defaultError,
           ),
         );
     }
@@ -83,7 +82,7 @@ class RegisterView extends StatelessWidget {
         ..hideCurrentSnackBar()
         ..showSnackBar(
           AppSnackBars.success(
-            message: AppTranslations.register.accountCreatedSuccessfully,
+            message: Translations.register.accountCreatedSuccessfully,
           ),
         );
       context.read<RegisterBloc>().add(const RegisterEvent.resetState());

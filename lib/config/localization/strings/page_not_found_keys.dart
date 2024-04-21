@@ -1,4 +1,4 @@
-part of '../app_translations.dart';
+part of '../translations.dart';
 
 final class PageNotFoundKeys {
   /// page_not_found

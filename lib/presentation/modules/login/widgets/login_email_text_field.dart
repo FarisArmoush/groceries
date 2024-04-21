@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/modules/login/bloc/login_bloc.dart';
 import 'package:groceries/presentation/widgets/app_text_field.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -29,7 +29,7 @@ class LoginEmailTextField extends StatelessWidget {
             onChanged: (email) =>
                 context.read<LoginBloc>().add(LoginEvent.updateEmail(email)),
             keyboardType: TextInputType.emailAddress,
-            labelText: AppTranslations.general.email,
+            labelText: Translations.general.email,
             errorText: state.email.displayError,
             validator: (value) => state.email.validator(value),
           ),

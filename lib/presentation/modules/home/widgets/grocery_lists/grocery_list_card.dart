@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
@@ -74,7 +74,7 @@ class GroceryListCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
         ),
         child: Text(
-          '${listModel.items?.length ?? 0} ${AppTranslations.home.newTasks}',
+          '${listModel.items?.length ?? 0} ${Translations.home.newTasks}',
           style: TextStyle(
             fontWeight: AppFontWeights.light,
             color: context.theme.colorScheme.secondary,

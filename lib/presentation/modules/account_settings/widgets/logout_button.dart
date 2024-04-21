@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/blocs/logout/logout_bloc.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/logout_bottom_sheet.dart';
@@ -20,7 +20,7 @@ class LogoutButton extends StatelessWidget {
       listenWhen: (previous, current) => previous.status != current.status,
       listener: _listener,
       child: AppListTileButton(
-        title: AppTranslations.accountSettings.logout,
+        title: Translations.accountSettings.logout,
         icon: Assets.icons.logout.path,
         color: context.theme.primaryColorLight,
         onTap: () => showModalBottomSheet<void>(
@@ -39,7 +39,7 @@ class LogoutButton extends StatelessWidget {
         ..hideCurrentSnackBar()
         ..showSnackBar(
           AppSnackBars.error(
-            error: AppTranslations.settings.logoutFailed,
+            error: Translations.settings.logoutFailed,
           ),
         ),
       success: () {
@@ -50,7 +50,7 @@ class LogoutButton extends StatelessWidget {
           ..hideCurrentSnackBar()
           ..showSnackBar(
             AppSnackBars.informative(
-              message: AppTranslations.settings.logoutSuccess,
+              message: Translations.settings.logoutSuccess,
             ),
           );
         context.pushReplacementNamed(AppRoute.welcome.name);

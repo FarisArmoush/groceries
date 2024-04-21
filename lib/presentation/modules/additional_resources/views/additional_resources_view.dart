@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/modules/additional_resources/widgets/additional_resources_title.dart';
 import 'package:groceries/presentation/modules/additional_resources/widgets/app_version_list_tile.dart';
@@ -13,7 +13,7 @@ class AdditionalResourcesView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppTranslations.additionalResources.title),
+        title: Text(Translations.additionalResources.title),
       ),
       body: ListView(
         padding: AppPaddings.scaffold(context),
@@ -23,7 +23,7 @@ class AdditionalResourcesView extends StatelessWidget {
             height: context.deviceHeight * 0.04,
           ),
           AdditionalResourcesTitle(
-            AppTranslations.additionalResources.helpImproveApp,
+            Translations.additionalResources.helpImproveApp,
           ),
           SizedBox(
             height: context.deviceHeight * 0.02,

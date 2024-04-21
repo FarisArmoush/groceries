@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/delete_account_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 import 'package:groceries/utils/exceptions/app_network_exception.dart';
@@ -42,7 +42,7 @@ class DeleteAccountBloc extends Bloc<DeleteAccountEvent, DeleteAccountState> {
       emit(
         state.copyWith(
           status: BlocStatus.failure(
-            e.message ?? AppTranslations.errorMessages.defaultError,
+            e.message ?? Translations.errors.defaultError,
           ),
         ),
       );
@@ -50,7 +50,7 @@ class DeleteAccountBloc extends Bloc<DeleteAccountEvent, DeleteAccountState> {
       emit(
         state.copyWith(
           status: BlocStatus.failure(
-            AppTranslations.errorMessages.defaultError,
+            Translations.errors.defaultError,
           ),
         ),
       );

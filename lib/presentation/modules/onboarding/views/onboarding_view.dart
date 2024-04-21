@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/data/models/onboarding_page_model/onboarding_page_model.dart';
 import 'package:groceries/presentation/modules/onboarding/bloc/onboarding_bloc.dart';
 import 'package:groceries/presentation/modules/onboarding/widgets/leave_onboarding_button.dart';
@@ -47,20 +47,20 @@ class _OnboardingViewState extends State<OnboardingView> {
   final pages = <OnboardingPageModel>[
     OnboardingPageModel(
       illustrationPath: Assets.illustrations.celebrating.path,
-      title: AppTranslations.onboarding.firstTitle,
-      body: AppTranslations.onboarding.firstBody,
+      title: Translations.onboarding.firstTitle,
+      body: Translations.onboarding.firstBody,
       backgroundColor: Colors.amber,
     ),
     OnboardingPageModel(
       illustrationPath: Assets.illustrations.mail.path,
-      title: AppTranslations.onboarding.secondTitle,
-      body: AppTranslations.onboarding.secondBody,
+      title: Translations.onboarding.secondTitle,
+      body: Translations.onboarding.secondBody,
       backgroundColor: Colors.purple,
     ),
     OnboardingPageModel(
       illustrationPath: Assets.illustrations.eating.path,
-      title: AppTranslations.onboarding.thirdTitle,
-      body: AppTranslations.onboarding.thirdBody,
+      title: Translations.onboarding.thirdTitle,
+      body: Translations.onboarding.thirdBody,
       backgroundColor: Colors.blue,
     ),
   ];

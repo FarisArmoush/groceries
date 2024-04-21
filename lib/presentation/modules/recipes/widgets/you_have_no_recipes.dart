@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries_theme/app_theme.dart';
@@ -19,7 +19,7 @@ class YouHaveNoRecipes extends StatelessWidget {
           height: context.deviceHeight * 0.02,
         ),
         Text(
-          AppTranslations.recipes.emptyRecipesHeader,
+          Translations.recipes.emptyRecipesHeader,
           style: TextStyle(
             fontWeight: AppFontWeights.semiBold,
             color: context.theme.primaryColor,
@@ -31,7 +31,7 @@ class YouHaveNoRecipes extends StatelessWidget {
           height: context.deviceHeight * 0.01,
         ),
         Text(
-          AppTranslations.recipes.emptyRecipesBody,
+          Translations.recipes.emptyRecipesBody,
           style: TextStyle(
             fontWeight: AppFontWeights.light,
             color: context.theme.hintColor,
@@ -44,7 +44,7 @@ class YouHaveNoRecipes extends StatelessWidget {
         ),
         FilledButton(
           onPressed: () {},
-          child: Text(AppTranslations.recipes.createFirstRecipe),
+          child: Text(Translations.recipes.createFirstRecipe),
         ),
       ],
     );

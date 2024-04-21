@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/data/models/task_model/task_model.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
@@ -53,7 +53,7 @@ class MyTasksCard extends StatelessWidget {
                   Visibility(
                     visible: taskModel?.groceries?.isNotEmpty ?? false,
                     child: Text(
-                      '$length ${AppTranslations.home.newTasks}',
+                      '$length ${Translations.home.newTasks}',
                       style: context.theme.listTileTheme.subtitleTextStyle
                           ?.copyWith(
                         color: context.theme.primaryColorLight,

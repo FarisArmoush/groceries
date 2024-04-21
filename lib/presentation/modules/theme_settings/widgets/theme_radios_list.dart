@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/data/models/app_theme_model/app_theme_model.dart';
 import 'package:groceries/presentation/modules/theme_settings/cubit/theme_cubit.dart';
 import 'package:groceries/presentation/modules/theme_settings/widgets/theme_radio.dart';
@@ -36,15 +36,15 @@ class ThemeRadiosList extends StatelessWidget {
   List<AppThemeModel> get _themes {
     return [
       AppThemeModel(
-        title: AppTranslations.theme.light,
+        title: Translations.theme.light,
         themeMode: ThemeMode.light,
       ),
       AppThemeModel(
-        title: AppTranslations.theme.dark,
+        title: Translations.theme.dark,
         themeMode: ThemeMode.dark,
       ),
       AppThemeModel(
-        title: AppTranslations.theme.system,
+        title: Translations.theme.system,
         themeMode: ThemeMode.system,
       ),
     ];

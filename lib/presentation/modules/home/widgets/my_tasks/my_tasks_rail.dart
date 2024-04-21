@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/data/models/task_model/task_model.dart';
 import 'package:groceries/presentation/modules/home/widgets/my_tasks/my_tasks_list.dart';
 import 'package:groceries/presentation/modules/home/widgets/my_tasks/you_have_no_tasks.dart';
@@ -24,7 +24,7 @@ class MyTasksRail extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       children: [
         RailTitle(
-          title: Text(AppTranslations.home.myTasks),
+          title: Text(Translations.home.myTasks),
         ),
         SizedBox(
           height: tasksIsNotEmpty

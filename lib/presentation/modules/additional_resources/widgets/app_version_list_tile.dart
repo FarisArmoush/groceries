@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/blocs/remote_config/remote_config_bloc.dart';
 
 /// A [ListTile] widget that shows the app's current version.
@@ -25,7 +25,7 @@ class _AppVersionListTileState extends State<AppVersionListTile> {
   Widget build(BuildContext context) {
     final appVersion = context.watch<RemoteConfigBloc>().state.appVersion;
     return ListTile(
-      title: Text(AppTranslations.additionalResources.appVersion),
+      title: Text(Translations.additionalResources.appVersion),
       trailing: Text(appVersion),
     );
   }

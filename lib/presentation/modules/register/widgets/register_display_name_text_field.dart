@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/modules/register/bloc/register_bloc.dart';
 import 'package:groceries/presentation/widgets/app_text_field.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -32,7 +32,7 @@ class RegisterDisplayNameTextField extends StatelessWidget {
               fit: BoxFit.scaleDown,
             ),
             keyboardType: TextInputType.name,
-            labelText: AppTranslations.general.username,
+            labelText: Translations.general.username,
             errorText: state.displayName.displayError,
             validator: (value) => state.displayName.validator(value),
           ),

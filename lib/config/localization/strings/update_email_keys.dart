@@ -1,4 +1,4 @@
-part of '../app_translations.dart';
+part of '../translations.dart';
 
 final class UpdateEmailKeys {
   /// update_display_name_header

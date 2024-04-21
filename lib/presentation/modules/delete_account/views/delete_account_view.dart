@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/modules/delete_account/widgets/delete_account_body_text.dart';
 import 'package:groceries/presentation/modules/delete_account/widgets/delete_account_button.dart';
@@ -14,7 +14,7 @@ class DeleteAccountView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppTranslations.deleteAccount.deleteAccount),
+        title: Text(Translations.deleteAccount.deleteAccount),
       ),
       body: ListView(
         shrinkWrap: true,

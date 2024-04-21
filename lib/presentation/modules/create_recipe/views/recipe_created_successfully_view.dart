@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
@@ -25,7 +25,7 @@ class RecipeCreatedSuccessfullyView extends StatelessWidget {
               height: context.deviceHeight * 0.35,
             ),
             Text(
-              AppTranslations.createRecipe.successHeader,
+              Translations.createRecipe.successHeader,
               style: TextStyle(
                 fontWeight: AppFontWeights.semiBold,
                 color: context.theme.primaryColor,
@@ -37,7 +37,7 @@ class RecipeCreatedSuccessfullyView extends StatelessWidget {
               height: context.deviceHeight * 0.01,
             ),
             Text(
-              AppTranslations.createRecipe.successBody,
+              Translations.createRecipe.successBody,
               style: TextStyle(
                 fontWeight: AppFontWeights.regular,
                 color: context.theme.hintColor,
@@ -51,7 +51,7 @@ class RecipeCreatedSuccessfullyView extends StatelessWidget {
             OutlinedButton(
               onPressed: () => context.pushReplacementNamed(AppRoute.root.name),
               child: Text(
-                AppTranslations.createGroceryList.goHome,
+                Translations.createGroceryList.goHome,
               ),
             ),
           ],

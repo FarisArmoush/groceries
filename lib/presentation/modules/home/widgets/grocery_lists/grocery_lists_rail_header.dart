@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/modules/home/widgets/rail_title.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -16,7 +16,7 @@ class GroceryListsRailHeader extends StatelessWidget {
       children: [
         Expanded(
           child: RailTitle(
-            title: Text(AppTranslations.home.myLists),
+            title: Text(Translations.home.myLists),
           ),
         ),
         const Spacer(),
@@ -25,7 +25,7 @@ class GroceryListsRailHeader extends StatelessWidget {
           child: TextButton.icon(
             label: FittedBox(
               child: Text(
-                AppTranslations.createGroceryList.createNewList,
+                Translations.createGroceryList.createNewList,
                 maxLines: 1,
               ),
             ),

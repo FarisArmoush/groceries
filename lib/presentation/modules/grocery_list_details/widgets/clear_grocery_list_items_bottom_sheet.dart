@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/data/models/grocery_list_details_model/grocery_list_details_model.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/bloc/grocery_list_details_bloc.dart';
@@ -31,7 +31,7 @@ class ClearGroceryListItemsBottomSheet extends StatelessWidget {
             padding: AppPaddings.bottomSheet(context),
             children: [
               Text(
-                AppTranslations.groceryLists.clearGroceriesFromList,
+                Translations.groceryLists.clearGroceriesFromList,
                 style: context.theme.dialogTheme.titleTextStyle,
                 textAlign: TextAlign.center,
               ),
@@ -42,11 +42,11 @@ class ClearGroceryListItemsBottomSheet extends StatelessWidget {
                 onPressed: () => context.read<GroceryListDetailsBloc>().add(
                       GroceryListDetailsEvent.clear(uid: listModel?.id),
                     ),
-                child: Text(AppTranslations.groceryLists.yesClearGroceries),
+                child: Text(Translations.groceryLists.yesClearGroceries),
               ),
               OutlinedButton(
                 onPressed: () => context.pop(),
-                child: Text(AppTranslations.groceryLists.noDontClearGroceries),
+                child: Text(Translations.groceryLists.noDontClearGroceries),
               ),
             ],
           ),

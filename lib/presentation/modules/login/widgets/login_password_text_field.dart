@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/modules/login/bloc/login_bloc.dart';
 import 'package:groceries/presentation/widgets/app_text_field.dart';
 import 'package:groceries/presentation/widgets/password_input_obscurity_button.dart';
@@ -36,7 +36,7 @@ class LoginPasswordTextField extends StatelessWidget {
           onFieldSubmitted: (_) => state.isValid
               ? () => context.read<LoginBloc>().add(const LoginEvent.submit())
               : null,
-          labelText: AppTranslations.general.password,
+          labelText: Translations.general.password,
           errorText: state.password.displayError,
           validator: (value) => state.password.validator(value),
           obscureText: state.isObscure,

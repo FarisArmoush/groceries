@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
 import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocery_lists_list.dart';
 import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocery_lists_rail_header.dart';
@@ -27,7 +27,7 @@ class GroceryListsRail extends StatelessWidget {
           const GroceryListsRailHeader()
         else
           RailTitle(
-            title: Text(AppTranslations.home.myLists),
+            title: Text(Translations.home.myLists),
           ),
         SizedBox(
           height: lists.isNotEmpty

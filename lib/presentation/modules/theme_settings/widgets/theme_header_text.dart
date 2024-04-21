@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries_theme/app_theme.dart';
 
@@ -9,7 +9,7 @@ class ThemeHeaderText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
-      AppTranslations.theme.header,
+      Translations.theme.header,
       style: TextStyle(
         fontWeight: AppFontWeights.medium,
         color: context.theme.primaryColor,

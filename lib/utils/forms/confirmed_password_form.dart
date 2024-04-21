@@ -1,5 +1,5 @@
 import 'package:formz/formz.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 
 /// A class representing a confirmed password input form field.
 /// This class extends the FormzInput class and is specifically
@@ -32,7 +32,7 @@ class ConfirmedPasswordForm extends FormzInput<String, String> {
 
   @override
   String? validator(String? value) {
-    final messages = AppTranslations.inputValidationMessages;
+    final messages = Translations.validation;
 
     if (password.isEmpty) {
       return messages.fieldCannotBeEmpty;

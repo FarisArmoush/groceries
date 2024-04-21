@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/modules/add_items/widgets/category_box_divider.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries/utils/extenstions/padding_extensions.dart';
@@ -32,7 +32,7 @@ class CategoryBox extends StatelessWidget {
           const CategoryBoxDivider(),
           TextButton(
             onPressed: () {},
-            child: Text(AppTranslations.addItems.addItems),
+            child: Text(Translations.addItems.addItems),
           ).symmetricPadding(
             horizontal: context.deviceWidth * 0.1,
           ),

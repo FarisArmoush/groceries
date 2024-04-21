@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/data/models/app_bottom_navigation_bar_item/app_bottom_navigation_bar_item.dart';
 import 'package:groceries/presentation/blocs/grocery_lists/grocery_lists_bloc.dart';
 import 'package:groceries/presentation/blocs/my_tasks/my_tasks_bloc.dart';
@@ -68,19 +68,19 @@ class _RootViewState extends State<RootView> {
     return [
       _bnbItem(
         context,
-        label: AppTranslations.home.home,
+        label: Translations.home.home,
         iconPath: Assets.icons.house.path,
         activeIconPath: Assets.icons.houseFilled.path,
       ),
       _bnbItem(
         context,
-        label: AppTranslations.recipes.recipes,
+        label: Translations.recipes.recipes,
         iconPath: Assets.icons.cookingPot.path,
         activeIconPath: Assets.icons.cookingPotFilled.path,
       ),
       _bnbItem(
         context,
-        label: AppTranslations.settings.settings,
+        label: Translations.settings.settings,
         iconPath: Assets.icons.gear.path,
         activeIconPath: Assets.icons.gearFilled.path,
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/modules/add_items/bloc/add_items_bloc.dart';
 import 'package:groceries/presentation/modules/add_items/widgets/add_items_categories_list.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
@@ -44,8 +44,8 @@ class _AddItemsViewState extends State<AddItemsView> {
             success: () => CustomScrollView(
               slivers: [
                 GroceriesAppBar(
-                  largeTitle: Text(AppTranslations.addItems.addItems),
-                  middle: Text(AppTranslations.addItems.addItems),
+                  largeTitle: Text(Translations.addItems.addItems),
+                  middle: Text(Translations.addItems.addItems),
                 ),
                 const SliverToBoxAdapter(
                   child: AddItemsCategoriesList(),

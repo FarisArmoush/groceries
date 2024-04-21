@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/modules/create_list/bloc/create_list_bloc.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/utils/extenstions/widgets_as_extensions.dart';
@@ -21,7 +21,7 @@ class CreateListButton extends StatelessWidget {
           ignoring: state.formStatus.isInProgressOrSuccess,
           child: ElevatedButton(
             onPressed: state.isValid ? () => _submit(context, state) : null,
-            child: Text(AppTranslations.createGroceryList.createList),
+            child: Text(Translations.createGroceryList.createList),
           ).bottomButtonSpacing(),
         ),
       ),

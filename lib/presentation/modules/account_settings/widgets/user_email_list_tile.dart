@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/blocs/user_data/user_data_cubit.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
@@ -18,7 +18,7 @@ class UserEmailListTile extends StatelessWidget {
     final email = user?.email ?? '';
     final isUserVerified = user?.isVerified ?? false;
     return ListTile(
-      title: Text(AppTranslations.general.email),
+      title: Text(Translations.general.email),
       subtitle: Text(email),
       trailing: Assets.icons.edit.svg(
         colorFilter: ColorFilter.mode(
@@ -54,7 +54,7 @@ class VerifyToUpdateEmailBottomSheet extends StatelessWidget {
           height: context.deviceHeight * 0.05,
         ),
         Text(
-          AppTranslations.verifyAccount.verifyToUpdateEmail,
+          Translations.verifyAccount.verifyToUpdateEmail,
           style: context.theme.dialogTheme.titleTextStyle,
           textAlign: TextAlign.center,
         ),

@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/data/models/task_model/task_model.dart';
 import 'package:groceries/domain/use_cases/fetch_my_tasks_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
@@ -38,7 +38,7 @@ class MyTasksBloc extends Bloc<MyTasksEvent, MyTasksState> {
       emit(
         state.copyWith(
           status: BlocStatus.failure(
-            e.message ?? AppTranslations.errorMessages.defaultError,
+            e.message ?? Translations.errors.defaultError,
           ),
         ),
       );
@@ -46,7 +46,7 @@ class MyTasksBloc extends Bloc<MyTasksEvent, MyTasksState> {
       emit(
         state.copyWith(
           status: BlocStatus.failure(
-            AppTranslations.errorMessages.defaultError,
+            Translations.errors.defaultError,
           ),
         ),
       );

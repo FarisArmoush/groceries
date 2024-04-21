@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
@@ -23,7 +23,7 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
             ),
             Assets.illustrations.error.svg(),
             Text(
-              AppTranslations.createGroceryList.listCreatedUnsuccessfullyHeader,
+              Translations.createGroceryList.listCreatedUnsuccessfullyHeader,
               style: TextStyle(
                 fontWeight: AppFontWeights.semiBold,
                 color: context.theme.primaryColorLight,
@@ -35,7 +35,7 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
               height: context.deviceHeight * 0.01,
             ),
             Text(
-              AppTranslations.createGroceryList.listCreatedUnsuccessfullyBody,
+              Translations.createGroceryList.listCreatedUnsuccessfullyBody,
               style: TextStyle(
                 fontWeight: AppFontWeights.regular,
                 color: context.theme.hintColor,
@@ -49,13 +49,13 @@ class ListCreatedUnsuccessfullyView extends StatelessWidget {
             FilledButton(
               onPressed: () => context.pushReplacementNamed(AppRoute.root.name),
               child: Text(
-                AppTranslations.createGroceryList.goHome,
+                Translations.createGroceryList.goHome,
               ),
             ),
             OutlinedButton(
               onPressed: () {},
               child: Text(
-                AppTranslations.createGroceryList.tryAgain,
+                Translations.createGroceryList.tryAgain,
               ),
             ),
           ],

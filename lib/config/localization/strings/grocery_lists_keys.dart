@@ -1,4 +1,4 @@
-part of '../app_translations.dart';
+part of '../translations.dart';
 
 final class GroceryListsKeys {
   final emptyListHeader = 'empty_list_header'.tr();

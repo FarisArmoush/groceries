@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/modules/update_email/bloc/update_email_bloc.dart';
 import 'package:groceries/presentation/widgets/app_text_field.dart';
 
@@ -13,7 +13,7 @@ class UpdateEmailTextField extends StatelessWidget {
       buildWhen: (previous, current) => previous.email != current.email,
       builder: (context, state) {
         return AppTextField(
-          labelText: AppTranslations.general.email,
+          labelText: Translations.general.email,
           onChanged: (value) => context.read<UpdateEmailBloc>().add(
                 UpdateEmailEvent.emailChanged(value),
               ),

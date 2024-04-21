@@ -1,10 +1,10 @@
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 
 class AppNetworkException implements Exception {
   const AppNetworkException([this.message]);
 
   factory AppNetworkException.fromCode(String? code) {
-    final errors = AppTranslations.errorMessages;
+    final errors = Translations.errors;
     switch (code) {
       case 'invalid-email':
         return AppNetworkException(errors.invalidEmail);

@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/data/models/category_model/category_model.dart';
 import 'package:groceries/domain/use_cases/fetch_categories_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
@@ -44,7 +44,7 @@ class AddItemsBloc extends Bloc<AddItemsEvent, AddItemsState> {
       emit(
         state.copyWith(
           status: BlocStatus.failure(
-            e.message ?? AppTranslations.errorMessages.defaultError,
+            e.message ?? Translations.errors.defaultError,
           ),
         ),
       );

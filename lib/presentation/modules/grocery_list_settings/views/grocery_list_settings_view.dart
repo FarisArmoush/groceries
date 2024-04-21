@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/modules/grocery_list_settings/widgets/delete_grocery_list_button.dart';
 import 'package:groceries/presentation/modules/grocery_list_settings/widgets/edit_list_image.dart';
@@ -16,7 +16,7 @@ class GroceryListSettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppTranslations.groceryListSettings.listSettings),
+        title: Text(Translations.groceryListSettings.listSettings),
         actions: const [
           SaveGroceryListChangesButton(),
         ],
@@ -34,7 +34,7 @@ class GroceryListSettingsView extends StatelessWidget {
             height: context.deviceHeight * 0.035,
           ),
           Text(
-            AppTranslations.groceryListSettings.listMembers,
+            Translations.groceryListSettings.listMembers,
             style: TextStyle(
               fontWeight: AppFontWeights.regular,
               color: context.theme.primaryColor,

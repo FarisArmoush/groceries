@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/modules/additional_resources/cubit/send_crash_reports_cubit.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries_theme/app_theme.dart';
@@ -18,9 +18,9 @@ class SendCrashReportsSwitchTile extends StatelessWidget {
           onChanged: (_) => context.read<SendCrashReportsCubit>().toggle(),
           tileColor: AppColors.transparent,
           activeColor: context.theme.primaryColorLight,
-          title: Text(AppTranslations.additionalResources.sendCrashReports),
+          title: Text(Translations.additionalResources.sendCrashReports),
           subtitle: Text(
-            AppTranslations.additionalResources.sendCrashReportsDescription,
+            Translations.additionalResources.sendCrashReportsDescription,
           ),
         );
       },

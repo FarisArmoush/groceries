@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/blocs/remote_config/remote_config_bloc.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
@@ -25,7 +25,7 @@ class AccountSettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppTranslations.accountSettings.title),
+        title: Text(Translations.accountSettings.title),
       ),
       body: ListView(
         padding: AppPaddings.scaffold(context),
@@ -98,7 +98,7 @@ class _DeleteAccountButtonState extends State<_DeleteAccountButton> {
               ..pushNamed(AppRoute.deleteAccount.name),
           );
         },
-        child: Text(AppTranslations.deleteAccount.deleteAccount),
+        child: Text(Translations.deleteAccount.deleteAccount),
       ),
     );
   }

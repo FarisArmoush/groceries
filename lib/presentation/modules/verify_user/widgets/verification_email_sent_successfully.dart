@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/blocs/logout/logout_bloc.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
@@ -22,7 +22,7 @@ class VerificationEmailSentSuccessfully extends StatelessWidget {
           height: context.deviceHeight * 0.02,
         ),
         Text(
-          AppTranslations.verifyAccount.successHeader,
+          Translations.verifyAccount.successHeader,
           textAlign: TextAlign.center,
           style: context.theme.dialogTheme.titleTextStyle,
         ),
@@ -30,7 +30,7 @@ class VerificationEmailSentSuccessfully extends StatelessWidget {
           height: context.deviceHeight * 0.01,
         ),
         Text(
-          AppTranslations.verifyAccount.successBody,
+          Translations.verifyAccount.successBody,
           textAlign: TextAlign.center,
           style: context.theme.dialogTheme.contentTextStyle,
         ),
@@ -45,7 +45,7 @@ class VerificationEmailSentSuccessfully extends StatelessWidget {
               )
               ..pop();
           },
-          child: Text(AppTranslations.accountSettings.logout),
+          child: Text(Translations.accountSettings.logout),
         ),
       ],
     ).symmetricPadding(vertical: 12, horizontal: 24);

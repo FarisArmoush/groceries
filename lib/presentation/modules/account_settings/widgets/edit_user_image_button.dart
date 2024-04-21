@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/widgets/upload_image_bottom_sheet.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
@@ -11,7 +11,7 @@ class EditUserImageButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton.icon(
       label: Text(
-        AppTranslations.accountSettings.editUserImage,
+        Translations.accountSettings.editUserImage,
       ),
       icon: Assets.icons.edit.svg(
         colorFilter: ColorFilter.mode(

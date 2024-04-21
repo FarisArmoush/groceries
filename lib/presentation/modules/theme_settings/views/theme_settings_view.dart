@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/modules/theme_settings/widgets/theme_header_text.dart';
 import 'package:groceries/presentation/modules/theme_settings/widgets/theme_hint_text.dart';
@@ -13,7 +13,7 @@ class ThemeSettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppTranslations.theme.theme),
+        title: Text(Translations.theme.theme),
       ),
       body: ListView(
         padding: AppPaddings.scaffold(context),

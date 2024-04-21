@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/utils/exceptions/app_network_exception.dart';
 
 void main() {
@@ -11,17 +11,17 @@ void main() {
 
     test('Constructing from invalid-email code sets the correct message', () {
       final exception = AppNetworkException.fromCode('invalid-email');
-      expect(exception.message, AppTranslations.errorMessages.invalidEmail);
+      expect(exception.message, Translations.errors.invalidEmail);
     });
 
     test('Constructing from user-disabled code sets the correct message', () {
       final exception = AppNetworkException.fromCode('user-disabled');
-      expect(exception.message, AppTranslations.errorMessages.userDisabled);
+      expect(exception.message, Translations.errors.userDisabled);
     });
 
     test('Constructing from user-not-found code sets the correct message', () {
       final exception = AppNetworkException.fromCode('user-not-found');
-      expect(exception.message, AppTranslations.errorMessages.userNotFound);
+      expect(exception.message, Translations.errors.userNotFound);
     });
 
     test(
@@ -30,13 +30,13 @@ void main() {
       final exception = AppNetworkException.fromCode('requires-recent-login');
       expect(
         exception.message,
-        AppTranslations.errorMessages.requiresRecentLogin,
+        Translations.errors.requiresRecentLogin,
       );
     });
 
     test('Constructing from wrong-password code sets the correct message', () {
       final exception = AppNetworkException.fromCode('wrong-password');
-      expect(exception.message, AppTranslations.errorMessages.wrongPassword);
+      expect(exception.message, Translations.errors.wrongPassword);
     });
 
     test('Constructing from email-already-in-use code sets the correct message',
@@ -44,7 +44,7 @@ void main() {
       final exception = AppNetworkException.fromCode('email-already-in-use');
       expect(
         exception.message,
-        AppTranslations.errorMessages.emailAlreadyInUse,
+        Translations.errors.emailAlreadyInUse,
       );
     });
 
@@ -54,13 +54,13 @@ void main() {
       final exception = AppNetworkException.fromCode('operation-not-allowed');
       expect(
         exception.message,
-        AppTranslations.errorMessages.operationNotAllowed,
+        Translations.errors.operationNotAllowed,
       );
     });
 
     test('Constructing from weak-password code sets the correct message', () {
       final exception = AppNetworkException.fromCode('weak-password');
-      expect(exception.message, AppTranslations.errorMessages.weakPassword);
+      expect(exception.message, Translations.errors.weakPassword);
     });
 
     test('''
@@ -70,7 +70,7 @@ Constructing from unauthorized-continue-uri code sets the correct message''',
           AppNetworkException.fromCode('unauthorized-continue-uri');
       expect(
         exception.message,
-        AppTranslations.errorMessages.unauthorizedContinueUri,
+        Translations.errors.unauthorizedContinueUri,
       );
     });
 
@@ -79,7 +79,7 @@ Constructing from unauthorized-continue-uri code sets the correct message''',
       final exception = AppNetworkException.fromCode('invalid-continue-uri');
       expect(
         exception.message,
-        AppTranslations.errorMessages.invalidContinueUri,
+        Translations.errors.invalidContinueUri,
       );
     });
 
@@ -89,7 +89,7 @@ Constructing from unauthorized-continue-uri code sets the correct message''',
       final exception = AppNetworkException.fromCode('missing-ios-bundle-id');
       expect(
         exception.message,
-        AppTranslations.errorMessages.missingIosBundleId,
+        Translations.errors.missingIosBundleId,
       );
     });
 
@@ -98,7 +98,7 @@ Constructing from unauthorized-continue-uri code sets the correct message''',
       final exception = AppNetworkException.fromCode('missing-continue-uri');
       expect(
         exception.message,
-        AppTranslations.errorMessages.missingContinueUri,
+        Translations.errors.missingContinueUri,
       );
     });
 
@@ -109,13 +109,13 @@ Constructing from missing-android-pkg-name code sets the correct message''',
           AppNetworkException.fromCode('missing-android-pkg-name');
       expect(
         exception.message,
-        AppTranslations.errorMessages.missingAndroidPackageName,
+        Translations.errors.missingAndroidPackageName,
       );
     });
 
     test('Constructing from unknown code sets default error message', () {
       final exception = AppNetworkException.fromCode('unknown-code');
-      expect(exception.message, AppTranslations.errorMessages.defaultError);
+      expect(exception.message, Translations.errors.defaultError);
     });
   });
 }

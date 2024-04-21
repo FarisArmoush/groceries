@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/modules/welcome/widgets/welcome_view_body_text.dart';
 import 'package:groceries/presentation/modules/welcome/widgets/welcome_view_header_text.dart';
@@ -31,7 +31,7 @@ class WelcomeView extends StatelessWidget {
               onPressed: () => context.pushReplacementNamed(
                 AppRoute.register.name,
               ),
-              child: Text(AppTranslations.register.register),
+              child: Text(Translations.register.register),
             ),
             SizedBox(
               height: context.deviceHeight * 0.01,
@@ -40,7 +40,7 @@ class WelcomeView extends StatelessWidget {
               onPressed: () => context.pushReplacementNamed(
                 AppRoute.login.name,
               ),
-              child: Text(AppTranslations.login.login),
+              child: Text(Translations.login.login),
             ),
           ],
         ),

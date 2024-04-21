@@ -1,7 +1,7 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/data/models/user_model/user_model.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/presentation/widgets/cancel_bottom_sheet.dart';
@@ -31,7 +31,7 @@ class MemberCard extends StatelessWidget {
           elevation: 0,
           context: context,
           builder: (context) => CancelBottomSheet(
-            title: AppTranslations.groceryListSettings.removeMemberFromList,
+            title: Translations.groceryListSettings.removeMemberFromList,
             onCancel: () => context.pop(),
           ),
         ),

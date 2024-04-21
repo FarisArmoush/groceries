@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/utils/forms/login_password_form.dart';
 
 void main() {
@@ -30,7 +30,7 @@ void main() {
       expect(password.isNotValid, true);
       expect(
         password.error,
-        AppTranslations.inputValidationMessages.fieldCannotBeEmpty,
+        Translations.validation.fieldCannotBeEmpty,
       );
     });
 
@@ -42,8 +42,7 @@ void main() {
       expect(password.isNotValid, true);
       expect(
         password.error,
-        AppTranslations
-            .inputValidationMessages.fieldMustHaveAtLeastEightCharacters,
+        Translations.validation.fieldMustHaveAtLeastEightCharacters,
       );
     });
   });

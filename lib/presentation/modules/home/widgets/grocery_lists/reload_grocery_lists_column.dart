@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/blocs/grocery_lists/grocery_lists_bloc.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries_theme/app_theme.dart';
@@ -34,7 +34,7 @@ class ReloadGroceryListsColumn extends StatelessWidget {
             ..add(
               const GroceryListsEvent.getGroceryLists(),
             ),
-          child: Text(AppTranslations.general.tryAgain),
+          child: Text(Translations.general.tryAgain),
         ),
       ],
     );

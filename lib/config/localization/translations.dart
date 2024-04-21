@@ -27,7 +27,7 @@ part 'strings/verify_account_keys.dart';
 part 'strings/welcome_keys.dart';
 
 /// This class provides translations for all app strings.
-class AppTranslations {
+class Translations {
   /// General Keys
   static final general = GeneralKeys();
 
@@ -98,8 +98,8 @@ class AppTranslations {
   static final updateName = UpdateDisplayNameKeys();
 
   /// Input Validation Messages Keys
-  static final inputValidationMessages = InputValidationMessagesKeys();
+  static final validation = InputValidationMessagesKeys();
 
   /// Error Messages Keys
-  static final errorMessages = ErrorMessagesKeys();
+  static final errors = ErrorMessagesKeys();
 }

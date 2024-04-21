@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/modules/verify_user/widgets/send_verification_email_button.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
@@ -22,7 +22,7 @@ class VerifyUserInitialBody extends StatelessWidget {
             height: context.deviceHeight * 0.03,
           ),
           Text(
-            AppTranslations.verifyAccount.sendVerificationEmail,
+            Translations.verifyAccount.sendVerificationEmail,
             style: context.theme.dialogTheme.titleTextStyle,
             textAlign: TextAlign.center,
           ),

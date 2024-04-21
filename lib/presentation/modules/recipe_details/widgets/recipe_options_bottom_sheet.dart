@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/widgets/bottom_sheet_button.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -16,17 +16,17 @@ class RecipeOptionsBottomSheet extends StatelessWidget {
       children: [
         BottomSheetButton(
           onTap: () {},
-          text: AppTranslations.groceryLists.edit,
+          text: Translations.groceryLists.edit,
           iconPath: Assets.icons.edit.path,
         ),
         BottomSheetButton(
           onTap: () {},
-          text: AppTranslations.groceryLists.share,
+          text: Translations.groceryLists.share,
           iconPath: Assets.icons.share.path,
         ),
         BottomSheetButton(
           onTap: () {},
-          text: AppTranslations.groceryLists.delete,
+          text: Translations.groceryLists.delete,
           iconPath: Assets.icons.trash.path,
           color: context.theme.primaryColorLight,
         ),

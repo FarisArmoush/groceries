@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/utils/forms/confirmed_password_form.dart';
 
 void main() {
@@ -37,7 +37,7 @@ void main() {
       expect(confirmedPassword.isNotValid, true);
       expect(
         confirmedPassword.error,
-        AppTranslations.inputValidationMessages.passwordsDoNotMatch,
+        Translations.validation.passwordsDoNotMatch,
       );
     });
 
@@ -53,7 +53,7 @@ emits an error when the confirmed password does not match the password''', () {
       expect(confirmedPassword.isNotValid, true);
       expect(
         confirmedPassword.error,
-        AppTranslations.inputValidationMessages.passwordsDoNotMatch,
+        Translations.validation.passwordsDoNotMatch,
       );
     });
 

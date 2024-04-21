@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 
 class SaveGroceryListChangesButton extends StatelessWidget {
   const SaveGroceryListChangesButton({super.key});
@@ -9,7 +9,7 @@ class SaveGroceryListChangesButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () => context.pop(),
-      child: Text(AppTranslations.groceryListSettings.saveListChanges),
+      child: Text(Translations.groceryListSettings.saveListChanges),
     );
   }
 }

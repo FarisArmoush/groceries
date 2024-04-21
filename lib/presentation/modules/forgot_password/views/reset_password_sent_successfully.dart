@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
@@ -31,7 +31,7 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
             height: context.deviceHeight * 0.045,
           ),
           Text(
-            AppTranslations.forgotPassword.successHeader,
+            Translations.forgotPassword.successHeader,
             style: TextStyle(
               fontWeight: AppFontWeights.bold,
               color: context.theme.primaryColorLight,
@@ -43,7 +43,7 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
             height: context.deviceHeight * 0.01,
           ),
           Text(
-            AppTranslations.forgotPassword.successBody,
+            Translations.forgotPassword.successBody,
             style: TextStyle(
               fontWeight: AppFontWeights.regular,
               color: context.theme.primaryColor,
@@ -57,7 +57,7 @@ class ResetPasswordSentSuccessfullyView extends StatelessWidget {
         width: context.deviceWidth,
         child: ElevatedButton(
           onPressed: () => context.pushReplacementNamed(AppRoute.login.name),
-          child: Text(AppTranslations.login.login),
+          child: Text(Translations.login.login),
         ),
       ).symmetricPadding(
         vertical: 16,

@@ -1,5 +1,5 @@
 import 'package:formz/formz.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/utils/extenstions/num_extensions.dart';
 
 /// A class representing a login password input form field.
@@ -24,7 +24,7 @@ class LoginPasswordForm extends FormzInput<String, String> {
 
   @override
   String? validator(String? value) {
-    final messages = AppTranslations.inputValidationMessages;
+    final messages = Translations.validation;
     if (value!.isEmpty) {
       return messages.fieldCannotBeEmpty;
     }

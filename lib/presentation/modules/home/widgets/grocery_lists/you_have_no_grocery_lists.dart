@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
@@ -23,7 +23,7 @@ class YouDontHaveGroceryLists extends StatelessWidget {
           height: context.deviceHeight * 0.015,
         ),
         Text(
-          AppTranslations.home.youDontHaveGroceryLists,
+          Translations.home.youDontHaveGroceryLists,
           style: TextStyle(
             fontWeight: AppFontWeights.medium,
             fontSize: 16,
@@ -37,7 +37,7 @@ class YouDontHaveGroceryLists extends StatelessWidget {
         FilledButton.icon(
           onPressed: () => context.pushNamed(AppRoute.createList.name),
           icon: const Icon(CupertinoIcons.add),
-          label: Text(AppTranslations.home.createYourFirstList),
+          label: Text(Translations.home.createYourFirstList),
         ),
       ],
     );

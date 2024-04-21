@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/data/models/grocery_list_details_model/grocery_list_details_model.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/widgets/grocery_list_options_bottom_sheet.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -16,7 +16,7 @@ class GroceryListOptionsButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      tooltip: AppTranslations.groceryLists.listOptions,
+      tooltip: Translations.groceryLists.listOptions,
       icon: Assets.icons.menu.svg(
         colorFilter: ColorFilter.mode(
           context.theme.primaryColor,

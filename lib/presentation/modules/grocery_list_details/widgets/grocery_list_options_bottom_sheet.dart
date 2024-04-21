@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/data/models/grocery_list_details_model/grocery_list_details_model.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
@@ -33,7 +33,7 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  AppTranslations.groceryLists.listOptions,
+                  Translations.groceryLists.listOptions,
                   style: TextStyle(
                     fontWeight: AppFontWeights.regular,
                     color: context.theme.primaryColor,
@@ -42,7 +42,7 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
                 ),
                 TextButton(
                   child: Text(
-                    AppTranslations.general.close,
+                    Translations.general.close,
                   ),
                   onPressed: () => context.pop(),
                 ),
@@ -54,7 +54,7 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
             Visibility(
               visible: itemsIsEmpty,
               child: BottomSheetButton(
-                text: AppTranslations.groceryLists.sendListAsText,
+                text: Translations.groceryLists.sendListAsText,
                 iconPath: Assets.icons.send.path,
                 onTap: () {},
               ),
@@ -62,13 +62,13 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
             Visibility(
               visible: itemsIsEmpty,
               child: BottomSheetButton(
-                text: AppTranslations.groceryLists.printList,
+                text: Translations.groceryLists.printList,
                 iconPath: Assets.icons.printer.path,
                 onTap: () {},
               ),
             ),
             BottomSheetButton(
-              text: AppTranslations.groceryListSettings.listSettings,
+              text: Translations.groceryListSettings.listSettings,
               iconPath: Assets.icons.gear.path,
               onTap: () => context
                 ..pop()

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/modules/create_recipe/widgets/add_items_to_recipe_button.dart';
 import 'package:groceries/presentation/modules/create_recipe/widgets/add_steps_to_recipe_list.dart';
@@ -18,8 +18,8 @@ class CreateRecipeView extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           GroceriesAppBar(
-            largeTitle: Text(AppTranslations.createRecipe.createRecipe),
-            middle: Text(AppTranslations.createRecipe.createRecipe),
+            largeTitle: Text(Translations.createRecipe.createRecipe),
+            middle: Text(Translations.createRecipe.createRecipe),
           ),
           SliverPadding(
             padding: AppPaddings.scaffold(context),

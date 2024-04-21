@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/blocs/user_data/user_data_cubit.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -14,7 +14,7 @@ class UserDisplayNameListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     final displayName = context.read<UserDataCubit>().state.user?.name ?? '';
     return ListTile(
-      title: Text(AppTranslations.general.username),
+      title: Text(Translations.general.username),
       subtitle: Text(displayName),
       trailing: Assets.icons.edit.svg(
         colorFilter: ColorFilter.mode(

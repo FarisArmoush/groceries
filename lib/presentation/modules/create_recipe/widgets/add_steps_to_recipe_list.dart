@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/config/localization/app_translations.dart';
+import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/modules/create_recipe/widgets/recipe_step_text_field.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
@@ -66,7 +66,7 @@ class _AddStepsToRecipeListState extends State<AddStepsToRecipeList> {
               BlendMode.srcIn,
             ),
           ),
-          label: Text(AppTranslations.createRecipe.addStep),
+          label: Text(Translations.createRecipe.addStep),
         ),
       ],
     );
