@@ -13,10 +13,6 @@ you don't forget any essential items while grocery shopping.
 
 ---
 
-# Grocery Shopping App
-
-This repository contains the source code for my grocery shopping app developed using Flutter and Firebase.
-
 ## Architecture
 
 I've implemented a clean architecture for this project, ensuring a clear separation of concerns. Here's a brief overview of the data flow:
@@ -65,7 +61,7 @@ To get started with the app, follow these steps:
    
 2. Set up Firebase configurations.
    
-3. Run the app on your Flutter development environment.
+3. Run the application.
 
 Feel free to explore the codebase, and if you have any questions or suggestions, don't hesitate to reach out!
 
@@ -83,28 +79,35 @@ dart run build_runner watch --delete-conflicting-outputs
 ```
 
 ## Release APK 
+
+### Development
 ```ssh
 flutter build apk --release -t lib/main_development.dart --flavor development
 ```
 
+### Staging
 ```ssh
 flutter build apk --release -t lib/main_staging.dart --flavor staging
 ``` 
 
+### Production
 ```ssh
 flutter build apk --release -t lib/main_production.dart --flavor production
 ```
 
 ## Release IPA
 
+### Development
 ```ssh
 flutter build ipa --release -t lib/main_development.dart --flavor development
 ```
 
+### Staging
 ```ssh
 flutter build ipa --release -t lib/main_staging.dart --flavor staging
 ``` 
 
+### Production
 ```ssh
 flutter build ipa --release -t lib/main_production.dart --flavor production
 ```
