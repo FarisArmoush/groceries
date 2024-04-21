@@ -14,12 +14,10 @@ class WrapperView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AuthenticationBloc, AuthenticationState>(
       buildWhen: (previous, current) => previous != current,
-      builder: (context, state) {
-        return state.when(
-          authenticated: (_) => const RootView(),
-          unAuthenticated: () => const WelcomeView(),
-        );
-      },
+      builder: (context, state) => state.when(
+        authenticated: (_) => const RootView(),
+        unAuthenticated: () => const WelcomeView(),
+      ),
     );
   }
 }
