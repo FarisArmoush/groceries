@@ -21,7 +21,7 @@ abstract interface class AuthenticationDataSource {
 
   Future<void> sendVerificationEmail();
 
-  Stream<Object?> get authStateChanges;
+  Stream<UserModel?> get authStateChanges;
 
   UserModel? get currentUser;
 }

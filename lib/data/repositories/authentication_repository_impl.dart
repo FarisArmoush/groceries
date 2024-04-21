@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:groceries/data/data_sources/interfaces/authentication_data_source.dart';
 import 'package:groceries/data/data_sources/remote/firebase_authentication_data_source.dart';
 import 'package:groceries/data/models/login_param/login_param.dart';
@@ -15,8 +14,7 @@ class AuthenticationRepositoryImpl extends AuthenticationRepository {
 
   final AuthenticationDataSource _dataSource;
   @override
-  Stream<User?> get authStateChanges =>
-      _dataSource.authStateChanges as Stream<User?>;
+  Stream<UserModel?> get authStateChanges => _dataSource.authStateChanges;
 
   @override
   UserModel? get currentUser => _dataSource.currentUser;

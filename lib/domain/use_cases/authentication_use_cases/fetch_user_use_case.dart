@@ -3,8 +3,8 @@ import 'package:groceries/domain/repositories/authentication_repository.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
-class FetchUserDataUseCase {
-  const FetchUserDataUseCase(this._authenticationRepository);
+class FetchUserUseCase {
+  const FetchUserUseCase(this._authenticationRepository);
 
   final AuthenticationRepository _authenticationRepository;
 

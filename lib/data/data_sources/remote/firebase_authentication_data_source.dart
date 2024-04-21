@@ -17,8 +17,18 @@ class FirebaseAuthenticationDataSource implements AuthenticationDataSource {
   FirebaseFirestore get firestore => FirebaseFirestore.instance;
 
   @override
-  Stream<User?> get authStateChanges =>
-      firebaseAuth.userChanges().map((user) => user);
+  Stream<UserModel?> get authStateChanges {
+    return firebaseAuth.userChanges().map(
+          (user) => UserModel(
+            id: user?.uid,
+            name: user?.displayName,
+            email: user?.email,
+            imageUrl: user?.photoURL,
+            isVerified: user?.emailVerified,
+            creationDate: user?.metadata.creationTime,
+          ),
+        );
+  }
 
   @override
   UserModel? get currentUser {
