@@ -24,7 +24,7 @@ This repository contains the source code for my grocery shopping app developed u
 
 I've implemented a clean architecture for this project, ensuring a clear separation of concerns. Here's a brief overview of the data flow:
 
-1. **DataSource**: Responsible for retrieving raw data from various sources, like APIs or databases.
+1. **DataSource**: Responsible for retrieving data from any source, like APIs, remote/local databases, or cache.
    
 2. **Repository**: Acts as a bridge between the DataSource and the rest of the app. It defines the methods for fetching and storing data.
 
