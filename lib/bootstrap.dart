@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/app/app_bloc_observer.dart';
 import 'package:groceries/config/injection/injector.dart';
+import 'package:groceries/utils/logger.dart';
+import 'package:talker_bloc_logger/talker_bloc_logger.dart';
 
 /// Bootstraps the Flutter application by setting up error handling and
 /// configuring the global [Bloc.observer]
@@ -39,7 +41,12 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
     log(details.exceptionAsString(), stackTrace: details.stack);
   };
 
-  Bloc.observer = const AppBlocObserver();
+  Bloc.observer = TalkerBlocObserver(
+    talker: logger,
+    settings: const TalkerBlocLoggerSettings(
+      printTransitions: false,
+    ),
+  );
   EasyLocalization.logger.enableBuildModes = [];
   injectAppDependencies();
   await runZonedGuarded(

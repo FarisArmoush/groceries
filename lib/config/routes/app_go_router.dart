@@ -35,10 +35,13 @@ import 'package:groceries/presentation/modules/verify_user/views/verify_user_vie
 import 'package:groceries/presentation/modules/welcome/views/welcome_view.dart';
 import 'package:groceries/presentation/modules/wrapper/views/wrapper_view.dart';
 import 'package:groceries/utils/keys/storage_keys.dart';
+import 'package:groceries/utils/logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:talker_flutter/talker_flutter.dart';
 
 /// A variable that defines the routes and builders for the App.
 final GoRouter appGoRouter = GoRouter(
+  observers: [TalkerRouteObserver(logger)],
   debugLogDiagnostics: true,
   initialLocation: '/',
   routes: [
