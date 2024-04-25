@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +37,7 @@ import 'package:talker_bloc_logger/talker_bloc_logger.dart';
 /// ```
 Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   FlutterError.onError = (details) {
-    log(details.exceptionAsString(), stackTrace: details.stack);
+    logger.critical(details.exceptionAsString());
   };
 
   Bloc.observer = TalkerBlocObserver(
@@ -51,6 +50,6 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   injectAppDependencies();
   await runZonedGuarded(
     () async => runApp(await builder()),
-    (error, stackTrace) => log(error.toString(), stackTrace: stackTrace),
+    (error, stackTrace) => logger.critical(error.toString()),
   );
 }

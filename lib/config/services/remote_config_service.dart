@@ -1,8 +1,7 @@
-import 'dart:developer' as developer;
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
+import 'package:groceries/utils/logger.dart';
 
 class RemoteConfigService {
   RemoteConfigService(this._remoteConfig);
@@ -20,11 +19,7 @@ class RemoteConfigService {
       );
       await _remoteConfig.fetchAndActivate();
     } on FirebaseException catch (e, stackTrace) {
-      developer.log(
-        'Unable to initialize remote config',
-        error: e,
-        stackTrace: stackTrace,
-      );
+      logger.error('Unable to initialize remote config', e, stackTrace);
     }
   }
 }

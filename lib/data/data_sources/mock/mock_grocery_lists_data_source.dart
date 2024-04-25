@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:groceries/data/data_sources/interfaces/grocery_lists_data_source.dart';
@@ -7,6 +5,7 @@ import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/data/models/refinements_model/refinements_model.dart';
 import 'package:groceries/data/models/user_model/user_model.dart';
+import 'package:groceries/utils/logger.dart';
 import 'package:injectable/injectable.dart';
 
 @named
@@ -61,31 +60,31 @@ class MockGroceryListsDataSource implements GroceryListsDataSource {
 
   @override
   Future<void> deleteGroceryList(String? uid) async {
-    log('deleteGroceryList');
+    logger.verbose('implement deleteGroceryList');
     throw UnimplementedError();
   }
 
   @override
   Future<void> createGroceryList(GroceryListModel? groceryListModel) async {
-    log('createGroceryList');
+    logger.verbose('implement createGroceryList');
     throw UnimplementedError();
   }
 
   @override
   Future<void> removeMember(UserModel? userModel) async {
-    log('removeMember');
+    logger.verbose('implement removeMember');
     throw UnimplementedError();
   }
 
   @override
   Future<void> updateListImage(String? image) {
-    log('updateListImage');
+    logger.verbose('implement updateListImage');
     throw UnimplementedError();
   }
 
   @override
   Future<void> updateListName(String? name) {
-    log('updateListName');
+    logger.verbose('implement updateListName');
     throw UnimplementedError();
   }
 }
