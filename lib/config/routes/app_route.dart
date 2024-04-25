@@ -1,5 +1,5 @@
 export 'package:groceries/config/routes/app_route_keys.dart';
-export 'package:groceries/config/routes/app_route_path.dart';
+export 'package:groceries/config/routes/app_route_name.dart';
 
 /// An enum that defines the names of the routes used in the App.
 enum AppRoute {
