@@ -48,13 +48,13 @@ class RecipeCreatedUnsuccessfullyView extends StatelessWidget {
             ),
             FilledButton(
               onPressed: () => context.pushReplacementNamed(
-                AppRoute.root.name,
+                AppRoute.root.named,
               ),
               child: Text(Translations.createGroceryList.goHome),
             ),
             OutlinedButton(
               onPressed: () => context.pushReplacementNamed(
-                AppRoute.createRecipe.name,
+                AppRoute.createRecipe.named,
               ),
               child: Text(Translations.createGroceryList.tryAgain),
             ),

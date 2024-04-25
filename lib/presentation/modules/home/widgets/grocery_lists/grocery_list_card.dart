@@ -21,7 +21,7 @@ class GroceryListCard extends StatelessWidget {
       color: context.theme.cardColor,
       child: InkWell(
         onTap: () => context.pushNamed(
-          AppRoute.groceryListDetails.name,
+          AppRoute.groceryListDetails.named,
           extra: listModel.id,
         ),
         child: Container(

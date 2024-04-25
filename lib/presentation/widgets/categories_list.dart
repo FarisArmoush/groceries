@@ -27,12 +27,12 @@ class CategoriesList extends StatelessWidget {
               onTap: () {
                 if (hasSubCategories) {
                   context.pushNamed(
-                    AppRoute.subCategories.name,
+                    AppRoute.subCategories.named,
                     extra: category,
                   );
                 } else {
                   context.pushNamed(
-                    AppRoute.items.name,
+                    AppRoute.items.named,
                     extra: category,
                   );
                 }

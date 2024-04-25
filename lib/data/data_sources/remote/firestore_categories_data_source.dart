@@ -3,6 +3,7 @@ import 'package:groceries/data/data_sources/interfaces/categories_data_source.da
 import 'package:groceries/data/models/category_model/category_model.dart';
 import 'package:groceries/utils/exceptions/app_network_exception.dart';
 import 'package:groceries/utils/keys/firestore_keys.dart';
+import 'package:groceries/utils/logger.dart';
 import 'package:injectable/injectable.dart';
 
 @named
@@ -23,12 +24,14 @@ class FirestoreCategoriesDataSource implements CategoriesDataSource {
             .collection(FirestoreCollection.category)
             .orderBy(FirestoreField.name)
             .where(FirestoreField.parentCategoryId, isEqualTo: categoryId);
+        logger.info('Fetch categories with the id $categoryId');
       } else {
         // Parent-Categories Query
         query = _firestore
             .collection(FirestoreCollection.category)
             .orderBy(FirestoreField.name)
             .where(FirestoreField.parentCategoryId, isNull: true);
+        logger.info('Fetch parent categories');
       }
 
       final result = await query.get();
@@ -37,10 +40,13 @@ class FirestoreCategoriesDataSource implements CategoriesDataSource {
         final json = document.data();
         categories.add(CategoryModel.fromJson(json));
       }
+
       return categories;
     } on FirebaseException catch (e) {
+      logger.error(e.message, e, e.stackTrace);
       throw AppNetworkException.fromCode(e.code);
     } catch (_) {
+      logger.error('Error fetching categories');
       throw const AppNetworkException();
     }
   }

@@ -47,7 +47,7 @@ class ForgotPasswordView extends StatelessWidget {
   void _listener(BuildContext context, ForgotPasswordState state) {
     if (state.status.isSuccess) {
       context.pushReplacementNamed(
-        AppRoute.resetPasswordSentSuccessfully.name,
+        AppRoute.resetPasswordSentSuccessfully.named,
       );
     }
     if (state.status.isFailure) {

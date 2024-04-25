@@ -15,7 +15,7 @@ class PageNotFoundView extends StatelessWidget {
           Text(Translations.pageNotFound.title),
           TextButton(
             onPressed: () => context.pushReplacementNamed(
-              AppRoute.wrapper.name,
+              AppRoute.wrapper.named,
             ),
             child: Text(Translations.pageNotFound.goBack),
           ),

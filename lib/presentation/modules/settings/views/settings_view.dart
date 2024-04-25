@@ -50,7 +50,7 @@ class _SettingsViewState extends State<SettingsView> {
                 title: Translations.accountSettings.title,
                 subtitle: Translations.accountSettings.description,
                 iconPath: Assets.icons.user.path,
-                onTap: () => context.pushNamed(AppRoute.accountSettings.name),
+                onTap: () => context.pushNamed(AppRoute.accountSettings.named),
               ),
               SizedBox(
                 height: context.deviceHeight * 0.01,
@@ -59,7 +59,7 @@ class _SettingsViewState extends State<SettingsView> {
                 title: Translations.theme.theme,
                 subtitle: Translations.theme.header,
                 iconPath: Assets.icons.sunMoon.path,
-                onTap: () => context.pushNamed(AppRoute.themeSettings.name),
+                onTap: () => context.pushNamed(AppRoute.themeSettings.named),
               ),
               SizedBox(
                 height: context.deviceHeight * 0.01,
@@ -72,7 +72,7 @@ class _SettingsViewState extends State<SettingsView> {
                     subtitle: Translations.additionalResources.description,
                     iconPath: Assets.icons.menu.path,
                     onTap: () =>
-                        context.pushNamed(AppRoute.additionalResources.name),
+                        context.pushNamed(AppRoute.additionalResources.named),
                   ),
                 ),
                 SizedBox(

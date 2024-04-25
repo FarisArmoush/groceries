@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/data/data_sources/interfaces/theme_data_source.dart';
 import 'package:groceries/utils/keys/storage_keys.dart';
+import 'package:groceries/utils/logger.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -15,6 +16,7 @@ class LocalThemeDataSource implements ThemeDataSource {
     final theme = ThemeMode.values.firstWhere(
       (value) => value.toString() == cachedTheme,
     );
+    logger.info('Got theme($theme)');
     return theme;
   }
 
@@ -22,5 +24,6 @@ class LocalThemeDataSource implements ThemeDataSource {
   Future<void> cacheTheme(ThemeMode theme) async {
     final sharedPreferences = await SharedPreferences.getInstance();
     await sharedPreferences.setString(StorageKeys.themeMode, theme.toString());
+    logger.info('Cached $theme');
   }
 }

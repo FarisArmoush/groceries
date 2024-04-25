@@ -6,6 +6,7 @@ import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/modules/delete_account/bloc/delete_account_bloc.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/app_snack_bars.dart';
+import 'package:groceries/utils/extenstions/path.dart';
 import 'package:groceries/utils/extenstions/widgets_as_extensions.dart';
 
 class DeleteAccountButton extends StatelessWidget {
@@ -15,7 +16,9 @@ class DeleteAccountButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<DeleteAccountBloc, DeleteAccountState>(
       listener: (context, state) => state.status.whenOrNull(
-        success: () => context.pushReplacementNamed(AppRoute.welcome.path),
+        success: () => context.pushReplacementNamed(
+          AppRoute.welcome.named.path,
+        ),
         failure: (error) {
           context.pop();
           return ScaffoldMessenger.of(context)
