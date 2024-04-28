@@ -43,7 +43,6 @@ import 'package:talker_flutter/talker_flutter.dart';
 /// A variable that defines the routes and builders for the App.
 final GoRouter appGoRouter = GoRouter(
   observers: [TalkerRouteObserver(logger)],
-  debugLogDiagnostics: true,
   initialLocation: '/',
   routes: [
     GoRoute(
