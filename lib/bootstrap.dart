@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/app/app_bloc_observer.dart';
 import 'package:groceries/config/injection/injector.dart';
 import 'package:groceries/utils/logger.dart';
 import 'package:talker_bloc_logger/talker_bloc_logger.dart';
@@ -19,10 +18,6 @@ import 'package:talker_bloc_logger/talker_bloc_logger.dart';
 /// This function sets up error handling using [FlutterError.onError]
 /// to log any uncaught
 /// Flutter errors. The errors are logged with their corresponding stack traces.
-///
-/// Additionally, the global bloc observer is set to [AppBlocObserver], which
-/// is a custom observer used to log the state changes of BLoCs
-/// (Business Logic Components) throughout the application.
 ///
 /// The function utilizes [runZonedGuarded] to run the application's
 /// root widget returned by the `builder` function. Any uncaught errors that

@@ -8,5 +8,10 @@ class FetchPrioritiesUseCase {
 
   final ConstantsRepository _constantsRepository;
 
-  Future<List<PriorityModel>> call() => _constantsRepository.fetchPriorities();
+  Future<List<PriorityModel>> call() async {
+    final priorities = await _constantsRepository.fetchPriorities();
+    final sortedPriorities = priorities
+      ..sort((a, b) => a.index?.compareTo(b.index ?? 0) ?? 1);
+    return sortedPriorities;
+  }
 }
