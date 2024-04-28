@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:groceries/data/cache_service.dart';
 import 'package:groceries/data/data_sources/interfaces/constants_data_source.dart';
 import 'package:groceries/data/data_sources/local/cache_constants_data_source.dart';
@@ -7,6 +5,7 @@ import 'package:groceries/data/data_sources/remote/firestore_constants_data_sour
 import 'package:groceries/data/models/priority_model/priority_model.dart';
 import 'package:groceries/domain/repositories/constants_repository.dart';
 import 'package:groceries/utils/keys/storage_keys.dart';
+import 'package:groceries/utils/logger.dart';
 import 'package:groceries/utils/typedefs/typedefs.dart';
 import 'package:injectable/injectable.dart';
 
@@ -27,7 +26,7 @@ class ConstantsRepositoryImpl extends ConstantsRepository {
     final cachedPriorities = await _checkCachedPriorities();
 
     if (cachedPriorities != null) {
-      log('Fetched Priorities from cache', name: 'ConstantsRepository');
+      logger.info('Fetched Priorities from cache');
       return cachedPriorities;
     }
 
@@ -42,7 +41,7 @@ class ConstantsRepositoryImpl extends ConstantsRepository {
       StorageKeys.lastPrioritiesFetch,
       DateTime.now().toString(),
     );
-    log('Fetched Priorities from Firestore', name: 'ConstantsRepository');
+    logger.info('Fetched Priorities from Firestore');
     return remotePriorities;
   }
 
