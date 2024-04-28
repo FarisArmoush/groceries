@@ -54,9 +54,12 @@ class _RootViewState extends State<RootView> {
           body: _views[state.index],
           bottomNavigationBar: AppBottomNavigationBar(
             currentIndex: state.index,
-            onTap: (index) => context.read<RootNavigationBloc>().add(
-                  RootNavigationEvent.navigateToIndex(index),
-                ),
+            onTap: (index) {
+              if (index == state.index) return;
+              context.read<RootNavigationBloc>().add(
+                    RootNavigationEvent.navigateToIndex(index),
+                  );
+            },
             items: _bnb(context),
           ),
         );
