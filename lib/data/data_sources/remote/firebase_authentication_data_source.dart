@@ -21,14 +21,14 @@ class FirebaseAuthenticationDataSource implements AuthenticationDataSource {
   Stream<UserModel?> get authStateChanges {
     return firebaseAuth.userChanges().map(
       (user) {
-        if (user?.uid == null) return null;
+        if (user == null) return null;
         return UserModel(
-          id: user?.uid,
-          name: user?.displayName,
-          email: user?.email,
-          imageUrl: user?.photoURL,
-          isVerified: user?.emailVerified,
-          creationDate: user?.metadata.creationTime,
+          id: user.uid,
+          name: user.displayName,
+          email: user.email,
+          imageUrl: user.photoURL,
+          isVerified: user.emailVerified,
+          creationDate: user.metadata.creationTime,
         );
       },
     );
@@ -37,13 +37,13 @@ class FirebaseAuthenticationDataSource implements AuthenticationDataSource {
   @override
   UserModel? get currentUser {
     final user = firebaseAuth.currentUser;
-    if (user?.uid == null) return null;
+    if (user == null) return null;
     return UserModel(
-      id: user?.tenantId,
-      creationDate: user?.metadata.creationTime,
-      email: user?.email,
-      imageUrl: user?.photoURL,
-      name: user?.displayName,
+      id: user.tenantId,
+      creationDate: user.metadata.creationTime,
+      email: user.email,
+      imageUrl: user.photoURL,
+      name: user.displayName,
     );
   }
 

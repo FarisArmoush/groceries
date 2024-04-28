@@ -72,10 +72,10 @@ In the add items module, you will not be able to access my official database tha
 ```ssh
 flutter clean
 flutter pub get
-dart run build_runner build --delete-conflicting-outputs
+dart run build_runner build -d
 ```
 ```ssh
-dart run build_runner watch --delete-conflicting-outputs
+dart run build_runner watch -d
 ```
 
 ## Release APK 
