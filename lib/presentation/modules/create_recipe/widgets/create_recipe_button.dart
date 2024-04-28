@@ -11,7 +11,7 @@ class CreateRecipeButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FilledButton(
       onPressed: () => context.pushReplacementNamed(
-        AppRoute.recipeCreatedUnsuccessfully.name,
+        AppRoute.recipeCreatedUnsuccessfully.named,
       ),
       child: Text(Translations.createRecipe.createRecipe),
     ).bottomButtonSpacing();

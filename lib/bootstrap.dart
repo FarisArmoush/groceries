@@ -1,11 +1,12 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/app/app_bloc_observer.dart';
 import 'package:groceries/config/injection/injector.dart';
+import 'package:groceries/utils/logger.dart';
+import 'package:talker_bloc_logger/talker_bloc_logger.dart';
 
 /// Bootstraps the Flutter application by setting up error handling and
 /// configuring the global [Bloc.observer]
@@ -36,14 +37,19 @@ import 'package:groceries/config/injection/injector.dart';
 /// ```
 Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   FlutterError.onError = (details) {
-    log(details.exceptionAsString(), stackTrace: details.stack);
+    logger.critical(details.exceptionAsString());
   };
 
-  Bloc.observer = const AppBlocObserver();
+  Bloc.observer = TalkerBlocObserver(
+    talker: logger,
+    settings: const TalkerBlocLoggerSettings(
+      printTransitions: false,
+    ),
+  );
   EasyLocalization.logger.enableBuildModes = [];
   injectAppDependencies();
   await runZonedGuarded(
     () async => runApp(await builder()),
-    (error, stackTrace) => log(error.toString(), stackTrace: stackTrace),
+    (error, stackTrace) => logger.critical(error.toString()),
   );
 }

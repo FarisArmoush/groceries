@@ -3,6 +3,7 @@ import 'package:groceries/data/data_sources/interfaces/base_groceries_data_sourc
 import 'package:groceries/data/models/grocery_model/grocery_model.dart';
 import 'package:groceries/utils/exceptions/app_network_exception.dart';
 import 'package:groceries/utils/keys/firestore_keys.dart';
+import 'package:groceries/utils/logger.dart';
 import 'package:injectable/injectable.dart';
 
 @named
@@ -26,10 +27,13 @@ class FirestoreBaseGroceriesDataSource implements BaseGroceriesDataSource {
       for (final element in result.docs) {
         items.add(GroceryModel.fromJson(element.data()));
       }
+      logger.info('Fetched items with the id: $categoryId successfully');
       return items;
     } on FirebaseException catch (e) {
+      logger.error(e.message, e, e.stackTrace);
       throw AppNetworkException.fromCode(e.code);
     } catch (_) {
+      logger.error('Failed to fetch items with the id $categoryId');
       throw const AppNetworkException();
     }
   }

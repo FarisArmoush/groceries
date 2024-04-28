@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,6 +11,7 @@ import 'package:groceries/presentation/widgets/sliver_sized_box.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries/utils/extenstions/padding_extensions.dart';
 import 'package:groceries/utils/extenstions/widgets_as_extensions.dart';
+import 'package:groceries/utils/logger.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -82,7 +81,7 @@ class _MockAddItemsToCloudFirestoreAutomatically extends StatelessWidget {
         ),
       );
     }
-    log('Done');
+    logger.verbose('Done');
   }
 
   @override

@@ -19,6 +19,9 @@ extension ContextExtensions on BuildContext {
   /// returns the current [ColorScheme].
   ColorScheme get colorScheme => Theme.of(this).colorScheme;
 
+  /// returns the current [TextTheme].
+  TextTheme get textTheme => Theme.of(this).textTheme;
+
   /// returns a bool indicating if the current theme is dark or not.
   bool get isDarkMode => watch<ThemeCubit>().state == ThemeMode.dark;
 }

@@ -61,7 +61,7 @@ class UpdateEmailView extends StatelessWidget {
             message: Translations.updateEmail.emailUpdatedSuccessfully,
           ),
         );
-      context.pushReplacementNamed(AppRoute.root.name);
+      context.pushReplacementNamed(AppRoute.root.named);
     }
     if (state.status.isFailure) {
       context.read<RootNavigationBloc>().add(
@@ -74,7 +74,7 @@ class UpdateEmailView extends StatelessWidget {
             error: state.errorMessage ?? Translations.errors.defaultError,
           ),
         );
-      context.pushReplacementNamed(AppRoute.root.name);
+      context.pushReplacementNamed(AppRoute.root.named);
     }
     if (state.status.isInProgress) {
       showDialog<AppLoadingIndicator>(

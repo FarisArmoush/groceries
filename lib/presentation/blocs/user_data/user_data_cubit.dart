@@ -10,16 +10,16 @@ part 'user_data_state.dart';
 
 @lazySingleton
 class UserDataCubit extends Cubit<UserDataState> {
-  UserDataCubit(this.fetchUserDataUseCase)
+  UserDataCubit(this._fetchUserDataUseCase)
       : super(
           UserDataState(
-            user: fetchUserDataUseCase(),
+            user: _fetchUserDataUseCase(),
           ),
         );
-  final FetchUserUseCase fetchUserDataUseCase;
+  final FetchUserUseCase _fetchUserDataUseCase;
   void loadUser() => emit(
         state.copyWith(
-          user: fetchUserDataUseCase(),
+          user: _fetchUserDataUseCase(),
         ),
       );
 }

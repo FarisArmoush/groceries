@@ -34,16 +34,20 @@ import 'package:groceries/presentation/modules/update_email/views/update_email_v
 import 'package:groceries/presentation/modules/verify_user/views/verify_user_view.dart';
 import 'package:groceries/presentation/modules/welcome/views/welcome_view.dart';
 import 'package:groceries/presentation/modules/wrapper/views/wrapper_view.dart';
+import 'package:groceries/utils/extenstions/path.dart';
 import 'package:groceries/utils/keys/storage_keys.dart';
+import 'package:groceries/utils/logger.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:talker_flutter/talker_flutter.dart';
 
 /// A variable that defines the routes and builders for the App.
 final GoRouter appGoRouter = GoRouter(
+  observers: [TalkerRouteObserver(logger)],
   debugLogDiagnostics: true,
   initialLocation: '/',
   routes: [
     GoRoute(
-      name: AppRoute.wrapper.name,
+      name: AppRoute.wrapper.named,
       path: '/',
       builder: (context, state) => const WrapperView(),
       redirect: (context, state) async {
@@ -52,35 +56,35 @@ final GoRouter appGoRouter = GoRouter(
           StorageKeys.hasViewedOnboarding,
         );
         if (hasViewedOnboarding == false || hasViewedOnboarding == null) {
-          return AppRoute.onboarding.path;
+          return AppRoute.onboarding.named.path;
         }
         return null;
       },
     ),
     GoRoute(
-      name: AppRoute.onboarding.name,
-      path: AppRoute.onboarding.path,
+      name: AppRoute.onboarding.named,
+      path: AppRoute.onboarding.named.path,
       builder: (context, state) => OnboardingView(
         key: Key(AppRoute.onboarding.key),
       ),
     ),
     GoRoute(
-      name: AppRoute.welcome.name,
-      path: AppRoute.welcome.path,
+      name: AppRoute.welcome.named,
+      path: AppRoute.welcome.named.path,
       builder: (context, state) => WelcomeView(
         key: Key(AppRoute.welcome.key),
       ),
       routes: [
         GoRoute(
-          name: AppRoute.login.name,
-          path: AppRoute.login.name,
+          name: AppRoute.login.named,
+          path: AppRoute.login.named,
           builder: (context, state) => LoginView(
             key: Key(AppRoute.login.key),
           ),
           routes: [
             GoRoute(
-              name: AppRoute.forgotPassword.name,
-              path: AppRoute.forgotPassword.name,
+              name: AppRoute.forgotPassword.named,
+              path: AppRoute.forgotPassword.named,
               pageBuilder: (context, state) => _slideUpTransition(
                 ForgotPasswordView(
                   key: Key(AppRoute.forgotPassword.key),
@@ -88,8 +92,8 @@ final GoRouter appGoRouter = GoRouter(
               ),
               routes: [
                 GoRoute(
-                  name: AppRoute.resetPasswordSentSuccessfully.name,
-                  path: AppRoute.resetPasswordSentSuccessfully.name,
+                  name: AppRoute.resetPasswordSentSuccessfully.named,
+                  path: AppRoute.resetPasswordSentSuccessfully.named,
                   builder: (context, state) =>
                       ResetPasswordSentSuccessfullyView(
                     key: Key(AppRoute.resetPasswordSentSuccessfully.key),
@@ -100,8 +104,8 @@ final GoRouter appGoRouter = GoRouter(
           ],
         ),
         GoRoute(
-          name: AppRoute.register.name,
-          path: AppRoute.register.name,
+          name: AppRoute.register.named,
+          path: AppRoute.register.named,
           builder: (context, state) => RegisterView(
             key: Key(AppRoute.register.key),
           ),
@@ -109,29 +113,29 @@ final GoRouter appGoRouter = GoRouter(
       ],
     ),
     GoRoute(
-      name: AppRoute.root.name,
-      path: AppRoute.root.path,
+      name: AppRoute.root.named,
+      path: AppRoute.root.named.path,
       builder: (context, state) => RootView(
         key: Key(AppRoute.root.key),
       ),
       routes: [
         GoRoute(
-          name: AppRoute.home.name,
-          path: AppRoute.home.name,
+          name: AppRoute.home.named,
+          path: AppRoute.home.named,
           builder: (context, state) => HomeView(
             key: Key(AppRoute.home.key),
           ),
           routes: [
             GoRoute(
-              path: AppRoute.premium.name,
-              name: AppRoute.premium.name,
+              path: AppRoute.premium.named,
+              name: AppRoute.premium.named,
               builder: (context, state) => PremiumView(
                 key: Key(AppRoute.premium.key),
               ),
             ),
             GoRoute(
-              name: AppRoute.createList.name,
-              path: AppRoute.createList.name,
+              name: AppRoute.createList.named,
+              path: AppRoute.createList.named,
               pageBuilder: (context, state) => _slideUpTransition(
                 CreateListView(
                   key: Key(AppRoute.createList.key),
@@ -139,15 +143,15 @@ final GoRouter appGoRouter = GoRouter(
               ),
               routes: [
                 GoRoute(
-                  path: AppRoute.listCreatedSuccessfully.name,
-                  name: AppRoute.listCreatedSuccessfully.name,
+                  path: AppRoute.listCreatedSuccessfully.named,
+                  name: AppRoute.listCreatedSuccessfully.named,
                   builder: (context, state) => ListCreatedSuccessfullyView(
                     key: Key(AppRoute.listCreatedSuccessfully.key),
                   ),
                 ),
                 GoRoute(
-                  path: AppRoute.listCreatedUnsuccessfully.name,
-                  name: AppRoute.listCreatedUnsuccessfully.name,
+                  path: AppRoute.listCreatedUnsuccessfully.named,
+                  name: AppRoute.listCreatedUnsuccessfully.named,
                   builder: (context, state) => ListCreatedUnsuccessfullyView(
                     key: Key(AppRoute.listCreatedUnsuccessfully.key),
                   ),
@@ -155,16 +159,16 @@ final GoRouter appGoRouter = GoRouter(
               ],
             ),
             GoRoute(
-              name: AppRoute.groceryListDetails.name,
-              path: AppRoute.groceryListDetails.name,
+              name: AppRoute.groceryListDetails.named,
+              path: AppRoute.groceryListDetails.named,
               builder: (context, state) => GroceryListDetailsView(
                 key: Key(AppRoute.groceryListDetails.key),
                 uid: state.extra as String?,
               ),
               routes: [
                 GoRoute(
-                  name: AppRoute.addItems.name,
-                  path: AppRoute.addItems.name,
+                  name: AppRoute.addItems.named,
+                  path: AppRoute.addItems.named,
                   pageBuilder: (context, state) => _slideUpTransition(
                     AddItemsView(
                       key: Key(AppRoute.addItems.key),
@@ -172,16 +176,16 @@ final GoRouter appGoRouter = GoRouter(
                   ),
                   routes: [
                     GoRoute(
-                      name: AppRoute.items.name,
-                      path: AppRoute.items.name,
+                      name: AppRoute.items.named,
+                      path: AppRoute.items.named,
                       builder: (context, state) => ItemsView(
                         key: Key(AppRoute.items.key),
                         categoryModel: state.extra! as CategoryModel,
                       ),
                     ),
                     GoRoute(
-                      name: AppRoute.subCategories.name,
-                      path: AppRoute.subCategories.name,
+                      name: AppRoute.subCategories.named,
+                      path: AppRoute.subCategories.named,
                       builder: (context, state) => SubCategoriesView(
                         key: Key(AppRoute.subCategories.key),
                         parentCategoryModel: state.extra! as CategoryModel,
@@ -190,8 +194,8 @@ final GoRouter appGoRouter = GoRouter(
                   ],
                 ),
                 GoRoute(
-                  name: AppRoute.groceryListSettings.name,
-                  path: AppRoute.groceryListSettings.name,
+                  name: AppRoute.groceryListSettings.named,
+                  path: AppRoute.groceryListSettings.named,
                   builder: (context, state) => GroceryListSettingsView(
                     key: Key(AppRoute.groceryListSettings.key),
                   ),
@@ -201,23 +205,23 @@ final GoRouter appGoRouter = GoRouter(
           ],
         ),
         GoRoute(
-          name: AppRoute.recipes.name,
-          path: AppRoute.recipes.name,
+          name: AppRoute.recipes.named,
+          path: AppRoute.recipes.named,
           builder: (context, state) => RecipesView(
             key: Key(AppRoute.recipes.key),
           ),
           routes: [
             GoRoute(
-              name: AppRoute.recipeDetails.name,
-              path: AppRoute.recipeDetails.name,
+              name: AppRoute.recipeDetails.named,
+              path: AppRoute.recipeDetails.named,
               builder: (context, state) => RecipeDetailsView(
                 key: Key(AppRoute.recipeDetails.key),
                 uid: state.extra! as String?,
               ),
             ),
             GoRoute(
-              name: AppRoute.createRecipe.name,
-              path: AppRoute.createRecipe.name,
+              name: AppRoute.createRecipe.named,
+              path: AppRoute.createRecipe.named,
               pageBuilder: (context, state) => _slideUpTransition(
                 CreateRecipeView(
                   key: Key(AppRoute.createRecipe.key),
@@ -225,15 +229,15 @@ final GoRouter appGoRouter = GoRouter(
               ),
               routes: [
                 GoRoute(
-                  name: AppRoute.recipeCreatedSuccessfully.name,
-                  path: AppRoute.recipeCreatedSuccessfully.name,
+                  name: AppRoute.recipeCreatedSuccessfully.named,
+                  path: AppRoute.recipeCreatedSuccessfully.named,
                   builder: (context, state) => RecipeCreatedSuccessfullyView(
                     key: Key(AppRoute.recipeCreatedSuccessfully.key),
                   ),
                 ),
                 GoRoute(
-                  name: AppRoute.recipeCreatedUnsuccessfully.name,
-                  path: AppRoute.recipeCreatedUnsuccessfully.name,
+                  name: AppRoute.recipeCreatedUnsuccessfully.named,
+                  path: AppRoute.recipeCreatedUnsuccessfully.named,
                   builder: (context, state) => RecipeCreatedUnsuccessfullyView(
                     key: Key(AppRoute.recipeCreatedUnsuccessfully.key),
                   ),
@@ -243,36 +247,36 @@ final GoRouter appGoRouter = GoRouter(
           ],
         ),
         GoRoute(
-          name: AppRoute.settings.name,
-          path: AppRoute.settings.name,
+          name: AppRoute.settings.named,
+          path: AppRoute.settings.named,
           builder: (context, state) => SettingsView(
             key: Key(AppRoute.settings.key),
           ),
           routes: [
             GoRoute(
-              name: AppRoute.themeSettings.name,
-              path: AppRoute.themeSettings.name,
+              name: AppRoute.themeSettings.named,
+              path: AppRoute.themeSettings.named,
               builder: (context, state) => ThemeSettingsView(
                 key: Key(AppRoute.themeSettings.key),
               ),
             ),
             GoRoute(
-              name: AppRoute.additionalResources.name,
-              path: AppRoute.additionalResources.name,
+              name: AppRoute.additionalResources.named,
+              path: AppRoute.additionalResources.named,
               builder: (context, state) => AdditionalResourcesView(
                 key: Key(AppRoute.additionalResources.key),
               ),
             ),
             GoRoute(
-              name: AppRoute.accountSettings.name,
-              path: AppRoute.accountSettings.name,
+              name: AppRoute.accountSettings.named,
+              path: AppRoute.accountSettings.named,
               builder: (context, state) => AccountSettingsView(
                 key: Key(AppRoute.accountSettings.key),
               ),
               routes: [
                 GoRoute(
-                  name: AppRoute.deleteAccount.name,
-                  path: AppRoute.deleteAccount.name,
+                  name: AppRoute.deleteAccount.named,
+                  path: AppRoute.deleteAccount.named,
                   pageBuilder: (context, state) => _slideUpTransition(
                     DeleteAccountView(
                       key: Key(AppRoute.deleteAccount.key),
@@ -280,8 +284,8 @@ final GoRouter appGoRouter = GoRouter(
                   ),
                 ),
                 GoRoute(
-                  name: AppRoute.updateDisplayName.name,
-                  path: AppRoute.updateDisplayName.name,
+                  name: AppRoute.updateDisplayName.named,
+                  path: AppRoute.updateDisplayName.named,
                   pageBuilder: (context, state) => _slideUpTransition(
                     UpdateDisplayNameView(
                       key: Key(AppRoute.updateDisplayName.key),
@@ -289,8 +293,8 @@ final GoRouter appGoRouter = GoRouter(
                   ),
                 ),
                 GoRoute(
-                  name: AppRoute.updateEmail.name,
-                  path: AppRoute.updateEmail.name,
+                  name: AppRoute.updateEmail.named,
+                  path: AppRoute.updateEmail.named,
                   pageBuilder: (context, state) => _slideUpTransition(
                     UpdateEmailView(
                       key: Key(AppRoute.updateEmail.key),
@@ -298,8 +302,8 @@ final GoRouter appGoRouter = GoRouter(
                   ),
                 ),
                 GoRoute(
-                  name: AppRoute.verifyAccount.name,
-                  path: AppRoute.verifyAccount.name,
+                  name: AppRoute.verifyAccount.named,
+                  path: AppRoute.verifyAccount.named,
                   pageBuilder: (context, state) => _slideUpTransition(
                     VerifyUserView(
                       key: Key(AppRoute.verifyAccount.key),
@@ -313,8 +317,8 @@ final GoRouter appGoRouter = GoRouter(
       ],
     ),
     GoRoute(
-      name: AppRoute.pageNotFound.name,
-      path: AppRoute.pageNotFound.path,
+      name: AppRoute.pageNotFound.named,
+      path: AppRoute.pageNotFound.named.path,
       builder: (context, state) => PageNotFoundView(
         key: Key(AppRoute.pageNotFound.key),
       ),

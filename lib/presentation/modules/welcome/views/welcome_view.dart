@@ -29,7 +29,7 @@ class WelcomeView extends StatelessWidget {
             ),
             FilledButton(
               onPressed: () => context.pushReplacementNamed(
-                AppRoute.register.name,
+                AppRoute.register.named,
               ),
               child: Text(Translations.register.register),
             ),
@@ -38,7 +38,7 @@ class WelcomeView extends StatelessWidget {
             ),
             OutlinedButton(
               onPressed: () => context.pushReplacementNamed(
-                AppRoute.login.name,
+                AppRoute.login.named,
               ),
               child: Text(Translations.login.login),
             ),

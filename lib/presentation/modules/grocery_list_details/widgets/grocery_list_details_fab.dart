@@ -12,7 +12,7 @@ class GroceryListDetailsFab extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton.extended(
       onPressed: () {
-        context.pushNamed(AppRoute.addItems.name);
+        context.pushNamed(AppRoute.addItems.named);
       },
       label: Text(Translations.addItems.addItems),
       icon: Assets.icons.plus.svg(

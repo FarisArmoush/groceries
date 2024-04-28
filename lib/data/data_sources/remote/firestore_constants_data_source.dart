@@ -3,6 +3,7 @@ import 'package:groceries/data/data_sources/interfaces/constants_data_source.dar
 import 'package:groceries/data/models/priority_model/priority_model.dart';
 import 'package:groceries/utils/exceptions/app_network_exception.dart';
 import 'package:groceries/utils/keys/firestore_keys.dart';
+import 'package:groceries/utils/logger.dart';
 import 'package:groceries/utils/typedefs/typedefs.dart';
 import 'package:injectable/injectable.dart';
 
@@ -25,11 +26,13 @@ class FirestoreConstatntsDataSource implements ConstantsDataSource {
 
       final priorities =
           data.map((e) => PriorityModel.fromJson(e as JSON)).toList();
-
+      logger.info('Fetched priorities successfully');
       return priorities;
     } on FirebaseException catch (e) {
+      logger.error(e.message, e, e.stackTrace);
       throw AppNetworkException.fromCode(e.code);
     } catch (_) {
+      logger.error('Error fetching priorities');
       throw const AppNetworkException();
     }
   }
