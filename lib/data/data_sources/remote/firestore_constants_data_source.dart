@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:groceries/data/data_sources/interfaces/constants_data_source.dart';
 import 'package:groceries/data/models/priority_model/priority_model.dart';
@@ -27,7 +25,7 @@ class FirestoreConstatntsDataSource implements ConstantsDataSource {
 
       final priorities =
           data.map((e) => PriorityModel.fromJson(e as JSON)).toList();
-      log('From FirestoreConstatntsDataSource', name: 'ConstantsDataSource');
+
       return priorities;
     } on FirebaseException catch (e) {
       throw AppNetworkException.fromCode(e.code);

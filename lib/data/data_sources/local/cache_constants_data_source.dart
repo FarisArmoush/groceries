@@ -1,29 +1,24 @@
-import 'dart:convert';
-import 'dart:developer';
-
+import 'package:groceries/data/cache_service.dart';
 import 'package:groceries/data/data_sources/interfaces/constants_data_source.dart';
 import 'package:groceries/data/models/priority_model/priority_model.dart';
 import 'package:groceries/utils/keys/storage_keys.dart';
+import 'package:groceries/utils/typedefs/typedefs.dart';
 import 'package:injectable/injectable.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 @named
 @Injectable(as: ConstantsDataSource)
 class LocalConstantsDataSource implements ConstantsDataSource {
+  const LocalConstantsDataSource(this._cacheService);
+
+  final CacheService _cacheService;
+
   @override
   Future<List<PriorityModel>> fetchPriorities() async {
-    final sharedPreferences = await SharedPreferences.getInstance();
-    final jsonString = sharedPreferences.getString(StorageKeys.priorities);
-    if (jsonString case != null && != '') {
-      final jsonList = json.decode(jsonString) as List<dynamic>;
-      final priorities = jsonList
-          .map((e) => PriorityModel.fromJson(e as Map<String, dynamic>))
-          .toList();
-      log('Not Empty from cache', name: 'ConstantsDataSource');
-      return priorities;
+    final value = await _cacheService.read<List<JSON>>(StorageKeys.priorities);
+    if (value case != null && != const []) {
+      final cachedValue = value.map(PriorityModel.fromJson).toList();
+      return cachedValue;
     }
-    log('Empty from cache', name: 'ConstantsDataSource');
-
-    return [];
+    return <PriorityModel>[];
   }
 }
