@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-abstract class ThemeRepository {
+abstract interface class ThemeRepository {
   Future<ThemeMode> getTheme();
   Future<void> cacheTheme(ThemeMode theme);
 }

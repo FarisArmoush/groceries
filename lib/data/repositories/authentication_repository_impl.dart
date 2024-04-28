@@ -7,7 +7,7 @@ import 'package:groceries/domain/repositories/authentication_repository.dart';
 import 'package:injectable/injectable.dart';
 
 @LazySingleton(as: AuthenticationRepository)
-class AuthenticationRepositoryImpl extends AuthenticationRepository {
+class AuthenticationRepositoryImpl implements AuthenticationRepository {
   const AuthenticationRepositoryImpl(
     @Named.from(FirebaseAuthenticationDataSource) this._dataSource,
   );

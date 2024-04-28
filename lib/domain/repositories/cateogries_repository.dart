@@ -1,6 +1,6 @@
 import 'package:groceries/data/models/category_model/category_model.dart';
 
-abstract class CategoriesRepository {
+abstract interface class CategoriesRepository {
   const CategoriesRepository();
 
   Future<List<CategoryModel>> fetchCategories([String? categoryId]);

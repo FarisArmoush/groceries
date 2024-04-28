@@ -1,6 +1,6 @@
 import 'package:groceries/data/models/recipe_model/recipe_model.dart';
 
-abstract class RecipesRepository {
+abstract interface class RecipesRepository {
   const RecipesRepository();
 
   Future<List<RecipeModel>> fetchRecipes();

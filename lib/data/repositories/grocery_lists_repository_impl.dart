@@ -6,7 +6,7 @@ import 'package:groceries/domain/repositories/grocery_lists_repository.dart';
 import 'package:injectable/injectable.dart';
 
 @Singleton(as: GroceryListsRepository)
-class GroceryListsRepositoryImpl extends GroceryListsRepository {
+class GroceryListsRepositoryImpl implements GroceryListsRepository {
   const GroceryListsRepositoryImpl(
     @Named.from(MockGroceryListsDataSource) this._dataSource,
   );

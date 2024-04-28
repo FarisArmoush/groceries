@@ -18,7 +18,6 @@ class GroceriesAppBar extends StatelessWidget {
   final Widget? trailing;
   final bool stretch;
   final bool transitionBetweenRoutes;
-
   final Widget largeTitle;
   final Widget middle;
 

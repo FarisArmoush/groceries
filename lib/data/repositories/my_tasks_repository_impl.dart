@@ -5,7 +5,7 @@ import 'package:groceries/domain/repositories/my_tasks_repository.dart';
 import 'package:injectable/injectable.dart';
 
 @Singleton(as: MyTasksRepository)
-class MyTasksRepositoryImpl extends MyTasksRepository {
+class MyTasksRepositoryImpl implements MyTasksRepository {
   const MyTasksRepositoryImpl(
     @Named.from(MockMyTasksDataSource) this._dataSource,
   );

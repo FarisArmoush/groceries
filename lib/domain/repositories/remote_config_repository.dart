@@ -1,4 +1,4 @@
-abstract class RemoteConfigRepository {
+abstract interface class RemoteConfigRepository {
   const RemoteConfigRepository();
 
   /// App Version

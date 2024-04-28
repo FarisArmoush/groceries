@@ -1,6 +1,6 @@
 import 'package:groceries/data/models/grocery_list_details_model/grocery_list_details_model.dart';
 
-abstract class GroceryListDetailsRepository {
+abstract interface class GroceryListDetailsRepository {
   const GroceryListDetailsRepository();
 
   Future<GroceryListDetailsModel?> fetchDetails(String? uid);

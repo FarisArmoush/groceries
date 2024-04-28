@@ -7,5 +7,4 @@ class ForgotPasswordEvent with _$ForgotPasswordEvent {
   const factory ForgotPasswordEvent.sendEmail() = _SendEmail;
 
   const factory ForgotPasswordEvent.dismissKeyboard() = _DismissKeyboard;
-  
 }

@@ -4,7 +4,7 @@ import 'package:groceries/data/models/user_model/user_model.dart';
 
 /// This abstract class defines a set of common methods
 /// and properties for authentication repositories.
-abstract class AuthenticationRepository {
+abstract interface class AuthenticationRepository {
   const AuthenticationRepository();
 
   /// Signs in a user with email and password.

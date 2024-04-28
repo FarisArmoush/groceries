@@ -10,7 +10,7 @@ import 'package:groceries/utils/typedefs/typedefs.dart';
 import 'package:injectable/injectable.dart';
 
 @Singleton(as: ConstantsRepository)
-class ConstantsRepositoryImpl extends ConstantsRepository {
+class ConstantsRepositoryImpl implements ConstantsRepository {
   ConstantsRepositoryImpl(
     @Named.from(FirestoreConstatntsDataSource) this._dataSource,
     @Named.from(LocalConstantsDataSource) this._localDataSource,

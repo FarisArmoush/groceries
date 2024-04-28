@@ -5,7 +5,7 @@ import 'package:groceries/domain/repositories/theme_repository.dart';
 import 'package:injectable/injectable.dart';
 
 @Injectable(as: ThemeRepository)
-class ThemeRepositoryImpl extends ThemeRepository {
+class ThemeRepositoryImpl implements ThemeRepository {
   ThemeRepositoryImpl(
     @Named.from(LocalThemeDataSource) this._themeDataSource,
   );

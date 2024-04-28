@@ -4,7 +4,7 @@ import 'package:groceries/domain/repositories/remote_config_repository.dart';
 import 'package:injectable/injectable.dart';
 
 @Singleton(as: RemoteConfigRepository)
-class RemoteConfigRepositoryImpl extends RemoteConfigRepository {
+class RemoteConfigRepositoryImpl implements RemoteConfigRepository {
   const RemoteConfigRepositoryImpl(
     @Named.from(FirebaseRemoteConfigDataSource) this._dataSource,
   );

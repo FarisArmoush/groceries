@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
-import 'package:groceries/presentation/blocs/remote_config/remote_config_bloc.dart';
+import 'package:groceries/presentation/modules/settings/widgets/additional_resources_button.dart';
 import 'package:groceries/presentation/modules/settings/widgets/settings_list_tile.dart';
 import 'package:groceries/presentation/modules/settings/widgets/user_data_box.dart';
 import 'package:groceries/presentation/widgets/groceries_app_bar.dart';
@@ -50,47 +49,13 @@ class SettingsView extends StatelessWidget {
                 height: context.deviceHeight * 0.01,
               ),
               const AdditionalResourcesButton(),
+              SizedBox(
+                height: context.deviceHeight * 0.05,
+              ),
             ],
           ),
         ],
       ),
-    );
-  }
-}
-
-class AdditionalResourcesButton extends StatefulWidget {
-  const AdditionalResourcesButton({super.key});
-
-  @override
-  State<AdditionalResourcesButton> createState() =>
-      _AdditionalResourcesButtonState();
-}
-
-class _AdditionalResourcesButtonState extends State<AdditionalResourcesButton> {
-  @override
-  void initState() {
-    context.read<RemoteConfigBloc>().add(
-          const RemoteConfigEvent.getShowAdditionalResources(),
-        );
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<RemoteConfigBloc, RemoteConfigState>(
-      buildWhen: (previous, current) =>
-          previous.showAdditionalResources != current.showAdditionalResources,
-      builder: (context, state) {
-        return Visibility(
-          visible: state.showAdditionalResources,
-          child: SettingsListTile(
-            title: Translations.additionalResources.title,
-            subtitle: Translations.additionalResources.description,
-            iconPath: Assets.icons.menu.path,
-            onTap: () => context.pushNamed(AppRoute.additionalResources.named),
-          ),
-        );
-      },
     );
   }
 }

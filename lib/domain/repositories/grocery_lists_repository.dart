@@ -1,7 +1,7 @@
 import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
 import 'package:groceries/data/models/user_model/user_model.dart';
 
-abstract class GroceryListsRepository {
+abstract interface class GroceryListsRepository {
   const GroceryListsRepository();
   Future<List<GroceryListModel>> fetchMyGroceryLists();
   Future<void> createGroceryList(GroceryListModel? groceryListModel);

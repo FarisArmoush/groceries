@@ -5,7 +5,7 @@ import 'package:groceries/domain/repositories/base_groceries_repository.dart';
 import 'package:injectable/injectable.dart';
 
 @Singleton(as: BaseGroceriesRepository)
-class BaseGroceriesRepositoryImpl extends BaseGroceriesRepository {
+class BaseGroceriesRepositoryImpl implements BaseGroceriesRepository {
   const BaseGroceriesRepositoryImpl(
     @Named.from(FirestoreBaseGroceriesDataSource) this._remoteDataSource,
   );

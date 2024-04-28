@@ -5,7 +5,7 @@ import 'package:groceries/domain/repositories/cateogries_repository.dart';
 import 'package:injectable/injectable.dart';
 
 @Singleton(as: CategoriesRepository)
-class CategoriesRepositoryImpl extends CategoriesRepository {
+class CategoriesRepositoryImpl implements CategoriesRepository {
   const CategoriesRepositoryImpl(
     @Named.from(FirestoreCategoriesDataSource) this._dataSource,
   );
