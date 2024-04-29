@@ -10,7 +10,6 @@ import 'package:groceries/presentation/blocs/priorities/priorities_bloc.dart';
 import 'package:groceries/presentation/blocs/remote_config/remote_config_bloc.dart';
 import 'package:groceries/presentation/blocs/user_data/user_data_cubit.dart';
 import 'package:groceries/presentation/modules/add_items/bloc/add_items_bloc.dart';
-import 'package:groceries/presentation/modules/additional_resources/cubit/send_crash_reports_cubit.dart';
 import 'package:groceries/presentation/modules/create_list/bloc/create_list_bloc.dart';
 import 'package:groceries/presentation/modules/create_recipe/bloc/create_recipe_bloc.dart';
 import 'package:groceries/presentation/modules/delete_account/bloc/delete_account_bloc.dart';
@@ -103,9 +102,6 @@ class App extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => injector<AddItemsBloc>(),
-        ),
-        BlocProvider(
-          create: (context) => injector<SendCrashReportsCubit>(),
         ),
         BlocProvider(
           create: (context) => injector<ThemeCubit>()..loadTheme(),

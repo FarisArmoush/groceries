@@ -6,7 +6,6 @@ import 'package:groceries/data/models/category_model/category_model.dart';
 import 'package:groceries/data/services/cache/cache_service.dart';
 import 'package:groceries/presentation/modules/account_settings/views/account_settings_view.dart';
 import 'package:groceries/presentation/modules/add_items/views/add_items_view.dart';
-import 'package:groceries/presentation/modules/additional_resources/views/additional_resources_view.dart';
 import 'package:groceries/presentation/modules/create_list/views/create_list_view.dart';
 import 'package:groceries/presentation/modules/create_list/views/list_created_successfully_view.dart';
 import 'package:groceries/presentation/modules/create_list/views/list_created_unsuccessfully_view.dart';
@@ -260,13 +259,6 @@ final GoRouter appGoRouter = GoRouter(
               path: AppRoute.themeSettings.named,
               builder: (context, state) => ThemeSettingsView(
                 key: Key(AppRoute.themeSettings.key),
-              ),
-            ),
-            GoRoute(
-              name: AppRoute.additionalResources.named,
-              path: AppRoute.additionalResources.named,
-              builder: (context, state) => AdditionalResourcesView(
-                key: Key(AppRoute.additionalResources.key),
               ),
             ),
             GoRoute(
