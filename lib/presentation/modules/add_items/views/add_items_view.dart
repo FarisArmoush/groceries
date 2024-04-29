@@ -32,10 +32,11 @@ class _AddItemsViewState extends State<AddItemsView> {
       buildWhen: (previous, current) => previous.status != current.status,
       builder: (context, state) {
         return Scaffold(
-          appBar: state.status.maybeWhen(
+          appBar: state.status.when(
             loading: AppBar.new,
             initial: AppBar.new,
-            orElse: () => null,
+            failure: (_) => AppBar(),
+            success: () => null,
           ),
           body: state.status.when(
             initial: AppLoadingIndicator.new,

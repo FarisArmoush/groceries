@@ -7,6 +7,8 @@ import 'package:groceries/config/injection/injector.dart';
 import 'package:groceries/config/services/remote_config_service.dart';
 import 'package:groceries/data/models/app_flavor/app_flavor.dart';
 import 'package:groceries/firebase_options.dart';
+import 'package:hive/hive.dart';
+import 'package:path_provider/path_provider.dart';
 
 Future<Widget> mainCommon(AppFlavor flavor) async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,5 +20,7 @@ Future<Widget> mainCommon(AppFlavor flavor) async {
   await remoteConfigService.init();
   await EasyLocalization.ensureInitialized();
   injector.registerSingleton<AppFlavor>(flavor);
+  final directory = await getApplicationCacheDirectory();
+  Hive.init(directory.path);
   return const App();
 }

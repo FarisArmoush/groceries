@@ -24,14 +24,12 @@ class FirestoreCategoriesDataSource implements CategoriesDataSource {
             .collection(FirestoreCollection.category)
             .orderBy(FirestoreField.name)
             .where(FirestoreField.parentCategoryId, isEqualTo: categoryId);
-        logger.info('Fetch categories with the id $categoryId');
       } else {
         // Parent-Categories Query
         query = _firestore
             .collection(FirestoreCollection.category)
             .orderBy(FirestoreField.name)
             .where(FirestoreField.parentCategoryId, isNull: true);
-        logger.info('Fetch parent categories');
       }
 
       final result = await query.get();
