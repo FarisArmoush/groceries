@@ -16,11 +16,6 @@ class FirebaseRemoteConfigDataSource implements RemoteConfigDataSource {
       );
 
   @override
-  bool? get showAdditionalResources => _remoteConfig.getBool(
-        RemoteConfigKeys.showAdditionalResources,
-      );
-
-  @override
   bool? get showDeleteAccountButton => _remoteConfig.getBool(
         RemoteConfigKeys.showDeleteAccountButton,
       );

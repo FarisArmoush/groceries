@@ -1,10 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
+import 'package:groceries/config/injection/injector.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/data/models/category_model/category_model.dart';
+import 'package:groceries/data/services/cache/cache_service.dart';
 import 'package:groceries/presentation/modules/account_settings/views/account_settings_view.dart';
 import 'package:groceries/presentation/modules/add_items/views/add_items_view.dart';
-import 'package:groceries/presentation/modules/additional_resources/views/additional_resources_view.dart';
 import 'package:groceries/presentation/modules/create_list/views/create_list_view.dart';
 import 'package:groceries/presentation/modules/create_list/views/list_created_successfully_view.dart';
 import 'package:groceries/presentation/modules/create_list/views/list_created_unsuccessfully_view.dart';
@@ -37,7 +38,6 @@ import 'package:groceries/presentation/modules/wrapper/views/wrapper_view.dart';
 import 'package:groceries/utils/extenstions/path.dart';
 import 'package:groceries/utils/keys/storage_keys.dart';
 import 'package:groceries/utils/logger.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 /// A variable that defines the routes and builders for the App.
@@ -50,11 +50,13 @@ final GoRouter appGoRouter = GoRouter(
       path: '/',
       builder: (context, state) => const WrapperView(),
       redirect: (context, state) async {
-        final sharedPreferences = await SharedPreferences.getInstance();
-        final hasViewedOnboarding = sharedPreferences.getBool(
+        final cacheService = injector.get<CacheService>(
+          instanceName: 'SharedPreferencesCacheService',
+        );
+        final hasViewedOnboarding = await cacheService.read<bool>(
           StorageKeys.hasViewedOnboarding,
         );
-        if (hasViewedOnboarding == false || hasViewedOnboarding == null) {
+        if (hasViewedOnboarding case null || false) {
           return AppRoute.onboarding.named.path;
         }
         return null;
@@ -257,13 +259,6 @@ final GoRouter appGoRouter = GoRouter(
               path: AppRoute.themeSettings.named,
               builder: (context, state) => ThemeSettingsView(
                 key: Key(AppRoute.themeSettings.key),
-              ),
-            ),
-            GoRoute(
-              name: AppRoute.additionalResources.named,
-              path: AppRoute.additionalResources.named,
-              builder: (context, state) => AdditionalResourcesView(
-                key: Key(AppRoute.additionalResources.key),
               ),
             ),
             GoRoute(

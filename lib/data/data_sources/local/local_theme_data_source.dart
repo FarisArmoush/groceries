@@ -1,7 +1,8 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
-import 'package:groceries/data/cache_service.dart';
 import 'package:groceries/data/data_sources/interfaces/theme_data_source.dart';
+import 'package:groceries/data/services/cache/cache_service.dart';
+import 'package:groceries/data/services/cache/shared_preferences_cache_service.dart';
 import 'package:groceries/utils/keys/storage_keys.dart';
 import 'package:groceries/utils/logger.dart';
 import 'package:injectable/injectable.dart';
@@ -9,7 +10,9 @@ import 'package:injectable/injectable.dart';
 @named
 @Injectable(as: ThemeDataSource)
 class LocalThemeDataSource implements ThemeDataSource {
-  const LocalThemeDataSource(this._cacheService);
+  const LocalThemeDataSource(
+    @Named.from(SharedPreferencesCacheService) this._cacheService,
+  );
 
   final CacheService _cacheService;
   @override

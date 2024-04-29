@@ -1,14 +1,11 @@
 import 'dart:convert';
 
+import 'package:groceries/data/services/cache/cache_service.dart';
 import 'package:groceries/utils/typedefs/typedefs.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-abstract interface class CacheService {
-  Future<bool> write<T>(String key, T value);
-  Future<T?> read<T>(String key);
-}
-
+@named
 @Injectable(as: CacheService)
 class SharedPreferencesCacheService implements CacheService {
   @override
@@ -16,17 +13,17 @@ class SharedPreferencesCacheService implements CacheService {
     final prefs = await SharedPreferences.getInstance();
     try {
       if (T == String) {
-        return (prefs.getString(key) ?? '') as T;
+        return (prefs.getString(key) ?? '') as T?;
       } else if (T == bool) {
-        return prefs.getBool(key) as T;
+        return prefs.getBool(key) as T?;
       } else if (T == int) {
-        return prefs.getInt(key) as T;
+        return prefs.getInt(key) as T?;
       } else if (T == JSON) {
-        return json.decode(prefs.getString(key) ?? '') as T;
+        return json.decode(prefs.getString(key) ?? '') as T?;
       } else if (T == List<JSON>) {
         final list = (prefs.getStringList(key) ?? []) as Iterable<String>;
         final mappedList = list.map((e) => jsonDecode(e) as JSON);
-        return List<JSON>.from(mappedList) as T;
+        return List<JSON>.from(mappedList) as T?;
       } else {
         throw Exception('Unsupported type: $T');
       }

@@ -37,7 +37,6 @@ extension AppRouteKeys on AppRoute {
         AppRoute.verifyAccount => 'K_VERIFY_ACCOUNT_VIEW_KEY',
         AppRoute.deleteAccount => 'K_DELETE_ACCOUNT_VIEW_KEY',
         AppRoute.themeSettings => 'K_THEME_SETTINGS_VIEW_KEY',
-        AppRoute.additionalResources => 'K_ADDITIONAL_RESOURCES_VIEW_KEY',
         AppRoute.pageNotFound => 'K_PAGE_NOT_FOUND_VIEW_KEY',
         AppRoute.premium => 'K_BUY_PREMIUM_VIEW_KEY',
         AppRoute.items => 'K_ITEMS_VIEW_KEY',

@@ -90,9 +90,6 @@ enum AppRoute {
   /// Appearance Settings View
   themeSettings,
 
-  /// Additional Resources View
-  additionalResources,
-
   /// Page Not Found View
   ///
   /// Automatically used when the user goes to a view that doesnt exist
