@@ -67,4 +67,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'grocoriesapp.appspot.com',
     iosBundleId: 'com.example.verygoodcore.groceries',
   );
+
 }
