@@ -93,11 +93,6 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
                 ),
               ),
             ),
-          // BottomSheetButton(
-          //   text: AppTranslations.groceryLists.removeImage,
-          //   iconPath: Assets.icons.trash.path,
-          //   onTap: () {},
-          // ),
           BottomSheetButton(
             text: Translations.groceryLists.markAsDone,
             iconPath: Assets.icons.doubleCheck.path,
