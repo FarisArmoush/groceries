@@ -15,8 +15,5 @@ class RemoteConfigRepositoryImpl implements RemoteConfigRepository {
   String get appVersion => _dataSource.appVersion;
 
   @override
-  bool? get showAdditionalResources => _dataSource.showAdditionalResources;
-
-  @override
   bool? get showDeleteAccountButton => _dataSource.showDeleteAccountButton;
 }

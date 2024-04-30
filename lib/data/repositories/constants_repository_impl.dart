@@ -1,8 +1,9 @@
-import 'package:groceries/data/cache_service.dart';
 import 'package:groceries/data/data_sources/interfaces/constants_data_source.dart';
 import 'package:groceries/data/data_sources/local/cache_constants_data_source.dart';
 import 'package:groceries/data/data_sources/remote/firestore_constants_data_source.dart';
 import 'package:groceries/data/models/priority_model/priority_model.dart';
+import 'package:groceries/data/services/cache/cache_service.dart';
+import 'package:groceries/data/services/cache/hive_cache_service.dart';
 import 'package:groceries/domain/repositories/constants_repository.dart';
 import 'package:groceries/utils/keys/storage_keys.dart';
 import 'package:groceries/utils/logger.dart';
@@ -14,7 +15,7 @@ class ConstantsRepositoryImpl implements ConstantsRepository {
   ConstantsRepositoryImpl(
     @Named.from(FirestoreConstatntsDataSource) this._dataSource,
     @Named.from(LocalConstantsDataSource) this._localDataSource,
-    this._cacheService,
+    @Named.from(HiveCacheService) this._cacheService,
   );
 
   final ConstantsDataSource _dataSource;

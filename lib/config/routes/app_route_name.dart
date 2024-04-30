@@ -33,7 +33,6 @@ extension AppRouteName on AppRoute {
         AppRoute.verifyAccount => 'verify-account',
         AppRoute.deleteAccount => 'delete-account',
         AppRoute.themeSettings => 'theme-settings',
-        AppRoute.additionalResources => 'additional-resourcez',
         AppRoute.pageNotFound => 'page-not-found',
         AppRoute.premium => 'buy-premium',
         AppRoute.items => 'items',

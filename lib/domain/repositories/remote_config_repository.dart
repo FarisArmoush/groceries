@@ -6,7 +6,4 @@ abstract interface class RemoteConfigRepository {
 
   /// Show Delete Account Button
   bool? get showDeleteAccountButton;
-
-  /// Show Additional Resources
-  bool? get showAdditionalResources;
 }

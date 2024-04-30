@@ -47,7 +47,7 @@ class HomeView extends StatelessWidget {
               SliverSizedBox(
                 height: context.deviceHeight * 0.05,
               ),
-              // const _MockAddItemsToCloudFirestoreAutomatically(),
+              // const MockAddItemsToCloudFirestoreAutomatically(),
             ],
           ),
         ),
@@ -57,8 +57,8 @@ class HomeView extends StatelessWidget {
 }
 
 // ignore: unused_element
-class _MockAddItemsToCloudFirestoreAutomatically extends StatelessWidget {
-  const _MockAddItemsToCloudFirestoreAutomatically();
+class MockAddItemsToCloudFirestoreAutomatically extends StatelessWidget {
+  const MockAddItemsToCloudFirestoreAutomatically({super.key});
 
   Future<void> addToCloudFirestore() async {
     final firestore = FirebaseFirestore.instance;
