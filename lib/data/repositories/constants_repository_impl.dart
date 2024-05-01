@@ -1,13 +1,9 @@
-import 'package:groceries/data/data_sources/interfaces/constants_data_source.dart';
+import 'package:groceries/data/data_sources/i_data_source.dart';
 import 'package:groceries/data/data_sources/local/cache_constants_data_source.dart';
 import 'package:groceries/data/data_sources/remote/firestore_constants_data_source.dart';
 import 'package:groceries/data/models/priority_model/priority_model.dart';
-import 'package:groceries/data/services/cache/cache_service.dart';
-import 'package:groceries/data/services/cache/hive_cache_service.dart';
 import 'package:groceries/domain/repositories/constants_repository.dart';
-import 'package:groceries/utils/keys/storage_keys.dart';
 import 'package:groceries/utils/logger.dart';
-import 'package:groceries/utils/typedefs/typedefs.dart';
 import 'package:injectable/injectable.dart';
 
 @Singleton(as: ConstantsRepository)
@@ -15,51 +11,33 @@ class ConstantsRepositoryImpl implements ConstantsRepository {
   ConstantsRepositoryImpl(
     @Named.from(FirestoreConstatntsDataSource) this._dataSource,
     @Named.from(LocalConstantsDataSource) this._localDataSource,
-    @Named.from(HiveCacheService) this._cacheService,
   );
 
-  final ConstantsDataSource _dataSource;
-  final ConstantsDataSource _localDataSource;
-  final CacheService _cacheService;
+  final DataSource _dataSource;
+  final DataSource _localDataSource;
 
   @override
   Future<List<PriorityModel>> fetchPriorities() async {
-    final cachedPriorities = await _checkCachedPriorities();
-
-    if (cachedPriorities != null) {
-      logger.info('Fetched Priorities from cache');
-      return cachedPriorities;
-    }
-
-    final remotePriorities = await _dataSource.fetchPriorities();
-    final jsonedPriorities = remotePriorities.map((e) => e.toJson()).toList();
-
-    await _cacheService.write<List<JSON>>(
-      StorageKeys.priorities,
-      jsonedPriorities,
+    final localPriorities = await _localDataSource.request<List<PriorityModel>>(
+      requestType: RequestType.read,
     );
-    await _cacheService.write<String>(
-      StorageKeys.lastPrioritiesFetch,
-      DateTime.now().toString(),
-    );
-    logger.info('Fetched Priorities from Firestore');
-    return remotePriorities;
-  }
-
-  Future<List<PriorityModel>?> _checkCachedPriorities() async {
-    final localPriorities = await _localDataSource.fetchPriorities();
-    final lastFetchTimeValue = await _cacheService.read<String>(
-      StorageKeys.lastPrioritiesFetch,
-    );
-    final lastFetchTime =
-        DateTime.tryParse(lastFetchTimeValue ?? '') ?? DateTime.now();
-
-    final hasBeenLessThanOneDay =
-        DateTime.now().difference(lastFetchTime).inDays <= 1;
-
-    if (localPriorities.isNotEmpty && hasBeenLessThanOneDay) {
+    if (localPriorities != null && localPriorities.isNotEmpty) {
+      logger.verbose('priorities from Cache');
       return localPriorities;
     }
-    return null;
+
+    final remotePriorities = await _dataSource.request<List<PriorityModel>>(
+      requestType: RequestType.read,
+    );
+
+    final jsonedValue = remotePriorities?.map((e) => e.toJson()).toList();
+
+    await _localDataSource.request<bool>(
+      requestType: RequestType.create,
+      body: jsonedValue,
+    );
+
+    logger.verbose('priorities from Remote');
+    return remotePriorities ?? <PriorityModel>[];
   }
 }

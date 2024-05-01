@@ -20,6 +20,7 @@ class GroceryListsShimmeredRail extends StatelessWidget {
         ),
         SizedBox(height: context.deviceHeight * 0.03),
         ListView.separated(
+          physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: 3,
           padding: const EdgeInsetsDirectional.symmetric(vertical: 4),

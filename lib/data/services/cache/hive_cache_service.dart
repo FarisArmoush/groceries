@@ -26,8 +26,13 @@ class HiveCacheService implements CacheService {
 
   @override
   Future<T?> read<T>(String key) async {
-    await _initializeBox<T>(key);
-    final box = Hive.box<T>(key);
-    return box.get(key);
+    try {
+      await _initializeBox<T>(key);
+      final box = Hive.box<T>(key);
+      return box.get(key);
+    } on Exception catch (e) {
+      logger.error(e);
+      return null;
+    }
   }
 }
