@@ -32,7 +32,7 @@ import 'package:talker_bloc_logger/talker_bloc_logger.dart';
 /// ```
 Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   FlutterError.onError = (details) {
-    logger.critical(details.exceptionAsString());
+    logger.critical(details.exceptionAsString(), details, details.stack);
   };
 
   Bloc.observer = TalkerBlocObserver(
@@ -45,6 +45,6 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   injectAppDependencies();
   await runZonedGuarded(
     () async => runApp(await builder()),
-    (error, stackTrace) => logger.critical(error.toString()),
+    (error, stackTrace) => logger.critical(error.toString(), error, stackTrace),
   );
 }
