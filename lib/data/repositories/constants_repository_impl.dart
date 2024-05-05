@@ -33,7 +33,7 @@ class ConstantsRepositoryImpl implements ConstantsRepository {
     final jsonedValue = remotePriorities?.map((e) => e.toJson()).toList();
 
     await _localDataSource.request<bool>(
-      requestType: RequestType.create,
+      requestType: RequestType.write,
       body: jsonedValue,
     );
 

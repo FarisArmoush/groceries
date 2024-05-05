@@ -1,4 +1,4 @@
-enum RequestType { create, read, update, delete }
+enum RequestType { write, read, update, delete }
 
 abstract class DataSource {
   Future<T?> request<T>({

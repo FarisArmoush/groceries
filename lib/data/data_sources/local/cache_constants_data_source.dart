@@ -23,7 +23,7 @@ class LocalConstantsDataSource implements DataSource {
     Object? body,
   }) {
     return switch (requestType) {
-      RequestType.create => _create(
+      RequestType.write => _write(
           (body ?? <JSON>[]) as List<JSON>,
         ),
       RequestType.read => _read(),
@@ -31,7 +31,7 @@ class LocalConstantsDataSource implements DataSource {
     };
   }
 
-  Future<T?> _create<T>(Object body) async {
+  Future<T?> _write<T>(Object body) async {
     return await _cacheService.write<List<JSON>>(
       StorageKeys.priorities,
       body as List<Map<String, dynamic>>,
@@ -41,7 +41,7 @@ class LocalConstantsDataSource implements DataSource {
   Future<T?> _read<T>() async {
     final dataIsStale = !(await _staleDataChecker.shouldFetchFromRemote(
       lastFetchTimeKey: StorageKeys.lastPrioritiesFetch,
-      days: 30,
+      days: 1,
     ));
     final value = await _cacheService.read<List<JSON>>(StorageKeys.priorities);
     if (value != null && value.isNotEmpty && dataIsStale) {
