@@ -1,6 +1,5 @@
 import 'package:formz/formz.dart';
 import 'package:groceries/config/localization/translations.dart';
-import 'package:groceries/utils/extenstions/num_extensions.dart';
 
 /// A class representing a form field for entering a grocery list name.
 /// This class extends the FormzInput class and provides validation logic
@@ -28,7 +27,7 @@ class GroceryListNameForm extends FormzInput<String, String> {
     if (value.isEmpty) {
       return messages.fieldCannotBeEmpty;
     }
-    if (value.length.isLessThan(8)) {
+    if (value.length <= 8) {
       return messages.fieldMustHaveAtLeastEightCharacters;
     }
     return null;

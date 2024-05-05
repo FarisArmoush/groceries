@@ -1,5 +1,4 @@
 import 'package:groceries/utils/extenstions/hard_coded_extension.dart';
-import 'package:groceries/utils/extenstions/num_extensions.dart';
 
 /// Extension providing utility methods for parsing and formatting date strings.
 extension DateTimeParser on String {
@@ -38,7 +37,7 @@ extension DateTimeParser on String {
 
   /// Returns the day with suffix (e.g., 1st, 2nd, 3rd, 4th).
   String _getDayWithSuffix(int day) {
-    if (day.isGreaterThan(11) && day.isLessThan(13)) {
+    if (day >= 11 && day <= 13) {
       return '${day}th';
     }
     return switch (day % 10) {
