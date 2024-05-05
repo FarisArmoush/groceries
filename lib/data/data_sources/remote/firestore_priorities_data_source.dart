@@ -9,7 +9,7 @@ import 'package:injectable/injectable.dart';
 
 @named
 @Injectable(as: DataSource)
-class FirestoreConstatntsDataSource implements DataSource {
+class FirestorePrioritiesDataSource implements DataSource {
   @override
   Future<T?> request<T>({
     required RequestType requestType,

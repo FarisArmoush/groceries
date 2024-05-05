@@ -9,8 +9,8 @@ import 'package:injectable/injectable.dart';
 
 @named
 @Injectable(as: DataSource)
-class LocalConstantsDataSource implements DataSource {
-  LocalConstantsDataSource(
+class LocalPrioritiesDataSource implements DataSource {
+  LocalPrioritiesDataSource(
     @Named.from(HiveCacheService) this._cacheService,
     @Named.from(HiveStaleDataChecker) this._staleDataChecker,
   );
