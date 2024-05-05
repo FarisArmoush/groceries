@@ -38,7 +38,7 @@ class IsUserVerifiedListTile extends StatelessWidget {
               elevation: 0,
               builder: (context) => const YourAccountIsVerifiedBottomSheet(),
             )
-          : context.pushNamed(AppRoute.verifyAccount.name),
+          : context.pushNamed(AppRoute.verifyAccount.named),
     );
   }
 }

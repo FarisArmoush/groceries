@@ -11,7 +11,7 @@ class AddItemsToRecipeButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton.icon(
-      onPressed: () => context.pushNamed(AppRoute.addItems.name),
+      onPressed: () => context.pushNamed(AppRoute.addItems.named),
       icon: Assets.icons.plus.svg(
         colorFilter: ColorFilter.mode(
           context.theme.colorScheme.secondary,

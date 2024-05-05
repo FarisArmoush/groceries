@@ -19,7 +19,7 @@ class RegisterOtherOptionsTextButton extends StatelessWidget {
           child: SwitchAuthenticationOptionTextButton(
             upperText: Translations.register.alreadyHaveAnAccount,
             lowerText: Translations.register.loginNow,
-            onTap: () => context.pushNamed(AppRoute.login.name),
+            onTap: () => context.pushNamed(AppRoute.login.named),
           ),
         );
       },

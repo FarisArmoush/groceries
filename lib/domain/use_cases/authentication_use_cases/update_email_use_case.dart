@@ -1,13 +1,13 @@
-import 'package:groceries/domain/repositories/authentication_repository.dart';
+import 'package:groceries/domain/repositories/user_management_repository.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
 class UpdateEmailUseCase {
-  const UpdateEmailUseCase(this._authenticationRepository);
+  const UpdateEmailUseCase(this._userManagementRepository);
 
-  final AuthenticationRepository _authenticationRepository;
+  final UserManagementRepository _userManagementRepository;
 
   Future<void> call(String input) async {
-    return _authenticationRepository.updateEmail(input);
+    return _userManagementRepository.updateEmail(input);
   }
 }

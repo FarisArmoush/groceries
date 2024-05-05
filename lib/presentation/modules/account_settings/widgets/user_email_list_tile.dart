@@ -27,7 +27,7 @@ class UserEmailListTile extends StatelessWidget {
         ),
       ),
       onTap: isUserVerified
-          ? () => context.pushNamed(AppRoute.updateEmail.name)
+          ? () => context.pushNamed(AppRoute.updateEmail.named)
           : () => showModalBottomSheet<void>(
                 context: context,
                 showDragHandle: true,

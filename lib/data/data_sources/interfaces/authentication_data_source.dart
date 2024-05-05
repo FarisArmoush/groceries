@@ -9,15 +9,9 @@ abstract interface class AuthenticationDataSource {
 
   Future<void> sendPasswordResetEmail(String? email);
 
-  Future<void> updateDisplayName(String? displayName);
-
   Future<void> logout();
 
   Future<void> deleteAccount();
-
-  Future<void> updateEmail(String? email);
-
-  Future<void> updatePassword(String? password);
 
   Future<void> sendVerificationEmail();
 

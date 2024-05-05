@@ -17,7 +17,7 @@ class LeaveOnboardingButton extends StatelessWidget {
       ),
       backgroundColor: context.theme.primaryColorLight,
       onPressed: () async {
-        context.pushReplacementNamed(AppRoute.welcome.name);
+        context.pushReplacementNamed(AppRoute.welcome.named);
         context.read<OnboardingBloc>().add(
               const OnboardingEvent.markOnboardingAsViewed(),
             );

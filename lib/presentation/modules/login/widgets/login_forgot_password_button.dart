@@ -21,7 +21,7 @@ class LoginForgotPasswordButton extends StatelessWidget {
               child: Text(
                 Translations.forgotPassword.header,
               ),
-              onPressed: () => context.pushNamed(AppRoute.forgotPassword.name),
+              onPressed: () => context.pushNamed(AppRoute.forgotPassword.named),
             ),
           ],
         ),

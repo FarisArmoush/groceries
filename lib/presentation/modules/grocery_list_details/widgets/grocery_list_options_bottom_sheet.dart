@@ -72,7 +72,7 @@ class GroceryListOptionsBottomSheet extends StatelessWidget {
               iconPath: Assets.icons.gear.path,
               onTap: () => context
                 ..pop()
-                ..pushNamed(AppRoute.groceryListSettings.name),
+                ..pushNamed(AppRoute.groceryListSettings.named),
             ),
           ],
         );

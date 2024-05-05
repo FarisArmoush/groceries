@@ -53,7 +53,7 @@ class LogoutButton extends StatelessWidget {
               message: Translations.settings.logoutSuccess,
             ),
           );
-        context.pushReplacementNamed(AppRoute.welcome.name);
+        context.pushReplacementNamed(AppRoute.welcome.named);
       },
     );
   }

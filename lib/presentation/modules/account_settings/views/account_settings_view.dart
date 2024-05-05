@@ -95,7 +95,7 @@ class _DeleteAccountButtonState extends State<_DeleteAccountButton> {
             500.milliseconds,
             () => context
               ..pop()
-              ..pushNamed(AppRoute.deleteAccount.name),
+              ..pushNamed(AppRoute.deleteAccount.named),
           );
         },
         child: Text(Translations.deleteAccount.deleteAccount),

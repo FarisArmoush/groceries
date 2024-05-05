@@ -62,7 +62,7 @@ class UpdateDisplayNameView extends StatelessWidget {
             message: Translations.updateName.nameUpdatedSuccessfully,
           ),
         );
-      context.pushReplacementNamed(AppRoute.root.name);
+      context.pushReplacementNamed(AppRoute.root.named);
     }
     if (state.status.isFailure) {
       context.read<RootNavigationBloc>().add(
@@ -76,7 +76,7 @@ class UpdateDisplayNameView extends StatelessWidget {
             error: state.errorMessage ?? Translations.errors.defaultError,
           ),
         );
-      context.pushReplacementNamed(AppRoute.root.name);
+      context.pushReplacementNamed(AppRoute.root.named);
     }
     if (state.status.isInProgress) {
       showDialog<AppLoadingIndicator>(

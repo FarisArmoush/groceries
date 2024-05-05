@@ -86,7 +86,7 @@ class RegisterView extends StatelessWidget {
           ),
         );
       context.read<RegisterBloc>().add(const RegisterEvent.resetState());
-      context.pushReplacementNamed(AppRoute.root.name);
+      context.pushReplacementNamed(AppRoute.root.named);
     }
   }
 }

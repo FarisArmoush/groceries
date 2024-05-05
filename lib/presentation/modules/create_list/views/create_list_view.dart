@@ -84,10 +84,10 @@ class _CreateListViewState extends State<CreateListView> {
         );
       },
       success: () {
-        context.pushReplacementNamed(AppRoute.listCreatedSuccessfully.name);
+        context.pushReplacementNamed(AppRoute.listCreatedSuccessfully.named);
       },
       failure: (error) {
-        context.pushReplacementNamed(AppRoute.listCreatedUnsuccessfully.name);
+        context.pushReplacementNamed(AppRoute.listCreatedUnsuccessfully.named);
       },
     );
   }
