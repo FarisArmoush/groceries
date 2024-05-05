@@ -58,7 +58,9 @@ class ListCreatedSuccessfullyView extends StatelessWidget {
               height: context.deviceHeight * 0.005,
             ),
             OutlinedButton(
-              onPressed: () => context.pushReplacementNamed(AppRoute.root.name),
+              onPressed: () => context.pushReplacementNamed(
+                AppRoute.root.named,
+              ),
               child: Text(
                 Translations.createGroceryList.goHome,
               ),

@@ -22,7 +22,7 @@ class UserDisplayNameListTile extends StatelessWidget {
           BlendMode.srcIn,
         ),
       ),
-      onTap: () => context.pushNamed(AppRoute.updateDisplayName.name),
+      onTap: () => context.pushNamed(AppRoute.updateDisplayName.named),
     );
   }
 }

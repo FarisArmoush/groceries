@@ -49,7 +49,9 @@ class RecipeCreatedSuccessfullyView extends StatelessWidget {
               height: context.deviceHeight * 0.02,
             ),
             OutlinedButton(
-              onPressed: () => context.pushReplacementNamed(AppRoute.root.name),
+              onPressed: () => context.pushReplacementNamed(
+                AppRoute.root.named,
+              ),
               child: Text(
                 Translations.createGroceryList.goHome,
               ),

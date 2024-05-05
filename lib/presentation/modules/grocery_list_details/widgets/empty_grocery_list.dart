@@ -47,7 +47,7 @@ class EmptyGroceryList extends StatelessWidget {
           height: context.deviceHeight * 0.02,
         ),
         ElevatedButton.icon(
-          onPressed: () => context.pushNamed(AppRoute.addItems.name),
+          onPressed: () => context.pushNamed(AppRoute.addItems.named),
           label: Text(Translations.groceryLists.browseGroceries),
           icon: Assets.icons.search.svg(
             colorFilter: ColorFilter.mode(

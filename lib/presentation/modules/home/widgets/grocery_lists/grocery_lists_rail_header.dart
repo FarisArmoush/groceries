@@ -35,7 +35,7 @@ class GroceryListsRailHeader extends StatelessWidget {
                 BlendMode.srcIn,
               ),
             ),
-            onPressed: () => context.pushNamed(AppRoute.createList.name),
+            onPressed: () => context.pushNamed(AppRoute.createList.named),
           ),
         ),
       ],

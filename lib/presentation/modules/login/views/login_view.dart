@@ -80,7 +80,7 @@ class LoginView extends StatelessWidget {
           ),
         );
       context.read<LoginBloc>().add(const LoginEvent.resetState());
-      context.pushReplacementNamed(AppRoute.root.name);
+      context.pushReplacementNamed(AppRoute.root.named);
     }
   }
 }

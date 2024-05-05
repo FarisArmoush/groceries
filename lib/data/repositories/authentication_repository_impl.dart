@@ -38,16 +38,5 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
       _dataSource.sendPasswordResetEmail(email);
 
   @override
-  Future<void> updateDisplayName(String? displayName) =>
-      _dataSource.updateDisplayName(displayName);
-
-  @override
-  Future<void> updateEmail(String? email) => _dataSource.updateEmail(email);
-
-  @override
-  Future<void> updatePassword(String? password) =>
-      _dataSource.updatePassword(password);
-
-  @override
   Future<void> sendVerificationEmail() => _dataSource.sendVerificationEmail();
 }
