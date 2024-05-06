@@ -44,9 +44,10 @@ class AppNetworkException implements Exception {
 
       case 'missing-android-pkg-name':
         return AppNetworkException(errors.missingAndroidPackageName);
-      // TODO(FarisArmoush): Translate (You're not allowed to access this data)?
+
       case 'permission-denied':
-        return const AppNetworkException('Permisstion Denied.');
+        return AppNetworkException(errors.permissionDenied);
+
       default:
         return AppNetworkException(errors.defaultError);
     }

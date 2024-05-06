@@ -42,4 +42,7 @@ final class ErrorMessagesKeys {
 
   /// requires_recent_login
   final requiresRecentLogin = 'requires_recent_login'.tr();
+
+  /// permission_denied
+  final permissionDenied = 'permission_denied'.tr();
 }
