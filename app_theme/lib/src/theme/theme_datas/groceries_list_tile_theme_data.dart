@@ -5,7 +5,7 @@ abstract final class GroceriesListTileThemeData {
   static final light = ListTileThemeData(
     tileColor: AppColors.offWhite,
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadiusDirectional.circular(10),
     ),
     titleTextStyle: const TextStyle(
       fontWeight: AppFontWeights.regular,
@@ -27,7 +27,7 @@ abstract final class GroceriesListTileThemeData {
   static final dark = ListTileThemeData(
     tileColor: AppColors.cardDarkGrey,
     shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(10),
+      borderRadius: BorderRadiusDirectional.circular(10),
     ),
     titleTextStyle: const TextStyle(
       fontWeight: AppFontWeights.regular,

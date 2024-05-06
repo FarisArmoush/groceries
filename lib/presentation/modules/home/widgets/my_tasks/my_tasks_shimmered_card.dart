@@ -11,7 +11,7 @@ class MyTasksShimmeredCard extends StatelessWidget {
       tileColor: AppColors.transparent,
       contentPadding: EdgeInsetsDirectional.zero,
       leading: ShimmerSkeleton(
-        borderRadius: BorderRadius.circular(64),
+        borderRadius: BorderRadiusDirectional.circular(64),
         height: 50,
         width: 50,
       ),

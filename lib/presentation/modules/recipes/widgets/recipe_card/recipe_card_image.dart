@@ -22,7 +22,7 @@ class RecipeCardImage extends StatelessWidget {
         height: context.deviceHeight * 0.2,
         width: double.infinity,
         shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadiusDirectional.circular(16),
       ),
     );
   }

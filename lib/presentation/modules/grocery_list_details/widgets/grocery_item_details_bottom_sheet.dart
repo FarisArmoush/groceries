@@ -68,7 +68,7 @@ class GroceryItemDetailsBottomSheet extends StatelessWidget {
               height: context.deviceHeight * 0.3,
               width: double.infinity,
               shape: BoxShape.rectangle,
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadiusDirectional.circular(16),
               imageUrl: groceryModel?.image ?? '',
             ),
             SizedBox(

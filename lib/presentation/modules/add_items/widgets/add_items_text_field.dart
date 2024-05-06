@@ -21,7 +21,7 @@ class AddItemsTextField extends StatelessWidget {
           failure: (_) => const SizedBox.shrink(),
           success: () => Material(
             color: CupertinoColors.systemGrey5,
-            borderRadius: BorderRadius.circular(9),
+            borderRadius: BorderRadiusDirectional.circular(9),
             child: const AppTextField(
               style: TextStyle(
                 fontWeight: AppFontWeights.semiBold,

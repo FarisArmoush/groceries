@@ -20,7 +20,7 @@ class GroceryListShimmeredCard extends StatelessWidget {
             ShimmerSkeleton(
               height: context.deviceHeight * 0.045,
               width: context.deviceWidth * 0.06,
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadiusDirectional.circular(16),
             ),
           ],
         ),
@@ -45,7 +45,7 @@ class GroceryListShimmeredCard extends StatelessWidget {
     return ShimmerSkeleton(
       height: context.deviceHeight * 0.045,
       width: context.deviceWidth * 0.1,
-      borderRadius: BorderRadius.circular(64),
+      borderRadius: BorderRadiusDirectional.circular(64),
     );
   }
 
@@ -53,7 +53,7 @@ class GroceryListShimmeredCard extends StatelessWidget {
     return ShimmerSkeleton(
       height: context.deviceHeight * 0.02,
       width: context.deviceWidth * 0.2,
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadiusDirectional.circular(12),
     );
   }
 
@@ -61,7 +61,7 @@ class GroceryListShimmeredCard extends StatelessWidget {
     return ShimmerSkeleton(
       height: context.deviceHeight * 0.015,
       width: context.deviceWidth * 0.5,
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadiusDirectional.circular(12),
     );
   }
 }

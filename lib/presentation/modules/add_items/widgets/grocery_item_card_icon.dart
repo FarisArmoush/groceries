@@ -16,7 +16,7 @@ class GroceryItemCardIcon extends StatelessWidget {
       padding: const EdgeInsetsDirectional.all(8),
       decoration: BoxDecoration(
         color: context.theme.primaryColor,
-        borderRadius: BorderRadius.circular(5),
+        borderRadius: BorderRadiusDirectional.circular(5),
       ),
       child: SvgPicture.asset(
         Assets.icons.beef.path,

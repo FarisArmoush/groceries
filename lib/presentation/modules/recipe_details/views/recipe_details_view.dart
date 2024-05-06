@@ -53,7 +53,7 @@ class _RecipeDetailsViewState extends State<RecipeDetailsView> {
                         height: context.deviceHeight * 0.3,
                         width: context.deviceWidth,
                         shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadiusDirectional.circular(12),
                       ),
                       SizedBox(
                         height: context.deviceHeight * 0.05,

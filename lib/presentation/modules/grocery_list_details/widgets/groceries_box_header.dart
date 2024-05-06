@@ -29,7 +29,7 @@ class GroceriesBoxHeader extends StatelessWidget {
             padding: const EdgeInsetsDirectional.all(8),
             decoration: BoxDecoration(
               color: AppColors.white,
-              borderRadius: BorderRadius.circular(5),
+              borderRadius: BorderRadiusDirectional.circular(5),
             ),
             child: SvgPicture.asset(
               assetPath,
