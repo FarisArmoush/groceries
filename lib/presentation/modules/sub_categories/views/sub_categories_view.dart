@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/data/models/category_model/category_model.dart';
+import 'package:groceries/domain/entities/category/category_entity.dart';
 import 'package:groceries/presentation/modules/sub_categories/bloc/sub_categories_bloc.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/categories_list.dart';
@@ -14,7 +14,7 @@ class SubCategoriesView extends StatefulWidget {
     super.key,
   });
 
-  final CategoryModel parentCategoryModel;
+  final CategoryEntity parentCategoryModel;
 
   @override
   State<SubCategoriesView> createState() => _SubCategoriesViewState();

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/data/models/recipe_details_model/recipe_details_model.dart';
+import 'package:groceries/domain/entities/recipe_details/recipe_details_entity.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries/utils/extenstions/padding_extensions.dart';
 import 'package:groceries/utils/extenstions/widgets_as_extensions.dart';
@@ -8,7 +8,7 @@ import 'package:groceries_theme/app_theme.dart';
 class RecipeStepsList extends StatelessWidget {
   const RecipeStepsList({required this.recipeModel, super.key});
 
-  final RecipeDetailsModel? recipeModel;
+  final RecipeDetailsEntity? recipeModel;
 
   @override
   Widget build(BuildContext context) {

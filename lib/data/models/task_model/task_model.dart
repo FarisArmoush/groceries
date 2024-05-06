@@ -20,4 +20,3 @@ class TaskModel with _$TaskModel {
 
   factory TaskModel.fromJson(JSON json) => _$TaskModelFromJson(json);
 }
-

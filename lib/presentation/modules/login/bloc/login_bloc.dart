@@ -5,7 +5,6 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:groceries/data/models/login_param/login_param.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/login_with_email_and_password_use_case.dart';
 import 'package:groceries/utils/exceptions/app_network_exception.dart';
 import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
@@ -110,10 +109,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
     );
     try {
       await _loginWithEmailAndPasswordUseCase(
-        LoginParam(
-          email: state.email.value,
-          password: state.password.value,
-        ),
+        email: state.email.value,
+        password: state.password.value,
       );
       emit(state.copyWith(status: FormzSubmissionStatus.success));
     } on AppNetworkException catch (e) {

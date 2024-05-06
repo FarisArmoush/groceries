@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/config/localization/translations.dart';
-import 'package:groceries/data/models/grocery_list_details_model/grocery_list_details_model.dart';
+import 'package:groceries/domain/entities/grocery_list_details/grocery_list_details_entity.dart';
 import 'package:groceries/domain/use_cases/add_item_to_list_use_case.dart';
 import 'package:groceries/domain/use_cases/clear_grocery_list_items_use_case.dart';
 import 'package:groceries/domain/use_cases/fetch_grocery_list_details_use_case.dart';

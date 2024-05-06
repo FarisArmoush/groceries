@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/routes/app_route.dart';
-import 'package:groceries/data/models/category_model/category_model.dart';
+import 'package:groceries/domain/entities/category/category_entity.dart';
 import 'package:groceries/presentation/widgets/next_arrow_icon.dart';
 import 'package:groceries/utils/extenstions/padding_extensions.dart';
 
@@ -11,7 +11,7 @@ class CategoriesList extends StatelessWidget {
     super.key,
   });
 
-  final List<CategoryModel> categories;
+  final List<CategoryEntity> categories;
 
   @override
   Widget build(BuildContext context) {

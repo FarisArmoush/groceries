@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/config/localization/translations.dart';
-import 'package:groceries/data/models/app_theme_model/app_theme_model.dart';
+import 'package:groceries/presentation/models/app_theme_model/app_theme_model.dart';
 import 'package:groceries/presentation/modules/theme_settings/cubit/theme_cubit.dart';
 import 'package:groceries/presentation/modules/theme_settings/widgets/theme_radio.dart';
 import 'package:groceries/presentation/widgets/app_primary_box.dart';

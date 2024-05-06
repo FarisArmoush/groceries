@@ -1,4 +1,4 @@
-import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
+import 'package:groceries/domain/entities/grocery_list/grocery_list_entity.dart';
 import 'package:groceries/domain/repositories/grocery_lists_repository.dart';
 import 'package:injectable/injectable.dart';
 
@@ -8,6 +8,9 @@ class GroceryListsUseCase {
 
   final GroceryListsRepository _groceryListsRepository;
 
-  Future<List<GroceryListModel>?> call() =>
-      _groceryListsRepository.fetchMyGroceryLists();
+  Future<List<GroceryListEntity>?> call() async {
+    final modelList = await _groceryListsRepository.fetchMyGroceryLists();
+    final entityList = modelList.map((e) => e.toEntity()!).toList();
+    return entityList;
+  }
 }

@@ -1,4 +1,3 @@
-import 'package:groceries/data/models/register_param/register_param.dart';
 import 'package:groceries/domain/repositories/authentication_repository.dart';
 import 'package:injectable/injectable.dart';
 
@@ -8,7 +7,15 @@ class RegisterWithEmailAndPasswordUseCase {
 
   final AuthenticationRepository _authenticationRepository;
 
-  Future<void> call(RegisterParam input) {
-    return _authenticationRepository.signUpWithEmailAndPassword(input);
+  Future<void> call({
+    required String email,
+    required String password,
+    required String name,
+  }) {
+    return _authenticationRepository.signUpWithEmailAndPassword(
+      name: name,
+      email: email,
+      password: password,
+    );
   }
 }

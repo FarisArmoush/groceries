@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:groceries/data/models/user_model/user_model.dart';
+import 'package:groceries/domain/entities/user/user_entity.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/auth_state_changes_stream_use_case.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/fetch_user_use_case.dart';
 import 'package:injectable/injectable.dart';
@@ -35,7 +35,7 @@ class AuthenticationBloc
   final AuthStateChangesStreamUseCase _authStateChangesStreamUseCase;
   final FetchUserUseCase _fetchUserUseCase;
 
-  late final StreamSubscription<UserModel?> _userSubscription;
+  late final StreamSubscription<UserEntity?> _userSubscription;
 
   void _onUserChanged(
     _UserChanged event,

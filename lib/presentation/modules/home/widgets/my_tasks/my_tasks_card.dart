@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/translations.dart';
-import 'package:groceries/data/models/task_model/task_model.dart';
+import 'package:groceries/domain/entities/task/task_entity.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries/utils/extenstions/date_time_parser_extension.dart';
@@ -12,7 +12,7 @@ class MyTasksCard extends StatelessWidget {
     super.key,
   });
 
-  final TaskModel? taskModel;
+  final TaskEntity? taskModel;
 
   @override
   Widget build(BuildContext context) {

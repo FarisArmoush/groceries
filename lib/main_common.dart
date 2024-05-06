@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:groceries/app/app.dart';
 import 'package:groceries/config/injection/injector.dart';
 import 'package:groceries/config/services/remote_config_service.dart';
-import 'package:groceries/data/models/app_flavor/app_flavor.dart';
 import 'package:groceries/firebase_options.dart';
+import 'package:groceries/presentation/models/app_flavor/app_flavor.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/data/models/app_bottom_navigation_bar_item/app_bottom_navigation_bar_item.dart';
+import 'package:groceries/presentation/models/app_bottom_navigation_bar_item/app_bottom_navigation_bar_item.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 import 'package:groceries_theme/app_theme.dart';

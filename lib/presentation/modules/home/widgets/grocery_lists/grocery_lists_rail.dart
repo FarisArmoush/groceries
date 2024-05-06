@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/translations.dart';
-import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
+import 'package:groceries/domain/entities/grocery_list/grocery_list_entity.dart';
 import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocery_lists_list.dart';
 import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocery_lists_rail_header.dart';
 import 'package:groceries/presentation/modules/home/widgets/grocery_lists/you_have_no_grocery_lists.dart';
@@ -14,7 +14,7 @@ class GroceryListsRail extends StatelessWidget {
     super.key,
   });
 
-  final List<GroceryListModel> lists;
+  final List<GroceryListEntity> lists;
 
   @override
   Widget build(BuildContext context) {

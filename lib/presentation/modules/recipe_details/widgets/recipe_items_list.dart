@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/data/models/recipe_details_model/recipe_details_model.dart';
+import 'package:groceries/domain/entities/recipe_details/recipe_details_entity.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
@@ -9,7 +9,7 @@ class RecipeItemsList extends StatelessWidget {
     super.key,
   });
 
-  final RecipeDetailsModel? recipeModel;
+  final RecipeDetailsEntity? recipeModel;
 
   @override
   Widget build(BuildContext context) {

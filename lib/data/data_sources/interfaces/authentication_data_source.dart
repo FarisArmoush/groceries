@@ -1,11 +1,16 @@
-import 'package:groceries/data/models/login_param/login_param.dart';
-import 'package:groceries/data/models/register_param/register_param.dart';
 import 'package:groceries/data/models/user_model/user_model.dart';
 
 abstract interface class AuthenticationDataSource {
-  Future<void> signInWithEmailAndPassword(LoginParam loginParam);
+  Future<void> signInWithEmailAndPassword({
+    required String email,
+    required String password,
+  });
 
-  Future<void> signUpWithEmailAndPassword(RegisterParam registerParam);
+  Future<void> signUpWithEmailAndPassword({
+    required String email,
+    required String password,
+    required String name,
+  });
 
   Future<void> sendPasswordResetEmail(String? email);
 

@@ -1,7 +1,7 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/data/models/grocery_model/grocery_model.dart';
+import 'package:groceries/domain/entities/grocery/grocery_entity.dart';
 import 'package:groceries/presentation/blocs/priorities/priorities_bloc.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/widgets/grocery_item_details_bottom_sheet.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -16,7 +16,7 @@ class GroceryItemTile extends StatelessWidget {
     super.key,
   });
 
-  final GroceryModel? item;
+  final GroceryEntity? item;
   final bool showPriority;
 
   @override
@@ -50,7 +50,7 @@ class GroceryItemTile extends StatelessWidget {
     );
   }
 
-  Widget _buildIcon(BuildContext context, GroceryModel? item) {
+  Widget _buildIcon(BuildContext context, GroceryEntity? item) {
     final isDone = item?.isDone ?? false;
     if (isDone) {
       return Assets.icons.doubleCheck.svg(
@@ -69,7 +69,7 @@ class GroceryItemTile extends StatelessWidget {
     }
   }
 
-  void _showBottomSheet(BuildContext context, GroceryModel? item) {
+  void _showBottomSheet(BuildContext context, GroceryEntity? item) {
     if (item == null) return;
     WoltModalSheet.show<void>(
       context: context,

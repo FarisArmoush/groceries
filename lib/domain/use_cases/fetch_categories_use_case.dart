@@ -1,4 +1,4 @@
-import 'package:groceries/data/models/category_model/category_model.dart';
+import 'package:groceries/domain/entities/category/category_entity.dart';
 import 'package:groceries/domain/repositories/cateogries_repository.dart';
 import 'package:injectable/injectable.dart';
 
@@ -8,7 +8,9 @@ class FetchCategoriesUseCase {
 
   final CategoriesRepository _categoriesRepository;
 
-  Future<List<CategoryModel>> call([String? input]) {
-    return _categoriesRepository.fetchCategories(input);
+  Future<List<CategoryEntity>> call([String? input]) async {
+    final modelList = await _categoriesRepository.fetchCategories(input);
+    final entityList = modelList.map((e) => e.toEntity()!).toList();
+    return entityList;
   }
 }
