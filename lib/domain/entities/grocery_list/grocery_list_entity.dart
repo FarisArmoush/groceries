@@ -11,36 +11,34 @@ class GroceryListEntity with _$GroceryListEntity {
     String? id,
     String? name,
     String? imageUrl,
-    List<GroceryEntity?>? items,
-    List<UserEntity?>? members,
+    List<GroceryEntity>? items,
+    List<UserEntity>? members,
     DateTime? creationDate,
   }) = _GroceryListEntity;
 }
 
-extension GroceryListModelMapper on GroceryListModel? {
-  GroceryListEntity? toEntity() {
-    if (this == null) return null;
+extension GroceryListModelMapper on GroceryListModel {
+  GroceryListEntity toEntity() {
     return GroceryListEntity(
-      id: this?.id,
-      name: this?.name,
-      imageUrl: this?.imageUrl,
-      items: this?.items?.map((item) => item.toEntity()).toList(),
-      members: this?.members?.map((user) => user.toEntity()).toList(),
-      creationDate: this?.creationDate,
+      id: id,
+      name: name,
+      imageUrl: imageUrl,
+      items: items?.map((item) => item.toEntity()).toList(),
+      members: members?.map((user) => user.toEntity()).toList(),
+      creationDate: creationDate,
     );
   }
 }
 
-extension GroceryListEntityMapper on GroceryListEntity? {
+extension GroceryListEntityMapper on GroceryListEntity {
   GroceryListModel? toModel() {
-    if (this == null) return null;
     return GroceryListModel(
-      id: this?.id,
-      name: this?.name,
-      imageUrl: this?.imageUrl,
-      items: this?.items?.map((item) => item?.toModel()).toList(),
-      members: this?.members?.map((user) => user?.toModel()).toList(),
-      creationDate: this?.creationDate,
+      id: id,
+      name: name,
+      imageUrl: imageUrl,
+      items: items?.map((item) => item.toModel()).toList(),
+      members: members?.map((user) => user.toModel()).toList(),
+      creationDate: creationDate,
     );
   }
 }

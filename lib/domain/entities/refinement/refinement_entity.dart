@@ -11,22 +11,20 @@ class RefinementEntity with _$RefinementEntity {
   }) = _RefinementEntity;
 }
 
-extension RefinementsModelMapper on RefinementsModel? {
-  RefinementEntity? toEntity() {
-    if (this == null) return null;
+extension RefinementsModelMapper on RefinementsModel {
+  RefinementEntity toEntity() {
     return RefinementEntity(
-      refinement: this?.refinement,
-      isChecked: this?.isChecked,
+      refinement: refinement,
+      isChecked: isChecked,
     );
   }
 }
 
-extension RefinementEntityMapper on RefinementEntity? {
-  RefinementsModel? toModel() {
-    if (this == null) return null;
+extension RefinementEntityMapper on RefinementEntity {
+  RefinementsModel toModel() {
     return RefinementsModel(
-      refinement: this?.refinement,
-      isChecked: this?.isChecked,
+      refinement: refinement,
+      isChecked: isChecked,
     );
   }
 }

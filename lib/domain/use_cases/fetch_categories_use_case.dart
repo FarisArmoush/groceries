@@ -10,7 +10,7 @@ class FetchCategoriesUseCase {
 
   Future<List<CategoryEntity>> call([String? input]) async {
     final modelList = await _categoriesRepository.fetchCategories(input);
-    final entityList = modelList.map((e) => e.toEntity()!).toList();
+    final entityList = modelList.map((e) => e.toEntity()).toList();
     return entityList;
   }
 }

@@ -19,37 +19,34 @@ class GroceryEntity with _$GroceryEntity {
   }) = _GroceryEntity;
 }
 
-extension GroceryModelMapper on GroceryModel? {
-  GroceryEntity? toEntity() {
-    if (this == null) return null;
+extension GroceryModelMapper on GroceryModel {
+  GroceryEntity toEntity() {
     return GroceryEntity(
-      id: this?.id,
-      name: this?.name,
-      image: this?.image,
-      notes: this?.notes,
-      isDone: this?.isDone,
-      categoryId: this?.categoryId,
-      priorityId: this?.priorityId,
-      creationDate: this?.creationDate,
-      refinements: this?.refinements?.map((e) => e?.toEntity()).toList(),
+      id: id,
+      name: name,
+      image: image,
+      notes: notes,
+      isDone: isDone,
+      categoryId: categoryId,
+      priorityId: priorityId,
+      creationDate: creationDate,
+      refinements: refinements?.map((e) => e?.toEntity()).toList(),
     );
   }
 }
 
-extension GroceryEntityMapper on GroceryEntity? {
-  GroceryModel? toModel() {
-    if (this == null) return null;
-
+extension GroceryEntityMapper on GroceryEntity {
+  GroceryModel toModel() {
     return GroceryModel(
-      id: this?.id,
-      name: this?.name,
-      image: this?.image,
-      notes: this?.notes,
-      isDone: this?.isDone,
-      categoryId: this?.categoryId,
-      priorityId: this?.priorityId,
-      creationDate: this?.creationDate,
-      refinements: this?.refinements?.map((e) => e?.toModel()).toList(),
+      id: id,
+      name: name,
+      image: image,
+      notes: notes,
+      isDone: isDone,
+      categoryId: categoryId,
+      priorityId: priorityId,
+      creationDate: creationDate,
+      refinements: refinements?.map((e) => e?.toModel()).toList(),
     );
   }
 }

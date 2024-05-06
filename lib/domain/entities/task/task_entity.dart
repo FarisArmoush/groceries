@@ -16,28 +16,26 @@ class TaskEntity with _$TaskEntity {
   }) = _TaskEntity;
 }
 
-extension TaskModelMapper on TaskModel? {
-  TaskEntity? toEntity() {
-    if (this == null) return null;
+extension TaskModelMapper on TaskModel {
+  TaskEntity toEntity() {
     return TaskEntity(
-      id: this?.id,
-      listModel: this?.listModel?.toEntity(),
-      dueDate: this?.dueDate,
-      groceries: this?.groceries?.map((e) => e?.toEntity()).toList(),
-      creationDate: this?.creationDate,
+      id: id,
+      listModel: listModel?.toEntity(),
+      dueDate: dueDate,
+      groceries: groceries?.map((e) => e?.toEntity()).toList(),
+      creationDate: creationDate,
     );
   }
 }
 
-extension TaskEntityMapper on TaskEntity? {
-  TaskModel? toModel() {
-    if (this == null) return null;
+extension TaskEntityMapper on TaskEntity {
+  TaskModel toModel() {
     return TaskModel(
-      id: this?.id,
-      listModel: this?.listModel?.toModel(),
-      dueDate: this?.dueDate,
-      groceries: this?.groceries?.map((e) => e?.toModel()).toList(),
-      creationDate: this?.creationDate,
+      id: id,
+      listModel: listModel?.toModel(),
+      dueDate: dueDate,
+      groceries: groceries?.map((e) => e?.toModel()).toList(),
+      creationDate: creationDate,
     );
   }
 }

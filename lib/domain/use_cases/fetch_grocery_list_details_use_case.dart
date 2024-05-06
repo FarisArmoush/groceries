@@ -10,6 +10,6 @@ class FetchGroceryListDetailsUseCase {
 
   Future<GroceryListDetailsEntity?> call(String? input) async {
     final model = await _repository.fetchDetails(input);
-    return model.toEntity();
+    return model?.toEntity();
   }
 }

@@ -15,30 +15,28 @@ class CategoryEntity with _$CategoryEntity {
   }) = _CategoryEntity;
 }
 
-extension CategoryModelMapper on CategoryModel? {
-  CategoryEntity? toEntity() {
-    if (this == null) return null;
+extension CategoryModelMapper on CategoryModel {
+  CategoryEntity toEntity() {
     return CategoryEntity(
-      categoryId: this?.categoryId,
-      creationDate: this?.creationDate,
-      image: this?.image,
-      name: this?.name,
-      parentCategoryId: this?.parentCategoryId,
-      hasSubCategories: this?.hasSubCategories,
+      categoryId: categoryId,
+      creationDate: creationDate,
+      image: image,
+      name: name,
+      parentCategoryId: parentCategoryId,
+      hasSubCategories: hasSubCategories,
     );
   }
 }
 
-extension CategoryEntityMapper on CategoryEntity? {
-  CategoryModel? toModel() {
-    if (this == null) return null;
+extension CategoryEntityMapper on CategoryEntity {
+  CategoryModel toModel() {
     return CategoryModel(
-      categoryId: this?.categoryId,
-      creationDate: this?.creationDate,
-      image: this?.image,
-      name: this?.name,
-      parentCategoryId: this?.parentCategoryId,
-      hasSubCategories: this?.hasSubCategories,
+      categoryId: categoryId,
+      creationDate: creationDate,
+      image: image,
+      name: name,
+      parentCategoryId: parentCategoryId,
+      hasSubCategories: hasSubCategories,
     );
   }
 }

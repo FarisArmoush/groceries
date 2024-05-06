@@ -10,7 +10,7 @@ class FetchMyTasksUseCase {
 
   Future<List<TaskEntity>?> call() async {
     final modelList = await _repository.fetchMyTasks();
-    final entityList = modelList?.map((e) => e.toEntity()!).toList();
+    final entityList = modelList?.map((e) => e.toEntity()).toList();
     return entityList;
   }
 }

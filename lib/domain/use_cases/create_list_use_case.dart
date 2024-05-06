@@ -9,6 +9,6 @@ class CreateListUseCase {
   final GroceryListsRepository _groceryListsRepository;
 
   Future<void> call(GroceryListEntity? input) async {
-    return _groceryListsRepository.createGroceryList(input.toModel());
+    return _groceryListsRepository.createGroceryList(input?.toModel());
   }
 }

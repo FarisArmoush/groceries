@@ -8,5 +8,5 @@ class FetchUserUseCase {
 
   final AuthenticationRepository _authenticationRepository;
 
-  UserEntity? call() => _authenticationRepository.currentUser.toEntity();
+  UserEntity? call() => _authenticationRepository.currentUser?.toEntity();
 }

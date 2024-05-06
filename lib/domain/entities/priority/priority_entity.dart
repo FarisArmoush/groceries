@@ -13,26 +13,24 @@ class PriorityEntity with _$PriorityEntity {
   }) = _PriorityEntity;
 }
 
-extension PriorityModelMapper on PriorityModel? {
-  PriorityEntity? toEntity() {
-    if (this == null) return null;
+extension PriorityModelMapper on PriorityModel {
+  PriorityEntity toEntity() {
     return PriorityEntity(
-      id: this?.id,
-      name: this?.name,
-      color: this?.color,
-      index: this?.index,
+      id: id,
+      name: name,
+      color: color,
+      index: index,
     );
   }
 }
 
-extension PriorityEntityMapper on PriorityEntity? {
-  PriorityModel? toModel() {
-    if (this == null) return null;
+extension PriorityEntityMapper on PriorityEntity {
+  PriorityModel toModel() {
     return PriorityModel(
-      id: this?.id,
-      name: this?.name,
-      color: this?.color,
-      index: this?.index,
+      id: id,
+      name: name,
+      color: color,
+      index: index,
     );
   }
 }

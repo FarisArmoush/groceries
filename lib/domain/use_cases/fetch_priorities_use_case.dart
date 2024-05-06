@@ -10,7 +10,7 @@ class FetchPrioritiesUseCase {
 
   Future<List<PriorityEntity>> call() async {
     final modelPriorities = await _prioritiesRepository.fetchPriorities();
-    final entityPriorities = modelPriorities.map((e) => e.toEntity()!).toList();
+    final entityPriorities = modelPriorities.map((e) => e.toEntity()).toList();
     final sortedPriorities = entityPriorities
       ..sort((a, b) => a.index?.compareTo(b.index ?? 0) ?? 1);
     return sortedPriorities;

@@ -10,7 +10,7 @@ class GroceryListsUseCase {
 
   Future<List<GroceryListEntity>?> call() async {
     final modelList = await _groceryListsRepository.fetchMyGroceryLists();
-    final entityList = modelList.map((e) => e.toEntity()!).toList();
+    final entityList = modelList.map((e) => e.toEntity()).toList();
     return entityList;
   }
 }

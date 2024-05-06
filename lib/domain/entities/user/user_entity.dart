@@ -15,30 +15,28 @@ class UserEntity with _$UserEntity {
   }) = _UserEntity;
 }
 
-extension UserModelMapper on UserModel? {
-  UserEntity? toEntity() {
-    if (this == null) return null;
+extension UserModelMapper on UserModel {
+  UserEntity toEntity() {
     return UserEntity(
-      id: this?.id,
-      name: this?.name,
-      email: this?.email,
-      imageUrl: this?.imageUrl,
-      isVerified: this?.isVerified,
-      creationDate: this?.creationDate,
+      id: id,
+      name: name,
+      email: email,
+      imageUrl: imageUrl,
+      isVerified: isVerified,
+      creationDate: creationDate,
     );
   }
 }
 
-extension UserEntityMapper on UserEntity? {
-  UserModel? toModel() {
-    if (this == null) return null;
+extension UserEntityMapper on UserEntity {
+  UserModel toModel() {
     return UserModel(
-      id: this?.id,
-      name: this?.name,
-      email: this?.email,
-      imageUrl: this?.imageUrl,
-      isVerified: this?.isVerified,
-      creationDate: this?.creationDate,
+      id: id,
+      name: name,
+      email: email,
+      imageUrl: imageUrl,
+      isVerified: isVerified,
+      creationDate: creationDate,
     );
   }
 }

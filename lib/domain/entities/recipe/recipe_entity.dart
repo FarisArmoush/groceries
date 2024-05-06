@@ -13,26 +13,24 @@ class RecipeEntity with _$RecipeEntity {
   }) = _RecipeEntity;
 }
 
-extension RecipeModelMapper on RecipeModel? {
-  RecipeEntity? toEntity() {
-    if (this == null) return null;
+extension RecipeModelMapper on RecipeModel {
+  RecipeEntity toEntity() {
     return RecipeEntity(
-      id: this?.id,
-      name: this?.name,
-      imageUrl: this?.imageUrl,
-      creationDate: this?.creationDate,
+      id: id,
+      name: name,
+      imageUrl: imageUrl,
+      creationDate: creationDate,
     );
   }
 }
 
-extension RecipeEntityMapper on RecipeEntity? {
-  RecipeModel? toModel() {
-    if (this == null) return null;
+extension RecipeEntityMapper on RecipeEntity {
+  RecipeModel toModel() {
     return RecipeModel(
-      id: this?.id,
-      name: this?.name,
-      imageUrl: this?.imageUrl,
-      creationDate: this?.creationDate,
+      id: id,
+      name: name,
+      imageUrl: imageUrl,
+      creationDate: creationDate,
     );
   }
 }

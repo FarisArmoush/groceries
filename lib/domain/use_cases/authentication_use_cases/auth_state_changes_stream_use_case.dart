@@ -10,7 +10,7 @@ class AuthStateChangesStreamUseCase {
 
   Stream<UserEntity?> call() => _authenticationRepository.authStateChanges.map(
         (user) {
-          final entity = user.toEntity();
+          final entity = user?.toEntity();
           if (user == null || entity == null) return null;
           return entity;
         },

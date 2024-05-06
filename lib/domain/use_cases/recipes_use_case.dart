@@ -10,7 +10,7 @@ class RecipesUseCase {
 
   Future<List<RecipeEntity>> call() async {
     final modelList = await _recipesRepository.fetchRecipes();
-    final entityList = modelList.map((e) => e.toEntity()!).toList();
+    final entityList = modelList.map((e) => e.toEntity()).toList();
     return entityList;
   }
 }

@@ -15,28 +15,26 @@ class RecipeDetailsEntity with _$RecipeDetailsEntity {
   }) = _RecipeDetailsEntity;
 }
 
-extension RecipeDetailsModelMapper on RecipeDetailsModel? {
-  RecipeDetailsEntity? toEntity() {
-    if (this == null) return null;
+extension RecipeDetailsModelMapper on RecipeDetailsModel {
+  RecipeDetailsEntity toEntity() {
     return RecipeDetailsEntity(
-      id: this?.id,
-      name: this?.name,
-      imageUrl: this?.imageUrl,
-      items: this?.items?.map((item) => item?.toEntity()).toList(),
-      steps: this?.steps,
+      id: id,
+      name: name,
+      imageUrl: imageUrl,
+      items: items?.map((item) => item?.toEntity()).toList(),
+      steps: steps,
     );
   }
 }
 
-extension RecipeDetailsEntityMapper on RecipeDetailsEntity? {
-  RecipeDetailsModel? toModel() {
-    if (this == null) return null;
+extension RecipeDetailsEntityMapper on RecipeDetailsEntity {
+  RecipeDetailsModel toModel() {
     return RecipeDetailsModel(
-      id: this?.id,
-      name: this?.name,
-      imageUrl: this?.imageUrl,
-      items: this?.items?.map((item) => item?.toModel()).toList(),
-      steps: this?.steps,
+      id: id,
+      name: name,
+      imageUrl: imageUrl,
+      items: items?.map((item) => item?.toModel()).toList(),
+      steps: steps,
     );
   }
 }
