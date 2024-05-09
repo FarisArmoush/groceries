@@ -111,3 +111,5 @@ flutter build ipa --release -t lib/main_staging.dart --flavor staging
 ```ssh
 flutter build ipa --release -t lib/main_production.dart --flavor production
 ```
+
+Testing this shit.
