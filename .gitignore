@@ -10,6 +10,11 @@
 .svn/
 migrate_working_dir/
 
+# Firebase
+firebase.json
+**/android/app/google-services.json
+**/ios/app/firebase_app_id_file.json
+
 # App Related
 *.freezed.dart
 *.g.dart
