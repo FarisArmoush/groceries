@@ -14,6 +14,7 @@ migrate_working_dir/
 firebase.json
 **/android/app/google-services.json
 **/ios/app/firebase_app_id_file.json
+**/ios/Runner/GoogleService-Info.plist
 lib/firebase_options.dart
 
 # App Related
