@@ -19,7 +19,6 @@ dependencies:
   faker: ^2.1.0
   firebase_auth: ^4.2.4
   firebase_core: ^2.25.1
-  firebase_crashlytics: ^3.3.0
   firebase_remote_config: ^4.3.9
   firebase_storage: ^11.0.10
   flutter:
