@@ -23,8 +23,8 @@ class RecipeItemsList extends StatelessWidget {
                 (item) => Padding(
                   padding: const EdgeInsetsDirectional.symmetric(vertical: 4),
                   child: ListTile(
-                    title: Text(item?.name ?? ''),
-                    subtitle: Text(item?.notes ?? ''),
+                    title: Text(item.name ?? ''),
+                    subtitle: Text(item.notes ?? ''),
                     leading: Assets.icons.archive.svg(
                       colorFilter: ColorFilter.mode(
                         context.theme.primaryColor,

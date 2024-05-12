@@ -11,7 +11,7 @@ class GroceryListDetailsEntity with _$GroceryListDetailsEntity {
     String? id,
     String? name,
     String? imageUrl,
-    List<GroceryEntity?>? items,
+    List<GroceryEntity>? items,
     List<UserEntity>? members,
     DateTime? creationDate,
   }) = _GroceryListDetailsEntity;
@@ -23,8 +23,8 @@ extension GroceryListDetailsModelMapper on GroceryListDetailsModel {
       id: id,
       name: name,
       imageUrl: imageUrl,
-      items: items?.map((item) => item?.toEntity()).toList(),
-      members: members?.map((member) => member!.toEntity()).toList(),
+      items: items?.map((item) => item.toEntity()).toList(),
+      members: members?.map((member) => member.toEntity()).toList(),
       creationDate: creationDate,
     );
   }
@@ -36,7 +36,7 @@ extension GroceryListDetailsEntityMapper on GroceryListDetailsEntity {
       id: id,
       name: name,
       imageUrl: imageUrl,
-      items: items?.map((item) => item?.toModel()).toList(),
+      items: items?.map((item) => item.toModel()).toList(),
       members: members?.map((member) => member.toModel()).toList(),
       creationDate: creationDate,
     );

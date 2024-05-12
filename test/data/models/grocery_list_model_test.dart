@@ -71,15 +71,15 @@ void main() {
         'Some notes about the grocery item',
       );
       expect(
-        groceryListModel.items?[0].refinements?[0]?.refinement,
+        groceryListModel.items?[0].refinements?[0].refinement,
         'Category',
       );
-      expect(groceryListModel.items?[0].refinements?[0]?.isChecked, true);
+      expect(groceryListModel.items?[0].refinements?[0].isChecked, true);
       expect(
-        groceryListModel.items?[0].refinements?[1]?.refinement,
+        groceryListModel.items?[0].refinements?[1].refinement,
         'Organic',
       );
-      expect(groceryListModel.items?[0].refinements?[1]?.isChecked, false);
+      expect(groceryListModel.items?[0].refinements?[1].isChecked, false);
 
       expect(groceryListModel.members?.length, 1);
       expect(groceryListModel.members?[0].id, '123');

@@ -31,9 +31,11 @@ import 'package:talker_bloc_logger/talker_bloc_logger.dart';
 /// }
 /// ```
 Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
-  FlutterError.onError = (details) {
-    logger.critical(details.exceptionAsString(), details, details.stack);
-  };
+  FlutterError.onError = (details) => logger.critical(
+        details.exceptionAsString(),
+        details.exception,
+        details.stack,
+      );
 
   Bloc.observer = TalkerBlocObserver(
     talker: logger,

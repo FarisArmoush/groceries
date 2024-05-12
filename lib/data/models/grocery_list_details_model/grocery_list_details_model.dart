@@ -14,8 +14,8 @@ class GroceryListDetailsModel with _$GroceryListDetailsModel {
     String? id,
     String? name,
     String? imageUrl,
-    List<GroceryModel?>? items,
-    List<UserModel?>? members,
+    List<GroceryModel>? items,
+    List<UserModel>? members,
     @TimestampSerializer() DateTime? creationDate,
   }) = _GroceryListDetailsModel;
 

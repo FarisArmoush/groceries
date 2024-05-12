@@ -10,7 +10,7 @@ class RecipeDetailsModel with _$RecipeDetailsModel {
     String? id,
     String? name,
     String? imageUrl,
-    List<GroceryModel?>? items,
+    List<GroceryModel>? items,
     List<String>? steps,
   }) = _RecipeDetailsModel;
 

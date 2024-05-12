@@ -15,7 +15,7 @@ class GroceryEntity with _$GroceryEntity {
     String? name,
     String? notes,
     String? priorityId,
-    List<RefinementEntity?>? refinements,
+    List<RefinementEntity>? refinements,
   }) = _GroceryEntity;
 }
 
@@ -30,7 +30,7 @@ extension GroceryModelMapper on GroceryModel {
       categoryId: categoryId,
       priorityId: priorityId,
       creationDate: creationDate,
-      refinements: refinements?.map((e) => e?.toEntity()).toList(),
+      refinements: refinements?.map((e) => e.toEntity()).toList(),
     );
   }
 }
@@ -46,7 +46,7 @@ extension GroceryEntityMapper on GroceryEntity {
       categoryId: categoryId,
       priorityId: priorityId,
       creationDate: creationDate,
-      refinements: refinements?.map((e) => e?.toModel()).toList(),
+      refinements: refinements?.map((e) => e.toModel()).toList(),
     );
   }
 }

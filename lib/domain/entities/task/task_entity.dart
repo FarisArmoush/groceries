@@ -11,7 +11,7 @@ class TaskEntity with _$TaskEntity {
     String? id,
     GroceryListEntity? listModel,
     DateTime? dueDate,
-    List<GroceryEntity?>? groceries,
+    List<GroceryEntity>? groceries,
     DateTime? creationDate,
   }) = _TaskEntity;
 }
@@ -22,7 +22,7 @@ extension TaskModelMapper on TaskModel {
       id: id,
       listModel: listModel?.toEntity(),
       dueDate: dueDate,
-      groceries: groceries?.map((e) => e?.toEntity()).toList(),
+      groceries: groceries?.map((e) => e.toEntity()).toList(),
       creationDate: creationDate,
     );
   }
@@ -34,7 +34,7 @@ extension TaskEntityMapper on TaskEntity {
       id: id,
       listModel: listModel?.toModel(),
       dueDate: dueDate,
-      groceries: groceries?.map((e) => e?.toModel()).toList(),
+      groceries: groceries?.map((e) => e.toModel()).toList(),
       creationDate: creationDate,
     );
   }

@@ -16,7 +16,7 @@ class MockRecipeDetailsDataSource implements RecipeDetailsDataSource {
       name: 'Vegetables Salad',
       imageUrl:
           'https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg',
-      items: <GroceryModel?>[
+      items: <GroceryModel>[
         GroceryModel(
           categoryId: '1235',
           name: 'Chicken',

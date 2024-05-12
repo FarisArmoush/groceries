@@ -18,7 +18,7 @@ class GroceryModel with _$GroceryModel {
     String? name,
     String? notes,
     String? priorityId,
-    List<RefinementsModel?>? refinements,
+    List<RefinementsModel>? refinements,
   }) = _GroceryModel;
 
   factory GroceryModel.fromJson(JSON json) => _$GroceryModelFromJson(json);

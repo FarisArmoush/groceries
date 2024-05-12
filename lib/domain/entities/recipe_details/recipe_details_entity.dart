@@ -10,7 +10,7 @@ class RecipeDetailsEntity with _$RecipeDetailsEntity {
     String? id,
     String? name,
     String? imageUrl,
-    List<GroceryEntity?>? items,
+    List<GroceryEntity>? items,
     List<String>? steps,
   }) = _RecipeDetailsEntity;
 }
@@ -21,7 +21,7 @@ extension RecipeDetailsModelMapper on RecipeDetailsModel {
       id: id,
       name: name,
       imageUrl: imageUrl,
-      items: items?.map((item) => item?.toEntity()).toList(),
+      items: items?.map((item) => item.toEntity()).toList(),
       steps: steps,
     );
   }
@@ -33,7 +33,7 @@ extension RecipeDetailsEntityMapper on RecipeDetailsEntity {
       id: id,
       name: name,
       imageUrl: imageUrl,
-      items: items?.map((item) => item?.toModel()).toList(),
+      items: items?.map((item) => item.toModel()).toList(),
       steps: steps,
     );
   }

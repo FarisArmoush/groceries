@@ -14,7 +14,7 @@ class TaskModel with _$TaskModel {
     String? id,
     GroceryListModel? listModel,
     DateTime? dueDate,
-    List<GroceryModel?>? groceries,
+    List<GroceryModel>? groceries,
     @TimestampSerializer() DateTime? creationDate,
   }) = _TaskModel;
 
