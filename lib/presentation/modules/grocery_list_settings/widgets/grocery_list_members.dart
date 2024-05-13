@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/data/models/user_model/user_model.dart';
+import 'package:groceries/domain/entities/user/user_entity.dart';
 import 'package:groceries/presentation/modules/grocery_list_settings/widgets/member_card.dart';
 
 class GroceryListMembers extends StatelessWidget {
@@ -14,7 +14,7 @@ class GroceryListMembers extends StatelessWidget {
         tiles: List.generate(
           2,
           (index) => MemberCard(
-            userModel: UserModel(
+            userModel: UserEntity(
               id: '',
               name: 'Faris $index',
               email: 'fariskarmoush@gmail.com $index',

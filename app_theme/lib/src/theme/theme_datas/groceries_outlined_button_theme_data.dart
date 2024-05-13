@@ -7,7 +7,7 @@ abstract final class GroceriesOutlinedButtonThemeData {
       splashFactory: appSplashFactory,
       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadiusDirectional.circular(12),
         ),
       ),
       side: MaterialStateProperty.all<BorderSide>(
@@ -39,7 +39,7 @@ abstract final class GroceriesOutlinedButtonThemeData {
       splashFactory: appSplashFactory,
       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadiusDirectional.circular(12),
         ),
       ),
       side: MaterialStateProperty.all<BorderSide>(

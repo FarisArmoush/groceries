@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:groceries/data/models/onboarding_page_model/onboarding_page_model.dart';
+import 'package:groceries/presentation/models/onboarding_page_model/onboarding_page_model.dart';
 
 void main() {
   group('OnboardingPageModel', () {

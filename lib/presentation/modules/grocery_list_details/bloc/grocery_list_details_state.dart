@@ -7,7 +7,7 @@ class GroceryListDetailsState with _$GroceryListDetailsState {
     @Default(BlocStatus.initial()) BlocStatus addItemStatus,
     @Default(BlocStatus.initial()) BlocStatus removeItemStatus,
     @Default(BlocStatus.initial()) BlocStatus clearStatus,
-    GroceryListDetailsModel? groceryList,
+    GroceryListDetailsEntity? groceryList,
   }) = _GroceryListDetailsState;
 
   const GroceryListDetailsState._();

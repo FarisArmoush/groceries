@@ -1,8 +1,6 @@
 import 'package:groceries/data/data_sources/interfaces/authentication_data_source.dart';
 import 'package:groceries/data/data_sources/remote/firebase_authentication_data_source.dart';
-import 'package:groceries/data/models/login_param/login_param.dart';
-import 'package:groceries/data/models/register_param/register_param.dart';
-import 'package:groceries/data/models/user_model/user_model.dart';
+import 'package:groceries/data/models/user/user_model.dart';
 import 'package:groceries/domain/repositories/authentication_repository.dart';
 import 'package:injectable/injectable.dart';
 
@@ -20,8 +18,16 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   UserModel? get currentUser => _dataSource.currentUser;
 
   @override
-  Future<void> signUpWithEmailAndPassword(RegisterParam registerParam) =>
-      _dataSource.signUpWithEmailAndPassword(registerParam);
+  Future<void> signUpWithEmailAndPassword({
+    required String email,
+    required String password,
+    required String name,
+  }) =>
+      _dataSource.signUpWithEmailAndPassword(
+        email: email,
+        password: password,
+        name: name,
+      );
 
   @override
   Future<void> deleteAccount() => _dataSource.deleteAccount();
@@ -30,8 +36,11 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
   Future<void> logout() => _dataSource.logout();
 
   @override
-  Future<void> signInWithEmailAndPassword(LoginParam loginParam) =>
-      _dataSource.signInWithEmailAndPassword(loginParam);
+  Future<void> signInWithEmailAndPassword({
+    required String email,
+    required String password,
+  }) =>
+      _dataSource.signInWithEmailAndPassword(email: email, password: password);
 
   @override
   Future<void> sendPasswordResetEmail(String? email) =>

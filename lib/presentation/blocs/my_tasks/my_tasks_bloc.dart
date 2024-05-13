@@ -1,7 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/config/localization/translations.dart';
-import 'package:groceries/data/models/task_model/task_model.dart';
+import 'package:groceries/domain/entities/task/task_entity.dart';
 import 'package:groceries/domain/use_cases/fetch_my_tasks_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 import 'package:groceries/utils/exceptions/app_network_exception.dart';

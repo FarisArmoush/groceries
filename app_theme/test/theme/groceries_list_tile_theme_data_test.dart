@@ -15,7 +15,7 @@ void main() {
         lightTheme.shape,
         equals(
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadiusDirectional.circular(10),
           ),
         ),
       );
@@ -62,7 +62,7 @@ void main() {
         darkTheme.shape,
         equals(
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadiusDirectional.circular(10),
           ),
         ),
       );

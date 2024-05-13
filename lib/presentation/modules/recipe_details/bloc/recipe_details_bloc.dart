@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/config/localization/translations.dart';
-import 'package:groceries/data/models/recipe_details_model/recipe_details_model.dart';
+import 'package:groceries/domain/entities/recipe_details/recipe_details_entity.dart';
 import 'package:groceries/domain/use_cases/delete_recipe_use_case.dart';
 import 'package:groceries/domain/use_cases/fetch_recipe_details_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';

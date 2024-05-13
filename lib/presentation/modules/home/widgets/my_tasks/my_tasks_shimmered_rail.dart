@@ -17,7 +17,7 @@ class MyTasksShimmeredRail extends StatelessWidget {
         ShimmerSkeleton(
           height: context.deviceHeight * 0.015,
           width: context.deviceWidth * 0.4,
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadiusDirectional.circular(16),
         ),
         SizedBox(
           height: context.deviceHeight * 0.025,

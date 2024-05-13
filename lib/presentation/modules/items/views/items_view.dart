@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/data/models/category_model/category_model.dart';
+import 'package:groceries/domain/entities/category/category_entity.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/widgets/groceries_box_list.dart';
 import 'package:groceries/presentation/modules/items/bloc/items_bloc.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
@@ -12,7 +12,7 @@ import 'package:groceries/utils/extenstions/widgets_as_extensions.dart';
 class ItemsView extends StatefulWidget {
   const ItemsView({required this.categoryModel, super.key});
 
-  final CategoryModel categoryModel;
+  final CategoryEntity categoryModel;
 
   @override
   State<ItemsView> createState() => _ItemsViewState();

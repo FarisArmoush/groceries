@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:groceries/data/models/app_bottom_navigation_bar_item/app_bottom_navigation_bar_item.dart';
+import 'package:groceries/presentation/models/app_bottom_navigation_bar_item/app_bottom_navigation_bar_item.dart';
 
 void main() {
   group('AppBottomNavigationBarItem', () {

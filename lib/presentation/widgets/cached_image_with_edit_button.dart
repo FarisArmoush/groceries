@@ -33,7 +33,7 @@ class CachedImageWithEditButton extends StatelessWidget {
           height: width ?? context.deviceHeight * 0.3,
           width: height ?? double.infinity,
           shape: boxShape ?? BoxShape.rectangle,
-          borderRadius: borderRadius ?? BorderRadius.circular(16),
+          borderRadius: borderRadius ?? BorderRadiusDirectional.circular(16),
           imageUrl: imageUrl ?? faker.image.image(),
         ),
         CircleAvatar(

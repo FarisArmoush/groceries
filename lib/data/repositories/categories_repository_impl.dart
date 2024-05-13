@@ -1,7 +1,7 @@
 import 'package:groceries/data/data_sources/interfaces/categories_data_source.dart';
 import 'package:groceries/data/data_sources/local/local_categories_data_source.dart';
 import 'package:groceries/data/data_sources/remote/firestore_categories_data_source.dart';
-import 'package:groceries/data/models/category_model/category_model.dart';
+import 'package:groceries/data/models/category/category_model.dart';
 import 'package:groceries/data/services/cache/cache_service.dart';
 import 'package:groceries/data/services/cache/hive_cache_service.dart';
 import 'package:groceries/domain/repositories/cateogries_repository.dart';

@@ -4,7 +4,7 @@ part of 'authentication_bloc.dart';
 class AuthenticationState with _$AuthenticationState {
   const AuthenticationState._();
   const factory AuthenticationState.authenticated({
-    UserModel? user,
+    UserEntity? user,
   }) = _Authenticated;
   const factory AuthenticationState.unAuthenticated() = _UnAuthenticated;
 }

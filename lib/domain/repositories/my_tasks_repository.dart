@@ -1,4 +1,4 @@
-import 'package:groceries/data/models/task_model/task_model.dart';
+import 'package:groceries/data/models/task/task_model.dart';
 
 abstract interface class MyTasksRepository {
   const MyTasksRepository();

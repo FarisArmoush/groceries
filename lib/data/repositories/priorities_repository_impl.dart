@@ -1,7 +1,7 @@
 import 'package:groceries/data/data_sources/i_data_source.dart';
 import 'package:groceries/data/data_sources/local/cache_priorities_data_source.dart';
 import 'package:groceries/data/data_sources/remote/firestore_priorities_data_source.dart';
-import 'package:groceries/data/models/priority_model/priority_model.dart';
+import 'package:groceries/data/models/priority/priority_model.dart';
 import 'package:groceries/domain/repositories/priorities_repository.dart';
 import 'package:groceries/utils/logger.dart';
 import 'package:injectable/injectable.dart';

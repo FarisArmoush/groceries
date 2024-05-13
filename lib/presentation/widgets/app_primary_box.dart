@@ -21,7 +21,7 @@ class AppPrimaryBox extends StatelessWidget {
     return Container(
       padding: const EdgeInsetsDirectional.all(16),
       decoration: BoxDecoration(
-        borderRadius: borderRadius ?? BorderRadius.circular(16),
+        borderRadius: borderRadius ?? BorderRadiusDirectional.circular(16),
         color: backgroundColor ?? context.theme.cardColor,
       ),
       child: Material(

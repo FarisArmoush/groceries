@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:groceries/data/models/task_model/task_model.dart';
+import 'package:groceries/domain/entities/task/task_entity.dart';
 import 'package:groceries/presentation/modules/home/widgets/my_tasks/my_tasks_card.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
@@ -10,7 +10,7 @@ class MyTasksList extends StatelessWidget {
     super.key,
   });
 
-  final List<TaskModel>? tasks;
+  final List<TaskEntity>? tasks;
 
   @override
   Widget build(BuildContext context) {

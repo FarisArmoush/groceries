@@ -21,7 +21,7 @@ class AppListTileButton extends StatelessWidget {
     return ListTile(
       onTap: onTap,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(5),
+        borderRadius: BorderRadiusDirectional.circular(5),
       ),
       leading: SvgPicture.asset(
         icon,

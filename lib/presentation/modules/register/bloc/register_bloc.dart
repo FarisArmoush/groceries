@@ -2,7 +2,6 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:groceries/data/models/register_param/register_param.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/register_with_email_and_password_use_case.dart';
 import 'package:groceries/utils/exceptions/app_network_exception.dart';
 import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
@@ -167,11 +166,9 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
     emit(state.copyWith(status: FormzSubmissionStatus.inProgress));
     try {
       await _registerWithEmailAndPasswordUseCase(
-        RegisterParam(
-          email: state.email.value,
-          password: state.password.value,
-          displayName: state.displayName.value,
-        ),
+        email: state.email.value,
+        password: state.password.value,
+        name: state.displayName.value,
       );
       emit(state.copyWith(status: FormzSubmissionStatus.success));
     } on AppNetworkException catch (e) {

@@ -1,8 +1,8 @@
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/data/models/grocery_model/grocery_model.dart';
-import 'package:groceries/data/models/priority_model/priority_model.dart';
+import 'package:groceries/domain/entities/grocery/grocery_entity.dart';
+import 'package:groceries/domain/entities/priority/priority_entity.dart';
 import 'package:groceries/presentation/blocs/priorities/priorities_bloc.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries/utils/extenstions/hex_color.dart';
@@ -11,14 +11,14 @@ import 'package:groceries_theme/app_theme.dart';
 class ItemPriorityButton extends StatefulWidget {
   const ItemPriorityButton({required this.groceryModel, super.key});
 
-  final GroceryModel? groceryModel;
+  final GroceryEntity? groceryModel;
 
   @override
   State<ItemPriorityButton> createState() => _ItemPriorityButtonState();
 }
 
 class _ItemPriorityButtonState extends State<ItemPriorityButton> {
-  late PriorityModel? selectedPriority;
+  late PriorityEntity? selectedPriority;
 
   @override
   void initState() {
@@ -55,7 +55,7 @@ class _ItemPriorityButtonState extends State<ItemPriorityButton> {
           ),
         ),
         const SizedBox(height: 8),
-        SegmentedButton<PriorityModel>(
+        SegmentedButton<PriorityEntity>(
           style: SegmentedButton.styleFrom(
             foregroundColor: context.theme.primaryColor,
             alignment: AlignmentDirectional.center,
@@ -79,7 +79,7 @@ class _ItemPriorityButtonState extends State<ItemPriorityButton> {
             () => selectedPriority = value.first,
           ),
           selected: priorities.isNotEmpty
-              ? <PriorityModel>{selectedPriority ?? priorities.first}
+              ? <PriorityEntity>{selectedPriority ?? priorities.first}
               : {},
         ),
       ],

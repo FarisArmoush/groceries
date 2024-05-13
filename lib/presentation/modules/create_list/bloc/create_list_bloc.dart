@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/config/localization/translations.dart';
-import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
+import 'package:groceries/domain/entities/grocery_list/grocery_list_entity.dart';
 import 'package:groceries/domain/use_cases/create_list_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -40,7 +40,7 @@ class CreateListBloc extends Bloc<CreateListEvent, CreateListState> {
     );
     try {
       await _createListUseCase(
-        GroceryListModel(
+        GroceryListEntity(
           creationDate: DateTime.now(),
           imageUrl: state.icon,
           name: state.listName.value,

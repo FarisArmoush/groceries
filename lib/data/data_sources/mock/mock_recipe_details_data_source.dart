@@ -1,7 +1,7 @@
 import 'package:groceries/data/data_sources/interfaces/recipe_details_data_source.dart';
-import 'package:groceries/data/models/grocery_model/grocery_model.dart';
-import 'package:groceries/data/models/recipe_details_model/recipe_details_model.dart';
-import 'package:groceries/data/models/refinements_model/refinements_model.dart';
+import 'package:groceries/data/models/grocery/grocery_model.dart';
+import 'package:groceries/data/models/recipe_details/recipe_details_model.dart';
+import 'package:groceries/data/models/refinements/refinements_model.dart';
 import 'package:injectable/injectable.dart';
 
 @named
@@ -16,7 +16,7 @@ class MockRecipeDetailsDataSource implements RecipeDetailsDataSource {
       name: 'Vegetables Salad',
       imageUrl:
           'https://cdn.britannica.com/36/123536-050-95CB0C6E/Variety-fruits-vegetables.jpg',
-      items: <GroceryModel?>[
+      items: <GroceryModel>[
         GroceryModel(
           categoryId: '1235',
           name: 'Chicken',

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
-import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
+import 'package:groceries/domain/entities/grocery_list/grocery_list_entity.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries_theme/app_theme.dart';
 
@@ -11,13 +11,13 @@ class GroceryListCard extends StatelessWidget {
     required this.listModel,
     super.key,
   });
-  final GroceryListModel listModel;
+  final GroceryListEntity listModel;
 
   @override
   Widget build(BuildContext context) {
     return Material(
       type: MaterialType.card,
-      borderRadius: BorderRadius.circular(12),
+      borderRadius: BorderRadiusDirectional.circular(12),
       color: context.theme.cardColor,
       child: InkWell(
         onTap: () => context.pushNamed(
@@ -71,7 +71,7 @@ class GroceryListCard extends StatelessWidget {
         padding: const EdgeInsetsDirectional.all(8),
         decoration: BoxDecoration(
           color: context.theme.primaryColor,
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadiusDirectional.circular(12),
         ),
         child: Text(
           '${listModel.items?.length ?? 0} ${Translations.home.newTasks}',

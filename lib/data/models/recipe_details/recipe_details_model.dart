@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:groceries/data/models/grocery_model/grocery_model.dart';
+import 'package:groceries/data/models/grocery/grocery_model.dart';
 
 part 'recipe_details_model.freezed.dart';
 part 'recipe_details_model.g.dart';
@@ -10,7 +10,7 @@ class RecipeDetailsModel with _$RecipeDetailsModel {
     String? id,
     String? name,
     String? imageUrl,
-    List<GroceryModel?>? items,
+    List<GroceryModel>? items,
     List<String>? steps,
   }) = _RecipeDetailsModel;
 

@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
-import 'package:groceries/data/models/grocery_model/grocery_model.dart';
-import 'package:groceries/data/models/refinements_model/refinements_model.dart';
-import 'package:groceries/data/models/user_model/user_model.dart';
+import 'package:groceries/data/models/grocery/grocery_model.dart';
+import 'package:groceries/data/models/grocery_list/grocery_list_model.dart';
+import 'package:groceries/data/models/refinements/refinements_model.dart';
+import 'package:groceries/data/models/user/user_model.dart';
 
 void main() {
   group('GroceryListModel', () {
@@ -54,43 +54,43 @@ void main() {
       expect(groceryListModel.imageUrl, 'https://example.com/grocery-list.jpg');
 
       expect(groceryListModel.items?.length, 1);
-      expect(groceryListModel.items?[0]?.categoryId, '123');
+      expect(groceryListModel.items?[0].categoryId, '123');
       expect(
-        groceryListModel.items?[0]?.creationDate,
+        groceryListModel.items?[0].creationDate,
         DateTime(2022, 01, 12, 15, 30, 45),
       );
-      expect(groceryListModel.items?[0]?.id, '456');
+      expect(groceryListModel.items?[0].id, '456');
       expect(
-        groceryListModel.items?[0]?.image,
+        groceryListModel.items?[0].image,
         'https://example.com/grocery.jpg',
       );
-      expect(groceryListModel.items?[0]?.isDone, true);
-      expect(groceryListModel.items?[0]?.name, 'Example Grocery');
+      expect(groceryListModel.items?[0].isDone, true);
+      expect(groceryListModel.items?[0].name, 'Example Grocery');
       expect(
-        groceryListModel.items?[0]?.notes,
+        groceryListModel.items?[0].notes,
         'Some notes about the grocery item',
       );
       expect(
-        groceryListModel.items?[0]?.refinements?[0]?.refinement,
+        groceryListModel.items?[0].refinements?[0].refinement,
         'Category',
       );
-      expect(groceryListModel.items?[0]?.refinements?[0]?.isChecked, true);
+      expect(groceryListModel.items?[0].refinements?[0].isChecked, true);
       expect(
-        groceryListModel.items?[0]?.refinements?[1]?.refinement,
+        groceryListModel.items?[0].refinements?[1].refinement,
         'Organic',
       );
-      expect(groceryListModel.items?[0]?.refinements?[1]?.isChecked, false);
+      expect(groceryListModel.items?[0].refinements?[1].isChecked, false);
 
       expect(groceryListModel.members?.length, 1);
-      expect(groceryListModel.members?[0]?.id, '123');
-      expect(groceryListModel.members?[0]?.name, 'John Doe');
-      expect(groceryListModel.members?[0]?.email, 'john.doe@example.com');
+      expect(groceryListModel.members?[0].id, '123');
+      expect(groceryListModel.members?[0].name, 'John Doe');
+      expect(groceryListModel.members?[0].email, 'john.doe@example.com');
       expect(
-        groceryListModel.members?[0]?.imageUrl,
+        groceryListModel.members?[0].imageUrl,
         'https://example.com/avatar.jpg',
       );
       expect(
-        groceryListModel.members?[0]?.creationDate,
+        groceryListModel.members?[0].creationDate,
         DateTime(2022, 01, 11, 12, 34, 56),
       );
 

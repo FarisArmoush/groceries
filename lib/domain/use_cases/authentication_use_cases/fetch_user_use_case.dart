@@ -1,4 +1,4 @@
-import 'package:groceries/data/models/user_model/user_model.dart';
+import 'package:groceries/domain/entities/user/user_entity.dart';
 import 'package:groceries/domain/repositories/authentication_repository.dart';
 import 'package:injectable/injectable.dart';
 
@@ -8,5 +8,5 @@ class FetchUserUseCase {
 
   final AuthenticationRepository _authenticationRepository;
 
-  UserModel? call() => _authenticationRepository.currentUser;
+  UserEntity? call() => _authenticationRepository.currentUser?.toEntity();
 }

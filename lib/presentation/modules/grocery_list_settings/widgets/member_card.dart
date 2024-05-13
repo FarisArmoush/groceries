@@ -2,7 +2,7 @@ import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/translations.dart';
-import 'package:groceries/data/models/user_model/user_model.dart';
+import 'package:groceries/domain/entities/user/user_entity.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/presentation/widgets/cancel_bottom_sheet.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -11,7 +11,7 @@ import 'package:groceries/utils/extenstions/context_extensions.dart';
 class MemberCard extends StatelessWidget {
   const MemberCard({required this.userModel, super.key});
 
-  final UserModel userModel;
+  final UserEntity userModel;
 
   @override
   Widget build(BuildContext context) {

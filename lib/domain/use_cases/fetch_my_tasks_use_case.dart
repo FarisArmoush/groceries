@@ -1,4 +1,4 @@
-import 'package:groceries/data/models/task_model/task_model.dart';
+import 'package:groceries/domain/entities/task/task_entity.dart';
 import 'package:groceries/domain/repositories/my_tasks_repository.dart';
 import 'package:injectable/injectable.dart';
 
@@ -8,7 +8,9 @@ class FetchMyTasksUseCase {
 
   final MyTasksRepository _repository;
 
-  Future<List<TaskModel>?> call() {
-    return _repository.fetchMyTasks();
+  Future<List<TaskEntity>?> call() async {
+    final modelList = await _repository.fetchMyTasks();
+    final entityList = modelList?.map((e) => e.toEntity()).toList();
+    return entityList;
   }
 }

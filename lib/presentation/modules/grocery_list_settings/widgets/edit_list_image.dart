@@ -20,7 +20,7 @@ class EditListImage extends StatelessWidget {
           height: context.deviceHeight * 0.225,
           width: context.deviceWidth,
           shape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(16),
+          borderRadius: BorderRadiusDirectional.circular(16),
         ),
         CircleAvatar(
           backgroundColor: AppColors.black.withOpacity(0.7),

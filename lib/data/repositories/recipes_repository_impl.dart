@@ -1,6 +1,6 @@
 import 'package:groceries/data/data_sources/interfaces/recipes_data_source.dart';
 import 'package:groceries/data/data_sources/mock/mock_recipes_data_source.dart';
-import 'package:groceries/data/models/recipe_model/recipe_model.dart';
+import 'package:groceries/data/models/recipe/recipe_model.dart';
 import 'package:groceries/domain/repositories/recipes_repository.dart';
 import 'package:injectable/injectable.dart';
 

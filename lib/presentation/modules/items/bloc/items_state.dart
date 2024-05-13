@@ -4,7 +4,7 @@ part of 'items_bloc.dart';
 class ItemsState with _$ItemsState {
   const factory ItemsState({
     @Default(BlocStatus.initial()) BlocStatus status,
-    @Default(<GroceryModel>[]) List<GroceryModel> groceries,
+    @Default(<GroceryEntity>[]) List<GroceryEntity> groceries,
   }) = _ItemsState;
 
   const ItemsState._();

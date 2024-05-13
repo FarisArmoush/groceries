@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:groceries/data/data_sources/interfaces/recipes_data_source.dart';
-import 'package:groceries/data/models/recipe_model/recipe_model.dart';
+import 'package:groceries/data/models/recipe/recipe_model.dart';
 import 'package:injectable/injectable.dart';
 
 @named

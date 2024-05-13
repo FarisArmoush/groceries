@@ -1,6 +1,6 @@
 import 'package:groceries/data/data_sources/interfaces/base_groceries_data_source.dart';
 import 'package:groceries/data/data_sources/remote/firestore_base_groceries_data_source.dart';
-import 'package:groceries/data/models/grocery_model/grocery_model.dart';
+import 'package:groceries/data/models/grocery/grocery_model.dart';
 import 'package:groceries/domain/repositories/base_groceries_repository.dart';
 import 'package:injectable/injectable.dart';
 

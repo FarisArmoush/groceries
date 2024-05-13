@@ -1,6 +1,4 @@
-import 'package:groceries/data/models/login_param/login_param.dart';
-import 'package:groceries/data/models/register_param/register_param.dart';
-import 'package:groceries/data/models/user_model/user_model.dart';
+import 'package:groceries/data/models/user/user_model.dart';
 
 /// This abstract class defines a set of common methods
 /// and properties for authentication repositories.
@@ -10,7 +8,10 @@ abstract interface class AuthenticationRepository {
   /// Required parameters:
   /// * [email]: The email address of the user.
   /// * [password]: The password of the user.
-  Future<void> signInWithEmailAndPassword(LoginParam loginParam);
+  Future<void> signInWithEmailAndPassword({
+    required String email,
+    required String password,
+  });
 
   /// Signs up a user with email, password, and display name.
   ///
@@ -18,7 +19,11 @@ abstract interface class AuthenticationRepository {
   /// * [email]: The email address of the user.
   /// * [password]: The password of the user.
   /// * [displayName]: The display name of the user.
-  Future<void> signUpWithEmailAndPassword(RegisterParam registerParam);
+  Future<void> signUpWithEmailAndPassword({
+    required String email,
+    required String password,
+    required String name,
+  });
 
   /// Sends an email to the user to reset their password
   Future<void> sendPasswordResetEmail(String? email);

@@ -17,7 +17,7 @@ class CreateListIconsGrid extends StatelessWidget {
       builder: (context, state) {
         return Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadiusDirectional.circular(16),
             color: context.theme.cardColor,
           ),
           padding: const EdgeInsetsDirectional.all(16),

@@ -1,7 +1,7 @@
 import 'package:groceries/data/data_sources/interfaces/grocery_lists_data_source.dart';
 import 'package:groceries/data/data_sources/mock/mock_grocery_lists_data_source.dart';
-import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
-import 'package:groceries/data/models/user_model/user_model.dart';
+import 'package:groceries/data/models/grocery_list/grocery_list_model.dart';
+import 'package:groceries/data/models/user/user_model.dart';
 import 'package:groceries/domain/repositories/grocery_lists_repository.dart';
 import 'package:injectable/injectable.dart';
 

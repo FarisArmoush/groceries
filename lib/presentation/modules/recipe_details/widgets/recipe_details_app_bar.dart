@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/data/models/recipe_details_model/recipe_details_model.dart';
+import 'package:groceries/domain/entities/recipe_details/recipe_details_entity.dart';
 import 'package:groceries/presentation/modules/recipe_details/widgets/recipe_options_bottom_sheet.dart';
 import 'package:groceries/presentation/widgets/groceries_app_bar.dart';
 import 'package:groceries/utils/constants/assets.gen.dart';
@@ -11,7 +11,7 @@ class RecipeDetailsAppBar extends StatelessWidget {
     super.key,
   });
 
-  final RecipeDetailsModel? recipeModel;
+  final RecipeDetailsEntity? recipeModel;
 
   @override
   Widget build(BuildContext context) {

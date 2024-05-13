@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/config/localization/translations.dart';
-import 'package:groceries/data/models/onboarding_page_model/onboarding_page_model.dart';
+import 'package:groceries/presentation/models/onboarding_page_model/onboarding_page_model.dart';
 import 'package:groceries/presentation/modules/onboarding/bloc/onboarding_bloc.dart';
 import 'package:groceries/presentation/modules/onboarding/widgets/leave_onboarding_button.dart';
 import 'package:groceries/presentation/modules/onboarding/widgets/onboarding_next_page_button.dart';

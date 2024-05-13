@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/config/localization/translations.dart';
-import 'package:groceries/data/models/recipe_model/recipe_model.dart';
+import 'package:groceries/domain/entities/recipe/recipe_entity.dart';
 import 'package:groceries/domain/use_cases/create_recipe_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 import 'package:groceries/utils/exceptions/app_network_exception.dart';
@@ -35,7 +35,7 @@ class CreateRecipeBloc extends Bloc<CreateRecipeEvent, CreateRecipeState> {
     );
 
     try {
-      await _createRecipeUseCase(const RecipeModel());
+      await _createRecipeUseCase(RecipeEntity());
       emit(
         state.copyWith(
           status: const BlocStatus.success(),

@@ -1,4 +1,4 @@
-import 'package:groceries/data/models/recipe_details_model/recipe_details_model.dart';
+import 'package:groceries/domain/entities/recipe_details/recipe_details_entity.dart';
 import 'package:groceries/domain/repositories/recipe_details_repository.dart';
 import 'package:injectable/injectable.dart';
 
@@ -8,7 +8,8 @@ class FetchRecipeDetailsUseCase {
 
   final RecipeDetailsRepository _repository;
 
-  Future<RecipeDetailsModel?> call(String? input) {
-    return _repository.fetchDetails(input);
+  Future<RecipeDetailsEntity?> call(String? input) async {
+    final model = await _repository.fetchDetails(input);
+    return model?.toEntity();
   }
 }

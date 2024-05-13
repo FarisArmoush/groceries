@@ -14,7 +14,7 @@ abstract final class GroceriesFilledButtonThemeData {
       elevation: MaterialStateProperty.all<double>(10),
       shape: MaterialStateProperty.all(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadiusDirectional.circular(12),
         ),
       ),
       foregroundColor: MaterialStateProperty.all(
@@ -50,7 +50,7 @@ abstract final class GroceriesFilledButtonThemeData {
       elevation: MaterialStateProperty.all<double>(10),
       shape: MaterialStateProperty.all(
         RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadiusDirectional.circular(12),
         ),
       ),
       backgroundColor: MaterialStateProperty.resolveWith<Color>(

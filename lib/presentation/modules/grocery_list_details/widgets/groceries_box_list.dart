@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/data/models/grocery_model/grocery_model.dart';
+import 'package:groceries/domain/entities/grocery/grocery_entity.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/widgets/grocery_item_tile.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
@@ -9,7 +9,7 @@ class GroceriesBoxList extends StatelessWidget {
     required this.showPriority,
     super.key,
   });
-  final List<GroceryModel?> list;
+  final List<GroceryEntity?> list;
   final bool showPriority;
 
   @override
