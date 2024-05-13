@@ -1,4 +1,4 @@
-import 'package:groceries/data/models/user_model/user_model.dart';
+import 'package:groceries/data/models/user/user_model.dart';
 
 abstract interface class AuthenticationDataSource {
   Future<void> signInWithEmailAndPassword({

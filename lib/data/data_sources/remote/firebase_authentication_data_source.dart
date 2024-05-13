@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:groceries/data/data_sources/interfaces/authentication_data_source.dart';
-import 'package:groceries/data/models/user_model/user_model.dart';
+import 'package:groceries/data/models/user/user_model.dart';
 import 'package:groceries/utils/exceptions/app_network_exception.dart';
 import 'package:groceries/utils/keys/firestore_keys.dart';
 import 'package:groceries/utils/logger.dart';

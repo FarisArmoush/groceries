@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:groceries/data/models/task_model/task_model.dart';
+import 'package:groceries/data/models/task/task_model.dart';
 import 'package:groceries/domain/entities/grocery/grocery_entity.dart';
 import 'package:groceries/domain/entities/grocery_list/grocery_list_entity.dart';
 

@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:groceries/data/models/recipe_model/recipe_model.dart';
+import 'package:groceries/data/models/recipe/recipe_model.dart';
 
 part 'recipe_entity.freezed.dart';
 

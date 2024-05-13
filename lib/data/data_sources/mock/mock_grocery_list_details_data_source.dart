@@ -1,8 +1,8 @@
 import 'package:faker/faker.dart';
 import 'package:groceries/data/data_sources/interfaces/grocery_list_details_data_source.dart';
-import 'package:groceries/data/models/grocery_list_details_model/grocery_list_details_model.dart';
-import 'package:groceries/data/models/grocery_model/grocery_model.dart';
-import 'package:groceries/data/models/refinements_model/refinements_model.dart';
+import 'package:groceries/data/models/grocery/grocery_model.dart';
+import 'package:groceries/data/models/grocery_list_details/grocery_list_details_model.dart';
+import 'package:groceries/data/models/refinements/refinements_model.dart';
 import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 import 'package:injectable/injectable.dart';
 

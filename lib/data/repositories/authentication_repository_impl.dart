@@ -1,6 +1,6 @@
 import 'package:groceries/data/data_sources/interfaces/authentication_data_source.dart';
 import 'package:groceries/data/data_sources/remote/firebase_authentication_data_source.dart';
-import 'package:groceries/data/models/user_model/user_model.dart';
+import 'package:groceries/data/models/user/user_model.dart';
 import 'package:groceries/domain/repositories/authentication_repository.dart';
 import 'package:injectable/injectable.dart';
 

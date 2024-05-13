@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:groceries/data/models/category_model/category_model.dart';
+import 'package:groceries/data/models/category/category_model.dart';
 import 'package:groceries/domain/entities/category/category_entity.dart';
 
 void main() {

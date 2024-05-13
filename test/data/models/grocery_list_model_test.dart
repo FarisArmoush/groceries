@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
-import 'package:groceries/data/models/grocery_model/grocery_model.dart';
-import 'package:groceries/data/models/refinements_model/refinements_model.dart';
-import 'package:groceries/data/models/user_model/user_model.dart';
+import 'package:groceries/data/models/grocery/grocery_model.dart';
+import 'package:groceries/data/models/grocery_list/grocery_list_model.dart';
+import 'package:groceries/data/models/refinements/refinements_model.dart';
+import 'package:groceries/data/models/user/user_model.dart';
 
 void main() {
   group('GroceryListModel', () {

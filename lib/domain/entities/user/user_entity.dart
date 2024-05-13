@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:groceries/data/models/user_model/user_model.dart';
+import 'package:groceries/data/models/user/user_model.dart';
 
 part 'user_entity.freezed.dart';
 

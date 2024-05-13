@@ -1,5 +1,5 @@
 import 'package:groceries/data/data_sources/i_data_source.dart';
-import 'package:groceries/data/models/priority_model/priority_model.dart';
+import 'package:groceries/data/models/priority/priority_model.dart';
 import 'package:groceries/data/services/cache/cache_service.dart';
 import 'package:groceries/data/services/cache/hive_cache_service.dart';
 import 'package:groceries/data/services/stale_data_checker.dart';

@@ -1,4 +1,4 @@
-import 'package:groceries/data/models/grocery_list_details_model/grocery_list_details_model.dart';
+import 'package:groceries/data/models/grocery_list_details/grocery_list_details_model.dart';
 
 abstract interface class GroceryListDetailsRepository {
   const GroceryListDetailsRepository();

@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:groceries/data/models/priority_model/priority_model.dart';
+import 'package:groceries/data/models/priority/priority_model.dart';
 
 part 'priority_entity.freezed.dart';
 

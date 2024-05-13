@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:groceries/data/models/category_model/category_model.dart';
+import 'package:groceries/data/models/category/category_model.dart';
 
 part 'category_entity.freezed.dart';
 

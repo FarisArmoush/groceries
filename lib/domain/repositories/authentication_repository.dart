@@ -1,4 +1,4 @@
-import 'package:groceries/data/models/user_model/user_model.dart';
+import 'package:groceries/data/models/user/user_model.dart';
 
 /// This abstract class defines a set of common methods
 /// and properties for authentication repositories.

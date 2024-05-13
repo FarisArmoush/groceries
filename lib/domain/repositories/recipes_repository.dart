@@ -1,4 +1,4 @@
-import 'package:groceries/data/models/recipe_model/recipe_model.dart';
+import 'package:groceries/data/models/recipe/recipe_model.dart';
 
 abstract interface class RecipesRepository {
   const RecipesRepository();

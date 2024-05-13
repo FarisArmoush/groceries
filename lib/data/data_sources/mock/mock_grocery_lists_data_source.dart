@@ -1,10 +1,10 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:groceries/data/data_sources/interfaces/grocery_lists_data_source.dart';
-import 'package:groceries/data/models/grocery_list_model/grocery_list_model.dart';
-import 'package:groceries/data/models/grocery_model/grocery_model.dart';
-import 'package:groceries/data/models/refinements_model/refinements_model.dart';
-import 'package:groceries/data/models/user_model/user_model.dart';
+import 'package:groceries/data/models/grocery/grocery_model.dart';
+import 'package:groceries/data/models/grocery_list/grocery_list_model.dart';
+import 'package:groceries/data/models/refinements/refinements_model.dart';
+import 'package:groceries/data/models/user/user_model.dart';
 import 'package:groceries/utils/logger.dart';
 import 'package:injectable/injectable.dart';
 
