@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/utils/timestamp_serializer.dart';
-import 'package:groceries/utils/typedefs/typedefs.dart';
 
 part 'user_model.freezed.dart';
 part 'user_model.g.dart';
@@ -18,5 +17,6 @@ class UserModel with _$UserModel {
     @TimestampSerializer() DateTime? creationDate,
   }) = _UserModel;
 
-  factory UserModel.fromJson(JSON json) => _$UserModelFromJson(json);
+  factory UserModel.fromJson(Map<String, dynamic> json) =>
+      _$UserModelFromJson(json);
 }

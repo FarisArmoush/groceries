@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:groceries/utils/typedefs/typedefs.dart';
 
 part 'priority_model.freezed.dart';
 part 'priority_model.g.dart';
@@ -13,5 +12,6 @@ class PriorityModel with _$PriorityModel {
     String? name,
   }) = _PriorityModel;
 
-  factory PriorityModel.fromJson(JSON json) => _$PriorityModelFromJson(json);
+  factory PriorityModel.fromJson(Map<String, dynamic> json) =>
+      _$PriorityModelFromJson(json);
 }

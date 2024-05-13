@@ -7,7 +7,6 @@ import 'package:groceries/data/services/cache/hive_cache_service.dart';
 import 'package:groceries/domain/repositories/cateogries_repository.dart';
 import 'package:groceries/utils/keys/storage_keys.dart';
 import 'package:groceries/utils/logger.dart';
-import 'package:groceries/utils/typedefs/typedefs.dart';
 import 'package:injectable/injectable.dart';
 
 @Singleton(as: CategoriesRepository)
@@ -37,7 +36,7 @@ class CategoriesRepositoryImpl implements CategoriesRepository {
         .map((e) => e.toJson()..remove('creationDate'))
         .toList();
 
-    await _cacheService.write<List<JSON>>(
+    await _cacheService.write<List<Map<String, dynamic>>>(
       categoryId ?? StorageKeys.parentCategories,
       jsonedPriorities,
     );

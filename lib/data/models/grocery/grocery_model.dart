@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/data/models/refinements/refinements_model.dart';
 import 'package:groceries/utils/timestamp_serializer.dart';
-import 'package:groceries/utils/typedefs/typedefs.dart';
 
 part 'grocery_model.freezed.dart';
 part 'grocery_model.g.dart';
@@ -21,5 +20,6 @@ class GroceryModel with _$GroceryModel {
     List<RefinementsModel>? refinements,
   }) = _GroceryModel;
 
-  factory GroceryModel.fromJson(JSON json) => _$GroceryModelFromJson(json);
+  factory GroceryModel.fromJson(Map<String, dynamic> json) =>
+      _$GroceryModelFromJson(json);
 }

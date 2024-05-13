@@ -3,7 +3,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/data/models/grocery/grocery_model.dart';
 import 'package:groceries/data/models/user/user_model.dart';
 import 'package:groceries/utils/timestamp_serializer.dart';
-import 'package:groceries/utils/typedefs/typedefs.dart';
 
 part 'grocery_list_details_model.freezed.dart';
 part 'grocery_list_details_model.g.dart';
@@ -19,6 +18,6 @@ class GroceryListDetailsModel with _$GroceryListDetailsModel {
     @TimestampSerializer() DateTime? creationDate,
   }) = _GroceryListDetailsModel;
 
-  factory GroceryListDetailsModel.fromJson(JSON json) =>
+  factory GroceryListDetailsModel.fromJson(Map<String, dynamic> json) =>
       _$GroceryListDetailsModelFromJson(json);
 }

@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/utils/timestamp_serializer.dart';
-import 'package:groceries/utils/typedefs/typedefs.dart';
 
 part 'recipe_model.freezed.dart';
 part 'recipe_model.g.dart';
@@ -16,5 +15,6 @@ class RecipeModel with _$RecipeModel {
     @TimestampSerializer() DateTime? creationDate,
   }) = _RecipeModel;
 
-  factory RecipeModel.fromJson(JSON json) => _$RecipeModelFromJson(json);
+  factory RecipeModel.fromJson(Map<String, dynamic> json) =>
+      _$RecipeModelFromJson(json);
 }

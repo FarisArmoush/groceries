@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:groceries/data/services/cache/cache_service.dart';
-import 'package:groceries/utils/typedefs/typedefs.dart';
 import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -18,12 +17,13 @@ class SharedPreferencesCacheService implements CacheService {
         return prefs.getBool(key) as T?;
       } else if (T == int) {
         return prefs.getInt(key) as T?;
-      } else if (T == JSON) {
+      } else if (T == Map<String, dynamic>) {
         return json.decode(prefs.getString(key) ?? '') as T?;
-      } else if (T == List<JSON>) {
+      } else if (T == List<Map<String, dynamic>>) {
         final list = (prefs.getStringList(key) ?? []) as Iterable<String>;
-        final mappedList = list.map((e) => jsonDecode(e) as JSON);
-        return List<JSON>.from(mappedList) as T?;
+        final mappedList =
+            list.map((e) => jsonDecode(e) as Map<String, dynamic>);
+        return List<Map<String, dynamic>>.from(mappedList) as T?;
       } else {
         throw Exception('Unsupported type: $T');
       }
@@ -41,10 +41,10 @@ class SharedPreferencesCacheService implements CacheService {
       return prefs.setBool(key, value as bool);
     } else if (T == int) {
       return prefs.setInt(key, value as int);
-    } else if (T == JSON) {
+    } else if (T == Map<String, dynamic>) {
       return prefs.setString(key, value as String);
-    } else if (T == List<JSON>) {
-      final value0 = value as List<JSON>;
+    } else if (T == List<Map<String, dynamic>>) {
+      final value0 = value as List<Map<String, dynamic>>;
       final value1 = value0.map(jsonEncode).toList();
       return prefs.setStringList(key, value1);
     } else {
