@@ -39,7 +39,6 @@ jobs:
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         run: |
-          firebase logout
           firebase login:ci --token $FIREBASE_TOKEN
 
       - name: 🔥 Use Existing Firebase Project
