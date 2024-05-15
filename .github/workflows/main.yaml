@@ -31,6 +31,28 @@ jobs:
           very_good packages get --recursive
           dart run build_runner build --delete-conflicting-outputs
 
+      - name: 🔥 Setup Firebase CLI
+        run: |
+          curl -sL https://firebase.tools | bash
+          
+      - name: 🔑 Authenticate Firebase CLI
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        run: |
+          firebase logout
+          firebase login:ci --token $FIREBASE_TOKEN
+
+      - name: 🔥 Use Existing Firebase Project
+        env:
+          PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+        run: |
+          firebase use $PROJECT_ID
+
+      - name: 🔥 Configure FlutterFire
+        run: |
+          flutter pub global activate flutterfire_cli
+          flutterfire configure --project=$PROJECT_ID
+
       - name: 🕵️ Analyze
         run: flutter analyze lib test
 
