@@ -5,9 +5,9 @@ import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/domain/entities/grocery_list/grocery_list_entity.dart';
 import 'package:groceries/domain/use_cases/create_list_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/presentation/constants/assets.gen.dart';
+import 'package:groceries/presentation/forms/grocery_list_name_form.dart';
 import 'package:groceries/utils/exceptions/app_network_exception.dart';
-import 'package:groceries/utils/forms/grocery_list_name_form.dart';
 import 'package:injectable/injectable.dart';
 
 part 'create_list_bloc.freezed.dart';

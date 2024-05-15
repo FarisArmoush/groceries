@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:groceries/presentation/constants/assets.gen.dart';
 import 'package:groceries/presentation/widgets/shimmer_skeleton.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class CachedImage extends StatefulWidget {

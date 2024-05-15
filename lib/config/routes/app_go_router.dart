@@ -1,4 +1,6 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:async';
+
+import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/injection/injector.dart';
 import 'package:groceries/config/routes/app_route.dart';
@@ -36,7 +38,6 @@ import 'package:groceries/presentation/modules/verify_user/views/verify_user_vie
 import 'package:groceries/presentation/modules/welcome/views/welcome_view.dart';
 import 'package:groceries/presentation/modules/wrapper/views/wrapper_view.dart';
 import 'package:groceries/utils/extenstions/path.dart';
-import 'package:groceries/utils/keys/storage_keys.dart';
 import 'package:groceries/utils/logger.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
@@ -53,9 +54,8 @@ final GoRouter appGoRouter = GoRouter(
         final cacheService = injector.get<CacheService>(
           instanceName: 'SharedPreferencesCacheService',
         );
-        final hasViewedOnboarding = await cacheService.read<bool>(
-          StorageKeys.hasViewedOnboarding,
-        );
+        final hasViewedOnboarding =
+            await cacheService.read<bool>('hasViewedOnboarding');
         if (hasViewedOnboarding case null || false) {
           return AppRoute.onboarding.named.path;
         }
@@ -337,4 +337,8 @@ CustomTransitionPage<void> _slideUpTransition(Widget child) {
       );
     },
   );
+}
+
+abstract interface class Redirect {
+  FutureOr<String?> call(BuildContext context, GoRouterState state);
 }

@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:groceries/data/data_sources/instances.dart';
 import 'package:groceries/data/data_sources/interfaces/user_management_data_source.dart';
 import 'package:groceries/utils/exceptions/app_network_exception.dart';
-import 'package:groceries/utils/keys/firestore_keys.dart';
 import 'package:groceries/utils/logger.dart';
 import 'package:injectable/injectable.dart';
 
@@ -14,9 +13,9 @@ class FirebaseUserManagementDataSource implements UserManagementDataSource {
     try {
       await firebaseAuth.currentUser?.updateDisplayName(displayName).then(
             (_) => firestore
-                .collection(FirestoreCollection.users)
+                .collection('users')
                 .doc(firebaseAuth.currentUser?.uid)
-                .update({FirestoreField.displayName: displayName}),
+                .update({'displayName': displayName}),
           );
       logger.info('Updated display name');
     } on FirebaseAuthException catch (e) {
@@ -34,9 +33,9 @@ class FirebaseUserManagementDataSource implements UserManagementDataSource {
     try {
       await firebaseAuth.currentUser?.verifyBeforeUpdateEmail(email).then(
             (_) => firestore
-                .collection(FirestoreCollection.users)
+                .collection('users')
                 .doc(firebaseAuth.currentUser?.uid)
-                .update({FirestoreField.email: email}),
+                .update({'email': email}),
           );
       logger.info('Updated email');
     } on FirebaseAuthException catch (e) {

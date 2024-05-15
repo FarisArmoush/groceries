@@ -5,7 +5,6 @@ import 'package:groceries/data/models/category/category_model.dart';
 import 'package:groceries/data/services/cache/cache_service.dart';
 import 'package:groceries/data/services/cache/hive_cache_service.dart';
 import 'package:groceries/domain/repositories/cateogries_repository.dart';
-import 'package:groceries/utils/keys/storage_keys.dart';
 import 'package:groceries/utils/logger.dart';
 import 'package:injectable/injectable.dart';
 
@@ -27,7 +26,7 @@ class CategoriesRepositoryImpl implements CategoriesRepository {
 
     if (cachedCategories != null) {
       logger.info(
-        'Cached categories ${categoryId ?? StorageKeys.parentCategories}',
+        'Cached categories ${categoryId ?? 'parentCategories'}',
       );
       return cachedCategories;
     }
@@ -37,17 +36,17 @@ class CategoriesRepositoryImpl implements CategoriesRepository {
         .toList();
 
     await _cacheService.write<List<Map<String, dynamic>>>(
-      categoryId ?? StorageKeys.parentCategories,
+      categoryId ?? 'parentCategories',
       jsonedPriorities,
     );
     await _cacheService.write<String>(
       categoryId != null
           ? 'last-fetch-$categoryId'
-          : 'last-fetch-${StorageKeys.parentCategories}',
+          : 'last-fetch-parentCategories',
       DateTime.now().toString(),
     );
     logger.info(
-      'Categories from Firestore ${categoryId ?? StorageKeys.parentCategories}',
+      'Categories from Firestore ${categoryId ?? 'parentCategories'}',
     );
     return remotePriorities;
   }
@@ -59,7 +58,7 @@ class CategoriesRepositoryImpl implements CategoriesRepository {
     final lastFetchTimeValue = await _cacheService.read<String>(
       categoryId != null
           ? 'last-fetch-$categoryId'
-          : 'last-fetch-${StorageKeys.parentCategories}',
+          : 'last-fetch-parentCategories',
     );
     final lastFetchTime =
         DateTime.tryParse(lastFetchTimeValue ?? '') ?? DateTime.now();

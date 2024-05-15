@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/presentation/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class PasswordInputObscurityButton extends StatelessWidget {

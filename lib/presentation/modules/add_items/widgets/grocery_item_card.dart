@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/domain/entities/grocery/grocery_entity.dart';
+import 'package:groceries/presentation/constants/assets.gen.dart';
 import 'package:groceries/presentation/modules/add_items/widgets/grocery_item_card_icon.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class GroceryItemCard extends StatelessWidget {

@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:groceries/data/data_sources/i_data_source.dart';
 import 'package:groceries/data/models/priority/priority_model.dart';
 import 'package:groceries/utils/exceptions/app_network_exception.dart';
-import 'package:groceries/utils/keys/firestore_keys.dart';
 import 'package:groceries/utils/logger.dart';
 import 'package:injectable/injectable.dart';
 
@@ -24,8 +23,8 @@ class FirestorePrioritiesDataSource implements DataSource {
   Future<T> _read<T>() async {
     try {
       final collectionReference = FirebaseFirestore.instance
-          .collection(FirestoreCollection.constants)
-          .doc(FirestoreDocuments.priorities);
+          .collection('constants')
+          .doc('priorities');
       final result = await collectionReference.get();
 
       final data = (result['data'] as List<dynamic>?) ?? [];

@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:groceries/data/data_sources/interfaces/categories_data_source.dart';
 import 'package:groceries/data/models/category/category_model.dart';
 import 'package:groceries/utils/exceptions/app_network_exception.dart';
-import 'package:groceries/utils/keys/firestore_keys.dart';
 import 'package:groceries/utils/logger.dart';
 import 'package:injectable/injectable.dart';
 
@@ -21,15 +20,15 @@ class FirestoreCategoriesDataSource implements CategoriesDataSource {
       if (categoryId != null) {
         // Sub-Categories Query
         query = _firestore
-            .collection(FirestoreCollection.category)
-            .orderBy(FirestoreField.name)
-            .where(FirestoreField.parentCategoryId, isEqualTo: categoryId);
+            .collection('category')
+            .orderBy('name')
+            .where('parentCategoryId', isEqualTo: categoryId);
       } else {
         // Parent-Categories Query
         query = _firestore
-            .collection(FirestoreCollection.category)
-            .orderBy(FirestoreField.name)
-            .where(FirestoreField.parentCategoryId, isNull: true);
+            .collection('category')
+            .orderBy('name')
+            .where('parentCategoryId', isNull: true);
       }
 
       final result = await query.get();

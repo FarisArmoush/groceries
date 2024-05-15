@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/presentation/constants/assets.gen.dart';
 import 'package:groceries/presentation/modules/premium/widgets/premium_feature_cell.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
 import 'package:groceries/utils/extenstions/hard_coded_extension.dart';
 
 class PremiumFeatures extends StatelessWidget {

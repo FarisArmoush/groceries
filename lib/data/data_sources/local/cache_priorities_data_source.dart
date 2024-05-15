@@ -3,7 +3,6 @@ import 'package:groceries/data/models/priority/priority_model.dart';
 import 'package:groceries/data/services/cache/cache_service.dart';
 import 'package:groceries/data/services/cache/hive_cache_service.dart';
 import 'package:groceries/data/services/stale_data_checker.dart';
-import 'package:groceries/utils/keys/storage_keys.dart';
 import 'package:injectable/injectable.dart';
 
 @named
@@ -32,18 +31,18 @@ class LocalPrioritiesDataSource implements DataSource {
 
   Future<T?> _write<T>(Object body) async {
     return await _cacheService.write<List<Map<String, dynamic>>>(
-      StorageKeys.priorities,
+      'priorities',
       body as List<Map<String, dynamic>>,
     ) as T;
   }
 
   Future<T?> _read<T>() async {
     final dataIsStale = !(await _staleDataChecker.shouldFetchFromRemote(
-      lastFetchTimeKey: StorageKeys.lastPrioritiesFetch,
+      lastFetchTimeKey: 'lastPrioritiesFetch',
       days: 1,
     ));
     final value = await _cacheService.read<List<Map<String, dynamic>>>(
-      StorageKeys.priorities,
+      'priorities',
     );
     if (value != null && value.isNotEmpty && dataIsStale) {
       final cachedValue = value.map(PriorityModel.fromJson).toList();

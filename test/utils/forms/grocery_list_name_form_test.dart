@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:groceries/config/localization/translations.dart';
-import 'package:groceries/utils/forms/grocery_list_name_form.dart';
+import 'package:groceries/presentation/forms/grocery_list_name_form.dart';
 
 void main() {
   group('GroceryListname', () {

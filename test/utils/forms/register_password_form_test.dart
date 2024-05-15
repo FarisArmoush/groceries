@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:groceries/config/localization/translations.dart';
-import 'package:groceries/utils/forms/register_password_form.dart';
+import 'package:groceries/presentation/forms/register_password_form.dart';
 
 void main() {
   group('register password', () {

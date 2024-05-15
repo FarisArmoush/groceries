@@ -3,9 +3,9 @@ import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/update_display_name_use_case.dart';
+import 'package:groceries/presentation/forms/display_name_form.dart';
 import 'package:groceries/utils/exceptions/app_network_exception.dart';
 import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
-import 'package:groceries/utils/forms/display_name_form.dart';
 import 'package:injectable/injectable.dart';
 
 part 'update_display_name_bloc.freezed.dart';
