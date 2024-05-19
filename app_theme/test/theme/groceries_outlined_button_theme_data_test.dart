@@ -14,7 +14,7 @@ void main() {
 
       expect(
         defaultStyle?.shape,
-        isInstanceOf<MaterialStateProperty<OutlinedBorder>>(),
+        isInstanceOf<WidgetStateProperty<OutlinedBorder>>(),
       );
       expect(
         defaultStyle?.splashFactory,
@@ -22,7 +22,7 @@ void main() {
       );
       expect(
         defaultStyle?.side,
-        isInstanceOf<MaterialStateProperty<BorderSide>>(),
+        isInstanceOf<WidgetStateProperty<BorderSide>>(),
       );
       expect(
         overlayColor,
@@ -54,7 +54,7 @@ void main() {
 
       expect(
         defaultStyle?.shape,
-        isInstanceOf<MaterialStateProperty<OutlinedBorder>>(),
+        isInstanceOf<WidgetStateProperty<OutlinedBorder>>(),
       );
       expect(
         defaultStyle?.splashFactory,
@@ -62,7 +62,7 @@ void main() {
       );
       expect(
         defaultStyle?.side,
-        isInstanceOf<MaterialStateProperty<BorderSide>>(),
+        isInstanceOf<WidgetStateProperty<BorderSide>>(),
       );
       expect(
         overlayColor,

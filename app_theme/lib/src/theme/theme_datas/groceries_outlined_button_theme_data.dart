@@ -5,26 +5,26 @@ abstract final class GroceriesOutlinedButtonThemeData {
   static final light = OutlinedButtonThemeData(
     style: ButtonStyle(
       splashFactory: appSplashFactory,
-      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+      shape: WidgetStateProperty.all<RoundedRectangleBorder>(
         RoundedRectangleBorder(
           borderRadius: BorderRadiusDirectional.circular(12),
         ),
       ),
-      side: MaterialStateProperty.all<BorderSide>(
+      side: WidgetStateProperty.all<BorderSide>(
         const BorderSide(
           color: AppColors.lightGrey,
         ),
       ),
-      overlayColor: MaterialStateProperty.all<Color>(
+      overlayColor: WidgetStateProperty.all<Color>(
         AppColors.black.withOpacity(0.15),
       ),
-      foregroundColor: MaterialStateProperty.all<Color>(
+      foregroundColor: WidgetStateProperty.all<Color>(
         AppColors.black,
       ),
-      iconColor: MaterialStateProperty.all<Color>(
+      iconColor: WidgetStateProperty.all<Color>(
         AppColors.black,
       ),
-      textStyle: MaterialStateProperty.all<TextStyle>(
+      textStyle: WidgetStateProperty.all<TextStyle>(
         const TextStyle(
           fontWeight: AppFontWeights.regular,
           color: AppColors.black,
@@ -37,26 +37,26 @@ abstract final class GroceriesOutlinedButtonThemeData {
   static final dark = OutlinedButtonThemeData(
     style: ButtonStyle(
       splashFactory: appSplashFactory,
-      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+      shape: WidgetStateProperty.all<RoundedRectangleBorder>(
         RoundedRectangleBorder(
           borderRadius: BorderRadiusDirectional.circular(12),
         ),
       ),
-      side: MaterialStateProperty.all<BorderSide>(
+      side: WidgetStateProperty.all<BorderSide>(
         const BorderSide(
           color: AppColors.lightGrey,
         ),
       ),
-      overlayColor: MaterialStateProperty.all<Color>(
+      overlayColor: WidgetStateProperty.all<Color>(
         AppColors.white.withOpacity(0.25),
       ),
-      foregroundColor: MaterialStateProperty.all<Color>(
+      foregroundColor: WidgetStateProperty.all<Color>(
         AppColors.white,
       ),
-      iconColor: MaterialStateProperty.all<Color>(
+      iconColor: WidgetStateProperty.all<Color>(
         AppColors.white,
       ),
-      textStyle: MaterialStateProperty.all<TextStyle>(
+      textStyle: WidgetStateProperty.all<TextStyle>(
         const TextStyle(
           fontWeight: AppFontWeights.regular,
           color: AppColors.white,

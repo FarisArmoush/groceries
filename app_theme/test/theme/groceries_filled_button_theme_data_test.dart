@@ -9,17 +9,17 @@ void main() {
 
       final defaultStyle = lightTheme.style;
       final disabledBackgroundColor = defaultStyle?.backgroundColor!.resolve(
-        {MaterialState.disabled},
+        {WidgetState.disabled},
       );
       final defaultForegroundColor = defaultStyle?.foregroundColor!.resolve({});
       final disabledForegroundColor = defaultStyle?.foregroundColor!.resolve(
-        {MaterialState.disabled},
+        {WidgetState.disabled},
       );
       final overlayColor = defaultStyle?.overlayColor!.resolve({});
 
       expect(
         defaultStyle?.shape,
-        isInstanceOf<MaterialStateProperty<OutlinedBorder?>>(),
+        isInstanceOf<WidgetStateProperty<OutlinedBorder?>>(),
       );
       expect(
         defaultStyle?.splashFactory,
@@ -63,11 +63,11 @@ void main() {
 
       final defaultStyle = darkTheme.style;
       final disabledBackgroundColor = defaultStyle?.backgroundColor!.resolve(
-        {MaterialState.disabled},
+        {WidgetState.disabled},
       );
       final defaultForegroundColor = defaultStyle?.foregroundColor!.resolve({});
       final disabledForegroundColor = defaultStyle?.foregroundColor!.resolve(
-        {MaterialState.disabled},
+        {WidgetState.disabled},
       );
       final overlayColor = defaultStyle?.overlayColor!.resolve(
         {},
@@ -75,7 +75,7 @@ void main() {
 
       expect(
         defaultStyle?.shape,
-        isInstanceOf<MaterialStateProperty<OutlinedBorder?>>(),
+        isInstanceOf<WidgetStateProperty<OutlinedBorder?>>(),
       );
       expect(defaultStyle?.splashFactory, equals(appSplashFactory));
       expect(

@@ -12,8 +12,8 @@ abstract final class GroceriesColorScheme {
     primary: AppColors.darkRed,
     secondary: AppColors.black,
     primaryContainer: AppColors.cardDarkGrey,
-    onBackground: AppColors.white,
-    background: AppColors.darkGrey,
+    onSurface: AppColors.white,
+    surface: AppColors.darkGrey,
     shadow: AppColors.white.withOpacity(0.015),
     outline: AppColors.lightGrey,
   );
