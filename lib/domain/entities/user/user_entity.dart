@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/data/models/user/user_model.dart';
+import 'package:groceries/domain/helpers/date_time_parser_extension.dart';
 
 part 'user_entity.freezed.dart';
 
@@ -11,7 +12,7 @@ class UserEntity with _$UserEntity {
     String? email,
     String? imageUrl,
     bool? isVerified,
-    DateTime? creationDate,
+    String? creationDate,
   }) = _UserEntity;
 }
 
@@ -23,7 +24,7 @@ extension UserModelMapper on UserModel {
       email: email,
       imageUrl: imageUrl,
       isVerified: isVerified,
-      creationDate: creationDate,
+      creationDate: creationDate.toString().toDDofMMYYYY(),
     );
   }
 }
@@ -36,7 +37,7 @@ extension UserEntityMapper on UserEntity {
       email: email,
       imageUrl: imageUrl,
       isVerified: isVerified,
-      creationDate: creationDate,
+      creationDate: DateTime.tryParse(creationDate ?? ''),
     );
   }
 }
