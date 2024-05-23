@@ -53,22 +53,7 @@ class RecipeStep extends StatelessWidget {
             ),
           ),
         ),
-        // Container(
-        //   width: context.deviceWidth * 0.075,
-        //   padding: const EdgeInsetsDirectional.all(4),
-        //   decoration: BoxDecoration(
-        //     color: context.theme.primaryColorLight,
-        //     shape: BoxShape.circle,
-        //   ),
-        //   child: Text(
-        //     (stepNumber + 1).toString(),
-        //     style: const TextStyle(
-        //       fontWeight: AppFontWeights.regular,
-        //       fontSize: 16,
-        //       color: AppColors.white,
-        //     ),
-        //   ).centered(),
-        // ),
+
         SizedBox(
           width: context.deviceWidth * 0.04,
         ),

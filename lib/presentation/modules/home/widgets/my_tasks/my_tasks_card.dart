@@ -3,7 +3,7 @@ import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/domain/entities/task/task_entity.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries/domain/helpers/date_time_parser_extension.dart';
+import 'package:groceries/utils/extenstions/padding_extensions.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 class MyTasksCard extends StatelessWidget {
@@ -22,28 +22,24 @@ class MyTasksCard extends StatelessWidget {
       borderRadius: BorderRadiusDirectional.circular(8),
       child: InkWell(
         onTap: () {},
-        child: Padding(
-          padding: const EdgeInsetsDirectional.symmetric(
-            vertical: 4,
-            horizontal: 12,
-          ),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              CachedImage(
-                imageUrl: taskModel?.listModel?.imageUrl ?? '',
-                width: context.deviceWidth * 0.15,
-                height: context.deviceHeight * 0.1,
-                progressIndicatorBuilder: (context, url, progress) {
-                  return const SizedBox.shrink();
-                },
-              ),
-              SizedBox(width: context.deviceWidth * 0.03),
-              Column(
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            CachedImage(
+              imageUrl: taskModel?.listModel?.imageUrl ?? '',
+              width: context.deviceWidth * 0.15,
+              height: context.deviceHeight * 0.1,
+              progressIndicatorBuilder: (context, url, progress) {
+                return const SizedBox.shrink();
+              },
+            ),
+            SizedBox(width: context.deviceWidth * 0.03),
+            Expanded(
+              flex: 5,
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    width: context.deviceWidth * 0.45,
                     child: Text(
                       taskModel?.listModel?.name ?? '',
                       style: context.theme.listTileTheme.titleTextStyle,
@@ -62,21 +58,24 @@ class MyTasksCard extends StatelessWidget {
                   ),
                 ],
               ),
-              const Spacer(),
-              SizedBox(
-                width: context.deviceWidth * 0.2,
-                child: Text(
-                  taskModel?.dueDate.toString().toDDMMYYYY() ?? '',
-                  style: TextStyle(
-                    fontWeight: AppFontWeights.regular,
-                    color: context.theme.hintColor,
-                    fontSize: 12,
-                  ),
-                  textAlign: TextAlign.end,
+            ),
+            const Spacer(),
+            Expanded(
+              flex: 4,
+              child: Text(
+                taskModel?.dueDate ?? '',
+                style: TextStyle(
+                  fontWeight: AppFontWeights.regular,
+                  color: context.theme.hintColor,
+                  fontSize: 12,
                 ),
+                textAlign: TextAlign.end,
               ),
-            ],
-          ),
+            ),
+          ],
+        ).symmetricPadding(
+          vertical: 4,
+          horizontal: 12,
         ),
       ),
     );
