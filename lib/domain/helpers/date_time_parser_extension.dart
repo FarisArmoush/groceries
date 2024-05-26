@@ -15,13 +15,23 @@ extension DateTimeParser on String {
   }
 
   /// Formats date string to look like `DD-MM-YYYY`.
-  /// Returns a formatted date string.
+  /// Returns a formatted date string. 11-7-2023
   String toDDMMYYYY() {
     final inputDateParts = split(' ')[0].split('-');
     final day = inputDateParts[2];
     final month = inputDateParts[1];
     final year = inputDateParts[0];
     return '$day-$month-$year';
+  }
+
+  /// Formats date string to look like `DD-MM-YYYY`.
+  /// Returns a formatted date string. 11-7-2023
+  String toMMDDYYYY() {
+    final inputDateParts = split(' ')[0].split('-');
+    final day = inputDateParts[2];
+    final month = inputDateParts[1];
+    final year = inputDateParts[0];
+    return '$month-$day-$year';
   }
 
   /// Parses the string as a date and returns a DateTime object.

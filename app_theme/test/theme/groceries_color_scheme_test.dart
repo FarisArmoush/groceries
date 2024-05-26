@@ -19,8 +19,8 @@ void main() {
       expect(darkScheme.primary, equals(AppColors.darkRed));
       expect(darkScheme.secondary, equals(AppColors.black));
       expect(darkScheme.primaryContainer, equals(AppColors.cardDarkGrey));
-      expect(darkScheme.onBackground, equals(AppColors.white));
-      expect(darkScheme.background, equals(AppColors.darkGrey));
+      expect(darkScheme.onSurface, equals(AppColors.white));
+      expect(darkScheme.surface, equals(AppColors.darkGrey));
       expect(darkScheme.shadow, equals(AppColors.white.withOpacity(0.015)));
       expect(darkScheme.outline, equals(AppColors.lightGrey));
     });

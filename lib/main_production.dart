@@ -1,12 +1,11 @@
 import 'package:groceries/bootstrap.dart';
 import 'package:groceries/main_common.dart';
-import 'package:groceries/presentation/models/app_flavor/app_flavor.dart';
+import 'package:groceries/presentation/models/flavor/flavor.dart';
 
 void main() {
   bootstrap(() async {
-    const flavor = AppFlavor(
-      apiUrl: 'Production URL',
-      environment: FlavorEnvironments.production,
+    const flavor = Flavor(
+      environment: FlavorEnvironment.production,
     );
     return mainCommon(flavor);
   });

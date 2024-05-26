@@ -14,7 +14,7 @@ abstract final class GroceriesTabBarThemeData {
       color: AppColors.lightGrey,
       fontSize: _labelTextSize,
     ),
-    overlayColor: MaterialStateProperty.all(
+    overlayColor: WidgetStateProperty.all(
       AppColors.white.withOpacity(0.1),
     ),
     unselectedLabelColor: AppColors.lightGrey,
@@ -35,7 +35,7 @@ abstract final class GroceriesTabBarThemeData {
       color: AppColors.lightGrey,
       fontSize: _labelTextSize,
     ),
-    overlayColor: MaterialStateProperty.all(
+    overlayColor: WidgetStateProperty.all(
       AppColors.white.withOpacity(0.1),
     ),
     unselectedLabelColor: AppColors.lightGrey,

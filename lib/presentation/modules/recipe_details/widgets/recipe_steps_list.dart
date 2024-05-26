@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:groceries/domain/entities/recipe_details/recipe_details_entity.dart';
 import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries/utils/extenstions/padding_extensions.dart';
-import 'package:groceries/utils/extenstions/widgets_as_extensions.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 class RecipeStepsList extends StatelessWidget {
-  const RecipeStepsList({required this.recipeModel, super.key});
+  const RecipeStepsList({
+    required this.recipeModel,
+    super.key,
+  });
 
   final RecipeDetailsEntity? recipeModel;
 
@@ -17,7 +19,7 @@ class RecipeStepsList extends StatelessWidget {
       children: List.generate(
         steps?.length ?? 0,
         (index) => RecipeStep(
-          stepNumber: index,
+          stepNumber: index + 1,
           step: steps?[index] ?? '',
         ),
       ),
@@ -40,22 +42,18 @@ class RecipeStep extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          width: context.deviceWidth * 0.075,
-          padding: const EdgeInsetsDirectional.all(4),
-          decoration: BoxDecoration(
-            color: context.theme.primaryColorLight,
-            shape: BoxShape.circle,
-          ),
+        CircleAvatar(
+          backgroundColor: context.theme.primaryColorLight,
           child: Text(
-            (stepNumber + 1).toString(),
+            '$stepNumber',
             style: const TextStyle(
               fontWeight: AppFontWeights.regular,
               fontSize: 16,
               color: AppColors.white,
             ),
-          ).centered(),
+          ),
         ),
+
         SizedBox(
           width: context.deviceWidth * 0.04,
         ),

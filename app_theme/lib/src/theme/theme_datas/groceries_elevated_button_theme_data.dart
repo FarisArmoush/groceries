@@ -5,33 +5,33 @@ abstract final class GroceriesElevatedButtonThemeData {
   static final light = ElevatedButtonThemeData(
     style: ButtonStyle(
       splashFactory: appSplashFactory,
-      shape: MaterialStateProperty.all<OutlinedBorder>(
+      shape: WidgetStateProperty.all<OutlinedBorder>(
         RoundedRectangleBorder(
           borderRadius: BorderRadiusDirectional.circular(12),
         ),
       ),
-      backgroundColor: MaterialStateProperty.resolveWith<Color>(
-        (Set<MaterialState> states) {
-          if (states.contains(MaterialState.disabled)) {
+      backgroundColor: WidgetStateProperty.resolveWith<Color>(
+        (Set<WidgetState> states) {
+          if (states.contains(WidgetState.disabled)) {
             return AppColors.lightGrey;
           }
           return AppColors.black;
         },
       ),
-      foregroundColor: MaterialStateProperty.all<Color>(
+      foregroundColor: WidgetStateProperty.all<Color>(
         AppColors.white,
       ),
-      overlayColor: MaterialStateProperty.all<Color>(
+      overlayColor: WidgetStateProperty.all<Color>(
         AppColors.white.withOpacity(0.12),
       ),
-      textStyle: MaterialStateProperty.all<TextStyle>(
+      textStyle: WidgetStateProperty.all<TextStyle>(
         const TextStyle(
           fontWeight: AppFontWeights.regular,
           color: AppColors.white,
           fontSize: 16,
         ),
       ),
-      iconColor: MaterialStateProperty.all<Color>(
+      iconColor: WidgetStateProperty.all<Color>(
         AppColors.white,
       ),
     ),
@@ -40,38 +40,38 @@ abstract final class GroceriesElevatedButtonThemeData {
   static final dark = ElevatedButtonThemeData(
     style: ButtonStyle(
       splashFactory: appSplashFactory,
-      shape: MaterialStateProperty.all<OutlinedBorder>(
+      shape: WidgetStateProperty.all<OutlinedBorder>(
         RoundedRectangleBorder(
           borderRadius: BorderRadiusDirectional.circular(12),
         ),
       ),
-      backgroundColor: MaterialStateProperty.resolveWith<Color>(
-        (Set<MaterialState> states) {
-          if (states.contains(MaterialState.disabled)) {
+      backgroundColor: WidgetStateProperty.resolveWith<Color>(
+        (Set<WidgetState> states) {
+          if (states.contains(WidgetState.disabled)) {
             return AppColors.lightGrey;
           }
           return AppColors.white;
         },
       ),
-      foregroundColor: MaterialStateProperty.resolveWith<Color>(
-        (Set<MaterialState> states) {
-          if (states.contains(MaterialState.disabled)) {
+      foregroundColor: WidgetStateProperty.resolveWith<Color>(
+        (Set<WidgetState> states) {
+          if (states.contains(WidgetState.disabled)) {
             return AppColors.white;
           }
           return AppColors.black;
         },
       ),
-      overlayColor: MaterialStateProperty.all<Color>(
+      overlayColor: WidgetStateProperty.all<Color>(
         AppColors.black.withOpacity(0.12),
       ),
-      textStyle: MaterialStateProperty.all<TextStyle>(
+      textStyle: WidgetStateProperty.all<TextStyle>(
         const TextStyle(
           fontWeight: AppFontWeights.regular,
           color: AppColors.white,
           fontSize: 16,
         ),
       ),
-      iconColor: MaterialStateProperty.all<Color>(
+      iconColor: WidgetStateProperty.all<Color>(
         AppColors.white,
       ),
     ),
