@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/domain/entities/recipe_details/recipe_details_entity.dart';
 import 'package:groceries/presentation/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/presentation/extensions/context_extensions.dart';
 
 class RecipeItemsList extends StatelessWidget {
   const RecipeItemsList({

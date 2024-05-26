@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:groceries/domain/entities/grocery/grocery_entity.dart';
 import 'package:groceries/presentation/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/presentation/extensions/context_extensions.dart';
 
 class GroceryItemCardIcon extends StatelessWidget {
   const GroceryItemCardIcon({required this.groceryModel, super.key});

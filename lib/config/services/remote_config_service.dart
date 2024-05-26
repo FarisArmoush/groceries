@@ -1,6 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
-import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 import 'package:groceries/utils/logger.dart';
 
 class RemoteConfigService {
@@ -13,7 +12,7 @@ class RemoteConfigService {
       await _remoteConfig.ensureInitialized();
       await _remoteConfig.setConfigSettings(
         RemoteConfigSettings(
-          fetchTimeout: 10.seconds,
+          fetchTimeout: const Duration(seconds: 10),
           minimumFetchInterval: Duration.zero,
         ),
       );

@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:groceries/domain/entities/grocery_list_details/grocery_list_details_entity.dart';
+import 'package:groceries/presentation/extensions/context_extensions.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/widgets/clear_grocery_list_items_button.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/widgets/grocery_list_options_button.dart';
 import 'package:groceries/presentation/widgets/groceries_app_bar.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class GroceryListDetailsAppBar extends StatelessWidget {
   const GroceryListDetailsAppBar({required this.listModel, super.key});

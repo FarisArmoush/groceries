@@ -3,8 +3,8 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/domain/entities/recipe/recipe_entity.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
+import 'package:groceries/presentation/extensions/context_extensions.dart';
 import 'package:groceries/presentation/modules/recipes/widgets/recipe_card/recipe_card.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class RecipesList extends StatelessWidget {
   const RecipesList({

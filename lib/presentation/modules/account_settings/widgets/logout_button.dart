@@ -5,11 +5,11 @@ import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/blocs/logout/logout_bloc.dart';
 import 'package:groceries/presentation/constants/assets.gen.dart';
+import 'package:groceries/presentation/extensions/context_extensions.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/logout_bottom_sheet.dart';
 import 'package:groceries/presentation/modules/root/bloc/root_navigation_bloc.dart';
 import 'package:groceries/presentation/widgets/app_list_tile_button.dart';
 import 'package:groceries/presentation/widgets/app_snack_bars.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class LogoutButton extends StatelessWidget {
   const LogoutButton({super.key});

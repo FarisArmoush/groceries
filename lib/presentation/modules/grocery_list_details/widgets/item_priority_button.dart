@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/domain/entities/grocery/grocery_entity.dart';
 import 'package:groceries/domain/entities/priority/priority_entity.dart';
 import 'package:groceries/presentation/blocs/priorities/priorities_bloc.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries/utils/extenstions/hex_color.dart';
+import 'package:groceries/presentation/extensions/context_extensions.dart';
+import 'package:groceries/presentation/extensions/hex_color.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 class ItemPriorityButton extends StatefulWidget {

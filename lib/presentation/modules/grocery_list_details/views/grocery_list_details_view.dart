@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:groceries/presentation/extensions/widgets_as_extensions.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/bloc/grocery_list_details_bloc.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/widgets/empty_grocery_list.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/widgets/grocery_list_details_app_bar.dart';
@@ -7,7 +8,6 @@ import 'package:groceries/presentation/modules/grocery_list_details/widgets/groc
 import 'package:groceries/presentation/modules/grocery_list_details/widgets/grocery_list_details_form.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/error_state.dart';
-import 'package:groceries/utils/extenstions/widgets_as_extensions.dart';
 
 class GroceryListDetailsView extends StatefulWidget {
   const GroceryListDetailsView({required this.uid, super.key});

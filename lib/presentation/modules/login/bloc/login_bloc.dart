@@ -9,7 +9,6 @@ import 'package:groceries/domain/use_cases/authentication_use_cases/login_with_e
 import 'package:groceries/presentation/forms/email_form.dart';
 import 'package:groceries/presentation/forms/login_password_form.dart';
 import 'package:groceries/utils/exceptions/app_network_exception.dart';
-import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 import 'package:injectable/injectable.dart';
 
 part 'login_bloc.freezed.dart';
@@ -124,7 +123,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       emit(state.copyWith(status: FormzSubmissionStatus.failure));
     } finally {
       await Future.delayed(
-        200.milliseconds,
+        const Duration(milliseconds: 200),
         () => emit(state.copyWith(status: FormzSubmissionStatus.initial)),
       );
     }

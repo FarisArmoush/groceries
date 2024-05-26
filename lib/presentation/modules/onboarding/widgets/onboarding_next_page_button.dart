@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/widgets/next_arrow_icon.dart';
-import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 class OnboardingNextPageButton extends StatelessWidget {
@@ -13,7 +12,7 @@ class OnboardingNextPageButton extends StatelessWidget {
       tooltip: Translations.onboarding.nextPage,
       onPressed: () => pageController.nextPage(
         curve: Curves.ease,
-        duration: 500.milliseconds,
+        duration:const Duration(milliseconds: 500),
       ),
       child: const NextArrowIcon(
         color: AppColors.white,

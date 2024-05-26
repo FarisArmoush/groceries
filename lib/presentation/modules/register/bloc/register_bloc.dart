@@ -8,7 +8,6 @@ import 'package:groceries/presentation/forms/display_name_form.dart';
 import 'package:groceries/presentation/forms/email_form.dart';
 import 'package:groceries/presentation/forms/register_password_form.dart';
 import 'package:groceries/utils/exceptions/app_network_exception.dart';
-import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 import 'package:injectable/injectable.dart';
 
 part 'register_bloc.freezed.dart';
@@ -182,7 +181,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       emit(state.copyWith(status: FormzSubmissionStatus.failure));
     } finally {
       await Future.delayed(
-        200.milliseconds,
+        const Duration(milliseconds: 200),
         () => emit(state.copyWith(status: FormzSubmissionStatus.initial)),
       );
     }

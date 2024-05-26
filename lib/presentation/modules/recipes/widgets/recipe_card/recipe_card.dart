@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/domain/entities/recipe/recipe_entity.dart';
+import 'package:groceries/presentation/extensions/context_extensions.dart';
 import 'package:groceries/presentation/modules/recipes/widgets/recipe_card/recipe_card_image.dart';
 import 'package:groceries/presentation/modules/recipes/widgets/recipe_card/recipe_card_title.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class RecipeCard extends StatelessWidget {
   const RecipeCard({

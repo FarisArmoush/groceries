@@ -4,8 +4,8 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/presentation/blocs/logout/logout_bloc.dart';
 import 'package:groceries/presentation/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries/utils/extenstions/padding_extensions.dart';
+import 'package:groceries/presentation/extensions/context_extensions.dart';
+import 'package:groceries/presentation/extensions/padding_extensions.dart';
 
 class VerificationEmailSentSuccessfully extends StatelessWidget {
   const VerificationEmailSentSuccessfully({super.key});

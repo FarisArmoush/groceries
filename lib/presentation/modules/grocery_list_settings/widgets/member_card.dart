@@ -4,9 +4,9 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/domain/entities/user/user_entity.dart';
 import 'package:groceries/presentation/constants/assets.gen.dart';
+import 'package:groceries/presentation/extensions/context_extensions.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/presentation/widgets/cancel_bottom_sheet.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class MemberCard extends StatelessWidget {
   const MemberCard({required this.userModel, super.key});

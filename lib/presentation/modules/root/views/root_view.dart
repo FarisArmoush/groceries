@@ -6,6 +6,7 @@ import 'package:groceries/presentation/blocs/grocery_lists/grocery_lists_bloc.da
 import 'package:groceries/presentation/blocs/my_tasks/my_tasks_bloc.dart';
 import 'package:groceries/presentation/blocs/priorities/priorities_bloc.dart';
 import 'package:groceries/presentation/constants/assets.gen.dart';
+import 'package:groceries/presentation/extensions/context_extensions.dart';
 import 'package:groceries/presentation/models/app_bottom_navigation_bar_item/app_bottom_navigation_bar_item.dart';
 import 'package:groceries/presentation/modules/home/views/home_view.dart';
 import 'package:groceries/presentation/modules/recipes/bloc/recipes_bloc.dart';
@@ -13,7 +14,6 @@ import 'package:groceries/presentation/modules/recipes/views/recipes_view.dart';
 import 'package:groceries/presentation/modules/root/bloc/root_navigation_bloc.dart';
 import 'package:groceries/presentation/modules/settings/views/settings_view.dart';
 import 'package:groceries/presentation/widgets/app_bottom_navigation_bar.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class RootView extends StatefulWidget {
   const RootView({super.key});

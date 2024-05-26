@@ -7,6 +7,7 @@ import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/blocs/remote_config/remote_config_bloc.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
+import 'package:groceries/presentation/extensions/context_extensions.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/edit_user_image_button.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/is_user_verified_list_tile.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/logout_button.dart';
@@ -15,8 +16,6 @@ import 'package:groceries/presentation/modules/account_settings/widgets/user_dis
 import 'package:groceries/presentation/modules/account_settings/widgets/user_email_list_tile.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/user_image.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 
 class AccountSettingsView extends StatelessWidget {
   const AccountSettingsView({super.key});
@@ -92,7 +91,7 @@ class _DeleteAccountButtonState extends State<_DeleteAccountButton> {
             barrierDismissible: false,
           );
           Future.delayed(
-            500.milliseconds,
+            const Duration(milliseconds: 500),
             () => context
               ..pop()
               ..pushNamed(AppRoute.deleteAccount.named),

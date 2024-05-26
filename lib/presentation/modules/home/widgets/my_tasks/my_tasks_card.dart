@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/domain/entities/task/task_entity.dart';
+import 'package:groceries/presentation/extensions/context_extensions.dart';
+import 'package:groceries/presentation/extensions/padding_extensions.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries/utils/extenstions/padding_extensions.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 class MyTasksCard extends StatelessWidget {

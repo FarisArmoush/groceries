@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/config/routes/app_route.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
+import 'package:groceries/presentation/extensions/context_extensions.dart';
 import 'package:groceries/presentation/modules/create_list/bloc/create_list_bloc.dart';
 import 'package:groceries/presentation/modules/create_list/widgets/create_list_button.dart';
 import 'package:groceries/presentation/modules/create_list/widgets/create_list_icons_grid.dart';
@@ -12,7 +13,6 @@ import 'package:groceries/presentation/modules/create_list/widgets/invite_people
 import 'package:groceries/presentation/modules/create_list/widgets/invite_to_list_buttons.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/cancel_bottom_sheet.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class CreateListView extends StatefulWidget {
   const CreateListView({super.key});
