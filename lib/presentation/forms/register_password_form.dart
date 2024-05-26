@@ -1,6 +1,6 @@
 import 'package:formz/formz.dart';
 import 'package:groceries/config/localization/translations.dart';
-import 'package:groceries/utils/app_reg_exps.dart';
+import 'package:groceries/presentation/forms/helpers/app_reg_exps.dart';
 
 /// A class representing a register password input form field.
 /// This class extends the FormzInput class and is specifically

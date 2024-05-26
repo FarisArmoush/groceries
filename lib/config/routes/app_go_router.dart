@@ -37,7 +37,6 @@ import 'package:groceries/presentation/modules/update_email/views/update_email_v
 import 'package:groceries/presentation/modules/verify_user/views/verify_user_view.dart';
 import 'package:groceries/presentation/modules/welcome/views/welcome_view.dart';
 import 'package:groceries/presentation/modules/wrapper/views/wrapper_view.dart';
-import 'package:groceries/utils/extenstions/path.dart';
 import 'package:groceries/utils/logger.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
@@ -57,21 +56,21 @@ final GoRouter appGoRouter = GoRouter(
         final hasViewedOnboarding =
             await cacheService.read<bool>('hasViewedOnboarding');
         if (hasViewedOnboarding case null || false) {
-          return AppRoute.onboarding.named.path;
+          return '/${AppRoute.onboarding.named}';
         }
         return null;
       },
     ),
     GoRoute(
       name: AppRoute.onboarding.named,
-      path: AppRoute.onboarding.named.path,
+      path: '/${AppRoute.onboarding.named}',
       builder: (context, state) => OnboardingView(
         key: Key(AppRoute.onboarding.key),
       ),
     ),
     GoRoute(
       name: AppRoute.welcome.named,
-      path: AppRoute.welcome.named.path,
+      path: '/${AppRoute.welcome.named}',
       builder: (context, state) => WelcomeView(
         key: Key(AppRoute.welcome.key),
       ),
@@ -115,7 +114,7 @@ final GoRouter appGoRouter = GoRouter(
     ),
     GoRoute(
       name: AppRoute.root.named,
-      path: AppRoute.root.named.path,
+      path: '/${AppRoute.root.named}',
       builder: (context, state) => RootView(
         key: Key(AppRoute.root.key),
       ),
@@ -312,7 +311,7 @@ final GoRouter appGoRouter = GoRouter(
     ),
     GoRoute(
       name: AppRoute.pageNotFound.named,
-      path: AppRoute.pageNotFound.named.path,
+      path: '/${AppRoute.pageNotFound.named}',
       builder: (context, state) => PageNotFoundView(
         key: Key(AppRoute.pageNotFound.key),
       ),

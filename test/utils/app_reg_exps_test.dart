@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:groceries/utils/app_reg_exps.dart';
+import 'package:groceries/presentation/forms/helpers/app_reg_exps.dart';
 
 void main() {
   group('AppRegExps', () {

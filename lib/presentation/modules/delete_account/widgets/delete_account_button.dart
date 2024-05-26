@@ -7,7 +7,6 @@ import 'package:groceries/presentation/extensions/widgets_as_extensions.dart';
 import 'package:groceries/presentation/modules/delete_account/bloc/delete_account_bloc.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/app_snack_bars.dart';
-import 'package:groceries/utils/extenstions/path.dart';
 
 class DeleteAccountButton extends StatelessWidget {
   const DeleteAccountButton({super.key});
@@ -17,7 +16,7 @@ class DeleteAccountButton extends StatelessWidget {
     return BlocListener<DeleteAccountBloc, DeleteAccountState>(
       listener: (context, state) => state.status.whenOrNull(
         success: () => context.pushReplacementNamed(
-          AppRoute.welcome.named.path,
+          '/${AppRoute.welcome.named}',
         ),
         failure: (error) {
           context.pop();
