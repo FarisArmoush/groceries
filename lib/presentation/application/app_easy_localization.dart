@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:groceries/presentation/application/app_view.dart';
 import 'package:groceries/config/localization/remote_config_translations_loader.dart';
+import 'package:groceries/presentation/application/app_view.dart';
 
 /// A widget that configures [EasyLocalization] for the entire app.
 ///

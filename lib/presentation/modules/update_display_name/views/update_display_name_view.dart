@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/translations.dart';
-import 'package:groceries/presentation/router/app_route.dart';
 import 'package:groceries/presentation/blocs/user_data/user_data_cubit.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/extensions/context_extensions.dart';
@@ -13,6 +12,7 @@ import 'package:groceries/presentation/modules/update_display_name/widgets/submi
 import 'package:groceries/presentation/modules/update_display_name/widgets/update_display_name_body_text.dart';
 import 'package:groceries/presentation/modules/update_display_name/widgets/update_display_name_header_text.dart';
 import 'package:groceries/presentation/modules/update_display_name/widgets/update_display_name_text_field.dart';
+import 'package:groceries/presentation/router/app_route.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/app_snack_bars.dart';
 

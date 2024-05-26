@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/injection/injector.dart';
-import 'package:groceries/presentation/router/app_route.dart';
 import 'package:groceries/data/services/cache/cache_service.dart';
 import 'package:groceries/domain/entities/category/category_entity.dart';
 import 'package:groceries/presentation/modules/account_settings/views/account_settings_view.dart';
@@ -37,6 +36,7 @@ import 'package:groceries/presentation/modules/update_email/views/update_email_v
 import 'package:groceries/presentation/modules/verify_user/views/verify_user_view.dart';
 import 'package:groceries/presentation/modules/welcome/views/welcome_view.dart';
 import 'package:groceries/presentation/modules/wrapper/views/wrapper_view.dart';
+import 'package:groceries/presentation/router/app_route.dart';
 import 'package:groceries/shared/logger.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
