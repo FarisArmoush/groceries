@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:groceries/config/routes/app_route.dart';
+import 'package:groceries/presentation/router/app_route.dart';
 import 'package:groceries/domain/entities/category/category_entity.dart';
 import 'package:groceries/presentation/extensions/padding_extensions.dart';
 import 'package:groceries/presentation/widgets/next_arrow_icon.dart';

@@ -1,4 +1,4 @@
-import 'package:groceries/config/routes/app_route.dart';
+import 'package:groceries/presentation/router/app_route.dart';
 
 /// Extension to provide keys corresponding to different routes in
 /// the application.

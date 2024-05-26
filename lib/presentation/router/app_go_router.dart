@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/injection/injector.dart';
-import 'package:groceries/config/routes/app_route.dart';
+import 'package:groceries/presentation/router/app_route.dart';
 import 'package:groceries/data/services/cache/cache_service.dart';
 import 'package:groceries/domain/entities/category/category_entity.dart';
 import 'package:groceries/presentation/modules/account_settings/views/account_settings_view.dart';
