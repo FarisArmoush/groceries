@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:groceries/data/data_sources/interfaces/base_groceries_data_source.dart';
 import 'package:groceries/data/models/grocery/grocery_model.dart';
-import 'package:groceries/utils/exceptions/app_network_exception.dart';
-import 'package:groceries/utils/logger.dart';
+import 'package:groceries/shared/exceptions/app_network_exception.dart';
+import 'package:groceries/shared/logger.dart';
 import 'package:injectable/injectable.dart';
 
 @named

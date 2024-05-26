@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries/data/data_sources/interfaces/theme_data_source.dart';
 import 'package:groceries/data/services/cache/cache_service.dart';
 import 'package:groceries/data/services/cache/shared_preferences_cache_service.dart';
-import 'package:groceries/utils/logger.dart';
+import 'package:groceries/shared/logger.dart';
 import 'package:injectable/injectable.dart';
 
 @named

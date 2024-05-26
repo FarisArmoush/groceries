@@ -8,7 +8,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/login_with_email_and_password_use_case.dart';
 import 'package:groceries/presentation/forms/email_form.dart';
 import 'package:groceries/presentation/forms/login_password_form.dart';
-import 'package:groceries/utils/exceptions/app_network_exception.dart';
+import 'package:groceries/shared/exceptions/app_network_exception.dart';
 import 'package:injectable/injectable.dart';
 
 part 'login_bloc.freezed.dart';

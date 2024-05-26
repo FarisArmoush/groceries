@@ -1,6 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
-import 'package:groceries/utils/logger.dart';
+import 'package:groceries/shared/logger.dart';
 
 class RemoteConfigService {
   RemoteConfigService(this._remoteConfig);

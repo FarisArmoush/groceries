@@ -37,7 +37,7 @@ import 'package:groceries/presentation/modules/update_email/views/update_email_v
 import 'package:groceries/presentation/modules/verify_user/views/verify_user_view.dart';
 import 'package:groceries/presentation/modules/welcome/views/welcome_view.dart';
 import 'package:groceries/presentation/modules/wrapper/views/wrapper_view.dart';
-import 'package:groceries/utils/logger.dart';
+import 'package:groceries/shared/logger.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 /// A variable that defines the routes and builders for the App.

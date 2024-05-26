@@ -7,7 +7,7 @@ import 'package:groceries/presentation/forms/confirmed_password_form.dart';
 import 'package:groceries/presentation/forms/display_name_form.dart';
 import 'package:groceries/presentation/forms/email_form.dart';
 import 'package:groceries/presentation/forms/register_password_form.dart';
-import 'package:groceries/utils/exceptions/app_network_exception.dart';
+import 'package:groceries/shared/exceptions/app_network_exception.dart';
 import 'package:injectable/injectable.dart';
 
 part 'register_bloc.freezed.dart';

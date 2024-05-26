@@ -5,7 +5,7 @@ import 'package:groceries/data/models/category/category_model.dart';
 import 'package:groceries/data/services/cache/cache_service.dart';
 import 'package:groceries/data/services/cache/hive_cache_service.dart';
 import 'package:groceries/domain/repositories/cateogries_repository.dart';
-import 'package:groceries/utils/logger.dart';
+import 'package:groceries/shared/logger.dart';
 import 'package:injectable/injectable.dart';
 
 @Singleton(as: CategoriesRepository)

@@ -11,7 +11,7 @@ import 'package:groceries/presentation/modules/home/widgets/grocery_lists/grocer
 import 'package:groceries/presentation/modules/home/widgets/home_app_bar.dart';
 import 'package:groceries/presentation/modules/home/widgets/my_tasks/my_tasks_form.dart';
 import 'package:groceries/presentation/widgets/sliver_sized_box.dart';
-import 'package:groceries/utils/logger.dart';
+import 'package:groceries/shared/logger.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});

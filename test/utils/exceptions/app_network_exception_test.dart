@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:groceries/config/localization/translations.dart';
-import 'package:groceries/utils/exceptions/app_network_exception.dart';
+import 'package:groceries/shared/exceptions/app_network_exception.dart';
 
 void main() {
   group('AppNetworkException', () {

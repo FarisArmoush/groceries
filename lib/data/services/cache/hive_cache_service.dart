@@ -1,5 +1,5 @@
 import 'package:groceries/data/services/cache/cache_service.dart';
-import 'package:groceries/utils/logger.dart';
+import 'package:groceries/shared/logger.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 

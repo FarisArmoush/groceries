@@ -7,7 +7,7 @@ import 'package:groceries/domain/use_cases/create_list_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
 import 'package:groceries/presentation/constants/assets.gen.dart';
 import 'package:groceries/presentation/forms/grocery_list_name_form.dart';
-import 'package:groceries/utils/exceptions/app_network_exception.dart';
+import 'package:groceries/shared/exceptions/app_network_exception.dart';
 import 'package:injectable/injectable.dart';
 
 part 'create_list_bloc.freezed.dart';

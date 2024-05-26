@@ -4,7 +4,7 @@ import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/domain/entities/priority/priority_entity.dart';
 import 'package:groceries/domain/use_cases/fetch_priorities_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
-import 'package:groceries/utils/exceptions/app_network_exception.dart';
+import 'package:groceries/shared/exceptions/app_network_exception.dart';
 import 'package:injectable/injectable.dart';
 
 part 'priorities_bloc.freezed.dart';

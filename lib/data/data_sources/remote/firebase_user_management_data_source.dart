@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:groceries/data/data_sources/instances.dart';
 import 'package:groceries/data/data_sources/interfaces/user_management_data_source.dart';
-import 'package:groceries/utils/exceptions/app_network_exception.dart';
-import 'package:groceries/utils/logger.dart';
+import 'package:groceries/shared/exceptions/app_network_exception.dart';
+import 'package:groceries/shared/logger.dart';
 import 'package:injectable/injectable.dart';
 
 @named

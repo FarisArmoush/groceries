@@ -5,7 +5,7 @@ import 'package:groceries/data/models/grocery/grocery_model.dart';
 import 'package:groceries/data/models/grocery_list/grocery_list_model.dart';
 import 'package:groceries/data/models/refinements/refinements_model.dart';
 import 'package:groceries/data/models/user/user_model.dart';
-import 'package:groceries/utils/logger.dart';
+import 'package:groceries/shared/logger.dart';
 import 'package:injectable/injectable.dart';
 
 @named
