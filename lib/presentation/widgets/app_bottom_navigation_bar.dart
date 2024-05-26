@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:groceries/presentation/extensions/context_extensions.dart';
 import 'package:groceries/presentation/models/app_bottom_navigation_bar_item/app_bottom_navigation_bar_item.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 /// A customizable bottom navigation bar widget for the application.
@@ -64,7 +63,7 @@ class AppBottomNavigationBar extends StatelessWidget {
         end: items.indexOf(item) == currentIndex ? 1 : 0,
       ),
       curve: Curves.easeOutQuint,
-      duration: 500.milliseconds,
+      duration: const Duration(milliseconds: 500),
       builder: (context, t, _) {
         final selectedColor = item.selectedColor ??
             selectedItemColor ??

@@ -1,9 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:groceries/data/data_sources/interfaces/base_groceries_data_source.dart';
 import 'package:groceries/data/models/grocery/grocery_model.dart';
-import 'package:groceries/utils/exceptions/app_network_exception.dart';
-import 'package:groceries/utils/keys/firestore_keys.dart';
-import 'package:groceries/utils/logger.dart';
+import 'package:groceries/shared/exceptions/app_network_exception.dart';
+import 'package:groceries/shared/logger.dart';
 import 'package:injectable/injectable.dart';
 
 @named
@@ -16,9 +15,9 @@ class FirestoreBaseGroceriesDataSource implements BaseGroceriesDataSource {
   Future<List<GroceryModel>> fetchCategoryItems(String? categoryId) async {
     try {
       final collectionReference = _firestore
-          .collection(FirestoreCollection.items)
-          .orderBy(FirestoreField.name)
-          .where(FirestoreField.categoryId, isEqualTo: categoryId);
+          .collection('items')
+          .orderBy('name')
+          .where('categoryId', isEqualTo: categoryId);
 
       final result = await collectionReference.get();
 

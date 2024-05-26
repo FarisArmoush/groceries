@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/translations.dart';
-import 'package:groceries/config/routes/app_route.dart';
-import 'package:groceries/utils/extenstions/widgets_as_extensions.dart';
+import 'package:groceries/presentation/router/app_route.dart';
+import 'package:groceries/presentation/extensions/widgets_as_extensions.dart';
 
 class CreateRecipeButton extends StatelessWidget {
   const CreateRecipeButton({super.key});

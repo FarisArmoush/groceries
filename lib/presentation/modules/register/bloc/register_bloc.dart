@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/register_with_email_and_password_use_case.dart';
-import 'package:groceries/utils/exceptions/app_network_exception.dart';
-import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
-import 'package:groceries/utils/forms/confirmed_password_form.dart';
-import 'package:groceries/utils/forms/display_name_form.dart';
-import 'package:groceries/utils/forms/email_form.dart';
-import 'package:groceries/utils/forms/register_password_form.dart';
+import 'package:groceries/presentation/forms/confirmed_password_form.dart';
+import 'package:groceries/presentation/forms/display_name_form.dart';
+import 'package:groceries/presentation/forms/email_form.dart';
+import 'package:groceries/presentation/forms/register_password_form.dart';
+import 'package:groceries/shared/exceptions/app_network_exception.dart';
 import 'package:injectable/injectable.dart';
 
 part 'register_bloc.freezed.dart';
@@ -182,7 +181,7 @@ class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
       emit(state.copyWith(status: FormzSubmissionStatus.failure));
     } finally {
       await Future.delayed(
-        200.milliseconds,
+        const Duration(milliseconds: 200),
         () => emit(state.copyWith(status: FormzSubmissionStatus.initial)),
       );
     }

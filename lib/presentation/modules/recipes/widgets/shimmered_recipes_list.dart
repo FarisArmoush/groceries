@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
+import 'package:groceries/presentation/extensions/context_extensions.dart';
 import 'package:groceries/presentation/modules/recipes/widgets/shimmered_recipe_card.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class ShimmeredRecipesList extends StatelessWidget {
   const ShimmeredRecipesList({super.key});

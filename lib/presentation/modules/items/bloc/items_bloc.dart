@@ -4,7 +4,7 @@ import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/domain/entities/grocery/grocery_entity.dart';
 import 'package:groceries/domain/use_cases/fetch_category_items_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
-import 'package:groceries/utils/exceptions/app_network_exception.dart';
+import 'package:groceries/shared/exceptions/app_network_exception.dart';
 import 'package:injectable/injectable.dart';
 
 part 'items_bloc.freezed.dart';

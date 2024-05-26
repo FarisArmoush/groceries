@@ -7,7 +7,7 @@ part 'grocery_list_details_entity.freezed.dart';
 
 @freezed
 class GroceryListDetailsEntity with _$GroceryListDetailsEntity {
-  factory GroceryListDetailsEntity({
+  const factory GroceryListDetailsEntity({
     String? id,
     String? name,
     String? imageUrl,

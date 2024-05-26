@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:groceries/domain/entities/grocery/grocery_entity.dart';
+import 'package:groceries/presentation/extensions/context_extensions.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/widgets/grocery_item_tile.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class GroceriesBoxList extends StatelessWidget {
   const GroceriesBoxList({

@@ -5,7 +5,7 @@ import 'package:groceries/domain/entities/recipe_details/recipe_details_entity.d
 import 'package:groceries/domain/use_cases/delete_recipe_use_case.dart';
 import 'package:groceries/domain/use_cases/fetch_recipe_details_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
-import 'package:groceries/utils/exceptions/app_network_exception.dart';
+import 'package:groceries/shared/exceptions/app_network_exception.dart';
 import 'package:injectable/injectable.dart';
 
 part 'recipe_details_bloc.freezed.dart';

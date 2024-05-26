@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/config/localization/translations.dart';
+import 'package:groceries/presentation/extensions/context_extensions.dart';
 import 'package:groceries/presentation/modules/add_items/bloc/add_items_bloc.dart';
 import 'package:groceries/presentation/modules/add_items/widgets/add_items_categories_list.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
@@ -8,7 +9,6 @@ import 'package:groceries/presentation/widgets/app_snack_bars.dart';
 import 'package:groceries/presentation/widgets/error_state.dart';
 import 'package:groceries/presentation/widgets/groceries_app_bar.dart';
 import 'package:groceries/presentation/widgets/sliver_sized_box.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class AddItemsView extends StatefulWidget {
   const AddItemsView({super.key});

@@ -3,8 +3,6 @@ import 'package:groceries/data/models/priority/priority_model.dart';
 import 'package:groceries/data/services/cache/cache_service.dart';
 import 'package:groceries/data/services/cache/hive_cache_service.dart';
 import 'package:groceries/data/services/stale_data_checker.dart';
-import 'package:groceries/utils/keys/storage_keys.dart';
-import 'package:groceries/utils/typedefs/typedefs.dart';
 import 'package:injectable/injectable.dart';
 
 @named
@@ -24,7 +22,7 @@ class LocalPrioritiesDataSource implements DataSource {
   }) {
     return switch (requestType) {
       RequestType.write => _write(
-          (body ?? <JSON>[]) as List<JSON>,
+          (body ?? <Map<String, dynamic>>[]) as List<Map<String, dynamic>>,
         ),
       RequestType.read => _read(),
       _ => Future.delayed(Duration.zero),
@@ -32,18 +30,20 @@ class LocalPrioritiesDataSource implements DataSource {
   }
 
   Future<T?> _write<T>(Object body) async {
-    return await _cacheService.write<List<JSON>>(
-      StorageKeys.priorities,
+    return await _cacheService.write<List<Map<String, dynamic>>>(
+      'priorities',
       body as List<Map<String, dynamic>>,
     ) as T;
   }
 
   Future<T?> _read<T>() async {
     final dataIsStale = !(await _staleDataChecker.shouldFetchFromRemote(
-      lastFetchTimeKey: StorageKeys.lastPrioritiesFetch,
+      lastFetchTimeKey: 'lastPrioritiesFetch',
       days: 1,
     ));
-    final value = await _cacheService.read<List<JSON>>(StorageKeys.priorities);
+    final value = await _cacheService.read<List<Map<String, dynamic>>>(
+      'priorities',
+    );
     if (value != null && value.isNotEmpty && dataIsStale) {
       final cachedValue = value.map(PriorityModel.fromJson).toList();
       return cachedValue as T;

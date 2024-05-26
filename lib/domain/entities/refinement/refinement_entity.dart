@@ -5,7 +5,7 @@ part 'refinement_entity.freezed.dart';
 
 @freezed
 class RefinementEntity with _$RefinementEntity {
-  factory RefinementEntity({
+  const factory RefinementEntity({
     String? refinement,
     bool? isChecked,
   }) = _RefinementEntity;

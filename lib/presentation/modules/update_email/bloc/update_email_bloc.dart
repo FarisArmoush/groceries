@@ -3,9 +3,8 @@ import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/domain/use_cases/authentication_use_cases/update_email_use_case.dart';
-import 'package:groceries/utils/exceptions/app_network_exception.dart';
-import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
-import 'package:groceries/utils/forms/email_form.dart';
+import 'package:groceries/presentation/forms/email_form.dart';
+import 'package:groceries/shared/exceptions/app_network_exception.dart';
 import 'package:injectable/injectable.dart';
 
 part 'update_email_bloc.freezed.dart';
@@ -48,7 +47,7 @@ class UpdateEmailBloc extends Bloc<UpdateEmailEvent, UpdateEmailState> {
       );
     } finally {
       await Future.delayed(
-        200.milliseconds,
+        const Duration(milliseconds: 200),
         () => emit(state.copyWith(status: FormzSubmissionStatus.initial)),
       );
     }

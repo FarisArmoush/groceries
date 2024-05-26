@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
+import 'package:groceries/presentation/constants/assets.gen.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 abstract final class AppSnackBars {

@@ -2,8 +2,6 @@ import 'package:groceries/data/data_sources/interfaces/categories_data_source.da
 import 'package:groceries/data/models/category/category_model.dart';
 import 'package:groceries/data/services/cache/cache_service.dart';
 import 'package:groceries/data/services/cache/hive_cache_service.dart';
-import 'package:groceries/utils/keys/storage_keys.dart';
-import 'package:groceries/utils/typedefs/typedefs.dart';
 import 'package:injectable/injectable.dart';
 
 @named
@@ -16,8 +14,8 @@ class LocalCategoriesDataSource implements CategoriesDataSource {
   final CacheService _cacheService;
   @override
   Future<List<CategoryModel>> fetchCategories([String? categoryId]) async {
-    final rawCategories = await _cacheService.read<List<JSON>>(
-      categoryId ?? StorageKeys.parentCategories,
+    final rawCategories = await _cacheService.read<List<Map<String, dynamic>>>(
+      categoryId ?? 'parentCategories',
     );
     final categories = rawCategories?.map(CategoryModel.fromJson) ?? [];
     return categories.toList();

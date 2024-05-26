@@ -5,7 +5,7 @@ part 'priority_entity.freezed.dart';
 
 @freezed
 class PriorityEntity with _$PriorityEntity {
-  factory PriorityEntity({
+  const factory PriorityEntity({
     String? color,
     String? id,
     int? index,

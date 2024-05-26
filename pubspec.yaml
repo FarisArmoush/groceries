@@ -56,7 +56,7 @@ dev_dependencies:
   very_good_analysis: ^5.0.0+1
 
 flutter_gen: 
-  output: lib/utils/constants/
+  output: lib/presentation/constants/
   integrations:
     flutter_svg: true
 

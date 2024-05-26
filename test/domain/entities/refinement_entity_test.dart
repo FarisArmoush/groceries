@@ -10,7 +10,7 @@ void main() {
       isChecked: true,
     );
 
-    final testEntity = RefinementEntity(
+    const testEntity = RefinementEntity(
       refinement: 'Free Shipping',
       isChecked: true,
     );

@@ -2,9 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:groceries/data/data_sources/interfaces/authentication_data_source.dart';
 import 'package:groceries/data/models/user/user_model.dart';
-import 'package:groceries/utils/exceptions/app_network_exception.dart';
-import 'package:groceries/utils/keys/firestore_keys.dart';
-import 'package:groceries/utils/logger.dart';
+import 'package:groceries/shared/exceptions/app_network_exception.dart';
+import 'package:groceries/shared/logger.dart';
 import 'package:injectable/injectable.dart';
 
 @named
@@ -78,14 +77,14 @@ class FirebaseAuthenticationDataSource implements AuthenticationDataSource {
       )
           .then((user) {
         final setData = {
-          FirestoreField.creationDate: DateTime.timestamp(),
-          FirestoreField.email: email,
-          FirestoreField.id: user.user?.uid,
-          FirestoreField.image: '',
-          FirestoreField.displayName: name,
+          'creationDate': DateTime.timestamp(),
+          'email': email,
+          'id': user.user?.uid,
+          'image': '',
+          'displayName': name,
         };
         firestore
-            .collection(FirestoreCollection.users)
+            .collection('users')
             .doc(user.user?.uid)
             .set(setData);
         firebaseAuth.currentUser?.updateDisplayName(name);
@@ -104,7 +103,7 @@ class FirebaseAuthenticationDataSource implements AuthenticationDataSource {
   Future<void> deleteAccount() async {
     try {
       await firestore
-          .collection(FirestoreCollection.users)
+          .collection('users')
           .doc(firebaseAuth.currentUser?.uid)
           .delete();
       await firebaseAuth.currentUser?.delete();

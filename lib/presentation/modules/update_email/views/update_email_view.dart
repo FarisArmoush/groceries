@@ -3,9 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/translations.dart';
-import 'package:groceries/config/routes/app_route.dart';
+import 'package:groceries/presentation/router/app_route.dart';
 import 'package:groceries/presentation/blocs/user_data/user_data_cubit.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
+import 'package:groceries/presentation/extensions/context_extensions.dart';
 import 'package:groceries/presentation/modules/root/bloc/root_navigation_bloc.dart';
 import 'package:groceries/presentation/modules/update_email/bloc/update_email_bloc.dart';
 import 'package:groceries/presentation/modules/update_email/widgets/submit_new_email_button.dart';
@@ -14,7 +15,6 @@ import 'package:groceries/presentation/modules/update_email/widgets/update_email
 import 'package:groceries/presentation/modules/update_email/widgets/update_email_text_field.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/app_snack_bars.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class UpdateEmailView extends StatelessWidget {
   const UpdateEmailView({super.key});

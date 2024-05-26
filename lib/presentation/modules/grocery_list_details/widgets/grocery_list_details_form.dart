@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:groceries/domain/entities/grocery_list_details/grocery_list_details_entity.dart';
+import 'package:groceries/presentation/extensions/context_extensions.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/widgets/groceries_list.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
 
 class GroceryListDetailsForm extends StatelessWidget {
   const GroceryListDetailsForm({

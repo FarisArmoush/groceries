@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/domain/entities/category/category_entity.dart';
+import 'package:groceries/presentation/extensions/widgets_as_extensions.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/widgets/groceries_box_list.dart';
 import 'package:groceries/presentation/modules/items/bloc/items_bloc.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/error_state.dart';
 import 'package:groceries/presentation/widgets/groceries_app_bar.dart';
 import 'package:groceries/presentation/widgets/sliver_sized_box.dart';
-import 'package:groceries/utils/extenstions/widgets_as_extensions.dart';
 
 class ItemsView extends StatefulWidget {
   const ItemsView({required this.categoryModel, super.key});

@@ -3,7 +3,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:groceries/domain/entities/recipe/recipe_entity.dart';
 import 'package:groceries/domain/use_cases/recipes_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
-import 'package:groceries/utils/extenstions/duration_simplifier_extension.dart';
 import 'package:injectable/injectable.dart';
 
 part 'recipes_bloc.freezed.dart';
@@ -32,7 +31,7 @@ class RecipesBloc extends Bloc<RecipesEvent, RecipesState> {
     );
     final recipes = await _recipesUseCase();
     await Future.delayed(
-      500.milliseconds,
+      const Duration(milliseconds: 500),
       () => emit(
         state.copyWith(
           status: const BlocStatus.success(),

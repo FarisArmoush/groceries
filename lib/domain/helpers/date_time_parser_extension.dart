@@ -1,5 +1,3 @@
-import 'package:groceries/utils/extenstions/hard_coded_extension.dart';
-
 /// Extension providing utility methods for parsing and formatting date strings.
 extension DateTimeParser on String {
   /// Formats date string to look like `11th of July 2023`.
@@ -51,7 +49,7 @@ extension DateTimeParser on String {
       return '${day}th';
     }
     return switch (day % 10) {
-      1 => '${day}st'.hardCoded,
+      1 => '${day}st',
       2 => '${day}nd',
       3 => '${day}rd',
       _ => '${day}th',

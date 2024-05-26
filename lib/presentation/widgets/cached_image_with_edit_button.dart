@@ -1,9 +1,9 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
+import 'package:groceries/presentation/constants/assets.gen.dart';
+import 'package:groceries/presentation/extensions/context_extensions.dart';
+import 'package:groceries/presentation/extensions/padding_extensions.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
-import 'package:groceries/utils/extenstions/padding_extensions.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 class CachedImageWithEditButton extends StatelessWidget {

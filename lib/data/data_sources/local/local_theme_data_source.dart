@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:groceries/data/data_sources/interfaces/theme_data_source.dart';
 import 'package:groceries/data/services/cache/cache_service.dart';
 import 'package:groceries/data/services/cache/shared_preferences_cache_service.dart';
-import 'package:groceries/utils/keys/storage_keys.dart';
-import 'package:groceries/utils/logger.dart';
+import 'package:groceries/shared/logger.dart';
 import 'package:injectable/injectable.dart';
 
 @named
@@ -17,7 +16,7 @@ class LocalThemeDataSource implements ThemeDataSource {
   final CacheService _cacheService;
   @override
   Future<ThemeMode> getTheme() async {
-    final cachedTheme = await _cacheService.read<String>(StorageKeys.themeMode);
+    final cachedTheme = await _cacheService.read<String>('themeMode');
     final theme = ThemeMode.values.firstWhereOrNull(
       (element) => element.toString() == cachedTheme,
     );
@@ -28,7 +27,7 @@ class LocalThemeDataSource implements ThemeDataSource {
   @override
   Future<void> cacheTheme(ThemeMode theme) async {
     try {
-      await _cacheService.write(StorageKeys.themeMode, theme.toString());
+      await _cacheService.write('themeMode', theme.toString());
       logger.info('Cached $theme');
     } on Exception catch (e) {
       logger.error(e.toString());

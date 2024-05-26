@@ -6,7 +6,7 @@ part 'recipe_details_entity.freezed.dart';
 
 @freezed
 class RecipeDetailsEntity with _$RecipeDetailsEntity {
-  factory RecipeDetailsEntity({
+  const factory RecipeDetailsEntity({
     String? id,
     String? name,
     String? imageUrl,

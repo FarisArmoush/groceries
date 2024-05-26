@@ -10,7 +10,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
+import 'package:groceries/presentation/extensions/context_extensions.dart';
 
 /// Standard iOS navigation bar height without the status bar.
 ///

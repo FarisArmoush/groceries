@@ -4,7 +4,7 @@ import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/domain/entities/task/task_entity.dart';
 import 'package:groceries/domain/use_cases/fetch_my_tasks_use_case.dart';
 import 'package:groceries/presentation/common/bloc_status.dart';
-import 'package:groceries/utils/exceptions/app_network_exception.dart';
+import 'package:groceries/shared/exceptions/app_network_exception.dart';
 import 'package:injectable/injectable.dart';
 
 part 'my_tasks_bloc.freezed.dart';

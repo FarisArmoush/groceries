@@ -3,13 +3,13 @@ import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/translations.dart';
 import 'package:groceries/domain/entities/grocery/grocery_entity.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
+import 'package:groceries/presentation/constants/assets.gen.dart';
+import 'package:groceries/presentation/extensions/context_extensions.dart';
 import 'package:groceries/presentation/modules/grocery_list_details/widgets/item_priority_button.dart';
 import 'package:groceries/presentation/widgets/app_text_field.dart';
 import 'package:groceries/presentation/widgets/bottom_sheet_button.dart';
 import 'package:groceries/presentation/widgets/cached_image.dart';
 import 'package:groceries/presentation/widgets/upload_image_bottom_sheet.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
-import 'package:groceries/utils/extenstions/context_extensions.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 class GroceryItemDetailsBottomSheet extends StatelessWidget {

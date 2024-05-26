@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:groceries/config/localization/translations.dart';
+import 'package:groceries/presentation/constants/assets.gen.dart';
 import 'package:groceries/presentation/models/onboarding_page_model/onboarding_page_model.dart';
 import 'package:groceries/presentation/modules/onboarding/bloc/onboarding_bloc.dart';
 import 'package:groceries/presentation/modules/onboarding/widgets/leave_onboarding_button.dart';
 import 'package:groceries/presentation/modules/onboarding/widgets/onboarding_next_page_button.dart';
 import 'package:groceries/presentation/modules/onboarding/widgets/onboarding_page_base.dart';
-import 'package:groceries/utils/constants/assets.gen.dart';
 
 class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});
