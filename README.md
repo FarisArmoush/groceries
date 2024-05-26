@@ -33,25 +33,32 @@ I've implemented a clean architecture for this project, ensuring a clear separat
 
 I've organized configuration-related elements in a separate layer to maintain clarity and modularity. This layer includes:
 
-- **Translations**: Translation keys for multilingual support.
+- **Localization**: Translation keys for multilingual support.
   
-- **Routing**: Solution objects for managing app navigation.
-  
-- **Theme Configurations**: Configuration settings for the app's theme.
+- **Injection**: Solution object for managing instances.
 
-## Util Layer
+## Shared
 
-The util layer is a collection of utility classes and objects, including:
-
-- **Forms Objects**: Utilities for handling forms.
-  
-- **App Constants**: Constants for colors, fonts, etc.
+The shared layer is a collection of utility classes and objects that dont really belong somewhere specific.
   
 - **Exceptions**: Custom exceptions for error handling.
-  
-- **Extensions**: Extensions for adding functionality to existing classes.
-  
-- **Parameters Models**: Models used when sending objects to Firebase.
+
+- **Logger**: Custom logger.
+
+## Presentaion Layer
+
+This layer includes all classes that influence the user interface:
+
+- **Application**: Contains the entry point for the application
+- **Blocs**: Shared blocs that are used throughout the app.
+- **Common**: Shared componenet that are used throughout the entire layer.
+- **Constants**: Contains data that rarely change, such as icons and illustrations.
+- **Extensions**: Some extensions that make the code easier to read.
+- **Formz**: Form objects that make validation easier.
+- **Models**: Models that are limited to the presentaion layer.
+- **Modules**: This folder contains UI modules in the app, each module contains a view, widgets, and blocs folder.
+- **Router**: Solution objects for managing app navigation.
+- **Widgets**: Widgets that are commonly used throughout the applications
 
 ## How to Use
 
