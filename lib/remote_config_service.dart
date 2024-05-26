@@ -1,4 +1,3 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:groceries/shared/logger.dart';
 
@@ -17,7 +16,7 @@ class RemoteConfigService {
         ),
       );
       await _remoteConfig.fetchAndActivate();
-    } on FirebaseException catch (e, stackTrace) {
+    } catch (e, stackTrace) {
       logger.error('Unable to initialize remote config', e, stackTrace);
     }
   }
