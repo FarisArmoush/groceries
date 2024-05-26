@@ -1,12 +1,12 @@
-import 'package:groceries/domain/repositories/authentication_repository.dart';
+import 'package:groceries/domain/repositories/user_management_repository.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
 class VerifyUserUseCase {
-  const VerifyUserUseCase(this._authenticationRepository);
+  const VerifyUserUseCase(this._userManagementRepository);
 
-  final AuthenticationRepository _authenticationRepository;
+  final UserManagementRepository _userManagementRepository;
 
   Future<void> call() async =>
-      _authenticationRepository.sendVerificationEmail();
+      _userManagementRepository.sendVerificationEmail();
 }

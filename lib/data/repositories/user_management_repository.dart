@@ -19,4 +19,14 @@ class UserManagementRepositoryImpl implements UserManagementRepository {
   Future<void> updateEmail(String? email) {
     return _dataSource.updateEmail(email);
   }
+
+  @override
+  Future<void> deleteAccount() => _dataSource.deleteAccount();
+
+  @override
+  Future<void> sendPasswordResetEmail(String? email) =>
+      _dataSource.sendPasswordResetEmail(email);
+
+  @override
+  Future<void> sendVerificationEmail() => _dataSource.sendVerificationEmail();
 }

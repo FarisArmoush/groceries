@@ -12,13 +12,7 @@ abstract interface class AuthenticationDataSource {
     required String name,
   });
 
-  Future<void> sendPasswordResetEmail(String? email);
-
   Future<void> logout();
-
-  Future<void> deleteAccount();
-
-  Future<void> sendVerificationEmail();
 
   Stream<UserModel?> get authStateChanges;
 

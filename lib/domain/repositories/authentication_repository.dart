@@ -25,17 +25,8 @@ abstract interface class AuthenticationRepository {
     required String name,
   });
 
-  /// Sends an email to the user to reset their password
-  Future<void> sendPasswordResetEmail(String? email);
-
   /// Signs out the current user.
   Future<void> logout();
-
-  /// Deletes the account of the current user.
-  Future<void> deleteAccount();
-
-  /// Sends a verification Email
-  Future<void> sendVerificationEmail();
 
   /// A stream of authentication state changes.
   Stream<UserModel?> get authStateChanges;

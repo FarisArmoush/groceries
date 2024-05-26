@@ -83,10 +83,7 @@ class FirebaseAuthenticationDataSource implements AuthenticationDataSource {
           'image': '',
           'displayName': name,
         };
-        firestore
-            .collection('users')
-            .doc(user.user?.uid)
-            .set(setData);
+        firestore.collection('users').doc(user.user?.uid).set(setData);
         firebaseAuth.currentUser?.updateDisplayName(name);
       });
       logger.info('Register successfully');
@@ -95,24 +92,6 @@ class FirebaseAuthenticationDataSource implements AuthenticationDataSource {
       throw AppNetworkException.fromCode(e.code);
     } catch (e) {
       logger.error('Error logging in', e);
-      throw const AppNetworkException();
-    }
-  }
-
-  @override
-  Future<void> deleteAccount() async {
-    try {
-      await firestore
-          .collection('users')
-          .doc(firebaseAuth.currentUser?.uid)
-          .delete();
-      await firebaseAuth.currentUser?.delete();
-      logger.info('Deleted account');
-    } on FirebaseAuthException catch (e) {
-      logger.error(e.message, e, e.stackTrace);
-      throw AppNetworkException.fromCode(e.message ?? '');
-    } catch (_) {
-      logger.error('Error deleting account');
       throw const AppNetworkException();
     }
   }
@@ -127,36 +106,6 @@ class FirebaseAuthenticationDataSource implements AuthenticationDataSource {
       throw AppNetworkException.fromCode(e.message ?? '');
     } catch (e) {
       logger.error('Error logging out', e);
-      throw const AppNetworkException();
-    }
-  }
-
-  @override
-  Future<void> sendPasswordResetEmail(String? email) async {
-    if (email == null) throw const AppNetworkException();
-
-    try {
-      await firebaseAuth.sendPasswordResetEmail(email: email);
-      logger.info('Sent password reset email');
-    } on FirebaseAuthException catch (e) {
-      logger.error(e.message, e, e.stackTrace);
-      throw AppNetworkException.fromCode(e.message ?? '');
-    } catch (_) {
-      logger.error('Error sending password reset email');
-      throw const AppNetworkException();
-    }
-  }
-
-  @override
-  Future<void> sendVerificationEmail() async {
-    try {
-      await firebaseAuth.currentUser?.sendEmailVerification();
-      logger.info('Sent verification email');
-    } on FirebaseAuthException catch (e) {
-      logger.error(e.message, e, e.stackTrace);
-      throw AppNetworkException.fromCode(e.code);
-    } catch (_) {
-      logger.error('Failed to send verification email');
       throw const AppNetworkException();
     }
   }

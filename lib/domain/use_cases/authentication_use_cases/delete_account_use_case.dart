@@ -1,11 +1,11 @@
-import 'package:groceries/domain/repositories/authentication_repository.dart';
+import 'package:groceries/domain/repositories/user_management_repository.dart';
 import 'package:injectable/injectable.dart';
 
 @injectable
 class DeleteAccountUseCase {
-  const DeleteAccountUseCase(this._authenticationRepository);
+  const DeleteAccountUseCase(this._userManagementRepository);
 
-  final AuthenticationRepository _authenticationRepository;
+  final UserManagementRepository _userManagementRepository;
 
-  Future<void> call() async => _authenticationRepository.deleteAccount();
+  Future<void> call() async => _userManagementRepository.deleteAccount();
 }

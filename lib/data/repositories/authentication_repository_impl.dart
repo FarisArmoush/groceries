@@ -30,9 +30,6 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
       );
 
   @override
-  Future<void> deleteAccount() => _dataSource.deleteAccount();
-
-  @override
   Future<void> logout() => _dataSource.logout();
 
   @override
@@ -41,11 +38,4 @@ class AuthenticationRepositoryImpl implements AuthenticationRepository {
     required String password,
   }) =>
       _dataSource.signInWithEmailAndPassword(email: email, password: password);
-
-  @override
-  Future<void> sendPasswordResetEmail(String? email) =>
-      _dataSource.sendPasswordResetEmail(email);
-
-  @override
-  Future<void> sendVerificationEmail() => _dataSource.sendVerificationEmail();
 }
