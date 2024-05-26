@@ -9,7 +9,7 @@ part 'grocery_list_details_model.g.dart';
 
 @freezed
 class GroceryListDetailsModel with _$GroceryListDetailsModel {
-  factory GroceryListDetailsModel({
+  const factory GroceryListDetailsModel({
     String? id,
     String? name,
     String? imageUrl,

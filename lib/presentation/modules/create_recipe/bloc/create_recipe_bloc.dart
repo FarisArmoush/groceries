@@ -35,7 +35,7 @@ class CreateRecipeBloc extends Bloc<CreateRecipeEvent, CreateRecipeState> {
     );
 
     try {
-      await _createRecipeUseCase(RecipeEntity());
+      await _createRecipeUseCase(const RecipeEntity());
       emit(
         state.copyWith(
           status: const BlocStatus.success(),

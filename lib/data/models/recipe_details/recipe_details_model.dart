@@ -6,7 +6,7 @@ part 'recipe_details_model.g.dart';
 
 @freezed
 class RecipeDetailsModel with _$RecipeDetailsModel {
-  factory RecipeDetailsModel({
+  const factory RecipeDetailsModel({
     String? id,
     String? name,
     String? imageUrl,

@@ -8,7 +8,7 @@ part 'task_entity.freezed.dart';
 
 @freezed
 class TaskEntity with _$TaskEntity {
-  factory TaskEntity({
+  const factory TaskEntity({
     String? id,
     GroceryListEntity? listModel,
     String? dueDate,

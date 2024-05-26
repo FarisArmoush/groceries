@@ -5,7 +5,7 @@ part 'priority_model.g.dart';
 
 @freezed
 class PriorityModel with _$PriorityModel {
-  factory PriorityModel({
+  const factory PriorityModel({
     String? color,
     String? id,
     int? index,

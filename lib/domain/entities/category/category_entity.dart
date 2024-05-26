@@ -5,7 +5,7 @@ part 'category_entity.freezed.dart';
 
 @freezed
 class CategoryEntity with _$CategoryEntity {
-  factory CategoryEntity({
+  const factory CategoryEntity({
     String? categoryId,
     DateTime? creationDate,
     String? image,

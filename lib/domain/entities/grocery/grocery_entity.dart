@@ -6,7 +6,7 @@ part 'grocery_entity.freezed.dart';
 
 @freezed
 class GroceryEntity with _$GroceryEntity {
-  factory GroceryEntity({
+  const factory GroceryEntity({
     String? categoryId,
     DateTime? creationDate,
     String? id,
