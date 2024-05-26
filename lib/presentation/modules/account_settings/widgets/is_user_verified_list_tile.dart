@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/translations.dart';
-import 'package:groceries/presentation/router/app_route.dart';
 import 'package:groceries/presentation/blocs/user_data/user_data_cubit.dart';
 import 'package:groceries/presentation/constants/assets.gen.dart';
 import 'package:groceries/presentation/modules/account_settings/widgets/your_account_is_verified_bottom_sheet.dart';
+import 'package:groceries/presentation/router/app_route.dart';
 import 'package:groceries_theme/app_theme.dart';
 
 class IsUserVerifiedListTile extends StatelessWidget {

@@ -3,13 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/translations.dart';
-import 'package:groceries/presentation/router/app_route.dart';
 import 'package:groceries/presentation/extensions/context_extensions.dart';
 import 'package:groceries/presentation/modules/forgot_password/bloc/forgot_password_bloc.dart';
 import 'package:groceries/presentation/modules/forgot_password/widgets/forgot_password_body_text.dart';
 import 'package:groceries/presentation/modules/forgot_password/widgets/forgot_password_email_text_field.dart';
 import 'package:groceries/presentation/modules/forgot_password/widgets/forgot_password_header_text.dart';
 import 'package:groceries/presentation/modules/forgot_password/widgets/send_forgot_password_email_button.dart';
+import 'package:groceries/presentation/router/app_route.dart';
 import 'package:groceries/presentation/widgets/app_snack_bars.dart';
 
 class ForgotPasswordView extends StatelessWidget {

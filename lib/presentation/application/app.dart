@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:groceries/presentation/application/app_easy_localization.dart';
 import 'package:groceries/config/injection/injector.dart';
+import 'package:groceries/presentation/application/app_easy_localization.dart';
 import 'package:groceries/presentation/blocs/authentication/authentication_bloc.dart';
 import 'package:groceries/presentation/blocs/grocery_lists/grocery_lists_bloc.dart';
 import 'package:groceries/presentation/blocs/logout/logout_bloc.dart';

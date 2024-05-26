@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:groceries/config/localization/translations.dart';
-import 'package:groceries/presentation/router/app_route.dart';
 import 'package:groceries/presentation/common/app_paddings.dart';
 import 'package:groceries/presentation/extensions/context_extensions.dart';
 import 'package:groceries/presentation/modules/create_list/bloc/create_list_bloc.dart';
@@ -11,6 +10,7 @@ import 'package:groceries/presentation/modules/create_list/widgets/create_list_i
 import 'package:groceries/presentation/modules/create_list/widgets/create_list_text_field.dart';
 import 'package:groceries/presentation/modules/create_list/widgets/invite_people_to_list_text.dart';
 import 'package:groceries/presentation/modules/create_list/widgets/invite_to_list_buttons.dart';
+import 'package:groceries/presentation/router/app_route.dart';
 import 'package:groceries/presentation/widgets/app_loading_indicator.dart';
 import 'package:groceries/presentation/widgets/cancel_bottom_sheet.dart';
 
