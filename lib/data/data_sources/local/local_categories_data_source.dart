@@ -12,6 +12,7 @@ class LocalCategoriesDataSource implements CategoriesDataSource {
   );
 
   final CacheService _cacheService;
+
   @override
   Future<List<CategoryModel>> fetchCategories([String? categoryId]) async {
     final rawCategories = await _cacheService.read<List<Map<String, dynamic>>>(

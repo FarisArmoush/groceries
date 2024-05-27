@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:groceries/data/data_sources/instances.dart';
 import 'package:groceries/data/data_sources/interfaces/base_groceries_data_source.dart';
 import 'package:groceries/data/models/grocery/grocery_model.dart';
 import 'package:groceries/shared/exceptions/app_network_exception.dart';
@@ -10,11 +11,10 @@ import 'package:injectable/injectable.dart';
 class FirestoreBaseGroceriesDataSource implements BaseGroceriesDataSource {
   const FirestoreBaseGroceriesDataSource();
 
-  FirebaseFirestore get _firestore => FirebaseFirestore.instance;
   @override
   Future<List<GroceryModel>> fetchCategoryItems(String? categoryId) async {
     try {
-      final collectionReference = _firestore
+      final collectionReference = firestore
           .collection('items')
           .orderBy('name')
           .where('categoryId', isEqualTo: categoryId);

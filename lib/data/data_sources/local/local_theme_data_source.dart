@@ -1,4 +1,3 @@
-import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:groceries/data/data_sources/interfaces/theme_data_source.dart';
 import 'package:groceries/data/services/cache/cache_service.dart';
@@ -17,11 +16,12 @@ class LocalThemeDataSource implements ThemeDataSource {
   @override
   Future<ThemeMode> getTheme() async {
     final cachedTheme = await _cacheService.read<String>('themeMode');
-    final theme = ThemeMode.values.firstWhereOrNull(
+    final theme = ThemeMode.values.firstWhere(
       (element) => element.toString() == cachedTheme,
+      orElse: () => ThemeMode.system,
     );
     logger.info('Got theme($theme)');
-    return theme ?? ThemeMode.system;
+    return theme;
   }
 
   @override
@@ -29,7 +29,7 @@ class LocalThemeDataSource implements ThemeDataSource {
     try {
       await _cacheService.write('themeMode', theme.toString());
       logger.info('Cached $theme');
-    } on Exception catch (e) {
+    }  catch (e) {
       logger.error(e.toString());
     }
   }

@@ -18,8 +18,8 @@ class FirebaseUserManagementDataSource implements UserManagementDataSource {
                 .update({'displayName': displayName}),
           );
       logger.info('Updated display name');
-    } on FirebaseAuthException catch (e) {
-      logger.error(e.message, e, e.stackTrace);
+    } on FirebaseAuthException catch (e, stackTrace) {
+      logger.error(e.message, e, stackTrace);
       throw AppNetworkException.fromCode(e.message ?? '');
     } catch (_) {
       logger.error('Error updating display name');
@@ -38,8 +38,8 @@ class FirebaseUserManagementDataSource implements UserManagementDataSource {
                 .update({'email': email}),
           );
       logger.info('Updated email');
-    } on FirebaseAuthException catch (e) {
-      logger.error(e.message, e, e.stackTrace);
+    } on FirebaseAuthException catch (e, stackTrace) {
+      logger.error(e.message, e, stackTrace);
       throw AppNetworkException.fromCode(e.message ?? '');
     } catch (_) {
       logger.error('Error updating email');
@@ -53,8 +53,8 @@ class FirebaseUserManagementDataSource implements UserManagementDataSource {
     try {
       await firebaseAuth.currentUser?.updatePassword(password);
       logger.info('Updated password');
-    } on FirebaseAuthException catch (e) {
-      logger.error(e.message, e, e.stackTrace);
+    } on FirebaseAuthException catch (e, stackTrace) {
+      logger.error(e.message, e, stackTrace);
       throw AppNetworkException.fromCode(e.message ?? '');
     } catch (_) {
       logger.error('Failed to update password');
@@ -87,8 +87,8 @@ class FirebaseUserManagementDataSource implements UserManagementDataSource {
     try {
       await firebaseAuth.sendPasswordResetEmail(email: email);
       logger.info('Sent password reset email');
-    } on FirebaseAuthException catch (e) {
-      logger.error(e.message, e, e.stackTrace);
+    } on FirebaseAuthException catch (e, stackTrace) {
+      logger.error(e.message, e, stackTrace);
       throw AppNetworkException.fromCode(e.message ?? '');
     } catch (_) {
       logger.error('Error sending password reset email');
@@ -101,8 +101,8 @@ class FirebaseUserManagementDataSource implements UserManagementDataSource {
     try {
       await firebaseAuth.currentUser?.sendEmailVerification();
       logger.info('Sent verification email');
-    } on FirebaseAuthException catch (e) {
-      logger.error(e.message, e, e.stackTrace);
+    } on FirebaseAuthException catch (e, stackTrace) {
+      logger.error(e.message, e, stackTrace);
       throw AppNetworkException.fromCode(e.code);
     } catch (_) {
       logger.error('Failed to send verification email');

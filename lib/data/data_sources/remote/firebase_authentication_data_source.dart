@@ -11,12 +11,12 @@ import 'package:injectable/injectable.dart';
 class FirebaseAuthenticationDataSource implements AuthenticationDataSource {
   const FirebaseAuthenticationDataSource();
 
-  FirebaseAuth get firebaseAuth => FirebaseAuth.instance;
-  FirebaseFirestore get firestore => FirebaseFirestore.instance;
+  FirebaseAuth get _firebaseAuth => FirebaseAuth.instance;
+  FirebaseFirestore get _firestore => FirebaseFirestore.instance;
 
   @override
   Stream<UserModel?> get authStateChanges {
-    return firebaseAuth.userChanges().map(
+    return _firebaseAuth.userChanges().map(
       (user) {
         if (user == null) return null;
         return UserModel(
@@ -33,7 +33,7 @@ class FirebaseAuthenticationDataSource implements AuthenticationDataSource {
 
   @override
   UserModel? get currentUser {
-    final user = firebaseAuth.currentUser;
+    final user = _firebaseAuth.currentUser;
     if (user == null) return null;
     return UserModel(
       id: user.tenantId,
@@ -50,7 +50,7 @@ class FirebaseAuthenticationDataSource implements AuthenticationDataSource {
     required String password,
   }) async {
     try {
-      await firebaseAuth.signInWithEmailAndPassword(
+      await _firebaseAuth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
@@ -70,7 +70,7 @@ class FirebaseAuthenticationDataSource implements AuthenticationDataSource {
     required String name,
   }) async {
     try {
-      await firebaseAuth
+      await _firebaseAuth
           .createUserWithEmailAndPassword(
         email: email,
         password: password,
@@ -83,8 +83,8 @@ class FirebaseAuthenticationDataSource implements AuthenticationDataSource {
           'image': '',
           'displayName': name,
         };
-        firestore.collection('users').doc(user.user?.uid).set(setData);
-        firebaseAuth.currentUser?.updateDisplayName(name);
+        _firestore.collection('users').doc(user.user?.uid).set(setData);
+        _firebaseAuth.currentUser?.updateDisplayName(name);
       });
       logger.info('Register successfully');
     } on FirebaseAuthException catch (e) {
@@ -99,7 +99,7 @@ class FirebaseAuthenticationDataSource implements AuthenticationDataSource {
   @override
   Future<void> logout() async {
     try {
-      await firebaseAuth.signOut();
+      await _firebaseAuth.signOut();
       logger.info('logged out succesfully');
     } on FirebaseAuthException catch (e) {
       logger.error(e.message, e, e.stackTrace);

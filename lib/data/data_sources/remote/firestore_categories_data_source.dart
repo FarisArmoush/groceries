@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:groceries/data/data_sources/instances.dart';
 import 'package:groceries/data/data_sources/interfaces/categories_data_source.dart';
 import 'package:groceries/data/models/category/category_model.dart';
 import 'package:groceries/shared/exceptions/app_network_exception.dart';
@@ -10,8 +11,6 @@ import 'package:injectable/injectable.dart';
 class FirestoreCategoriesDataSource implements CategoriesDataSource {
   const FirestoreCategoriesDataSource();
 
-  FirebaseFirestore get _firestore => FirebaseFirestore.instance;
-
   @override
   Future<List<CategoryModel>> fetchCategories([String? categoryId]) async {
     try {
@@ -19,13 +18,13 @@ class FirestoreCategoriesDataSource implements CategoriesDataSource {
 
       if (categoryId != null) {
         // Sub-Categories Query
-        query = _firestore
+        query = firestore
             .collection('category')
             .orderBy('name')
             .where('parentCategoryId', isEqualTo: categoryId);
       } else {
         // Parent-Categories Query
-        query = _firestore
+        query = firestore
             .collection('category')
             .orderBy('name')
             .where('parentCategoryId', isNull: true);
