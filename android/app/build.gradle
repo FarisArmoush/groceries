@@ -59,7 +59,6 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
-        multiDexEnabled true
     }
 
     signingConfigs {
@@ -89,12 +88,12 @@ android {
         }
         staging {
             dimension "default"
-            applicationIdSuffix ""
+            applicationIdSuffix ".stg"
             manifestPlaceholders = [appName: "[STG] Groceries"]
         }
         development {
             dimension "default"
-            applicationIdSuffix ""
+            applicationIdSuffix ".dev"
             manifestPlaceholders = [appName: "[DEV] Groceries"]
         }
     }
@@ -117,5 +116,4 @@ flutter {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10"
-    implementation 'androidx.multidex:multidex:2.0.1'
 }
