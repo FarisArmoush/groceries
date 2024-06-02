@@ -21,6 +21,7 @@ lib/firebase_options.dart
 *.freezed.dart
 *.g.dart
 *.config.dart
+*.gen.dart
 
 # IntelliJ related
 *.iml
