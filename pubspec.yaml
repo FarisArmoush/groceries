@@ -29,7 +29,7 @@ dependencies:
   flutter_svg: ^2.0.6
   formz: ^0.7.0
   freezed_annotation: ^2.2.0
-  get_it: ^7.6.7
+  get_it: ^8.0.0
   groceries_theme:
     path: app_theme
   go_router: ^14.0.0
